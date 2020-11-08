@@ -1,0 +1,77 @@
+{
+  "routes": [
+    {
+      "title": "Home",
+      "path": "./index.md",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16px\" xml:space=\"preserve\"><path d=\"M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555  L0.55,7C0.238,7.325,0,7.562,0,8c0,0.563,0.432,1,1,1h1v6c0,0.55,0.45,1,1,1h3v-5c0-0.55,0.45-1,1-1h2c0.55,0,1,0.45,1,1v5h3  c0.55,0,1-0.45,1-1V9h1c0.568,0,1-0.437,1-1C16,7.562,15.762,7.325,15.45,7z\"/></svg>"
+    },
+    {
+      "title": "Workflow",
+      "path": "./workflow/index.md",
+      "icon": "<svg viewBox=\"0 0 512 466\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M46.5 0.837754C20.5 0.837754 0 22.3052 0 49.5321V122.94V196.348V221.062V245.776V270.489V343.898V417.306C0 444.533 20.5 466 46.5 466H256H465.5C491.5 466 512 444.533 512 417.306V343.898V244.205V195.511V122.102V48.6944C512 21.4674 491.5 0 465.5 0H256H46.5V0.837754Z\" />\n<path d=\"M70.1 73.1V99.1L140.2 140.1L70.1 181.1V207.1L186.7 140.1L70.1 73.1ZM185.9 186.5V210.1H302.5V186.5H185.9Z\" fill=\"white\" />\n</svg>",
+      "children": [
+        {
+          "title": "Setup",
+          "path": "./workflow/setup/index.md",
+          "children": [
+            {
+              "title": "Local VS Code",
+              "path": "./workflow/setup/local-vscode.md"
+            },
+            {
+              "title": "Browser VS Code",
+              "path": "./workflow/setup/browser-vscode.md"
+            },
+            {
+              "title": "Browser JetBrains",
+              "path": "./workflow/setup/browser-jetbrains.md"
+            }
+          ]
+        },
+        {
+          "title": "Personalization",
+          "path": "./workflow/personalization.md"
+        },
+        {
+          "title": "Files",
+          "path": "./workflow/files.md"
+        },
+        {
+          "title": "Port Forwarding",
+          "path": "./workflow/ports.md"
+        },
+        {
+          "title": "SSH",
+          "path": "./workflow/ssh.md"
+        }
+      ]
+    },
+    {
+      "title": "Admin",
+      "path": "./admin/index.md",
+      "icon": "<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><path d=\"M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z\"/></svg>",
+      "children": [
+        {
+          "title": "Setup",
+          "path": "./admin/setup.md"
+        },
+        {
+          "title": "Appearance",
+          "path": "./admin/appearance.md"
+        },
+        {
+          "title": "Audit",
+          "path": "./admin/audit.md"
+        },
+        {
+          "title": "Metrics",
+          "path": "./admin/metrics.md"
+        },
+        {
+          "title": "Updates",
+          "path": "./admin/updates.md"
+        }
+      ]
+    }
+  ]
+}
