@@ -17,6 +17,9 @@ DEPLOYMENT_ID=$(curl \
             }' \
     https://api.github.com/repos/$GITHUB_REPOSITORY/deployments | jq '.id')
 
+# Remove just in case...
+rm -f url.txt
+
 # Starts the vercel deployment.
 ./ci/steps/vercel_deploy.sh 1> url.txt 2>/dev/null &
 
@@ -48,6 +51,7 @@ curl \
     -H "Content-Type: application/json" \
     --user "x-access-token:$GITHUB_TOKEN" \
     --data '{
-              "state": "success"
+              "state": "success",
+              "environment_url": "'$ENVIRONMENT_URL'"
             }' \
     https://api.github.com/repos/$GITHUB_REPOSITORY/deployments/$DEPLOYMENT_ID/statuses
