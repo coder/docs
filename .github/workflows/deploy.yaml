@@ -8,6 +8,5 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'cdr/c'
-          ref: 'codercom-docs'
           submodules: true
       - run: cd docs/ && git fetch ${GITHUB_SHA} && git checkout ${GITHUB_SHA}
