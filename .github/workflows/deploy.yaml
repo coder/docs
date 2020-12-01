@@ -19,8 +19,21 @@ jobs:
       - uses: actions/setup-node@v1
       - run: git fetch && git checkout ${GITHUB_SHA}
         working-directory: ./docs
-      - run: ./ci/steps/vercel_deploy.sh
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ github.token }}
+          environment: none
+      - run: ./ci/steps/vercel_deploy.sh > url.txt
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
           VERCEL_PROJECT_ID: QmZRucMRh3GFk1817ZgXjRVuw5fhTspHPHKct3JNQDEPGd
+      - run: URL=$(cat url.txt) echo "::set-output name=url::$URL"
+        id: url
+      - uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ github.token }}
+          target_url: ${{ steps.url.outputs.url }}
+          state: success
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
