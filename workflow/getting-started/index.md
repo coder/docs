@@ -16,7 +16,7 @@ Your home directory persists after rebuilds, so feel free to configure to your l
 
 1. Navigate to the Environments page.
 
-   ![Environments](./assets/environments-nav.png)
+   <img src="./assets/environments-nav.png">
 
 2. Click "New Environment".
 
