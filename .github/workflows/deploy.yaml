@@ -1,0 +1,33 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
+jobs:
+  preview:
+    name: Preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Mono
+        uses: actions/checkout@v2
+        with:
+          repository: cdr/c
+          ref: refs/heads/codercom-docs
+          ssh-key: ${{ secrets.MONOREPO_DEPLOY_KEY }}
+          submodules: true
+          fetch-depth: 0
+      - name: Checkout Docs
+        run: git fetch && git checkout ${GITHUB_SHA}
+        working-directory: ./docs
+      - name: Setup Node
+        uses: actions/setup-node@v1
+      - name: Deploy
+        run: ./docs/.github/ci/deploy.sh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REF: ${{ github.ref }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
+          VERCEL_PROJECT_ID: QmZRucMRh3GFk1817ZgXjRVuw5fhTspHPHKct3JNQDEPGd

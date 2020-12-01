@@ -3,7 +3,9 @@ title: "Documentation"
 description: "Explore our guides and examples to get started with Coder."
 ---
 
-Coder moves software development to your cloud, centralizing an organization's development initiatives and unlocking substantial gains in both developer velocity and enterprise security.
+Coder moves software development to your cloud, centralizing
+an organization's development initiatives and unlocking substantial
+gains in both developer velocity and enterprise security.
 
 <div class="get-started">
   <div>
