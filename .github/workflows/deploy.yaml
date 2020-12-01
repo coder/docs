@@ -23,17 +23,17 @@ jobs:
         id: deployment
         with:
           token: ${{ github.token }}
-          environment: none
+          environment: staging
       - run: ./ci/steps/vercel_deploy.sh > url.txt
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
           VERCEL_PROJECT_ID: QmZRucMRh3GFk1817ZgXjRVuw5fhTspHPHKct3JNQDEPGd
       - run: URL=$(cat url.txt) echo "::set-output name=url::$URL"
-        id: url
+        id: set_url
       - uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ github.token }}
-          target_url: ${{ steps.url.outputs.url }}
+          target_url: ${{ steps.set_url.outputs.url }}
           state: success
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
