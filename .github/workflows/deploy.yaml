@@ -16,7 +16,8 @@ jobs:
           ssh-key: ${{ secrets.MONOREPO_DEPLOY_KEY }}
           submodules: true
       - uses: actions/setup-node@v1
-      - run: cd docs/ && git fetch && git checkout ${GITHUB_SHA}
+      - run: git fetch && git checkout ${GITHUB_SHA}
+        working-directory: ./docs
       - run: ./ci/steps/vercel_deploy.sh
         env:
           VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
