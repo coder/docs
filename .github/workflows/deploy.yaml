@@ -1,5 +1,9 @@
 name: Deploy
-on: push
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
 jobs:
   preview:
     name: Preview
@@ -11,4 +15,9 @@ jobs:
           ref: refs/heads/codercom-docs
           ssh-key: ${{ secrets.MONOREPO_DEPLOY_KEY }}
           submodules: true
+      - uses: actions/setup-node@v1
       - run: cd docs/ && git fetch && git checkout ${GITHUB_SHA}
+      - run: ./ci/steps/vercel_deploy.sh
+        env:
+          VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
+          VERCEL_PROJECT_ID: QmZRucMRh3GFk1817ZgXjRVuw5fhTspHPHKct3JNQDEPGd
