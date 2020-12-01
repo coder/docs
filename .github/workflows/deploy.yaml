@@ -11,4 +11,4 @@ jobs:
           ref: refs/heads/codercom-docs
           ssh-key: ${{ secrets.MONOREPO_DEPLOY_KEY }}
           submodules: true
-      - run: cd docs/ && git fetch ${GITHUB_SHA} && git checkout ${GITHUB_SHA}
+      - run: cd docs/ && git fetch && git checkout ${GITHUB_SHA}
