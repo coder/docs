@@ -68,8 +68,54 @@
           "path": "./admin/audit.md"
         },
         {
+          "title": "Enable Dev URLs",
+          "path": "./admin/devurls.md"
+        },
+        {
+          "title": "Extensions",
+          "path": "./admin/extensions.md"
+        },
+        {
+          "title": "Git Configuration",
+          "path": "./admin/git.md"
+        },
+        {
+          "title": "Licensing",
+          "path": "./admin/licensing.md"
+        },
+        {
+          "title": "Memory Overprovisioning",
+          "path": "./admin/memory-overprivisioning.md"
+        },
+        {
+          "title": "Environment Management",
+          "path": "./admin/environment-management/index.md",
+          "children": [
+            {
+              "title": "Environment Shutdown",
+              "path": "./admin/environment-management/shutdown.md"
+            },
+            {
+              "title": "GPU Acceleration",
+              "path": "./admin/environment-management/gpu-acceleration.md"
+            },
+            {
+              "title": "Privileged Environments",
+              "path": "./admin/environment-management/privileged.md"
+            },
+            {
+              "title": "Disable SSH Access",
+              "path": "./admin/environment-management/ssh-access.md"
+            }
+          ]
+        },
+        {
           "title": "Metrics",
           "path": "./admin/metrics.md"
+        },
+        {
+          "title": "Telemetry",
+          "path": "./admin/telemetry.md"
         },
         {
           "title": "Updates",
