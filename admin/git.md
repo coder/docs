@@ -12,7 +12,7 @@ Currently, Coder supports the following providers:
   rel="noreferrer noopener">doesn't support</a> managing SSH keys for users via
   OAuth)
 
-![Configure Git Integration](./../assets/git-admin.png)
+![Configure Git Integration](../assets/git-admin.png)
 
 ## Configuring OAuth
 

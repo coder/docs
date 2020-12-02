@@ -4,10 +4,10 @@ purposes.
 Any user who is a **Site Manager** or an **Auditor** can log into Coder, go to
 **Manage** > **Audit**, and view the **Audit Logs**.
 
-By default, this page displays a cåhronological list of all actions taken on the
+By default, this page displays a chronological list of all actions taken on the
 system.
 
-![Audit Logs](./../assets/audit-log.png)
+![Audit Logs](../assets/audit-log.png)
 
 You can filter the logs displayed using the search filters available at the top:
 

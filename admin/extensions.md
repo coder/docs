@@ -3,7 +3,7 @@
 You can customize VS Code with extensions, which allow you to add new features
 and functionality (e.g., languages, debuggers, tools), themes, and more.
 
-![Installed Extensions](./../assets/extensions.png)
+![Installed Extensions](../assets/extensions.png)
 
 ## The Extension Marketplace
 
@@ -18,7 +18,7 @@ three types of extensions marketplaces by going to **Manage** > **Admin** >
   accessed via the URL you provide
 - **Internal**: VS Code extensions served from within the Coder private network
 
-![Configuring Extensions Marketplace](./../assets/configure-extensions.png)
+![Configuring Extensions Marketplace](../assets/configure-extensions.png)
 
 ## Installing an Extension from a Marketplace
 
