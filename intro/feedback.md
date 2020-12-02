@@ -57,3 +57,5 @@ We welcome any additional information that you think may be helpful.
 One important piece of information you could provide is the version number of
 your deployment. This information is available at the bottom of most pages in
 the Coder UI.
+
+![Version Information](../assets/version-info.png)
