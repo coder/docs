@@ -18,7 +18,7 @@ In the Coder dashboard, go to **Manage** > **Organizations** and choose the
 organization you'd like to modify.
 
 Click **Edit** in the top-right. In the dialog that opens, use the slider
-underneath** Environment Shutdown Behavior** to select the maximum allowed
+underneath **Environment Shutdown Behavior** to select the maximum allowed
 duration.
 
 ![Configure shutdown behavior](../../assets/env-shutdown.png)

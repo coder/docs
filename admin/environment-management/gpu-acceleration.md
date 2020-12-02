@@ -1,5 +1,5 @@
 GPUs can be used for performing tasks such as machine learning within
-environments. 
+environments.
 
 By default, users cannot create environments with GPUs until a site manager
 configures and enables this feature.
