@@ -9,7 +9,8 @@ To customize your system banner messages:
 
 1. Go to **Admin > Appearance** in the Coder UI.
 2. Select the checkbox next to **Enabled**.
-3. Set your **background color**, and provide the text you want to be displayed in your **Header** and **Footer**.
+3. Set your **background color**, and provide the text you want to be displayed
+   in your **Header** and **Footer**.
 4. Click **Update Appearance** to save your changes.
 
 <video autoplay loop="loop" width="100%" controls
@@ -21,10 +22,12 @@ To enable the display of a Terms of Service and to edit the text displayed:
 
 1. Go to **Admin > Appearance** in the Coder UI.
 2. Select the checkbox next to **Enabled**.
-3. Provide your Terms of Service in **Body**; this editor accepts HTML and Markdown formatting.
+3. Provide your Terms of Service in **Body**; this editor accepts HTML and
+   Markdown formatting.
 4. Click **Update Appearance** to save your changes.
 
 <video autoplay loop="loop" width="100%" controls
 src="https://cdn.coder.com/docs/terms-of-service.mp4"></video>
 
-**Note**: If you enable the use of a Terms of Service, users will not be able to log into Coder without first accepting the Terms of Service.
+**Note**: If you enable the use of a Terms of Service, users will not be able to
+log into Coder without first accepting the Terms of Service.
