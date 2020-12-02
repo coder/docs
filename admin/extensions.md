@@ -1,5 +1,3 @@
-# Extensions
-
 You can customize VS Code with extensions, which allow you to add new features
 and functionality (e.g., languages, debuggers, tools), themes, and more.
 
