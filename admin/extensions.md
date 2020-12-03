@@ -26,7 +26,7 @@ either by filtering for it or selecting it in the list displayed. Click
 **Import**.
 
 <video autoplay loop="loop" width="100%" controls
-src="https://cdn.coder.com/docs/import-extension.mp4"></video>
+src="../assets/import-extension.mp4"></video>
 
 ## Coder's Internal Marketplace
 

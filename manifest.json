@@ -72,7 +72,7 @@
             },
             {
               "title": "Configuration",
-              "path": "./admin/setup/setup-config.md"
+              "path": "./admin/setup/configuration.md"
             }
           ]
         },

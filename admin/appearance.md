@@ -14,7 +14,7 @@ To customize your system banner messages:
 4. Click **Update Appearance** to save your changes.
 
 <video autoplay loop="loop" width="100%" controls
-src="https://cdn.coder.com/docs/system-banners.mp4"></video>
+src="../assets/system-banners.mp4"></video>
 
 ## Terms of Service
 
@@ -27,7 +27,7 @@ To enable the display of a Terms of Service and to edit the text displayed:
 4. Click **Update Appearance** to save your changes.
 
 <video autoplay loop="loop" width="100%" controls
-src="https://cdn.coder.com/docs/terms-of-service.mp4"></video>
+src="../assets/terms-of-service.mp4"></video>
 
 **Note**: If you enable the use of a Terms of Service, users will not be able to
 log into Coder without first accepting the Terms of Service.
