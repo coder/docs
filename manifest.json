@@ -135,6 +135,16 @@
           "path": "./admin/telemetry.md"
         }
       ]
+    },
+    {
+      "title": "CLI",
+      "path": "./cli/index.md",
+      "children": [
+        {
+          "title": "Remote Terminal",
+          "path": "./cli/remote-terminal"
+        }
+      ]
     }
   ]
 }
