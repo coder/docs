@@ -47,6 +47,17 @@
         {
           "title": "SSH",
           "path": "./workflow/ssh.md"
+        },
+        {
+          "title": "Command-Line Interface",
+          "path": "./cli/index.md",
+          "icon": "<svg viewBox=\"0 0 14 12\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M6.7 5.3L1.7 0.3C1.3 -0.1 0.7 -0.1 0.3 0.3C-0.1 0.7 -0.1 1.3 0.3 1.7L4.6 6L0.3 10.3C-0.1 10.7 -0.1 11.3 0.3 11.7C0.5 11.9 0.7 12 1 12C1.3 12 1.5 11.9 1.7 11.7L6.7 6.7C7.1 6.3 7.1 5.7 6.7 5.3Z\" />\n<path d=\"M14 10H7V12H14V10Z\" />\n</svg>",
+          "children": [
+            {
+              "title": "Remote Terminal",
+              "path": "./cli/remote-terminal.md"
+            }
+          ]
         }
       ]
     },
@@ -133,16 +144,6 @@
         {
           "title": "Telemetry",
           "path": "./admin/telemetry.md"
-        }
-      ]
-    },
-    {
-      "title": "CLI",
-      "path": "./cli/index.md",
-      "children": [
-        {
-          "title": "Remote Terminal",
-          "path": "./cli/remote-terminal.md"
         }
       ]
     }
