@@ -50,7 +50,8 @@ data, including environment information and session tokens.
    password for the admin user
 
    ```bash
-   kubectl logs -l coder.deployment=cemanager -c cemanager --tail=-1 | grep -A1 -B2 Password
+   kubectl logs -l coder.deployment=cemanager -c cemanager \
+    --tail=-1 | grep -A1 -B2 Password
    ```
 
    When this step is done, you will see:
