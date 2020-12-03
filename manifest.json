@@ -59,19 +59,19 @@
           "children": [
             {
               "title": "Architecture",
-              "path": "./admin/install-setup/architecture.md"
+              "path": "./admin/setup/architecture.md"
             },
             {
               "title": "Requirements",
-              "path": "./admin/install-setup/requirements.md"
+              "path": "./admin/setup/requirements.md"
             },
             {
               "title": "Installation",
-              "path": "./admin/install-setup/installation.md"
+              "path": "./admin/setup/installation.md"
             },
             {
               "title": "Configuration",
-              "path": "./admin/install-setup/setup-config.md"
+              "path": "./admin/setup/setup-config.md"
             }
           ]
         },
