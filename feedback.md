@@ -11,7 +11,7 @@ with the details of your suggestion.
 
 We collect your email so that you will be notified when the feature is updated.
 
-![Coder Roadmap](../assets/roadmap.png)
+![Coder Roadmap](assets/roadmap.png)
 
 ## Reporting a Problem
 
@@ -20,7 +20,7 @@ report using the guidelines below to **support@coder.com**. If the application
 crashes, a report will be generated for you. Copy the report and include it with
 your report.
 
-![Coder Error Report](../assets/error-report.png)
+![Coder Error Report](assets/error-report.png)
 
 ### Writing a Detailed Report
 
@@ -58,4 +58,4 @@ One important piece of information you could provide is the version number of
 your deployment. This information is available at the bottom of most pages in
 the Coder UI.
 
-![Version Information](../assets/version-info.png)
+![Version Information](assets/version-info.png)
