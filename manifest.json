@@ -7,7 +7,7 @@
       "children": [
         {
           "title": "About",
-          "path": "./about/index.md"
+          "path": "./about/overview.md"
         },
         {
           "title": "Our Mission",
