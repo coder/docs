@@ -42,11 +42,11 @@ data, including environment information and session tokens.
    You can find/define these values in your [PostgreSQL server configuration
    file](https://www.postgresql.org/docs/current/config-setting.html).
 
-3. [Enable Dev URL Usage](doc:setup-dev-urls). Dev URLs allow users to access
+4. [Enable Dev URL Usage](../devurls.md). Dev URLs allow users to access
    the web servers running in your environment. To enable, provide a wildcard
    domain and its DNS certificate and update your helm chart accordingly.
 
-4. After you've created the pod, tail the logs to find the randomly generated
+5. After you've created the pod, tail the logs to find the randomly generated
    password for the admin user
 
    ```bash

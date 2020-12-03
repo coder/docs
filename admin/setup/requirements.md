@@ -35,7 +35,7 @@ currently support the use of:
 - Mozilla Firefox 57
 - Microsoft Edge 79
 
-If you're using [Remote IDEs](doc:multi-editor), allow pop-ups; Coder launches
+If you're using [Remote IDEs](../../workflow/index.md), allow pop-ups; Coder launches
 the Remote IDE in a pop-up window.
 
 ## Licenses
