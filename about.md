@@ -15,7 +15,7 @@ With Coder, engineers can continue using the development tools, CI/CD pipelines,
 source code management systems, and editors they know and love while leveraging
 the power of cloud and automation.
 
-## Our Missioin
+## Our Mission
 
 Developers should spend their time writing code, not on getting their
 development environment working. Coder's goal is to empower organizations to
