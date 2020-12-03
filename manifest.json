@@ -7,25 +7,23 @@
       "children": [
         {
           "title": "About",
-          "path": "./about/index.md",
-          "children": [
-            {
-              "title": "Our Mission",
-              "path": "./about/our-mission.md"
-            },
-            {
-              "title": "Why Coder?",
-              "path": "./about/why-coder.md"
-            },
-            {
-              "title": "Product Comparison",
-              "path": "./about/comparison.md"
-            },
-            {
-              "title": "Feedback",
-              "path": "./about/feedback.md"
-            }
-          ]
+          "path": "./about/index.md"
+        },
+        {
+          "title": "Our Mission",
+          "path": "./about/our-mission.md"
+        },
+        {
+          "title": "Why Coder?",
+          "path": "./about/why-coder.md"
+        },
+        {
+          "title": "Product Comparison",
+          "path": "./about/comparison.md"
+        },
+        {
+          "title": "Feedback",
+          "path": "./about/feedback.md"
         }
       ]
     },
