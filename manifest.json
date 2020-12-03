@@ -11,19 +11,19 @@
       "children": [
         {
           "title": "Our Mission",
-          "path": "./intro/about/our-mission.md"
+          "path": "./about/our-mission.md"
         },
         {
           "title": "Why Coder?",
-          "path": "./intro/about/why-coder.md"
+          "path": "./about/why-coder.md"
         },
         {
           "title": "Product Comparison",
-          "path": "./intro/about/comparison.md"
+          "path": "./about/comparison.md"
         },
         {
           "title": "Provide Feedback",
-          "path": "./intro/feedback.md"
+          "path": "./about/feedback.md"
         }
       ]
     },
