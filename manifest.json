@@ -142,7 +142,7 @@
       "children": [
         {
           "title": "Remote Terminal",
-          "path": "./cli/remote-terminal"
+          "path": "./cli/remote-terminal.md"
         }
       ]
     }
