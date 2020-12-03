@@ -1,5 +1,5 @@
-Coder hooks into Docker [registries](doc:registries), and you can import images
-in these registries for use.
+Coder hooks into Docker [registries](../../admin/registries/index.md), and you
+can import images in these registries for use.
 
 To import an image, go to **Images** and select **Import Image** in the
 upper-right. When prompted:

@@ -1,6 +1,6 @@
 Images used with Coder require **glibc**.
 
-Additionally, the use of [SSH](doc:access-an-environment-via-ssh-2) also
+Additionally, the use of [SSH](../environments/ssh-access-to-coder.md) also
 requires:
 
 * OpenSSH server

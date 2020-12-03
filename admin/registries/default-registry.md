@@ -1,7 +1,7 @@
 > This feature is unavailable for air-gapped deployments.
 
 Coder is configured to automatically import the default
-[registry](doc:registries), Docker Hub, to streamline your initial setup
+[registry](index.md), Docker Hub, to streamline your initial setup
 process.
 
 This means that your users can create environments using Docker Hub images
