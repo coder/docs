@@ -19,7 +19,7 @@
           "path": "./workflow/images",
           "children": [
             {
-              "title": "Structuring Your Org's Images",
+              "title": "Structuring Images",
               "path": "./workflow/images/structure.md"
             },
             {
