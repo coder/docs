@@ -6,7 +6,7 @@ key benefits include:
   developers. New developers can begin contributing right away instead of
   spending time setting up their working environment.
 
-![Onboarding](../../assets/onboard.png)
+![Onboarding](./../assets/onboard.png)
 
 - **Environmental Consistency**: Every component of your environments are
   predefined and preapproved, reducing configuration drift caused by variations
@@ -19,7 +19,7 @@ key benefits include:
   working or the slow network uploads of large files. All processes are
   performed on the cluster, with only the commands sent over the network.
 
-![Performance](../../assets/performance.png)
+![Performance](./../assets/performance.png)
 
 - **Zero Overhead**: Coder performs all graphical rendering on the client,
   minimizing network traffic and resulting in zero overhead for most
@@ -32,13 +32,13 @@ key benefits include:
   you can track which versions your developers are using, providing visibility
   into environmental consistency.
 
-![Updates](../../assets/update.png)
+![Updates](./../assets/update.png)
 
 - **Centralized Source Code**: Keeping source code centralized on company
   servers mitigates the risk of loss or theft. Developers can work on their
   projects from anywhere while using any device with an internet browser.
 
-![Security](../../assets/firewall.png)
+![Security](./../assets/firewall.png)
 
 - **Improved Security**: Development actions are centralized on your internal
   infrastructure, allowing insight into potential threats. Furthermore,
