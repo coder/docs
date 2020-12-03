@@ -16,7 +16,29 @@
         },
         {
           "title": "Images",
-          "path": "./workflow/images"
+          "path": "./workflow/images",
+          "children": [
+            {
+              "title": "Structuring Your Org's Images",
+              "path": "./workflow/images/structure.md"
+            },
+            {
+              "title": "Image Requirements",
+              "path": "./workflow/images/requirements.md"
+            },
+            {
+              "title": "Image Tags",
+              "path": "./workflow/images/tags.md"
+            },
+            {
+              "title": "Importing Images",
+              "path": "./workflow/images/importing.md"
+            },
+            {
+              "title": "Deprecating Images",
+              "path": "./workflow/images/deprecating.md"
+            }
+          ]
         },
         {
           "title": "Editors",
@@ -136,7 +158,13 @@
         },
         {
           "title": "Registries",
-          "path": "./admin/registries"
+          "path": "./admin/registries",
+          "children": [
+            {
+              "title": "Default Registry",
+              "path": "./admin/registries/default-registry.md"
+            }
+          ]
         },
         {
           "title": "Telemetry",
