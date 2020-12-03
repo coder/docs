@@ -7,23 +7,15 @@
       "children": [
         {
           "title": "About",
-          "path": "./about/overview.md"
-        },
-        {
-          "title": "Our Mission",
-          "path": "./about/our-mission.md"
-        },
-        {
-          "title": "Why Coder?",
-          "path": "./about/why-coder.md"
+          "path": "about.md"
         },
         {
           "title": "Product Comparison",
-          "path": "./about/comparison.md"
+          "path": "comparison.md"
         },
         {
           "title": "Feedback",
-          "path": "./about/feedback.md"
+          "path": "feedback.md"
         }
       ]
     },
