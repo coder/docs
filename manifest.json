@@ -15,6 +15,10 @@
             "path": "./workflow/getting-started/index.md"
         },
         {
+          "title": "Images",
+          "path": "./workflow/images"
+        },
+        {
           "title": "Editors",
           "path": "./workflow/editor/index.md",
           "children": [
@@ -129,6 +133,10 @@
         {
           "title": "Metrics",
           "path": "./admin/metrics.md"
+        },
+        {
+          "title": "Registries",
+          "path": "./admin/registries"
         },
         {
           "title": "Telemetry",

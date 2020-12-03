@@ -15,4 +15,4 @@ Finally, you can specify the minimum amount of resources (cores, memory, and
 disk space) the environment should have when using this image.
 
 <video autoplay loop="loop" width="100%" controls
-src="https://cdn.coder.com/docs/import-image.mp4"></video>
+src="../../assets/import-image.mp4"></video>
