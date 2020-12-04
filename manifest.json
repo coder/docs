@@ -67,10 +67,21 @@
           ]
         },
         {
+          "path": "./workflow/services.md"
+        },
+        {
           "path": "./workflow/remote-ides/index.md",
           "children": [
             {
               "path": "workflow/remote-ides/install.md"
+            }
+          ]
+        },
+        {
+          "path": "./workflow/cli/index.md",
+          "children": [
+            {
+              "path": "workflow/cli/remote-terminal.md"
             }
           ]
         }
