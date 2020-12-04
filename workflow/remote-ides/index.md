@@ -1,3 +1,7 @@
+---
+title: "Remote IDEs"
+---
+
 > Non-VS Code support is currently in beta.
 
 Coder Enterprise offers full support for a wide range of editors, including

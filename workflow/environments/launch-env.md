@@ -1,3 +1,7 @@
+---
+title: "Launch an Environment"
+---
+
 Once you've logged in to Coder, you can launch your environment from its
 overview page.
 

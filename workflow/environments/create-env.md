@@ -1,3 +1,7 @@
+---
+title: "Create an Environment"
+---
+
 Whenever you log into Coder, you'll see the **Environments** page.
 
 If this is your first time using Coder, you'll see a **Create Environment**

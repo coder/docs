@@ -1,3 +1,7 @@
+---
+title: "Progressive Web Apps"
+---
+
 In addition to running Coder Enterprise in a web browser, you can also run it as
 a progressive web application (PWA). Using Coder Enterprise as a PWA offers you
 an experience that is akin to a native application and offers improved

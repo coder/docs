@@ -1,3 +1,7 @@
+---
+title: "Environments"
+---
+
 Environments are containers that bundle the dependencies and tooling you need to
 contribute to a project. Within the environment, you'll be working with the IDE
 of your choice or in the terminal.

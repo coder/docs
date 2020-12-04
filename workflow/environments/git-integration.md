@@ -1,3 +1,7 @@
+---
+title: "Git Integration"
+---
+
 Once your site manager has set up a [Git service](doc:git-service), you can link
 your Coder account to a [supported Git service](doc:git-service#support).
 

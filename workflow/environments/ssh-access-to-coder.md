@@ -1,4 +1,6 @@
-## Requirements
+---
+title: "SSH Access to Coder"
+---
 
 Before using, configuring, and accessing your environment via SSH:
 

@@ -1,3 +1,7 @@
+---
+title: "Install a Remote IDE"
+---
+
 The process of installing an IDE onto your [image](./images) is similar to
 installing the IDE onto a local machine.
 

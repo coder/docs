@@ -1,3 +1,7 @@
+---
+title: "Personalization"
+---
+
 Coder Enterprise allows you to personalize your environments to facilitate the
 workflow that best works for you. This includes adding the tools that you want
 that are not included in the default image from which your environment is
