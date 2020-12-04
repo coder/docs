@@ -1,3 +1,8 @@
+---
+title: "About"
+description: "Some example"
+---
+
 Coder moves software development to the cloud, centralizing your organizations'
 development initiatives and offering improvements in development velocity and
 enterprise security.

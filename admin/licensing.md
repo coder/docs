@@ -1,3 +1,7 @@
+---
+title: "Licensing"
+---
+
 You can manage your Coder licenses using the Dashboard when logged in as a site
 manager.
 

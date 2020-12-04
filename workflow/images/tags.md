@@ -1,3 +1,7 @@
+---
+title: "Tags"
+---
+
 <a href="https://docs.docker.com/engine/reference/commandline/tag/"
 target="_blank" rel="noreferrer noopener">Image tags</a> are variants of the
 original (or base) image. Users can publish new image tags containing updated

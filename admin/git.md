@@ -1,3 +1,7 @@
+---
+title: "Git"
+---
+
 The Git Integration allows your developers to connect their Coder accounts to
 their accounts with the Git repository service of choice.
 

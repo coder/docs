@@ -1,3 +1,7 @@
+---
+title: "Structure"
+---
+
 Coder allows your organization to structure your image hierarchy however you'd
 like. However, we've seen organizations do well by defining a set of
 organization-wide base images from which all projects are created.

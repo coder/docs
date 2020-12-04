@@ -1,3 +1,7 @@
+---
+title: "Requirements"
+---
+
 Images used with Coder require **glibc**.
 
 Additionally, the use of [SSH](../environments/ssh-access-to-coder.md) also

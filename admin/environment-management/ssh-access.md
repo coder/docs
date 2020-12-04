@@ -1,3 +1,7 @@
+---
+title: "Disable SSH Access"
+---
+
 By default, Coder enables SSH access for all users. There are no additional
 dependencies required.
 

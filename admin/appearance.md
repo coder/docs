@@ -1,3 +1,7 @@
+---
+title: "Appearance"
+---
+
 Coder offers you appearance customization options for the following:
 
 * System banner messages

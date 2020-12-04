@@ -1,199 +1,151 @@
 {
   "routes": [
     {
-      "title": "Home",
       "path": "./index.md",
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16px\" xml:space=\"preserve\"><path d=\"M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555  L0.55,7C0.238,7.325,0,7.562,0,8c0,0.563,0.432,1,1,1h1v6c0,0.55,0.45,1,1,1h3v-5c0-0.55,0.45-1,1-1h2c0.55,0,1,0.45,1,1v5h3  c0.55,0,1-0.45,1-1V9h1c0.568,0,1-0.437,1-1C16,7.562,15.762,7.325,15.45,7z\"/></svg>",
       "children": [
         {
-          "title": "About",
           "path": "about.md"
         },
         {
-          "title": "Product Comparison",
           "path": "comparison.md"
         },
         {
-          "title": "Feedback",
           "path": "feedback.md"
         }
       ]
     },
     {
-      "title": "Workflow",
       "path": "./workflow/index.md",
-      "icon": "<svg viewBox=\"0 0 512 466\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M46.5 0.837754C20.5 0.837754 0 22.3052 0 49.5321V122.94V196.348V221.062V245.776V270.489V343.898V417.306C0 444.533 20.5 466 46.5 466H256H465.5C491.5 466 512 444.533 512 417.306V343.898V244.205V195.511V122.102V48.6944C512 21.4674 491.5 0 465.5 0H256H46.5V0.837754Z\" />\n<path d=\"M70.1 73.1V99.1L140.2 140.1L70.1 181.1V207.1L186.7 140.1L70.1 73.1ZM185.9 186.5V210.1H302.5V186.5H185.9Z\" fill=\"white\" />\n</svg>",
       "children": [
         {
-            "title": "Getting Started",
             "path": "./workflow/getting-started/index.md"
         },
         {
-          "title": "Images",
-          "path": "./workflow/images",
-          "icon": "<svg viewBox=\"0 0 16 16\"  xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M15.0017 4.0017H1.0017C0.868289 3.99368 0.734692 4.01405 0.609732 4.06147C0.484772 4.10889 0.371292 4.18228 0.276784 4.27678C0.182276 4.37129 0.108891 4.48477 0.0614728 4.60973C0.0140548 4.73469 -0.00631686 4.86829 0.00170278 5.0017V15.0017C-0.00631686 15.1351 0.0140548 15.2687 0.0614728 15.3937C0.108891 15.5186 0.182276 15.6321 0.276784 15.7266C0.371292 15.8211 0.484772 15.8945 0.609732 15.9419C0.734692 15.9894 0.868289 16.0097 1.0017 16.0017H15.0017C15.1351 16.0097 15.2687 15.9894 15.3937 15.9419C15.5186 15.8945 15.6321 15.8211 15.7266 15.7266C15.8211 15.6321 15.8945 15.5186 15.9419 15.3937C15.9894 15.2687 16.0097 15.1351 16.0017 15.0017V5.0017C16.0097 4.86829 15.9894 4.73469 15.9419 4.60973C15.8945 4.48477 15.8211 4.37129 15.7266 4.27678C15.6321 4.18228 15.5186 4.10889 15.3937 4.06147C15.2687 4.01405 15.1351 3.99368 15.0017 4.0017ZM14.0017 14.0017H2.0017V6.0017H14.0017V14.0017Z\" />\n<path d=\"M14 0H2V2H14V0Z\" />\n<path d=\"M5 13L10 8L13 13H5Z\" />\n<path d=\"M5 10C5.55228 10 6 9.55228 6 9C6 8.44772 5.55228 8 5 8C4.44772 8 4 8.44772 4 9C4 9.55228 4.44772 10 5 10Z\" />\n</svg>",
+          "path": "./workflow/images/index.md",
           "children": [
             {
-              "title": "Structuring Images",
               "path": "./workflow/images/structure.md"
             },
             {
-              "title": "Image Requirements",
               "path": "./workflow/images/requirements.md"
             },
             {
-              "title": "Image Tags",
               "path": "./workflow/images/tags.md"
             },
             {
-              "title": "Importing Images",
               "path": "./workflow/images/importing.md"
             },
             {
-              "title": "Deprecating Images",
               "path": "./workflow/images/deprecating.md"
             }
           ]
         },
         {
-          "title": "Editors",
           "path": "./workflow/editor/index.md",
           "children": [
             {
-              "title": "Local VS Code",
               "path": "./workflow/editor/local-vscode.md"
             },
             {
-              "title": "Browser VS Code",
               "path": "./workflow/editor/browser-vscode.md"
             },
             {
-              "title": "Browser JetBrains",
               "path": "./workflow/editor/browser-jetbrains.md"
             }
           ]
         },
         {
-          "title": "Personalization",
           "path": "./workflow/personalization.md"
         },
         {
-          "title": "Files",
           "path": "./workflow/files.md"
         },
         {
-          "title": "Port Forwarding",
           "path": "./workflow/ports.md"
         },
         {
-          "title": "SSH",
           "path": "./workflow/ssh.md"
         },
         {
-          "title": "Command-Line Interface",
-          "path": "./cli/index.md",
-          "icon": "<svg viewBox=\"0 0 14 12\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M6.7 5.3L1.7 0.3C1.3 -0.1 0.7 -0.1 0.3 0.3C-0.1 0.7 -0.1 1.3 0.3 1.7L4.6 6L0.3 10.3C-0.1 10.7 -0.1 11.3 0.3 11.7C0.5 11.9 0.7 12 1 12C1.3 12 1.5 11.9 1.7 11.7L6.7 6.7C7.1 6.3 7.1 5.7 6.7 5.3Z\" />\n<path d=\"M14 10H7V12H14V10Z\" />\n</svg>",
+          "path": "./workflow/cli/index.md",
           "children": [
             {
-              "title": "Remote Terminal",
-              "path": "./cli/remote-terminal.md"
+              "path": "./workflow/cli/remote-terminal.md"
             }
           ]
         }
       ]
     },
     {
-      "title": "Admin",
-      "icon": "<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><path d=\"M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z\"/></svg>",
+      "path": "./admin/index.md",
       "children": [
         {
-          "title": "Setup",
-          "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z\"></path></svg>",
+          "path": "./admin/setup/index.md",
           "children": [
             {
-              "title": "Architecture",
               "path": "./admin/setup/architecture.md"
             },
             {
-              "title": "Requirements",
               "path": "./admin/setup/requirements.md"
             },
             {
-              "title": "Installation",
               "path": "./admin/setup/installation.md"
             },
             {
-              "title": "Configuration",
               "path": "./admin/setup/configuration.md"
             }
           ]
         },
         {
-          "title": "Appearance",
           "path": "./admin/appearance.md"
         },
         {
-          "title": "Audit",
           "path": "./admin/audit.md"
         },
         {
-          "title": "Enable Dev URLs",
           "path": "./admin/devurls.md"
         },
         {
-          "title": "Extensions",
           "path": "./admin/extensions.md"
         },
         {
-          "title": "Git Configuration",
           "path": "./admin/git.md"
         },
         {
-          "title": "Licensing",
           "path": "./admin/licensing.md"
         },
         {
-          "title": "Memory Overprovisioning",
           "path": "./admin/memory-overprovisioning.md"
         },
         {
-          "title": "Environment Management",
           "path": "./admin/environment-management/index.md",
           "children": [
             {
-              "title": "Environment Shutdown",
               "path": "./admin/environment-management/shutdown.md"
             },
             {
-              "title": "GPU Acceleration",
               "path": "./admin/environment-management/gpu-acceleration.md"
             },
             {
-              "title": "Privileged Environments",
               "path": "./admin/environment-management/privileged.md"
             },
             {
-              "title": "Disable SSH Access",
               "path": "./admin/environment-management/ssh-access.md"
             }
           ]
         },
         {
-          "title": "Metrics",
           "path": "./admin/metrics.md"
         },
         {
-          "title": "Registries",
-          "path": "./admin/registries",
+          "path": "./admin/registries/index.md",
           "children": [
             {
-              "title": "Default Registry",
               "path": "./admin/registries/default-registry.md"
             }
           ]
         },
         {
-          "title": "Telemetry",
           "path": "./admin/telemetry.md"
         }
       ]

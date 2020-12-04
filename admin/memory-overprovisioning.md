@@ -1,3 +1,7 @@
+---
+title: "Memory Overprovisioning"
+---
+
 Coder Enterprise allows you to set memory overprovisioning ratios for each of
 your organizations. By changing this ratio, you can change the number of
 environments that fit onto a single Kubernetes node.

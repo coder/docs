@@ -1,3 +1,7 @@
+---
+title: "Installation"
+---
+
 This article walks you through the process of installing Coder.
 
 ## Dependencies

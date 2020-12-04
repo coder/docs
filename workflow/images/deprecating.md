@@ -1,3 +1,7 @@
+---
+title: "Deprecating"
+---
+
 You can mark images as **deprecated** to prevent them from being used to create
 new environments.
 

@@ -1,3 +1,7 @@
+---
+title: "Privileged Environments"
+---
+
 Privileged environments are those that can be deployed with a sidecar running
 Docker Daemon. If you install the Docker Client CLI in a privileged environment,
 the environment can interact with the Docker Daemon.

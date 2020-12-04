@@ -1,3 +1,7 @@
+---
+title: "Architecture"
+---
+
 Coder is deployed on Kubernetes and includes the following components:
 
 - **Manager**: the central authority; provides authentication and supports the

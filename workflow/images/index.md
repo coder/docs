@@ -1,3 +1,7 @@
+---
+title: "Images"
+---
+
 Images are the bases from which new environments are created.
 
 Each image contains the language version, tooling, and dependencies users need
