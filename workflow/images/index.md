@@ -11,3 +11,7 @@ contribute immediately to the project for which it's defined.
 Coder hooks into Docker registries, which store images that you can import. You
 can source control the Dockerfile in your project's repository to provide your
 organization with up-to-date information.
+
+## Learn More
+
+<children></children>

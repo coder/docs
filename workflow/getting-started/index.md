@@ -12,9 +12,6 @@ By using the same images, you no longer have the "it works on my machine" proble
 When an update is pushed to the Image your Environment uses, you'll be able to rebuild!
 Your home directory persists after rebuilds, so feel free to configure to your liking.
 
-{{#> example}}
-{{#> dashboard}}
-
 1. Navigate to the Environments page.
 
    <img src="./assets/environments-nav.png">
@@ -28,15 +25,3 @@ Your home directory persists after rebuilds, so feel free to configure to your l
    ![Create Environment](./assets/environments-create.png)
 
 4. Your environment will start creating... you'll be notified once it finishes!
-
-{{/dashboard}}
-{{#> cli}}
-
-```bash
-coder envs create dev --image
-```
-
-Optionally, append `--follow` to watch your Environment build.
-
-{{/cli}}
-{{/example}}
