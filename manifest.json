@@ -15,11 +15,8 @@
       ]
     },
     {
-      "path": "./workflow/index.md",
+      "path": "./workflow/getting-started/index.md",
       "children": [
-        {
-            "path": "./workflow/getting-started/index.md"
-        },
         {
           "path": "./workflow/images/index.md",
           "children": [
