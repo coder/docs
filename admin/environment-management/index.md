@@ -1,3 +1,7 @@
+---
+title: "Environment Management"
+---
+
 Administrative users can modify a variety of environment-related behaviors.
 
 * From the Coder UI's **Manage** > **Admin** > **General** tab, you can enable

@@ -1,3 +1,7 @@
+---
+title: "Metrics"
+---
+
 Metrics allow you to track your usage of your Coder Enterprise. You can see
 information regarding how you use particular features and how much you use your
 individual environments.

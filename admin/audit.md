@@ -1,3 +1,7 @@
+---
+title: "Audit"
+---
+
 Coder maintains records of all user actions on system resources for auditing
 purposes.
 

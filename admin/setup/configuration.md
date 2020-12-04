@@ -1,3 +1,7 @@
+---
+title: "Configuration"
+---
+
 After installation, you'll set up and configure Coder using its web UI.
 
 ## Before You Start

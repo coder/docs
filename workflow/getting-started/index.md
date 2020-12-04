@@ -1,4 +1,5 @@
 ---
+title: "Getting Started"
 description: "Learn how to create an environment and start developing with Coder."
 next: "../editor/index.md"
 ---

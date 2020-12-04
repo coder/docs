@@ -1,3 +1,7 @@
+---
+title: "Default Registry"
+---
+
 > This feature is unavailable for air-gapped deployments.
 
 Coder is configured to automatically import the default

@@ -1,3 +1,7 @@
+---
+title: "Comparison"
+---
+
 Coder offers both enterprise and open-source (code-server) solutions to meet the
 needs of the software community. Both solutions enable cloud-based software
 development delivered through the browser. The key differences pertain to

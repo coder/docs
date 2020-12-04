@@ -1,3 +1,7 @@
+---
+title: "Importing"
+---
+
 Coder hooks into Docker [registries](../../admin/registries/index.md), and you
 can import images in these registries for use.
 

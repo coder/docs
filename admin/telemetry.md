@@ -1,3 +1,7 @@
+---
+title: "Telemetry"
+---
+
 Coder Enterprise allows you to control the behavior of its built-in telemetry
 and crash reporting features.
 

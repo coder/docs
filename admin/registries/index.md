@@ -1,3 +1,7 @@
+---
+title: "Registries"
+---
+
 Coder hooks into public and private Docker Registries to pull images and manage
 image metadata.
 

@@ -1,3 +1,7 @@
+---
+title: "Command Line"
+---
+
 Coder provides an [open-source CLI](https://github.com/cdr/coder-cli) that
 allows you to interact with your environments using your local machine.
 

@@ -1,3 +1,7 @@
+---
+title: "GPU Acceleration"
+---
+
 GPUs can be used for performing tasks such as machine learning within
 environments.
 

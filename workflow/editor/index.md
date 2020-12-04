@@ -1,4 +1,5 @@
 ---
+title: "Editor"
 description: "We don't want to change your workflow... we either have amazing support, or no support."
 ---
 

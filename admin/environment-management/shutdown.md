@@ -1,3 +1,7 @@
+---
+title: "Shutdown"
+---
+
 You can specify the duration of inactivity allowed before an environment
 automatically shuts down. This helps you optimize your resource allocation since
 automatically shutting down idle environments can save resource availability and
