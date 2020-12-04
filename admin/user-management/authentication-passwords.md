@@ -1,3 +1,7 @@
+---
+title: "User Authentication and Passwords"
+---
+
 You can change the authentication method by which a user logs into their Coder
 account.
 

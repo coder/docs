@@ -1,3 +1,7 @@
+---
+title: "Organizations"
+---
+
 Organizations are groups that tie together users, environments, and images. All
 of your images and environments must be assigned to a specific organization. An
 end-user can only access images that are assigned to the same organization they

@@ -1,3 +1,7 @@
+---
+title: "User Management"
+---
+
 Administrators may create and manage users via the User Management dashboard.
 
 Once you've logged into your Coder deployment, the User Management dashboard is

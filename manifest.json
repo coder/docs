@@ -117,36 +117,24 @@
           ]
         },
         {
-          "title": "Access Control",
-          "path": "./admin/access-control",
+          "path": "./admin/auth-methods"
+        },
+        {
+          "path": "./admin/organizations/index.md",
           "children": [
             {
-              "title": "Authentication Methods",
-              "path": "./admin/access-control/auth-methods.md"
+              "path": "./admin/organizations/manage.md"
+            }
+          ]
+        },
+        {
+          "path": "./admin/user-management/index.md",
+          "children": [
+            {
+              "path": "./admin/user-management/authentication-passwords.md"
             },
             {
-              "title": "Organizations",
-              "path": "./admin/access-control/organizations/index.md",
-              "children": [
-                {
-                  "title": "Org Management",
-                  "path": "./admin/access-control/organizations/manage.md"
-                }
-              ]
-            },
-            {
-              "title": "User Management",
-              "path": "./admin/access-control/user-management/index.md",
-              "children": [
-                {
-                  "title": "User Auth and Passwords",
-                  "path": "./admin/access-control/user-management/authentication-passwords.md"
-                },
-                {
-                  "title": "User Roles",
-                  "path": "./admin/access-control/user-management/user-roles.md"
-                }
-              ]
+              "path": "./admin/user-management/user-roles.md"
             }
           ]
         },

@@ -1,3 +1,7 @@
+---
+title: "User Roles"
+---
+
 Coder allows you to assign different roles to users, and each role comes with a
 distinct set of privileges regarding what the user can access and which actions
 they can perform.

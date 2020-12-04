@@ -1,3 +1,7 @@
+---
+title: "Organization Management"
+---
+
 This article will show you how to:
 
 - Create a new organization
