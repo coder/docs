@@ -21,7 +21,7 @@ DEPLOYMENT_ID=$(curl \
 rm -f url.txt
 
 # Starts the vercel deployment.
-./ci/steps/vercel_deploy.sh 1> url.txt &
+./ci/scripts/deploy_vercel.sh 1> url.txt 2>/dev/null &
 
 while ! [ -s url.txt ]; do
     # Until the URL is in the file we don't want to create the deployment.
