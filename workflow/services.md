@@ -1,3 +1,7 @@
+---
+title: "Services"
+---
+
 Coder allows you to add **services**, which are "sidecar" containers that run
 alongside your primary development environment.
 

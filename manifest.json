@@ -18,9 +18,6 @@
       "path": "./workflow/index.md",
       "children": [
         {
-            "path": "./workflow/getting-started/index.md"
-        },
-        {
           "path": "./workflow/images/index.md",
           "children": [
             {
@@ -41,30 +38,41 @@
           ]
         },
         {
-          "path": "./workflow/editor/index.md",
+          "path": "./workflow/environments/index.md",
           "children": [
             {
-              "path": "./workflow/editor/local-vscode.md"
+              "path": "./workflow/environments/create-env.md"
             },
             {
-              "path": "./workflow/editor/browser-vscode.md"
+              "path": "./workflow/environments/launch-env.md"
             },
             {
-              "path": "./workflow/editor/browser-jetbrains.md"
+              "path": "./workflow/environments/devurls.md"
+            },
+            {
+              "path": "./workflow/environments/git-integration.md"
+            },
+            {
+              "path": "./workflow/environments/personalization.md"
+            },
+            {
+              "path": "./workflow/environments/pwa.md"
+            },
+            {
+              "path": "./workflow/environments/ssh-access-to-coder.md"
             }
           ]
         },
         {
-          "path": "./workflow/personalization.md"
+          "path": "./workflow/services.md"
         },
         {
-          "path": "./workflow/files.md"
-        },
-        {
-          "path": "./workflow/ports.md"
-        },
-        {
-          "path": "./workflow/ssh.md"
+          "path": "./workflow/remote-ides/index.md",
+          "children": [
+            {
+              "path": "workflow/remote-ides/install.md"
+            }
+          ]
         },
         {
           "path": "./workflow/cli/index.md",
