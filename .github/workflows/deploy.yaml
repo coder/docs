@@ -14,7 +14,7 @@ jobs:
         with:
           repository: cdr/c
           ref: refs/heads/codercom-docs
-          ssh-key: ${{ secrets.MONOREPO_DEPLOY_KEY }}
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
           submodules: true
           fetch-depth: 0
       - name: Checkout Docs
