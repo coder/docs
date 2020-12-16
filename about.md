@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "Some example"
+description: "Learn about Coder, our mission, and why to choose us."
 ---
 
 Coder moves software development to the cloud, centralizing your organizations'

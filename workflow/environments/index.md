@@ -7,7 +7,7 @@ contribute to a project. Within the environment, you'll be working with the IDE
 of your choice or in the terminal.
 
 All Coder environments are created using [Docker
-images](workflow/images/index.md). The images include:
+images](../images/index.md). The images include:
 
 - Language version
 - Dependencies

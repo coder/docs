@@ -16,17 +16,14 @@ gains in both developer velocity and enterprise security.
     Learn all the tips and tricks to maximize your productivity with Coder.
   </p>
 
-  <a href="./workflow/getting-started/index.md">
+  <a href="./workflow">
     <button class="arrow">
       Get Started
     </button>
   </a>
 
   <ul>
-    <li><a href="./workflow/personalization.md">Personalization</a></li>
-    <li><a href="./workflow/ports.md">CLI</a></li>
-    <li><a href="./workflow/editor/index.md">Editors</a></li>
-    <li><a href="./workflow/ssh.md">SSH</a></li>
+    <li><a href="./workflow/environments/personalization.md">Personalization</a></li>
   </ul>
   </div>
 

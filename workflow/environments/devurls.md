@@ -5,7 +5,7 @@ title: "Dev URLs"
 Developer (Dev) URLs allow you to access the web services you're developing in
 your environment.
 
-> You must have [DevURLs enabled](../admin/devurls.md) in your installation.
+> You must have [DevURLs enabled](../../admin/devurls.md) in your installation.
 
 ## Creating a Dev URL
 

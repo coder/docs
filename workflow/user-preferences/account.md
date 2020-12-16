@@ -4,7 +4,7 @@ title: "Account"
 
 The **Account** tab allows you to update your name, email, username, and profile
 picture. You can also provide a link to your dotfiles repository to
-[personalize](../personalization.md) your Coder environments.
+[personalize](../environments/personalization.md) your Coder environments.
 
 ![Account Preferences](../../assets/account-prefs.png)
 
