@@ -114,7 +114,7 @@
           ]
         },
         {
-          "path": "./admin/auth-methods"
+          "path": "./admin/auth-methods.md"
         },
         {
           "path": "./admin/organizations/index.md",
@@ -131,7 +131,7 @@
               "path": "./admin/user-management/authentication-passwords.md"
             },
             {
-              "path": "./admin/user-management/user-roles.md"
+              "path": "./admin/user-management/roles.md"
             }
           ]
         },
