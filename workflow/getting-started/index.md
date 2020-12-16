@@ -1,7 +1,7 @@
 ---
 title: "Getting Started"
 description: "Learn how to create an environment and start developing with Coder."
-next: "../editor/index.md"
+next: "../environments/launch-env.md"
 ---
 
 An Environment is your personal computer on {{@product_name}}.
