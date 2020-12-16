@@ -78,7 +78,27 @@
           "path": "./workflow/cli/index.md",
           "children": [
             {
-              "path": "workflow/cli/remote-terminal.md"
+              "path": "./workflow/cli/remote-terminal.md"
+            }
+          ]
+        },
+        {
+          "path": "./workflow/user-preferences/index.md",
+          "children": [
+            {
+              "path": "./workflow/user-preferences/account.md"
+            },
+            {
+              "path": "./workflow/user-preferences/security.md"
+            },
+            {
+              "path": "./workflow/user-preferences/ssh-keys.md"
+            },
+            {
+              "path": "./workflow/user-preferences/linked-accounts.md"
+            },
+            {
+              "path": "./workflow/user-preferences/notifications.md"
             }
           ]
         }
