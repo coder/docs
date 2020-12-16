@@ -2,7 +2,7 @@
 title: "Linked Accounts"
 ---
 
-> Your Site Manager must have enabled [Git Support](doc:git-service) before you
+> Your Site Manager must have enabled [Git Support](../../admin/git.md) before you
 > can link your Git accounts.
 
 The **Linked Accounts** tab allows you to provide your Coder SSH key to the

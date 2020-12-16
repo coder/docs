@@ -13,7 +13,7 @@ Dev URLs with Coder.
 
 ## Enabling the Use of Dev URLs
 
-[Dev URLs](doc:dev-urls)  is an opt-in feature. To enable Dev URLs in your
+[Dev URLs](../workflow/environments/devurls.md)  is an opt-in feature. To enable Dev URLs in your
 cluster, you'll need to modify your:
 
 1. Helm chart

@@ -26,11 +26,11 @@ When prompted, provide the following information:
         <td><b>Image Source</b></td>
         <td>The source of your image; leave as <b>Existing</b> in most cases.
         You can also <b>import</b> a new image if your site manager has imported
-         a <a href="doc:registries">registry</a> or select a <b><a
+         a <a href="../../admin/registries/index.md">registry</a> or select a <b><a
          href="https://github.com/cdr/enterprise-images">packaged</
          a></b> image provided by Coder if your site manager has
          enabled the automatic importing of the <a
-         href="doc:importing-default-registries">Default Registry</a>.
+         href="../../admin/registries/default-registry.md">Default Registry</a>.
 </td>
     </tr>
     <tr>
