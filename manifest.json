@@ -47,6 +47,20 @@
       ]
     },
     {
+      "path": "./images/index.md",
+      "children": [
+        {
+          "path": "./images/importing.md"
+        },
+        {
+          "path": "./images/tagging.md"
+        },
+        {
+          "path": "./images/deprecating.md"
+        }
+      ]
+    },
+    {
       "path": "./workflow/index.md",
       "children": [
         {
