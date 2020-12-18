@@ -24,6 +24,8 @@ gains in both developer velocity and enterprise security.
 
   <ul>
     <li><a href="./workflow/environments/personalization.md">Personalization</a></li>
+    <li><a href="./workflow/environments/personalization.md">Testing</a></li>
+    <li><a href="./workflow/environments/personalization.md">Example</a></li>
   </ul>
   </div>
 

@@ -15,6 +15,38 @@
       ]
     },
     {
+      "path": "./environments/index.md",
+      "children": [
+        {
+          "path": "./environments/getting-started.md"
+        },
+        {
+          "path": "./environments/lifecycle.md"
+        },
+        {
+          "path": "./environments/ssh.md"
+        },
+        {
+          "path": "./environments/workflow.md"
+        },
+        {
+          "path": "./environments/cvms.md"
+        },
+        {
+          "path": "./environments/personalization.md"
+        },
+        {
+          "path": "./environments/devurls.md"
+        },
+        {
+          "path": "./environments/git.md"
+        },
+        {
+          "path": "./environments/native-apps.md"
+        }
+      ]
+    },
+    {
       "path": "./workflow/index.md",
       "children": [
         {

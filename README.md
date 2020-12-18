@@ -1,1 +1,38 @@
 # Docs
+
+- Home
+    - About
+    - Comparison
+    - Feedback
+- Environments
+    - Getting Started
+    - Lifecycle
+    - SSH
+    - Workflow
+    - Container-based VMs
+    - Personalization
+    - Dev URLs
+    - Git Integration
+    - Native Apps
+- Images
+    - Requirements
+    - Creating
+    - Importing
+    - Tagging
+    - Deprecating
+- Command Line
+- API
+- Admin
+    - Appearance
+    - Metrics
+    - Dev URLs
+    - Resource Overprovisioning
+    - Git Integration
+    - Registries
+    - Telemetry
+    - Auditing
+- Setup
+    - Architecture
+    - Requirements
+    - Installation
+    - Licensing
