@@ -1,5 +1,6 @@
 ---
 title: "Docker in Environments"
+description: Learn how to securely run Docker inside your Environment.
 ---
 
 Standard Coder Environments run as normal Docker containers. This carries limitations as to

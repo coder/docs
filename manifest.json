@@ -26,7 +26,6 @@
         { "path": "./environments/devurls.md" },
         { "path": "./environments/git.md" },
         { "path": "./environments/pwa.md" },
-        { "path": "./environments/launch-env.md" },
         { "path": "./environments/create-env.md" },
         { "path": "./environments/git-integration.md" },
         { "path": "./environments/services.md" }
