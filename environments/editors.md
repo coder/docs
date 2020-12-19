@@ -12,7 +12,7 @@ There are four primary ways you can connect an IDE to your Coder Environment:
 ## VSCode Remote SSH
 
 Once you've [set up SSH access to Coder Enterprise](./ssh.md), you can work on projects
-locally using VS Code, then connect to a predefined environment for compute,
+from your local VSCode, connected to your Coder Environment for compute,
 etc.
 
 1. Open VS Code locally.

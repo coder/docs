@@ -1,5 +1,6 @@
 ---
 title: "Progressive Web Apps"
+description: Learn how to install the editor PWAs for a browser editing experience closer to native.
 ---
 
 In addition to running Coder Enterprise in a web browser, you can also run it as

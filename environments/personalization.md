@@ -1,5 +1,6 @@
 ---
 title: "Personalization"
+description: Learn how to personalize your Environment to augment its base Image.
 ---
 Your Coder development Environment strikes a balance between consistent team configuration and personal customization.
 While the Environment [Image](../images/index.md) standardizes system dependencies for development, Coder offers a few different mechanisms

@@ -1,5 +1,6 @@
 ---
 title: "SSH Access to Coder"
+description: Learn how to configure SSH access to your Environments.
 ---
 
 Before using, configuring, and accessing your environment via SSH:

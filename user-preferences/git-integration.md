@@ -1,5 +1,5 @@
 ---
-title: "Linked Accounts"
+title: "Git Integration"
 ---
 
 > Your Site Manager must have enabled [Git Support](../admin/git.md) before you

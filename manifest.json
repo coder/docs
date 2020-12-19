@@ -24,10 +24,8 @@
         { "path": "./environments/cvms.md" },
         { "path": "./environments/personalization.md" },
         { "path": "./environments/devurls.md" },
-        { "path": "./environments/git.md" },
         { "path": "./environments/pwa.md" },
         { "path": "./environments/create-env.md" },
-        { "path": "./environments/git-integration.md" },
         { "path": "./environments/services.md" }
       ]
     },
@@ -45,25 +43,15 @@
       "path": "./cli/index.md",
       "children": [{ "path": "./cli/remote-terminal.md" }]
     },
-        {
-          "path": "./user-preferences/index.md",
-          "children": [
-            {
-              "path": "./user-preferences/account.md"
-            },
-            {
-              "path": "./user-preferences/security.md"
-            },
-            {
-              "path": "./user-preferences/ssh-keys.md"
-            },
-            {
-              "path": "./user-preferences/linked-accounts.md"
-            },
-            {
-              "path": "./user-preferences/notifications.md"
-            }
-          ]
+    {
+      "path": "./user-preferences/index.md",
+      "children": [
+        { "path": "./user-preferences/account.md" },
+        { "path": "./user-preferences/security.md" },
+        { "path": "./user-preferences/ssh-keys.md" },
+        { "path": "./user-preferences/git-integration.md" },
+        { "path": "./user-preferences/notifications.md" }
+      ]
     },
     {
       "path": "./admin/index.md",
