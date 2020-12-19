@@ -6,7 +6,7 @@ The Security tab allows you to change your password if your organization
 utilizes built-in authentication for sign-in (this is the case if you provide an
 email address and password to log into Coder).
 
-![Security](../../assets/security.png)
+![Security](../assets/security.png)
 
 To change your password, provide your **current password** and what you would
 like your **new password** to be. You'll be asked to confirm your new password.

@@ -1,5 +1,6 @@
+
 ---
-title: "Install a Remote IDE"
+title: "Install a JetBrains IDEs"
 ---
 
 The process of installing an IDE onto your [image](./images) is similar to
@@ -24,17 +25,8 @@ PATH:
 - PyCharm
 - Rider
 - RubyMine
-- VS Code
+- Code OSS (VSCode, installed by default)
 - WebStorm
-
-> If you're working with an IDE currently unsupported by Coder, consider setting
-> up either
-> [one-way](https://help.coder.com/hc/en-us/articles/360055767234-One-way-File-Sync)
-> or [two-way](https://help.coder.com/hc/en-us/articles/360058001313) sync to
-> leverage Coder's compute abilities.
->
-> Coder also supports the use of any CLI editors with both the > environment
-> terminal and the Coder CLI.
 
 ## Required Packages
 

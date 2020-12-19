@@ -7,7 +7,7 @@ alongside your primary development environment.
 
 ## Before You Proceed
 
-Creating a service is similar to [importing images](images/importing.md) into
+Creating a service is similar to [importing images](../images/importing.md) into
 Coder. Before proceeding, be sure that Coder can access a
 [registry](../admin/registries/index.md) and pull images from that registry.
 

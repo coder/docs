@@ -29,9 +29,9 @@ environment.
 When adding a tag, check **Set tag as default** to make it the default tag for
 that image.
 
-![Set Default Tag](../../assets/default-tag.png)
+![Set Default Tag](../assets/default-tag.png)
 
 To use an existing tag as the default tag, click the 3 dot menu for a tag and
 select **Make default**.
 
-![Set Existing Tag as Default](../../assets/existing-tag-as-default.png)
+![Set Existing Tag as Default](../assets/existing-tag-as-default.png)

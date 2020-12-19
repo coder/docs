@@ -13,4 +13,4 @@ overview page.
 From the **Application** section of the overview page, click to launch the IDE
 you want to use. Alternatively, you can launch the **Terminal**.
 
-![Launch an Environment](../../assets/launch-env.png)
+![Launch an Environment](../assets/launch-env.png)

@@ -15,7 +15,7 @@ native app.
 Click your avatar to open a menu. Select **Feature Preview** to open the feature
 preview modal where you can enable JetBrains support.
 
-![Enable JetBrains Support](../../assets/enable-jetbrains-support.png)
+![Enable JetBrains Support](../assets/enable-jetbrains-support.png)
 
 Coder Enterprise launches remote IDEs in their own windows; be sure to set your
 browser to allow pop-up windows so that you can use your IDE.
@@ -44,3 +44,13 @@ and reduce blurriness.
 - Popup windows are missing titles and window controls
 - Some theme-based plugins can cause the IDE to render incorrectly
 - Some minor rendering artifacts occur during regular usage
+
+> If you're working with an IDE currently unsupported by Coder, consider setting
+> up either
+> [one-way](https://help.coder.com/hc/en-us/articles/360055767234-One-way-File-Sync)
+> or [two-way](https://help.coder.com/hc/en-us/articles/360058001313) sync to
+> leverage Coder's compute abilities.
+>
+> Coder also supports the use of any CLI editors with both the > environment
+> terminal and the Coder CLI.
+

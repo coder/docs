@@ -34,7 +34,7 @@ with a Git provider, your SSH key pair is injected during this step as well, all
 to perform authenticated `git` operations.
 
 2. `Execution of /coder/configure`  
-Execution of this script allows [Images]() to perform startup operations consistent
+Execution of this script allows [Images](../images/index.md) to perform startup operations consistent
 across all of its Environments. If an image needs to perform modifications to the `/home`, it
 should do so in this script.
 

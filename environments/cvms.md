@@ -77,7 +77,7 @@ This prevents shutdowns and rebuilds from purging the Docker cache.
 Note that this data is never directly accessible to you but will still consume data on your disk
 and count towards the size limit.
 
-When setting default disk sizes for [Images](), plan for these additional storage requirements.
+When setting default disk sizes for [Images](../images/index.md), plan for these additional storage requirements.
 We recommend treating the environment as a full machine, so PVC disk sizes in the range of 
 50-100 GB are reasonable. This is especially true if users of the image are storing large
 Docker caches. 

@@ -16,16 +16,16 @@ gains in both developer velocity and enterprise security.
     Learn all the tips and tricks to maximize your productivity with Coder.
   </p>
 
-  <a href="./workflow">
+  <a href="./environments/getting-started.md">
     <button class="arrow">
       Get Started
     </button>
   </a>
 
   <ul>
-    <li><a href="./workflow/environments/personalization.md">Personalization</a></li>
-    <li><a href="./workflow/environments/personalization.md">Testing</a></li>
-    <li><a href="./workflow/environments/personalization.md">Example</a></li>
+    <li><a href="./environments/personalization.md">Personalization</a></li>
+    <li><a href="./environments/personalization.md">Testing</a></li>
+    <li><a href="./environments/personalization.md">Example</a></li>
   </ul>
   </div>
 
@@ -41,7 +41,7 @@ gains in both developer velocity and enterprise security.
     Learn how to leverage Coder for your team.
   </p>
 
-  <a href="./workflow/getting-started/index.md">
+  <a href="./environments/getting-started.md">
     <button class="arrow outlined">
       Learn More
     </button>
@@ -63,7 +63,7 @@ gains in both developer velocity and enterprise security.
     Learn how to manage your Coder deployment.
   </p>
 
-  <a href="./workflow/getting-started/index.md">
+  <a href="./admin/setup/index.md">
     <button class="arrow outlined">
       Deploy Now
     </button>

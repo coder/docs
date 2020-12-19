@@ -20,4 +20,4 @@ Please note that:
 You can see if you have native notifications enabled by clicking **Test
 Notifications**.
 
-![Notifications](../../assets/notifications.png)
+![Notifications](../assets/notifications.png)

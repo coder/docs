@@ -13,7 +13,7 @@ To create an environment, launch the creation dialog by:
 - Clicking **Create Environment** (if available), or
 - Clicking **New Environment** in the top-right
 
-![Create an Environment](../../assets/create-env.png)
+![Create an Environment](../assets/create-env.png)
 
 When prompted, provide the following information:
 
@@ -26,11 +26,11 @@ When prompted, provide the following information:
         <td><b>Image Source</b></td>
         <td>The source of your image; leave as <b>Existing</b> in most cases.
         You can also <b>import</b> a new image if your site manager has imported
-         a <a href="../../admin/registries/index.md">registry</a> or select a <b><a
+         a <a href="../admin/registries/index.md">registry</a> or select a <b><a
          href="https://github.com/cdr/enterprise-images">packaged</
          a></b> image provided by Coder if your site manager has
          enabled the automatic importing of the <a
-         href="../../admin/registries/default-registry.md">Default Registry</a>.
+         href="../admin/registries/default-registry.md">Default Registry</a>.
 </td>
     </tr>
     <tr>
