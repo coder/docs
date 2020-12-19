@@ -1,5 +1,6 @@
 ---
 title: "Deprecating"
+description: Learn how to deprecate an image.
 ---
 
 You can mark images as deprecated to prevent them from being used to create new environments.

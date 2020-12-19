@@ -1,5 +1,6 @@
 ---
 title: "Structure"
+description: Learn how to best structure Image specifications for use inside your organization.
 ---
 
 Coder allows your organization to structure your image hierarchy however you'd
