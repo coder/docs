@@ -27,26 +27,6 @@ For example, try running
 Your environment is now accessible via `ssh coder.<environment_name>` (e.g.,
 `ssh coder.myEnv` if your environment is named `myEnv`).
 
-## Accessing Coder Enterprise via VS Code
-
-Once you've set up SSH access to Coder Enterprise, you can work on projects
-locally using VS Code, then connect to a predefined environment for compute,
-etc.
-
-1. Open VS Code locally.
-2. Make sure that you've installed [Remote -
-   SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
-3. In VS Code's left-hand nav bar, click **Remote Explorer**.
-
-![Remote Explorer](../assets/remote-explorer.png)
-
-4. Ensure you're viewing **SSH Targets** and click **+** to add a new host. In
-   the prompt that appears, select your alias for Coder Enterprise (e.g.,
-   `coder.<environment_name>`).
-
-VS Code will open a new window connected to your remote container, allowing you
-to add your folder(s) and continue working.
-
 ## Reconfiguration
 
 You will need to rerun the `coder config-ssh` command if:

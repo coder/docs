@@ -19,7 +19,6 @@
       "children": [
         { "path": "./environments/getting-started.md" },
         { "path": "./environments/lifecycle.md" },
-        { "path": "./environments/workflow.md" },
         { "path": "./environments/ssh.md" },
         { "path": "./environments/editors.md" },
         { "path": "./environments/cvms.md" },

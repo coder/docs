@@ -1,16 +1,30 @@
 ---
-title: "Remote IDEs"
+title: "Editors and IDEs"
 ---
 
-> Non-VS Code support is currently in beta.
+There are four primary ways you can connect an IDE to your Coder Environment:
+1. [VSCode Remote SSH](#vscode-remote-ssh) with local VSCode
+1. VSCode in the browser with code-server
+1. [JetBrains in the browser](#jetbrains-in-the-browser) with JetBrains Projector
+1. *Any* local editor with [2-way file synchronization over SSH](https://help.coder.com/hc/en-us/articles/360058001313?__hstc=103542367.6151dcd6d50b6cb62a878734c4aad255.1608274456028.1608306470901.1608410536657.3&__hssc=103542367.75.1608410536657&__hsfp=974138608)
 
-Coder Enterprise offers full support for a wide range of editors, including
-VSCode and the JetBrains suite. These editors are run in the remote environment
-and rendered directly in the browser. The support for multi editors is bundled
-with a window management system to give the application the look and feel of a
-native app.
+## VSCode Remote SSH
 
-## Enable JetBrains Support
+Once you've [set up SSH access to Coder Enterprise](./ssh.md), you can work on projects
+locally using VS Code, then connect to a predefined environment for compute,
+etc.
+
+1. Open VS Code locally.
+2. Make sure that you've installed [Remote -
+   SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) extension
+3. In VS Code's left-hand nav bar, click **Remote Explorer** and right click on an environment to connect
+
+![VSCode Remote Explorer](../assets/vscode-remote-ssh-panel.png)
+
+## VSCode in the browser
+// TODO(@cmoog)
+
+## JetBrains in the browser
 
 Click your avatar to open a menu. Select **Feature Preview** to open the feature
 preview modal where you can enable JetBrains support.
@@ -23,34 +37,10 @@ browser to allow pop-up windows so that you can use your IDE.
 > If you need a valid license to run your IDE locally, you'll also need one to
 > run it in Coder.
 
-## Optimizing Displays: Zoom vs. Font Sizing
-
-Remote IDEs display as they would locally with pixel-for-pixel rendering.
-
-Since remote IDEs run within a browser window, you can use the browser's default
-controls for zooming in/out. For example, if you're using Chrome on a
-Windows-based machine, you can zoom in by pressing **Ctrl** and **+**, zoom out
-by pressing **Ctrl** and **-**, and reset the screen to normal by pressing
-**Ctrl** and **0**.
-
-If you're using a high-resolution DPI display, changing the display and font
-preferences within the IDE instead of the browser may improve your experience
-and reduce blurriness.
-
-## Known Issues
+### Known Issues
 
 - Window dragging behavior can misalign with mouse movements
 - Popover dialogs do not always appear in the correct location
 - Popup windows are missing titles and window controls
 - Some theme-based plugins can cause the IDE to render incorrectly
 - Some minor rendering artifacts occur during regular usage
-
-> If you're working with an IDE currently unsupported by Coder, consider setting
-> up either
-> [one-way](https://help.coder.com/hc/en-us/articles/360055767234-One-way-File-Sync)
-> or [two-way](https://help.coder.com/hc/en-us/articles/360058001313) sync to
-> leverage Coder's compute abilities.
->
-> Coder also supports the use of any CLI editors with both the > environment
-> terminal and the Coder CLI.
-
