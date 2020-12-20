@@ -20,7 +20,8 @@ Enter a friendly name for your environment, along with an
 [Image](../images/index.md) to use.
 
 When done, click **Create** to proceed. Coder redirects you to an overview page
-for your environment during the build process.
+for your environment during the build process. Learn more about the Environment
+[creation parameters](./environment-params.md).
 
 Your environment persists the home directory, updates to new versions of the image,
 and runs custom configuration on startup. Learn about the [environment lifecycle](lifecycle.md).
