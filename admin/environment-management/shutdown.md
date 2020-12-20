@@ -10,7 +10,7 @@ reduce costs.
 > An environment that's stopped must be rebuilt before it can be used again. All
 > data outside of **/home** is lost during rebuild. Please store any changes you
 > would like persisted across rebuilds with the
-> [Dotfiles](../../workflow/environments/personalization.md) feature.
+> [Dotfiles](../../environments/personalization.md) feature.
 
 ## Configuring Environment Shutdown Behavior
 

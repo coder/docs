@@ -1,5 +1,6 @@
 ---
 title: "Metrics"
+description: Learn how to track usage of your Coder deployment.
 ---
 
 Metrics allow you to track your usage of your Coder Enterprise. You can see

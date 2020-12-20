@@ -1,5 +1,6 @@
 ---
 title: "Telemetry"
+description: Learn what usage telemetry Coder collects.
 ---
 
 Coder Enterprise allows you to control the behavior of its built-in telemetry

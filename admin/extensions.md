@@ -1,5 +1,6 @@
 ---
 title: "Extensions"
+description: Learn how to configure an internal marketplace for air-gapped deployments.
 ---
 
 You can customize VS Code with extensions, which allow you to add new features

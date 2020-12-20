@@ -1,5 +1,6 @@
 ---
 title: "Licensing"
+description: Learn how to manage the license for your Coder deployment.
 ---
 
 You can manage your Coder licenses using the Dashboard when logged in as a site
