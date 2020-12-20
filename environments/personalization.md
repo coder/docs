@@ -21,7 +21,9 @@ and is reset between by Environment [rebuilds](./lifecycle.md).
 ## ~/personalize
 
 For cases where personal configuration of system files is needed, Environments
-expose the [~/personalize rebuild hook](./lifecycle.md#hooks).
+expose the [~/personalize rebuild hook](./lifecycle.md#hooks). Coder executes
+this script every time the Environment is rebuilt.
+
 Consider the case where you want to use the `fish` shell as your default shell,
 but the Environment image doesn't include the package. The following
 `~/personalize` scripts would install `fish` and change the default shell
