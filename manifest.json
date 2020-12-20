@@ -62,14 +62,6 @@
     {
       "path": "./admin/index.md",
       "children": [
-        { "path": "./admin/appearance.md" },
-        { "path": "./admin/audit.md" },
-        { "path": "./admin/devurls.md" },
-        { "path": "./admin/extensions.md" },
-        { "path": "./admin/git.md" },
-        { "path": "./admin/licensing.md" },
-        { "path": "./admin/account-dormancy.md" },
-        { "path": "./admin/memory-overprovisioning.md" },
         {
           "path": "./admin/environment-management/index.md",
           "children": [
@@ -79,6 +71,14 @@
             { "path": "./admin/environment-management/ssh-access.md" }
           ]
         },
+        { "path": "./admin/appearance.md" },
+        { "path": "./admin/audit.md" },
+        { "path": "./admin/devurls.md" },
+        { "path": "./admin/extensions.md" },
+        { "path": "./admin/git.md" },
+        { "path": "./admin/licensing.md" },
+        { "path": "./admin/account-dormancy.md" },
+        { "path": "./admin/memory-overprovisioning.md" },
         { "path": "./admin/metrics.md" },
         {
           "path": "./admin/registries/index.md",

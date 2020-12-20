@@ -1,5 +1,6 @@
 ---
-title: "Create an Environment"
+title: Environment Parameters
+description: Learn about each parameter available during Environment creation.
 ---
 
 Whenever you log into Coder, you'll see the **Environments** page.

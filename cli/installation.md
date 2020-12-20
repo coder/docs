@@ -41,7 +41,7 @@ Generate a static authentication token with the following command:
 coder tokens create my-token
 ```
 
-## Reference
+## Full Reference
 
 For a full list of the Coder CLI commands available, see the [reference
 pages](https://github.com/cdr/coder-cli/blob/master/docs/coder.md).

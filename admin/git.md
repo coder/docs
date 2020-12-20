@@ -1,5 +1,5 @@
 ---
-title: "Git"
+title: Git Integration
 description: Learn how to integrate with your Git provider to automatically authenticate their Environments.
 ---
 

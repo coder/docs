@@ -11,3 +11,5 @@ Coder environments and Dashboard. You can do things like:
 - Link your Coder environment to Bitbucket, GitHub, or GitLab
 
 ![Account Preferences](../assets/account-prefs.png)
+
+<children></children>
