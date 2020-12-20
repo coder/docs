@@ -3,15 +3,9 @@
     {
       "path": "./index.md",
       "children": [
-        {
-          "path": "about.md"
-        },
-        {
-          "path": "comparison.md"
-        },
-        {
-          "path": "feedback.md"
-        }
+        { "path": "about.md" },
+        { "path": "comparison.md" },
+        { "path": "feedback.md" }
       ]
     },
     {
@@ -61,72 +55,34 @@
         {
           "path": "./admin/setup/index.md",
           "children": [
-            {
-              "path": "./admin/setup/architecture.md"
-            },
-            {
-              "path": "./admin/setup/requirements.md"
-            },
-            {
-              "path": "./admin/setup/installation.md"
-            },
-            {
-              "path": "./admin/setup/configuration.md"
-            }
+            { "path": "./admin/setup/architecture.md" },
+            { "path": "./admin/setup/requirements.md" },
+            { "path": "./admin/setup/installation.md" },
+            { "path": "./admin/setup/configuration.md" }
           ]
         },
-        {
-          "path": "./admin/appearance.md"
-        },
-        {
-          "path": "./admin/audit.md"
-        },
-        {
-          "path": "./admin/devurls.md"
-        },
-        {
-          "path": "./admin/extensions.md"
-        },
-        {
-          "path": "./admin/git.md"
-        },
-        {
-          "path": "./admin/licensing.md"
-        },
-        {
-          "path": "./admin/memory-overprovisioning.md"
-        },
+        { "path": "./admin/appearance.md" },
+        { "path": "./admin/audit.md" },
+        { "path": "./admin/devurls.md" },
+        { "path": "./admin/extensions.md" },
+        { "path": "./admin/git.md" },
+        { "path": "./admin/licensing.md" },
+        { "path": "./admin/memory-overprovisioning.md" },
         {
           "path": "./admin/environment-management/index.md",
           "children": [
-            {
-              "path": "./admin/environment-management/shutdown.md"
-            },
-            {
-              "path": "./admin/environment-management/gpu-acceleration.md"
-            },
-            {
-              "path": "./admin/environment-management/privileged.md"
-            },
-            {
-              "path": "./admin/environment-management/ssh-access.md"
-            }
+            { "path": "./admin/environment-management/shutdown.md" },
+            { "path": "./admin/environment-management/gpu-acceleration.md" },
+            { "path": "./admin/environment-management/privileged.md" },
+            { "path": "./admin/environment-management/ssh-access.md" }
           ]
         },
-        {
-          "path": "./admin/metrics.md"
-        },
+        { "path": "./admin/metrics.md" },
         {
           "path": "./admin/registries/index.md",
-          "children": [
-            {
-              "path": "./admin/registries/default-registry.md"
-            }
-          ]
+          "children": [{ "path": "./admin/registries/default-registry.md" }]
         },
-        {
-          "path": "./admin/telemetry.md"
-        }
+        { "path": "./admin/telemetry.md" }
       ]
     }
   ]
