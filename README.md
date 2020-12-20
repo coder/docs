@@ -7,7 +7,7 @@ synchronized with this repository as releases are made public.
 
 Interested in using Coder? [Contact our Technical Sales Team](https://coder.com/contact).
 
-See something wrong or unclear? Please contribute by [opening an issue or pull request](./issues/new).
+See something wrong or unclear? Please contribute by [opening an issue or pull request](https://github.com/cdr/code-server/issues/new).
 
 ```plaintext
 - Home

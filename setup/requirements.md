@@ -1,5 +1,6 @@
 ---
 title: "Requirements"
+description: Learn about the prerequisite infrastructure requirements. 
 ---
 
 Coder is deployed onto Kubernetes clusters, and we recommend the following
@@ -39,7 +40,7 @@ currently support the use of:
 - Mozilla Firefox 57
 - Microsoft Edge 79
 
-If you're using [Remote IDEs](../../environments/editors.md), allow pop-ups;
+If you're using [Remote IDEs](../environments/editors.md), allow pop-ups;
 Coder launches the Remote IDE in a pop-up window.
 
 ## Licenses

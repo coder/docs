@@ -57,7 +57,7 @@ gains in both developer velocity and enterprise security.
     Learn how to manage your Coder deployment.
   </p>
 
-  <a href="./admin/setup/index.md">
+  <a href="./setup/index.md">
     <button class="arrow outlined">
       Deploy Now
     </button>

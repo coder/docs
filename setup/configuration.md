@@ -1,5 +1,6 @@
 ---
 title: "Configuration"
+description: Learn how to configure a fresh Coder installation.
 ---
 
 After installation, you'll set up and configure Coder using its web UI.

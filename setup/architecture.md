@@ -1,5 +1,6 @@
 ---
 title: "Architecture"
+description: Learn about the technical architecture of the Coder platform.
 ---
 
 Coder is deployed on Kubernetes and includes the following components:
@@ -12,7 +13,7 @@ Coder is deployed on Kubernetes and includes the following components:
 
 Each component runs in its own Kubernetes pod.
 
-![Architecture](../../assets/architecture.png)
+![Architecture](../assets/architecture.png)
 
 ## Kubernetes NGINX Ingress
 
