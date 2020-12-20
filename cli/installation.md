@@ -23,8 +23,11 @@ version number.
 
 ### Authenticate
 
-Once you've installed the CLI, run `coder login [https://coder.domain.com]` to
-authenticate with your Coder account.
+Once you've installed the CLI, authenticate the client with your Coder account.
+
+```bash
+coder login [https://coder.domain.com]
+```
 
 If you're logged into Coder via your web browser, the process proceeds
 automatically; otherwise, you'll be asked to provide your username and password.
