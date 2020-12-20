@@ -1,18 +1,17 @@
 ---
 title: Managing Environments 
-descriptions: See some example usages of the CLI for personal management of Environments.
+descriptions: See some example usages of the CLI for personal management of Environment.
 ---
 
 ## List all of your Environments
 
 ```plaintext
 coder envs ls
-Name      ImageTag    CPUCores    MemoryGB    DiskGB    GPUs    Updating    Status    CVM      
-cdev      latest      8           12          96        0       false       ON        true     
-site      ubuntu      1           1           10        0       false       ON        false    
-devenv    ubuntu      1           1           10        0       false       OFF       false    
-dev       latest      8           16          64        0       false       OFF       false    
-denv      latest      8           16          80        0       false       OFF       false 
+Name    ImageTag    CPUCores    MemoryGB    DiskGB    GPUs    Updating    Status
+cdev    latest      8           12          96        0       false       ON
+site    ubuntu      1           1           10        0       false       ON
+dev     latest      8           16          64        0       false       OFF
+denv    latest      8           16          80        0       false       OFF
 ```
 
 ## Rebuild an Environment

@@ -2,8 +2,8 @@
 title: "Remote Terminal"
 ---
 
-You can access the the shell of your Coder Environment from your local computer using the
-CLI's `coder sh` command.
+You can access the the shell of your Coder Environment from your local computer
+using the CLI's `coder sh` command.
 
 ## Usage
 

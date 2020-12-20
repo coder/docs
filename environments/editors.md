@@ -4,6 +4,7 @@ description: Learn how to connect your favorite Editors and IDEs to your remote 
 ---
 
 There are four primary ways you can connect an IDE to your Coder Environment:
+
 1. [VSCode Remote SSH](#vscode-remote-ssh) with local VSCode
 1. [VSCode in the browser](#vscode-in-the-browser) with code-server
 1. [JetBrains in the browser](#jetbrains-in-the-browser) with JetBrains Projector
@@ -17,8 +18,10 @@ etc.
 
 1. Open VS Code locally.
 2. Make sure that you've installed [Remote -
-   SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) extension
-3. In VS Code's left-hand nav bar, click **Remote Explorer** and right click on an environment to connect
+   SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+   extension
+3. In VS Code's left-hand nav bar, click **Remote Explorer** and right click on
+an environment to connect
 
 ![VSCode Remote Explorer](../assets/vscode-remote-ssh-panel.png)
 

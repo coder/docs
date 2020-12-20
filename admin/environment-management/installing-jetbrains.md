@@ -1,4 +1,3 @@
-
 ---
 title: "Install a JetBrains IDEs"
 ---

@@ -13,8 +13,8 @@ Dev URLs with Coder.
 
 ## Enabling the Use of Dev URLs
 
-[Dev URLs](../environments/devurls.md) is an opt-in feature. To enable Dev URLs in your
-cluster, you'll need to modify your:
+[Dev URLs](../environments/devurls.md) is an opt-in feature. To enable Dev URLs
+in your cluster, you'll need to modify your:
 
 1. Helm chart
 2. Wildcard DNS record

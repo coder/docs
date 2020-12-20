@@ -5,7 +5,8 @@ description: "Learn how to develop in an Environment."
 
 ## 1. Import an Image
 
-Ensure you've [imported an Image]() for your [Environment](index.md) to use.
+Ensure you've [imported an Image](../images/importing.md) for your
+[Environment](index.md) to use.
 
 ## 2. Create an Environment
 
@@ -15,7 +16,8 @@ existing environments. Click the **New Environment** button.
 
 ![Create an Environment](../assets/create-env.png)
 
-Enter a friendly name for your environment, along with an [Image](../images/index.md) to use.
+Enter a friendly name for your environment, along with an
+[Image](../images/index.md) to use.
 
 When done, click **Create** to proceed. Coder redirects you to an overview page
 for your environment during the build process.
@@ -37,8 +39,8 @@ and specify custom resources.
 
 ## 3. Start Coding
 
-Once you've created an Environment, it's time to hop in. Read more about how to [connect your
-favorite Editor or IDE](./editors.md) with your new Environment!
+Once you've created an Environment, it's time to hop in. Read more about how to
+[connect your favorite Editor or IDE](./editors.md) with your new Environment!
 
 ![Start Coding](../assets/applications.png)
 
