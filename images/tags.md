@@ -1,5 +1,6 @@
 ---
 title: "Tags"
+description: Learn how to manage image versions inside Coder.
 ---
 
 <a href="https://docs.docker.com/engine/reference/commandline/tag/"
