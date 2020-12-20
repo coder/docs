@@ -47,6 +47,5 @@ the build log.
 ## Git Integration
 
 Once your site manager has [set up a Git service](../admin/git.md), you can link
-your Coder account to a supported Git service. This will authenticate all
-`git` operations performed in your Environment. See how to connect your acount
-[here](../user-preferences/git-integration.md).
+your Coder account. This will authenticate all
+`git` operations performed in your Environment. See how to [link your account](https://help.coder.com/hc/en-us/articles/360057612153-Linking-Git-Accounts).

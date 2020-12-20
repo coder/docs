@@ -41,16 +41,6 @@
       ]
     },
     {
-      "path": "./user-preferences/index.md",
-      "children": [
-        { "path": "./user-preferences/account.md" },
-        { "path": "./user-preferences/security.md" },
-        { "path": "./user-preferences/ssh-keys.md" },
-        { "path": "./user-preferences/git-integration.md" },
-        { "path": "./user-preferences/notifications.md" }
-      ]
-    },
-    {
       "path": "./setup/index.md",
       "children": [
         { "path": "./setup/architecture.md" },
