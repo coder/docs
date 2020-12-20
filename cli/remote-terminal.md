@@ -1,5 +1,6 @@
 ---
 title: "Remote Terminal"
+description: Learn how to use the Coder CLI to access your Environment.
 ---
 
 You can access the the shell of your Coder Environment from your local computer
