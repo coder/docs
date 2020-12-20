@@ -15,7 +15,7 @@ existing environments. Click the **New Environment** button.
 
 ![Create an Environment](../assets/create-env.png)
 
-Enter a friendly name for your environment, along with an Image to use.
+Enter a friendly name for your environment, along with an [Image](../images/index.md) to use.
 
 When done, click **Create** to proceed. Coder redirects you to an overview page
 for your environment during the build process.
@@ -26,7 +26,7 @@ and runs custom configuration on startup. Learn about the [environment lifecycle
 ### Advanced
 
 Coder provides advanced settings that allow you to customize your environment.
-You can choose to run your environment as a [Container-based VM](cvms.md),
+You can choose to run your environment as a [Container-based Virtual Machine](cvms.md),
 and specify custom resources.
 
 > By default, Coder allocates resources (CPU Cores, Memory, and Disk Space)
@@ -37,12 +37,9 @@ and specify custom resources.
 
 ## 3. Start Coding
 
-Once you've created an Environment, it's time to hop in.
+Once you've created an Environment, it's time to hop in. Read more about how to [connect your
+favorite Editor or IDE](./editors.md) with your new Environment!
 
 ![Start Coding](../assets/applications.png)
 
 > Integrate with Git to automatically have your SSH key injected into Environments.
-
-### Local Workflow
-
-### Browser Workflow

@@ -34,7 +34,7 @@ You will need to rerun the `coder config-ssh` command if:
 
 - You reconfigure or modify their keypair using the Coder dashboard
 - You add additional environments (running this command will ensure that your
-  **~/.ssh/config** file populates properly)
+  **~/.ssh/config** file populates properly with alias targets)
 
 ## Using SFTP
 

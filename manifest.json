@@ -41,7 +41,10 @@
     },
     {
       "path": "./cli/index.md",
-      "children": [{ "path": "./cli/remote-terminal.md" }]
+      "children": [
+        { "path": "./cli/remote-terminal.md" },
+        { "path": "./cli/managing-envs.md" }
+      ]
     },
     {
       "path": "./user-preferences/index.md",

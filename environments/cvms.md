@@ -7,7 +7,7 @@ Standard Coder Environments run as normal Docker containers. This carries limita
 what applications you can run inside your Environment. Most notably, it's not possible to run
 Docker securely within normal Docker containers.
 
-Coder offers an alternative Environment deployment option that allows you to run Docker, Docker Compose, Systemd, 
+Coder offers an alternative Environment deployment option that allows you to run Docker, Docker Compose, systemd, 
 and other system-level applications securely within your development containers. 
 We call this environment variant a *Container-based Virtual Machine (CVM)*.
 
@@ -23,14 +23,14 @@ To create an Environments capable of securely running system-level applications 
 
 ![Create CVM](../assets/cvm-create.png)
 
-## Systemd
+## systemd
 
 During Environment startup, Coder checks for the presence of `/sbin/init` within the Environment
 Image. If the file exists, it's used as the container entrypoint with a `PID` of 1. If your image
-OS distribution does not link the Systemd init to `/sbin/init`, you'll need to do this manually in your
+OS distribution does not link the `systemd` init to `/sbin/init`, you'll need to do this manually in your
 Dockerfile.
 
-The following snippet demonstrates how an image can specify Systemd as the init.
+The following snippet demonstrates how an image can specify `systemd` as the init.
 ```Dockerfile
 FROM ubuntu:20.04
 RUN apt-get update && apt-get install -y \

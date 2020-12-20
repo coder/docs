@@ -38,6 +38,11 @@ preview modal where you can enable JetBrains support.
 Coder Enterprise launches remote IDEs in their own windows; be sure to set your
 browser to allow pop-up windows so that you can use your IDE.
 
+With support enabled and the editor installed with the Image, you'll be able to
+launch the editor from the dashboard.
+
+![JetBrains Logos](../assets/jetbrains-launcher-icons.png)
+
 > If you need a valid license to run your IDE locally, you'll also need one to
 > run it in Coder.
 
