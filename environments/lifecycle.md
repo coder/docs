@@ -43,4 +43,4 @@ perform modifications to the `/home`, it should do so in this script.
 
 3. `Execution of ~/personalize`
 Execution of this script allows you to customize your personal development Environment
-on each rebuild. Read more [here](./personalization.md) on personalization.
+on each rebuild. Read more on personalization[here](./personalization.md).
