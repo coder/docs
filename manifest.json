@@ -68,6 +68,7 @@
         { "path": "./admin/extensions.md" },
         { "path": "./admin/git.md" },
         { "path": "./admin/licensing.md" },
+        { "path": "./admin/account-dormancy.md" },
         { "path": "./admin/memory-overprovisioning.md" },
         {
           "path": "./admin/environment-management/index.md",
