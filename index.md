@@ -5,15 +5,15 @@ icon: "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org
 ---
 
 Coder moves software development to your cloud, centralizing
-an organization's development initiatives and unlocking substantial
+an organization's development initiatives and unlocking
 gains in both developer velocity and enterprise security.
 
 <div class="get-started">
   <div>
-  <h2>Workflow</h2>
+  <h2>Environments</h2>
 
   <p>
-    Learn all the tips and tricks to maximize your productivity with Coder.
+    Welcome to your new computer in the cloud.
   </p>
 
   <a href="./environments/getting-started.md">
@@ -23,9 +23,9 @@ gains in both developer velocity and enterprise security.
   </a>
 
   <ul>
+    <li><a href="./environments/lifecycle.md">Lifecycle</a></li>
+    <li><a href="./environments/editors.md">Editors and IDEs</a></li>
     <li><a href="./environments/personalization.md">Personalization</a></li>
-    <li><a href="./environments/personalization.md">Testing</a></li>
-    <li><a href="./environments/personalization.md">Example</a></li>
   </ul>
   </div>
 
@@ -41,7 +41,7 @@ gains in both developer velocity and enterprise security.
     Learn how to leverage Coder for your team.
   </p>
 
-  <a href="./environments/getting-started.md">
+  <a href="./admin/index.md">
     <button class="arrow outlined">
       Learn More
     </button>
