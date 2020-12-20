@@ -87,5 +87,5 @@ data on your disk and count towards the size limit.
 
 When setting default disk sizes for [Images](../images/index.md), plan for these
 additional storage requirements. We recommend treating the environment as a full
-machine, so PVC disk sizes in the range of 50-100 GB are reasonable.
+machine, so disk sizes in the range of 50-100 GB are reasonable.
 This is especially true if users of the image are storing large Docker caches.
