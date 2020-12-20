@@ -16,12 +16,12 @@ a *Container-based Virtual Machine (CVM)*.
 ## Container-based Virtual Machine
 
 By choosing this option,
-your environments behave like virtual machines yet retain the image, security,
+your Environment behaves like a VM or raw host, yet retains the image, security,
 and performance properties of typical containers.
 
 To create an Environments capable of securely running system-level applications
 like Docker, check the `Run as Container-based Virtual Machine` box when you
-create a new environment.
+create a new Environment.
 
 ![Create CVM](../assets/cvm-create.png)
 
