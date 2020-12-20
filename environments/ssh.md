@@ -38,5 +38,5 @@ You will need to rerun the `coder config-ssh` command if:
 
 ## Using SFTP
 
-Coder Enterprise supports the use of the SFTP protocol. To connect to an
+Coder supports the use of the SFTP protocol. To connect to an
 environment using SFTP, run `sftp coder.<environment_name>`.

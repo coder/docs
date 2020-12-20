@@ -12,7 +12,7 @@ There are four primary ways you can connect an IDE to your Coder Environment:
 
 ## VS Code Remote SSH
 
-Once you've [set up SSH access to Coder Enterprise](./ssh.md), you can work on projects
+Once you've [set up SSH access to Coder](./ssh.md), you can work on projects
 from your local VS Code, connected to your Coder Environment for compute,
 etc.
 
@@ -38,7 +38,7 @@ preview modal where you can enable JetBrains support.
 
 ![Enable JetBrains Support](../assets/enable-jetbrains-support.png)
 
-Coder Enterprise launches remote IDEs in their own windows; be sure to set your
+Coder launches remote IDEs in their own windows; be sure to set your
 browser to allow pop-up windows so that you can use your IDE.
 
 With support enabled and the editor installed with the Image, you'll be able to
