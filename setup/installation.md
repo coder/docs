@@ -1,5 +1,6 @@
 ---
 title: "Installation"
+description: Learn how to install Coder onto your infrastructure.
 ---
 
 This article walks you through the process of installing Coder.
@@ -46,7 +47,7 @@ data, including environment information and session tokens.
    You can find/define these values in your [PostgreSQL server configuration
    file](https://www.postgresql.org/docs/current/config-setting.html).
 
-4. [Enable Dev URL Usage](../devurls.md). Dev URLs allow users to access
+4. [Enable Dev URL Usage](../admin/devurls.md). Dev URLs allow users to access
    the web servers running in your environment. To enable, provide a wildcard
    domain and its DNS certificate and update your helm chart accordingly.
 
