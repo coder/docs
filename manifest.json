@@ -19,10 +19,10 @@
       "children": [
         { "path": "./environments/getting-started.md" },
         { "path": "./environments/lifecycle.md" },
-        { "path": "./environments/ssh.md" },
         { "path": "./environments/editors.md" },
-        { "path": "./environments/cvms.md" },
         { "path": "./environments/personalization.md" },
+        { "path": "./environments/ssh.md" },
+        { "path": "./environments/cvms.md" },
         { "path": "./environments/devurls.md" },
         { "path": "./environments/pwa.md" },
         { "path": "./environments/create-env.md" },
