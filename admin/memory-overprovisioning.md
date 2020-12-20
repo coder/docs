@@ -1,5 +1,6 @@
 ---
 title: "Memory Overprovisioning"
+description: Learn how to overprovision memory requests from Environments.
 ---
 
 Coder Enterprise allows you to set memory overprovisioning ratios for each of
