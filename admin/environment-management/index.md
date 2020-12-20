@@ -1,5 +1,6 @@
 ---
 title: "Environment Management"
+description: Learn how to manage Environments from an admin level.
 ---
 
 Administrative users can modify a variety of environment-related behaviors.
@@ -17,3 +18,5 @@ Administrative users can modify a variety of environment-related behaviors.
 * You can [disable SSH access](ssh-access.md) for your
   end-users by editing the YAML file in helm (by default, Coder enables SSH
   access to environments).
+
+<children></children>

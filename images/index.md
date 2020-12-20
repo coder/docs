@@ -4,11 +4,11 @@ icon: "<svg viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d
 description: Learn about the base of reproducibility inside Coder.
 ---
 
-Images are the bases from which new [Environments](../environments/index.md)
-are created. They are the base of environment reproducibility.
+Images are the basis from which new [Environments](../environments/index.md)
+are created. They are the base of Environment reproducibility.
 
 Each image contains the language version, tooling, and dependencies users need
-to work on a project. Users create environments from the image and can begin to
+to work on a project. Users create Environments from the image and can begin to
 contribute immediately to the project for which it's defined.
 
 Coder hooks into Docker registries, which store images that you can import. You

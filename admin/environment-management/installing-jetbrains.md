@@ -1,5 +1,6 @@
 ---
 title: "Install a JetBrains IDEs"
+description: Learn how to install JetBrains IDEs into Images.
 ---
 
 The process of installing an IDE onto your [image](./images) is similar to

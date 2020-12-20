@@ -1,5 +1,6 @@
 ---
 title: "Privileged Environments"
+description: Learn how to enable Privileged Environments for added functionality but reduced security.
 ---
 
 Privileged environments are those that can be deployed with a sidecar running
