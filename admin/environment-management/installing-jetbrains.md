@@ -24,13 +24,13 @@ PATH:
 - PyCharm
 - Rider
 - RubyMine
-- Code OSS (VSCode, installed by default)
+- Code OSS (VS Code, installed by default)
 - WebStorm
 
 ## Required Packages
 
 The following packages are required in your image if you're using an IDE other
-than VSCode. They ensure that the IDE can communicate with Coder:
+than VS Code. They ensure that the IDE can communicate with Coder:
 
 <table>
     <thead>

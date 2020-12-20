@@ -5,15 +5,15 @@ description: Learn how to connect your favorite Editors and IDEs to your remote 
 
 There are four primary ways you can connect an IDE to your Coder Environment:
 
-1. [VSCode Remote SSH](#vscode-remote-ssh) with local VSCode
-1. [VSCode in the browser](#vscode-in-the-browser) with code-server
+1. [VS Code Remote SSH](#vscode-remote-ssh) with local VS Code
+1. [VS Code in the browser](#vscode-in-the-browser) with code-server
 1. [JetBrains in the browser](#jetbrains-in-the-browser) with JetBrains Projector
 1. *Any* local editor with [2-way file synchronization over SSH](https://help.coder.com/hc/en-us/articles/360058001313?__hstc=103542367.6151dcd6d50b6cb62a878734c4aad255.1608274456028.1608306470901.1608410536657.3&__hssc=103542367.75.1608410536657&__hsfp=974138608)
 
-## VSCode Remote SSH
+## VS Code Remote SSH
 
 Once you've [set up SSH access to Coder Enterprise](./ssh.md), you can work on projects
-from your local VSCode, connected to your Coder Environment for compute,
+from your local VS Code, connected to your Coder Environment for compute,
 etc.
 
 1. Open VS Code locally.
@@ -23,11 +23,11 @@ etc.
 3. In VS Code's left-hand nav bar, click **Remote Explorer** and right click on
 an environment to connect
 
-![VSCode Remote Explorer](../assets/vscode-remote-ssh-panel.png)
+![VS Code Remote Explorer](../assets/vscode-remote-ssh-panel.png)
 
-## VSCode in the browser
+## VS Code in the browser
 
-Launch VSCode in the browser from the Environments page by clicking the *Code* icon.
+Launch VS Code in the browser from the Environments page by clicking the *Code* icon.
 
 ![Launch an Environment](../assets/launch-env.png)
 
