@@ -20,7 +20,8 @@ Enter a friendly name for your environment, along with an
 [Image](../images/index.md) to use.
 
 When done, click **Create** to proceed. Coder redirects you to an overview page
-for your environment during the build process.
+for your environment during the build process. Learn more about the Environment
+[creation parameters](./environment-params.md).
 
 Your environment persists the home directory, updates to new versions of the image,
 and runs custom configuration on startup. Learn about the [environment lifecycle](lifecycle.md).
@@ -44,4 +45,5 @@ Once you've created an Environment, it's time to hop in. Read more about how to
 
 ![Start Coding](../assets/applications.png)
 
-> Integrate with Git to automatically have your SSH key injected into Environments.
+> [Integrate with Git](./personalization#git-integration) to automatically have
+your SSH key injected into Environments.

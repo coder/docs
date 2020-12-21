@@ -1,5 +1,6 @@
 ---
 title: "Disable SSH Access"
+description: Learn how to disable SSH to comply with ingress restrictions.
 ---
 
 By default, Coder enables SSH access for all users. There are no additional

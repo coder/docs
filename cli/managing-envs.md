@@ -1,6 +1,6 @@
 ---
 title: Managing Environments 
-descriptions: See some example usages of the CLI for personal management of Environment.
+description: See some example usages of the CLI for personal management of Environment.
 ---
 
 ## List all of your Environments
@@ -32,3 +32,8 @@ coder envs ls -o json | jq -r .[].name | xargs coder envs stop
 success: successfully stopped environment "site"
 ...
 ```
+
+## Full Reference
+
+For a full list of the Coder CLI commands available, see the [reference
+pages](https://github.com/cdr/coder-cli/blob/master/docs/coder.md).

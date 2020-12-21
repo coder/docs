@@ -20,7 +20,7 @@ new environments.
 
 To do so:
 
-1. Launch the Coder Enterprise dashboard.
+1. Launch the Coder dashboard.
 2. Go to **Manage** > **Admin**.
 3. On the **General** tab, uncheck the Import Default Registry option.
 4. Click **Save Configuration**.

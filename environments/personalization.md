@@ -43,3 +43,9 @@ The Environments page shows the log output of the `~/personalize` script in
 the build log.
 
 ![Enable privileged environment](../assets/personalize-log.png)
+
+## Git Integration
+
+Once your site manager has [set up a Git service](../admin/git.md), you can link
+your Coder account. This will authenticate all
+`git` operations performed in your Environment. See how to [link your account](https://help.coder.com/hc/en-us/articles/360057612153-Linking-Git-Accounts).

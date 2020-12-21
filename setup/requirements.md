@@ -32,8 +32,8 @@ have these extensions enabled by running `kubectl get apiservices`):
 
 ## Browsers
 
-Use an up-to-date browser to ensure that you can use all of Coder's features. We
-currently support the use of:
+Use an up-to-date browser to ensure that you can use all of Coder's features.
+We currently require the following versions *or newer*:
 
 - Apple Safari 12.1
 - Google Chrome 66

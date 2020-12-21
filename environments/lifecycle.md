@@ -22,6 +22,7 @@ environment.
 Organizations can set an auto-off inactivity threshold. After an Environment
 hasn't been access for the specified threshold, it is shutdown. A stopped
 environment requires a [rebuild](#Rebuilds) before you can accessed it again.
+Read more about auto-off [here](../admin/environment-management/shutdown.md).
 
 ## Hooks
 
@@ -43,4 +44,4 @@ perform modifications to the `/home`, it should do so in this script.
 
 3. `Execution of ~/personalize`
 Execution of this script allows you to customize your personal development Environment
-on each rebuild. Read more on personalization[here](./personalization.md).
+on each rebuild. Read more on personalization [here](./personalization.md).

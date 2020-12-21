@@ -1,5 +1,6 @@
 ---
 title: "Install a JetBrains IDEs"
+description: Learn how to install JetBrains IDEs into Images.
 ---
 
 The process of installing an IDE onto your [image](./images) is similar to
@@ -24,13 +25,13 @@ PATH:
 - PyCharm
 - Rider
 - RubyMine
-- Code OSS (VSCode, installed by default)
+- Code OSS (VS Code, installed by default)
 - WebStorm
 
 ## Required Packages
 
 The following packages are required in your image if you're using an IDE other
-than VSCode. They ensure that the IDE can communicate with Coder:
+than VS Code. They ensure that the IDE can communicate with Coder:
 
 <table>
     <thead>
