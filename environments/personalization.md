@@ -49,3 +49,21 @@ the build log.
 Once your site manager has [set up a Git service](../admin/git.md), you can link
 your Coder account. This will authenticate all
 `git` operations performed in your Environment. See how to [link your account](https://help.coder.com/hc/en-us/articles/360057612153-Linking-Git-Accounts).
+
+## Dotfiles Repo
+
+A **dotfiles repository** is a Git repository that contains your personal
+Environment preferences in the form of static files and setup scripts.
+
+We recommend configuring a dotfiles repo (which Coder then clones to your home
+directory) to ensure that your preferences are applied whenever your
+Environment turns on or you create a new Environment.
+
+Read more about dotfiles repos [here](http://dotfiles.github.io/).
+
+### Adding Your Dotfiles Repo to Coder
+
+You can provide a link to your dotfiles repo that's hosted with the Git provider
+of your choice under User Preferences:
+
+![Dotfiles Preferences](../assets/dotfiles-preferences.png)
