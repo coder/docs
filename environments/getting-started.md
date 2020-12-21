@@ -45,4 +45,4 @@ Once you've created an Environment, it's time to hop in. Read more about how to
 
 ![Start Coding](../assets/applications.png)
 
-> Integrate with Git to automatically have your SSH key injected into Environments.
+> [Integrate with Git](./personalization#git-integration) to automatically have your SSH key injected into Environments.

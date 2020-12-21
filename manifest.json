@@ -46,7 +46,8 @@
         { "path": "./setup/architecture.md" },
         { "path": "./setup/requirements.md" },
         { "path": "./setup/installation.md" },
-        { "path": "./setup/configuration.md" }
+        { "path": "./setup/configuration.md" },
+        { "path": "./setup/licensing.md" }
       ]
     },
     {
@@ -65,7 +66,6 @@
           "path": "./admin/registries/index.md",
           "children": [{ "path": "./admin/registries/default-registry.md" }]
         },
-        { "path": "./admin/licensing.md" },
         { "path": "./admin/git.md" },
         { "path": "./admin/appearance.md" },
         { "path": "./admin/audit.md" },

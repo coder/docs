@@ -5,7 +5,7 @@ description: "Learn how to import images to use in Coder."
 
 Coder imports images from [Docker Registries](../admin/registries/index.md).
 
-To import, head to "Images" and select "Import Image".
+To import, head to **Images > Import Image**.
 
 Optionally, you can provide a **description** of the image (shown to all users)
 and a **Source Repo URL** to point to the image's source.
