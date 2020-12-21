@@ -57,7 +57,7 @@ Environment preferences in the form of static files and setup scripts.
 
 We recommend configuring a dotfiles repo (which Coder then clones to your home
 directory) to ensure that your preferences are applied whenever your
-environment turns on.
+Environment turns on or you create a new Environment.
 
 Read more about dotfiles repos [here](http://dotfiles.github.io/).
 
