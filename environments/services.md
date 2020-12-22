@@ -1,5 +1,6 @@
 ---
 title: "Services"
+state: deprecated
 ---
 
 Coder allows you to add **services**, which are "sidecar" containers that run

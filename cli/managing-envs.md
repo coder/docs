@@ -18,7 +18,7 @@ denv    latest      8           16          80        0       false       OFF
 
 ```plaintext
 coder envs rebuild my-env --follow
-Rebuild environment "site"? (will destroy any work outside of /home): y█
+Rebuild environment "my-env"? (will destroy any work outside of /home): y█
 ✅ -- 2020-12-20T02:43:44Z Deleting old environment
 ✅ -- 2020-12-20T02:43:44Z Deleting old network isolation policy
 ✅ -- 2020-12-20T02:43:44Z Deleting old service
