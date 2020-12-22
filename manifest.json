@@ -54,6 +54,13 @@
       "path": "./admin/index.md",
       "children": [
         {
+          "path": "./admin/access-control/index.md",
+          "children": [
+            { "path": "./admin/access-control/user-roles.md" },
+            { "path": "./admin/access-control/organizations.md" }
+          ]
+        },
+        {
           "path": "./admin/environment-management/index.md",
           "children": [
             { "path": "./admin/environment-management/shutdown.md" },
