@@ -14,7 +14,7 @@ Navigate to **Manage > Admin > General** to enable this option.
 
 - The Kubernetes Nodes must have a minimum kernel version of `5.4`
 (released Nov 24th, 2019).
-- The Kubernetes Nodes must be running an Ubunutu OS.
+- The Kubernetes Nodes must be running an Ubuntu OS.
 - Legacy versions of cluster-wide proxy services such as Istio are not
 supported.
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
