@@ -65,7 +65,7 @@ seamless experience, use [systemd](#systemd) and register the `docker` service
 so `dockerd` is automatically run during initialization.
 
 The following snippet demonstrates how an image can register the `docker`
-service in it's Dockerfile.
+service in its Dockerfile.
 
 ```Dockerfile
 FROM ubuntu:20.04
