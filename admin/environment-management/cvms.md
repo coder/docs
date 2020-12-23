@@ -64,7 +64,7 @@ Be sure to install the `docker` packages into your Environment Image. For a
 seamless experience, use [systemd](#systemd) and register the `docker` service
 so `dockerd` is automatically run during initialization.
 
-The following snippet demonstrates how an image can registry the `docker`
+The following snippet demonstrates how an image can register the `docker`
 service in it's Dockerfile.
 
 ```Dockerfile
