@@ -57,6 +57,7 @@
           "path": "./admin/environment-management/index.md",
           "children": [
             { "path": "./admin/environment-management/shutdown.md" },
+            { "path": "./admin/environment-management/cvms.md" },
             { "path": "./admin/environment-management/gpu-acceleration.md" },
             { "path": "./admin/environment-management/privileged.md" },
             { "path": "./admin/environment-management/ssh-access.md" }
