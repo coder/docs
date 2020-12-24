@@ -14,6 +14,10 @@ run Docker, Docker Compose, systemd, and other system-level applications
 securely within your development containers. We call this environment variant
 a *Container-based Virtual Machine (CVM)*.
 
+> Are you a platform admin? Learn how to
+[enable Docker in Environments](../admin/environment-management/cvms.md)
+for your deployment.
+
 ## Container-based Virtual Machine
 
 By choosing this option,
@@ -25,53 +29,6 @@ like Docker, check the `Run as Container-based Virtual Machine` box when you
 create a new Environment.
 
 ![Create CVM](../assets/cvm-create.png)
-
-## systemd
-
-During Environment startup, Coder checks for the presence of `/sbin/init` within
-the Environment Image. If the file exists, it's used as the container entrypoint
-with a `PID` of 1. If your image OS distribution does not link the `systemd`
-init to `/sbin/init`, you'll need to do this manually in your Dockerfile.
-
-The following snippet demonstrates how an image can specify `systemd` as the
-init.
-
-```Dockerfile
-FROM ubuntu:20.04
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    systemd
-
-# use systemd as the init
-RUN ln -s /lib/systemd/systemd /sbin/init
-```
-
-## Adding Docker
-
-Be sure to install the `docker` packages into your Environment Image. For a
-seamless experience, use [systemd](#systemd) and register the `docker` service
-so `dockerd` is automatically run during initialization.
-
-The following snippet demonstrates how an image can registry the `docker`
-service in it's Dockerfile.
-
-```Dockerfile
-FROM ubuntu:20.04
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    git \
-    bash \
-    docker.io \
-    curl \
-    sudo \
-    systemd
-
-# Enables Docker starting with systemd
-RUN systemctl enable docker
-
-# use systemd as the init
-RUN ln -s /lib/systemd/systemd /sbin/init
-```
 
 ## Disk
 
