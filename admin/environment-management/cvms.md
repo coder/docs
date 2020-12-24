@@ -10,7 +10,7 @@ programs inside their Environment including Docker and systemd.
 
 Navigate to **Manage > Admin > General** to enable this option.
 
-## Infrastructure requirements
+## Infrastructure Requirements
 
 - The Kubernetes Nodes must have a minimum kernel version of `5.4`
 (released Nov 24th, 2019).
