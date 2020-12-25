@@ -11,15 +11,24 @@ Environments.
 The CLI is also useful for use on your local machine. Before you can use the CLI
 locally, you'll need to download, install, and authenticate with Coder.
 
-### Download and Install
+## Installation
 
-You'll find all CLI releases on
-[GitHub](https://github.com/cdr/coder-cli/releases). Make sure to download the
-appropriate build for your platform.
+### Homebrew (Mac, Linux)
 
 The version numbering for CLI releases mirrors the version numbering for Coder
 releases. Download the CLI release whose version number matches your Coder
 version number.
+
+```sh
+brew install cdr/coder/coder-cli
+```
+
+### Download (Windows, Linux, Mac)
+
+Download the latest [release](https://github.com/cdr/coder-cli/releases):
+
+1. Click a release and download the tar file for your operating system (ex: coder-cli-linux-amd64.tar.gz)
+2. Extract the `coder` binary.
 
 ### Authenticate
 
