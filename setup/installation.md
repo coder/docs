@@ -27,6 +27,7 @@ data, including environment information and session tokens.
 2. Install the helm chart into the cluster
 
    ```bash
+   kubectl create namespace coder
    helm install --namespace coder coder coder/coder --version <VERSION-NUMBER>
    ```
 
@@ -55,7 +56,7 @@ data, including environment information and session tokens.
    password for the admin user
 
    ```bash
-   kubectl logs -l coder.deployment=cemanager -c cemanager \
+   kubectl logs -n coder -l coder.deployment=cemanager -c cemanager \
     --tail=-1 | grep -A1 -B2 Password
    ```
 
