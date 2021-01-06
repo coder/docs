@@ -51,7 +51,7 @@ launch the editor from the dashboard.
 
 ### System requirements
 
-For the best possible experience it is recommended to run the editor in an 
+For the best possible experience it is recommended to run the editor in an
 environment with:
 
 - at least 8 Gb of RAM
