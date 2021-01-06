@@ -6,7 +6,7 @@ state: deprecated
 ## ⚠️ Deprecation Notice
 
 [Services](./services.md) will be removed in a future release.
-Sad to see this feature go? Please leave feedback [here](mailto:contact@coder.com).
+Sad to see this feature go? Please leave feedback [here](https://roadmap.coder.com/c/18-services).
 To run Docker containers
 as a component of your Coder Environment, please enable
 [Container-based Virtual Machines](./cvms.md).
