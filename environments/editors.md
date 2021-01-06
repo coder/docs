@@ -49,6 +49,12 @@ launch the editor from the dashboard.
 > If you need a valid license to run your IDE locally, you'll also need one to
 > run it in Coder.
 
+### System requirements
+
+For the best possible experience it is recommended to run the editor in an environment with:
+- at least 8 Gb of RAM
+- a CPU with at least 4 cores
+
 ### Known Issues
 
 - Window dragging behavior can misalign with mouse movements
