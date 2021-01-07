@@ -9,15 +9,6 @@
       ]
     },
     {
-      "path": "./changelog/index.md",
-      "children": [
-        { "path": "./changelog/1.14.2.md" },
-        { "path": "./changelog/1.14.1.md" },
-        { "path": "./changelog/1.14.0.md" },
-        { "path": "./changelog/1.13.2.md" }
-      ]
-    },
-    {
       "path": "./environments/index.md",
       "children": [
         { "path": "./environments/getting-started.md" },
@@ -92,6 +83,15 @@
         { "path": "./admin/account-dormancy.md" },
         { "path": "./admin/metrics.md" },
         { "path": "./admin/telemetry.md" }
+      ]
+    },
+    {
+      "path": "./changelog/index.md",
+      "children": [
+        { "path": "./changelog/1.14.2.md" },
+        { "path": "./changelog/1.14.1.md" },
+        { "path": "./changelog/1.14.0.md" },
+        { "path": "./changelog/1.13.2.md" }
       ]
     }
   ]
