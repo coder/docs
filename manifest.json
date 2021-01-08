@@ -2,7 +2,11 @@
   "routes": [
     {
       "path": "./index.md",
-      "children": [{ "path": "about.md" }, { "path": "comparison.md" }, { "path": "feedback.md" }]
+      "children": [
+        { "path": "about.md" },
+        { "path": "comparison.md" },
+        { "path": "feedback.md" }
+      ]
     },
     {
       "path": "./environments/index.md",
