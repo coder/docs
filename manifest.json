@@ -2,11 +2,7 @@
   "routes": [
     {
       "path": "./index.md",
-      "children": [
-        { "path": "about.md" },
-        { "path": "comparison.md" },
-        { "path": "feedback.md" }
-      ]
+      "children": [{ "path": "about.md" }, { "path": "comparison.md" }, { "path": "feedback.md" }]
     },
     {
       "path": "./environments/index.md",
@@ -88,6 +84,7 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        { "path": "./changelog/1.14.3.md" },
         { "path": "./changelog/1.14.2.md" },
         { "path": "./changelog/1.14.1.md" },
         { "path": "./changelog/1.14.0.md" },
