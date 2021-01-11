@@ -45,7 +45,6 @@ gcloud beta container node-pools create "coder-pool" --cluster <cluster> \
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
-  region: us-west-2
   version: "1.17"
   ...
 nodeGroups:
