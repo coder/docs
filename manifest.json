@@ -75,7 +75,8 @@
         { "path": "./admin/extensions.md" },
         { "path": "./admin/account-dormancy.md" },
         { "path": "./admin/metrics.md" },
-        { "path": "./admin/telemetry.md" }
+        { "path": "./admin/telemetry.md" },
+        { "path": "./admin/user-management.md" }
       ]
     }
   ]
