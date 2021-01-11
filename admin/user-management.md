@@ -1,6 +1,6 @@
 ---
-title: "User Management" description: Learn how to add, edit, and delete Coder
-users.
+title: "User Management"
+description: Learn how to add and delete Coder users.
 ---
 
 Administrators may create and manage users via the User Management dashboard.
