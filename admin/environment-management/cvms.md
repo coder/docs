@@ -49,7 +49,7 @@ metadata:
   ...
 nodeGroups:
   - name: coder-node-group
-    amiFamily: Ubuntu2004
+    amiFamily: Ubuntu1804
     ...
 ```
 
