@@ -12,13 +12,12 @@ To create a new user:
 
 1. Go to **Manage** > **Users** > **New User**.
 
-2. In the new dialog window, provide the user's **name** and **email address** and
-select the **Auth Type** you want for the account:
-
-   * Select **Built-In** as your Auth Type if you want the user to access Coder
-  with a username/password combination
-   * Select **OpenID Connect** as your Auth Type if you would like to use your
-  organization's OpenID Connect Identity Provider
+2. In the new dialog window, provide the user's **name** and **email
+   address** and select the **Auth Type** you want for the account.
+   Select **Built-In** as your Auth Type if you want the user to access Coder
+   with a username/password combination; select **OpenID Connect** as your Auth
+   Type if you would like to use your organization's OpenID Connect Identity
+   Provider.
 
 3. Finally, choose the **Organization** to which the user belongs (this will affect
 the images to which the user has access). Click **Create**.
