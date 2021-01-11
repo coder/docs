@@ -29,7 +29,7 @@ about why this is still secure [here](#security).
 #### Example with `gcloud`
 
 ```bash
-gcloud beta container node-pools create "coder-pool" --cluster <cluster> \
+gcloud beta container clusters create "coder-cluster" \
     --image-type "UBUNTU" \
     --node-version "1.17.14-gke.1600" \
     ...
