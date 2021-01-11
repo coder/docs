@@ -54,6 +54,13 @@
       "path": "./admin/index.md",
       "children": [
         {
+          "path": "./admin/access-control/index.md",
+          "children": [
+            { "path": "./admin/access-control/user-roles.md" },
+            { "path": "./admin/access-control/organizations.md" }
+          ]
+        },
+        {
           "path": "./admin/environment-management/index.md",
           "children": [
             { "path": "./admin/environment-management/shutdown.md" },
@@ -77,6 +84,16 @@
         { "path": "./admin/metrics.md" },
         { "path": "./admin/telemetry.md" },
         { "path": "./admin/user-management.md" }
+      ]
+    },
+    {
+      "path": "./changelog/index.md",
+      "children": [
+        { "path": "./changelog/1.14.3.md" },
+        { "path": "./changelog/1.14.2.md" },
+        { "path": "./changelog/1.14.1.md" },
+        { "path": "./changelog/1.14.0.md" },
+        { "path": "./changelog/1.13.2.md" }
       ]
     }
   ]
