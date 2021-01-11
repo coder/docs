@@ -21,6 +21,39 @@ supported.
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
 about why this is still secure [here](#security).
 
+### Google Cloud Platform (GKE)
+
+- GKE Master version `>= 1.17`
+- `node-version >= 1.17` and `image-type = "UBUNTU"`
+
+#### Example with `gcloud`
+
+```bash
+gcloud beta container node-pools create "coder-pool" --cluster <cluster> \
+    --image-type "UBUNTU" \
+    --node-version "1.17.14-gke.1600" \
+    ...
+```
+
+### Amazon Web Services (EKS)
+
+- Node group `amiFamily: "Ubuntu2004"`
+
+#### Example with `eksctl`
+
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  region: us-west-2
+  version: "1.17"
+  ...
+nodeGroups:
+  - name: coder-node-group
+    amiFamily: Ubuntu2004
+    ...
+```
+
 ## Security
 
 The [Container-based Virtual Machine](../../environments/cvms.md) deployment
