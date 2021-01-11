@@ -3,10 +3,8 @@ title: "User Management"
 description: Learn how to add and delete Coder users.
 ---
 
-Administrators may create and manage users via the User Management dashboard.
-
-Once you've logged into your Coder deployment, the User Management dashboard is
-accessible under **Manage** > **Users**.
+Site managers can create and manage users via the User Management dashboard,
+which is accessible under **Manage** > **Users**.
 
 ## Creating a New User
 
@@ -20,10 +18,8 @@ select the **Auth Type** you want for the account:
 * Select **OpenID Connect** as your Auth Type if you would like to use your
   organization's OpenID Connect Identity Provider
 
-Finally, choose the **Organization** to which the user belongs. This will affect
-the images to which the user has access.
-
-Click **Create**.
+Finally, choose the **Organization** to which the user belongs (this will affect
+the images to which the user has access). Click **Create**.
 
 Coder will create the new user and display a Temporary Password. Provide this
 password to the user, which they can use along with their email to access their
