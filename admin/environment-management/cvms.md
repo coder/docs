@@ -37,7 +37,7 @@ gcloud beta container clusters create "coder-cluster" \
 
 ### Amazon Web Services (EKS)
 
-- Node group `amiFamily: "Ubuntu2004"`
+- Node group `amiFamily >= "Ubuntu1804"`
 
 #### Example with `eksctl`
 
