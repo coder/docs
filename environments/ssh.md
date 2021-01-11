@@ -1,5 +1,5 @@
 ---
-title: "SSH Access to Coder"
+title: "SSH Access"
 description: Learn how to configure SSH access to your Environments.
 ---
 
