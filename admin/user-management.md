@@ -3,7 +3,7 @@ title: "User Management"
 description: Learn how to add, delete and manage Coder users.
 ---
 
-[Site managers](/admin/access-control/user-roles#site-manager-permissions) can
+[Site managers](/access-control/user-roles#site-manager-permissions) can
 create and manage users from the **Users** page, which is accessible under
 **Manage** > **Users**.
 
