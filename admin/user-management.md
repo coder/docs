@@ -1,7 +1,6 @@
 ---
 title: "User Management"
-description: Learn how to add, delete and manage Coder
-users.
+description: Learn how to add, delete and manage Coder users.
 ---
 
 [Site managers](/admin/access-control/user-roles#site-manager-permissions) can
