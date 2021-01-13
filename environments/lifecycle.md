@@ -12,9 +12,10 @@ on cloud compute and justify more powerful dev machines :).
 Rebuilding an [Environment](index.md) allows you to update to the latest image,
 edit resource requests, or restart your environment after a shutdown.
 
-Only the `/home/<username>` directory is persisted between rebuilds. Configurations and source
-code within the `/home/<username>` subtree will not be affected across rebuilds, even if the
-underlying [Image](../images/index.md) or its dependencies change.
+Only the `/home/<username>` directory is persisted between rebuilds.
+Configurations and source code within the `/home/<username>` subtree will
+not be affected across rebuilds, even if the underlying
+[Image](../images/index.md) or its dependencies change.
 
 ## Auto-Off
 
