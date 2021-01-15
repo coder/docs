@@ -13,5 +13,5 @@ You can mark images as deprecated to prevent them from being used to create new 
 ![Deprecating an Image](../assets/deprecate-image.png)
 
 > Users cannot create new environments using deprecated images. Still, they can
-> continue to use *existing* environments created with the now-deprecated images
+> continue to use _existing_ environments created with the now-deprecated images
 > and edit the resources.

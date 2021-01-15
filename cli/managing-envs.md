@@ -1,5 +1,5 @@
 ---
-title: Managing Environments 
+title: Managing Environments
 description: See some example usages of the CLI for personal management of Environment.
 ---
 

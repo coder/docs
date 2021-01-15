@@ -2,6 +2,7 @@
 title: "Personalization"
 description: Learn how to personalize your Environment to augment its base Image.
 ---
+
 Your Coder development Environment strikes a balance between consistent team
 configuration and personal customization.
 While the Environment [Image](../images/index.md) standardizes system
@@ -10,12 +11,12 @@ for customizing the Environment to best fit your needs.
 
 ## Persistent Home
 
-The `/home` volume is bound to your Environment. Its contents are persisted
-between shutdowns and  rebuilds. This ensures that personal configuration files
+The `/home/<username>` volume is bound to your Environment. Its contents are persisted
+between shutdowns and rebuilds. This ensures that personal configuration files
 like `~/.gitconfig` and `~/.zshrc`, as well as source code and project files,
 are not disrupted.
 
-Data outside `/home` is provided by the Environment [Image](../images/index.md)
+Data outside `/home/<username>` is provided by the Environment [Image](../images/index.md)
 and is reset between by Environment [rebuilds](./lifecycle.md).
 
 ## ~/personalize
@@ -27,7 +28,7 @@ this script every time the Environment is rebuilt.
 Consider the case where you want to use the `fish` shell as your default shell,
 but the Environment image doesn't include the package. The following
 `~/personalize` scripts would install `fish` and change the default shell
-*each time the environment is rebuilt*.
+_each time the environment is rebuilt_.
 
 ```bash
 #!/bin/bash
@@ -58,6 +59,10 @@ Environment preferences in the form of static files and setup scripts.
 We recommend configuring a dotfiles repo (which Coder then clones to your home
 directory) to ensure that your preferences are applied whenever your
 Environment turns on or you create a new Environment.
+
+At startup, Coder clones this repository into `~/dotfiles`. If an executable
+`~/dotfiles/install.sh` is present, it is executed. If not, all dot-prefixed files
+are symlinked into your home directory.
 
 Read more about dotfiles repos [here](http://dotfiles.github.io/).
 

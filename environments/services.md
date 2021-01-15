@@ -34,11 +34,11 @@ To add a new service, go to **Services** in the top navigation bar and click
 
 You'll be asked to provide the following basic information:
 
-* **Service Name**: The name for your service
-* **Service Description**: (Optional) A description of what your service is/what
+- **Service Name**: The name for your service
+- **Service Description**: (Optional) A description of what your service is/what
   it does:
-* **Image**: The image to be pulled
-* **Tag**: The specific image you want to be pulled
+- **Image**: The image to be pulled
+- **Tag**: The specific image you want to be pulled
 
 If your service requires a privileged container, check the **Require Privileged
 Environment** box.
@@ -69,9 +69,9 @@ variables as you'd like.
 If you would like your service to create a storage directory that persists
 through rebuilds, you can define the volume used here. Provide:
 
-* A **name** for the volume
-* The **path** to the volume
-* The **size** the volume should be
+- A **name** for the volume
+- The **path** to the volume
+- The **size** the volume should be
 
 Please note that the service will have access to the home volume of the primary
 container.
