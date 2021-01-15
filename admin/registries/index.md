@@ -15,7 +15,7 @@ images](../../images/index.md).
 
 To import an image, go to **Images** > **Import Image** in the upper-right. In
 the dialog that opens, you'll be prompted to pick a registry by default.
-However, to *add* a registry, click **Add a new registry**, which is the option
+However, to _add_ a registry, click **Add a new registry**, which is the option
 located immediately below the registry selector.
 
 You'll be asked to provide:

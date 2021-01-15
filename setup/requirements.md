@@ -1,6 +1,6 @@
 ---
 title: "Requirements"
-description: Learn about the prerequisite infrastructure requirements. 
+description: Learn about the prerequisite infrastructure requirements.
 ---
 
 Coder is deployed onto Kubernetes clusters, and we recommend the following
@@ -33,7 +33,7 @@ have these extensions enabled by running `kubectl get apiservices`):
 ## Browsers
 
 Use an up-to-date browser to ensure that you can use all of Coder's features.
-We currently require the following versions *or newer*:
+We currently require the following versions _or newer_:
 
 - Apple Safari 12.1
 - Google Chrome 66

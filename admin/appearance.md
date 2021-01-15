@@ -5,8 +5,8 @@ description: Learn how to augment the dashboard appearance.
 
 Coder offers you appearance customization options for the following:
 
-* System banner messages
-* The Terms of Service display
+- System banner messages
+- The Terms of Service display
 
 ## System Banner Messages
 

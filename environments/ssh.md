@@ -1,11 +1,11 @@
 ---
-title: "SSH Access to Coder"
+title: "SSH Access"
 description: Learn how to configure SSH access to your Environments.
 ---
 
 Before using, configuring, and accessing your environment via SSH:
 
-- Your site manager must *not* have [disabled
+- Your site manager must _not_ have [disabled
   access](../admin/environment-management/ssh-access.md) via SSH
 - You must have the [Coder CLI](../cli/index.md) installed on your local
   machine before proceeding.
@@ -40,3 +40,14 @@ You will need to rerun the `coder config-ssh` command if:
 
 Coder supports the use of the SFTP protocol. To connect to an
 environment using SFTP, run `sftp coder.<environment_name>`.
+
+## Using rsync
+
+You may use `rsync` to efficiently transfer files to and from Coder. Use the
+flag `-e "coder sh"` in your `rsync` transfer invokation.
+
+For example, this is how you might transfer your home directory to your environment:
+
+```bash
+rsync -e "coder sh" -a --progress ~/. my-env:~
+```
