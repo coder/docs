@@ -5,7 +5,7 @@ description: Learn how to configure SSH access to your Environments.
 
 Before using, configuring, and accessing your environment via SSH:
 
-- Your site manager must *not* have [disabled
+- Your site manager must _not_ have [disabled
   access](../admin/environment-management/ssh-access.md) via SSH
 - You must have the [Coder CLI](../cli/index.md) installed on your local
   machine before proceeding.
