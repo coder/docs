@@ -71,6 +71,7 @@
           "children": [{ "path": "./admin/registries/default-registry.md" }]
         },
         { "path": "./admin/git.md" },
+        { "path": "./admin/resources.md" },
         { "path": "./admin/appearance.md" },
         { "path": "./admin/audit.md" },
         { "path": "./admin/devurls.md" },
