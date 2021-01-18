@@ -15,11 +15,11 @@ compilations leads to wasted resources and sunk costs.
 
 ### With Expensive Laptops / Desktops
 
-Consider the case where a team’s compilation is parallelizable up to 16 CPU
+Consider the case where a project build compilation is parallelizable up to 16 CPU
 cores. To provide a more tolerable build time, each developer is given a 16
 CPU core laptop. During builds, the machine sees 100% utilization. But, notice
-how in a typical workday the machine is underutilized a vast majority
-of the time. Only during the few minutes of compilation are the resources
+that the machine is underutilized a vast majority of a typical workday.
+Only during the few minutes of compilation are the resources
 utilized.
 
 ![resources-nonshared.svg](../assets/resources-old.svg)
