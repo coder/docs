@@ -26,13 +26,13 @@ utilized.
 
 ### Shared Resources With Coder Workspaces on Your Cloud Infrastructure
 
-This behavior enables a model of Shared Resources to provide developers access
-to greater computing resources at similar or lower costs to the organization.
-Consider the original example. Instead, let’s place every developer into an
-isolated Coder Workspace on the same piece of hardware. Suppose this hardware
-is a 16 CPU core machine. Notice how each developer has access to the proper
-resources during peak load– providing a performant experience when needed,
-with less waste when not.
+This behavior enables a model of **Shared Resources** to provide developers access
+to greater computing resources at similar or lower costs to your organization.
+Consider the prior example. Instead, let’s place each developer into their own
+isolated Coder Workspace, all scheduled onto the same piece of hardware.
+Suppose this hardware is a 16 CPU core machine. Notice how each developer
+has access to the proper resources during peak load– providing a
+performant experience when needed, with less waste during periods of idling.
 
 <!-- Notice how each developer has access to greater
 resources during peak load– providing a superior experience when needed,
