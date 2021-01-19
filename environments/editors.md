@@ -52,10 +52,10 @@ launch the editor from the dashboard.
 > If you need a valid license to run your IDE locally, you'll also need one to
 > run it in Coder.
 
-### Install JetBrains IDEs
+### Install JetBrains' IDEs
 
-IDEs can also be manually installed. Once you've followed JetBrains steps
-on how to install the editor, you will have to create a symlink and add
+JetBrains' IDEs can also be manually installed. Once you've followed JetBrains
+steps on how to install the editor, you will have to create a symlink and add
 it to the _$PATH_.
 
 The symlink names supported by Coder are:
