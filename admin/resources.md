@@ -50,7 +50,7 @@ But, the nature of developer workflows makes resource contention far less
 common than in other server workloads, given that it only occurs when several
 users are simultaneously performing an infrequent compilation task.
 
-## Configuring Shared Resources in with Coder
+## Configuring Shared Resources in Coder
 
 There are 5 primary variables that determine how resource allocation and usage
 will effect developers and compute costs.
