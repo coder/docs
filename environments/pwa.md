@@ -73,3 +73,13 @@ Go to Settings > Apps and select **Install Coder**.
 To remove the Coder progressive web app, go to **Settings** >
 **Uninstall Coder**. You'll be prompted to remove Coder; confirm by clicking
 **Remove**. You can also check the box to clear Coder data (if desired).
+
+## Installing code-server as a Progressive Web App
+
+You can install the code-server app as a PWA. To do so:
+
+1. Log into Coder and select your environment.
+2. Under **Applications** click **code** to launch code-server.
+3. Follow your browser's instructions for installing the PWA.
+
+> The code-server app is installed on a per-environment basis.
