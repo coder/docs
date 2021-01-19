@@ -73,6 +73,7 @@
         { "path": "./admin/git.md" },
         { "path": "./admin/appearance.md" },
         { "path": "./admin/audit.md" },
+        { "path": "./admin/cluster-info.md" },
         { "path": "./admin/devurls.md" },
         { "path": "./admin/memory-overprovisioning.md" },
         { "path": "./admin/extensions.md" },
