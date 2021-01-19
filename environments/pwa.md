@@ -16,7 +16,7 @@ To use Coder as a PWA, you must be using Google Chrome or Microsoft Edge.
 
 1. Log into Coder and select your environment.
 2. Under **Applications**, click on an application in order to launch it as a
-   new window (or tab)
+   new window (or tab).
 3. Follow your browser's instructions for installing the application as a PWA.
 
 Please note that applications are currently installed on a per-environment basis.
