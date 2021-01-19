@@ -3,6 +3,8 @@ title: Compute Resources
 description: Learn the unique compute resource management capabilities in Coder.
 ---
 
+## Overview
+
 Developer computing workloads are unique in that they don’t require consistent
 access to CPU, instead they have **short periods of peak usage** during builds and
 compilations, followed by **long periods of relative idling**.
@@ -47,3 +49,16 @@ on a weighted basis relative to the resource request of the Coder Workspace.
 But, the nature of developer workflows makes resource contention far less
 common than in other server workloads, given that it only occurs when several
 users are simultaneously performing an infrequent compilation task.
+
+## Configuring Shared Resources in with Coder
+
+There are 5 primary variables that determine how resource allocation and usage
+will effect developers and compute costs.
+
+- Kubernetes Node type (virtual CPU count and memory size)
+- Coder Workspace default CPU and memory limits
+- Coder Organization CPU and memory provision-ratio
+- The magnitude and frequency of code compilation operations
+- Coder Organization Workspace inactivity shutdown threshold
+
+![cpu_provision_ratio.png](../assets/cpu_provision_ratio.png)
