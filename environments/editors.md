@@ -52,6 +52,25 @@ launch the editor from the dashboard.
 > If you need a valid license to run your IDE locally, you'll also need one to
 > run it in Coder.
 
+### Install JetBrains' IDEs
+
+You can manually install JetBrains' IDEs. After following JetBrains' steps for
+installing your IDE, create a symlink and add it to $PATH.
+
+The symlink names supported by Coder are:
+
+- `clion`
+- `datagrip`
+- `goland`
+- `intellij-idea-ultimate`
+- `intellij-idea-community`
+- `phpstorm`
+- `pycharm`
+- `pycharm-community`
+- `rider`
+- `rubymine`
+- `webstorm`
+
 ### System Requirements
 
 For the best possible experience it is recommended to run the editor in an
