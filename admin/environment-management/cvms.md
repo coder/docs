@@ -9,7 +9,7 @@ As a platform administrator, you have the option to enable
 deployment option. This option allows users to run system-level
 programs inside their Environment including Docker and systemd.
 
-Navigate to **Manage > Admin > General** to enable this option.
+Navigate to **Manage > Admin > Infrastructure** to enable this option.
 
 ## Infrastructure Requirements
 

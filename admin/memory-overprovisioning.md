@@ -12,7 +12,7 @@ environments that fit onto a single Kubernetes node.
 A site admin/manager must complete these steps:
 
 1. In the Coder Dashboard's top navigation bar, go to **Manage** > **Admin**.
-2. Under the **General** tab, check the box next to **Enable Memory
+2. Under the **Infrastructure** tab, check the box next to **Enable Memory
    Overprovisioning**.
 
 ![Enable memory overprovisioning](../assets/enable-memory-overprovisioning.png)

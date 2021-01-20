@@ -5,7 +5,7 @@ description: Learn how to manage Environments from an admin level.
 
 Administrative users can modify a variety of environment-related behaviors.
 
-- From the Coder UI's **Manage** > **Admin** > **General** tab, you can enable
+- From the Coder UI's **Manage** > **Admin** > **Infrastructure** tab, you can enable
   and configure the following features:
 
   - [GPU Acceleration](gpu-acceleration.md)
