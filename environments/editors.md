@@ -54,9 +54,8 @@ launch the editor from the dashboard.
 
 ### Install JetBrains' IDEs
 
-JetBrains' IDEs can also be manually installed. Once you've followed JetBrains
-steps on how to install the editor, you will have to create a symlink and add
-it to the _$PATH_.
+You can manually install JetBrains' IDEs. After following JetBrains' steps for
+installing your IDE, create a symlink and add it to $PATH.
 
 The symlink names supported by Coder are:
 
