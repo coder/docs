@@ -1,7 +1,6 @@
 ---
 title: "Progressive Web Apps"
-description: Learn how to install the editor PWAs
-for a browser editing experience closer to native IDEs.
+description: Learn how to install the editor PWAs for a browser editing experience closer to native IDEs.
 ---
 
 In addition to running Coder in a web browser, you can also run each application
