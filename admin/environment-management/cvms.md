@@ -1,6 +1,6 @@
 ---
 title: Docker in Environments
-description: Learn how to enable support for secure Docker inside Environments. 
+description: Learn how to enable support for secure Docker inside Environments.
 state: alpha
 ---
 
@@ -9,17 +9,17 @@ As a platform administrator, you have the option to enable
 deployment option. This option allows users to run system-level
 programs inside their Environment including Docker and systemd.
 
-Navigate to **Manage > Admin > General** to enable this option.
+Navigate to **Manage > Admin > Infrastructure** to enable this option.
 
 ## Infrastructure Requirements
 
 - The Kubernetes Nodes must have a minimum kernel version of `5.4`
-(released Nov 24th, 2019).
+  (released Nov 24th, 2019).
 - The Kubernetes Nodes must be running an Ubuntu OS.
 - Legacy versions of cluster-wide proxy services such as Istio are not
-supported.
+  supported.
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
-about why this is still secure [here](#security).
+  about why this is still secure [here](#security).
 
 ### Google Cloud Platform w/ GKE
 

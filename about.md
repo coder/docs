@@ -12,8 +12,8 @@ what language version and tooling are required to provide consistency across the
 organization and allow new members to onboard and contribute. Developers focus
 on their projects and the end product, not on setup.
 
-These pre-configured environments are the foundation of Coder's *Dev
-Environments as Code* paradigm, allowing a project's language and tooling
+These pre-configured environments are the foundation of Coder's _Dev
+Environments as Code_ paradigm, allowing a project's language and tooling
 dependencies to be source controlled along with the code itself.
 
 With Coder, engineers can continue using the development tools, CI/CD pipelines,
@@ -34,7 +34,7 @@ development through Coder.
 
 ## Why Coder
 
-Coder's *Dev Environments as Code* paradigm is new for software development. Its
+Coder's _Dev Environments as Code_ paradigm is new for software development. Its
 key benefits include:
 
 - **Automated Setup and Instant Onboarding**: Because your environments are

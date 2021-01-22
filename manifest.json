@@ -2,11 +2,7 @@
   "routes": [
     {
       "path": "./index.md",
-      "children": [
-        { "path": "about.md" },
-        { "path": "comparison.md" },
-        { "path": "feedback.md" }
-      ]
+      "children": [{ "path": "about.md" }, { "path": "comparison.md" }, { "path": "feedback.md" }]
     },
     {
       "path": "./environments/index.md",
@@ -75,19 +71,25 @@
           "children": [{ "path": "./admin/registries/default-registry.md" }]
         },
         { "path": "./admin/git.md" },
+        { "path": "./admin/resources.md" },
         { "path": "./admin/appearance.md" },
         { "path": "./admin/audit.md" },
+        { "path": "./admin/cluster-info.md" },
         { "path": "./admin/devurls.md" },
         { "path": "./admin/memory-overprovisioning.md" },
         { "path": "./admin/extensions.md" },
         { "path": "./admin/account-dormancy.md" },
         { "path": "./admin/metrics.md" },
-        { "path": "./admin/telemetry.md" }
+        { "path": "./admin/telemetry.md" },
+        { "path": "./admin/user-management.md" },
+        { "path": "./admin/api.md"}
       ]
     },
     {
       "path": "./changelog/index.md",
       "children": [
+        { "path": "./changelog/1.15.0.md" },
+        { "path": "./changelog/1.14.4.md" },
         { "path": "./changelog/1.14.3.md" },
         { "path": "./changelog/1.14.2.md" },
         { "path": "./changelog/1.14.1.md" },

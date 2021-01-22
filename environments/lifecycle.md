@@ -12,10 +12,10 @@ on cloud compute and justify more powerful dev machines :).
 Rebuilding an [Environment](index.md) allows you to update to the latest image,
 edit resource requests, or restart your environment after a shutdown.
 
-Only the `/home` directory is persisted between rebuilds. This allows the
-Image to populated system development dependencies without interfering with any
-source code or miscellaneous configuration unique to your individual development
-environment.
+Only the `/home/<username>` directory persists between rebuilds. Rebuilds
+do not affect configurations and source code within the `/home/<username>`
+subtree, even if the underlying [Image](../images/index.md) or its dependencies
+change.
 
 ## Auto-Off
 
@@ -30,18 +30,18 @@ Coder exposes a few hooks during the build process. Once an Environment
 is available and running on and underlying host, the following steps are taken
 
 1. `Injecting secrets into environment`  
-Coder injects authentication for the
-[Coder CLI](https://github.com/cdr/coder-cli), allowing
-the latter scripts to perform authenticated CLI commands.
-If your Coder instance is configured with a Git provider, your SSH key pair is
-injected during this step as well, allowing the latter scripts to perform
-authenticated `git` operations.
+   Coder injects authentication for the
+   [Coder CLI](https://github.com/cdr/coder-cli), allowing
+   the latter scripts to perform authenticated CLI commands.
+   If your Coder instance is configured with a Git provider, your SSH key pair is
+   injected during this step as well, allowing the latter scripts to perform
+   authenticated `git` operations.
 
 2. `Execution of /coder/configure`  
-Execution of this script allows [Images](../images/index.md) to perform startup
-operations consistent across all of its Environments. If an image needs to
-perform modifications to the `/home`, it should do so in this script.
+   Execution of this script allows [Images](../images/index.md) to perform startup
+   operations consistent across all of its Environments. If an image needs to
+   perform modifications to the `/home`, it should do so in this script.
 
 3. `Execution of ~/personalize`
-Execution of this script allows you to customize your personal development Environment
-on each rebuild. Read more on personalization [here](./personalization.md).
+   Execution of this script allows you to customize your personal development Environment
+   on each rebuild. Read more on personalization [here](./personalization.md).
