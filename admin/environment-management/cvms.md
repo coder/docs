@@ -39,7 +39,7 @@ gcloud beta container clusters create "coder-cluster" \
 
 - Node group `amiFamily >= "Ubuntu1804"`
 
-#### Example with `eksctl`
+#### Example with an `eksctl` config spec
 
 ```yaml
 apiVersion: eksctl.io/v1alpha5
