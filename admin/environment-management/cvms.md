@@ -21,7 +21,7 @@ supported.
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
 about why this is still secure [here](#security).
 
-### Google Cloud Platform (GKE)
+### Google Cloud Platform w/ GKE
 
 - GKE Master version `>= 1.17`
 - `node-version >= 1.17` and `image-type = "UBUNTU"`
@@ -35,7 +35,7 @@ gcloud beta container clusters create "coder-cluster" \
     ...
 ```
 
-### Amazon Web Services (EKS)
+### Amazon Web Services w/ EKS
 
 - Node group `amiFamily >= "Ubuntu1804"`
 
