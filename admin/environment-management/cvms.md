@@ -21,6 +21,38 @@ Navigate to **Manage > Admin > Infrastructure** to enable this option.
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
   about why this is still secure [here](#security).
 
+### Google Cloud Platform w/ GKE
+
+- GKE Master version `>= 1.17`
+- `node-version >= 1.17` and `image-type = "UBUNTU"`
+
+#### Example with `gcloud`
+
+```bash
+gcloud beta container clusters create "coder-cluster" \
+    --image-type "UBUNTU" \
+    --node-version "1.17.14-gke.1600" \
+    ...
+```
+
+### Amazon Web Services w/ EKS
+
+- Node group `amiFamily >= "Ubuntu1804"`
+
+#### Example with an `eksctl` config spec
+
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  version: "1.17"
+  ...
+nodeGroups:
+  - name: coder-node-group
+    amiFamily: Ubuntu1804
+    ...
+```
+
 ## Security
 
 The [Container-based Virtual Machine](../../environments/cvms.md) deployment
