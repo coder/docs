@@ -52,11 +52,15 @@ If your config file defines a `nodeGroup` where `amiFamily >= "Ubuntu1804"`,
 then update your `eksctl` config spec with the following to create your node
 pool:
 
-"`yaml apiVersion: eksctl.io/v1alpha5 kind: ClusterConfig metadata: version:
-"1.17"
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata: 
+  version: "1.17"
   ...
 nodeGroups:
-  - name: coder-node-group amiFamily: Ubuntu1804
+  - name: coder-node-group
+    amiFamily: Ubuntu1804
     ...
 ```
 
