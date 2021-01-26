@@ -22,13 +22,13 @@ such as Istio.
 
 ## Enabling CVMs in Coder
 
-Go to **Manage > Admin > Infrastructure** and toggle the **Enable Container-Based
-Virtual Machines** option to **Enable**.
+1. Go to **Manage > Admin > Infrastructure**.
+2. Toggle the **Enable Container-Based Virtual Machines** option to **Enable**.
 
 ## Setting Up Your Cluster
 
 The following sections show how you can set up your K8 clusters hosted by Google
-and Amazon to allow CVMs.
+and Amazon to support CVMs.
 
 ### Google Cloud Platform w/ GKE
 
@@ -89,9 +89,7 @@ and Docker for use in CVMs.
 
 ### systemd
 
-When you start up an environment, Coder checks for the presence of `/sbin/init`
-in your image. If it exists, then Coder uses it as the container entrypoint with
-a `PID` of 1. If your image's OS distribution doesn't link the `systemd` init to
+If your image's OS distribution doesn't link the `systemd` init to
 `/sbin/init`, you'll need to do this manually in your Dockerfile.
 
 The following snippet shows how you can specify `systemd` as the init in your
@@ -106,6 +104,10 @@ RUN apt-get update && apt-get install -y \
 # use systemd as the init
 RUN ln -s /lib/systemd/systemd /sbin/init
 ```
+
+When you start up an environment, Coder checks for the presence of `/sbin/init`
+in your image. If it exists, then Coder uses it as the container entrypoint with
+a `PID` of 1. 
 
 ### Docker
 
