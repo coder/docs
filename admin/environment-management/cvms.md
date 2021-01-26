@@ -52,15 +52,11 @@ If your config file defines a `nodeGroup` where `amiFamily >= "Ubuntu1804"`,
 then update your `eksctl` config spec with the following to create your node
 pool:
 
-"`yaml
-apiVersion: eksctl.io/v1alpha5
-kind: ClusterConfig
-metadata:
-  version: "1.17"
+"`yaml apiVersion: eksctl.io/v1alpha5 kind: ClusterConfig metadata: version:
+"1.17"
   ...
 nodeGroups:
-  - name: coder-node-group
-    amiFamily: Ubuntu1804
+  - name: coder-node-group amiFamily: Ubuntu1804
     ...
 ```
 
@@ -96,8 +92,7 @@ The following snippet shows how you can specify `systemd` as the init in your
 image:
 
 ```Dockerfile
-FROM ubuntu:20.04
-RUN apt-get update && apt-get install -y \
+FROM ubuntu:20.04 RUN apt-get update && apt-get install -y \
     build-essential \
     systemd
 
@@ -119,8 +114,7 @@ The following snippet shows how your image can register the `docker` services in
 its Dockerfile.
 
 ```Dockerfile
-FROM ubuntu:20.04
-RUN apt-get update && apt-get install -y \
+FROM ubuntu:20.04 RUN apt-get update && apt-get install -y \
     build-essential \
     git \
     bash \
