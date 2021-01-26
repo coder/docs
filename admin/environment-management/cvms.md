@@ -106,7 +106,7 @@ RUN ln -s /lib/systemd/systemd /sbin/init
 
 When you start up an environment, Coder checks for the presence of `/sbin/init`
 in your image. If it exists, then Coder uses it as the container entrypoint with
-a `PID` of 1. 
+a `PID` of 1.
 
 ### Docker
 
