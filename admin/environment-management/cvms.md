@@ -4,25 +4,26 @@ description: Learn how to enable support for secure Docker inside Environments.
 state: alpha
 ---
 
-If you're a site manager, you can enable [container-based virtual machines
-(CVMs)](../../environments/cvms.md) as an option whenever someone deploys an
-environment. CVMs allow users to run system-level programs inside their
-environments, including Docker and systemd.
+If you're a site admin or a site manager, you can enable [container-based
+virtual machines (CVMs)](../../environments/cvms.md) as an environment
+deployment option. CVMs allow users to run system-level programs, such as Docker
+and systemd, in their environments.
 
 ## Infrastructure Requirements
 
-- The Kubernetes Nodes must have a minimum kernel version of `5.4` (released
+- The Kubernetes Nodes must have a minimum kernel version of **5.4** (released
   Nov 24th, 2019).
-- The Kubernetes Nodes must be running an Ubuntu OS.
-- Coder doesn't support legacy versions of cluster-wide proxy services (such as
-  Istio).
+- The Kubernetes Nodes must be running Ubuntu.
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
   about why this is still secure [here](#security).
 
-## Enabling CVMs
+**Note:** Coder doesn't support legacy versions of cluster-wide proxy services
+such as Istio.
 
-Go to **Manage > Admin > Infrastructure**. Toggle the **Enable Container-Based
-Virtual Machines** option to enable.
+## Enabling CVMs in Coder
+
+Go to **Manage > Admin > Infrastructure** and toggle the **Enable Container-Based
+Virtual Machines** option to **Enable**.
 
 ## Setting Up Your Cluster
 
@@ -31,12 +32,12 @@ and Amazon to allow CVMs.
 
 ### Google Cloud Platform w/ GKE
 
-If your cluster meets the following requirements:
+If your cluster is configured as follows
 
 - GKE Master version `>= 1.17`
 - `node-version >= 1.17` and `image-type = "UBUNTU"`
 
-Then run the following to create your node pool:
+Then run this snippet to create your node pool:
 
 ```bash
 gcloud beta container clusters create "coder-cluster" \
@@ -48,9 +49,10 @@ gcloud beta container clusters create "coder-cluster" \
 ### Amazon Web Services w/ EKS
 
 If your config file defines a `nodeGroup` where `amiFamily >= "Ubuntu1804"`,
-then update your `eksctl` config spec with:
+then update your `eksctl` config spec with the following to create your node
+pool:
 
-```yaml
+"`yaml
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
@@ -73,13 +75,17 @@ Coder first launches a supervising container with additional privileges. This
 container is standard and included with the Coder release package. During the
 environment build process, the supervising container launches an inner container
 using the [sysbox container runtime](https://github.com/nestybox/sysbox). This
-inner container is the user’s [Environment](../../environments/index.md). The
-user cannot gain access to the supervising container at any point. The isolation
-between the user’s Environment container and its outer, supervising container is
-what provides [strong
+inner container is the user’s [environment](../../environments/index.md).
+
+The user cannot gain access to the supervising container at any point. The
+isolation between the user's environment container and its outer, supervising
+container is what provides [strong
 isolation](https://github.com/nestybox/sysbox/blob/master/docs/user-guide/security.md).
 
 ## Image Configuration
+
+The following sections show how you can configure your image to include systemd
+and Docker for use in CVMs.
 
 ### systemd
 
@@ -103,7 +109,7 @@ RUN ln -s /lib/systemd/systemd /sbin/init
 
 ### Docker
 
-To add Docker, be sure to install the `docker` packages into your image. For a
+To add Docker, install the `docker` packages into your image. For a
 seamless experience, use [systemd](#systemd) and register the `docker` service
 so `dockerd` runs automatically during initialization.
 
