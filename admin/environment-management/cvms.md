@@ -118,7 +118,8 @@ The following snippet shows how your image can register the `docker` services in
 its Dockerfile.
 
 ```Dockerfile
-FROM ubuntu:20.04 RUN apt-get update && apt-get install -y \
+FROM ubuntu:20.04
+RUN apt-get update && apt-get install -y \
     build-essential \
     git \
     bash \
