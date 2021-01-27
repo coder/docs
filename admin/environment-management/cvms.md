@@ -96,7 +96,8 @@ The following snippet shows how you can specify `systemd` as the init in your
 image:
 
 ```Dockerfile
-FROM ubuntu:20.04 RUN apt-get update && apt-get install -y \
+FROM ubuntu:20.04
+RUN apt-get update && apt-get install -y \
     build-essential \
     systemd
 
