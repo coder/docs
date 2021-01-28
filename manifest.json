@@ -43,7 +43,8 @@
         { "path": "./setup/requirements.md" },
         { "path": "./setup/installation.md" },
         { "path": "./setup/configuration.md" },
-        { "path": "./setup/licensing.md" }
+        { "path": "./setup/licensing.md" },
+        { "path": "./setup/updating.md" }
       ]
     },
     {
