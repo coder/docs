@@ -1,32 +1,32 @@
 ---
-title: "Updating"
+title: "Updating Coder"
 description: Learn how to update your Coder deployment.
 ---
 
 This guide will show you how to update your Coder deployment.
 
-## Dependencies
+## Prerequisites
 
-Install the following dependencies:
+If you haven't already, install [helm](https://helm.sh/docs/intro/install/).
 
-- [helm](https://helm.sh/docs/intro/install/)
+Before beginning the update process, please make sure that you've added the
+Coder helm repo to your cluster. You can verify that the Coder repo has been
+added to helm using `helm repo list`:
 
-Before beginning, please ensure that you've set up the Coder helm repo and that
-your Kubernetes config is pointing to your Kubernetes cluster that Coder is
-deployed into. You can verify that the Coder repo has been added to helm by
-running helm repo list:
+```bash
+$ helm repo list
+NAME URL
+coder https://helm.coder.com
+```
 
-    ```bash
-    $ helm repo list
-    NAME URL
-    coder https://helm.coder.com
-    ```
+If you don't have the Coder repo, you can add it:
 
-If you don't have the Coder repo added, you can add it with the following:
+```bash
+helm repo add coder https://helm.coder.com
+```
 
-    ```bash
-    helm repo add coder https://helm.coder.com
-    ```
+Please also ensure that your Kubernetes config is pointing to the cluster on
+which you've deployed Coder.
 
 ## Update Coder
 
