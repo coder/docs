@@ -29,8 +29,7 @@ majority of the time.
 However, sharing resources can allow you to provide your developers with access
 to the computing resources while minimizing underutilization.
 
-Coder places each developer into an isolated environment, and each environment
-is scheduled onto the same piece of hardware (in this example, the hardware is a
+Coder places each developer into an isolated environment and schedules each developer's environment onto the same piece of hardware (in this example, the hardware is a
 machine with 16 CPU cores). Each developer has access to the resources they need
 during peak load (e.g., compilation, build); this offers them a performant
 experience when required. However, the shared resources minimize resource

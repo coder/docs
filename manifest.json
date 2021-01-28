@@ -2,7 +2,12 @@
   "routes": [
     {
       "path": "./index.md",
-      "children": [{ "path": "about.md" }, { "path": "comparison.md" }, { "path": "feedback.md" }]
+      "children": [
+        { "path": "about.md" },
+        { "path": "comparison.md" },
+        {"path": "resources.md"},
+        { "path": "feedback.md" }
+      ]
     },
     {
       "path": "./environments/index.md",
@@ -71,7 +76,6 @@
           "children": [{ "path": "./admin/registries/default-registry.md" }]
         },
         { "path": "./admin/git.md" },
-        { "path": "./admin/resources.md" },
         { "path": "./admin/appearance.md" },
         { "path": "./admin/audit.md" },
         { "path": "./admin/cluster-info.md" },
