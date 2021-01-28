@@ -7,10 +7,13 @@ After installation, you'll set up and configure Coder using its web UI.
 
 ## Before You Start
 
+You should have completed the [installation](installation.md) process and
+successfully logged in to Coder.
+
 Make sure you have the following information on hand:
 
-- The **admin user credentials** that were presented to you at the end of the
-  [installation](installation.md) process
+- The **admin user credentials** for your Coder deployment (necessary if you're
+  not already logged in).
 
 - Your **Coder license**; you must provide your license key during setup and
   config. Your license should have been sent to you via email; if not, please
@@ -25,28 +28,15 @@ Coder provides you with your licensing information, which looks like:
 ```
 
 Copy this information into the text editor of your choice, and save it as a .txt
-or a .json file. You will be asked to upload this file at two points during the
+or a .json file. You'll need to upload this file at two points during the
 setup and configuration processes.
 
-## Set Up Your Coder Deployment
+## Providing Your License
 
-1. Get the IP address you need to access the Web UI. To do so, run the following
-   in the terminal to list the Kubernetes services running:
+Immediately after logging into Coder for the first time, you'll be prompted to
+upload your license (you must provide a JSON file).
 
-   ```bash
-   kubectl --namespace coder get services
-   ```
-
-   The row for the **ingress-nginx** service includes an **EXTERNAL-IP** value;
-   this is the IP address you need.
-
-2. In your browser, navigate to the external IP of ingress-nginx.
-
-3. Use your admin credentials to log in to the Coder platform. If this is the
-   first time that you've logged in, you'll be prompted to create a new password
-   for the site admin user.
-
-4. Upload your license (you must provide a JSON file).
+Once done, you can proceed with the Coder configuration process.
 
 ## Configure Your Coder Deployment
 
@@ -55,7 +45,7 @@ dashboard. You can specify the authentication method used for logins, provide
 your license information, and more.
 
 After you complete this process, you'll be redirected to the main Coder
-deployment dashboard, where you can create new users, images, and environments.
+dashboard, where you can create new users, images, and environments.
 
 > After completing the configuration process, we recommend creating a **site
 > manager** user that can be used to create additional users and resources. **We
