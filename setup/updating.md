@@ -38,7 +38,7 @@ Updating Coder is a two-step process:
     helm repo update
     ```
 
-2. Upgrade to the specified version (ex: 1.15.2):
+2. Upgrade to the desired version (i.e., `1.15.2`):
 
     ```bash
     helm upgrade --namespace coder --force --install --atomic --wait \
