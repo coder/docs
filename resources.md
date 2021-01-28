@@ -1,12 +1,11 @@
 ---
-title: Compute Resources 
+title: Compute Resources
 description: Learn the unique compute resource management capabilities in Coder.
 ---
 
 The computing workloads of developers are unique in that they don't require
 consistent access to CPUs; instead, developers typically have short periods of
-peak usage during builds and compilation followed by long periods of
-low usage.
+peak usage during builds and compilation followed by long periods of low usage.
 
 Build and compilation performance directly impacts the development experience of
 a project: faster builds mean faster iteration cycles, leading to greater
@@ -29,11 +28,12 @@ majority of the time.
 However, sharing resources can allow you to provide your developers with access
 to the computing resources while minimizing underutilization.
 
-Coder places each developer into an isolated environment and schedules each developer's environment onto the same piece of hardware (in this example, the hardware is a
-machine with 16 CPU cores). Each developer has access to the resources they need
-during peak load (e.g., compilation, build); this offers them a performant
-experience when required. However, the shared resources minimize resource
-underutilization.
+Coder places each developer into an isolated environment and schedules each
+developer's environment onto the same piece of hardware (in this example, the
+hardware is a machine with 16 CPU cores). Each developer has access to the
+resources they need during peak load (e.g., compilation, build); this offers
+them a performant experience when required. However, the shared resources
+minimize resource underutilization.
 
 ![resources-shared.svg](../assets/resources-new.svg)
 
@@ -46,13 +46,13 @@ share CPU cycles on a weighted basis relative to the resource request of the
 Coder environment.
 
 However, the nature of developer workflows makes resource contention fairly
-uncommon since this occurs when several users are performing
-resource-intensive tasks, such as compilation, simultaneously.
+uncommon since this occurs when several users are performing resource-intensive
+tasks, such as compilation, simultaneously.
 
 ## Shared Resource Configuration in Coder
 
-Five variables determine how resource allocation and usage affect
-developers and compute costs:
+Five variables determine how resource allocation and usage affect developers and
+compute costs:
 
 - The Kubernetes Node type (virtual CPU count and memory size)
 - The Coder environment's default CPU and memory limits
