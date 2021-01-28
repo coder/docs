@@ -1,5 +1,5 @@
 ---
-title: "Updating Coder"
+title: "Updating"
 description: Learn how to update your Coder deployment.
 ---
 
