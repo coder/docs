@@ -45,6 +45,7 @@
       "children": [
         { "path": "./setup/architecture.md" },
         { "path": "./setup/requirements.md" },
+        { "path": "./setup/local-preview.md" },
         { "path": "./setup/installation.md" },
         { "path": "./setup/configuration.md" },
         { "path": "./setup/licensing.md" },
