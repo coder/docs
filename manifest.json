@@ -92,6 +92,7 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        { "path": "./changelog/1.15.2.md" },
         { "path": "./changelog/1.15.1.md" },
         { "path": "./changelog/1.15.0.md" },
         { "path": "./changelog/1.14.4.md" },
