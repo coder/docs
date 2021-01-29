@@ -16,7 +16,8 @@
         { "path": "./environments/devurls.md" },
         { "path": "./environments/pwa.md" },
         { "path": "./environments/environment-params.md" },
-        { "path": "./environments/services.md" }
+        { "path": "./environments/services.md" },
+        { "path": "./environments/mobile-development.md" }
       ]
     },
     {
