@@ -1,9 +1,9 @@
 ---
 title: "Editors and IDEs"
-description: Learn how to connect your favorite Editors and IDEs to your remote Environment.
+description: Learn how to connect your favorite Editors and IDEs to your remote environment.
 ---
 
-There are four primary ways you can connect an IDE to your Coder Environment:
+There are four primary ways you can connect an IDE to your Coder environment:
 
 1. [VS Code Remote SSH](#vs-code-remote-ssh) with local VS Code
 1. [VS Code in the browser](#vs-code-in-the-browser) with code-server
@@ -16,14 +16,14 @@ There are four primary ways you can connect an IDE to your Coder Environment:
 ## VS Code Remote SSH
 
 Once you've [set up SSH access to Coder](./ssh.md), you can work on projects
-from your local VS Code, connected to your Coder Environment for compute,
+from your local VS Code, connected to your Coder environment for compute,
 etc.
 
 1. Open VS Code locally.
 2. Make sure that you've installed [Remote -
    SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
    extension
-3. In VS Code's left-hand nav bar, click **Remote Explorer** and right click on
+3. In VS Code's left-hand nav bar, click **Remote Explorer** and right-click on
    an environment to connect
 
 ![VS Code Remote Explorer](../assets/vscode-remote-ssh-panel.png)
@@ -42,7 +42,7 @@ preview modal where you can enable JetBrains support.
 ![Enable JetBrains Support](../assets/enable-jetbrains-support.png)
 
 Coder launches remote IDEs in their own windows; be sure to set your
-browser to allow pop-up windows so that you can use your IDE.
+browser to allow popup windows so that you can use your IDE.
 
 With support enabled and the editor installed with the Image, you'll be able to
 launch the editor from the dashboard.
@@ -55,7 +55,7 @@ launch the editor from the dashboard.
 ### Install JetBrains' IDEs
 
 You can manually install JetBrains' IDEs. After following JetBrains' steps for
-installing your IDE, create a symlink and add it to $PATH.
+installing your IDE, create a symlink, and add it to $PATH.
 
 The symlink names supported by Coder are:
 
@@ -73,8 +73,8 @@ The symlink names supported by Coder are:
 
 ### System Requirements
 
-For the best possible experience it is recommended to run the editor in an
-environment with at minimum the following resources:
+For the best possible experience, we recommend running the editor in an
+environment with the following resources at a minimum:
 
 - 8 GB RAM
 - 4 CPU cores

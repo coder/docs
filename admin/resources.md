@@ -3,60 +3,61 @@ title: Compute Resources
 description: Learn the unique compute resource management capabilities in Coder.
 ---
 
-Developer computing workloads are unique in that they don’t require consistent
-access to CPU, instead they have **short periods of peak usage** during builds and
-compilations, followed by **long periods of relative idling**.
+The computing workloads of developers are unique in that they don't require
+consistent access to CPUs; instead, developers typically have short periods of
+peak usage during builds and compilation followed by long periods of low usage.
 
-Build and compilation performance directly impacts the development
-experience of a project– faster builds mean faster iteration cycles,
-leading to greater development velocity. But, traditional approaches to
-providing developers with more hardware for computationally intensive
-compilations leads to wasted resources and sunk costs.  
+Build and compilation performance directly impacts the development experience of
+a project: faster builds mean faster iteration cycles, leading to greater
+development velocity. However, traditional approaches to providing developers
+with more hardware for computationally intensive compilations can lead to wasted
+resources.
 
-## With Expensive Laptops / Desktops
+## Individual vs. Shared Resources
 
-Consider the case where a project's compilation is parallelizable up to 16 CPU
-cores. To provide a more tolerable build time, each developer is given a 16
-CPU core laptop. During builds, the machine sees 100% utilization. But, notice
-that the machine is underutilized a vast majority of a typical workday.
-Only during the few minutes of compilation are the resources
-utilized.
+Consider a project whose compilation is parallelizable up to 16 CPU cores.
+
+Because each developer would need hardware capable of supporting compilation,
+you could give everyone laptops with 16 CPU cores. During compilation and build,
+each machine would see 100% utilization of its resources. However, these
+processes are relatively quick, so the machine is underutilized the vast
+majority of the time.
 
 ![resources-nonshared.svg](../assets/resources-old.svg)
 
-## Shared Resources with Coder Environments
+However, sharing resources can allow you to provide your developers with access
+to the computing resources while minimizing underutilization.
 
-This behavior enables a model of **Shared Resources** to provide developers access
-to greater computing resources at similar or lower costs to your organization.
-Consider the prior example. Instead, let’s place each developer into their own
-isolated Coder Environment, all scheduled onto the same piece of hardware.
-Suppose this hardware is a 16 CPU core machine. Notice how each developer
-has access to the proper resources during peak load– providing a
-performant experience when needed, with less waste during periods of idling.
-
-<!-- Notice how each developer has access to greater
-resources during peak load– providing a superior experience when needed,
-with less waste when not. -->
+Coder places each developer into an isolated environment and schedules each
+developer's environment onto the same piece of hardware (in this example, the
+hardware is a machine with 16 CPU cores). Each developer has access to the
+resources they need during peak load (e.g., compilation, build); this offers
+them a performant experience when required. However, the shared resources
+minimize resource underutilization.
 
 ![resources-shared.svg](../assets/resources-new.svg)
 
-### What happens during resource contention?
+## Resource Contention
 
-If resources on the underlying node become contented, CPU cycles are shared
-on a weighted basis relative to the resource request of the Coder Environment.
-But, the nature of developer workflows makes resource contention far less
-common than in other server workloads, given that it only occurs when several
-users are simultaneously performing an infrequent compilation task.
+One possible issue with shared resources is resource contention.
 
-### Configuring Shared Resources in Coder
+If the resources on the underlying node become contented, the developers will
+share CPU cycles on a weighted basis relative to the resource request of the
+Coder environment.
 
-There are 5 primary variables that determine how resource allocation and usage
-will effect developers and compute costs.
+However, the nature of developer workflows makes resource contention fairly
+uncommon since this occurs when several users are performing resource-intensive
+tasks, such as compilation, simultaneously.
 
-- Kubernetes Node type (virtual CPU count and memory size)
-- Coder Environment default CPU and memory limits
-- Coder Organization CPU and memory provision-ratio
+## Shared Resource Configuration in Coder
+
+Five variables determine how resource allocation and usage affect developers and
+compute costs:
+
+- The Kubernetes Node type (virtual CPU count and memory size)
+- The Coder environment's default CPU and memory limits
+- The Coder organization's CPU and memory provision ratios
+- The Coder organization's environment inactivity shutdown threshold
 - The magnitude and frequency of code compilation operations
-- Coder Organization Environment inactivity shutdown threshold
 
 ![cpu_provision_ratio.png](../assets/cpu_provision_ratio.png)
