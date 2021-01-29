@@ -8,6 +8,8 @@ With Coder, you can save time compiling while getting a native emulator experien
 
 ## Android
 
+Use the Android emulator on your local machine to build and debug remote apps.
+
 1. On your local machine, install [Android Studio](https://developer.android.com/studio).
 
    ```sh
