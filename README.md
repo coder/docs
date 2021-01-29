@@ -4,7 +4,7 @@ This repository contains the documentation source files for [coder.com/docs](htt
 
 Is something confusing, unclear, or just want to contribute something new? [Open an issue or pull request](https://github.com/cdr/docs/issues/new)! 
 
-While you can't currently build the docs site locally, you'll be able to preview your changes in the context of the site through a deploy preview.
+Contributions can be previewed in the context of the site using pull request deploy previews. :rocket:
 
 Our documentation is published once a day. Expect any merged contributions to be live within 24 hours.
 
