@@ -25,7 +25,7 @@ in your cluster, you'll need to modify your:
 Set `devurls.host` to a wildcard domain pointing to your ingress controller:
 
 ```shell
-helm install coder --set devurls.host="*.my-custom-domain.io"
+helm upgrade coder coder/coder --set devurls.host="*.my-custom-domain.io"
 ```
 
 If you're using the default ingress controller, specifying a value for
