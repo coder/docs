@@ -5,12 +5,18 @@ description: "Released on 02/20/2021"
 
 ### Breaking Changes ❗
 
-There are no breaking changes in next.
+- The deprecated `Services` feature is now **removed**. All resources created
+  for Services are preserved for data recovery purposes (volumes,
+  database tables, etc.), but are not accessible through the Coder platform.
+  Please reference
+  [Docker in Environments](https://coder.com/docs/environments/cvms) for
+  a guide on the new workflow for running containers with your Environment.
 
 ### Features ✨
 
 - Public Rest API <apidocs.coder.com>
 - Resource Pools
+- Support for remote port forwarding over SSH
 - Environments can now be configured to automatically start at a specified time
   each day
 - web: PWA icons for jetbrains and code-server have been redesigned
@@ -20,12 +26,8 @@ There are no breaking changes in next.
 
 ### Bug Fixes 🐛
 
-- jetbrains: Fixed IDE closing in rare circumstances when stdout/stderr were
-  overloaded
 - infra: Extraneous environment variables were removed from non-CVM based
   environments
-- web: When creating/editing an environment, the "Services" section will no
-  longer appear if there are no available services
 
 ### Security Updates 🔐
 
