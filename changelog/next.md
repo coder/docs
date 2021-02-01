@@ -11,6 +11,12 @@ description: "Released on 02/20/2021"
   Please reference
   [Docker in Environments](https://coder.com/docs/environments/cvms) for
   a guide on the new workflow for running containers with your Environment.
+- The built-in Internal Extension Marketplace is now **removed**. All resources
+  created for this feature are preserved for data recover purposes, but are not
+  accessible through the Coder platform. For air-gapped deployments, the `Custom`
+  Extension Marketplace configuration enables the use of
+  [Open VSX](https://github.com/eclipse/openvsx) as
+  an alternative. For more details, please view our [migration guide](TODO).
 
 ### Features ✨
 
