@@ -19,11 +19,11 @@ jobs:
           fetch-depth: 0
       - name: Checkout Docs
         run: git fetch && git checkout ${GITHUB_SHA}
-        working-directory: ./product/coder.com/docs
+        working-directory: ./product/coder.com/site/docs
       - name: Setup Node
         uses: actions/setup-node@v1
       - name: Deploy
-        run: ./product/coder.com/docs/.github/ci/deploy.sh
+        run: ./product/coder.com/site/docs/.github/ci/deploy.sh
         env:
           GITHUB_TOKEN: ${{ github.token }}
           GITHUB_REF: ${{ github.ref }}
