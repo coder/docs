@@ -79,7 +79,7 @@
         { "path": "./admin/appearance.md" },
         { "path": "./admin/audit.md" },
         { "path": "./admin/cluster-info.md" },
-        { "path": "./admin/compute-resources.md" },
+        { "path": "./admin/resources.md" },
         { "path": "./admin/devurls.md" },
         { "path": "./admin/extensions.md" },
         { "path": "./admin/git.md" },
