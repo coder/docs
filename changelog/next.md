@@ -17,6 +17,12 @@ description: "Released on 02/20/2021"
   Extension Marketplace configuration enables the use of
   [Open VSX](https://github.com/eclipse/openvsx) as
   an alternative. For more details, please view our [migration guide](TODO).
+- The administrator configuration option "Privileged Enivonrments" is now
+  removed. All non-CVM enviornments are launched with `privileged: false`.
+- The [Container-based Virutal Machine](https://coder.com/docs/admin/environment-management/cvms)
+  environment option is now considered generally available. The
+  administraotr-level configuration is still required, but the `alpha`
+  warning has been removed.
 
 ### Features ✨
 
