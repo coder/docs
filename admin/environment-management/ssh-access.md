@@ -33,7 +33,7 @@ RUN systemctl enable ssh
 ```
 
 At startup, Coder injects the user's SSH key into `~/authorized_keys` to allow
-proper authentication behavior from OpenSSH. For the most consitent experience,
+proper authentication behavior from OpenSSH. For the most consistent experience,
 add the following to the `/etc/ssh/sshd_config` file in your Dockerfile.
 
 ```text
