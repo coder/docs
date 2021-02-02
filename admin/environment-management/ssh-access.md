@@ -14,7 +14,9 @@ is limited, and does not properly implement more advaned usages of SSH like
 X11-forwarding and `sshd_config` specifications.
 
 If SSH is the primary mode of access for your users, consider running a full
-OpenSSH server with `systemd` inside your image instead.
+OpenSSH server with `systemd` inside your image instead. This requires
+environments created with the
+[CVM option](https://coder.com/docs/environments/cvms) enabled.
 
 ## OpenSSH
 
