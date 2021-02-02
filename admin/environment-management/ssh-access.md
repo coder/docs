@@ -7,7 +7,7 @@ By default, Coder enables SSH access for all users. Each user has a single
 private key which provides access to all of their enviornments.
 
 As part of the standard Coder envionrment asset bundle, a lightweight SSH
-server is mounted into he enviornment agent and used as a backup when no server
+server is mounted into the enviornment agent and used as a backup when no server
 is found on port 22. This allows slimmer images to
 remain accessible by SSH without any image dependencie. The built-in server
 is limited, and does not properly implement more advaned usages of SSH like
