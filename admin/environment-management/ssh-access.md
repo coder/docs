@@ -9,7 +9,7 @@ private key which provides access to all of their enviornments.
 As part of the standard Coder envionrment asset bundle, a lightweight SSH
 server is mounted into the enviornment agent and used as a backup when no server
 is found on port 22. This allows slimmer images to
-remain accessible by SSH without any image dependencie. The built-in server
+remain accessible by SSH without any image dependencies. The built-in server
 is limited, and does not properly implement more advaned usages of SSH like
 X11-forwarding and `sshd_config` specifications.
 
@@ -25,7 +25,7 @@ detected on port 22, incoming SSH traffic is forwarded to this server.
 FROM ubuntu:20.04
 RUN apt-get update && apt-get install -y \
     build-essential \
-    systemd
+    systemd \
     openssh-server
 
 # Start OpenSSH with systemd
