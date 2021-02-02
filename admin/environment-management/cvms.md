@@ -1,7 +1,6 @@
 ---
 title: Docker in Environments
 description: Learn how to enable support for secure Docker inside Environments.
-state: alpha
 ---
 
 If you're a site admin or a site manager, you can enable [container-based
