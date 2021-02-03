@@ -16,8 +16,8 @@ to remain accessible via SSH without the need for additional image dependencies.
 ## Using OpenSSH
 
 The built-in SSH server is limited and does not correctly implement
-advanced functionality like X11 forwarding or `sshd_config` specifications. As
-such, f SSH is the primary mode of access to Coder for your users, consider
+advanced functionality like X11 forwarding or `sshd_config` specifications.
+If SSH is the primary mode of access to Coder for your users, consider
 running a full OpenSSH server with `systemd` inside your image instead.
 
 To do so:
