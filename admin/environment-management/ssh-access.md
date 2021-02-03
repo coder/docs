@@ -41,7 +41,7 @@ RUN systemctl enable ssh
 > traffic to this server.
 
 At startup, Coder injects the user's SSH key into `~/authorized_keys` to
-faciliate authentication with OpenSSH. For the best experience, add the
+facilitate authentication with OpenSSH. For the best experience, add the
 following to your `/etc/ssh/sshd_config` file as well:
 
 ```text
