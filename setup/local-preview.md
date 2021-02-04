@@ -1,37 +1,37 @@
 ---
 title: "Local Preview"
-description: Setup a Coder deployment locally for testing.
+description: Set up a Coder deployment locally for testing.
 ---
 
-Coder is normally deployed onto Kubernetes clusters, but that can be overkill
-for simply previewing the platform. To solve this, Coder provides a script to
-test out the platform locally using [Docker](https://www.docker.com/) and
-[kind](https://kind.sigs.k8s.io/)!
+Coder is typically deployed onto Kubernetes cluster, but if you would like to
+set up a lightweight preview deployment, you can do so locally using using
+[Docker](https://www.docker.com/) and [kind](https://kind.sigs.k8s.io/).
 
-Since it runs everything inside Docker, teardown is super simple and nothing is
-left on your machine.
+> Coder currently supports local preview only on workstations running macOS or
+> Linux.
 
-Local preview currently only supports Mac and Linux.
+## Prerequisites
 
-## Installing
+Before proceeding, please make sure that you have the following installed:
 
-In a Mac or Linux environment, ensure that the following tools are installed:
+1. [Docker](https://hub.docker.com/search?q=docker&type=edition&offering=community)
+2. [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
+3. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
+4. [helm](https://helm.sh/docs/intro/install)
 
-1. `kubectl`: [https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
-1. `helm`: [https://helm.sh/docs/intro/install](https://helm.sh/docs/intro/install)
-1. `kind`: [https://kind.sigs.k8s.io/docs/user/quick-start/#installation](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
+## Installing Coder
 
-Then, use the following script to install Coder:
+To install Coder, run:
 
 ```bash
 curl -fsSL https://coder.com/try.sh | PORT="8080" sh
 ```
 
-> Note: you can edit the `PORT` variable to control which local port the
-> dashboard will be available on.
+> Note: you can edit the value of `PORT` to control where the Coder
+> dashboard will be available.
 
-After the install completes, it will print out the URL and credentials to
-login.
+When the installation process completes, you'll see the URL and login
+credentials you need to access Coder:
 
 ```txt
 You can now access Coder at
@@ -44,16 +44,19 @@ You can tear down the deployment with
 
 Platform credentials
 User:     admin
-Password: yfuyjsuxtyu2
+Password: yfu...yu2
 ```
 
-Visit the provided URL and login using the credentials. After this you'll be
-prompted to set a permanent password.
+Visit the URL, and log in using the provided credentials. Immediately after
+logging in, Coder prompts you to set a permanent password.
 
-## Tearing Down
+## Removing Coder
 
 To remove the local Coder deployment, run:
 
 ```bash
 kind delete cluster --name coder
 ```
+
+Because Coder runs inside Docker, you should have nothing left on your machine
+after tear down.
