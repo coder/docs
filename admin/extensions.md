@@ -28,3 +28,6 @@ If you run Coder in an air-gapped environment, the public VS Code marketplace is
 inaccessible to end-users. Using the **Custom** configuration option,
 your can point your Coder instance to an air-gapped instance of
 [OpenVSX](https://github.com/eclipse/openvsx) to serve assets to users.
+
+View the OpenVSX deployment wiki
+[here](https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX).
