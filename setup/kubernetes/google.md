@@ -20,7 +20,7 @@ sure to replace the parameters (specifically `PROJECT_ID` and
 
 ```bash
 gcloud beta container --project "PROJECT_ID" \
-clusters create "NEW_CLUSTER_NAME"
+clusters create "NEW_CLUSTER_NAME" \
    --zone "us-central1-a" \
    --no-enable-basic-auth \
    --cluster-version "latest" \
@@ -41,8 +41,8 @@ clusters create "NEW_CLUSTER_NAME"
    --enable-autoupgrade \
    --enable-autorepair \
    --enable-network-policy \
-   --enable-autoscaling
-   --min-nodes "1"
+   --enable-autoscaling \
+   --min-nodes "1" \
    --max-nodes "8"
 ```
 
