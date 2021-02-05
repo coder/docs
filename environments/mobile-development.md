@@ -3,58 +3,65 @@ title: Mobile Development
 description: Learn how to develop mobile apps with Coder.
 ---
 
-Mobile applications frequently require intensive workloads to achieve fast compilations.
-With Coder, you can save time compiling while getting a native emulator experience.
+Compiling mobile applications are resource-intensive, but Coder allows you to
+leverage cloud resources to save time compiling while still keeping your native
+emulator experience.
 
-## Android
+### Android
 
-Use the Android emulator on your local machine to build and debug remote apps.
+You can use the Android emulator on your local machine to build and debug apps
+developed remotely on Coder.
 
-1. On your local machine, install [Android Studio](https://developer.android.com/studio).
+1. [Install Android Studio](https://developer.android.com/studio) onto your
+   local machine.
 
-   ```sh
-   brew install android-studio
-   ```
+1. Start Android Studio, and when prompted, install the SDK. ![Android SDK
+   Install](../assets/android-sdk-missing.png)
 
-1. Install the SDK.
-   ![Android SDK Install](../assets/android-sdk-missing.png)
-1. [Create and start a device.](https://developer.android.com/studio/run/managing-avds)
-   ![Android Device](../assets/android-avd.png)
-1. Set the installation path of your Android SDK to the environment variable `ANDROID_SDK_PATH`.
-   On MacOS, it's `~/Library/Android/sdk`.
-   ![Android SDK Path](../assets/android-sdk-path.png)
-1. Start the Android Debug Server on port 5555.
+1. [Create and start](https://developer.android.com/studio/run/managing-avds) a
+   Virtual Device. ![Android Device](../assets/android-avd.png)
 
-   ```bash
-   $ $ANDROID_SDK_PATH/platform-tools/adb tcpip 5555
-   restarting in TCP mode port: 5555
-   ```
+1. Create an environment variable called `ANDROID_SDK_PATH` and set it to the
+   installation path of your Android SDK (for example, it's typically
+   `~/Library/Android/sdk` on macOS and
+   `C:\Users\<USER_NAME>\AppData\Local\Android\sdk` on Windows). ![Android SDK
+   Path](../assets/android-sdk-path.png)
 
-1. Create a Coder environment with the Android SDK.
-   Optionally, import or extend [our image](https://github.com/cdr/enterprise-images/blob/master/images/android/Dockerfile.ubuntu).
+1. Start the Android Debug Server on port 5555:
 
-   ```dockerfile
-   FROM codercom/enterprise-android
-   ```
+  ```bash
+  $ $ANDROID_SDK_PATH/platform-tools/adb tcpip 5555
+  restarting in TCP mode port: 5555
+  ```
 
-1. Forward your Android Debug Server remotely.
+1. Create a Coder environment that includes the Android SDK; you can do this by
+   including the following in your Dockerfile:
 
-   ```bash
-   # You must have the Coder CLI installed.
-   $ coder config-ssh
-   $ ssh -R 5555:127.0.0.1:5555 coder.<env name>
-   ```
+  ```Dockerfile
+  FROM codercom/enterprise-android
+  ```
 
-1. Run `adb devices` to view emulators forwarded from your local machine.
+   Alternatively, you can import or extend [Coder's
+   image](https://github.com/cdr/enterprise-images/blob/master/images/android/Dockerfile.ubuntu))
 
-   ```bash
-   $ adb devices
-   List of devices attached
-   emulator-5556
-   ```
+1. Forward your Android Debug Server to the remote environment:
 
-1. Build and run your Android applications remotely.
+  ```bash
+  # You must have the Coder CLI installed.
+  $ coder config-ssh
+  $ ssh -R 5555:127.0.0.1:5555 coder.<NAME_OF_YOUR_ENVIRONMENT>
+  ```
 
-   ```bash
-   ./gradlew android:installDebug
-   ```
+1. Run `adb devices` to view the emulators forwarded from your local machine:
+
+  ```bash
+  $ adb devices
+  List of devices attached
+  emulator-5556
+  ```
+
+1. Build and run your Android applications remotely:
+
+  ```bash
+  ./gradlew android:installDebug
+  ```
