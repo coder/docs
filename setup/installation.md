@@ -55,7 +55,8 @@ kubectl config set-context --current --namespace=coder
    a. Get a copy of your existing helm chart and save as `values.yaml`: `helm
    show values coder/coder > values.yaml`
 
-   b. Edit the `values.yaml` file as needed.
+   b. Edit the `values.yaml` file as needed. Be sure to remove the lines that
+   you are *not* modifying, otherwise Coder will overwrite these values.
 
    c. Upgrade/install your Coder deployment with the updated helm chart (be sure
       to replace the placeholder value with your Coder version): `helm upgrade
