@@ -32,37 +32,52 @@ and Amazon to support CVMs.
 
 ### Google Cloud Platform w/ GKE
 
-If your cluster is configured as follows
+To use CVMs with GKE, [create a cluster](../../setup/kubernetes/google.md) using
+the following parameters:
 
 - GKE Master version `>= 1.17`
-- `node-version >= 1.17` and `image-type = "UBUNTU"`
+- `node-version >= 1.17`
+- `image-type = "UBUNTU"`
 
-Then run this snippet to create your node pool:
+You can also provide `latest` instead of specific version numbers. For example:
 
 ```bash
-gcloud beta container clusters create "coder-cluster" \
-    --image-type "UBUNTU" \
-    --node-version "1.17.14-gke.1600" \
+gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
+    --node-version "latest" \
+    --cluster-version "latest" \
+    --image-type "UBUNTU"
     ...
 ```
 
 ### Amazon Web Services w/ EKS
 
-If your config file defines a `nodeGroup` where `amiFamily >= "Ubuntu1804"`,
-then update your `eksctl` config spec with the following to create your node
-pool:
+You can modify an existing [AWS-hosted container](../../setup/kubernetes/aws.md)
+to support CVMs by [creating a
+nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-from-a-config-file)
+and updating your `eksctl` config spec.
 
-```yaml
-apiVersion: eksctl.io/v1alpha5
-kind: ClusterConfig
-metadata: 
-  version: "1.17"
-  ...
-nodeGroups:
-  - name: coder-node-group
-    amiFamily: Ubuntu1804
-    ...
-```
+1. Define your config file in the location of your choice (we've named the file
+   `coder-node.yaml`, but you can call it whatever you'd like):
+
+    ```yaml
+    apiVersion: eksctl.io/v1alpha5
+    kind: ClusterConfig
+
+    metadata: 
+      version: "1.17"
+      name: <YOUR_CLUSTER_NAME>
+      region: <YOUR_AWS_REGION>
+
+    nodeGroups:
+    - name: coder-node-group
+      amiFamily: Ubuntu1804
+    ```
+
+2. Create your nodegroup (be sure to provide the correct file name):
+
+    ```bash
+    eksctl create nodegroup --config-file=coder-node.yaml
+    ```
 
 ## Security
 
