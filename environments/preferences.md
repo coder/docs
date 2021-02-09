@@ -62,3 +62,10 @@ Please note that:
 
 You can check whether notifications are enabled and working by click **Test
 Notifications**.
+
+## Autostart
+
+The **Autostart** feature allows you to set the time when your environments will
+automatically build and start. While you can select which environments will
+autostart from the Environments overview page in the Coder UI, you can set the
+specific time here.
