@@ -16,14 +16,19 @@ existing environments. Click the **New Environment** button.
 
 ![Create an Environment](../assets/create-env.png)
 
-Enter a friendly name for your environment, along with an
+1. Enter a friendly name for your environment, and choose an
 [Image](../images/index.md) to use.
 
-Select the **Workspace Provider** and the **Namespace** where your environment
+1. If you want your environment to automatically turn on at a specific time,
+   toggle **Autostart** to **Yes**. You can set the autostart time in User Preferences.
+
+1. Select the **Workspace Provider** and the **Namespace** where your environment
 will be located. We recommend selecting the workspace provider closest to you to
 minimize the latency you encounter when using Coder.
 
-When done, click **Create** to proceed. Coder redirects you to an overview page
+1. Click **Create** to proceed.
+
+Coder redirects you to an overview page
 for your environment during the build process. Learn more about the Environment
 [creation parameters](./environment-params.md).
 
