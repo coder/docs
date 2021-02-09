@@ -17,7 +17,7 @@ jobs:
           submodules: true
           fetch-depth: 0
       - name: Checkout Docs
-        run: git fetch && git checkout master
+        run: git fetch && git checkout ${GITHUB_SHA}
         working-directory: ./product/coder.com/site/docs
       - name: Commit files
           run: |
