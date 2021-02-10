@@ -59,10 +59,10 @@ kubectl config set-context --current --namespace=coder
    you are *not* modifying, otherwise the contents of `values.yaml` will
    override those in the default chart.
 
-   c. Upgrade/install your {{product_name}} deployment with the updated helm chart (be sure
-      to replace the placeholder value with your {{product_name}} version): `helm upgrade
-      coder coder/coder -n coder --version=<VERSION> -f values.yaml`. **This
-      must be done for whenever you update the helm chart.**
+   c. Upgrade/install your {{product_name}} deployment with the updated helm
+      chart (be sure to replace the placeholder value with your {{product_name}}
+      version): `helm upgrade coder coder/coder -n coder --version=<VERSION> -f values.yaml`.
+      **This must be done for whenever you update the helm chart.**
 
 4. **For Production deployments:** Add the following to your helm chart so that
    {{product_name}} uses your external PostgreSQL databases:
@@ -103,7 +103,8 @@ kubectl config set-context --current --namespace=coder
    ----------------------
    ```
 
-   These are the credentials you need to continue setup using {{product_name}}'s web UI.
+   These are the credentials you need to continue setup using {{product_name}}'s
+   web UI.
 
 > If you lose your admin credentials, you can use the [admin password
 > reset](https://help.coder.com/hc/en-us/articles/360057772573) process to
@@ -111,8 +112,9 @@ kubectl config set-context --current --namespace=coder
 
 ## Accessing {{product_name}}
 
-1. To access {{product_name}}'s web UI, you'll need to get its IP address by running the
-   following in the terminal to list the Kubernetes services running:
+1. To access {{product_name}}'s web UI, you'll need to get its IP address by
+   running the following in the terminal to list the Kubernetes services
+   running:
 
    ```bash
    kubectl --namespace coder get services
@@ -124,7 +126,7 @@ kubectl config set-context --current --namespace=coder
 2. In your browser, navigate to the external IP of ingress-nginx.
 
 3. Use the admin credentials you obtained in this installation guide's previous
-   step to log in to the {{product_name}} platform. If this is the first time you've logged
-   in, {{product_name}} will prompt you to change your password.
+   step to log in to the {{product_name}} platform. If this is the first time
+   you've logged in, {{product_name}} will prompt you to change your password.
 
 At this point, you're ready to proceed to [configuring {{product_name}}](configuration.md).
