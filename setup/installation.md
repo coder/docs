@@ -17,7 +17,7 @@ Install the following dependencies if you haven't already:
 [PostgreSQL](https://www.postgresql.org/docs/12/admin.html) instance to store
 data, including environment information and session tokens.
 
-## Creating the {{product_name}}a Namespace (Optional)
+## Creating the {{product_name}} Namespace (Optional)
 
 We recommend running {{product_name}} in a separate
 [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
