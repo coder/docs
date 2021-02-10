@@ -17,7 +17,7 @@ Dev URLs with Coder.
 [Dev URLs](../environments/devurls.md) is an opt-in feature. To enable Dev URLs
 in your cluster, you'll need to modify your:
 
-1. Helm chart
+1. Helm Chart
 2. Wildcard DNS record
 
 ### Step 1: Modify the Helm Chart
