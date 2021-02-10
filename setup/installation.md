@@ -3,7 +3,7 @@ title: "Installation"
 description: Learn how to install Coder onto your infrastructure.
 ---
 
-This article walks you through the process of installing Coder onto your
+This article walks you through the process of installing {{product_name}} onto your
 [Kubernetes cluster](kubernetes/index.md).
 
 ## Dependencies
