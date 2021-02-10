@@ -20,6 +20,7 @@
         { "path": "./environments/devurls.md" },
         { "path": "./environments/pwa.md" },
         { "path": "./environments/environment-params.md" },
+        { "path": "./environments/preferenes.md" },
         { "path": "./environments/services.md" }
       ]
     },
