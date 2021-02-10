@@ -2,11 +2,10 @@ name: Deploy
 on:
   push:
     branches:
-      - '**'
-      - '!master'
+      - "master"
 jobs:
-  preview:
-    name: Preview
+  docs:
+    name: coder.com/docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Mono
@@ -20,14 +19,14 @@ jobs:
       - name: Checkout Docs
         run: git fetch && git checkout ${GITHUB_SHA}
         working-directory: ./product/coder.com/site/docs
-      - name: Setup Node
-        uses: actions/setup-node@v1
-      - name: Deploy
-        run: ./product/coder.com/site/docs/.github/ci/deploy.sh
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          GITHUB_REF: ${{ github.ref }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
-          VERCEL_PROJECT_ID: QmZRucMRh3GFk1817ZgXjRVuw5fhTspHPHKct3JNQDEPGd
+      - name: Commit files
+          run: |
+            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git commit -m "cdr/docs: bump product/coder.com/site/docs ${GITHUB_SHA}" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          repository: cdr/m
+          github_token: ${{ secrets.GH_ACCESS_TOKEN }}
+          branch: master
