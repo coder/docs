@@ -47,7 +47,7 @@ We are working on bringing DevURL support to local previews in later releases.
 To install Coder, run:
 
 ```bash
-curl -fsSL https://coder.com/try.sh | PORT="8080" sh
+curl -fsSL https://coder.com/try.sh | PORT="8080" bash
 ```
 
 > Note: you can edit the value of `PORT` to control where the Coder
