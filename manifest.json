@@ -45,7 +45,15 @@
       "children": [
         { "path": "./setup/architecture.md" },
         { "path": "./setup/requirements.md" },
-        { "path": "./setup/local-preview.md" },
+        {
+          "path": "./setup/kubernetes/index.md",
+          "children": [
+            { "path": "./setup/kubernetes/local-preview.md" },
+            { "path": "./setup/kubernetes/aws.md" },
+            { "path": "./setup/kubernetes/azure.md" },
+            { "path": "./setup/kubernetes/google.md" }
+          ]
+        },
         { "path": "./setup/installation.md" },
         { "path": "./setup/configuration.md" },
         { "path": "./setup/licensing.md" },
@@ -80,7 +88,7 @@
         { "path": "./admin/appearance.md" },
         { "path": "./admin/audit.md" },
         { "path": "./admin/cluster-info.md" },
-        { "path": "./admin/compute-resources.md" },
+        { "path": "./admin/resources.md" },
         { "path": "./admin/devurls.md" },
         { "path": "./admin/extensions.md" },
         { "path": "./admin/git.md" },
@@ -88,7 +96,7 @@
         { "path": "./admin/metrics.md" },
         { "path": "./admin/telemetry.md" },
         { "path": "./admin/user-management.md" },
-        { "path": "./admin/api.md"}
+        { "path": "./admin/api.md" }
       ]
     },
     {

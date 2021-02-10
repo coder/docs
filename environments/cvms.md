@@ -24,7 +24,7 @@ By choosing this option,
 your Environment behaves like a VM or raw host, yet retains the image, security,
 and performance properties of typical containers.
 
-To create an Environments capable of securely running system-level applications
+To create an Environment capable of securely running system-level applications
 like Docker, check the `Run as Container-based Virtual Machine` box when you
 create a new Environment.
 

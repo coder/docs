@@ -1,0 +1,100 @@
+---
+title: Azure Kubernetes Service
+description: Learn how to set up an AKS cluster for your Coder deployment.
+---
+
+This deployment guide shows you how to set up an Azure Kubernetes Service (AKS)
+cluster on which Coder can deploy.
+
+## Prerequisites
+
+You must have an Azure account and paid subscription.
+
+Please make sure that you have the [Azure
+CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
+installed on your machine and that you've logged in (run `az login` and follow
+the prompts).
+
+## Step 1: Create the Resource Group
+
+To make subsequent steps easier, start by creating environment variables for the
+[Resource
+Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group)
+and
+[Location](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
+that will host your cluster:
+
+```bash
+RESOURCE_GROUP="<MY_RESOURCE_GROUP_NAME>" LOCATION="<MY_AZURE_LOCATION>"
+```
+
+Create a resource group:
+
+```bash
+az group create \
+  --resource-group "$RESOURCE_GROUP" \
+  --location "$LOCATION"
+```
+
+If this is successful, Azure returns information about your resource group. Pay
+attention to the `id` field:
+
+```bash
+"id": "/subscriptions/3afe...d2d/resourceGroups/coderdocs"
+```
+
+You will need the hash provided (i.e., `3afe...d2d`) when creating your cluster.
+
+## Step 2: Create the Azure Kubernetes Service Cluster
+
+Set two additional environment variables for your cluster name and subscription
+ID:
+
+```bash
+CLUSTER_NAME="<MY_CLUSTER_NAME>" SUBSCRIPTION="<MY_SUBSCRIPTION_SHA>"
+```
+
+Create the Azure Kubernetes Service Cluster:
+
+```bash
+# You may have to run `az extension add --name aks-preview`
+#
+# You may also need to create a service principal manually using
+# `az ad sp create-for-rbac --skip-assignment`, then setting the
+# --service-principal and --client-secret flags
+
+az aks create \
+  --name "$CLUSTER_NAME" \
+  --resource-group "$RESOURCE_GROUP" \
+  --subscription "$SUBSCRIPTION" \
+  --generate-ssh-keys \
+  --enable-addons http_application_routing \
+  --enable-cluster-autoscaler \
+  --location "$LOCATION" \
+  --max-count 10 \
+  --min-count 2 \
+  --node-vm-size Standard_B8ms \
+  --network-plugin "kubenet" \
+  --network-policy "calico"
+```
+
+This process might take some time (~5-20 minutes), but if you're successful,
+Azure returns a JSON object with your cluster information.
+
+## Step 3: Configure kubectl to Point to the Cluster
+
+After deploying your AKS cluster, configure kubectl to point to your cluster:
+
+```bash
+az aks get-credentials --name "$CLUSTER_NAME" --resource-group $RESOURCE_GROUP"
+```
+
+You should get a message similar to the following if this is successful:
+
+```bash
+Merged "<YOUR_CLUSTER_NAME>" as current context in /Users/<YOUR_USER>/.kube/config
+```
+
+## Next Steps
+
+At this point, you're ready to proceed to [Installation](../installation.md).
