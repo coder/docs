@@ -35,6 +35,15 @@ RUN apt-get update && apt-get install -y \
 
 # Start OpenSSH with systemd
 RUN systemctl enable ssh
+
+# recommended: remove the system-wide environment override
+RUN rm /etc/environment
+
+# recommended: adjust OpenSSH config
+RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
+  echo "X11Forwarding yes" >> /etc/ssh/sshd_config && \
+  echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
+
 ```
 
 > If Coder detects a running TCP server on port 22, it will forward incoming SSH
@@ -42,7 +51,7 @@ RUN systemctl enable ssh
 
 At startup, Coder injects the user's SSH key into `~/authorized_keys` to
 facilitate authentication with OpenSSH. For the best experience, add the
-following to your `/etc/ssh/sshd_config` file as well:
+following to your `/etc/ssh/sshd_config` file:
 
 ```text
 PermitUserEnvironment yes
