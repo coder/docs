@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-description: Learn how to install {{product_name}} onto your infrastructure.
+description: Learn how to install {{product_name}}aa onto your infrastructure.
 ---
 
 This article walks you through the process of installing {{product_name}} onto your
