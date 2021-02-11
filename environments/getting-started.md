@@ -21,13 +21,15 @@ existing environments. Click the **New Environment** button.
 
 1. If you want your environment to turn on at a specific time automatically,
    toggle **Autostart** to **Yes**. You can set the autostart time in [User
-   Preferences](preferences.md#autostart).
+   Preferences](preferences.md#autostart). Please note that Coder automatically
+   disables autostart if your environment has been inactive for more than three
+   days.
 
 1. Select the **Workspace Provider** and the **Namespace** where your
    environment will be located. We recommend selecting the workspace provider
    closest to you to minimize the latency you encounter when using Coder.
 
-1. Click **Create** to proceed.
+2. Click **Create** to proceed.
 
 Coder redirects you to an overview page for your environment during the build
 process. Learn more about the Environment [creation
