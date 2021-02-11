@@ -87,7 +87,7 @@ for your environment during the build process.
 ## .gitconfig files
 
 If the image you're using to create your environment doesn't include a
-.gitconfig file, Coder will Coder generates one for you automatically using the
+.gitconfig file, Coder will generate one for you automatically using the
 details found in your Coder account.
 
 You can modify the .gitconfig file, but we recommend using a
