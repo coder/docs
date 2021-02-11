@@ -47,7 +47,7 @@ We are working on bringing DevURL support to local previews in later releases.
 To install Coder, run:
 
 ```bash
-curl -fsSL https://coder.com/try.sh | PORT="8080" bash
+curl -fsSL https://coder.com/try.sh | PORT="8080" sh -s --
 ```
 
 > Note: you can edit the value of `PORT` to control where the Coder
@@ -63,7 +63,7 @@ You can now access Coder at
 
 You can tear down the deployment with
 
-    kind delete cluster --name coder
+    curl -fsSL https://coder.com/try.sh | sh -s -- down
 
 Platform credentials
 User:     admin
@@ -78,7 +78,7 @@ automatically configured for you, so there's no first time setup to do.
 To remove the local Coder deployment, run:
 
 ```bash
-kind delete cluster --name coder
+curl -fsSL https://coder.com/try.sh | sh -s -- down
 ```
 
 Because Coder runs inside Docker, you should have nothing left on your machine
