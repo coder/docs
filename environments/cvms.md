@@ -18,7 +18,7 @@ a _Container-based Virtual Machine (CVM)_.
 > [enable Docker in Environments](../admin/environment-management/cvms.md)
 > for your deployment.
 
-## Container-based Virtual Machine (CVMs)
+## Container-based Virtual Machine (CVM)
 
 By choosing this option,
 your Environment behaves like a VM or raw host, yet retains the image, security,
