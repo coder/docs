@@ -65,7 +65,7 @@ Notifications**.
 
 ## Autostart
 
-The **Autostart** feature allows you to set the time when your environments will
-automatically build and start. While you can select which environments will
-autostart from the Environments overview page in the Coder UI, you can set the
-specific time here.
+The **Autostart** feature lets you set the time when your environments will
+automatically build and start. You can set a specific environment to autostart
+using its Create/Update Environment modal page in the Coder UI, but you must set
+the specific time here.
