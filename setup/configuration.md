@@ -19,7 +19,8 @@ Make sure you have the following information on hand:
   config. Your license should have been sent to you via email; if not, please
   reach out to your Coder sales representative.
 
-> If you do not have a license, you can [generate one](https://coder.com/trial) that allows you to try Coder free of charge for 60 days.
+> If you do not have a license, you can [generate one](https://coder.com/trial)
+> that allows you to try Coder free of charge for 60 days.
 
 ### Creating Your License File
 
@@ -30,8 +31,8 @@ Coder provides you with your licensing information, which looks like:
 ```
 
 Copy this information into the text editor of your choice, and save it as a .txt
-or a .json file. You'll need to upload this file at two points during the
-setup and configuration processes.
+or a .json file. You'll need to upload this file at two points during the setup
+and configuration processes.
 
 ## Providing Your License
 
