@@ -17,8 +17,8 @@ Is something confusing, unclear, or just want to contribute something new?
 Contributions can be previewed in the context of the site using pull request
 deploy previews. :rocket:
 
-Our documentation is published once a day. Expect any merged contributions to
-be live within 24 hours.
+Our documentation is published once a day. Expect any merged contributions to be
+live within 24 hours.
 
 ## Interested in using Coder?
 
