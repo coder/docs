@@ -4,5 +4,5 @@ icon: "<svg viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d
 description: Learn how to customize and integrate Coder into your custom use cases.
 ---
 
-- [Mobile Development](mobile/index.md)
 - [Community-Created Resources](community/index.md)
+- [Mobile Development](mobile/index.md)

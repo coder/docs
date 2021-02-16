@@ -102,9 +102,19 @@
     {
       "path": "./guides/index.md",
       "children": [
-        { "path": "./guides/community/index.md" },
-        { "path": "./guides/mobile/index.md" }
-      ]
+        { "path": "./guides/community/index.md",
+          "children": [
+            { "path": "./guides/community/test.md" }
+          ]
+        },
+        { "path": "./guides/mobile/index.md",
+        "children": [
+          { "path": "./guides/mobile/index.md",
+            "children": [
+              { "path": "./guides/mobile/test.md" }
+            ] 
+          }
+        ]
     },
     {
       "path": "./changelog/index.md",
