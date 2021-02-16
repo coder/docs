@@ -66,4 +66,4 @@ development operations and cloud resources.
     </tr>
 </table>
 
-> For infomation about trying Coder, visit [https://coder.com/trial](https://coder.com/trial)
+> To get a free trial of Coder, please visit [https://coder.com/trial](https://coder.com/trial).
