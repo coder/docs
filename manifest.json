@@ -108,13 +108,11 @@
           ]
         },
         { "path": "./guides/mobile/index.md",
-        "children": [
-          { "path": "./guides/mobile/index.md",
-            "children": [
-              { "path": "./guides/mobile/test.md" }
-            ] 
-          }
-        ]
+          "children": [
+            { "path": "./guides/mobile/test.md" }
+          ] 
+        }
+      ]
     },
     {
       "path": "./changelog/index.md",
