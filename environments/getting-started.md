@@ -27,7 +27,8 @@ existing environments. Click the **New Environment** button.
 
 2. Select the **Workspace Provider** and the **Namespace** where your
    environment will be located. We recommend selecting the workspace provider
-   closest to you to minimize the latency you encounter when using Coder.
+   closest to you to minimize the latency you encounter when using Coder. This
+   is a **beta** feature.
 
 3. Click **Create** to proceed.
 

@@ -48,7 +48,7 @@ When prompted, provide the following information:
         the specified time</td>
     </tr>
     <tr>
-        <td><b>Workspace Provider</b></td>
+        <td><b>Workspace Provider (Beta)</b></td>
         <td>A workspace provider is an additional Kubernetes cluster for Coder;
         choose the location that's closest to you to minimize latency </td>
     </tr>
