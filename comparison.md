@@ -65,3 +65,5 @@ development operations and cloud resources.
         <td>Optional</td>
     </tr>
 </table>
+
+> For infomation about trying Coder, visit [https://coder.com/trial](https://coder.com/trial)
