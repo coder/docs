@@ -61,15 +61,15 @@ X11UseLocalhost no
 
 ### SSH Environment Variables
 
-OpenSSH can handle shell environment variables differently than expected.
-System-level environment variables for OpenSSH sessions are set by
+OpenSSH handles environment variables differently than most container
+processes. Environment variable overrides for OpenSSH sessions are set by
 `~/.ssh/environment` and `/etc/environment`. Note that these values
 will override those set in the Dockerfile `ENV` directives.
 
 At environment startup, Coder injects the image defined environment variables
 into `~/.ssh/environment`, as well as a set of Coder-defined defaults.
 
-The following snippet shows an example of what this file may look like for
+The following snippet shows an example of what this file may look like for a
 new environment.
 
 ```text
