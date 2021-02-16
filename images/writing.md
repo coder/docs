@@ -16,7 +16,7 @@ COPY file ./
 ...
 ```
 
-📝: You can build most images inside a Coder workspace! Check out [this image](https://github.com/bpmct/cdr-images/tree/master/docker-sandbox) for info.
+📝: You can build most images inside a Coder workspace! Check out [this image](https://github.com/bpmct/cdr-images/tree/master/docker-sandbox) for info. However, in order to build images with CVM-specific features, you will need to be running the [sysbox runtime](https://github.com/nestybox/sysbox) on your machine.
 
 ## Snippets
 
