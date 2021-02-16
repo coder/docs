@@ -19,7 +19,8 @@ Make sure you have the following information on hand:
   config. Your license should have been sent to you via email; if not, please
   reach out to your Coder sales representative.
 
-> If you do not have a license, you can [generate one](https://coder.com/trial) that allows you to try Coder free of charge for 60 days.
+> If you do not have a license, you can [generate one](https://coder.com/trial)
+> that allows you to try Coder free of charge for 60 days.
 
 ### Creating Your License File
 
