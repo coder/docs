@@ -59,6 +59,49 @@ X11Forwarding yes
 X11UseLocalhost no
 ```
 
+### SSH Environment Variables
+
+OpenSSH can handle shell environment variables differently than expected.
+System-level environment variables for OpenSSH sessions are set by
+`~/.ssh/environment` and `/etc/environment`. Note that these values
+will override those set in the Dockerfile `ENV` directives.
+
+At environment startup, Coder injects the image defined environment variables
+into `~/.ssh/environment`, as well as a set of Coder-defined defaults.
+
+The following snippet shows an example of what this file may look like for
+new environment.
+
+```text
+# --------- START CODER ENVIRONMENT VARIABLES ----------
+# The following has been auto-generated at Environment startup
+# You should not hand-edit this section, unless you are deleting it.
+
+SHELL=/bin/bash
+CODER_USER_EMAIL=email@coder.com
+CODER_ENVIRONMENT_NAME=dev
+HOSTNAME=dev
+CODER_USERNAME=john
+SSH_AUTH_SOCK=/home/coder/.coder-ssh-agent.sock
+PWD=/home/coder
+CODER_ASSETS_ROOT=/opt/coder
+HOME=/home/coder
+LANG=en_US.UTF-8
+CODER_CPU_LIMIT=24.00
+CODER_MEMORY_LIMIT=32.00
+USER=coder
+ITEM_URL=https://coder.domain.com/extensions
+CODER_IMAGE_TAG=latest
+CODER_IMAGE_DIGEST=sha256:1586122346e7d9d64a0c49a28df7538de4c5da5bfe0df672b1552dd52932c9a7
+SERVICE_URL=https://extensions.coder.com/api
+CODER_IMAGE_URI=codercom/enterprise-base:ubuntu
+PATH=/usr/local/google-cloud-sdk/bin:/home/coder/go/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/coder/coder-cli
+BASE_PATH=/proxy/environments/60162f9e-78809dfc9a9e24b8f5e580ff/ide
+_=/opt/coder/envagent
+
+# ----------------- END CODER -----------------------
+```
+
 ## Disable SSH Access
 
 If you would like to disable SSH access, you can either:
