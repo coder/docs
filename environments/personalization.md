@@ -3,32 +3,34 @@ title: "Personalization"
 description: Learn how to personalize your Environment to augment its base Image.
 ---
 
-Your Coder development Environment strikes a balance between consistent team
-configuration and personal customization.
-While the Environment [Image](../images/index.md) standardizes system
-dependencies for development, Coder offers a few different mechanisms
-for customizing the Environment to best fit your needs.
+Your Coder development environment strikes a balance between consistent team
+configuration and personal customization. The environment's
+[image](../images/index.md) standardizes the system dependencies for
+development, but there are several different mechanisms that Coder offers to
+allow you to customize the environment.
 
 ## Persistent Home
 
-The `/home/<username>` volume is bound to your Environment. Its contents are persisted
-between shutdowns and rebuilds. This ensures that personal configuration files
-like `~/.gitconfig` and `~/.zshrc`, as well as source code and project files,
-are not disrupted.
+The `/home/<username>` volume is bound to your environment, and its contents
+persist despite shutdowns and rebuilds. This ensures that personal configuration
+files like `~/.gitconfig` and `~/.zshrc`, source code, and project files, are
+not disrupted.
 
-Data outside `/home/<username>` is provided by the Environment [Image](../images/index.md)
-and is reset between by Environment [rebuilds](./lifecycle.md).
+The environment's [Image](../images/index.md), however, provides all data
+outside `/home/<username>` and is reset whenever your environment
+[rebuilds](./lifecycle.md).
 
 ## ~/personalize
 
-For cases where personal configuration of system files is needed, Environments
-expose the [~/personalize rebuild hook](./lifecycle.md#hooks). Coder executes
-this script every time the Environment is rebuilt.
+If you want to configure your system files, Coder environments expose the
+[~/personalize rebuild hook](./lifecycle.md#hooks). Coder executes the
+`~/personalize` script every time Coder rebuilds the environment.
 
-Consider the case where you want to use the `fish` shell as your default shell,
-but the Environment image doesn't include the package. The following
-`~/personalize` scripts would install `fish` and change the default shell
-_each time the environment is rebuilt_.
+For example, if you want to use the `fish` shell as your default but your
+environment's image doesn't include it, you can include installation
+instructions in your `~/personalize` script. Whenever Coder rebuilds your
+environment, it runs your `~/personalize` script, installs `fish`, and changes
+the default shell.
 
 ```bash
 #!/bin/bash
@@ -40,38 +42,70 @@ sudo apt-get install -y fish
 sudo chsh -s /usr/bin/fish $USER
 ```
 
-**Note:** The `-y` flag is required to continue through any prompts.
-Otherwise, the `~/personalize` script will abort.
+The following is a more extensive example of a `~/personalize` script:
 
-The Environments page shows the log output of the `~/personalize` script in
-the build log.
+```bash
+#!/bin/bash
+
+###########################################################################
+# For use with an environment build using an image that includes git. This
+# script configures git using Coder's personalize script. This script runs
+# each time the environment is rebuilt. The script must be located at
+# ~/personalize. The initial environment will not contain this script, so
+# it must be added after creation.
+###########################################################################
+
+# Backup existing gitconfig if it exists
+if [ -f ~/.gitconfig ]; then
+echo "Backing up ~/.gitconfig"
+mv ~/.gitconfig ~/.gitconfig.bak
+fi
+
+# Set name and email in git
+echo "[user]\n\temail = youremailhere@gmail.com\n\tname = Your Name" > ~/.gitconfig
+```
+
+### Notes
+
+- *The `-y` flag is required to continue through any prompts. Otherwise, the
+  `~/personalize` script will abort.
+- The personalize script must be executable; if you create your script, you may
+  need to run `chmod +x ~/personalize` to give the script execute permissions.
+- When you create a new personalize file or edit an existing file, your changes
+  won't take effect until you either:
+
+  - Run ~/personalize using the Coder terminal
+  - Rebuild your environment
+
+The Environments page shows the log output of the `~/personalize` script in the
+build log whenever it runs:
 
 ![Enable privileged environment](../assets/personalize-log.png)
 
 ## Git Integration
 
-Once your site manager has [set up a Git service](../admin/git.md), you can link
-your Coder account. This will authenticate all
-`git` operations performed in your Environment. See how to [link your account](https://help.coder.com/hc/en-us/articles/360057612153-Linking-Git-Accounts).
+Once your site manager has [set up a Git service](../admin/git.md), you can
+[link your Coder account](preferences.md#linked-accounts). This will
+authenticate all `git` operations performed in your environment.
 
 ## Dotfiles Repo
 
 A **dotfiles repository** is a Git repository that contains your personal
-Environment preferences in the form of static files and setup scripts.
+environment preferences in the form of static files and setup scripts.
 
 We recommend configuring a dotfiles repo (which Coder then clones to your home
-directory) to ensure that your preferences are applied whenever your
-Environment turns on or you create a new Environment.
+directory) to ensure that your preferences are applied whenever you create your
+environment or turn it on.
 
-At startup, Coder clones this repository into `~/dotfiles`. If an executable
-`~/dotfiles/install.sh` is present, it is executed. If not, all dot-prefixed files
-are symlinked into your home directory.
+At startup, Coder clones your dotfiles repository into `~/dotfiles`. If there's
+an executable `~/dotfiles/install.sh` present, Coder executes it. If not, all
+dot-prefixed files are symlinked to your home directory.
 
 Read more about dotfiles repos [here](http://dotfiles.github.io/).
 
 ### Adding Your Dotfiles Repo to Coder
 
 You can provide a link to your dotfiles repo that's hosted with the Git provider
-of your choice under User Preferences:
+of your choice under [User Preferences](preferences.md):
 
 ![Dotfiles Preferences](../assets/dotfiles-preferences.png)
