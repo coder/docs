@@ -100,7 +100,11 @@
       ]
     },
     {
-      "path": "./guides/index.md"
+      "path": "./guides/index.md",
+      "children": [
+        { "path": "./guides/community/index.md" },
+        { "path": "./guides/mobile/index.md" }
+      ]
     },
     {
       "path": "./changelog/index.md",
