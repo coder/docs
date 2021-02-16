@@ -4,6 +4,9 @@ on:
     branches:
       - "**"
       - "!master"
+    pull_request:
+      branches:
+        - "**"
 jobs:
   preview:
     name: Preview
