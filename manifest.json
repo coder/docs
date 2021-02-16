@@ -29,6 +29,7 @@
       "children": [
         { "path": "./images/importing.md" },
         { "path": "./images/structure.md" },
+        { "path": "./images/writing.md" },
         { "path": "./images/tags.md" },
         { "path": "./images/deprecating.md" }
       ]
@@ -96,7 +97,7 @@
         { "path": "./admin/metrics.md" },
         { "path": "./admin/telemetry.md" },
         { "path": "./admin/user-management.md" },
-        { "path": "./admin/api.md"}
+        { "path": "./admin/api.md" }
       ]
     },
     {
