@@ -53,7 +53,7 @@ When prompted, provide the following information:
         choose the location that's closest to you to minimize latency </td>
     </tr>
         <tr>
-        <td><b>Namespace</b></td>
+        <td><b>Namespace (Beta)</b></td>
         <td>The specific namespace where you want your environment deployed</td>
     </tr>
 </table>
