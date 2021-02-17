@@ -7,17 +7,17 @@ There are four primary ways you can connect an IDE to your Coder environment:
 
 1. [VS Code Remote SSH](#vs-code-remote-ssh) with local VS Code
 1. [VS Code in the browser](#vs-code-in-the-browser) with code-server
-1. [JetBrains in the browser](##jetbrains-ides-in-the-browser) with JetBrains Projector
-1. _Any_ local editor with
-   [2-way file synchronization over SSH](https://help.coder.com/hc/en-us/articles/360058001313?__hstc=103542367.6151dcd6d50b6cb62a878734c4aad255.1608274456028.1608306470901.1608410536657.3&__hssc=103542367.75.1608410536657&__hsfp=974138608)
-   and
-   [1-way file synchronization](https://help.coder.com/hc/en-us/articles/360055767234-Setting-Up-a-One-Way-File-Sync).
+1. [JetBrains in the browser](##jetbrains-ides-in-the-browser) with JetBrains
+   Projector
+1. _Any_ local editor with [2-way file synchronization over
+   SSH](https://help.coder.com/hc/en-us/articles/360058001313?__hstc=103542367.6151dcd6d50b6cb62a878734c4aad255.1608274456028.1608306470901.1608410536657.3&__hssc=103542367.75.1608410536657&__hsfp=974138608)
+   and [1-way file
+   synchronization](https://help.coder.com/hc/en-us/articles/360055767234-Setting-Up-a-One-Way-File-Sync).
 
 ## VS Code Remote SSH
 
 Once you've [set up SSH access to Coder](./ssh.md), you can work on projects
-from your local VS Code, connected to your Coder environment for compute,
-etc.
+from your local VS Code, connected to your Coder environment for compute, etc.
 
 1. Open VS Code locally.
 2. Make sure that you've installed [Remote -
@@ -30,7 +30,8 @@ etc.
 
 ## VS Code in the Browser
 
-Launch VS Code in the browser from the Environments page by clicking the _Code Web_ icon.
+Launch VS Code in the browser from the Environments page by clicking the _Code
+Web_ icon.
 
 ![Launch an Environment](../assets/launch-env.png)
 
@@ -47,8 +48,8 @@ to allow popup windows so that you can use your IDE.
 
 ### Manually Installing JetBrains' IDEs
 
-You can also manually install JetBrains' IDEs. After following JetBrains' steps for
-installing your IDE, create a symlink, and add it to $PATH.
+You can also manually install JetBrains' IDEs. After following JetBrains' steps
+for installing your IDE, create a symlink, and add it to $PATH.
 
 The symlink names supported by Coder are:
 
