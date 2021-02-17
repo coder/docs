@@ -65,3 +65,6 @@ development operations and cloud resources.
         <td>Optional</td>
     </tr>
 </table>
+
+> To get a free trial of Coder, please visit
+> [https://coder.com/trial](https://coder.com/trial).
