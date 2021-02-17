@@ -1,6 +1,7 @@
 ---
 title: "Cluster Info"
 description: Learn how to obtain cluster information for your deployment.
+state: deprecated
 ---
 
 The **Cluster Info** page, available via **Manage** > **Admin** > **Cluster

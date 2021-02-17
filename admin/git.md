@@ -38,6 +38,10 @@ ask you for the following Coder parameters:
   `[your-coder-domain]/oauth/callback` (e.g.
   `https://coder.domain.com/oauth/callback`)
 
+Then, provide your **Client ID** and **Client Secret** to Coder.
+
+When done, click **Save**.
+
 ### GitLab
 
 When <a href="https://docs.gitlab.com/ee/integration/oauth_provider.html"
@@ -52,6 +56,10 @@ enabled the following:
 
 - **Confidential**: Check this option
 - **API** (scope): Check this option
+
+Then, provide your **Client ID** and **Client Secret** to Coder.
+
+When done, click **Save**.
 
 ### Bitbucket Server
 

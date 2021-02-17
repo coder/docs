@@ -9,9 +9,9 @@ and crash reporting features.
 In the Coder UI, go to **Manage** > **Admin** > **Telemetry**.
 
 Using the provided checkboxes, indicate whether you want Coder to
-**Send Crash Reports** and/or **Send Usage Telemetry**.
+**Send Crash Reports**, **Send Usage Telemetry**, or **Send Enhanced Usage Telemetry**.
 
-Be sure to click **Update Telemetry** after you make your changes.
+Be sure to click **Save Preferences** after you make your changes.
 
 ![Telemetry](../assets/telemetry.png)
 
