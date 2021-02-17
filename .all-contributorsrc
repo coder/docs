@@ -1,0 +1,179 @@
+{
+  "projectName": "docs",
+  "projectOwner": "cdr",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "khorne3",
+      "name": "Katie Horne",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16521651?v=4",
+      "profile": "https://github.com/khorne3",
+      "contributions": [
+        "content",
+        "ideas",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "cmoog",
+      "name": "Charles Moog",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7585078?v=4",
+      "profile": "https://cmoog.io/",
+      "contributions": [
+        "content",
+        "ideas",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "vapurrmaid",
+      "name": "G r e y",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11184711?v=4",
+      "profile": "https://vapurrmaid.ca/",
+      "contributions": [
+        "content",
+        "ideas",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "bpmct",
+      "name": "Ben Potter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22407953?v=4",
+      "profile": "https://bpmct.net/",
+      "contributions": [
+        "content",
+        "ideas",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "kylecarbs",
+      "name": "Kyle Carberry",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7122116?v=4",
+      "profile": "https://carberry.com/",
+      "contributions": [
+        "content",
+        "design",
+        "ideas",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "coadler",
+      "name": "Colin Adler",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6332295?v=4",
+      "profile": "https://colin.vc/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "fioan89",
+      "name": "Faur Ioan-Aurel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1479167?v=4",
+      "profile": "https://github.com/fioan89",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "ammario",
+      "name": "Ammar Bandukwala",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7416144?v=4",
+      "profile": "https://ammar.io/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "ashumz",
+      "name": "Ashley McClelland",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100216?v=4",
+      "profile": "https://github.com/ashumz",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "CoderErik",
+      "name": "CoderErik",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67160019?v=4",
+      "profile": "https://github.com/CoderErik",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "sreya",
+      "name": "Jon Ayers",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4856196?v=4",
+      "profile": "https://github.com/sreya",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "nathanpotter",
+      "name": "Nathan Potter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12649493?v=4",
+      "profile": "https://github.com/nathanpotter",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "sestegra",
+      "name": "Stéphane Este-Gracias",
+      "avatar_url": "https://avatars.githubusercontent.com/u/109060?v=4",
+      "profile": "https://github.com/sestegra",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "ericpaulsen",
+      "name": "Eric Paulsen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9683576?v=4",
+      "profile": "https://github.com/ericpaulsen",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "IAmHughes",
+      "name": "Thomas Hughes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2894107?v=4",
+      "profile": "https://iamhughes.com/",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "balorette",
+      "name": "Bryan Lorette",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67381492?v=4",
+      "profile": "https://www.linkedin.com/in/blorette/",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "imgbot[bot]",
+      "name": "imgbot[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/in/4706?v=4",
+      "profile": "https://github.com/apps/imgbot",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
