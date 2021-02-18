@@ -11,15 +11,19 @@ minimize latency.
 
 ## Enabling Workspace Providers
 
-**To enable this beta feature in the UI:** click on your avatar. In the menu
-that appears, click **Feature Preview**. Select **Resource Pools UI** and click
-**Enable**. Once enabled, this allows end-users to choose the workspace provider
-and namespace where they want their environment deployed.
+To enable the Workspace Providers UI elements:
+
+1. In the Coder UI, click on your avatar.
+2. In the menu that appears, click **Feature Preview**.
+3. Select **Resource Pools UI** and click **Enable**.
+
+Once enabled, this allows end-users to choose the workspace provider and
+namespace where they want their environment deployed.
 
 ## Admin UI
 
-Site managers and admins will also see the workspace providers configuruation
-screen avaiable via **Manage** > **Admin** > **Workspace Providers**.
+Site managers and admins can view the workspace providers configuruation
+page avaiable via **Manage** > **Admin** > **Workspace Providers**.
 
 ![Workspace Providers Admin](../assets/workspace-providers-admin.png)
 
