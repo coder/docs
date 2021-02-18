@@ -48,7 +48,8 @@ entries:
     name: coder
     type: application
     urls:
-    - https://helm-nightly.coder.com/coder-1.11.0-90-gb0e792c7e-20200924.tgz version: 1.11.0-90-gb0e792c7e-20200924
+    - https://helm-nightly.coder.com/coder-1.11.0-90-gb0e792c7e-20200924.tgz
+        version: 1.11.0-90-gb0e792c7e-20200924
   - ...
 generated: "2020-09-28T00:02:05.129533118-05:00"
 ```
@@ -99,8 +100,8 @@ backup your database before running the following command):
 
     The `--atomic` flag instructs Helm to automatically downgrade if the nightly
     release isn't ready within the default timeout of 5 minutes. This automatic
-    downgrade on failure is safe and shouldn't require you to manually downgrade to
-    your database backup if it occurs.
+    downgrade on failure is safe and shouldn't require you to manually downgrade
+    to your database backup if it occurs.
 
 ## Downgrading to a Standard Release
 
