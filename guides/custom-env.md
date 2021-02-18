@@ -92,8 +92,8 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
 # Install the desired Node.js version into `/usr/local/`
 ENV NODE_VERSION=12.16.3
 RUN curl \
-https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz | \
-  tar xzfv - \
+https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz \
+ | tar xzfv - \
   --exclude CHANGELOG.md \
   --exclude LICENSE \
   --exclude README.md \
@@ -123,7 +123,10 @@ USER coder
 
 ### 1b. Build and Push Your Image
 
-At this point, you'll need to build the development image and push it to the Docker registry. To do so, run the following command in the directory where your Dockerfile is located (be sure to replace the placeholder values with your tag and repository name so that the image is pushed to the appropriate location):
+At this point, you'll need to build the development image and push it to the
+Docker registry. To do so, run the following command in the directory where your
+Dockerfile is located (be sure to replace the placeholder values with your tag
+and repository name so that the image is pushed to the appropriate location):
 
 ```bash
 docker build -t coderenterprise/react .
@@ -135,3 +138,81 @@ docker push coderenterprise/react
 
 ## Step 2: Import the Image
 
+After you've pushed the image to a Docker registry, you can access and import it
+into your Coder deployment.
+
+1. In the Coder UI, go to the **Images** page and click **Import Image**
+3. Add (or select) the image registry where the image is hosted, and provide the
+   requested values when prompted.
+
+## Step 3: Create the Dev Environment
+
+Once you've imported an image into Coder, you can use it to create new
+development environments:
+
+1. In the Coder UI, go to **Environments Overview**
+2. Click **New Environment**
+3. In the modal window that opens, provide a **name** for your environment, select
+   the **image** that you imported, adjust the resources appropriately (if you plan
+   to use WebStorm, allocate additional CPU and RAM), and click **Create**
+
+The environment will take a few minutes to build the first time due to the
+initial image pulling but should take around 30-90 seconds on subsequent
+rebuilds and updates.
+
+## Step 4: Use the Dev Environment
+
+At this point, you have a fully built environment, and you should begin working
+on your React application.
+
+### Set Up Your React App
+
+We'll begin our sample project for this tutorial by [bootstrapping the React
+app](https://github.com/facebook/create-react-app) provided by the language's
+creators.
+
+To do this, go to the **Environments** page of your Coder deployment and click
+**Terminal**. Run the following to create the skeleton for your application:
+
+```bash
+npx create-react-app coder-app
+```
+
+The command creates a new directory called **coder-app** that contains the
+initial code and configuration settings for your app.
+
+### Start the Development Server
+
+Before you begin working on your application, we recommend starting up the
+development server so that you can preview the changes you make to your project.
+
+You can switch into your app's directory and start the React development server
+(which listens on port 3000) using the Coder deployment's Terminal:
+
+```bash
+cd coder-app
+yarn start
+```
+
+### Preview Your Application
+
+Once you've started your server, you can preview your application using the web
+browser of your choice (you must have [Dev URLs](../admin/devurls.md) enabled
+for this to work). To do so:
+
+1. On the Environment Overview of your Coder deployment, go to Dev URLs and
+   click **Add URL**.
+2. In **Port**, enter **3000**.
+3. Click **Save**.
+4. Use the generated URL in a web browser to see your application.
+
+### Modifying Your Application Code
+
+At this point, you can open the IDE to start working on your project.
+
+On the Environment Overview, click Open Editor. Choose the editor you'd like to
+work in (Coder will open this in a new tab). Once the editor window opens, you
+can navigate to your **coder-app** directory and begin working.
+
+You can see the changes you're making in the web browser whose URL points to
+your application.

@@ -3,7 +3,8 @@ title: Air-Gapped Deployment
 description: Learn how to set up an air-gapped Coder deployment.
 ---
 
-If you need increased security for your Coder deployments, you can set up an air-gapped deployment.
+If you need increased security for your Coder deployments, you can set up an
+air-gapped deployment.
 
 To do so, you must:
 
@@ -39,11 +40,11 @@ platform images are hosted in Coder's Docker Hub repo.
 
 1. Pull the images for the Coder platform from the following Docker Hub locations:
 
-   - https://hub.docker.com/r/coderenvs/coder-service
-   - https://hub.docker.com/r/coderenvs/envbuilder
-   - https://hub.docker.com/r/coderenvs/dockerd
-   - https://hub.docker.com/r/coderenvs/timescale
-   - https://hub.docker.com/r/coderenvs/dashboard
+   - [coder-service](https://hub.docker.com/r/coderenvs/coder-service)
+   - [envbuilder](https://hub.docker.com/r/coderenvs/envbuilder)
+   - [dockerd](https://hub.docker.com/r/coderenvs/dockerd)
+   - [timescale](https://hub.docker.com/r/coderenvs/timescale)
+   - [dashboard](https://hub.docker.com/r/coderenvs/dashboard)
 
    You can pull each of these images from their
    `coderenvs/<img-name>:<version>` registry location using the image's name
