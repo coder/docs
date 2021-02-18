@@ -20,6 +20,7 @@
         { "path": "./environments/devurls.md" },
         { "path": "./environments/pwa.md" },
         { "path": "./environments/environment-params.md" },
+        { "path": "./environments/variables.md" },
         { "path": "./environments/preferences.md" },
         { "path": "./environments/services.md" }
       ]
@@ -30,7 +31,10 @@
         { "path": "./images/importing.md" },
         { "path": "./images/structure.md" },
         { "path": "./images/tags.md" },
-        { "path": "./images/deprecating.md" }
+        { "path": "./images/configure.md" },
+        { "path": "./images/ssl-certificates.md" },
+        { "path": "./images/deprecating.md" },
+        { "path": "./images/embed-button.md" }
       ]
     },
     {
@@ -38,6 +42,7 @@
       "children": [
         { "path": "./cli/installation.md" },
         { "path": "./cli/remote-terminal.md" },
+        { "path": "./cli/file-sync.md" },
         { "path": "./cli/managing-envs.md" }
       ]
     },
@@ -58,7 +63,9 @@
         { "path": "./setup/installation.md" },
         { "path": "./setup/configuration.md" },
         { "path": "./setup/licensing.md" },
-        { "path": "./setup/updating.md" }
+        { "path": "./setup/air-gapped.md" },
+        { "path": "./setup/updating.md" },
+        { "path": "./setup/nightly-releases.md" }
       ]
     },
     {
@@ -68,7 +75,8 @@
           "path": "./admin/access-control/index.md",
           "children": [
             { "path": "./admin/access-control/user-roles.md" },
-            { "path": "./admin/access-control/organizations.md" }
+            { "path": "./admin/access-control/organizations.md" },
+            { "path": "./admin/access-control/password-reset.md" }
           ]
         },
         {
@@ -96,8 +104,17 @@
         { "path": "./admin/memory-overprovisioning.md" },
         { "path": "./admin/metrics.md" },
         { "path": "./admin/telemetry.md" },
+        { "path": "./admin/usage-monitoring.md" },
         { "path": "./admin/user-management.md" },
         { "path": "./admin/api.md" }
+      ]
+    },
+    {
+      "path": "./guides/index.md",
+      "children": [
+        { "path": "./guides/custom-env.md" },
+        { "path": "./guides/macos-keybinding.md" },
+        { "path": "./guides/ssl-certificates.md" }
       ]
     },
     {
