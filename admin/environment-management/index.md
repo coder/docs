@@ -9,7 +9,6 @@ Administrative users can modify a variety of environment-related behaviors.
   and configure the following features:
 
   - [GPU Acceleration](gpu-acceleration.md)
-  - [Privileged Environments](privileged.md)
 
 - You can also modify the [Environment Shutdown
   Behavior](shutdown.md) on a per-organization basis to optimize
