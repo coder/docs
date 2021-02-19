@@ -1,6 +1,6 @@
 ---
 title: "Extensions"
-description: Learn how to configure an internal marketplace for air-gapped deployments.
+description: Learn how to configure the code-server extension marketplace .
 ---
 
 You can customize VS Code with extensions, which allow you to add new features
@@ -11,8 +11,8 @@ and functionality (e.g., languages, debuggers, tools), themes, and more.
 You can find the extensions available to you in the Extension Marketplace.
 Access to the marketplace is enabled by default and requires no unique
 configuration on your part. You can, however, choose between two types of
-extensions marketplaces by going to **Manage** > **Admin** >
-**Instrastructure**, then scrolling down to **Extensions**:
+extensions marketplaces by going to **Manage** > **Admin** > **Infrastructure**,
+then scrolling down to **Extensions**:
 
 - **Public**: a Coder-hosted marketplace of open-source VS Code extensions
 - **Custom**: your organization's custom VS Code extension marketplace API,
@@ -29,4 +29,5 @@ point Coder to an air-gapped instance of
 
 View the [OpenVSX deployment wiki] for more information.
 
-[OpenVSX deployment wiki]: https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX
+[OpenVSX deployment wiki]:
+https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX

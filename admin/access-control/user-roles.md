@@ -112,17 +112,6 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>Extensions</td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-        </tr>
-        <tr>
             <td>Images</td>
             <td>X</td>
             <td>X</td>
@@ -189,29 +178,7 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>Private Secrets</td>
-            <td>X</td>
-            <td></td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-        </tr>
-        <tr>
             <td>Registries</td>
-            <td>X</td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Services</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -396,29 +363,7 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>Private Secrets</td>
-            <td>X</td>
-            <td></td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-        </tr>
-        <tr>
             <td>Registries</td>
-            <td>X</td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Services</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -526,17 +471,6 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>Private Secrets</td>
-            <td>X</td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td>X</td>
-        </tr>
-        <tr>
             <td>Users</td>
             <td></td>
             <td></td>
@@ -610,17 +544,6 @@ There are four roles available:
             <td></td>
             <td></td>
             <td></td>
-        </tr>
-        <tr>
-            <td>Private Secrets</td>
-            <td>X</td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td>X</td>
         </tr>
         <tr>
             <td>Users</td>

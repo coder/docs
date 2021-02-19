@@ -43,7 +43,7 @@ sudo chsh -s /usr/bin/fish $USER
 The Environments page shows the log output of the `~/personalize` script in
 the build log.
 
-![Enable privileged environment](../assets/personalize-log.png)
+![~/personalize log output](../assets/personalize-log.png)
 
 ## Git Integration
 
