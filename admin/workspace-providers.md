@@ -4,25 +4,19 @@ description: Learn how workspace providers can minimize latency for users.
 state: beta
 ---
 
-Coder allows you to add to your deployment multiple Kubernetes clusters. These
-additional clusters are called **providers**. This can be helpful for
-distributed teams, since users can choose the provider closest to them to
-minimize latency.
+Workspace Providers enable a single Coder deployment to provision and manage
+workspaces across multiple Kubernetes clusters and namespaces, including ones
+located in other geographies, regions, or clouds.
 
-## Enabling Workspace Providers
-
-To enable the Workspace Providers UI elements:
-
-1. In the Coder UI, click on your avatar.
-2. In the menu that appears, click **Feature Preview**.
-3. Select **Resource Pools UI** and click **Enable**.
-
-Once enabled, end users can select the workspace provider and namespace that
-will contain their environment.
+Distributed teams can use this feature to allow users to manage workspaces in
+the cluster that's nearest, reducing network latency and improving developers'
+experience. Additionally, you can use workspace providers to support data
+sovereignty requirements or increase the isolation between workspaces running in
+the same region or cluster.
 
 ## Admin UI
 
-Site managers and admins can view the workspace providers configuruation
+Site managers and admins can view the workspace providers configuration
 page available via **Manage** > **Admin** > **Workspace Providers**.
 
 ![Workspace Providers Admin](../assets/workspace-providers-admin.png)
@@ -35,16 +29,3 @@ an Environment dialog.
 You can expand individual listings to view in-depth information:
 
 ![Detailed Workspace Providers Info](../assets/workspace-providers-detail.png)
-
-Workspace Providers are available on a per-organization basis. Site managers can
-configure the organizations permitted to use a particular Workspace Provider as
-follows:
-
-1. Expand the workspace provider's listing
-2. Click **Edit**
-3. Select the organizations whose users should be allowed to use the workspace
-   provider
-4. Click **Update**.
-
-![Organization Whitelist for Workspace
-Providers](../assets/workspace-providers-org-whitelist.png)

@@ -19,32 +19,7 @@ existing environments. Click the **New Environment** button.
 1. Enter a friendly name for your environment, and choose an
    [Image](../images/index.md) to use.
 
-1. If you want your environment to turn on at a specific time automatically,
-   toggle **Autostart** to **Yes**. You can set the autostart time in [User
-   Preferences](preferences.md#autostart). Please note that Coder will not
-   trigger autostart if your environment is on or hasn't been opened in three or
-   more days.
-
-1. **Beta Feature: Workspace Providers:** Coder allows you to add multiple
-   Kubernetes clusters called **providers**. This can be helpful for distributed
-   teams, since users can choose the provider closest to them to minimize
-   latency.
-
-   To enable this beta feature: click on your avatar in the Coder UI. In the menu
-   that appears, click **Feature Preview**. Select **Resource Pools UI** and click
-   **Enable**.
-
-   Once enabled, you'll see a new section in the Create Environment modal called
-   **Workspace Providers**.
-
-   ![Workspace Providers](../assets/workspace-providers.png)
-
-   Select the **Workspace Provider** and the
-   **Namespace** where your environment will be located. We recommend selecting
-   the workspace provider closest to you to minimize the latency you encounter
-   when using Coder.
-
-1. Click **Create** to proceed.
+2. Click **Create** to proceed.
 
 Coder redirects you to an overview page for your environment during the build
 process. Learn more about the Environment [creation

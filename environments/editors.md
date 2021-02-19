@@ -49,7 +49,8 @@ to allow popup windows so that you can use your IDE.
 ### Manually Installing JetBrains' IDEs
 
 You can also manually install JetBrains' IDEs. After following JetBrains' steps
-for installing your IDE, create a symlink, and add it to $PATH.
+for installing your IDE (make sure that you install the IDE to your home
+directory), create a symlink, and add it to $PATH.
 
 The symlink names supported by Coder are:
 

@@ -42,20 +42,6 @@ When prompted, provide the following information:
         <td><b>Tag</b></td>
         <td>The version of the Image you want to use</td>
     </tr>
-    <tr>
-        <td><b>Autostart</b></td>
-        <td>Whether you want your environment to automatically start and build at
-        the specified time</td>
-    </tr>
-    <tr>
-        <td><b>Workspace Provider (Beta)</b></td>
-        <td>A workspace provider is an additional Kubernetes cluster for Coder;
-        choose the location that's closest to you to minimize latency </td>
-    </tr>
-        <tr>
-        <td><b>Namespace (Beta)</b></td>
-        <td>The specific namespace where you want your environment deployed</td>
-    </tr>
 </table>
 
 Coder offers several **advanced** settings that allow you to customize your
