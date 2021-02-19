@@ -17,27 +17,28 @@ To enable the Workspace Providers UI elements:
 2. In the menu that appears, click **Feature Preview**.
 3. Select **Resource Pools UI** and click **Enable**.
 
-Once enabled, this allows end-users to choose the workspace provider and
-namespace where they want their environment deployed.
+Once enabled, end users can select the workspace provider and namespace that
+will contain their environment.
 
 ## Admin UI
 
 Site managers and admins can view the workspace providers configuruation
-page avaiable via **Manage** > **Admin** > **Workspace Providers**.
+page available via **Manage** > **Admin** > **Workspace Providers**.
 
 ![Workspace Providers Admin](../assets/workspace-providers-admin.png)
 
-The Admin panel will provide high-level information on all of your workspace
-providers, as well as whether the provider is active on not. The default tag
-indicates the provider that will be automatically selected whenever a user
-launches the Create an Environment modal.
+The Admin panel shows an overview of all configured workspace providers and
+indicates whether they are active. The **default** tag indicates the provider
+that is initially selected when a user creates an environment using the Create
+an Environment dialog.
 
 You can expand individual listings to view in-depth information:
 
 ![Detailed Workspace Providers Info](../assets/workspace-providers-detail.png)
 
-Workspace Providers are available on a per-organization basis. To make
-individual workspace providers available to organizations:
+Workspace Providers are available on a per-organization basis. Site managers can
+configure the organizations permitted to use a particular Workspace Provider as
+follows:
 
 1. Expand the workspace provider's listing
 2. Click **Edit**
