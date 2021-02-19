@@ -17,7 +17,7 @@ Administrative users can modify a variety of environment-related behaviors.
 - You can also modify the [Environment Shutdown Behavior](shutdown.md) on a
   per-organization basis to optimize resource usage.
 
-- You can [disable SSH access](ssh-access.md) for your end-users by editing the
-  YAML file in helm (by default, Coder enables SSH access to environments).
+- You can [disable SSH access](ssh-access.md) for users by editing the
+  Helm values file (Coder enables SSH access to environments by default).
 
 <children></children>

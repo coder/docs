@@ -27,6 +27,6 @@ inaccessible to end-users. Using the **Custom** configuration option, you can
 point Coder to an air-gapped instance of
 [OpenVSX](https://github.com/eclipse/openvsx) to serve assets to users.
 
-View the [OpenVSX deployment
-wiki](https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX) for more
-information.
+View the [OpenVSX deployment wiki] for more information.
+
+[OpenVSX deployment wiki]: https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX

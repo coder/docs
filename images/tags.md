@@ -34,7 +34,7 @@ that image.
 
 ![Set Default Tag](../assets/default-tag.png)
 
-To use an existing tag as the default tag, click the three-dot menu for a tag
-and select **Make default**.
+To use an existing tag as the default tag, click the **vertical ellipses** for a
+tag and select **Make default**.
 
 ![Set Existing Tag as Default](../assets/existing-tag-as-default.png)
