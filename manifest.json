@@ -19,7 +19,9 @@
         { "path": "./environments/cvms.md" },
         { "path": "./environments/devurls.md" },
         { "path": "./environments/pwa.md" },
-        { "path": "./environments/environment-params.md" }
+        { "path": "./environments/environment-params.md" },
+        { "path": "./environments/preferences.md" },
+        { "path": "./environments/services.md" }
       ]
     },
     {
@@ -47,6 +49,7 @@
         {
           "path": "./setup/kubernetes/index.md",
           "children": [
+            { "path": "./setup/kubernetes/local-preview.md" },
             { "path": "./setup/kubernetes/aws.md" },
             { "path": "./setup/kubernetes/azure.md" },
             { "path": "./setup/kubernetes/google.md" }
@@ -93,7 +96,7 @@
         { "path": "./admin/metrics.md" },
         { "path": "./admin/telemetry.md" },
         { "path": "./admin/user-management.md" },
-        { "path": "./admin/api.md"}
+        { "path": "./admin/api.md" }
       ]
     },
     {
