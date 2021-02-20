@@ -9,7 +9,7 @@ description: "Released on 02/20/2021"
   for Services are preserved for data recovery purposes (volumes,
   database tables, etc.), but are not accessible through the Coder platform.
   Please reference
-  [Docker in Environments](https://coder.com/docs/environments/cvms) for
+  [Docker in Environments](../environments/cvms) for
   a guide on the new workflow for running containers with your Environment.
 - The built-in Internal Extension Marketplace is now **removed**. All resources
   created for this feature are preserved for data recover purposes, but are not
@@ -17,12 +17,14 @@ description: "Released on 02/20/2021"
   Extension Marketplace configuration enables the use of
   [Open VSX](https://github.com/eclipse/openvsx) as
   an alternative. For more details, please view our [migration guide](TODO).
-- The administrator configuration option "Privileged Enivonrments" is now
-  removed. All non-CVM enviornments are launched with `privileged: false`.
-- The [Container-based Virutal Machine](https://coder.com/docs/admin/environment-management/cvms)
+- The administrator configuration option "Privileged Environments" is now
+  removed. All non-CVM environments are launched with `privileged: false`.
+- The [Container-based Virutal Machine](../admin/environment-management/cvms)
   environment option is now considered generally available. The
   admin-level configuration is still required, but the `alpha`
   warning has been removed.
+- Environment SSH routing has new behavior. Please reference
+[this guide](../admin/environment-management/ssh-access.md).
 
 ### Features ✨
 
