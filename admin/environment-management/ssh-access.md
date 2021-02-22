@@ -49,9 +49,10 @@ RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
 > If Coder detects a running TCP server on port 22, it will forward incoming SSH
 > traffic to this server.
 
-At startup, Coder injects the user's SSH key into `~/authorized_keys` to
-facilitate authentication with OpenSSH. For the best experience, add the
-following to your `/etc/ssh/sshd_config` file inside your image:
+At startup, Coder injects the user's SSH key into `~/authorized_keys` inside
+your environment to facilitate authentication with OpenSSH. For the best
+experience, add the following to your `/etc/ssh/sshd_config`
+file inside your image:
 
 ```text
 PermitUserEnvironment yes
