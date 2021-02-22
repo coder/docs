@@ -8,18 +8,20 @@ target="_blank" rel="noreferrer noopener">Image tags</a> are variants of the
 original (or base) image. Users can publish new image tags containing updated
 dependencies and tooling useful for work on the project.
 
-To add a tag to Coder, go to **Images** and find the original image. Open the
-image, then click **Add Tag** in the top-right. Provide the **tag name** when
-prompted.
+To add a tag to Coder:
+
+1. Go to **Images** and find the original image.
+2. Open the image, then click **Add Tag** in the top-right.
+3. Provide the **tag name** when prompted.
 
 When someone publishes a new version of a tag, Coder notifies users of that tag
 with active environments.
 
 ## Default Tag
 
-Each image has a default tag, which appears at the top of the list and is marked
-by an asterisk. Coder automatically selects the default tag when you create an
-environment.
+Each image has a default tag. The default tag appears at the top of the list and
+is indicated by an asterisk. Coder automatically selects the default tag when
+you create an environment.
 
 ### Changing the Default Tag
 
@@ -32,7 +34,7 @@ that image.
 
 ![Set Default Tag](../assets/default-tag.png)
 
-To use an existing tag as the default tag, click the 3 dot menu for a tag and
-select **Make default**.
+To use an existing tag as the default tag, click the **vertical ellipses** for a
+tag and select **Make default**.
 
 ![Set Existing Tag as Default](../assets/existing-tag-as-default.png)
