@@ -45,6 +45,9 @@ the build log.
 
 ![Enable privileged environment](../assets/personalize-log.png)
 
+**Note:** The `-y` flag is required to continue through any prompts.
+Otherwise, the `~/personalize` script will abort.
+
 ## Git Integration
 
 Once your site manager has [set up a Git service](../admin/git.md), you can link
