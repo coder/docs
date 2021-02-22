@@ -114,7 +114,8 @@
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/macos-keybinding.md" },
         { "path": "./guides/ssl-certificates.md" },
-        { "path": "./guides/nightly-releases.md" }
+        { "path": "./guides/nightly-releases.md" },
+        { "path": "./guides/teardown.md" }
       ]
     },
     {
