@@ -21,7 +21,7 @@ jobs:
           submodules: true
           fetch-depth: 0
       - name: Checkout Docs
-        run: git fetch && git checkout ${GITHUB_SHA}
+        run: git fetch && git checkout ${GITHUB_REF}
         working-directory: ./product/coder.com/site/docs
       - name: Setup Node
         uses: actions/setup-node@v1
