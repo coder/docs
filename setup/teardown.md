@@ -26,11 +26,10 @@ kubectl get svc --all-namespaces
 ```
 
 3. Delete any services that have an `EXTERNAL-IP` value
-by running the following command:
+in your namespace by running the following command:
 
 ```bash
 kubectl delete svc <service-name>
-```
 
 4. Delete the cluster and its underlying nodes by
 running the following command:
