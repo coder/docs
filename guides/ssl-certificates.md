@@ -1,5 +1,5 @@
 ---
-title: Create SSL Certificates
+title: SSL Certificate Setup
 description: Learn how to use cert-manager to set up SSL certificates for Coder
 ---
 
