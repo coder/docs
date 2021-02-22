@@ -67,8 +67,7 @@ echo $CLUSTER_NAME
 2. Delete the cluster by running the following command:
 
 ```bash
-gcloud beta container --project $PROJECT_ID clusters delete 
-$CLUSTER_NAME --zone <enterzone>
-```
+gcloud beta container --project $PROJECT_ID clusters delete \
+$CLUSTER_NAME --zone <zone>
 
 Thank you for using Coder! If you would like to provide feedback, you can do so here.
