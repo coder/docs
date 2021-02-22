@@ -145,7 +145,8 @@
       "profile": "https://github.com/ericpaulsen",
       "contributions": [
         "bug",
-        "maintenance"
+        "maintenance",
+        "content"
       ]
     },
     {
@@ -176,5 +177,6 @@
       ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
