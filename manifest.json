@@ -18,7 +18,6 @@
         { "path": "./environments/ssh.md" },
         { "path": "./environments/cvms.md" },
         { "path": "./environments/devurls.md" },
-        { "path": "./environments/mobile-development.md" },
         { "path": "./environments/pwa.md" },
         { "path": "./environments/environment-params.md" },
         { "path": "./environments/variables.md" },
@@ -114,8 +113,9 @@
       "children": [
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/macos-keybinding.md" },
-        { "path": "./guides/ssl-certificates.md" },
-        { "path": "./guides/nightly-releases.md" }
+        { "path": "./environments/mobile-development.md" },
+        { "path": "./guides/nightly-releases.md" },
+        { "path": "./guides/ssl-certificates.md" }
       ]
     },
     {
