@@ -1,9 +1,7 @@
 # Coder Docs
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
 [![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
-
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository contains the documentation source files for
@@ -48,7 +46,7 @@ Thanks goes to these wonderful people:
     <td align="center"><a href="https://github.com/sreya"><img src="https://avatars.githubusercontent.com/u/4856196?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jon Ayers</b></sub></a><br /><a href="#content-sreya" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/nathanpotter"><img src="https://avatars.githubusercontent.com/u/12649493?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nathan Potter</b></sub></a><br /><a href="#content-nathanpotter" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/sestegra"><img src="https://avatars.githubusercontent.com/u/109060?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Stéphane Este-Gracias</b></sub></a><br /><a href="https://github.com/cdr/docs/issues?q=author%3Asestegra" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/ericpaulsen"><img src="https://avatars.githubusercontent.com/u/9683576?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eric Paulsen</b></sub></a><br /><a href="https://github.com/cdr/docs/issues?q=author%3Aericpaulsen" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/ericpaulsen"><img src="https://avatars.githubusercontent.com/u/9683576?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eric Paulsen</b></sub></a><br /><a href="https://github.com/cdr/docs/issues?q=author%3Aericpaulsen" title="Bug reports">🐛</a> <a href="#maintenance-ericpaulsen" title="Maintenance">🚧</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://iamhughes.com/"><img src="https://avatars.githubusercontent.com/u/2894107?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Hughes</b></sub></a><br /><a href="#maintenance-IAmHughes" title="Maintenance">🚧</a></td>
