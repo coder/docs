@@ -27,12 +27,12 @@ When prompted, provide the following information:
         <td><b>Image Source</b></td>
         <td>The source of your image; leave as <b>Existing</b> in most cases.
         You can also <b>import</b> a new image if your site manager has imported
-         a <a href="../admin/registries/index.md">registry</a> or select a <b><a
-         href="https://github.com/cdr/enterprise-images">packaged</
-         a></b> image provided by Coder if your site manager has
-         enabled the automatic importing of the <a
-         href="../admin/registries/default-registry.md">Default Registry</a>.
-</td>
+            a <a href="../admin/registries/index.md">registry</a> or select a <b><a
+            href="https://github.com/cdr/enterprise-images">packaged</
+            a></b> image provided by Coder if your site manager has
+            enabled the automatic importing of the <a
+            href="../admin/registries/default-registry.md">Default Registry</a>.
+        </td>
     </tr>
     <tr>
         <td><b>Image</b></td>
@@ -48,6 +48,8 @@ Coder offers several **advanced** settings that allow you to customize your
 environment. You can choose to run your environment as a container-based virtual
 machine, provide a dotfiles URI for [personalization](personalization.md),
 and set your resource allocation.
+
+![Environment Setup Advanced Settings](../assets/advanced-env-config.png)
 
 <table>
     <tr>
@@ -72,6 +74,12 @@ and set your resource allocation.
     <tr>
         <td><b>Disk</b></td>
         <td>The amount of storage space you'd like for your environment</td>
+    </tr>
+    <tr>
+        <td><b>Add a GPU</b></td>
+        <td>Whether you want a
+        [GPU](../admin/environment-management/gpu-acceleration.md) added to
+        your environment</td>
     </tr>
 </table>
 
