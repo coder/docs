@@ -18,6 +18,7 @@
         { "path": "./environments/ssh.md" },
         { "path": "./environments/cvms.md" },
         { "path": "./environments/devurls.md" },
+        { "path": "./environments/mobile-development.md" },
         { "path": "./environments/pwa.md" },
         { "path": "./environments/environment-params.md" },
         { "path": "./environments/variables.md" },
