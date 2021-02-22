@@ -96,6 +96,7 @@
         { "path": "./admin/metrics.md" },
         { "path": "./admin/telemetry.md" },
         { "path": "./admin/user-management.md" },
+        { "path": "./admin/workspace-providers.md" },
         { "path": "./admin/api.md" }
       ]
     },
