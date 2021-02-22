@@ -112,7 +112,7 @@
       "children": [
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/macos-keybinding.md" },
-        { "path": "./environments/mobile-development.md" },
+        { "path": "./guides/mobile-development.md" },
         { "path": "./guides/nightly-releases.md" },
         { "path": "./guides/ssl-certificates.md" }
       ]
