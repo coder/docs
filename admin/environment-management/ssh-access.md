@@ -51,7 +51,7 @@ RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
 
 At startup, Coder injects the user's SSH key into `~/authorized_keys` to
 facilitate authentication with OpenSSH. For the best experience, add the
-following to your `/etc/ssh/sshd_config` file:
+following to your `/etc/ssh/sshd_config` file inside your image:
 
 ```text
 PermitUserEnvironment yes
