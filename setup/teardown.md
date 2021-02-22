@@ -7,7 +7,8 @@ This guide shows you how to teardown Coder and the cluster it is deployed on.
 
 **Note:** these instructions help you remove infrastructure spun up via our
 [Kubernetes Documentation](https://coder.com/docs/setup/kubernetes), and do not
-include teardown steps for any additional cluster resources that may have been deployed.
+include teardown steps for any additional resources that may have been created
+outside of these steps
 
 ## Amazon Elastic Kubernetes Service (EKS)
 
