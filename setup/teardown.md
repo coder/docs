@@ -47,6 +47,13 @@ to the one you want to delete in Azure by running the following command:
 echo $RESOURCE_GROUP
 ```
 
+* If the above is not set properly, set it to the proper value by running
+the following command:
+
+```bash
+RESOURCE_GROUP="<MY_RESOURCE_GROUP_NAME>"
+```
+
 2. Delete the cluster by running the following command:
 
 ```bash
@@ -64,11 +71,17 @@ echo $PROJECT_ID
 echo $CLUSTER_NAME
 ```
 
+* If the above are not set properly, set them to the proper values by
+running the following command:
+
+```bash
+PROJECT_ID="<MY_RESOURCE_GROUP_NAME>" \
+CLUSTER_NAME="<MY_CLUSTER_NAME>"
+```
+
 2. Delete the cluster by running the following command:
 
 ```bash
 gcloud beta container --project $PROJECT_ID clusters delete 
 $CLUSTER_NAME --zone <enterzone>
 ```
-
-Thank you for using Coder! If you would like to provide feedback, you can do so here.
