@@ -40,6 +40,9 @@ sudo apt-get install -y fish
 sudo chsh -s /usr/bin/fish $USER
 ```
 
+**Note:** The `-y` flag is required to continue through any prompts.
+Otherwise, the `~/personalize` script will abort.
+
 The Environments page shows the log output of the `~/personalize` script in
 the build log.
 
