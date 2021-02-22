@@ -133,8 +133,10 @@ cert-manager only for Coder, you may choose to use the **Issuer** configuration
 above. If you want to use a **ClusterIssuer** instead, you'll need to make the
 following changes:
 
-Change the namespace of the secret to **cert-manager** Change the kind of the
-**Issuer** to **ClusterIssuer** Remove the namespace of the **ClusterIssuer**
+- Change the namespace of the secret to **cert-manager**
+- Change the kind of the **Issuer** to **ClusterIssuer**
+- Remove the namespace of the **ClusterIssuer**
+- Change the additional annotations to `cert-manager.io/cluster-issuer: letsencrypt`
 
 For further information, see [Setting Up
 Issuers](https://docs.cert-manager.io/en/release-0.8/tasks/issuers/index.html).
@@ -168,7 +170,7 @@ ingress:
     hostSecretName: coder-root-cert
     devurlsHostSecretName: coder-devurls-cert
   additionalAnnotations:
-  - 'cert-manager.io/cluster-issuer: letsencrypt'
+  - 'cert-manager.io/issuer: letsencrypt'
 
 devurls:
   host: "*.coder.example.com"
