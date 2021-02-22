@@ -16,4 +16,4 @@ To switch the keybindings:
 5. Use the **Keymap** toggle at the top to switch to **macOS**
 6. Click **OK** to save your changes and proceed
 
-![Configuring macOS Keybindings](../../assets/macos-keybinding.png)
+![Configuring macOS Keybindings](../assets/macos-keybinding.png)

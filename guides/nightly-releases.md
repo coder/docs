@@ -1,5 +1,5 @@
 ---
-title: nightly-releases
+title: Nightly Releases
 description: Learn how to obtain and use Coder's nightly releases.
 ---
 
