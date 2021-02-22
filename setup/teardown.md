@@ -7,7 +7,8 @@ This guide shows you how to teardown Coder and the cluster it is deployed on.
 
 **Note:** these instructions help you remove infrastructure spun up via our
 [Kubernetes Documentation](https://coder.com/docs/setup/kubernetes), and do not
-include teardown steps for any additional cluster resources that may have been deployed.
+include teardown steps for any additional resources that may have been created
+outside of these steps
 
 ## Amazon Elastic Kubernetes Service (EKS)
 
@@ -25,11 +26,10 @@ kubectl get svc --all-namespaces
 ```
 
 3. Delete any services that have an `EXTERNAL-IP` value
-by running the following command:
+in your namespace by running the following command:
 
 ```bash
 kubectl delete svc <service-name>
-```
 
 4. Delete the cluster and its underlying nodes by
 running the following command:
@@ -82,6 +82,7 @@ CLUSTER_NAME="<MY_CLUSTER_NAME>"
 2. Delete the cluster by running the following command:
 
 ```bash
-gcloud beta container --project $PROJECT_ID clusters delete 
-$CLUSTER_NAME --zone <enterzone>
+gcloud beta container --project $PROJECT_ID clusters delete \
+$CLUSTER_NAME --zone <zone>
 ```
+
