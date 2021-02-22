@@ -64,8 +64,7 @@
         { "path": "./setup/configuration.md" },
         { "path": "./setup/licensing.md" },
         { "path": "./setup/air-gapped.md" },
-        { "path": "./setup/updating.md" },
-        { "path": "./setup/nightly-releases.md" }
+        { "path": "./setup/updating.md" }
       ]
     },
     {
@@ -114,7 +113,8 @@
       "children": [
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/macos-keybinding.md" },
-        { "path": "./guides/ssl-certificates.md" }
+        { "path": "./guides/ssl-certificates.md" },
+        { "path": "./guides/nightly-releases.md" }
       ]
     },
     {

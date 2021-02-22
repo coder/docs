@@ -1,6 +1,6 @@
 ---
 title: nightly-releases
-description: Learn how to obtain Coder's nightly releases.
+description: Learn how to obtain and use Coder's nightly releases.
 ---
 
 Coder offers a public nightly release Helm repository that's updated most

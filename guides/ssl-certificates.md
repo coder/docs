@@ -149,56 +149,15 @@ secret/cloudflare-api-key-secret created
 issuer.cert-manager.io/letsencrypt created
 ```
 
-## Step 3: Issue Certificates for Coder
-
-In a text editor, create a new file called **certificates.yaml** and paste the
-following (make sure you modify where necessary based on the comments):
-
-```yaml
-apiVersion: cert-manager.io/v1alpha2
-kind: Certificate
-metadata:
-  name: coder-root
-  namespace: coder # Your Coder deployment namespace
-spec:
-  secretName: coder-root-cert
-  duration: 2160h # 90d
-  renewBefore: 360h # 15d
-  dnsNames:
-    - "coder.example.com" # Your base domain for Coder
-  issuerRef:
-    name: letsencrypt
-    kind: Issuer
-
----
-apiVersion: cert-manager.io/v1alpha2
-kind: Certificate
-metadata:
-  name: coder-devurls
-  namespace: coder # Your Coder deployment namespace
-spec:
-  secretName: coder-devurls-cert
-  duration: 2160h # 90d
-  renewBefore: 360h # 15d
-  dnsNames:
-     - "*.coder.example.com" # Your dev URLs wildcard subdomain
-issuerRef:
-  name: letsencrypt
-  kind: Issuer
-```
-
-> If you are using a **ClusterIssuer** instead of an **Issuer**, change the
-> **issuerRef.kind** for each **Certificate** to **ClusterIssuer**.
-
-Next, apply it to your cluster: `kubectl apply -f certificates.yaml`
-
-## Step 4: Configure Coder to Use the Certificates
+## Step 3: Configure Coder to Issue and Use the Certificates
 
 If your installation uses an external egress, you'll need to configure your
 ingress to use the **coder-root-cert** and **coder-devurls-cert**.
 
-However, if you're using the default ingress included in the helm chart, you can
-use the following helm values to configure the internal ingress:
+However, if you're using the default
+[ingress](https://cert-manager.io/docs/usage/ingress/) included in the helm
+chart, you can use the following helm values to configure the internal ingress
+and automatically create your certificate:
 
 ```yaml
 ingress:
@@ -208,6 +167,8 @@ ingress:
     enable: true
     hostSecretName: coder-root-cert
     devurlsHostSecretName: coder-devurls-cert
+  additionalAnnotations:
+  - 'cert-manager.io/cluster-issuer: letsencrypt'
 
 devurls:
   host: "*.coder.example.com"
