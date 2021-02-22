@@ -9,7 +9,9 @@ To reset a user's password:
 2. Find the user whose password you want to reset and click the vertical
    ellipses to the right.
 3. Click **Reset password**. Coder will display a temporary password that you
-   can provide to the user.
+   can provide to the user. Click **Reset Password** to proceed with the reset.
+
+![Confirm Password Reset](../../assets/reset-password.png)
 
 When the user logs in using the temporary password, Coder will prompt them to
 change it.
