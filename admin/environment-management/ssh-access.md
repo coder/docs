@@ -22,9 +22,7 @@ running a full OpenSSH server with `systemd` inside your image instead.
 
 To do so:
 
-1. Make sure that you're creating your environments with the [CVM
-   option](https://coder.com/docs/environments/cvms) enabled
-2. Add the following to your Dockerfile:
+1. Add the following to your Dockerfile:
 
 ```Dockerfile
 FROM ubuntu:20.04
@@ -45,6 +43,9 @@ RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
   echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
 
 ```
+
+2. Make sure that you're creating your environments with the [CVM
+   option](https://coder.com/docs/environments/cvms) enabled
 
 > If Coder detects a running TCP server on port 22, it will forward incoming SSH
 > traffic to this server.
