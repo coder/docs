@@ -30,6 +30,7 @@ in your namespace by running the following command:
 
 ```bash
 kubectl delete svc <service-name>
+```
 
 4. Delete the cluster and its underlying nodes by
 running the following command:
