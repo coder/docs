@@ -56,7 +56,7 @@ cert-manager supports HTTP01 and DNS01 challenges, as well as [many DNS
 providers](https://cert-manager.io/docs/configuration/acme/dns01/#supported-dns01-providers).
 This guide, however, shows you how to use Cloudflare for DNS01 challenges. This
 is necessary to issue wildcard certificates, which are required for Coder's [Dev
-URLs](../../admin/devurls.md) feature.
+URLs](../admin/devurls.md) feature.
 
 First, get the Cloudflare API credentials for cert-manager to use; cert-manager
 needs permission to add a temporary TXT record and delete it after the challenge

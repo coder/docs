@@ -77,7 +77,7 @@ platform images are hosted in Coder's Docker Hub repo.
     --set envmetrics.image=my-registry.com/coderenvs/coder-service:<version>
     ```
 
-1. Next, follow the [Installation](../../setup/installation.md) guide beginning
+1. Next, follow the [Installation](installation.md) guide beginning
    with **step 6** to get the access URL and the temporary admin password, which
    allows you to proceed with setting up and configuring Coder.
 

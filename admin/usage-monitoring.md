@@ -22,7 +22,7 @@ environment than necessary.
 
 There are several tools available to you to balance the tradeoff between
 environment performance and cloud cost. Read more about this on [compute
-resources](../../admin/resources.md).
+resources](resources.md).
 
 ## Development Workspace Metrics
 
