@@ -1,88 +1,82 @@
 ---
 title: Teardown
-description: Learn how to teardown Coder and its associated infrastructure.
+description: Learn how to tear down Coder and the infrastructure on which it's deployed.
 ---
 
-This guide shows you how to teardown Coder and the cluster it is deployed on.
+This guide shows you how to tear down Coder and the cluster it is deployed on.
 
-**Note:** these instructions help you remove infrastructure spun up via our
-[Kubernetes Documentation](https://coder.com/docs/setup/kubernetes), and do not
-include teardown steps for any additional resources that may have been created
-outside of these steps
+> These instructions help you remove infrastructure created when following our
+[Kubernetes setup tutorials](../setup/kubernetes/index.md). They do not include
+teardown steps for any additional resources that you create.
 
 ## Amazon Elastic Kubernetes Service (EKS)
 
-1. Make sure you're running `eksctl` version 0.37.0 or later by running
-the following command:
+1. Make sure you're running `eksctl` version 0.37.0 or later:
 
-```bash
-eksctl version
-```
+    ```bash
+    eksctl version
+    ```
 
-2. List all services in the cluster by running the following command:
+1. List all of the services in your cluster:
 
-```bash
-kubectl get svc --all-namespaces
-```
+    ```bash
+    kubectl get svc --all-namespaces
+    ```
 
-3. Delete any services that have an `EXTERNAL-IP` value
-in your namespace by running the following command:
+1. Delete any services that have an `EXTERNAL-IP` value in your namespace:
 
-```bash
-kubectl delete svc <service-name>
+    ```bash
+    kubectl delete svc <service-name>
+    ```
 
-4. Delete the cluster and its underlying nodes by
-running the following command:
+1. Delete the cluster and its underlying nodes:
 
-```bash
-eksctl delete cluster --name <prod>
-```
+    ```bash
+    eksctl delete cluster --name <prod>
+    ```
 
-## Azure Kubernetes Serivce (AKS)
+## Azure Kubernetes Service (AKS)
 
-1. Ensure the environment variable for `RESOURCE_GROUP` is set
-to the one you want to delete in Azure by running the following command:
+1. Make sure that the environment variable for `RESOURCE_GROUP` is set to the
+   one you want to delete in Azure:
 
-```bash
-echo $RESOURCE_GROUP
-```
+    ```bash
+    echo $RESOURCE_GROUP
+    ```
 
-* If the above is not set properly, set it to the proper value by running
-the following command:
+    If the variable is incorrect, fix it by setting it to the proper value:
 
-```bash
-RESOURCE_GROUP="<MY_RESOURCE_GROUP_NAME>"
-```
+    ```bash
+    RESOURCE_GROUP="<MY_RESOURCE_GROUP_NAME>"
+    ```
 
-2. Delete the cluster by running the following command:
+1. Delete the cluster:
 
-```bash
-az group delete --resource-group $RESOURCE_GROUP
-```
+    ```bash
+    az group delete --resource-group $RESOURCE_GROUP
+    ```
 
 ## Google Kubernetes Engine (GKE)
 
-1. Ensure the environment variables for `PROJECT_ID` and `CLUSTER_NAME` are still
-set to the ones you want to delete in Google Cloud Platform (GCP).
-Do this by running the following commands:
+1. Ensure that the environment variables for `PROJECT_ID` and `CLUSTER_NAME` are
+   set to those for the cluster you want to delete:
 
-```bash
-echo $PROJECT_ID
-echo $CLUSTER_NAME
-```
+    ```bash
+    echo $PROJECT_ID
+    echo $CLUSTER_NAME
+    ```
 
-* If the above are not set properly, set them to the proper values by
-running the following command:
+    If these values are incorrect, you can fix this by providing the proper
+    names:
 
-```bash
-PROJECT_ID="<MY_RESOURCE_GROUP_NAME>" \
-CLUSTER_NAME="<MY_CLUSTER_NAME>"
-```
+    ```bash
+    PROJECT_ID="<MY_RESOURCE_GROUP_NAME>" \
+    CLUSTER_NAME="<MY_CLUSTER_NAME>"
+    ```
 
-2. Delete the cluster by running the following command:
+1. Delete the cluster:
 
-```bash
-gcloud beta container --project $PROJECT_ID clusters delete \
-$CLUSTER_NAME --zone <zone>
-```
-
+    ```bash
+    gcloud beta container --project $PROJECT_ID clusters delete \
+    $CLUSTER_NAME --zone <zone>
+    ```
