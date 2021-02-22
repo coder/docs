@@ -4,9 +4,9 @@ on:
     branches:
       - "**"
       - "!master"
-    pull_request:
-      branches:
-        - "**"
+  pull_request:
+    branches:
+      - "**"
 jobs:
   preview:
     name: Preview
@@ -20,8 +20,13 @@ jobs:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           submodules: true
           fetch-depth: 0
-      - name: Checkout Docs
+      - name: Checkout Docs - Push
+        if: ${{ github.event_name == 'push'}}
         run: git fetch && git checkout ${GITHUB_SHA}
+        working-directory: ./product/coder.com/site/docs
+      - name: Checkout Docs - PR
+        if: ${{ github.event_name == 'pull_request'}}
+        run: git fetch && git checkout ${GITHUB_HEAD_REF}
         working-directory: ./product/coder.com/site/docs
       - name: Setup Node
         uses: actions/setup-node@v1
