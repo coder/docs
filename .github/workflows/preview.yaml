@@ -24,7 +24,7 @@ jobs:
         if: ${{ github.event_name == 'push'}}
         run: git fetch && git checkout ${GITHUB_SHA}
         working-directory: ./product/coder.com/site/docs
-      - name: Checkout Docs - PR
+      - name: Checkout Docs - Pulls
         if: ${{ github.event_name == 'pull_request'}}
         run: git fetch && git checkout ${GITHUB_HEAD_REF}
         working-directory: ./product/coder.com/site/docs
