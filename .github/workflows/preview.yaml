@@ -11,6 +11,8 @@ jobs:
   preview:
     name: Preview
     runs-on: ubuntu-latest
+    # Prevent duplicate run from happening when a forked push is committed
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     steps:
       - name: Checkout Mono
         uses: actions/checkout@v2
@@ -24,7 +26,7 @@ jobs:
         if: ${{ github.event_name == 'push'}}
         run: git fetch && git checkout ${GITHUB_SHA}
         working-directory: ./product/coder.com/site/docs
-      - name: Checkout Docs - Pulls
+      - name: Checkout Docs - PR
         if: ${{ github.event_name == 'pull_request'}}
         run: git fetch && git checkout ${GITHUB_HEAD_REF}
         working-directory: ./product/coder.com/site/docs
