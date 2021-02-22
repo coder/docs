@@ -21,7 +21,7 @@ Make sure that you've:
 - (Optional) Configured [Dev URLs](../admin/devurls.md) for your deployment
 
 Your Coder user account must have permissions to [import an
-image](../../images/importing.md).
+image](../images/importing.md).
 
 ## Step 1: Create a Development Image
 
