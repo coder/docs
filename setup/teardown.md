@@ -85,4 +85,3 @@ CLUSTER_NAME="<MY_CLUSTER_NAME>"
 gcloud beta container --project $PROJECT_ID clusters delete \
 $CLUSTER_NAME --zone <zone>
 ```
-
