@@ -4,10 +4,9 @@ description: Learn how workspace providers can minimize latency for users.
 state: beta
 ---
 
-Workspace Providers are a forthcoming feature that will enable a single Coder
-deployment to provision and manage workspaces across multiple Kubernetes
-clusters and namespaces, including ones located in other geographies, regions,
-or clouds.
+Workspace Providers enable a single Coder deployment to provision and manage
+workspaces across multiple Kubernetes clusters and namespaces, including ones
+located in other geographies, regions, or clouds.
 
 Distributed teams can use this feature to allow users to manage workspaces in
 the cluster that's nearest, reducing network latency and improving developers'
