@@ -44,3 +44,20 @@ Updating Coder is a two-step process:
     helm upgrade --namespace coder --force --install --atomic --wait \
       --version 1.15.2 coder coder/coder
     ```
+    
+## Troubleshooting 
+
+If the upgrade fails due to error messages such as a field is immutable or helm doesn't control a resource, the best way to remedy it is to `uninstall` and then reinstall. 
+
+1. Retrieve the helm running values 
+
+    ```bash
+    helm get values --namespace coder coder > current-values.yml
+    ```
+
+2. Run `helm uninstall --namespace coder coder` 
+
+    Be sure not to use "delete" since that would remove the PVCs for the database. Uninstall and re-install will keep the persistent volume claim and reattach it.  It may lose the IP address for the ingress controller so you may need to update your host and devurl IP addresses in your DNS provider. 
+
+3. Run ``helm upgrade --namespace coder --debug --atomic --wait --install --force --version 1.16.0  coder coder/coder -f current-values.yml`
+
