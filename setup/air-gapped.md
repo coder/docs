@@ -42,9 +42,9 @@ platform images are hosted in Coder's Docker Hub repo.
 
    [coder-service](https://hub.docker.com/r/coderenvs/coder-service)
 
-   [envbuilder](https://hub.docker.com/r/coderenvs/envbuilder)
+   [envbox](https://hub.docker.com/r/coderenvs/envbox)
 
-   [dockerd](https://hub.docker.com/r/coderenvs/dockerd)
+   [envbuilder](https://hub.docker.com/r/coderenvs/envbuilder)
 
    [timescale](https://hub.docker.com/r/coderenvs/timescale)
 
@@ -77,8 +77,8 @@ platform images are hosted in Coder's Docker Hub repo.
     --set envproxy.image=my-registry.com/coderenvs/coder-service:<version> \
     --set envbuilder.image=my-registry.com/coderenvs/envbuilder:<version> \
     --set timescale.image=my-registry.com/coderenvs/timescale:<version> \
-    --set dockerd.image=my-registry.com/coderenvs/dockerd:<version> \
-    --set envmetrics.image=my-registry.com/coderenvs/coder-service:<version>
+    --set dashboard.image=my-registry.com/coderenvs/dashboard:<version> \
+    --set envbox.image=my-registry.com/coderenvs/envbox:<version>
     ```
 
 4. Next, follow the [Installation](installation.md) guide beginning
