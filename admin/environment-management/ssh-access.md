@@ -48,7 +48,8 @@ RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
    option](https://coder.com/docs/environments/cvms) enabled
 
 > If Coder detects a running TCP server on port 22, it will forward incoming SSH
-> traffic to this server.
+> traffic to this server. This means that environments should not run
+> a TCP server on port 22 unless it can properly handle incoming SSH traffic.
 
 At startup, Coder injects the user's SSH key into `~/authorized_keys` inside
 your environment to facilitate authentication with OpenSSH. For the best
