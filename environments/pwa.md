@@ -14,8 +14,8 @@ To use Coder as a PWA, you must be using Google Chrome or Microsoft Edge.
 ## Installing the PWA
 
 1. Log into Coder and select your environment.
-2. Under **Applications**, click on an application in order to launch it as a
-   new window (or tab).
+2. Under **Applications**, click on an application to launch it as a
+   new window or tab.
 3. Follow your browser's instructions for installing the application as a PWA.
 
 Please note that applications are currently installed on a per-environment basis.
@@ -27,25 +27,11 @@ Please note that applications are currently installed on a per-environment basis
 
 ## Chrome Installation
 
-You can install Coder as a PWA when using Chrome in one of three ways.
+You can install Coder as a PWA when using Chrome in one of three ways:
 
-### Option 1 for Chrome
-
-Click **Install App**, which is located at the top of the Coder Dashboard.
-
-![Install PWA via Dashboard](../assets/chrome-1.png)
-
-### Option 2 for Chrome
-
-Go to your **Settings** menu and select **Install Coder**.
-
-![Install PWA via Settings Menu](../assets/chrome-2.png)
-
-### Option 3 for Chrome
-
-Click the **plus** icon located in the browser's URL bar.
-
-![Install PWA Using the Navigation Bar](../assets/chrome-3.png)
+1. Click **Install App**, which is located at the top of the Coder Dashboard.
+1. Go to your **Settings** menu, and select **Install Coder**.
+1. Click the **plus** icon located in the browser's URL bar.
 
 ### Uninstalling the Chrome Progressive Web App
 
@@ -55,25 +41,11 @@ To remove the Coder progressive web app at any time, go to **Settings** >
 
 ## Edge Installation
 
-You can install Coder as a PWA when using Edge in one of three ways.
+You can install Coder as a PWA when using Edge in one of three ways:
 
-### Option 1 for Edge
-
-Click **Install App**, which is located at the top of the Coder Dashboard.
-
-![Install PWA via Settings Menu](../assets/edge-1.png)
-
-### Option 2 for Edge
-
-Click the **plus** icon located in the browser's URL bar.
-
-![Install PWA Using the Navigation Bar](../assets/edge-2.png)
-
-### Option 3 for Edge
-
-Go to Settings > Apps and select **Install Coder**.
-
-![Install PWA via Settings Menu](../assets/edge-3.png)
+1. Click **Install App**, which is located at the top of the Coder Dashboard.
+1. Click the **plus** icon located in the browser's URL bar.
+1. Go to Settings > Apps and select **Install Coder**.
 
 ### Uninstalling the Edge Progressive Web App
 

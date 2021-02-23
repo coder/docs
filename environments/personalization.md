@@ -80,7 +80,7 @@ echo "[user]\n\temail = youremailhere@gmail.com\n\tname = Your Name" > ~/.gitcon
 The Environments page shows the log output of the `~/personalize` script in the
 build log whenever it runs:
 
-![Enable privileged environment](../assets/personalize-log.png)
+![~/personalize log output](../assets/personalize-log.png)
 
 ## Git Integration
 

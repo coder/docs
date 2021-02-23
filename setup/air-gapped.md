@@ -40,11 +40,15 @@ platform images are hosted in Coder's Docker Hub repo.
 
 1. Pull the images for the Coder platform from the following Docker Hub locations:
 
-   - [coder-service](https://hub.docker.com/r/coderenvs/coder-service)
-   - [envbuilder](https://hub.docker.com/r/coderenvs/envbuilder)
-   - [dockerd](https://hub.docker.com/r/coderenvs/dockerd)
-   - [timescale](https://hub.docker.com/r/coderenvs/timescale)
-   - [dashboard](https://hub.docker.com/r/coderenvs/dashboard)
+   [coder-service](https://hub.docker.com/r/coderenvs/coder-service)
+
+   [envbox](https://hub.docker.com/r/coderenvs/envbox)
+
+   [envbuilder](https://hub.docker.com/r/coderenvs/envbuilder)
+
+   [timescale](https://hub.docker.com/r/coderenvs/timescale)
+
+   [dashboard](https://hub.docker.com/r/coderenvs/dashboard)
 
    You can pull each of these images from their
    `coderenvs/<img-name>:<version>` registry location using the image's name
@@ -54,7 +58,7 @@ platform images are hosted in Coder's Docker Hub repo.
    docker pull coderenvs/coder-service:<version>
    ```
 
-1. Tag and push all of the images that you've downloaded in the previous step to
+2. Tag and push all of the images that you've downloaded in the previous step to
    your internal registry; this registry must be accessible from  your
    air-gapped environment. For example, to push `coder-service`:
 
@@ -63,7 +67,7 @@ platform images are hosted in Coder's Docker Hub repo.
     docker push my-registry.com/coderenvs/coder-service:<version>
     ```
 
-1. Once all of the resources are in your air-gapped network, run the following
+3. Once all of the resources are in your air-gapped network, run the following
    to deploy Coder to your Kubernetes cluster:
 
     ```bash
@@ -73,11 +77,11 @@ platform images are hosted in Coder's Docker Hub repo.
     --set envproxy.image=my-registry.com/coderenvs/coder-service:<version> \
     --set envbuilder.image=my-registry.com/coderenvs/envbuilder:<version> \
     --set timescale.image=my-registry.com/coderenvs/timescale:<version> \
-    --set dockerd.image=my-registry.com/coderenvs/dockerd:<version> \
-    --set envmetrics.image=my-registry.com/coderenvs/coder-service:<version>
+    --set dashboard.image=my-registry.com/coderenvs/dashboard:<version> \
+    --set envbox.image=my-registry.com/coderenvs/envbox:<version>
     ```
 
-1. Next, follow the [Installation](installation.md) guide beginning
+4. Next, follow the [Installation](installation.md) guide beginning
    with **step 6** to get the access URL and the temporary admin password, which
    allows you to proceed with setting up and configuring Coder.
 
