@@ -44,7 +44,7 @@ Updating Coder is a two-step process:
     helm upgrade --namespace coder --force --install --atomic --wait \
       --version 1.15.2 coder coder/coder
     ```
-    
+
 ## Troubleshooting
 
 If the upgrade fails due to error messages such as a field is
