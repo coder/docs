@@ -102,7 +102,7 @@
         { "path": "./admin/telemetry.md" },
         { "path": "./admin/usage-monitoring.md" },
         { "path": "./admin/user-management.md" },
-        { "path": "./admin/cluster-info.md" },
+        { "path": "./admin/workspace-providers.md" },
         { "path": "./admin/api.md" }
       ]
     },
