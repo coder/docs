@@ -32,14 +32,14 @@ different roles. There are two roles available:
         <tr>
             <td><b>Organization Manager</b></td>
             <td>Grants full administrative access to the organization and the
-            ability to manage its <b>images</b>,<b>services</b>, and
+            ability to manage its <b>images</b> and
             <b>members</b>. Can view, modify, and delete <b>environments</b>
             belonging to members of the organization.</td>
         </tr>
         <tr>
             <td><b>Organization Member</b></td>
             <td>Grants basic organization access. Can use and view <b>images</b>
-            and <b>services</b> belonging to the organization. Can create new
+            belonging to the organization. Can create new
             <b>images</b> assigned to the organization. Can only access
             <b>environments</b> within their organization.</td>
         </tr>
@@ -146,17 +146,6 @@ organization.
         </tr>
         <tr>
             <td>Registries</td>
-            <td>X</td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Services</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -287,17 +276,6 @@ organization.
         </tr>
         <tr>
             <td>Registries</td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Services</td>
             <td></td>
             <td>X</td>
             <td></td>

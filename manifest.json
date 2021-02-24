@@ -21,8 +21,7 @@
         { "path": "./environments/pwa.md" },
         { "path": "./environments/environment-params.md" },
         { "path": "./environments/variables.md" },
-        { "path": "./environments/preferences.md" },
-        { "path": "./environments/services.md" }
+        { "path": "./environments/preferences.md" }
       ]
     },
     {
@@ -84,7 +83,6 @@
             { "path": "./admin/environment-management/shutdown.md" },
             { "path": "./admin/environment-management/cvms.md" },
             { "path": "./admin/environment-management/gpu-acceleration.md" },
-            { "path": "./admin/environment-management/privileged.md" },
             { "path": "./admin/environment-management/ssh-access.md" }
           ]
         },
@@ -113,14 +111,16 @@
       "children": [
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/macos-keybinding.md" },
-        { "path": "./guides/ssl-certificates.md" },
+        { "path": "./guides/mobile-development.md" },
         { "path": "./guides/nightly-releases.md" },
+        { "path": "./guides/ssl-certificates.md" },
         { "path": "./guides/teardown.md" }
       ]
     },
     {
       "path": "./changelog/index.md",
       "children": [
+        { "path": "./changelog/1.16.0.md" },
         { "path": "./changelog/1.15.2.md" },
         { "path": "./changelog/1.15.1.md" },
         { "path": "./changelog/1.15.0.md" },
