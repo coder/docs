@@ -10,4 +10,4 @@ Info** allows you to see cluster information for your deployment, including:
 - The Dev URL host
 - The namespaces available
 
-![Cluster Info](../assets/cluster-info.png)
+![Cluster Info](../../assets/cluster-info.png)
