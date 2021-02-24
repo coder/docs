@@ -81,11 +81,11 @@
         {
           "path": "./admin/environment-management/index.md",
           "children": [
-            { "path": "./admin/cluster-info.md" },
+            { "path": "./admin/environment-management/cluster-info.md" },
             { "path": "./admin/environment-management/cvms.md" },
-            { "path": "./admin/extensions.md" },
+            { "path": "./admin/environment-management/extensions.md" },
             { "path": "./admin/environment-management/gpu-acceleration.md" },
-            { "path": "./admin/memory-overprovisioning.md" },
+            { "path": "./admin/environment-management/memory-overprovisioning.md" },
             { "path": "./admin/environment-management/shutdown.md" },
             { "path": "./admin/environment-management/ssh-access.md" }
           ]
