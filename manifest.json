@@ -94,26 +94,27 @@
         { "path": "./admin/appearance.md" },
         { "path": "./admin/audit.md" },
         { "path": "./admin/cluster-info.md" },
-        { "path": "./admin/resources.md" },
         { "path": "./admin/devurls.md" },
         { "path": "./admin/extensions.md" },
         { "path": "./admin/git.md" },
         { "path": "./admin/memory-overprovisioning.md" },
         { "path": "./admin/metrics.md" },
         { "path": "./admin/telemetry.md" },
-        { "path": "./admin/usage-monitoring.md" },
-        { "path": "./admin/user-management.md" },
-        { "path": "./admin/api.md" }
+        { "path": "./admin/user-management.md" }
       ]
     },
     {
       "path": "./guides/index.md",
       "children": [
+        { "path": "./guides/resources.md" },
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/macos-keybinding.md" },
         { "path": "./guides/mobile-development.md" },
         { "path": "./guides/nightly-releases.md" },
-        { "path": "./guides/ssl-certificates.md" }
+        { "path": "./guides/api.md" },
+        { "path": "./guides/ssl-certificates.md" },
+        { "path": "./guides/usage-monitoring.md" }
+
       ]
     },
     {
