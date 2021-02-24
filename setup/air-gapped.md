@@ -90,4 +90,4 @@ platform images are hosted in Coder's Docker Hub repo.
 You can configure your deployment to use the internal, built-in extension
 marketplace, allowing your developers to utilize whitelisted IDE extensions
 within your air-gapped environment. For additional details, see
-[Extensions](../admin/extensions.md).
+[Extensions](../admin/environment-management/extensions.md).
