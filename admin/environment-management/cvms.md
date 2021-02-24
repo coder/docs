@@ -85,6 +85,8 @@ option leverages the [sysbox container
 runtime](https://github.com/nestybox/sysbox) to offer a VM-like user experience
 while retaining the footprint of a typical container.
 
+**Note:** [sysbox is only compatible with certain Linux kernels.](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
+
 Coder first launches a supervising container with additional privileges. This
 container is standard and included with the Coder release package. During the
 environment build process, the supervising container launches an inner container
