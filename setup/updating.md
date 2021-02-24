@@ -53,12 +53,12 @@ remedy it is to `uninstall` and then reinstall.
 
 Sample errors:
 
-```
+```plaintext
 failed to replace object: Service "cemanager" is invalid: 
 spec.clusterIP: Invalid value: "": field is immutable
 ```
 
-```
+```plaintext
 Error: UPGRADE FAILED: rendered manifests contain a resource
 that already exists. Unable to continue with update:
 ServiceAccount "coder" in namespace "coder" exists and cannot
