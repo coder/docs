@@ -32,7 +32,7 @@ Your environment is now accessible via `ssh coder.<environment_name>` (e.g.,
 
 You will need to rerun the `coder config-ssh` command if:
 
-- You reconfigure or modify their keypair using the Coder dashboard
+- You reconfigure or modify your keypair using the Coder dashboard
 - You add additional environments (running this command will ensure that your
   **~/.ssh/config** file populates correctly with alias targets)
 
