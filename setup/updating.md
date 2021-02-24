@@ -45,20 +45,18 @@ Updating Coder is a two-step process:
       --version 1.16.0 coder coder/coder
     ```
 
-## Troubleshooting
+## Fixing a Failed Upgrade
 
-If the upgrade fails due to error messages such as a field is
-immutable or helm doesn't control a resource, the best way to
-remedy it is to `uninstall` and then reinstall.
+While upgrading, the process may fail. You'll see an error message similar to
+the following samples indicating that a field is immutable or that helm doesn't
+control a resource:
 
-Sample errors:
-
-```plaintext
+```text
 failed to replace object: Service "cemanager" is invalid: 
 spec.clusterIP: Invalid value: "": field is immutable
 ```
 
-```plaintext
+```text
 Error: UPGRADE FAILED: rendered manifests contain a resource
 that already exists. Unable to continue with update:
 ServiceAccount "coder" in namespace "coder" exists and cannot
@@ -68,35 +66,35 @@ label validation error: missing key
 validation error: missing key "meta.helm.sh/release-name": must
 be set to "coder"; annotation validation error: missing key
 "meta.helm.sh/release-namespace": must be set to "coder"
-
 ```
 
-1. Retrieve the helm running values into a file:
+If this happens, we recommend uninstalling and reinstalling:
+
+1. Export the helm chart values into a file:
 
     ```bash
     helm get values --namespace coder coder > current-values.yml
     ```
 
-2. Run helm uninstall:
+2. Run `helm uninstall`:
 
     ```bash
-    helm uninstall --namespace coder coder`
+    helm uninstall --namespace coder coder
     ```
 
-    Be sure not to use "delete" since that would remove
-    the PVCs for the database. Uninstall and re-install
-    will keep the persistent volume claim and reattach it.
-    It may lose the IP address for the ingress controller
-    so you may need to update your host and devurl IP
-    addresses in your DNS provider.
+    **Do not use `delete`** since this command removes the persistent volume
+    claim (PVCs) for the database. Running `uninstall` then reinstalling will
+    keep the PVCs and reattach them. You may, however, lose the IP address for
+    the ingress controller; if that's the case, update your host and Dev URL IP
+    addresses with your DNS provider.
 
-    Also check the namespace for items slow to delete.
-    Web-ingress took a bit of time to finish releasing
-    the IP address so running the installation command
-    failed since the service existed but was in a
-    terminating state.
+    Make sure to check the namespace for items that are slow to delete. For
+    example **web-ingress** can take some time to release the IP addresses; if
+    you run the install command before this process completes, the install
+    process will fail.
 
-3. Run upgrade command with new version and values file:
+3. Run the `upgrade` command with the new version number and helm chart values
+   file:
 
     ```bash
     helm upgrade --namespace coder --atomic \
