@@ -106,8 +106,8 @@ kubectl config set-context --current --namespace=coder
    These are the credentials you need to continue setup using Coder's web UI.
 
 > If you lose your admin credentials, you can use the [admin password
-> reset](https://help.coder.com/hc/en-us/articles/360057772573) process to
-> regain access.
+> reset](../admin/access-control/password-reset.md#resetting-the-site-admin-password)
+> process to regain access.
 
 ## Accessing Coder
 
