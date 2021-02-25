@@ -10,9 +10,11 @@ and systemd, in their environments.
 
 ## Infrastructure Requirements
 
-- The Kubernetes Nodes must have a minimum kernel version of **5.4** (released
-  Nov 24th, 2019).
-- The Kubernetes Nodes must be running Ubuntu.
+- CVMs leverage the [sysbox container
+  runtime](https://github.com/nestybox/sysbox), so the Kubernetes Node must run
+  a supported Linux distro with the minimum Kernel version (see [Sysbox Distro
+  Compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
+  for more information)
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
   about why this is still secure [here](#security).
 
