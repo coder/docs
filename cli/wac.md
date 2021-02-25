@@ -25,7 +25,7 @@ that can be previewed with:
 coder envs create-from-config --help
 ```
 
-First a yaml document describing a workspace needs to be created, call it
+First create a yaml document describing the workspace. Name the file
 `wac_template.yaml`:
 
 > **Caution:** This yaml format is heavily subject to change
@@ -47,7 +47,7 @@ workspace:
       disk: 30
 ```
 
-Now we can create our env from this template:
+Now create the workspace from this template:
 
 ```bash
 $ coder envs create-from-config --org default -f wac_template.yaml
@@ -59,8 +59,9 @@ success: creating environment...
 ## Known Issues
 
 The first release of WAC is very sensitive to certain inputs. At this time,
-the reported errors to the cli are not descriptive or helpful, so making
-any mistake with the yaml or process will be difficult to debug.
+the reported errors to the cli are not descriptive or helpful. Debugging
+mistakes to the yaml file or process will be challenging.
+
 Common issues will likely involve:
 
 - The image name not being found.
