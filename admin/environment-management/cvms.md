@@ -10,9 +10,10 @@ and systemd, in their environments.
 
 ## Infrastructure Requirements
 
-- The Kubernetes Nodes must have a minimum kernel version of **5.4** (released
-  Nov 24th, 2019).
-- The Kubernetes Nodes must be running Ubuntu.
+- The Kubernetes Node must be running a supported Linux distro with the minimum
+  Kernel version (see [Sysbox Distro
+  Compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
+  for more information)
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
   about why this is still secure [here](#security).
 
@@ -84,8 +85,6 @@ The [Container-based Virtual Machine](../../environments/cvms.md) deployment
 option leverages the [sysbox container
 runtime](https://github.com/nestybox/sysbox) to offer a VM-like user experience
 while retaining the footprint of a typical container.
-
-**Note:** [sysbox is only compatible with certain Linux kernels.](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
 
 Coder first launches a supervising container with additional privileges. This
 container is standard and included with the Coder release package. During the
