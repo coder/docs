@@ -74,9 +74,13 @@ kubectl config set-context --current --namespace=coder
      port: PORT_NUMBER
      user: YOUR_USER_NAME
      database: YOUR_DATABASE
-     passwordSecret: postgres-master
+     passwordSecret: secret-name
      sslMode: require
    ```
+
+   To create the `passwordSecret`, run `kubectl create secret generic
+   secret-name --from-literal=password=UserDefinedPassword` (be sure to replace
+   `UserDefinedPassword` with your actual password).
 
    You can find/define these values in your [PostgreSQL server configuration
    file](https://www.postgresql.org/docs/current/config-setting.html).
