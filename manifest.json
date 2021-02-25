@@ -97,15 +97,10 @@
         { "path": "./admin/account-dormancy.md" },
         { "path": "./admin/appearance.md" },
         { "path": "./admin/audit.md" },
-        { "path": "./admin/resources.md" },
         { "path": "./admin/devurls.md" },
         { "path": "./admin/git.md" },
         { "path": "./admin/metrics.md" },
-        { "path": "./admin/telemetry.md" },
-        { "path": "./admin/usage-monitoring.md" },
-        { "path": "./admin/user-management.md" },
-        { "path": "./admin/workspace-providers.md" },
-        { "path": "./admin/api.md" }
+        { "path": "./admin/telemetry.md" }
       ]
     },
     {
