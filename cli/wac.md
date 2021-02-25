@@ -65,7 +65,7 @@ mistakes to the yaml file or process will be challenging.
 Common issues will likely involve:
 
 - The image name not being found.
-- If using `--ref` instead of passing a file directly, the oauth app might
+- If using `--repo_url` instead of passing a file directly, the oauth app might
   not be found to fetch the git repo.
 - The organization in the yaml is currently ignored, so using the cli flag
   `--org` is recommended in this mvp state.
