@@ -1,5 +1,5 @@
 ---
-title: "Deprecating"
+title: "Deprecate"
 description: Learn how to deprecate an image.
 ---
 
