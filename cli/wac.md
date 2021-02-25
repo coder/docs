@@ -10,10 +10,10 @@ state: alpha
 
 Workspaces as Code has secretly made its way into the v1.16.0 release!  
 
-Workspaces as Code is a feature that allows a workspace configuration as code.
-A yaml document can now be used instead of a web form to create a workspace.
-This enables a more rich set of features to configuring a workspace in the
-future as WAC develops.
+Workspaces as Code is a feature that allows a workspace to be configured and
+version controlled as code. A yaml document can now be used instead of a web
+form to create a workspace. In the future, this enables a more rich set
+of features when configuring a workspace.
 
 ## Creating a Workspace with WAC
 
