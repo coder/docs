@@ -1,9 +1,11 @@
 ---
 title: "Workspaces as Code"
 description: "Learn about the start of Workspaces as Code (WAC)."
+state: alpha
 ---
 
-> :warning: Workspaces as Code is still in its infancy, and subject to heavy change.
+> Workspaces as Code is still in its infancy, and subject to heavy change.
+> This feature should only be explored by advanced users at this time.
 
 Workspaces as Code has secretly made its way into the v1.16.0 release!  
 
@@ -25,7 +27,7 @@ coder envs create-from-config --help
 First a yaml document describing a workspace needs to be created, call it
 `wac_template.yaml`:
 
-:warning: This yaml format is heavily subject to change
+**This yaml format is heavily subject to change**
 
 ```yaml
 # wac_template.yaml
