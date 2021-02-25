@@ -10,8 +10,8 @@ There are four primary ways you can connect an IDE to your Coder environment:
 1. [JetBrains in the browser](##jetbrains-ides-in-the-browser) with JetBrains
    Projector
 1. _Any_ local editor with [1-way file
-   synchronization](../cli/file-sync.md#two-way-file-sync) or [2-way file
-   synchronization over SSH](../cli/file-sync.md#one-way-file-sync)
+   synchronization](../cli/file-sync.md#one-way-file-sync) or [2-way file
+   synchronization over SSH](../cli/file-sync.md#two-way-file-sync)
 
 ## VS Code Remote SSH
 
