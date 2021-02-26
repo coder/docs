@@ -1,5 +1,5 @@
 ---
-title: "Importing"
+title: "Import"
 description: "Learn how to import images to use in Coder."
 ---
 
