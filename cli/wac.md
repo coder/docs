@@ -4,69 +4,70 @@ description: "Learn about the start of Workspaces as Code (WAC)."
 state: alpha
 ---
 
-> **Caution:** Workspaces as Code is still in its infancy, and subject to
-> heavy change. This feature should only be explored by advanced users at
-> this time.
+> **Caution:** Workspaces as Code is a work-in-progress feature introduced in
+> v1.16.0. It is subject to significant changes and should only be implemented
+> and used by advanced users at this time.
 
-Workspaces as Code has secretly made its way into the v1.16.0 release!  
+Workspaces as Code is a feature that allows you to configure and version control
+a workspace the way you would software code. You can define your workspace using
+a YAML file, which Coder uses instead of a web form to create your workspace.
 
-Workspaces as Code is a feature that allows a workspace to be configured and
-version controlled as code. A yaml document can now be used instead of a web
-form to create a workspace. In the future, this enables a more rich set
-of features when configuring a workspace.
+## Creating a Workspace
 
-## Creating a Workspace with WAC
+Creating a workspace requires two steps:
 
-The easiest way to create a workspace from a yaml document is to use the
-`coder` command line utility. The `coder` cli has a hidden command,
-that can be previewed with:
+1. Creating the YAML file and defining your workspace
+2. Using the Coder CLI to create the workspace using your YAML file:
 
-```bash
-coder envs create-from-config --help
-```
+  ```bash
+  coder envs create-from-config [flags]
+  ```
 
-First create a yaml document describing the workspace. Name the file
-`wac_template.yaml`:
+1. Create the YAML file that describes the workspace using the text editor of
+   your choice. Name the file `wac_template.yaml`:
 
-> **Caution:** This yaml format is heavily subject to change
+  **Caution:** The YAML template is subject to change.
 
-```yaml
-# wac_template.yaml
-version: 0.0
-workspace:
-  name: "wacky-env"
-  organization: "default"
-  kubernetes:
-    # Image should already be registered in your coder's organization.
-    # Use the image's repo name.
-    image: ubuntu
-    container-based-vm: true
-    resources:
-      cpu: 2
-      memory: 8
-      disk: 30
-```
+  ```yaml
+  # wac_template.yaml
+  version: 0.0
+  workspace:
+    name: "your-env"
+    organization: "default"
+    kubernetes:
+      # Image should already be imported and available to your Coder
+      # organization. Use the image's repo name.
+      image: ubuntu
+      container-based-vm: true
+      resources:
+        cpu: 2
+        memory: 8
+        disk: 30
+  ```
 
-Now create the workspace from this template:
+2. Use the Coder CLI to create the workspace using your YAML file:
 
-```bash
-$ coder envs create-from-config --org default -f wac_template.yaml
-success: creating environment...
-  | 
-  | tip: run "coder envs watch-build wacky-env" to trail the build logs
-```
+  ```bash
+  $ coder envs create-from-config --org <YOUR_CODER_ORG> -f wac_template.yaml
+  success: creating environment...
+  ```
 
+  If you'd like to trail the build logs during this process, you can USE:
+
+  ```bash
+  coder envs watch-build <YOUR_NEW_ENVIRONMENT>
+  ```
+  
 ## Known Issues
 
-The first release of WAC is very sensitive to certain inputs. At this time,
-the reported errors to the cli are not descriptive or helpful. Debugging
-mistakes to the yaml file or process will be challenging.
+At this time, the errors returned to the CLI aren't descriptive, so debugging
+mistakes in the YAML file or process errors will be challenging.
 
-Common issues will likely involve:
+However, we expect common errors to involve:
 
-- The image name not being found.
-- If using `--repo_url` instead of passing a file directly, the oauth app might
-  not be found to fetch the git repo.
-- The organization in the yaml is currently ignored, so using the cli flag
-  `--org` is recommended in this mvp state.
-  
+- The image not being found
+- The OAuth app not being found to fetch the git repo if you use `--repo_url`
+  instead of passing a file directly
+
+Finally, Coder currently ignores the organization name in the YAML file, so we
+recommend using the CLI command flag `--org` at this time.
