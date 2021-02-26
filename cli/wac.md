@@ -1,6 +1,6 @@
 ---
 title: "Workspaces as Code"
-description: "Learn about the start of Workspaces as Code (WAC)."
+description: "Learn how to use Workspaces as Code."
 state: alpha
 ---
 
@@ -8,9 +8,10 @@ state: alpha
 > v1.16.0. It is subject to significant changes and should only be implemented
 > and used by advanced users at this time.
 
-Workspaces as Code is a feature that allows you to configure and version control
-a workspace the way you would software code. You can define your workspace using
-a YAML file, which Coder uses instead of a web form to create your workspace.
+Workspaces as Code (WAC) is a feature that allows you to configure and version
+control a workspace the way you would software code. You can define your
+workspace using a YAML file, which Coder uses instead of a web form to create
+your workspace.
 
 ## Creating a Workspace
 
@@ -23,40 +24,44 @@ Creating a workspace requires two steps:
   coder envs create-from-config [flags]
   ```
 
-1. Create the YAML file that describes the workspace using the text editor of
-   your choice. Name the file `wac_template.yaml`:
+### Step 1: Create the YAML File
 
-  **Caution:** The YAML template is subject to change.
+Create the YAML file that describes the workspace using the text editor ofyour
+choice. Name the file `wac_template.yaml`:
 
-  ```yaml
-  # wac_template.yaml
-  version: 0.0
-  workspace:
-    name: "your-env"
-    organization: "default"
-    kubernetes:
-      # Image should already be imported and available to your Coder
-      # organization. Use the image's repo name.
-      image: ubuntu
-      container-based-vm: true
-      resources:
-        cpu: 2
-        memory: 8
-        disk: 30
-  ```
+**Caution:** The YAML template is subject to change.
 
-2. Use the Coder CLI to create the workspace using your YAML file:
+```yaml
+# wac_template.yaml
+version: 0.0
+workspace:
+  name: "your-env"
+  organization: "default"
+  kubernetes:
+    # Image should already be imported and available to your Coder
+    # organization. Use the image's repo name.
+    image: ubuntu
+    container-based-vm: true
+    resources:
+      cpu: 2
+      memory: 8
+      disk: 30
+```
 
-  ```bash
-  $ coder envs create-from-config --org <YOUR_CODER_ORG> -f wac_template.yaml
-  success: creating environment...
-  ```
+### Step 2: Create the Workspace Using the Coder CLI
 
-  If you'd like to trail the build logs during this process, you can USE:
+Use the Coder CLI to create the workspace using your YAML file:
 
-  ```bash
-  coder envs watch-build <YOUR_NEW_ENVIRONMENT>
-  ```
+```bash
+$ coder envs create-from-config --org <YOUR_CODER_ORG> -f wac_template.yaml
+success: creating environment...
+```
+
+If you'd like to trail the build logs during this process, you can USE:
+
+```bash
+coder envs watch-build <YOUR_NEW_ENVIRONMENT>
+```
   
 ## Known Issues
 
