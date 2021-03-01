@@ -34,13 +34,13 @@ Kernel 4.9 because of a [bug](docker-bug-url).
 
 If you choose not to try CVMs, these Docker versions are not necessary.
 
-### DevURLs
+### Dev URLs
 
-Currently, the local preview doesn't support [DevURLs][devurl-url]. Tools such
+Currently, the local preview doesn't support [Dev URLs][devurl-url]. Tools such
 as [ngrok][ngrok-url] can be used to preview webpages from inside an
 environment.
 
-We are working on bringing DevURL support to local previews in later releases.
+We are working on bringing Dev URL support to local previews in later releases.
 
 ## Installing Coder
 
