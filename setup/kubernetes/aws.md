@@ -128,6 +128,11 @@ support immediate volume binding.
    EOF
    ```
 
+> See the [Kubernetes
+> docs](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode)
+> for information on choosing the right parameter for `volumeBindingMode`; Coder
+> accepts both `Immediate` and `WaitForFirstConsumer`.
+
 ### Modifying Your Cluster to Support CVMs
 
 To create clusters allowing you to [enable container-based virtual machines
