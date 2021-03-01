@@ -49,7 +49,7 @@ The use of Coder deployments requires a license that's emailed to you.
 
 ### Restrictions
 
-Deployments using the free 60-day free trial of Coder:
+Deployments using the 60-day free trial of Coder:
 
 - **Must** be able to reach and use an outbound internet connection (at minimum,
   your deployment must be able to access **licensor.coder.com**)
