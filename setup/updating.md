@@ -103,4 +103,4 @@ If this happens, we recommend uninstalling and reinstalling:
     ```
 
     The ingress may attach to a new public IP address; if this happens, you must
-    update the host and Dev URL IP addresses in your DNS provider.
+    update the host and Dev URL IP addresses with your DNS provider.
