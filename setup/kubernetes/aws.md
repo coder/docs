@@ -124,6 +124,7 @@ support immediate volume binding.
      type: gp2
      fsType: ext4
    volumeBindingMode: Immediate
+   allowVolumeExpansion: true
    EOF
    ```
 
