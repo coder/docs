@@ -102,5 +102,5 @@ If this happens, we recommend uninstalling and reinstalling:
     coder coder/coder -f current-values.yml
     ```
 
-    The ingress may attach to a new public IP address so you may have to update 
-    the host and devurl IP addresses in your DNS provider.
+    The ingress may attach to a new public IP address; if this happens, you must
+    update the host and Dev URL IP addresses in your DNS provider.
