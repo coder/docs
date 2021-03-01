@@ -175,14 +175,14 @@ implement network segmentation and tenant isolation.
    kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.5/config/v1.7/calico.yaml
    ```
 
-1. Watch the `kube-system` DaemonSets.
+1. Watch the `kube-system` DaemonSets:
 
    ```bash
    kubectl get daemonset calico-node --namespace kube-system
    ```
 
    Wait for the `calico-node` DaemonSet to have the number of pods **desired**
-   in the **ready** state. At this point, Calico works.
+   in the **ready** state; this indicates that Calico is working:
 
    ```bash
    NAME          DESIRED   CURRENT   READY     UP-TO-DATE   ...
