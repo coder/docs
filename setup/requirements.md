@@ -49,12 +49,12 @@ The use of Coder deployments requires a license that's emailed to you.
 
 ### Restrictions
 
-Deployments using the free level of Coder (1-10 users):
+Deployments using the free 60-day free trial of Coder:
 
 - **Must** be able to reach and use an outbound internet connection (at minimum,
   your deployment must be able to access **licensor.coder.com**)
-- Cannot be used to set up an air-gapped deployment
+- Cannot be deployed in an air-gapped network
 - Must use Coder v1.10.0 or later
 
-The above requirements do not apply to potential customers engaged in our trial
+The above requirements do not apply to potential customers engaged in our evaluation
 program.
