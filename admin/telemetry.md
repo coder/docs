@@ -15,5 +15,6 @@ Be sure to click **Save Preferences** after you make your changes.
 
 ![Telemetry](../assets/telemetry.png)
 
-> The default telemetry settings cannot be modified during the [60-day free trial](https://coder.com/trial) 
+> The default telemetry settings cannot be modified during the 
+> [free trial](https://coder.com/trial) 
 > of Coder or by those with evaluation deployments.
