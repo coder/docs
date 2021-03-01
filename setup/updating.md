@@ -38,9 +38,69 @@ Updating Coder is a two-step process:
     helm repo update
     ```
 
-2. Upgrade to the desired version (i.e., `1.15.2`):
+2. Upgrade to the desired version (i.e., `1.16.0`):
 
     ```bash
     helm upgrade --namespace coder --force --install --atomic --wait \
-      --version 1.15.2 coder coder/coder
+      --version 1.16.0 coder coder/coder
     ```
+
+## Fixing a Failed Upgrade
+
+While upgrading, the process may fail. You'll see an error message similar to
+the following samples indicating that a field is immutable or that helm doesn't
+control a resource:
+
+```text
+failed to replace object: Service "cemanager" is invalid: 
+spec.clusterIP: Invalid value: "": field is immutable
+```
+
+```text
+Error: UPGRADE FAILED: rendered manifests contain a resource
+that already exists. Unable to continue with update:
+ServiceAccount "coder" in namespace "coder" exists and cannot
+be imported into the current release: invalid ownership metadata;
+label validation error: missing key
+"app.kubernetes.io/managed-by": must be set to "Helm"; annotation
+validation error: missing key "meta.helm.sh/release-name": must
+be set to "coder"; annotation validation error: missing key
+"meta.helm.sh/release-namespace": must be set to "coder"
+```
+
+If this happens, we recommend uninstalling and reinstalling:
+
+1. Export the helm chart values into a file:
+
+    ```bash
+    helm get values --namespace coder coder > current-values.yml
+    ```
+
+2. Run `helm uninstall`:
+
+    ```bash
+    helm uninstall --namespace coder coder
+    ```
+
+    **Do not use `delete`** since this command removes the persistent volume
+    claim (PVCs) for the database. Running `uninstall` then reinstalling will
+    keep the PVCs and reattach them. You may, however, lose the IP address for
+    the ingress controller; if that's the case, update your host and Dev URL IP
+    addresses with your DNS provider.
+
+    Make sure to check the namespace for items that are slow to delete. For
+    example **web-ingress** can take some time to release the IP addresses; if
+    you run the install command before this process completes, the install
+    process will fail.
+
+3. Run the `upgrade` command with the new version number and helm chart values
+   file:
+
+    ```bash
+    helm upgrade --namespace coder --atomic \
+    --wait --install --force --version 1.16.0 \
+    coder coder/coder -f current-values.yml
+    ```
+
+    The ingress may attach to a new public IP address; if this happens, you must
+    update the host and Dev URL IP addresses with your DNS provider.
