@@ -163,6 +163,32 @@ nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-fro
     eksctl create nodegroup --config-file=coder-node.yaml
     ```
 
+## Step 3: Install Calico onto Your Cluster
+
+AWS uses
+[Calico](https://docs.amazonaws.cn/en_us/eks/latest/userguide/calico.html) to
+implement network segmentation and tenant isolation.
+
+1. Apply the Calico manifest to your cluster:
+
+   ```bash
+   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.5/config/v1.7/calico.yaml
+   ```
+
+1. Watch the `kube-system` DaemonSets.
+
+   ```bash
+   kubectl get daemonset calico-node --namespace kube-system
+   ```
+
+   Wait for the `calico-node` DaemonSet to have the number of pods **desired**
+   in the **ready** state. At this point, Calico works.
+
+   ```bash
+   NAME          DESIRED   CURRENT   READY     UP-TO-DATE   ...
+   calico-node   3         3         3         3            ...
+   ```
+
 ## Next Steps
 
 At this point, you're ready to proceed to [Installation](../installation.md).
