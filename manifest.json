@@ -112,6 +112,7 @@
         { "path": "./guides/mobile-development.md" },
         { "path": "./guides/nightly-releases.md" },
         { "path": "./guides/api.md" },
+        { "path": "./guides/keycloak.md" },
         { "path": "./guides/ssl-certificates.md" },
         { "path": "./guides/teardown.md" },        
         { "path": "./guides/usage-monitoring.md" }
