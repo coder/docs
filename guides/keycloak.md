@@ -135,7 +135,7 @@ At this point, you can configure your Coder deployment to use the Keycloak OIDC
 
     ![Coder Keycloak Config](../assets/keycloak-coder-config.png)
 
-1. Click **Save Configuration**.
+1. Click **Save Preferences**.
 
 At this point, you should be able to log into Coder via OIDC.
 
