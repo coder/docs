@@ -13,13 +13,12 @@ we recommend using a System-level git configuration. System-level git configurat
 are located at `/etc/gitconfig`. These settings are applied to each git repository,
 but may be overriden using global or worktree git configurations.
 
-We suggest using `coder/configure` for applying these settings to the development
-image. Below is an example of `.gitconfig` contents that could be applied to `/etc/gitconfig`.
-Here we are setting `ssh` as the System-level default within an example Coder environment.
+We suggest adding the System-level `.gitconfig` directly in the image Dockerfile.
+Below is an example of such:
 
-```gitconfig
-[url "git@github.com:"]
-    insteadOf = https://github.com/
+```Dockerfile
+# Add system level gitconfig
+COPY ["gitconfig", "/etc/gitconfig"]
 ```
 
 We recommend having users set a personal `.gitconfig` file via the `~/personalize`
