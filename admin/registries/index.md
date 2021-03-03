@@ -1,5 +1,6 @@
 ---
 title: "Registries"
+description: Learn how to hook into Docker Registries.
 ---
 
 Coder hooks into public and private Docker Registries to pull images and manage
