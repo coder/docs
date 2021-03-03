@@ -1,6 +1,6 @@
 ---
 title: Managing Git Configuration
-description: Learn how to manage your Git configuration in Coder.
+description: Learn how to configure Git with Coder.
 ---
 
 This guide will show you how to manage Git configuration through the system,
@@ -8,21 +8,26 @@ global, and repo levels.
 
 ## How to use the System and Global configurations
 
-For customers seeking organizational (system-level) `.gitconfig` defaults, we recommend
-adding a default configuration into the `/etc/gitconfig` file of each image associated
-to the organization:
+For scenarios whereby a set of git configurations should apply across an organization,
+we recommend using a System-level git configuration. System-level git configurations
+are located at `/etc/gitconfig`. These settings are applied to each git repository,
+but may be overriden using global or worktree git configurations.
 
-```bash
+We suggest using `coder/configure` for applying these settings to the development
+image. Below is an example of `.gitconfig` contents that could be applied to `/etc/gitconfig`.
+Here we are setting `ssh` as the System-level default within an example Coder environment.
+
+```gitconfig
 [url "git@github.com:"]
     insteadOf = https://github.com/
 ```
 
-For users seeking to override the system `.gitconfig` with a global setting of their
-own, we recommend including `.gitconfig` and other personal configuration files in
-the `home/coder` directory. [Learn more about environment personalization.](https://coder.com/docs/environments/personalization#dotfiles-repo)
+We recommend having users set a personal `.gitconfig` file via the `~/personalize`
+script, though it will override the System-level `etc/gitconfig` default set in
+the image.
 
 ## A Coder-injected configuration
 
-If there is no system-level `.gitconfig` in the image, or user-defined `.gitconfig`
-in the environment, Coder will inject a `.gitconfig` file into the enviornment upon
-creation, setting the `user.name` and `user.email` values to the Coder account values.
+By default, Coder will inject a `.gitconfig` into the environment using the name
+and email associated with your Coder login, given there is no System-level or user-defined
+`.gitconfig`.
