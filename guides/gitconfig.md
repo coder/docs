@@ -20,13 +20,13 @@ system-level settings.**
 
 ## System and Global git Configurations
 
-If you have a set of git configuration instructions that are applicable to your
+If you have a set of git configuration instructions that apply to your
 organization as a whole, you can define and use a system-level git
 configuration. We suggest adding the System-level `.gitconfig` directly to the
 image's Dockerfile:
 
 ```Dockerfile
-# Add system level gitconfig
+# Add system-level gitconfig
 COPY ["gitconfig", "/etc/gitconfig"]
 ```
 
