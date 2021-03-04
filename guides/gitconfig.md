@@ -8,24 +8,14 @@ This guide will show you how to manage your Git configuration in Coder.
 ## Personal git Configurations
 
 Coder will create a global git configuration file located at `~/.gitconfig` in all
-<<<<<<< HEAD
 newly created environments and set the user name and email address using the
-=======
-newly created environments, and set the user name and email address using the
->>>>>>> update: personal git config
 information associated with the user's Coder account.
 
 This step occurs before [coder/configre](https://coder.com/docs/images/configure)
 and [personalization](https://coder.com/docs/environments/personalization),
-<<<<<<< HEAD
 which can be used to override the default `.gitconfig` created by Coder.
 If there's already a `.gitconfig`g file, Coder will not create a default
 version when you rebuild an environment
-=======
-which may be utilized to override the default `~/.gitconfig` created by Coder.
-Whenever an environment is rebuilt, Coder will skip creating a default `~/.gitconfig`
-if the file already exists.
->>>>>>> update: personal git config
 
 We recommend that each Coder user set and modify their personal .gitconfig file
 using the [~/personalize script](../environments/personalization.md).
