@@ -1,32 +1,36 @@
 ---
 title: Managing Git Configuration
-description: Learn how to configure Git with Coder.
+description: Learn how to configure Git in Coder.
 ---
 
-This guide will show you how to manage Git configuration through the system,
-global, and repo levels.
+This guide will show you how to manage your Git configuration in Coder.
 
-## How to use the System and Global configurations
+## Personal git Configurations
 
-For scenarios whereby a set of git configurations should apply across an organization,
-we recommend using a System-level git configuration. System-level git configurations
-are located at `/etc/gitconfig`. These settings are applied to each git repository,
-but may be overriden using global or worktree git configurations.
+By default, Coder injects a .gitconfig file into each environment if there isn't
+a system-level or a user-defined .gitconfig file; the file sets the user name
+and email address using the information associated with the user's Coder
+account.
 
-We suggest adding the System-level `.gitconfig` directly in the image Dockerfile.
-Below is an example of such:
+We recommend that each Coder user set and modify their personal .gitconfig file
+using a [~/personalize script](../environments/personalization.md).
+
+**Preferences defined using individual .gitconfig files take precedence over
+system-level settings.**
+
+## System and Global git Configurations
+
+If you have a set of git configuration instructions that are applicable to your
+organization as a whole, you can define and use a system-level git
+configuration. We suggest adding the System-level `.gitconfig` directly to the
+image's Dockerfile:
 
 ```Dockerfile
 # Add system level gitconfig
 COPY ["gitconfig", "/etc/gitconfig"]
 ```
 
-We recommend having users set a personal `.gitconfig` file via the `~/personalize`
-script, though it will override the System-level `etc/gitconfig` default set in
-the image.
-
-## A Coder-injected configuration
-
-By default, Coder will inject a `.gitconfig` into the environment using the name
-and email associated with your Coder login, given there is no System-level or user-defined
-`.gitconfig`.
+As you can see from the example, Coder stores system-level git configurations
+under **/etc/gitconfig**. If present, Coder applies the settings to each git
+repository present. However, any Coder user can override system-level settings
+using global or worktree git configurations.
