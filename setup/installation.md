@@ -48,7 +48,7 @@ kubectl config set-context --current --namespace=coder
    helm install --namespace coder coder coder/coder
    ```
 
-**Steps 3-5 are optional for non-production deployments:**
+   **Steps 3-5 are optional for non-production deployments.**
 
 3. Get a copy of your helm chart so that you can modify it; you'll need to
    modify the helm chart to update your PostgreSQL databases (step 4) and enable
