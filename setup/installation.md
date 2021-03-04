@@ -48,6 +48,8 @@ kubectl config set-context --current --namespace=coder
    helm install --namespace coder coder coder/coder
    ```
 
+**Steps 3-5 are optional for non-production deployments:**
+
 3. Get a copy of your helm chart so that you can modify it; you'll need to
    modify the helm chart to update your PostgreSQL databases (step 4) and enable
    Dev URLs (step 5):
@@ -64,7 +66,7 @@ kubectl config set-context --current --namespace=coder
       coder coder/coder -n coder --version=<VERSION> -f values.yaml`. **This
       must be done for whenever you update the helm chart.**
 
-4. **For Production deployments:** Add the following to your helm chart so that
+4. Add the following to your helm chart so that
    Coder uses your external PostgreSQL databases:
 
    ```yaml
