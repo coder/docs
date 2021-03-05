@@ -50,9 +50,9 @@ To create clusters capable of supporting use of the
 [CVMs](../../admin/environment-management/cvms.md) deployment option:
 
 ```bash
-gcloud beta container --project "PROJECT_ID" \
-    clusters create "NEW_CLUSTER_NAME" \
-    --zone "us-central1-a" \
+gcloud beta container --project "$PROJECT_ID" \
+    clusters create "$NEW_CLUSTER_NAME" \
+    --zone "$ZONE" \
     --no-enable-basic-auth \
     --node-version "latest" \
     --cluster-version "latest" \
