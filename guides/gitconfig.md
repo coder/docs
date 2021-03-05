@@ -36,6 +36,8 @@ COPY ["gitconfig", "/etc/gitconfig"]
 ```
 
 As you can see from the example, system-level git configurations live
-under `/etc/gitconfig`. If present, Coder applies the settings to each git
-repository present. However, any Coder user can override system-level settings
+under `/etc/gitconfig`. If present, `git` applies the settings to each repository.
+However, any Coder user can override system-level settings
 using global or worktree git configurations.
+
+For more information on git configuration, refer to the [official documentation](https://git-scm.com/docs/git-config)
