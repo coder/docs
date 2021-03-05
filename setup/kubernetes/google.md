@@ -1,5 +1,5 @@
 ---
-title: Google Kubernetes Engine 
+title: Google Kubernetes Engine
 description: Learn how to set up a GKE cluster for your Coder deployment.
 ---
 
@@ -15,13 +15,13 @@ and configured to interact with your Google Cloud Platform account.
 ## Set Up the GKE Cluster
 
 The following will spin up a Kubernetes cluster using the `gcloud` command (be
-sure to replace the parameters (specifically `PROJECT_ID` and
-`NEW_CLUSTER_NAME`) as needed to reflect the needs of your environment).
+sure to replace the parameters (specifically `PROJECT_ID`,
+`NEW_CLUSTER_NAME`, and `ZONE`) as needed to reflect the needs of your environment).
 
 ```bash
-gcloud beta container --project "PROJECT_ID" \
-clusters create "NEW_CLUSTER_NAME" \
-   --zone "us-central1-a" \
+gcloud beta container --project "$PROJECT_ID" \
+clusters create "$NEW_CLUSTER_NAME" \
+   --zone "$ZONE" \
    --no-enable-basic-auth \
    --cluster-version "latest" \
    --machine-type "n1-standard-4" \
@@ -33,9 +33,7 @@ clusters create "NEW_CLUSTER_NAME" \
    --num-nodes "2" \
    --enable-stackdriver-kubernetes \
    --enable-ip-alias \
-   --network "projects/PROJECT_ID/global/networks/default" \
-   --subnetwork \
-   "projects/PROJECT_ID/regions/us-central1/subnetworks/default" \
+   --network "projects/$PROJECT_ID/regions/us-central1/subnetworks/default" \
    --default-max-pods-per-node "110" \
    --addons HorizontalPodAutoscaling,HttpLoadBalancing \
    --enable-autoupgrade \
@@ -50,9 +48,9 @@ To create clusters capable of supporting use of the
 [CVMs](../../admin/environment-management/cvms.md) deployment option:
 
 ```bash
-gcloud beta container --project "PROJECT_ID" \
-    clusters create "NEW_CLUSTER_NAME" \
-    --zone "us-central1-a" \
+gcloud beta container --project "$PROJECT_ID" \
+    clusters create "$NEW_CLUSTER_NAME" \
+    --zone "$ZONE" \
     --no-enable-basic-auth \
     --node-version "latest" \
     --cluster-version "latest" \
@@ -65,9 +63,9 @@ gcloud beta container --project "PROJECT_ID" \
     --num-nodes "2" \
     --enable-stackdriver-kubernetes \
     --enable-ip-alias \
-    --network "projects/PROJECT_ID/global/networks/default" \
+    --network "projects/$PROJECT_ID/global/networks/default" \
     --subnetwork \
-    "projects/PROJECT_ID/regions/us-central1/subnetworks/default" \
+    "projects/$PROJECT_ID/regions/us-central1/subnetworks/default" \
     --default-max-pods-per-node "110" \
     --addons HorizontalPodAutoscaling,HttpLoadBalancing \
     --enable-autoupgrade \
