@@ -106,7 +106,10 @@
     {
       "path": "./guides/index.md",
       "children": [
-        { "path": "./guides/resources.md" },
+        { 
+          "path": "./guides/resources.md",
+          "navigable": true
+        },
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/macos-keybinding.md" },
         { "path": "./guides/mobile-development.md" },
