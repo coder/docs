@@ -112,7 +112,10 @@
             { "path": "./guides/ssl-certificates/route53.md" }
           ]
         },
-        { "path": "./guides/resources.md" },
+        { 
+          "path": "./guides/resources.md",
+          "navigable": true
+        },
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/gitconfig.md" },
         { "path": "./guides/helm-charts.md" },
