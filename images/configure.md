@@ -11,7 +11,6 @@ You can use the configure script to:
 
 - Run [Coder CLI](https://github.com/cdr/coder-cli) commands
 - Check for and clone a GitHub repo if it isn't present
-- Install global npm packages
 - Run scripts using [CODER\_\* environment
   variables](../environments/variables.md)
 
