@@ -127,17 +127,18 @@
           "path": "./guides/customization/index.md",
           "navigable": false,
           "children": [
-            { "path": "./guides/custom-env.md" },
-            { "path": "./guides/macos-keybinding.md" }
+            { "path": "./guides/customization/custom-env.md" },
+            { "path": "./guides/customization/macos-keybinding.md" }
           ]
         },
         {
           "path": "./guides/deployments/index.md",
           "navigable": false,
           "children": [
-            { "path": "./guides/nightly-releases.md" },
-            { "path": "./guides/keycloak.md" },
-            { "path": "./guides/teardown.md" }
+            { "path": "./guides/deployments/nightly-releases.md" },
+            { "path": "./guides/deployments/keycloak.md" },
+            { "path": "./guides/deployments/ssl-certificates.md" },
+            { "path": "./guides/deployments/teardown.md" }
           ]
         },
         { "path": "./guides/mobile-development.md" },
