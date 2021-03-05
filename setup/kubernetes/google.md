@@ -15,13 +15,13 @@ and configured to interact with your Google Cloud Platform account.
 ## Set Up the GKE Cluster
 
 The following will spin up a Kubernetes cluster using the `gcloud` command (be
-sure to replace the parameters (specifically `PROJECT_ID` and
+sure to replace the parameters (specifically `PROJECT_ID`, `ZONE`, and
 `NEW_CLUSTER_NAME`) as needed to reflect the needs of your environment).
 
 ```bash
 gcloud beta container --project "$PROJECT_ID" \
 clusters create "$NEW_CLUSTER_NAME" \
-   --zone "us-central1-a" \
+   --zone "$ZONE" \
    --no-enable-basic-auth \
    --cluster-version "latest" \
    --machine-type "n1-standard-4" \
