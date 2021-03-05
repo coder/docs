@@ -113,8 +113,12 @@
           ]
         },
         { 
-          "path": "./guides/resources.md",
-          "navigable": true
+          "path": "./guides/admin/index.md",
+          "navigable": false,
+          "children": [
+            { "path": "./guides/admin/resources.md" },
+            { "path": "./guides/admin/usage-monitoring.md" }
+          ]
         },
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/gitconfig.md" },
