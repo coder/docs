@@ -105,6 +105,7 @@
     },
     {
       "path": "./guides/index.md",
+      "navigable": false,
       "children": [
         { "path": "./guides/ssl-certificates/index.md",
           "children": [
@@ -120,16 +121,27 @@
             { "path": "./guides/admin/usage-monitoring.md" }
           ]
         },
-        { "path": "./guides/custom-env.md" },
         { "path": "./guides/gitconfig.md" },
         { "path": "./guides/helm-charts.md" },
-        { "path": "./guides/macos-keybinding.md" },
+        {
+          "path": "./guides/customization/index.md",
+          "navigable": false,
+          "children": [
+            { "path": "./guides/custom-env.md" },
+            { "path": "./guides/macos-keybinding.md" }
+          ]
+        },
+        {
+          "path": "./guides/deployments/index.md",
+          "navigable": false,
+          "children": [
+            { "path": "./guides/nightly-releases.md" },
+            { "path": "./guides/keycloak.md" },
+            { "path": "./guides/teardown.md" }
+          ]
+        },
         { "path": "./guides/mobile-development.md" },
-        { "path": "./guides/nightly-releases.md" },
-        { "path": "./guides/api.md" },
-        { "path": "./guides/keycloak.md" },
-        { "path": "./guides/teardown.md" },
-        { "path": "./guides/usage-monitoring.md" }
+        { "path": "./guides/api.md" }
       ]
     },
     {
