@@ -111,5 +111,5 @@ release.
 
 If your currently installed nightly version is sufficiently older than a
 standard release (i.e., more than a week older), consider
-[upgrading](../setup/updating.md) from the nightly release to the standard
+[upgrading](../../setup/updating.md) from the nightly release to the standard
 release.

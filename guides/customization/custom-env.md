@@ -18,7 +18,7 @@ Make sure that you've:
 - Given your image building tool the rights needed to push to a [Docker
   Registry](https://docs.docker.com/registry/introduction/) (e.g., [Docker
   Hub](https://hub.docker.com/))
-- (Optional) Configured [Dev URLs](../admin/devurls.md) for your deployment
+- (Optional) Configured [Dev URLs](../../admin/devurls.md) for your deployment
 
 Your Coder user account must have permissions to [import an
 image](../images/importing.md).
