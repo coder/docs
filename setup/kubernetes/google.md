@@ -35,7 +35,7 @@ clusters create "$NEW_CLUSTER_NAME" \
    --enable-ip-alias \
    --network "projects/$PROJECT_ID/global/networks/default" \
    --subnetwork \
-   "projects/$PROJECT_ID/regions/us-central1/subnetworks/default" \
+   "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
    --default-max-pods-per-node "110" \
    --addons HorizontalPodAutoscaling,HttpLoadBalancing \
    --enable-autoupgrade \
@@ -67,7 +67,7 @@ gcloud beta container --project "$PROJECT_ID" \
     --enable-ip-alias \
     --network "projects/$PROJECT_ID/global/networks/default" \
     --subnetwork \
-    "projects/$PROJECT_ID/regions/us-central1/subnetworks/default" \
+    "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
     --default-max-pods-per-node "110" \
     --addons HorizontalPodAutoscaling,HttpLoadBalancing \
     --enable-autoupgrade \
