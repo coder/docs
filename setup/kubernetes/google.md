@@ -33,7 +33,9 @@ clusters create "$NEW_CLUSTER_NAME" \
    --num-nodes "2" \
    --enable-stackdriver-kubernetes \
    --enable-ip-alias \
-   --network "projects/$PROJECT_ID/regions/us-central1/subnetworks/default" \
+   --network "projects/$PROJECT_ID/global/networks/default" \
+   --subnetwork \
+   "projects/$PROJECT_ID/regions/us-central1/subnetworks/default" \
    --default-max-pods-per-node "110" \
    --addons HorizontalPodAutoscaling,HttpLoadBalancing \
    --enable-autoupgrade \
@@ -48,9 +50,9 @@ To create clusters capable of supporting use of the
 [CVMs](../../admin/environment-management/cvms.md) deployment option:
 
 ```bash
-gcloud beta container --project "$PROJECT_ID" \
-    clusters create "$NEW_CLUSTER_NAME" \
-    --zone "$ZONE" \
+gcloud beta container --project "PROJECT_ID" \
+    clusters create "NEW_CLUSTER_NAME" \
+    --zone "us-central1-a" \
     --no-enable-basic-auth \
     --node-version "latest" \
     --cluster-version "latest" \
