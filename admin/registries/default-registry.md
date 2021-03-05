@@ -1,5 +1,6 @@
 ---
 title: "Default Registry"
+description: Learn how to work with Coder's default registry.
 ---
 
 > This feature is unavailable for air-gapped deployments.
