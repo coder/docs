@@ -37,7 +37,7 @@ Updating Coder is a two-step process:
     ```bash
     helm repo update
     ```
-    
+
 2. Export the current helm chart values into a file:
 
     ```bash
