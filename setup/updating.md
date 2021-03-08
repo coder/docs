@@ -37,12 +37,20 @@ Updating Coder is a two-step process:
     ```bash
     helm repo update
     ```
+    
+2. Export the current helm chart values into a file:
 
-2. Upgrade to the desired version (i.e., `1.16.0`):
+    ```bash
+    helm get values --namespace coder coder > current-values.yml
+    ```
+
+3. Upgrade to the desired version with your helm chart values file (i.e., `1.16.0`):
+
+    _Note: Omitting `--version` will default to the latest version_
 
     ```bash
     helm upgrade --namespace coder --force --install --atomic --wait \
-      --version 1.16.0 coder coder/coder
+      --version 1.16.0 coder coder/coder -f current-values.yml
     ```
 
 ## Fixing a Failed Upgrade
