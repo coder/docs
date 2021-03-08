@@ -44,7 +44,8 @@ When prompted, provide the following information:
     </tr>
     <tr>
         <td><b>Workspace Provider</b></td>
-        <td>Which kubernetes cluster your workspace will be deployed to (default is `built-in`)</td>
+        <td>Which kubernetes cluster your workspace will be deployed to (default
+            is `built-in`)</td>
     </tr>
     <tr>
         <td><b>Namespace</b></td>
