@@ -30,7 +30,7 @@ which you've deployed Coder.
 
 ## Update Coder
 
-Updating Coder is a two-step process:
+To update Coder, follow these steps:
 
 1. Retrieve the latest repository information:
 
@@ -38,11 +38,20 @@ Updating Coder is a two-step process:
     helm repo update
     ```
 
-2. Upgrade to the desired version (i.e., `1.16.0`):
+1. (Optional) Export the current helm chart values into a file:
+
+    ```bash
+    helm get values --namespace coder coder > current-values.yml
+    ```
+
+1. Provide your helm chart values file and upgrade to the desired version (e.g.,
+1.16.1):
+
+    *Note: If you omit --version, you'll upgrade to the latest version.*
 
     ```bash
     helm upgrade --namespace coder --force --install --atomic --wait \
-      --version 1.16.0 coder coder/coder
+      --version 1.16.1 coder coder/coder --values current-values.yml
     ```
 
 ## Fixing a Failed Upgrade
@@ -76,7 +85,7 @@ If this happens, we recommend uninstalling and reinstalling:
     helm get values --namespace coder coder > current-values.yml
     ```
 
-2. Run `helm uninstall`:
+1. Run `helm uninstall`:
 
     ```bash
     helm uninstall --namespace coder coder
@@ -93,13 +102,13 @@ If this happens, we recommend uninstalling and reinstalling:
     you run the install command before this process completes, the install
     process will fail.
 
-3. Run the `upgrade` command with the new version number and helm chart values
+1. Run the `upgrade` command with the new version number and helm chart values
    file:
 
     ```bash
     helm upgrade --namespace coder --atomic \
-    --wait --install --force --version 1.16.0 \
-    coder coder/coder -f current-values.yml
+    --wait --install --force --version 1.16.1 \
+    coder coder/coder --values current-values.yml
     ```
 
     The ingress may attach to a new public IP address; if this happens, you must
