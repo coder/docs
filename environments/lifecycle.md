@@ -17,7 +17,7 @@ do not affect configurations and source code within the `/home/<username>`
 subtree, even if the underlying [Image](../images/index.md) or its dependencies
 change.
 
-   **Note:** `username` is defined in the image. See https://docs.docker.com/engine/reference/builder/#user
+   **Note:** `username` is defined in the image. See [Docker's image documentation](https://docs.docker.com/engine/reference/builder/#user)
 
 ## Auto-Off
 
