@@ -12,10 +12,12 @@ on cloud compute and justify more powerful dev machines :).
 Rebuilding an [Environment](index.md) allows you to update to the latest image,
 edit resource requests, or restart your environment after a shutdown.
 
-Only the `/home/coder` directory persists between rebuilds. Rebuilds
-do not affect configurations and source code within the `/home/coder`
+Only the `/home/<username>` directory persists between rebuilds. Rebuilds
+do not affect configurations and source code within the `/home/<username>`
 subtree, even if the underlying [Image](../images/index.md) or its dependencies
 change.
+
+   **Note:** `username` is defined in the image. See https://docs.docker.com/engine/reference/builder/#user
 
 ## Auto-Off
 

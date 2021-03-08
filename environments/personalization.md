@@ -11,13 +11,13 @@ allow you to customize the environment.
 
 ## Persistent Home
 
-The `/home/coder` volume is bound to your environment, and its contents
+The `/home/<username>` volume is bound to your environment, and its contents
 persist despite shutdowns and rebuilds. This ensures that personal configuration
 files like `~/.gitconfig` and `~/.zshrc`, source code, and project files, are
 not disrupted.
 
 The environment's [Image](../images/index.md), however, provides all data
-outside `/home/coder` and is reset whenever your environment
+outside `/home/<username>` and is reset whenever your environment
 [rebuilds](./lifecycle.md).
 
 ## ~/personalize
