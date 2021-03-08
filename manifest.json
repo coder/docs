@@ -108,13 +108,15 @@
       "children": [
         { "path": "./guides/resources.md" },
         { "path": "./guides/custom-env.md" },
+        { "path": "./guides/gitconfig.md" },
+        { "path": "./guides/helm-charts.md" },
         { "path": "./guides/macos-keybinding.md" },
         { "path": "./guides/mobile-development.md" },
         { "path": "./guides/nightly-releases.md" },
         { "path": "./guides/api.md" },
         { "path": "./guides/keycloak.md" },
         { "path": "./guides/ssl-certificates.md" },
-        { "path": "./guides/teardown.md" },        
+        { "path": "./guides/teardown.md" },
         { "path": "./guides/usage-monitoring.md" }
       ]
     },
