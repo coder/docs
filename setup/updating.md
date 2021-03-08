@@ -47,7 +47,7 @@ To update Coder, follow these steps:
 1. Provide your helm chart values file and upgrade to the desired version (e.g.,
 1.16.1):
 
-    Note: If you omit --version, you'll upgrade to the latest version.
+    *Note: If you omit --version, you'll upgrade to the latest version.*
 
     ```bash
     helm upgrade --namespace coder --force --install --atomic --wait \
