@@ -14,8 +14,8 @@ information associated with the user's Coder account.
 This step occurs before [coder/configre](https://coder.com/docs/images/configure)
 and [personalization](https://coder.com/docs/environments/personalization),
 which can be used to override the default `.gitconfig` created by Coder.
-If there's already a `.gitconfig` file, Coder will not create a default
-version when you rebuild an environment
+If there's already a `.gitconfig` file, Coder will not recreate a default
+version when you rebuild an environment.
 
 We recommend that each Coder user set and modify their personal .gitconfig file
 using the [~/personalize script](../environments/personalization.md).
