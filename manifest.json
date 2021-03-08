@@ -109,6 +109,7 @@
         { "path": "./guides/resources.md" },
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/gitconfig.md" },
+        { "path": "./guides/helm-charts.md" },
         { "path": "./guides/macos-keybinding.md" },
         { "path": "./guides/mobile-development.md" },
         { "path": "./guides/nightly-releases.md" },
