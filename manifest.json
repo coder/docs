@@ -117,7 +117,8 @@
         { "path": "./guides/keycloak.md" },
         { "path": "./guides/ssl-certificates.md" },
         { "path": "./guides/teardown.md" },
-        { "path": "./guides/usage-monitoring.md" }
+        { "path": "./guides/usage-monitoring.md" },
+        { "path": "./guides/deploying-workspace-provider.md" }
       ]
     },
     {

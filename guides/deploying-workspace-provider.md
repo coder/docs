@@ -1,5 +1,5 @@
 ---
-title: Deploying A Workspace Provider
+title: Deploying Workspace Providers
 description: Learn how to deploy a Workspace Provider with Helm and the coder CLI
 ---
 
