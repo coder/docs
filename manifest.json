@@ -118,7 +118,7 @@
         { "path": "./guides/ssl-certificates/index.md",
           "children": [
             { "path": "./guides/ssl-certificates/cloudflare.md" },
-            { "path": "./guides/route53.md" }
+            { "path": "./guides/ssl-certificates/route53.md" }
           ]
         },
         { "path": "./guides/ssl-certificates.md" },
