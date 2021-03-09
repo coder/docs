@@ -115,6 +115,12 @@
         { "path": "./guides/nightly-releases.md" },
         { "path": "./guides/api.md" },
         { "path": "./guides/keycloak.md" },
+        { "path": "./guides/ssl-certificates/index",
+          "children": [
+            { "path": "./guides/ssl-certificates/cloudflare.md" },
+            { "path": "./guides/route53.md" }
+          ]
+        },
         { "path": "./guides/ssl-certificates.md" },
         { "path": "./guides/teardown.md" },
         { "path": "./guides/usage-monitoring.md" }

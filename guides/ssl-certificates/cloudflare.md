@@ -1,6 +1,6 @@
 ---
-title: SSL Certificate Setup
-description: Learn how to use cert-manager to set up SSL certificates for Coder
+title: Cloudflare
+description: Learn how to use cert-manager to set up SSL certificates using Cloudflare for DNS01 challenges.
 ---
 
 [cert-manager](https://cert-manager.io/) allows you to enable HTTPS on your
