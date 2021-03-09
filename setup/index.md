@@ -9,12 +9,18 @@ icon:
   0l2.3-2.3c.5-.4.5-1.1.1-1.4z"></path></svg>
 ---
 
-Welcome to Coder! To begin the deployment process, see our docs on deploying a
-[Kubernetes cluster](https://coder.com/docs/setup/kubernetes)
-and [installing Coder](https://coder.com/docs/setup/installation).
+Welcome to Coder!
+
+Before you start, we recommend familiarizing yourself with Coder's
+[requirements](#requirements).
+
+To begin the deployment process, see our docs on deploying a [Kubernetes
+cluster](kubernetes/index.md) and [installing Coder](installation.md).
 
 Coder is free to try! You can [generate a license](https://coder.com/trial) that
-allows you to try Coder free of charge for 60 days, or you can use our
-[local preview](kubernetes/local-preview) option.
+allows you to try Coder free of charge for 60 days, or you can use our [local
+preview](kubernetes/local-preview) option.
+
+## In This Section
 
 <children></children>
