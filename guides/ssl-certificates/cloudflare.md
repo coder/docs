@@ -56,7 +56,7 @@ cert-manager supports HTTP01 and DNS01 challenges, as well as [many DNS
 providers](https://cert-manager.io/docs/configuration/acme/dns01/#supported-dns01-providers).
 This guide, however, shows you how to use Cloudflare for DNS01 challenges. This
 is necessary to issue wildcard certificates, which are required for Coder's [Dev
-URLs](../admin/devurls.md) feature.
+URLs](../../admin/devurls.md) feature.
 
 First, get the Cloudflare API credentials for cert-manager to use; cert-manager
 needs permission to add a temporary TXT record and delete it after the challenge
@@ -77,7 +77,7 @@ Create a token with the following settings:
 You can also add more zones (or give the token access to all zones in your
 account), and set an expiry date.
 
-![Create Custom Token](../assets/cloudflare-1.png)
+![Create Custom Token](../../assets/cloudflare-1.png)
 
 Click **Continue to summary**, then **Create Token**. Be sure to copy and save
 the token displayed because Cloudflare will not display it again.
