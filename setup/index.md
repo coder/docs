@@ -9,8 +9,6 @@ icon:
   0l2.3-2.3c.5-.4.5-1.1.1-1.4z"></path></svg>
 ---
 
-Welcome to Coder!
-
 Before you start, we recommend familiarizing yourself with Coder's
 [requirements](#requirements).
 
