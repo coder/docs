@@ -15,9 +15,9 @@ set up a lightweight preview deployment, you can do so locally using using
 Before proceeding, please make sure that you have the following installed:
 
 1. [Docker](https://hub.docker.com/search?q=docker&type=edition&offering=community)
-2. [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
-3. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
-4. [helm](https://helm.sh/docs/intro/install)
+1. [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
+1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
+1. [helm](https://helm.sh/docs/intro/install)
 
 ## Limitations
 
@@ -26,13 +26,24 @@ Before proceeding, please make sure that you have the following installed:
 [CVMs][cvm-url] are supported in local previews with some caveats.
 
 1. Linux hosts must be running Linux Kernel 5 and above.
+    * Additionally, you'll need the `linux-headers` package installed for the
+      running Kernel version. You should see the following folders correspond
+      to the current Kernel version:
+
+      ```bash
+      $ uname -r
+      5.11.4-arch1-1
+      $ ls /usr/lib/modules
+      5.11.4-arch1-1
+      $ ls /usr/src/
+      linux  linux-headers-5.11.4-arch1-1
+      ```
+
 1. Docker Desktop for Mac must use version [2.5.0.1][docker-mac-url].
-1. Docker Desktop for Windows must use version [2.5.0.1][docker-windows-url].
+    * This versions is necessary due to a recent downgrade to Linux Kernel 4.9
+      because of a [bug](docker-bug-url).
 
-These Docker Desktop versions are necessary due to a recent downgrade to Linux
-Kernel 4.9 because of a [bug](docker-bug-url).
-
-If you choose not to try CVMs, these Docker versions are not necessary.
+If you choose not to try out CVMs, these requirements are not necessary.
 
 ### Dev URLs
 
