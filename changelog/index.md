@@ -11,10 +11,13 @@ icon:
 ## Release Schedule
 
 * Release *candidates* begin appearing on the **second Wednesday** of each
-  month (Coder may create multiple release candidates during this time period)
+  month (Coder may create multiple release candidates prior to the actual
+  release)
 * Releases are available the **third Wednesday** of each month
 * *Patch* releases become available as needed
 
 [Coder Release Calendar (iCal file)](https://coder.com/release-calendar.ical)
+
+## Changelogs
 
 <children><children>
