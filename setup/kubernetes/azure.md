@@ -95,6 +95,16 @@ You should get a message similar to the following if this is successful:
 Merged "<YOUR_CLUSTER_NAME>" as current context in /Users/<YOUR_USER>/.kube/config
 ```
 
+## Access Control
+
+AKS can be configured to use both Azure Active Directory (AD) and Kubernetes Role-Based
+Access Control (RBAC) to limit access to cluster resources based on a user's identity
+or group membership. You can create groups and users in AD, and define roles to assign
+to users with role bindings via RBAC.
+
+For more information, see [Using Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+and [Using Azure AD with Kubernetes RBAC](https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac).
+
 ## Next Steps
 
 At this point, you're ready to proceed to [Installation](../installation.md).
