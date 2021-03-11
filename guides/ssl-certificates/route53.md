@@ -9,7 +9,8 @@ Encrypt](https://letsencrypt.org/) or you have your own certificate authority.
 
 This guide will show you how to install cert-manager v1.0.1 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
-you can enable HTTPS on your Coder deployment.
+you can enable HTTPS on your Coder deployment. It will also show you how to
+configure your Coder hostname and Dev URLs.
 
 > We recommend reviewing the official cert-manager
 > [documentation](https://cert-manager.io/docs/) if you encounter any issues or
@@ -53,6 +54,7 @@ You should also:
 
     ```console
     kubectl get all -n cert-manager
+    ```
 
 ## Step 2: Delegate Your Domain Names and Set Up DNS01 Challenges
 
@@ -116,7 +118,7 @@ newly created IAM role:
 1. Apply your configuration changes
 
     ```console
-    kubectl apply -f letsencrypt.yaml`
+    kubectl apply -f letsencrypt.yaml
     ```
 
     If successful, you'll see a response similar to
@@ -154,12 +156,12 @@ URLs work.
     kubectl get all -n <your_namespace> -o wide
     ```
 
-    Find the **service/ingress-nginx** line and copy its **external IP** value
+    Find the **service/ingress-nginx** line and copy its **external IP** value.
 
 1. Return to Route53 and go to **Hosted Zone**.
 
 1. Create a new record for your hostname; provide `coder` as the record name and
-   paste the external IP as the `value`. Save
+   paste the external IP as the `value`. Save.
 
 1. Create another record for your Dev URLs: set it to `*.dev.exampleCo` or
     similar and use the same external IP as the previous step for `value`. Save.
