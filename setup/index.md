@@ -9,15 +9,24 @@ icon:
   0l2.3-2.3c.5-.4.5-1.1.1-1.4z"></path></svg>
 ---
 
-Before you start, we recommend familiarizing yourself with Coder's
-[requirements](#requirements).
+The articles in this section will walk you through setting up a cluster to which
+Coder deploys and then deploying Coder.
 
-To begin the deployment process, see our docs on deploying a [Kubernetes
-cluster](kubernetes/index.md) and [installing Coder](installation.md).
+Coder is free to try, though you'll need a license to do so. You can [generate a
+   license](https://coder.com/trial) that allows you to try Coder free of charge
+   for 60 days. You'll provide this license *after* you've completed the
+   deployment steps.
 
-Coder is free to try! You can [generate a license](https://coder.com/trial) that
-allows you to try Coder free of charge for 60 days, or you can use our [local
-preview](kubernetes/local-preview) option.
+> If you're interested in a lightweight preview of Coder, check out our [local
+   preview](kubernetes/local-preview) option.
+
+## Deploying Coder
+
+1. Before you start, we recommend familiarizing yourself with Coder's
+   [requirements](#requirements).
+
+2. To begin the deployment process, see our docs on creating a [Kubernetes
+   cluster](kubernetes/index.md) and [installing Coder](installation.md).
 
 ## In This Section
 
