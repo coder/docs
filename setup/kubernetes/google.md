@@ -87,7 +87,7 @@ and all clusters within that Project. Kubernetes RBAC configuration applies to e
 individual cluster, allowing for fine-grained authorization down to the namespace
 level.
 
-For more information, see [Using Kubernetes RBAC auhtorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+For more information, see [Using Kubernetes RBAC authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 and [GKE Interaction with IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction).
 
 ## Next Steps
