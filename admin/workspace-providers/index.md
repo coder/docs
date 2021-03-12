@@ -16,14 +16,14 @@ developers' experience.
 You can also use workspace providers to support data sovereignty requirements or
 increase the isolation between workspaces running in the same region or cluster.
 
-### Built-In Workspace Provider
+## Built-In Workspace Provider
 
 By default, all Coder deployments will have a `built-in` workspace provider that
 specifies the Kubernetes cluster containing the Coder deployment. This allows
 users to create workspaces in the same cluster as the Coder deployment with no
 additional configuration.
 
-### Remote Workspace Providers
+## Remote Workspace Providers
 
 You can deploy a workspace provider to any existing Kubernetes cluster, enabling
 the cluster to become a selectable pool of resources in which developers can
@@ -56,10 +56,10 @@ Info](../../assets/workspace-providers-detail.png)
 
 A workspace provider can have one of the following statuses:
 
-- **Pending**: The workspace provider has been registered but has not yet been
-  successfully deployed to the remote Kubernetes cluster.
-- **Ready**: The workspace provider is online and available, and new workspaces
-  can be provisioned to it.
+- **Pending**: The workspace provider has been registered but not deployed to
+  the remote Kubernetes cluster.
+- **Ready**: The workspace provider is online and available, and you can
+  provision new workspaces to it.
 - **Error**: The workspace provider encountered an issue on startup or cannot be
   reached by the Coder deployment. The workspace provider's details will include
   an error message.
