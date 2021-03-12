@@ -172,13 +172,13 @@ implement network segmentation and tenant isolation.
 1. Apply the Calico manifest to your cluster:
 
    ```bash
-   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.5/config/v1.7/calico.yaml
+   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.9/config/v1.7/calico.yaml
    ```
 
 1. Watch the `kube-system` DaemonSets:
 
    ```bash
-   kubectl get daemonset calico-node --namespace kube-system
+   kubectl get daemonset calico-node --namespace calico-system 
    ```
 
    Wait for the `calico-node` DaemonSet to have the number of pods **desired**
