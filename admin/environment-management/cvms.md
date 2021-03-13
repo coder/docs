@@ -28,8 +28,8 @@ such as Istio.
 
 ## Setting Up Your Cluster
 
-The following sections show how you can set up your K8 clusters hosted by Google
-and Amazon to support CVMs.
+The following sections show how you can set up your K8 clusters hosted by Google,
+Azure, and Amazon to support CVMs.
 
 ### Google Cloud Platform w/ GKE
 
@@ -49,6 +49,11 @@ gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
     --image-type "UBUNTU"
     ...
 ```
+
+### Azure Kubernetes Service
+
+Azure defaults to the correct Ubuntu node base image as-of Kubernetes version 1.18
+so when creating your cluster, use `--kubernetes-version` of than `1.18.x` or newer.
 
 ### Amazon Web Services w/ EKS
 
