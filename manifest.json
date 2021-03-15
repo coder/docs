@@ -113,6 +113,12 @@
     {
       "path": "./guides/index.md",
       "children": [
+        { "path": "./guides/ssl-certificates/index.md",
+          "children": [
+            { "path": "./guides/ssl-certificates/cloudflare.md" },
+            { "path": "./guides/ssl-certificates/route53.md" }
+          ]
+        },
         { "path": "./guides/resources.md" },
         { "path": "./guides/custom-env.md" },
         { "path": "./guides/gitconfig.md" },
@@ -122,7 +128,6 @@
         { "path": "./guides/nightly-releases.md" },
         { "path": "./guides/api.md" },
         { "path": "./guides/keycloak.md" },
-        { "path": "./guides/ssl-certificates.md" },
         { "path": "./guides/teardown.md" },
         { "path": "./guides/usage-monitoring.md" }
       ]
