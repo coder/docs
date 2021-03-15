@@ -189,6 +189,21 @@ implement network segmentation and tenant isolation.
    calico-node   3         3         3         3            ...
    ```
 
+## Access Control
+
+EKS allows you to create and manage user permissions using IAM identity
+providers (IdPs). EKS also supports user authentication via OpenID Connect
+(OIDC) identity providers.
+
+Using IAM with Kubernetes' native Role-Based Access Control (RBAC) allows you to
+grant access to your EKS cluster using existing IDPs and fine-tune permissions
+with RBAC.
+
+For more information, see:
+
+- [AWS Identity Providers and Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html)
+- [Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+
 ## Next Steps
 
 At this point, you're ready to proceed to [Installation](../installation.md).
