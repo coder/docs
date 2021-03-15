@@ -38,7 +38,7 @@ in the drop-down menu.
 ## Constraints
 
 In order for your environment to be successfully autostarted, it must
-match the following eligibility criteria.
+satisfy the following eligibility criteria.
 
 - 1 You have configured autostart for the environment in question using the configuration steps above.
 
