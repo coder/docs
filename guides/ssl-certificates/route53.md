@@ -134,15 +134,15 @@ following `helm install` command instead:
 
 ```console
 helm install coder coder/coder --namespace coder \
-    --version=<CODER_VERSION> \
-    --set devurls.host="*.exampleCo.com" \
-    --set ingress.host="coder.exampleCo.com" \
-    --set ingress.tls.enable=true \
-    --set ingress.tls.devUrlsHostSecretName=devUlrCertificate \
-    --set ingress.tls.hostSecretName=hostCertificate \
-    --set \
-    "ingress.additionalAnnotations[0]=cert-manager.io/cluster-issuer:letsencrypt" \
-    --wait
+  --version=<CODER_VERSION> \
+  --set devurls.host="*.exampleCo.com" \
+  --set ingress.host="coder.exampleCo.com" \
+  --set ingress.tls.enable=true \
+  --set ingress.tls.devUrlsHostSecretName=devUlrCertificate \
+  --set ingress.tls.hostSecretName=hostCertificate \
+  --set \
+  "ingress.additionalAnnotations[0]=cert-manager.io/cluster-issuer:letsencrypt" \
+  --wait
 ```
 
 There are also a few additional steps to make sure that your hostname and Dev
