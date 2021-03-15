@@ -13,7 +13,7 @@
       "children": [
         { "path": "./environments/getting-started.md" },
         {
-          "path": "./environments/wac/.md",
+          "path": "./environments/wac/index.md",
           "children":  [
             { "path": "./environments/wac/getting-started.md" },
             { "path": "./environments/wac/specification.md" }
