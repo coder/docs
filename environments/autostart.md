@@ -37,10 +37,9 @@ in the drop-down menu.
 
 ## Constraints
 
-In order for your environment to be successfully autostarted, it must
-satisfy the following eligibility criteria.
+In order for any of your environments to be successfully autostarted, they must satisfy the following eligibility criteria:
 
-- 1 You have configured autostart for the environment in question using the configuration steps above.
+- 1 You have configured autostart using the configuration steps above.
 
 - 2 Your environment is off when it's time for autostart. We don't wan't to trigger a rebuild if you're already working.
 
