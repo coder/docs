@@ -191,14 +191,18 @@ implement network segmentation and tenant isolation.
 
 ## Access Control
 
-Amazon EKS allows for creating and managing user permissions via IAM identity providers
-(IdPs). Additionally, EKS supports user authentication via OpenID Connect (OIDC)
-identity providers. Using IAM in tandem with Kubernetes' native Role-Based Access
-Control (RBAC) allows you to grant access to your EKS cluster using existing IdPs,
-and configure fine-grain permissions within each cluster via RBAC.
+EKS allows you to create and manage user permissions using IAM identity
+providers (IdPs). EKS also supports user authentication via OpenID Connect
+(OIDC) identity providers.
 
-For more information, see [Using Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
-and [AWS Identity Providers and Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html).
+Using IAM with Kubernetes' native Role-Based Access Control (RBAC) allows you to
+grant access to your EKS cluster using existing IDPs and fine-tune permissions
+with RBAC.
+
+For more information, see:
+
+- [AWS Identity Providers and Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html)
+- [Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
 ## Next Steps
 

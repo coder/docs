@@ -80,15 +80,17 @@ gcloud beta container --project "$PROJECT_ID" \
 
 ## Access Control
 
-GKE allows for integration between Identity Access and Management (IAM) and Kubernetes'
-native Role-Based Access Control (RBAC) mechanism to authorize user actions in the
-cluster. IAM configuration is primarily applied at the Google Cloud Project level,
-and all clusters within that Project. Kubernetes RBAC configuration applies to each
-individual cluster, allowing for fine-grained authorization down to the namespace
-level.
+GKE allows you to integrate Identity Access and Management (IAM) with
+Kubernetes' native Role-Based Access Control (RBAC) mechanism to authorize user
+actions in the cluster. IAM configuration is primarily applied at the project
+level and to all clusters within that project. Kubernetes RBAC configuration
+applies to individual clusters, allowing you to implement fine-grained
+authorization right down to the namespace level.
 
-For more information, see [Using Kubernetes RBAC authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
-and [GKE Interaction with IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction).
+For more information, see:
+
+- [GKE Interaction with IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction)
+- [Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
 ## Next Steps
 
