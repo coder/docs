@@ -15,29 +15,41 @@ set up a lightweight preview deployment, you can do so locally using using
 Before proceeding, please make sure that you have the following installed:
 
 1. [Docker](https://hub.docker.com/search?q=docker&type=edition&offering=community)
-2. [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
-3. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
-4. [helm](https://helm.sh/docs/intro/install)
+1. [helm](https://helm.sh/docs/intro/install)
+1. [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
+1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
 ## Limitations
 
 ### CVMs
 
-[CVMs][cvm-url] are supported in local previews with some caveats.
+The local preview supports [CVMs][cvm-url] if you meet the following
+requirements (if you choose not to try out CVMs, these requirements do not
+apply):
 
-1. Linux hosts must be running Linux Kernel 5 and above.
-1. Docker Desktop for Mac must use version [2.5.0.1][docker-mac-url].
-1. Docker Desktop for Windows must use version [2.5.0.1][docker-windows-url].
+1. Your Linux hosts must be running Linux Kernel 5 and above.
 
-These Docker Desktop versions are necessary due to a recent downgrade to Linux
-Kernel 4.9 because of a [bug](docker-bug-url).
+1. You must have the `linux-headers` package corresponding to your Kernel
+   version installed. You should see the following folders all corresponding to
+   your Kernel version:
 
-If you choose not to try CVMs, these Docker versions are not necessary.
+      ```bash
+      $ uname -r
+      5.11.4-arch1-1
+      $ ls /usr/lib/modules
+      5.11.4-arch1-1
+      $ ls /usr/src/
+      linux  linux-headers-5.11.4-arch1-1
+      ```
+
+1. Docker Desktop for Mac **must** use version [2.5.0.1][docker-mac-url]. This
+   specific version is required because of a recent downgrade to Linux Kernel
+   4.9 due to a [bug](docker-bug-url).
 
 ### Dev URLs
 
-Currently, the local preview doesn't support [Dev URLs][devurl-url]. Tools such
-as [ngrok][ngrok-url] can be used to preview webpages from inside an
+Currently, the local preview doesn't support [Dev URLs][devurl-url]. Instead,
+you can use tools like [ngrok][ngrok-url] to preview webpages from inside an
 environment.
 
 We are working on bringing Dev URL support to local previews in later releases.
@@ -50,8 +62,8 @@ To install Coder, run:
 curl -fsSL https://coder.com/try.sh | PORT="8080" sh -s --
 ```
 
-> Note: you can edit the value of `PORT` to control where the Coder
-> dashboard will be available.
+> Note: you can edit the value of `PORT` to control where the Coder dashboard
+> will be available.
 
 When the installation process completes, you'll see the URL and login
 credentials you need to access Coder:
@@ -71,7 +83,7 @@ Password: yfu...yu2
 ```
 
 Visit the URL, and log in using the provided credentials. The platform is
-automatically configured for you, so there's no first time setup to do.
+automatically configured for you, so there's no first-time setup to do.
 
 ## Removing Coder
 
