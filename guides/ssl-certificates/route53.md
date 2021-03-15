@@ -37,8 +37,7 @@ You should also:
    cert-manager:
 
     ```console
-    kubectl apply --validate=false -f \
-    https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager.yaml
+    kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.2.0/cert-manager.yaml
     ```
 
 1. Check that cert-manager installs correctly by running
@@ -110,9 +109,9 @@ newly created IAM role:
                     secretAccessKeySecretRef:
                         key: secret-access-key
                         name: route53-credentials
-            selector:
-                dnsZones:
-                    - yourDomain.com
+              selector:
+                  dnsZones:
+                      - yourDomain.com
     ```
 
 1. Apply your configuration changes
@@ -142,8 +141,7 @@ helm install coder coder/coder --namespace coder \
     --set ingress.tls.devUrlsHostSecretName=devUlrCertificate \
     --set ingress.tls.hostSecretName=hostCertificate \
     --set \
-    "ingress.additionalAnnotations[0]= \
-    cert-manager.io/cluster-issuer:letsencrypt" \
+    "ingress.additionalAnnotations[0]=cert-manager.io/cluster-issuer:letsencrypt" \
     --wait
 ```
 
