@@ -43,7 +43,7 @@ In order for any of your environments to be successfully autostarted, they must 
 
 - 2 Your environment is off when it's time for autostart. We don't wan't to trigger a rebuild if you're already working.
 
-- 2 Your environment must be active. An inactive environment is defined as an environment that has not been opened in 5 days or more.
+- 3 Your environment must be active. An inactive environment is defined as an environment that has not been opened in 5 days or more.
 
 ## Caveat
 
