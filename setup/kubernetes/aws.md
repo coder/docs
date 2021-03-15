@@ -175,7 +175,7 @@ implement network segmentation and tenant isolation.
    kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.9/config/v1.7/calico.yaml
    ```
 
-1. Watch the `kube-system` DaemonSets:
+1. Watch the `calico-system` DaemonSets:
 
    ```bash
    kubectl get daemonset calico-node --namespace calico-system 
