@@ -78,6 +78,20 @@ gcloud beta container --project "$PROJECT_ID" \
     --max-nodes "8"
 ```
 
+## Access Control
+
+GKE allows you to integrate Identity Access and Management (IAM) with
+Kubernetes' native Role-Based Access Control (RBAC) mechanism to authorize user
+actions in the cluster. IAM configuration is primarily applied at the project
+level and to all clusters within that project. Kubernetes RBAC configuration
+applies to individual clusters, allowing you to implement fine-grained
+authorization right down to the namespace level.
+
+For more information, see:
+
+- [GKE Interaction with IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction)
+- [Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+
 ## Next Steps
 
 At this point, you're ready to proceed to [Installation](../installation.md).

@@ -172,13 +172,13 @@ implement network segmentation and tenant isolation.
 1. Apply the Calico manifest to your cluster:
 
    ```bash
-   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.5/config/v1.7/calico.yaml
+   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.9/config/v1.7/calico.yaml
    ```
 
-1. Watch the `kube-system` DaemonSets:
+1. Watch the `calico-system` DaemonSets:
 
    ```bash
-   kubectl get daemonset calico-node --namespace kube-system
+   kubectl get daemonset calico-node --namespace calico-system 
    ```
 
    Wait for the `calico-node` DaemonSet to have the number of pods **desired**
@@ -188,6 +188,21 @@ implement network segmentation and tenant isolation.
    NAME          DESIRED   CURRENT   READY     UP-TO-DATE   ...
    calico-node   3         3         3         3            ...
    ```
+
+## Access Control
+
+EKS allows you to create and manage user permissions using IAM identity
+providers (IdPs). EKS also supports user authentication via OpenID Connect
+(OIDC) identity providers.
+
+Using IAM with Kubernetes' native Role-Based Access Control (RBAC) allows you to
+grant access to your EKS cluster using existing IDPs and fine-tune permissions
+with RBAC.
+
+For more information, see:
+
+- [AWS Identity Providers and Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html)
+- [Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
 ## Next Steps
 
