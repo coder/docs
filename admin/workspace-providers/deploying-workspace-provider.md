@@ -1,5 +1,5 @@
 ---
-title: Deploying Workspace Providers
+title: Deployment
 description: Learn how to deploy a workspace provider.
 state: beta
 ---
