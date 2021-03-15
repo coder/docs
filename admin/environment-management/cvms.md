@@ -52,8 +52,12 @@ gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
 
 ### Azure Kubernetes Service
 
-Azure defaults to the correct Ubuntu node base image as-of Kubernetes version 1.18
+Azure defaults to the correct Ubuntu node base image as of Kubernetes version 1.18
 so when creating your cluster, use `--kubernetes-version` of than `1.18.x` or newer.
+
+If you're using Kubernetes version 1.18, Azure defaults to the correct Ubuntu node
+base image. So, when creating your cluster, set `--kubernetes-version` to `1.18.x`
+or newer for CVMs.
 
 ### Amazon Web Services w/ EKS
 
