@@ -35,14 +35,37 @@ workspace:
 
 ### Fields
 
-|Field| Description|
-|---|---|
-|`version`|A semver version string. Currently only `0.0` is supported.|
-|`workspace`|This section handles all Environment configuration options. Anything in this section will directly make modifications to an Environment|
-|`workspace->name`|The name of the Coder Environment. This name can only be used once per user. |
-|`workspace->type`|This field determines which fields are supported in `spec`. This field indicates which provider type is being used. Currently only `kubernetes` Environments are supported.|
-|`workspace->spec`| This section configures the resource provisioning options.|
 
+<table>
+    <thead>
+        <tr>
+            <td><b>Field</b></td>
+            <td><b>Description</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>version</td>
+            <td>semver version string. Currently only '0.0' is supported.</td>
+        </tr>
+        <tr>
+            <td>workspace</td>
+            <td>This section handles all Environment configuration options. Anything in this section will directly make modifications to an Environment</td>
+        </tr>
+        <tr>
+            <td>workspace->name</td>
+            <td>The name of the Coder Environment. This name can only be used once per user.</td>
+        </tr>
+        <tr>
+            <td>workspace->type</td>
+            <td>This field determines which fields are supported in 'spec'. This field indicates which provider type is being used. Currently only 'kubernetes' Environments are supported.</td>
+        </tr>
+        <tr>
+            <td>workspace->spec</td>
+            <td>This section configures the resource provisioning options.</td>
+        </tr>
+    </tbody>
+</table>
 
 ### Common Issues
 
@@ -52,7 +75,7 @@ When using an Environments as Code template file for the first time, there is li
 
 If this error is encountered, ensure the image is [imported](../../images/importing.md). Specifying the full image uri is also recommended.
 
-```
+```text
 The image was not found in the registered images. Please add the image to Coder.
 ```
 
@@ -60,7 +83,7 @@ The image was not found in the registered images. Please add the image to Coder.
 
 Environment names must be unique per user. At this time, the name in the template is static, therefore only 1 environment per user can be configured for each YAML document. If you receive this error, you may delete your old environment with that name or change the `name` section in the YAML document.
 
-```
+```text
 An environment with that name already exists for the user.
 ```
 
