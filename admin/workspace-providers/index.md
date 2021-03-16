@@ -5,34 +5,36 @@ state: beta
 ---
 
 Workspace providers are logical groups of resources to which developers can
-deploy workspaces. They enable a single Coder deployment to provision and manage
-workspaces across multiple Kubernetes clusters and namespaces, including those
+deploy environments. They enable a single Coder deployment to provision and manage
+environments across multiple Kubernetes clusters and namespaces, including those
 located in other geographies, regions, or clouds.
 
-Distributed teams can use this feature to allow users to manage workspaces in
+Distributed teams can use this feature to allow users to manage environments in
 the nearest cluster. This reduces network latency and improves
 developers' experience.
 
 You can also use workspace providers to support data sovereignty requirements or
-increase the isolation between workspaces running in the same region or cluster.
+increase the isolation between environments running in the same region or cluster.
 
 ## Built-In Workspace Provider
 
 By default, all Coder deployments will have a `built-in` workspace provider that
 specifies the Kubernetes cluster containing the Coder deployment. This allows
-users to create workspaces in the same cluster as the Coder deployment with no
+users to create environments in the same cluster as the Coder deployment with no
 additional configuration.
+
+You cannot delete the `built-in` workspace provider.
 
 ## Remote Workspace Providers
 
 You can deploy a workspace provider to any existing Kubernetes cluster, enabling
 the cluster to become a selectable pool of resources in which developers can
-create workspaces.
+create environments.
 
 Remote workspace providers can provide lower latency to developers by locating
-their workspaces closer to them geographically or can be used for workload
+their environments closer to them geographically or can be used for workload
 isolation purposes. See [Deploying A Workspace
-Provider](deployment.md) to learn how you can
+Provider](deploying-workspace-provider.md) to learn how you can
 expand your Coder deployment to additional Kubernetes clusters.
 
 ## Admin UI
@@ -59,7 +61,7 @@ A workspace provider can have one of the following statuses:
 - **Pending**: The workspace provider has been registered but not deployed to
   the remote Kubernetes cluster.
 - **Ready**: The workspace provider is online and available, and you can
-  provision new workspaces to it.
+  provision new environments to it.
 - **Error**: The workspace provider encountered an issue on startup or cannot be
   reached by the Coder deployment. The workspace provider's details will include
   an error message.
@@ -67,11 +69,11 @@ A workspace provider can have one of the following statuses:
 ### Organization Allowlists
 
 Site admins and site managers can manage which organizations have permissions to
-provision new workspaces in each workspace provider. When a new organization is
-created, it can provision workspaces into the `built-in` workspace provider by
+provision new environments in each workspace provider. When a new organization is
+created, it can provision environments into the `built-in` workspace provider by
 default.
 
-Organizations must not contain any workspaces in the workspace provider before
+Organizations must not contain any environments in the workspace provider before
 you remove them from a workspace provider's allowlist.
 
 ### Workspace Provider Lifecycle
@@ -82,4 +84,4 @@ Helm will apply any configuration changes you make to the workspace provider
 details whenever the workspace provider is deployed and updated.
 
 For more information, see [Deploying A Workspace
-Provider](deployment.md).
+Provider](deploying-workspace-provider.md).

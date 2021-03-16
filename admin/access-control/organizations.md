@@ -316,14 +316,17 @@ organization.
 1.17.
 
 Coder's helm chart previously included a `namespaceWhitelist` field, which took
-a list of namespaces in your cluster and available to Coder. This field has been
-removed in version 1.17 to support [Workspace
+a list of namespaces in your cluster and made them available to Coder. This
+field has been removed in version 1.17 to support [Workspace
 Providers](../workspace-providers/index.md).
 
-This field is no longer used in the Coder helm chart, and any changes you make
-will not be applied to Coder deployments running version 1.17+. Existing
-environments can continue to function in the previously allowed namespaces, but
-you cannot create new environments in these namespaces.
+This field is no longer used in the Coder helm chart, and you will not be able
+to make any changes *unless* there are no longer any environments in the
+namespaces you removed being used with Coder deployments v1.17+ (if you remove
+namespaces from the `namespaceWhitelist` field, the environments in the
+namespaces are no longer accessible). For older Coder deployments, you can
+continue using existing environments in whitelisted namespaces, though you
+cannot create new environments in those namespaces.
 
 If you want to segregate Coder environments by namespaces in a Kubernetes
 cluster, you can do so by [deploying a new workspace

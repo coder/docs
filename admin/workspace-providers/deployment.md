@@ -8,9 +8,9 @@ This article walks you through the process of deploying a workspace provider to
 a [Kubernetes cluster](../../setup/kubernetes/index.md).
 
 [Workspace Providers](index.md) are logical groups of resources to which
-developers can deploy workspaces. Like the Coder deployment, workspace providers
+developers can deploy environments. Like the Coder deployment, workspace providers
 are deployed via a helm chart to the Kubernetes cluster where you'd like to
-provision new workspaces.
+provision new environments.
 
 ## Dependencies
 
@@ -65,14 +65,14 @@ Using the Coder CLI, create a new workspace provider in the `pending` state.
 ```bash
 coder providers create [NAME] \
     --hostname=[HOSTNAME] \
-    --clusterAddress=[CLUSTER_ADDRESS]
+    --cluster-address=[CLUSTER_ADDRESS]
 ```
 
 You must provide the following arguments:
 
 - `name`: A unique name of the workspace provider
 - `hostname`: Hostname of the workspace provider
-- `clusterAddress`: The address of the Kubernetes cluster apiserver. This can be
+- `cluster-address`: The address of the Kubernetes cluster apiserver. This can be
   retrieved using
 
   ```bash
@@ -106,7 +106,7 @@ when communicating with the Coder deployment.
       --force \
       --set envproxy.token=[REMOTE_ENVPROXY_TOKEN] \
       --set ingress.host=[HOSTNAME] \
-      --set envproxy.clusterAddress=[CLUSTER_ADDRESS] \
+      --set envproxy.cluster-address=[CLUSTER_ADDRESS] \
       --set cemanager.accessURL=[CEMANAGER_ACCESS_URL]
    ```
 
@@ -138,8 +138,8 @@ when communicating with the Coder deployment.
 4. From the Workspace Provider Admin page, add the desired organizations to its
    allowlist.
 
-Users in the allowed organizations can now choose to deploy into the newly setup
-   workspace provider.
+Users in the allowed organizations can now choose to deploy into the newly set
+up workspace provider.
 
 ## Upgrading the Workspace Provider
 
@@ -165,7 +165,7 @@ write over them.
 ## Deleting a Workspace Provider
 
 You can only remove a workspace provider if it no longer contains any
-workspaces, so you must remove all workspaces before deleting the workspace
+environments, so you must remove all environments before deleting the workspace
 provider.
 
 To remove a workspace provider, run the following command using the Coder CLI:

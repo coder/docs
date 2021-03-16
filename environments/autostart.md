@@ -24,9 +24,7 @@ Your environment must meet the following criteria for you to use Autostart:
 1. Your environment must be active. We define *inactive* environments as those
    that haven't been opened in five days or more.
 
-### Caveat: Trigger Time
-
-Coder may *trigger* Autostart up to five minutes before your scheduled time if
+> Coder may trigger Autostart up to five minutes before your scheduled time if
 your environments satisfy the Autostart requirements. This is to make sure that
 your environments are ready by your scheduled time.
 
