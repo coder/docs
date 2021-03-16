@@ -7,10 +7,10 @@ state: beta
 This article walks you through the process of deploying a workspace provider to
 a [Kubernetes cluster](../../setup/kubernetes/index.md).
 
-[Workspace Providers](index.md)
-are logical groups of resources to which developers can deploy workspaces. Like
-the Coder deployment, workspace providers are deployed via a helm chart to the
-Kubernetes cluster where you'd like to provision new workspaces.
+[Workspace Providers](index.md) are logical groups of resources to which
+developers can deploy workspaces. Like the Coder deployment, workspace providers
+are deployed via a helm chart to the Kubernetes cluster where you'd like to
+provision new workspaces.
 
 ## Dependencies
 
@@ -60,7 +60,7 @@ kubectl config set-context --current --namespace=coder
 
 ## Creating the New Workspace Provider
 
-Using the Coder CLI, create a new workspace provider in the `pending` state. 
+Using the Coder CLI, create a new workspace provider in the `pending` state.
 
 ```bash
 coder providers create [NAME] \
@@ -122,11 +122,11 @@ when communicating with the Coder deployment.
    [updating a helm chart](../../guides/helm-charts.md)
 
 2. Once the helm chart is successfully deployed, fetch the ingress address:
-   
+
    ```bash
    kubectl get ingress web-ingress
    ```
-   
+
    Use this IP to create a DNS record for the provided hostname of the workspace
    provider.
 
