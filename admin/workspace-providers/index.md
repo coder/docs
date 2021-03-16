@@ -1,6 +1,7 @@
 ---
 title: Workspace Providers
-description: Learn how workspace providers can minimize latency for users.
+description: Learn how workspace providers can improve developer experience,
+increase environment isolation, and support data sovereignty requirements.
 state: beta
 ---
 

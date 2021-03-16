@@ -45,6 +45,7 @@ all queued environments are ready by their scheduled time.
 
 When creating a new environment, you set it to Autostart at your existing
 Autostart time by checking the box labeled **Automatically turn this environment
-on....** Doing so saves you from returning to User Preferences at this point.
+on at (HH:mm)** (HH:mm will display the time you've set). Doing so saves you from
+returning to User Preferences at this point.
 
 ![Enable Autostart with New Environment](../assets/enable-autostart.png)
