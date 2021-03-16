@@ -328,7 +328,7 @@ namespaces are no longer accessible). For older Coder deployments, you can
 continue using existing environments in whitelisted namespaces, though you
 cannot create new environments in those namespaces.
 
-If you want to segregate Coder environments by namespaces in a Kubernetes
+If you want to separate Coder environments by namespaces in a Kubernetes
 cluster, you can do so by [deploying a new workspace
 provider](../workspace-providers/deployment.md) to each
 additional namespace in the cluster. The workspace provider provisions

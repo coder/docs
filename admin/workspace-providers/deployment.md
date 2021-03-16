@@ -26,14 +26,15 @@ Install the following dependencies if you haven't already:
    Coder deployment. For example, if the Coder deployment's hostname is
    `coder.example.com`, the workspace provider's hostname must match the format
    `*.coder.example.com`.
-2. The main Coder deployment and the workspace provider must be able to
+1. The main Coder deployment and the workspace provider must be able to
    communicate bi-directionally via their respective hostnames.
-3. The Kubernetes cluster address must be reachable from the Coder deployment.
+1. The Kubernetes cluster address must be reachable from the Coder deployment.
 
 ## Connecting to the Cluster
 
 To add a Kubernetes cluster as a workspace provider, you must first make sure
-that you're connected to the cluster you want to expand into
+that you're connected to the cluster you want to expand into. Run the following
+command:
 
 ```bash
 kubectl config current-context
@@ -121,7 +122,7 @@ when communicating with the Coder deployment.
    If you're unfamiliar with the helm configuration values file, see our doc on
    [updating a helm chart](../../guides/helm-charts.md)
 
-2. Once the helm chart is successfully deployed, fetch the ingress address:
+1. Once the helm chart is successfully deployed, fetch the ingress address:
 
    ```bash
    kubectl get ingress web-ingress
@@ -130,12 +131,12 @@ when communicating with the Coder deployment.
    Use this IP to create a DNS record for the provided hostname of the workspace
    provider.
 
-3. Once the Helm chart has deployed successfully, you should see the workspace
+1. Once the Helm chart has deployed successfully, you should see the workspace
    provider in a `ready` state on the Workspace Provider Admin page.
 
    ![Workspace Providers Admin](../../assets/workspace-providers-admin.png)
 
-4. From the Workspace Provider Admin page, add the desired organizations to its
+1. From the Workspace Provider Admin page, add the desired organizations to its
    allowlist.
 
 Users in the allowed organizations can now choose to deploy into the newly set
