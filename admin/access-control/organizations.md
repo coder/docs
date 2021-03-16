@@ -322,9 +322,9 @@ Providers](../workspace-providers/index.md).
 
 This field is no longer used in the Coder helm chart, and you will not be able
 to make any changes *unless* there are no longer any environments in the
-namespaces you removed being used with Coder deployments v1.17+ (if you remove
-namespaces from the `namespaceWhitelist` field, the environments in the
-namespaces are no longer accessible). For older Coder deployments, you can
+namespaces you removed being used with Coder deployments v1.17.0 or later (if
+you remove namespaces from the `namespaceWhitelist` field, the environments in
+the namespaces are no longer accessible). For older Coder deployments, you can
 continue using existing environments in whitelisted namespaces, though you
 cannot create new environments in those namespaces.
 
