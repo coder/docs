@@ -32,11 +32,11 @@ all queued environments are ready by their scheduled time.
 1. Click on your avatar in the top-right and select **Account** in the drop-down
    menu.
 
-2. Select the **Autostart** tab and set your desired Autostart time.
+1. Select the **Autostart** tab and set your desired Autostart time.
 
     ![Set Autostart time](../assets/set_autostart_time.png)
 
-3. Select the environments for which you want to enable Autostart and save.
+1. Select the environments for which you want to enable Autostart and save.
 
     ![Select environments to
     Autostart](../assets/autostart_save_preferences.png)
