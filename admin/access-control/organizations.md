@@ -312,13 +312,26 @@ organization.
 
 ## Namespaces
 
-Coder's helm chart includes `namespaceWhitelist`. This value takes a list of the
-namespaces that are in your cluster and are available to Coder. If you don't set
-`namespaceWhitelist`, the only available namespace is the one Coder has deployed
-to (this is also the default namespace).
+> **Notice**: The `namespaceWhitelist` field has been deprecated in Coder version
+[1.17](../../changelog/1.17.0.md).
 
-If you're a site manager, you can assign a namespace to an organization; all
-resources for that organization now reside in that namespace. **Please note that
-this field is not editable once set.**
+Coder's helm chart previously included a `namespaceWhitelist` field, which took
+a list of namespaces in your cluster and made them available to Coder. This
+field has been removed in [version 1.17](../../changelog/1.17.0.md) to support [Workspace
+Providers](../workspace-providers/index.md).
 
-![Organization Resources](../../assets/org-resources.png)
+This field is no longer used in the Coder helm chart, and you will not be able
+to make any changes *unless* you are removing namespaces that no longer contain
+environments with Coder deployments v1.17.0 or later (if you remove namespaces
+from the `namespaceWhitelist` field, the environments in the namespaces are no
+longer accessible). For older Coder deployments, you can continue using existing
+environments in whitelisted namespaces, though you cannot create new
+environments in those namespaces.
+
+If you want to separate Coder environments by namespaces in a Kubernetes
+cluster, you can do so by [deploying a new workspace
+provider](../workspace-providers/deployment.md) to each
+additional namespace in the cluster. The workspace provider provisions
+environments to the namespace it has been deployed to, and you can control
+access to each workspace provider via an organization allowlist to replace the
+previous organization namespace behaviors.
