@@ -11,7 +11,7 @@ Coder will create a global git configuration file located at `~/.gitconfig` in a
 newly created environments and set the user name and email address using the
 information associated with the user's Coder account.
 
-This step occurs before [coder/configre](https://coder.com/docs/images/configure)
+This step occurs before [coder/configure](https://coder.com/docs/images/configure)
 and [personalization](https://coder.com/docs/environments/personalization),
 which can be used to override the default `.gitconfig` created by Coder.
 If there's already a `.gitconfig` file, Coder will not recreate a default
