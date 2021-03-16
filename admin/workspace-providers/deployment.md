@@ -47,7 +47,7 @@ connect to the correct context.
 
 We recommend running workspace providers in a separate
 [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
-to do so, run
+to do so, run:
 
 ```bash
 kubectl create namespace coder
@@ -89,7 +89,7 @@ when communicating with the Coder deployment.
 
 ## Installing Workspace Provider
 
-1. If you haven't already, add the Coder helm repo
+1. If you haven't already, add the Coder helm repo:
 
    ```bash
    helm repo add coder https://helm.coder.com
