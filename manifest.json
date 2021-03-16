@@ -21,7 +21,8 @@
         { "path": "./environments/pwa.md" },
         { "path": "./environments/environment-params.md" },
         { "path": "./environments/variables.md" },
-        { "path": "./environments/preferences.md" }
+        { "path": "./environments/preferences.md" },
+        { "path": "./environments/autostart.md" }
       ]
     },
     {

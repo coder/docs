@@ -47,6 +47,11 @@ When prompted, provide the following information:
         <td>The Kubernetes cluster to which your workspace will be deployed.
         Default: <code>built-in</code></td>
     </tr>
+        <tr>
+        <td><b>Autostart</b></td>
+        <td>Whether you want your environment to turn on automatically at a
+        specific time (you can set the autostart time in User Preferences.</td>
+    </tr>
 </table>
 
 Coder offers several **advanced** settings that allow you to customize your
