@@ -3,23 +3,21 @@ title: "Autostart"
 description: Learn how to configure automated environment rebuilds.
 ---
 
-Coder automatically [turns off](../admin/environment-management/shutdown.md)
-unused environments to help you save on cloud usage costs. Turning off
-environments, however, requires you to turn them on manually the next day.
-Autostart can help eliminate this manual process.
-
-Autostart also allows you to configure automated environment rebuilds at a time
-that best suits your workflow. You can now expect your environments to be ready
-for you at the start of each workday.
+Coder [automatically turns off idle
+environments](../admin/environment-management/shutdown.md) to help manage
+resource expenditure. Typically, this means environments turn off overnight and
+remain offline until a rebuild is requested. With Autostart, rebuilds may be
+automatically requested at a time that best suits your workflow. You can expect
+your environments to be ready for you at the start of each work day.
 
 ## Criteria for Autostart
 
-Your environment must meet the following criteria for you to use autostart:
+Your environment must meet the following criteria for you to use Autostart:
 
-1. You've [set the autostart time and selected
+1. You've [set the Autostart time and selected
    environments](#enabling-autostart) to be started automatically at that time.
 
-1. Your environments are off at the autostart time (autostart won't work if your
+1. Your environments are off at the Autostart time (Autostart won't work if your
    environments are on to prevent the possibility of triggering a rebuild while
    you're working).
 
@@ -28,8 +26,8 @@ Your environment must meet the following criteria for you to use autostart:
 
 ### Caveat: Trigger Time
 
-Coder may *trigger* autostart up to five minutes before your scheduled time if
-your environments satisfy the autostart requirements. This is to make sure that
+Coder may *trigger* Autostart up to five minutes before your scheduled time if
+your environments satisfy the Autostart requirements. This is to make sure that
 your environments are ready by your scheduled time.
 
 ## Enabling Autostart
@@ -37,15 +35,16 @@ your environments are ready by your scheduled time.
 1. Click on your avatar in the top-right and select **Account** in the drop-down
    menu.
 
-2. Select the **Autostart** tab and set your desired autostart time.
+2. Select the **Autostart** tab and set your desired Autostart time.
 
-    ![Set autostart time](../assets/set_autostart_time.png)
+    ![Set Autostart time](../assets/set_autostart_time.png)
 
-3. Select the environments for which you want to enable autostart and save.
+3. Select the environments for which you want to enable Autostart and save.
 
     ![Select environments to
-    autostart](../assets/autostart_save_preferences.png)
+    Autostart](../assets/autostart_save_preferences.png)
 
-> When creating a new environment, you set it to autostart at your
-> existing autostart time by checking the box labeled **Automatically turn this
-> environment on....**
+> When creating a new environment, you set it to Autostart at your existing
+> Autostart time by checking the box labeled **Automatically turn this
+> environment on....** Doing so saves you from returning to User Preferences at
+> this point.
