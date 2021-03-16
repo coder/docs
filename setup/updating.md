@@ -95,11 +95,11 @@ If this happens, we recommend uninstalling and reinstalling:
     example **web-ingress** can take some time to release the IP addresses; if
     you run the install command before this process completes, the install
     process will fail.
-    
-    Since uninstalling removes the `web-ingress` service which owns the IP address
-    for the ingress controller. After re-installing, the `web-ingress` service may
-    have a new public IP address or hostname. The DNS provider will need to reflect
-    this new IP or CNAME.
+
+    Running `uninstall` removes the `web-ingress` service that owns the IP address
+    for the ingress controller. As such, the `web-ingress` service may have a new
+    public IP address or hostname after you reinstall; if this is the case, update
+    your DNS provider with your new IP and/or CNAME.
 
 1. Run the `upgrade` command with the new version number and helm chart values
    file:
