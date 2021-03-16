@@ -13,16 +13,16 @@
       "children": [
         { "path": "./environments/getting-started.md" },
         { "path": "./environments/lifecycle.md" },
-        { "path": "./environments/editors.md" },
-        { "path": "./environments/personalization.md" },
-        { "path": "./environments/ssh.md" },
-        { "path": "./environments/cvms.md" },
-        { "path": "./environments/devurls.md" },
-        { "path": "./environments/pwa.md" },
         { "path": "./environments/environment-params.md" },
+        { "path": "./environments/editors.md" },
+        { "path": "./environments/autostart.md" },
+        { "path": "./environments/devurls.md" },
+        { "path": "./environments/cvms.md" },
         { "path": "./environments/variables.md" },
+        { "path": "./environments/personalization.md" },
         { "path": "./environments/preferences.md" },
-        { "path": "./environments/autostart.md" }
+        { "path": "./environments/pwa.md" },
+        { "path": "./environments/ssh.md" }
       ]
     },
     {
@@ -132,6 +132,7 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        { "path": "./changelog/1.17.0.md" },
         { "path": "./changelog/1.16.2.md" },
         { "path": "./changelog/1.16.1.md" },
         { "path": "./changelog/1.16.0.md" },

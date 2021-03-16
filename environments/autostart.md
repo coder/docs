@@ -44,9 +44,10 @@ your environments are ready by your scheduled time.
     ![Select environments to
     Autostart](../assets/autostart_save_preferences.png)
 
-> When creating a new environment, you set it to Autostart at your existing
-> Autostart time by checking the box labeled **Automatically turn this
-> environment on....** Doing so saves you from returning to User Preferences at
-> this point.
->
-> ![Enable Autostart with New Environment](../assets/enable-autostart.png)
+### Enabling Autostart for New Environments
+
+When creating a new environment, you set it to Autostart at your existing
+Autostart time by checking the box labeled **Automatically turn this environment
+on....** Doing so saves you from returning to User Preferences at this point.
+
+![Enable Autostart with New Environment](../assets/enable-autostart.png)
