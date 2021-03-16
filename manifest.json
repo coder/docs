@@ -13,11 +13,11 @@
       "children": [
         { "path": "./environments/getting-started.md" },
         { "path": "./environments/lifecycle.md" },
-        { "path": "./environments/environment-params.md" },
         { "path": "./environments/editors.md" },
         { "path": "./environments/autostart.md" },
         { "path": "./environments/devurls.md" },
         { "path": "./environments/cvms.md" },
+        { "path": "./environments/environment-params.md" },
         { "path": "./environments/variables.md" },
         { "path": "./environments/personalization.md" },
         { "path": "./environments/preferences.md" },
