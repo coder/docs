@@ -60,7 +60,7 @@ kubectl config set-context --current --namespace=coder
 
 ## Creating the New Workspace Provider
 
-Using the Coder CLI, create a new workspace provider in the `pending` state.
+Using the Coder CLI, create a new workspace provider in the `pending` state. 
 
 ```bash
 coder providers create [NAME] \
@@ -107,7 +107,7 @@ when communicating with the Coder deployment.
       --set envproxy.token=[REMOTE_ENVPROXY_TOKEN] \
       --set ingress.host=[HOSTNAME] \
       --set envproxy.clusterAddress=[CLUSTER_ADDRESS] \
-      --set cemanager.AccessURL=[CEMANAGER_ACCESS_URL]
+      --set cemanager.accessURL=[CEMANAGER_ACCESS_URL]
    ```
 
    Optionally, you can provide additional helm configuration values by providing
@@ -121,12 +121,21 @@ when communicating with the Coder deployment.
    If you're unfamiliar with the helm configuration values file, see our doc on
    [updating a helm chart](../../guides/helm-charts.md)
 
-2. Once the Helm chart has deployed successfully, you should see the workspace
+2. Once the helm chart is successfully deployed, fetch the ingress address:
+   
+   ```bash
+   kubectl get ingress web-ingress
+   ```
+   
+   Use this IP to create a DNS record for the provided hostname of the workspace
+   provider.
+
+3. Once the Helm chart has deployed successfully, you should see the workspace
    provider in a `ready` state on the Workspace Provider Admin page.
 
    ![Workspace Providers Admin](../../assets/workspace-providers-admin.png)
 
-3. From the Workspace Provider Admin page, add the desired organizations to its
+4. From the Workspace Provider Admin page, add the desired organizations to its
    allowlist.
 
 Users in the allowed organizations can now choose to deploy into the newly setup

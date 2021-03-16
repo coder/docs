@@ -47,10 +47,6 @@ When prompted, provide the following information:
         <td>The Kubernetes cluster to which your workspace will be deployed.
         Default: <code>built-in</code></td>
     </tr>
-    <tr>
-        <td><b>Namespace</b></td>
-        <td>The Kubernetes namespace to which your workspace will be deployed</td>
-    </tr>
 </table>
 
 Coder offers several **advanced** settings that allow you to customize your
