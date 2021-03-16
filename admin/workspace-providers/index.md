@@ -1,7 +1,6 @@
 ---
 title: Workspace Providers
-description: Learn how workspace providers can improve developer experience,
-increase environment isolation, and support data sovereignty requirements.
+description: Learn how workspace providers can improve developer experience.
 state: beta
 ---
 
