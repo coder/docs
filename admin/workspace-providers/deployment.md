@@ -65,7 +65,7 @@ Using the Coder CLI, create a new workspace provider in the `pending` state.
 ```bash
 coder providers create [NAME] \
     --hostname=[HOSTNAME] \
-    --clusterAddress=[CLUSTER_ADDRESS]
+    --cluster-address=[CLUSTER_ADDRESS]
 ```
 
 You must provide the following arguments:
