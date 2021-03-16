@@ -1,50 +1,57 @@
 ---
 title: "Autostart"
-description: Automate environment rebuilds at a pre-configured time.
+description: Learn how to start your environments automatically at a predetermined time.
 ---
 
-Coder automatically turns off any environments you're not using after 8
-hours. This helps customer's save on cloud costs. Unfortunately,
-this required users to manually start their environments at the
-beginning of each work day.
+Autostart allows you to set environments to turn on automatically at a
+predetermined time.
 
-# Autostart
+## Background
 
-Autostart allows each individual developer on the team to configure automated
-environment rebuilds at a time that best suits their workflow. Users can now
-expect their environments to be ready for them at the start of each workday.
+Coder automatically turns off unused environments after 8 hours to help you save
+on cloud usage costs. Turning off environments, however, require you to turn
+them on manually the next day. Autostart can help eliminate this manual process.
 
-As a result, users save time and can expect their environment to always be on
-the latest image at the start of each workday.
+Autostart also allows you to configure automated environment rebuilds at a time
+that best suits your workflow. You can now expect your environments to be ready
+for you at the start of each workday.
 
-# Configuration
+## Criteria for Autostart
 
-To configure autostart for your environments:
+Your environment must meet the following criteria for you to use autostart:
 
-- 1 Navigate to your account settings by clicking on your avatar in
-the upper-right hand corner of your screen and then clicking `account`
-in the drop-down menu.
+1. You've [set the autostart time and selected
+   environments](#enabling-autostart) to be started automatically at that time.
 
-![user_preferences](../assets/account_settings.png)
+1. Your environments are off at the autostart time (autostart won't work if your
+   environments are on to prevent the possibility of triggering a rebuild while
+   you're working).
 
-- 2 Click on the autostart tab and select an autostart time using the drop-down menu.
+2. Your environment must be active. We define *inactive* environments as those
+   that haven't been opened in five days or more.
 
-![set_time](../assets/set_autostart_time.png)
+### Caveat: Trigger Time
 
-- 3 Finally, select which environments should be autostarted and save your preferences.
+Coder may *trigger* autostart up to five minutes before your scheduled time if
+your environments satisfy the autostart requirements. This is to make sure that
+your environments are ready by your scheduled time.
 
-![save_preferences](../assets/autostart_save_preferences.png)
+## Enabling Autostart
 
-## Constraints
+1. Click on your avatar in the top-right and select **Account** in the drop-down
+   menu.
 
-In order for any of your environments to be successfully autostarted, they must satisfy the following eligibility criteria:
+2. Select the **Autostart** tab and set your desired autostart time.
 
-- 1 You have configured autostart using the configuration steps above.
+    ![Set autostart time](../assets/set_autostart_time.png)
 
-- 2 Your environment is off when it's time for autostart. We don't wan't to trigger a rebuild if you're already working.
+3. Select the environments for which you want to enable autostart.
 
-- 3 Your environment must be active. An inactive environment is defined as an environment that has not been opened in 5 days or more.
+    ![Select environments to
+    autostart](../assets/autostart_save_preferences.png)
 
-## Caveat
+4. Save.
 
-An automated environment rebuild may be triggered up to 5 minutes before your autostart time if all of the above eligibility requirements are satisfied. The purpose of this is to have your environment ready for you by your autostart time.
+> When creating a new environment, you can set it to autostart at that time. To
+> do so, make sure you check the box enabling **Automatically turn this
+> environment on....**
