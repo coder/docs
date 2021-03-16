@@ -48,3 +48,5 @@ your environments are ready by your scheduled time.
 > Autostart time by checking the box labeled **Automatically turn this
 > environment on....** Doing so saves you from returning to User Preferences at
 > this point.
+>
+> ![Enable Autostart with New Environment](../assets/enable-autostart.png)
