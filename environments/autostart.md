@@ -1,6 +1,6 @@
 ---
 title: "Autostart"
-description: Learn how to start your environments automatically at a predetermined time.
+description: Learn how to configure automated environment rebuilds.
 ---
 
 Autostart allows you to set environments to turn on automatically at a
@@ -9,7 +9,7 @@ predetermined time.
 ## Background
 
 Coder automatically turns off unused environments after 8 hours to help you save
-on cloud usage costs. Turning off environments, however, require you to turn
+on cloud usage costs. Turning off environments, however, requires you to turn
 them on manually the next day. Autostart can help eliminate this manual process.
 
 Autostart also allows you to configure automated environment rebuilds at a time
