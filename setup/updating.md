@@ -91,16 +91,15 @@ If this happens, we recommend uninstalling and reinstalling:
     helm uninstall --namespace coder coder
     ```
 
-    **Do not use `delete`** since this command removes the persistent volume
-    claim (PVCs) for the database. Running `uninstall` then reinstalling will
-    keep the PVCs and reattach them. You may, however, lose the IP address for
-    the ingress controller; if that's the case, update your host and Dev URL IP
-    addresses with your DNS provider.
-
     Make sure to check the namespace for items that are slow to delete. For
     example **web-ingress** can take some time to release the IP addresses; if
     you run the install command before this process completes, the install
     process will fail.
+    
+    Since uninstalling removes the `web-ingress` service which owns the IP address
+    for the ingress controller. After re-installing, the `web-ingress` service may
+    have a new public IP address or hostname. The DNS provider will need to reflect
+    this new IP or CNAME.
 
 1. Run the `upgrade` command with the new version number and helm chart values
    file:
