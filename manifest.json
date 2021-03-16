@@ -86,13 +86,16 @@
             { "path": "./admin/environment-management/gpu-acceleration.md" },
             { "path": "./admin/environment-management/memory-overprovisioning.md" },
             { "path": "./admin/environment-management/shutdown.md" },
-            { "path": "./admin/environment-management/ssh-access.md" },
-            { "path": "./admin/environment-management/workspace-providers.md" }
+            { "path": "./admin/environment-management/ssh-access.md" }
           ]
         },
         {
           "path": "./admin/registries/index.md",
           "children": [{ "path": "./admin/registries/default-registry.md" }]
+        },
+        {
+          "path": "./admin/workspace-providers/index.md",
+          "children": [{ "path": "./admin/workspace-providers/deploying-workspace-provider.md" }]
         },
         { "path": "./admin/account-dormancy.md" },
         { "path": "./admin/appearance.md" },

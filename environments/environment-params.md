@@ -40,7 +40,12 @@ When prompted, provide the following information:
     </tr>
     <tr>
         <td><b>Tag</b></td>
-        <td>The version of the Image you want to use</td>
+        <td>The version of the image you want to use</td>
+    </tr>
+    <tr>
+        <td><b>Workspace Provider</b></td>
+        <td>The Kubernetes cluster to which your workspace will be deployed.
+        Default: <code>built-in</code></td>
     </tr>
 </table>
 
