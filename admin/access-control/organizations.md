@@ -315,21 +315,21 @@ organization.
 > **Notice**: The `namespaceWhitelist` field has been deprecated in Coder version
 1.17.
 
-Coder's helm chart previously included a `namespaceWhitelist` field that has
+Coder's helm chart previously included a `namespaceWhitelist` field; this has
 been removed in version 1.17. This value took a list of the namespaces that are
-in your cluster and are available to Coder.
+in your cluster and available to Coder.
 
-This functionality has been removed in order to better support
-[Workspace Providers](../workspace-providers/index.md). This field is no longer
-used in the Coder helm chart and any changes will not be applied to Coder
-deployments running version 1.17 and onward. Previously created environments
-can continue to function in the previously allowed namespaces, but new
-environments cannot be created in these namespaces.
+This functionality has been removed to support [Workspace
+Providers](../workspace-providers/index.md). This field is no longer used in the
+Coder helm chart and any changes you make will not be applied to Coder deployments
+running version 1.17+. Existing environments can continue to function in the
+previously allowed namespaces; you cannot create new environments in these
+namespaces.
 
-If you still want to segregate coder environments by namespaces in the same
-Kubernetes cluster you can do so by
-[deploying a new workspace provider](../workspace-providers/deploying-workspace-provider.md)
-to each addition namespace in the cluster. Each workspace provider provisions
-environments into the respective namespace it has been deployed onto, and access
-to each workspace provider can be controlled via an organization allowlist to
-replace the previous organization namespace behaviors.
+If you want to segregate Coder environments by namespaces in a Kubernetes
+cluster, you can do so by [deploying a new workspace
+provider](../workspace-providers/deploying-workspace-provider.md) to each
+addition namespace in the cluster. Each workspace provider provisions
+environments to the namespace it has been deployed to, and you can control
+access to each workspace provider via an organization allowlist to replace the
+previous organization namespace behaviors.
