@@ -3,14 +3,10 @@ title: "Autostart"
 description: Learn how to configure automated environment rebuilds.
 ---
 
-Autostart allows you to set environments to turn on automatically at a
-predetermined time.
-
-## Background
-
-Coder automatically turns off unused environments after 8 hours to help you save
-on cloud usage costs. Turning off environments, however, requires you to turn
-them on manually the next day. Autostart can help eliminate this manual process.
+Coder automatically [turns off](../admin/environment-management/shutdown.md)
+unused environments to help you save on cloud usage costs. Turning off
+environments, however, requires you to turn them on manually the next day.
+Autostart can help eliminate this manual process.
 
 Autostart also allows you to configure automated environment rebuilds at a time
 that best suits your workflow. You can now expect your environments to be ready
@@ -27,7 +23,7 @@ Your environment must meet the following criteria for you to use autostart:
    environments are on to prevent the possibility of triggering a rebuild while
    you're working).
 
-2. Your environment must be active. We define *inactive* environments as those
+1. Your environment must be active. We define *inactive* environments as those
    that haven't been opened in five days or more.
 
 ### Caveat: Trigger Time
@@ -45,13 +41,11 @@ your environments are ready by your scheduled time.
 
     ![Set autostart time](../assets/set_autostart_time.png)
 
-3. Select the environments for which you want to enable autostart.
+3. Select the environments for which you want to enable autostart and save.
 
     ![Select environments to
     autostart](../assets/autostart_save_preferences.png)
 
-4. Save.
-
-> When creating a new environment, you can set it to autostart at that time. To
-> do so, make sure you check the box enabling **Automatically turn this
+> When creating a new environment, you set it to autostart at your
+> existing autostart time by checking the box labeled **Automatically turn this
 > environment on....**
