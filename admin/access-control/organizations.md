@@ -313,11 +313,11 @@ organization.
 ## Namespaces
 
 > **Notice**: The `namespaceWhitelist` field has been deprecated in Coder version
-1.17.
+[1.17](../../changelog/1.17.0.md).
 
 Coder's helm chart previously included a `namespaceWhitelist` field, which took
 a list of namespaces in your cluster and made them available to Coder. This
-field has been removed in version 1.17 to support [Workspace
+field has been removed in [version 1.17](../../changelog/1.17.0.md) to support [Workspace
 Providers](../workspace-providers/index.md).
 
 This field is no longer used in the Coder helm chart, and you will not be able
