@@ -96,7 +96,7 @@
         },
         {
           "path": "./admin/workspace-providers/index.md",
-          "children": [{ "path": "./admin/workspace-providers/deploying-workspace-provider.md" }]
+          "children": [{ "path": "./admin/workspace-providers/deployment.md" }]
         },
         { "path": "./admin/account-dormancy.md" },
         { "path": "./admin/appearance.md" },

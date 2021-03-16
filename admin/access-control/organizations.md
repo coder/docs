@@ -327,7 +327,7 @@ you cannot create new environments in these namespaces.
 
 If you want to segregate Coder environments by namespaces in a Kubernetes
 cluster, you can do so by [deploying a new workspace
-provider](../workspace-providers/deploying-workspace-provider.md) to each
+provider](../workspace-providers/deployment.md) to each
 additional namespace in the cluster. The workspace provider provisions
 environments to the namespace it has been deployed to, and you can control
 access to each workspace provider via an organization allowlist to replace the

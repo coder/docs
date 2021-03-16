@@ -32,7 +32,7 @@ create workspaces.
 Remote workspace providers can provide lower latency to developers by locating
 their workspaces closer to them geographically or can be used for workload
 isolation purposes. See [Deploying A Workspace
-Provider](deploying-workspace-provider.md) to learn how you can
+Provider](deployment.md) to learn how you can
 expand your Coder deployment to additional Kubernetes clusters.
 
 ## Admin UI
@@ -82,4 +82,4 @@ Helm will apply any configuration changes you make to the workspace provider
 details whenever the workspace provider is deployed and updated.
 
 For more information, see [Deploying A Workspace
-Provider](deploying-workspace-provider.md).
+Provider](deployment.md).
