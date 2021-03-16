@@ -168,12 +168,33 @@
       ]
     },
     {
-      "login": "imgbot[bot]",
-      "name": "imgbot[bot]",
-      "avatar_url": "https://avatars.githubusercontent.com/in/4706?v=4",
-      "profile": "https://github.com/apps/imgbot",
+      "login": "mterhar",
+      "name": "Mike Terhar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/938684?v=4",
+      "profile": "https://brownfield.dev/",
       "contributions": [
+        "content",
+        "ideas",
         "maintenance"
+      ]
+    },
+    {
+      "login": "deansheather",
+      "name": "Dean Sheather",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11241812?v=4",
+      "profile": "https://github.com/deansheather",
+      "contributions": [
+        "content",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "fuskovic",
+      "name": "Faris Huskovic",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34631293?v=4",
+      "profile": "https://github.com/fuskovic",
+      "contributions": [
+        "content"
       ]
     }
   ],

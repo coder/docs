@@ -28,6 +28,17 @@ helm repo add coder https://helm.coder.com
 Please also ensure that your Kubernetes config is pointing to the cluster on
 which you've deployed Coder.
 
+## Recommendations
+
+- As with any significant maintenance operation, we **strongly recommend**
+  taking a snapshot of the database before proceeding with the upgrade. In the
+  event that there are upgrade issues, it is simpler and safer to roll
+  back directly at the database level, since it guarantees restoration of the
+  system to a known-working condition.
+
+- We recommend updating no more than one major version at a time (i.e., we
+  recommend moving from 1.15 to 1.16 only).
+
 ## Update Coder
 
 To update Coder, follow these steps:
