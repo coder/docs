@@ -50,7 +50,7 @@ To update Coder, follow these steps:
     *Note: If you omit --version, you'll upgrade to the latest version.*
 
     ```bash
-    helm upgrade --namespace coder --force --install --atomic --wait \
+    helm upgrade --namespace coder --install --atomic --wait \
       --version 1.16.1 coder coder/coder --values current-values.yml
     ```
 
@@ -106,7 +106,7 @@ If this happens, we recommend uninstalling and reinstalling:
 
     ```bash
     helm upgrade --namespace coder --atomic \
-    --wait --install --force --version 1.16.1 \
+    --wait --install --version 1.16.1 \
     coder coder/coder --values current-values.yml
     ```
 
