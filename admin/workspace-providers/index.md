@@ -92,7 +92,7 @@ workspace providers to complement the `built-in` workspace provider, you must:
    you use the following flag:
 
   ```bash
-    --set cemanager.accessURL=[NEW_ACCESS_URL]`
+    --set cemanager.accessURL=[NEW_ACCESS_URL]
   ```
 
 1. Confirm that the remote workspace providers deployed successfully with the
