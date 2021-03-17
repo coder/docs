@@ -28,6 +28,8 @@ Install the following dependencies if you haven't already:
    `*.coder.example.com`.
 1. The main Coder deployment and the workspace provider must be able to
    communicate bi-directionally via their respective hostnames.
+1. The workspace provider http protocol must match the protocol of the Coder
+   deployment Access URL.
 1. The Kubernetes cluster address must be reachable from the Coder deployment.
 
 ## Connecting to the Cluster
@@ -72,7 +74,7 @@ coder providers create [NAME] \
 You must provide the following arguments:
 
 - `name`: A unique name of the workspace provider
-- `hostname`: Hostname of the workspace provider
+- `hostname`: Hostname of the workspace provider.
 - `cluster-address`: The address of the Kubernetes cluster apiserver. This can be
   retrieved using
 
@@ -106,7 +108,8 @@ when communicating with the Coder deployment.
       --install \
       --force \
       --set envproxy.token=[REMOTE_ENVPROXY_TOKEN] \
-      --set ingress.host=[HOSTNAME] \
+      --set envproxy.accessURL=[HOSTNAME] \
+      --set ingress.host=[HOSTNAME_WITH_NO_PROTOCOL] \
       --set envproxy.cluster-address=[CLUSTER_ADDRESS] \
       --set cemanager.accessURL=[CEMANAGER_ACCESS_URL]
    ```
@@ -118,6 +121,10 @@ when communicating with the Coder deployment.
    [Workspace Provider Helm Chart
    Values]("https://github.com/cdr/enterprise-helm/blob/workspace-providers-envproxy-only/README.md")
    for more details.
+
+   > **NOTE**: If the hostname provided is using https you must ensure the
+   deployment has a valid SSL certificate. See the doc on [SSL Certificates](../../guides/ssl-certificates/index.md)
+   for more information.
 
    If you're unfamiliar with the helm configuration values file, see our doc on
    [updating a helm chart](../../guides/helm-charts.md)
