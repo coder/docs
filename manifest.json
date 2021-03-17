@@ -49,7 +49,8 @@
         { "path": "./cli/installation.md" },
         { "path": "./cli/remote-terminal.md" },
         { "path": "./cli/file-sync.md" },
-        { "path": "./cli/managing-envs.md" }
+        { "path": "./cli/managing-envs.md" },
+        { "path": "./cli/wac.md" }
       ]
     },
     {
