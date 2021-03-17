@@ -1,7 +1,7 @@
 # Coder Docs
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository contains the documentation source files for
@@ -52,6 +52,7 @@ Thanks goes to these wonderful people:
     <td align="center"><a href="https://iamhughes.com/"><img src="https://avatars.githubusercontent.com/u/2894107?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Hughes</b></sub></a><br /><a href="#maintenance-IAmHughes" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/blorette/"><img src="https://avatars.githubusercontent.com/u/67381492?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bryan Lorette</b></sub></a><br /><a href="https://github.com/cdr/docs/issues?q=author%3Abalorette" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://brownfield.dev/"><img src="https://avatars.githubusercontent.com/u/938684?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mike Terhar</b></sub></a><br /><a href="#content-mterhar" title="Content">🖋</a> <a href="#ideas-mterhar" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-mterhar" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/deansheather"><img src="https://avatars.githubusercontent.com/u/11241812?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dean Sheather</b></sub></a><br /><a href="#content-deansheather" title="Content">🖋</a> <a href="#maintenance-deansheather" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 

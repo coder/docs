@@ -177,6 +177,16 @@
         "ideas",
         "maintenance"
       ]
+    },
+    {
+      "login": "deansheather",
+      "name": "Dean Sheather",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11241812?v=4",
+      "profile": "https://github.com/deansheather",
+      "contributions": [
+        "content",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
