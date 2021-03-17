@@ -97,7 +97,7 @@ workspace providers to complement the `built-in` workspace provider, you must:
 
 1. Confirm that the remote workspace providers deployed successfully with the
    new access URL and environments still accessible.
-2. Remove any DNS records resolving to the old access URL.
+1. Remove any DNS records resolving to the old access URL.
 
 ### Workspace Provider Lifecycle
 
