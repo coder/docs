@@ -80,7 +80,7 @@ you remove them from a workspace provider's allowlist.
 
 For deployments with multiple workspace providers, you must ensure that each
 provider can communicate with the Coder deployment (otherwise, you may see
-downtime). As such, if you want to change the Access URL after you've deployed
+downtime). If you want to change the Access URL after you've deployed
 workspace providers to complement the `built-in` workspace provider, you must:
 
 1. Ensure that the new URL resolves to the Coder deployment
