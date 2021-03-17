@@ -72,7 +72,8 @@ coder providers create [NAME] \
 You must provide the following arguments:
 
 - `name`: A unique name of the workspace provider
-- `hostname`: Hostname of the workspace provider
+- `hostname`: Hostname of the workspace provider. The http protocol must match
+  the protocol of the Coder deployment Access URL.
 - `cluster-address`: The address of the Kubernetes cluster apiserver. This can be
   retrieved using
 
@@ -106,7 +107,8 @@ when communicating with the Coder deployment.
       --install \
       --force \
       --set envproxy.token=[REMOTE_ENVPROXY_TOKEN] \
-      --set ingress.host=[HOSTNAME] \
+      --set envproxy.accessURL=[HOSTNAME] \
+      --set ingress.host=[HOSTNAME_WITH_NO_PROTOCOL] \
       --set envproxy.cluster-address=[CLUSTER_ADDRESS] \
       --set cemanager.accessURL=[CEMANAGER_ACCESS_URL]
    ```
@@ -118,6 +120,10 @@ when communicating with the Coder deployment.
    [Workspace Provider Helm Chart
    Values]("https://github.com/cdr/enterprise-helm/blob/workspace-providers-envproxy-only/README.md")
    for more details.
+
+   > **NOTE**: If the hostname provided is using https you must ensure the
+   deployment has a valid SSL certificate. See the doc on [SSL Certificates](../../guides/ssl-certificates/index.md)
+   for more information.
 
    If you're unfamiliar with the helm configuration values file, see our doc on
    [updating a helm chart](../../guides/helm-charts.md)
