@@ -44,6 +44,8 @@ To update Coder, follow these steps:
     helm get values --namespace coder coder > current-values.yml
     ```
 
+    > Double-check your values to ensure it only contains your changes.  
+
 1. Provide your helm chart values file and upgrade to the desired version (e.g.,
 1.16.1):
 
@@ -84,6 +86,8 @@ If this happens, we recommend uninstalling and reinstalling:
     ```bash
     helm get values --namespace coder coder > current-values.yml
     ```
+
+    > Double-check your values file to ensure it only contains your changes.  
 
 1. Run `helm uninstall`:
 
