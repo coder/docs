@@ -30,10 +30,18 @@ which you've deployed Coder.
 
 ## Recommendations
 
-- Before beginning, we **strongly recommend** taking snapshots
-of your environment in case there are issues with the update process.
-- We recommend updating no more than version at a time (e.g., we recommend
-  moving from 1.15 to 1.16 only).
+- As with any significant maintenance operation, we recommend taking a snapshot of
+the database before proceeding with the upgrade.
+
+    Although Coder tests in-place upgrades and rollbacks involving database
+    state, it is good practice to have a recent backup created during a
+    maintenance window immediately prior to the upgrade. It is simpler and safer
+    to roll back directly at the database level, and Coder recommends doing so
+    in the event of an upgrade failure, since it guarantees restoration of the
+    system to a known-working condition.
+
+- We recommend updating no more than one major version at a time (i.e., we
+  recommend moving from 1.15 to 1.16 only).
 
 ## Update Coder
 
