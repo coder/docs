@@ -42,10 +42,11 @@ kubectl config set-context --current --namespace=coder
    ```
 
 2. Install the helm chart onto your cluster (see the
-   [changelog](../changelog/index.md) for a list of Coder versions)
+   [changelog](../changelog/index.md) for a list of Coder versions or run `helm
+   search repo coder -l`)
 
    ```bash
-   helm install --namespace coder coder coder/coder
+   helm install coder coder/coder --namespace coder
    ```
 
    **Steps 3-5 are optional for non-production deployments.**
@@ -66,8 +67,8 @@ kubectl config set-context --current --namespace=coder
       coder coder/coder -n coder --version=<VERSION> -f values.yaml`. **This
       must be done for whenever you update the helm chart.**
 
-4. Add the following to your helm chart so that
-   Coder uses your external PostgreSQL databases:
+4. Add the following to your helm chart so that Coder uses your external
+   PostgreSQL databases:
 
    ```yaml
    postgres:
