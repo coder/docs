@@ -78,11 +78,10 @@ you remove them from a workspace provider's allowlist.
 
 ### Updating the Access URL
 
-For deployments with multiple workspace providers, make sure that each provider
-can communicate with the Coder deployment (otherwise, you may see downtime).
-
-If you want to change the Access URL after you've deployed workspace providers
-to complement the `built-in` workspace provider, you must:
+For deployments with multiple workspace providers, you must make sure that each
+provider can communicate with the Coder deployment (otherwise, you may see
+downtime). As such, if you want to change the Access URL after you've deployed
+workspace providers to complement the `built-in` workspace provider, you must:
 
 1. Ensure that the new URL resolves to the Coder deployment
 1. Change the Coder Access URL via the **Manage** > **Admin** >
