@@ -116,13 +116,13 @@ spec:
             name: cloudflare-api-key-secret
             key: api-key
 
-    # This section denotes which domains to use this issuer for. If you didn't
-    # limit which zones the API token had access to, you may wish to remove
-    # this section.
-    selector:
-      dnsZones:
-         # Only use this issuer for the domain example.com and its subdomains.
-         - 'example.com'
+      # This section denotes which domains to use this issuer for. If you didn't
+      # limit which zones the API token had access to, you may wish to remove
+      # this section.
+      selector:
+        dnsZones:
+          # Only use this issuer for the domain example.com and its subdomains.
+          - 'example.com'
 ```
 
 ### ClusterIssuers
