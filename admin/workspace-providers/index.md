@@ -76,6 +76,29 @@ default.
 Organizations must not contain any environments in the workspace provider before
 you remove them from a workspace provider's allowlist.
 
+### Access URL Updates
+
+For deployments with multiple workspace providers, you must ensure the providers
+can communicate with the Coder deployment to ensure no downtime for those
+environments. If you wish to change the Coder Access URL after you have deployed
+addition workspace providers (outside the `built-in` workspace provider) you
+should do the following steps:
+
+1. Ensure the new URL resolves to the Coder deployment.
+1. Change the Coder Access URL via the
+   **Manage** > **Admin** > **Infrastructure** page. The old url should continue
+   to resolve to the Coder deployment at this step.
+1. [Redeploy each remote workspace provider](./deployment.md#upgrading-the-workspace-provider)
+   and use the flag:
+
+  ```bash
+    --set cemanager.accessURL=[NEW_ACCESS_URL]`
+  ```
+
+1. Confirm the remote workspace providers are deployed successfully with the
+   new access URL and environments are still accessible.
+1. Now you can remove any DNS records resolving the old access URL.
+
 ### Workspace Provider Lifecycle
 
 You can create and delete workspace providers via the Coder CLI.
