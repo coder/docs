@@ -28,6 +28,8 @@ Install the following dependencies if you haven't already:
    `*.coder.example.com`.
 1. The main Coder deployment and the workspace provider must be able to
    communicate bi-directionally via their respective hostnames.
+1. The workspace provider http protocol must match the protocol of the Coder
+   deployment Access URL.
 1. The Kubernetes cluster address must be reachable from the Coder deployment.
 
 ## Connecting to the Cluster
@@ -72,8 +74,7 @@ coder providers create [NAME] \
 You must provide the following arguments:
 
 - `name`: A unique name of the workspace provider
-- `hostname`: Hostname of the workspace provider. The http protocol must match
-  the protocol of the Coder deployment Access URL.
+- `hostname`: Hostname of the workspace provider.
 - `cluster-address`: The address of the Kubernetes cluster apiserver. This can be
   retrieved using
 
