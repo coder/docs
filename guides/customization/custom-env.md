@@ -21,7 +21,7 @@ Make sure that you've:
 - (Optional) Configured [Dev URLs](../../admin/devurls.md) for your deployment
 
 Your Coder user account must have permissions to [import an
-image](../images/importing.md).
+image](../../images/importing.md).
 
 ## Step 1: Create a Development Image
 
@@ -197,7 +197,7 @@ yarn start
 ### Preview Your Application
 
 Once you've started your server, you can preview your application using the web
-browser of your choice (you must have [Dev URLs](../admin/devurls.md) enabled
+browser of your choice (you must have [Dev URLs](../../admin/devurls.md) enabled
 for this to work). To do so:
 
 1. On the Environment Overview of your Coder deployment, go to Dev URLs and
