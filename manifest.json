@@ -118,16 +118,17 @@
           "navigable": false,
           "children": [
             { "path": "./guides/admin/resources.md" },
-            { "path": "./guides/admin/usage-monitoring.md" }
+            { "path": "./guides/admin/usage-monitoring.md" },
+            { "path": "./guides/admin/helm-charts.md" }
           ]
         },
-        { "path": "./guides/gitconfig.md" },
-        { "path": "./guides/helm-charts.md" },
+
         {
           "path": "./guides/customization/index.md",
           "navigable": false,
           "children": [
             { "path": "./guides/customization/custom-env.md" },
+            { "path": "./guides/customization/gitconfig.md" },
             { "path": "./guides/customization/macos-keybinding.md" }
           ]
         },
@@ -141,7 +142,7 @@
             { "path": "./guides/deployments/teardown.md" }
           ]
         },
-        { "path": "./guides/mobile-development.md" },
+        { "path": "./guides/mobile-development/index.md" },
         { "path": "./guides/api.md" }
       ]
     },
