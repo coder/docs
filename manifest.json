@@ -142,8 +142,12 @@
             { "path": "./guides/deployments/teardown.md" }
           ]
         },
-        { "path": "./guides/mobile-development/index.md" },
-        { "path": "./guides/api.md" }
+        { "path": "./guides/mobile-development/index.md",
+          "navigable": false
+        },
+        { "path": "./guides/api.md",
+          "navigable": false
+        }
       ]
     },
     {
