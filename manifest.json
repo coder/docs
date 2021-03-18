@@ -108,6 +108,7 @@
       "navigable": false,
       "children": [
         { "path": "./guides/ssl-certificates/index.md",
+          "navigable": false,
           "children": [
             { "path": "./guides/ssl-certificates/cloudflare.md" },
             { "path": "./guides/ssl-certificates/route53.md" }
