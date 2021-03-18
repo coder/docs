@@ -42,7 +42,7 @@ developed remotely on Coder.
   ```
 
    Alternatively, you can import or extend [Coder's
-   image](https://github.com/cdr/enterprise-images/blob/master/images/android/Dockerfile.ubuntu))
+   image](https://github.com/cdr/enterprise-images/blob/master/images/android/Dockerfile.ubuntu).
 
 1. Forward your Android Debug Server to the remote environment:
 
