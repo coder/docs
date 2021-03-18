@@ -122,7 +122,6 @@
             { "path": "./guides/admin/helm-charts.md" }
           ]
         },
-
         {
           "path": "./guides/customization/index.md",
           "navigable": false,
