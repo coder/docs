@@ -107,13 +107,6 @@
       "path": "./guides/index.md",
       "navigable": false,
       "children": [
-        { "path": "./guides/ssl-certificates/index.md",
-          "navigable": false,
-          "children": [
-            { "path": "./guides/ssl-certificates/cloudflare.md" },
-            { "path": "./guides/ssl-certificates/route53.md" }
-          ]
-        },
         { 
           "path": "./guides/admin/index.md",
           "navigable": false,
@@ -140,6 +133,13 @@
             { "path": "./guides/deployments/keycloak.md" },
             { "path": "./guides/deployments/ssl-certificates.md" },
             { "path": "./guides/deployments/teardown.md" }
+          ]
+        },
+        { "path": "./guides/ssl-certificates/index.md",
+          "navigable": false,
+          "children": [
+            { "path": "./guides/ssl-certificates/cloudflare.md" },
+            { "path": "./guides/ssl-certificates/route53.md" }
           ]
         },
         { "path": "./guides/mobile-development/index.md",
