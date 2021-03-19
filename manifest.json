@@ -14,14 +14,15 @@
         { "path": "./environments/getting-started.md" },
         { "path": "./environments/lifecycle.md" },
         { "path": "./environments/editors.md" },
-        { "path": "./environments/personalization.md" },
-        { "path": "./environments/ssh.md" },
-        { "path": "./environments/cvms.md" },
+        { "path": "./environments/autostart.md" },
         { "path": "./environments/devurls.md" },
-        { "path": "./environments/pwa.md" },
+        { "path": "./environments/cvms.md" },
         { "path": "./environments/environment-params.md" },
         { "path": "./environments/variables.md" },
-        { "path": "./environments/preferences.md" }
+        { "path": "./environments/personalization.md" },
+        { "path": "./environments/preferences.md" },
+        { "path": "./environments/pwa.md" },
+        { "path": "./environments/ssh.md" }
       ]
     },
     {
@@ -86,13 +87,16 @@
             { "path": "./admin/environment-management/gpu-acceleration.md" },
             { "path": "./admin/environment-management/memory-overprovisioning.md" },
             { "path": "./admin/environment-management/shutdown.md" },
-            { "path": "./admin/environment-management/ssh-access.md" },
-            { "path": "./admin/environment-management/workspace-providers.md" }
+            { "path": "./admin/environment-management/ssh-access.md" }
           ]
         },
         {
           "path": "./admin/registries/index.md",
           "children": [{ "path": "./admin/registries/default-registry.md" }]
+        },
+        {
+          "path": "./admin/workspace-providers/index.md",
+          "children": [{ "path": "./admin/workspace-providers/deployment.md" }]
         },
         { "path": "./admin/account-dormancy.md" },
         { "path": "./admin/appearance.md" },
@@ -129,6 +133,7 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        { "path": "./changelog/1.17.0.md" },
         { "path": "./changelog/1.16.2.md" },
         { "path": "./changelog/1.16.1.md" },
         { "path": "./changelog/1.16.0.md" },

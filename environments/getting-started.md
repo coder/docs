@@ -19,7 +19,9 @@ existing environments. Click the **New Environment** button.
 1. Enter a friendly name for your environment, and choose an
    [Image](../images/index.md) to use.
 
-2. Click **Create** to proceed.
+1. Set the [parameters](environment-params.md) for your environment.
+
+1. Click **Create** to proceed.
 
 Coder redirects you to an overview page for your environment during the build
 process. Learn more about the Environment [creation
