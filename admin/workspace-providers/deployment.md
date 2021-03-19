@@ -1,5 +1,5 @@
 ---
-title: Deployment
+title: Workspace Provider Deployment
 description: Learn how to deploy a workspace provider.
 state: beta
 ---
@@ -89,7 +89,7 @@ The returned `REMOTE_ENVPROXY_TOKEN` is a shared secret between the two
 deployments and is what the workspace provider will use to authenticate itself
 when communicating with the Coder deployment.
 
-## Installing Workspace Provider
+## Installing a Workspace Provider
 
 1. If you haven't already, add the Coder helm repo:
 

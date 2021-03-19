@@ -54,7 +54,7 @@ You can expand individual listings to view in-depth information:
 ![Detailed Workspace Providers
 Info](../../assets/workspace-providers-detail.png)
 
-### Statuses
+### Status
 
 A workspace provider can have one of the following statuses:
 
