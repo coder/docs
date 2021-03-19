@@ -11,13 +11,17 @@ Watchpack Error (watcher): Error: ENOSPC: System limit for number of file
 watchers reached, watch '/some/path'
 ```
 
+This results from a low number of [inotify
+watches](https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit)
+combined with high node usage, causing the log stream to fail.
+
 ## Resolution
 
 Increase the number of file watchers. Because the setting quantifying the number
 of file watchers isn't namespaced, you'll need to raise the maximum number at
 the node level.
 
-One way to do this is to use a daemonset with a privileged container to set the
+One way to do this is to use a daemonset in the cluster with a privileged container to set the
 maximum number of file watchers (H/T:
 [xinyanmsft](https://github.com/Azure/AKS/issues/772#issuecomment-477760184)):
 
