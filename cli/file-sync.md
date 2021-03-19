@@ -12,7 +12,7 @@ testing, compilation, and so on.
 ## One-Way File Sync
 
 1. Make sure that you've installed [rsync](https://rsync.samba.org/) on both your
-local machine and Coder enviornment.
+local machine and Coder environment.
 
 1. To establish a one-way directory sync to a remote environment:
 
