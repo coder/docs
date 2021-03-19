@@ -55,13 +55,16 @@ To update Coder, follow these steps:
     helm get values --namespace coder coder > current-values.yml
     ```
 
+    > Make sure that your values only contain the changes you want (i.e., if you
+    > see references to a prior version, you may need to remove these).
+
 1. Provide your helm chart values file and upgrade to the desired version (e.g.,
-1.16.1):
+   1.16.1):
 
     *Note: If you omit --version, you'll upgrade to the latest version.*
 
     ```bash
-    helm upgrade --namespace coder --force --install --atomic --wait \
+    helm upgrade --namespace coder --install --atomic --wait \
       --version 1.16.1 coder coder/coder --values current-values.yml
     ```
 
@@ -96,6 +99,8 @@ If this happens, we recommend uninstalling and reinstalling:
     helm get values --namespace coder coder > current-values.yml
     ```
 
+    > Double-check your values file to ensure it only contains your changes.  
+
 1. Run `helm uninstall`:
 
     ```bash
@@ -107,17 +112,17 @@ If this happens, we recommend uninstalling and reinstalling:
     you run the install command before this process completes, the install
     process will fail.
 
-    Running `uninstall` removes the `web-ingress` service that owns the IP address
-    for the ingress controller. As such, the `web-ingress` service may have a new
-    public IP address or hostname after you reinstall; if this is the case, update
-    your DNS provider with your new IP and/or CNAME.
+    Running `uninstall` removes the `web-ingress` service that owns the ingress
+    controller's IP address. As such, the `web-ingress` service may have a new
+    public IP address or hostname after you reinstall; if this is the case,
+    update your DNS provider with your new IP and CNAME.
 
 1. Run the `upgrade` command with the new version number and helm chart values
    file:
 
     ```bash
     helm upgrade --namespace coder --atomic \
-    --wait --install --force --version 1.16.1 \
+    --wait --install --version 1.16.1 \
     coder coder/coder --values current-values.yml
     ```
 
