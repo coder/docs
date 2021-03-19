@@ -36,7 +36,7 @@ Download releases [from Github](https://github.com/cdr/coder-cli/releases):
 
 Once you've installed the CLI, authenticate the client with your Coder account.
 
-```bash
+```console
 coder login [https://coder.domain.com]
 ```
 
@@ -51,7 +51,7 @@ such as in CI/CD pipelines, the Coder CLI can also be authenticated with the
 
 Generate a static authentication token with the following command:
 
-```bash
+```console
 coder tokens create my-token
 ```
 

@@ -64,7 +64,7 @@ The following will spin up a Kubernetes cluster using the `eksctl`; replace the
 parameters and environment variables as needed to reflect those for your
 environment.
 
-```bash
+```console
 CLUSTER_NAME="YOUR_CLUSTER_NAME" \
   SSH_KEY_PATH="<PATH/TO/KEY>.pub" REGION="YOUR_REGION" \
   eksctl create cluster \
@@ -87,7 +87,7 @@ size](https://aws.amazon.com/ec2/instance-types/t3/) instead.
 
 When your cluster is ready, you should see the following message:
 
-```bash
+```console
 EKS cluster "YOUR_CLUSTER_NAME" in "YOUR_REGION" region is ready
 ```
 
@@ -98,20 +98,20 @@ support immediate volume binding.
 
 1. Make sure that you're pointed to the correct context:
 
-   ```bash
+   ```console
    kubectl config current-context
    ```
 
 2. If you're pointed to the correct context, delete the gp2 storage class:
 
-   ```bash
+   ```console
    kubectl delete sc gp2
    ```
 
 3. Recreate the gp2 storage class with the `volumeBindingMode` set to
    `Immediate`:
 
-   ```bash
+   ```console
    cat <<EOF | kubectl apply -f -
    apiVersion: storage.k8s.io/v1
    kind: StorageClass
@@ -159,7 +159,7 @@ nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-fro
 
 2. Create your nodegroup (be sure to provide the correct file name):
 
-    ```bash
+    ```console
     eksctl create nodegroup --config-file=coder-node.yaml
     ```
 
@@ -171,20 +171,20 @@ implement network segmentation and tenant isolation.
 
 1. Apply the Calico manifest to your cluster:
 
-   ```bash
+   ```console
    kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.9/config/v1.7/calico.yaml
    ```
 
 1. Watch the `calico-system` DaemonSets:
 
-   ```bash
+   ```console
    kubectl get daemonset calico-node --namespace calico-system 
    ```
 
    Wait for the `calico-node` DaemonSet to have the number of pods **desired**
    in the **ready** state; this indicates that Calico is working:
 
-   ```bash
+   ```console
    NAME          DESIRED   CURRENT   READY     UP-TO-DATE   ...
    calico-node   3         3         3         3            ...
    ```

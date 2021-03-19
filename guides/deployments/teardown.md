@@ -15,25 +15,25 @@ Coder services but retains environments and their associated disk space.
 
 1. Make sure you're running `eksctl` version 0.37.0 or later:
 
-    ```bash
+    ```console
     eksctl version
     ```
 
 1. List all of the services in your cluster:
 
-    ```bash
+    ```console
     kubectl get svc --all-namespaces
     ```
 
 1. Delete any services that have an `EXTERNAL-IP` value in your namespace:
 
-    ```bash
+    ```console
     kubectl delete svc <service-name>
     ```
 
 1. Delete the cluster and its underlying nodes:
 
-    ```bash
+    ```console
     eksctl delete cluster --name <prod>
     ```
 
@@ -42,19 +42,19 @@ Coder services but retains environments and their associated disk space.
 1. Make sure that the environment variable for `RESOURCE_GROUP` is set to the
    one you want to delete in Azure:
 
-    ```bash
+    ```console
     echo $RESOURCE_GROUP
     ```
 
     If the variable is incorrect, fix it by setting it to the proper value:
 
-    ```bash
+    ```console
     RESOURCE_GROUP="<MY_RESOURCE_GROUP_NAME>"
     ```
 
 1. Delete the cluster:
 
-    ```bash
+    ```console
     az group delete --resource-group $RESOURCE_GROUP
     ```
 
@@ -63,7 +63,7 @@ Coder services but retains environments and their associated disk space.
 1. Ensure that the environment variables for `PROJECT_ID` and `CLUSTER_NAME` are
    set to those for the cluster you want to delete:
 
-    ```bash
+    ```console
     echo $PROJECT_ID
     echo $CLUSTER_NAME
     ```
@@ -71,14 +71,14 @@ Coder services but retains environments and their associated disk space.
     If these values are incorrect, you can fix this by providing the proper
     names:
 
-    ```bash
+    ```console
     PROJECT_ID="<MY_RESOURCE_GROUP_NAME>" \
     CLUSTER_NAME="<MY_CLUSTER_NAME>"
     ```
 
 1. Delete the cluster:
 
-    ```bash
+    ```console
     gcloud beta container --project $PROJECT_ID clusters delete \
     $CLUSTER_NAME --zone <zone>
     ```

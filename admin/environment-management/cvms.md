@@ -42,7 +42,7 @@ the following parameters:
 
 You can also provide `latest` instead of specific version numbers. For example:
 
-```bash
+```console
 gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
     --node-version "latest" \
     --cluster-version "latest" \
@@ -82,7 +82,7 @@ and updating your `eksctl` config spec.
 
 2. Create your nodegroup (be sure to provide the correct file name):
 
-    ```bash
+    ```console
     eksctl create nodegroup --config-file=coder-node.yaml
     ```
 
