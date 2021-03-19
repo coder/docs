@@ -131,7 +131,6 @@
           "children": [
             { "path": "./guides/deployments/nightly-releases.md" },
             { "path": "./guides/deployments/keycloak.md" },
-            { "path": "./guides/deployments/ssl-certificates.md" },
             { "path": "./guides/deployments/teardown.md" }
           ]
         },
