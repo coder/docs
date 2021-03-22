@@ -67,8 +67,9 @@ kubectl config set-context --current --namespace=coder
       coder coder/coder -n coder --version=<VERSION> -f values.yaml`. **This
       must be done for whenever you update the helm chart.**
 
-4. Add the following to your helm chart so that Coder uses your external
-   PostgreSQL databases:
+4. Ensure that you have superuser privileges to your PostgreSQL database. Add
+   the following to your helm chart so that Coder uses your external PostgreSQL
+   databases:
 
    ```yaml
    postgres:
