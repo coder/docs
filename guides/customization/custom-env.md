@@ -128,11 +128,11 @@ Docker registry. To do so, run the following command in the directory where your
 Dockerfile is located (be sure to replace the placeholder values with your tag
 and repository name so that the image is pushed to the appropriate location):
 
-```bash
+```console
 docker build -t coderenterprise/react .
 ```
 
-```bash
+```console
 docker push coderenterprise/react
 ```
 
@@ -174,7 +174,7 @@ creators.
 To do this, go to the **Environments** page of your Coder deployment and click
 **Terminal**. Run the following to create the skeleton for your application:
 
-```bash
+```console
 npx create-react-app coder-app
 ```
 
@@ -189,7 +189,7 @@ development server so that you can preview the changes you make to your project.
 You can switch into your app's directory and start the React development server
 (which listens on port 3000) using the Coder deployment's Terminal:
 
-```bash
+```console
 cd coder-app
 yarn start
 ```

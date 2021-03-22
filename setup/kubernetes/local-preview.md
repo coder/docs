@@ -33,7 +33,7 @@ apply):
    version installed. You should see the following folders all corresponding to
    your Kernel version:
 
-      ```bash
+      ```console
       $ uname -r
       5.11.4-arch1-1
       $ ls /usr/lib/modules
@@ -58,7 +58,7 @@ We are working on bringing Dev URL support to local previews in later releases.
 
 To install Coder, run:
 
-```bash
+```console
 curl -fsSL https://coder.com/try.sh | PORT="8080" sh -s --
 ```
 
@@ -89,7 +89,7 @@ automatically configured for you, so there's no first-time setup to do.
 
 To remove the local Coder deployment, run:
 
-```bash
+```console
 curl -fsSL https://coder.com/try.sh | sh -s -- down
 ```
 

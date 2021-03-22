@@ -18,7 +18,7 @@ The following will spin up a Kubernetes cluster using the `gcloud` command (be
 sure to replace the parameters (specifically `PROJECT_ID`,
 `NEW_CLUSTER_NAME`, and `ZONE`) as needed to reflect the needs of your environment).
 
-```bash
+```console
 gcloud beta container --project "$PROJECT_ID" \
 clusters create "$NEW_CLUSTER_NAME" \
    --zone "$ZONE" \
@@ -49,7 +49,7 @@ clusters create "$NEW_CLUSTER_NAME" \
 To create clusters capable of supporting use of the
 [CVMs](../../admin/environment-management/cvms.md) deployment option:
 
-```bash
+```console
 gcloud beta container --project "$PROJECT_ID" \
     clusters create "$NEW_CLUSTER_NAME" \
     --zone "$ZONE" \

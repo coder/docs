@@ -29,7 +29,7 @@ platform images are hosted in Coder's Docker Hub repo.
 1. Pull down the Coder helm charts by running the following in a non-air-gapped
    environment:
 
-    ```bash
+    ```console
     helm repo add coder https://helm.coder.com
     helm pull coder/coder
     ```
@@ -54,7 +54,7 @@ platform images are hosted in Coder's Docker Hub repo.
    `coderenvs/<img-name>:<version>` registry location using the image's name
    and Coder version:
 
-   ```bash
+   ```console
    docker pull coderenvs/coder-service:<version>
    ```
 
@@ -62,7 +62,7 @@ platform images are hosted in Coder's Docker Hub repo.
    your internal registry; this registry must be accessible from  your
    air-gapped environment. For example, to push `coder-service`:
 
-    ```bash
+    ```console
     docker tag coderenvs/coder-service:<version> my-registry.com/coderenvs/coder-service:<version>
     docker push my-registry.com/coderenvs/coder-service:<version>
     ```
@@ -70,7 +70,7 @@ platform images are hosted in Coder's Docker Hub repo.
 3. Once all of the resources are in your air-gapped network, run the following
    to deploy Coder to your Kubernetes cluster:
 
-    ```bash
+    ```console
     kubectl create namespace coder
     helm --namespace coder install coder /path/to/coder-X.Y.Z.tgz \
     --set cemanager.image=my-registry.com/coderenvs/coder-service:<version> \

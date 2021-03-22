@@ -12,7 +12,7 @@ Coder's helm chart.
 
 1. Get a copy of your existing helm chart and save it as `values.yaml`
 
-    ```bash
+    ```console
     helm show values coder/coder > values.yaml
     ```
 
@@ -28,7 +28,7 @@ Coder's helm chart.
    replace the placeholder value in the following command with your Coder
    version):
 
-    ```bash
+    ```console
     helm upgrade coder coder/coder -n coder --version=<VERSION> -f values.yaml
     ```
 

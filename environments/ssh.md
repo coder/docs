@@ -15,7 +15,7 @@ Before using, configuring, and accessing your environment via SSH:
 You can access your environments via SSH by configuring your local machine as
 follows:
 
-```bash
+```console
 $ coder config-ssh
 
 An auto-generated ssh config was written to "/Users/yourName/.ssh/config"
@@ -49,6 +49,6 @@ To do so, use the flag `-e "coder sh"` in your `rsync` transfer invokation. For
 example, the following shows how you can transfer your home directory to your
 environment:
 
-```bash
+```console
 rsync -e "coder sh" -a --progress ~/. my-env:~
 ```

@@ -24,13 +24,13 @@ and
 [Location](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
 that will host your cluster:
 
-```bash
+```console
 RESOURCE_GROUP="<MY_RESOURCE_GROUP_NAME>" LOCATION="<MY_AZURE_LOCATION>"
 ```
 
 Create a resource group:
 
-```bash
+```console
 az group create \
   --resource-group "$RESOURCE_GROUP" \
   --location "$LOCATION"
@@ -39,7 +39,7 @@ az group create \
 If this is successful, Azure returns information about your resource group. Pay
 attention to the `id` field:
 
-```bash
+```console
 "id": "/subscriptions/3afe...d2d/resourceGroups/coderdocs"
 ```
 
@@ -50,13 +50,13 @@ You will need the hash provided (i.e., `3afe...d2d`) when creating your cluster.
 Set two additional environment variables for your cluster name and subscription
 ID:
 
-```bash
+```console
 CLUSTER_NAME="<MY_CLUSTER_NAME>" SUBSCRIPTION="<MY_SUBSCRIPTION_SHA>"
 ```
 
 Create the Azure Kubernetes Service Cluster:
 
-```bash
+```console
 # You may have to run `az extension add --name aks-preview`
 #
 # You may also need to create a service principal manually using
@@ -85,13 +85,13 @@ Azure returns a JSON object with your cluster information.
 
 After deploying your AKS cluster, configure kubectl to point to your cluster:
 
-```bash
+```console
 az aks get-credentials --name "$CLUSTER_NAME" --resource-group $RESOURCE_GROUP"
 ```
 
 You should get a message similar to the following if this is successful:
 
-```bash
+```console
 Merged "<YOUR_CLUSTER_NAME>" as current context in /Users/<YOUR_USER>/.kube/config
 ```
 
