@@ -18,7 +18,7 @@ Your environment must be
 - Off (Autostart doesn't work when environments are *on* to prevent the
   triggering of a rebuild while you're working)
 
-Coder may trigger Autostart before your scheduled time to ensure all queued
+Coder may trigger Autostart up to 5 minutes before your scheduled time to ensure all queued
 environments are ready on time.
 
 ## Enabling Autostart
