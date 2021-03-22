@@ -6,26 +6,20 @@ description: Learn how to configure automated environment rebuilds.
 Coder [automatically turns off idle
 environments](../admin/environment-management/shutdown.md) to help manage
 resource expenditure. Typically, this means environments turn off overnight and
-remain offline until a rebuild is requested. With Autostart, rebuilds may be
-automatically requested at a time that best suits your workflow. You can expect
-your environments to be ready for you at the start of each work day.
+remain offline until a rebuild is requested. With Autostart, you can request
+rebuilds at a time that suits your workflow. You can expect your environments to
+be ready for you at the start of each workday.
 
 ## Criteria for Autostart
 
-Your environment must meet the following criteria for you to use Autostart:
+Your environment must be
 
-1. You've [set the Autostart time and selected
-   environments](#enabling-autostart) to be started automatically at that time.
+- Active (e.g., has been opened within the last five days)
+- Off (Autostart doesn't work when environments are *on* to prevent the
+  triggering of a rebuild while you're working)
 
-1. Your environments are off at the Autostart time (Autostart won't work if your
-   environments are on to prevent the possibility of triggering a rebuild while
-   you're working).
-
-1. Your environment must be active. We define *inactive* environments as those
-   that haven't been opened within the last five days.
-
-> Coder may trigger Autostart up to five minutes before your scheduled time to ensure
-all queued environments are ready by their scheduled time.
+Coder may trigger Autostart before your scheduled time to ensure all queued
+environments are ready on time.
 
 ## Enabling Autostart
 
@@ -44,7 +38,7 @@ all queued environments are ready by their scheduled time.
 ### Enabling Autostart for New Environments
 
 When creating a new environment, you may enable Autostart by checking the box
-labeled **Automatically turn this environment on at (HH:MM)** (where HH:MM will
-display as your configured time).
+labeled **Automatically turn this environment on at (HH:MM)** (where HH:MM is
+your configured time).
 
 ![Enable Autostart with New Environment](../assets/enable-autostart.png)
