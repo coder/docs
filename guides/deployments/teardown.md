@@ -6,10 +6,10 @@ description: Learn how to tear down Coder and the infrastructure on which it's d
 This guide shows you how to tear down Coder and the cluster it is deployed on.
 
 > These instructions help you remove infrastructure created when following our
-[Kubernetes setup tutorials](../setup/kubernetes/index.md). They do not include
-teardown steps for any additional resources that you create.  If you need to keep
-your cluster, you can run `helm uninstall coder`, which deletes all Coder
-services but retains environments and their associated disk space.
+[Kubernetes setup tutorials](../../setup/kubernetes/index.md). They do not
+include teardown steps for any additional resources that you create.  If you
+need to keep your cluster, you can run `helm uninstall coder`, which deletes all
+Coder services but retains environments and their associated disk space.
 
 ## Amazon Elastic Kubernetes Service (EKS)
 
