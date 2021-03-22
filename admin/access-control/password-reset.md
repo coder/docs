@@ -30,7 +30,7 @@ cemanager's **reset-admin-password** command.
 
 To reset the password, run the following in the terminal:
 
-```bash
+```console
 # get any cemanager pod
 kubectl get pods | grep cemanager- | awk '{print $1}' | head -n1
 

@@ -23,13 +23,13 @@ We recommend running Coder in a separate
 [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
 to do so, run
 
-```bash
+```console
 kubectl create namespace coder
 ```
 
 Next, change the kubectl context to point to your newly created namespace:
 
-```bash
+```console
 kubectl config set-context --current --namespace=coder
 ```
 
@@ -37,7 +37,7 @@ kubectl config set-context --current --namespace=coder
 
 1. Add the Coder helm repo
 
-   ```bash
+   ```console
    helm repo add coder https://helm.coder.com
    ```
 
@@ -45,7 +45,7 @@ kubectl config set-context --current --namespace=coder
    [changelog](../changelog/index.md) for a list of Coder versions or run `helm
    search repo coder -l`)
 
-   ```bash
+   ```console
    helm install coder coder/coder --namespace coder
    ```
 
@@ -96,7 +96,7 @@ kubectl config set-context --current --namespace=coder
 6. After you've created the pod, tail the logs to find the randomly generated
    password for the admin user
 
-   ```bash
+   ```console
    kubectl logs -n coder -l coder.deployment=cemanager -c cemanager \
     --tail=-1 | grep -A1 -B2 Password
    ```
@@ -121,7 +121,7 @@ kubectl config set-context --current --namespace=coder
 1. To access Coder's web UI, you'll need to get its IP address by running the
    following in the terminal to list the Kubernetes services running:
 
-   ```bash
+   ```console
    kubectl --namespace coder get services
    ```
 

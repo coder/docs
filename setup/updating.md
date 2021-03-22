@@ -13,7 +13,7 @@ Before beginning the update process, please make sure that you've added the
 Coder helm repo to your cluster. You can verify that the Coder repo has been
 added to helm using `helm repo list`:
 
-```bash
+```console
 $ helm repo list
 NAME URL
 coder https://helm.coder.com
@@ -21,7 +21,7 @@ coder https://helm.coder.com
 
 If you don't have the Coder repo, you can add it:
 
-```bash
+```console
 helm repo add coder https://helm.coder.com
 ```
 
@@ -45,13 +45,13 @@ To update Coder, follow these steps:
 
 1. Retrieve the latest repository information:
 
-    ```bash
+    ```console
     helm repo update
     ```
 
 1. (Optional) Export the current helm chart values into a file:
 
-    ```bash
+    ```console
     helm get values --namespace coder coder > current-values.yml
     ```
 
@@ -63,7 +63,7 @@ To update Coder, follow these steps:
 
     *Note: If you omit --version, you'll upgrade to the latest version.*
 
-    ```bash
+    ```console
     helm upgrade --namespace coder --install --atomic --wait \
       --version 1.16.1 coder coder/coder --values current-values.yml
     ```
@@ -95,7 +95,7 @@ If this happens, we recommend uninstalling and reinstalling:
 
 1. Export the helm chart values into a file:
 
-    ```bash
+    ```console
     helm get values --namespace coder coder > current-values.yml
     ```
 
@@ -103,7 +103,7 @@ If this happens, we recommend uninstalling and reinstalling:
 
 1. Run `helm uninstall`:
 
-    ```bash
+    ```console
     helm uninstall --namespace coder coder
     ```
 
@@ -120,7 +120,7 @@ If this happens, we recommend uninstalling and reinstalling:
 1. Run the `upgrade` command with the new version number and helm chart values
    file:
 
-    ```bash
+    ```console
     helm upgrade --namespace coder --atomic \
     --wait --install --version 1.16.1 \
     coder coder/coder --values current-values.yml

@@ -29,7 +29,7 @@ developed remotely on Coder.
 
 1. Start the Android Debug Server on port 5555:
 
-  ```bash
+  ```console
   $ $ANDROID_SDK_PATH/platform-tools/adb tcpip 5555
   restarting in TCP mode port: 5555
   ```
@@ -46,7 +46,7 @@ developed remotely on Coder.
 
 1. Forward your Android Debug Server to the remote environment:
 
-  ```bash
+  ```console
   # You must have the Coder CLI installed.
   $ coder config-ssh
   $ ssh -R 5555:127.0.0.1:5555 coder.<NAME_OF_YOUR_ENVIRONMENT>
@@ -54,7 +54,7 @@ developed remotely on Coder.
 
 1. Run `adb devices` to view the emulators forwarded from your local machine:
 
-  ```bash
+  ```console
   $ adb devices
   List of devices attached
   emulator-5556
@@ -62,6 +62,6 @@ developed remotely on Coder.
 
 1. Build and run your Android applications remotely:
 
-  ```bash
+  ```console
   ./gradlew android:installDebug
   ```

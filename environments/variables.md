@@ -9,7 +9,7 @@ contextual information about your environment.
 To obtain a list of environment variables and their values, launch the
 **Terminal** via the Coder Dashboard and run:
 
-```bash
+```console
 env | grep CODER_
 ```
 

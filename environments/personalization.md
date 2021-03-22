@@ -32,7 +32,7 @@ instructions in your `~/personalize` script. Whenever Coder rebuilds your
 environment, it runs your `~/personalize` script, installs `fish`, and changes
 the default shell.
 
-```bash
+```console
 #!/bin/bash
 
 echo "--Starting personalize"
@@ -44,7 +44,7 @@ sudo chsh -s /usr/bin/fish $USER
 
 The following is a more extensive example of a `~/personalize` script:
 
-```bash
+```console
 #!/bin/bash
 
 ###########################################################################
