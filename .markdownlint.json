@@ -3,6 +3,6 @@
   "no-inline-html": false,
   "ol-prefix": false,
   "MD013": {
-    "code_blocks": false,
+    "code_blocks": false
   }
 }
