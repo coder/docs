@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: Install node_modules
+      - name: Install Node Modules
         run: yarn
 
       - name: Lint
