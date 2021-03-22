@@ -7,8 +7,8 @@ Coder [automatically turns off idle
 environments](../admin/environment-management/shutdown.md) to help manage
 resource expenditure. Typically, this means environments turn off overnight and
 remain offline until a rebuild is requested. With Autostart, you can request
-automated rebuilds at a time that suits your workflow. You can expect your environments to
-be ready for you at the start of each workday.
+automated rebuilds at a time that suits your workflow. You can expect your
+environments to be ready for you at the start of each workday.
 
 ## Criteria for Autostart
 
@@ -19,8 +19,8 @@ Your environment must be:
 - Off (Autostart doesn't work when environments are *on* to prevent the
   triggering of a rebuild while you're working)
 
-Coder may trigger Autostart up to 5 minutes before your scheduled time to ensure all queued
-environments are ready on time.
+Coder may trigger Autostart up to 5 minutes before your scheduled time to ensure
+all queued environments are ready on time.
 
 ## Enabling Autostart
 
