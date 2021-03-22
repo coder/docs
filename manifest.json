@@ -117,7 +117,8 @@
           "children": [
             { "path": "./guides/admin/resources.md" },
             { "path": "./guides/admin/usage-monitoring.md" },
-            { "path": "./guides/admin/helm-charts.md" }
+            { "path": "./guides/admin/helm-charts.md" },
+            { "path": "./guides/admin/inotify-watch-limits.md" }
           ]
         },
         {
