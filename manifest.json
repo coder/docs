@@ -109,24 +109,48 @@
     },
     {
       "path": "./guides/index.md",
+      "navigable": false,
       "children": [
+        { 
+          "path": "./guides/admin/index.md",
+          "navigable": false,
+          "children": [
+            { "path": "./guides/admin/resources.md" },
+            { "path": "./guides/admin/usage-monitoring.md" },
+            { "path": "./guides/admin/helm-charts.md" }
+          ]
+        },
+        {
+          "path": "./guides/customization/index.md",
+          "navigable": false,
+          "children": [
+            { "path": "./guides/customization/custom-env.md" },
+            { "path": "./guides/customization/gitconfig.md" },
+            { "path": "./guides/customization/macos-keybinding.md" }
+          ]
+        },
+        {
+          "path": "./guides/deployments/index.md",
+          "navigable": false,
+          "children": [
+            { "path": "./guides/deployments/nightly-releases.md" },
+            { "path": "./guides/deployments/keycloak.md" },
+            { "path": "./guides/deployments/teardown.md" }
+          ]
+        },
         { "path": "./guides/ssl-certificates/index.md",
+          "navigable": false,
           "children": [
             { "path": "./guides/ssl-certificates/cloudflare.md" },
             { "path": "./guides/ssl-certificates/route53.md" }
           ]
         },
-        { "path": "./guides/resources.md" },
-        { "path": "./guides/custom-env.md" },
-        { "path": "./guides/gitconfig.md" },
-        { "path": "./guides/helm-charts.md" },
-        { "path": "./guides/macos-keybinding.md" },
-        { "path": "./guides/mobile-development.md" },
-        { "path": "./guides/nightly-releases.md" },
-        { "path": "./guides/api.md" },
-        { "path": "./guides/keycloak.md" },
-        { "path": "./guides/teardown.md" },
-        { "path": "./guides/usage-monitoring.md" }
+        { "path": "./guides/mobile-development/index.md",
+          "navigable": false
+        },
+        { "path": "./guides/api.md",
+          "navigable": false
+        }
       ]
     },
     {
