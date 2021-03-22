@@ -20,36 +20,33 @@ advanced functionality like X11 forwarding or `sshd_config` specifications.
 If SSH is the primary mode of access to Coder for your users, consider
 running a full OpenSSH server with `systemd` inside your image instead.
 
-To do so:
+To do so, add the following to your Dockerfile:
 
-1. Add the following to your Dockerfile:
+```Dockerfile
+FROM ubuntu:20.04
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    systemd \
+    openssh-server
 
-  ```Dockerfile
-  FROM ubuntu:20.04
-  RUN apt-get update && apt-get install -y \
-      build-essential \
-      systemd \
-      openssh-server
+# Start OpenSSH with systemd
+RUN systemctl enable ssh
 
-  # Start OpenSSH with systemd
-  RUN systemctl enable ssh
+# recommended: remove the system-wide environment override
+RUN rm /etc/environment
 
-  # recommended: remove the system-wide environment override
-  RUN rm /etc/environment
+# recommended: adjust OpenSSH config
+RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
+  echo "X11Forwarding yes" >> /etc/ssh/sshd_config && \
+  echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
+```
 
-  # recommended: adjust OpenSSH config
-  RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
-    echo "X11Forwarding yes" >> /etc/ssh/sshd_config && \
-    echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
+Then, make sure that you're creating your environments with the [CVM
+  option](https://coder.com/docs/environments/cvms) enabled.
 
-  ```
-
-1. Make sure that you're creating your environments with the [CVM
-   option](https://coder.com/docs/environments/cvms) enabled.
-
-  > If Coder detects a running TCP server on port 22, it will forward incoming
-  > SSH traffic to this server. This means that environments should not run a
-  > TCP server on port 22 unless it can properly handle incoming SSH traffic.
+> If Coder detects a running TCP server on port 22, it will forward incoming
+> SSH traffic to this server. This means that environments should not run a
+> TCP server on port 22 unless it can properly handle incoming SSH traffic.
 
 At startup, Coder injects the user's SSH key into `~/authorized_keys` inside
 your environment to facilitate authentication with OpenSSH. For the best
