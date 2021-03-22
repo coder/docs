@@ -124,9 +124,9 @@ when communicating with the Coder deployment.
    For installations using HTTPS, you must [ensure the deployment has a valid certificate](../../guides/ssl-certificates/index.md).
 
    If you're unfamiliar with the helm configuration values file, see our doc on
-   [updating a helm chart](../../guides/helm-charts.md)
+   [updating a helm chart](../../guides/admin/helm-charts.md)
 
-1. Once the helm chart is successfully deployed, fetch the ingress address:
+2. Once the helm chart is successfully deployed, fetch the ingress address:
 
    ```bash
    kubectl get ingress web-ingress
@@ -135,12 +135,12 @@ when communicating with the Coder deployment.
    Use this IP to create a DNS record for the provided hostname of the workspace
    provider.
 
-1. Once the Helm chart has deployed successfully, you should see the workspace
+3. Once the Helm chart has deployed successfully, you should see the workspace
    provider in a `ready` state on the Workspace Provider Admin page.
 
    ![Workspace Providers Admin](../../assets/workspace-providers-admin.png)
 
-1. From the Workspace Provider Admin page, add the desired organizations to its
+4. From the Workspace Provider Admin page, add the desired organizations to its
    allowlist.
 
 Users in the allowed organizations can now choose to deploy into the newly set
