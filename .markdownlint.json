@@ -1,5 +1,8 @@
 {
   "first-line-heading": false,
   "no-inline-html": false,
-  "ol-prefix": false
+  "ol-prefix": false,
+  "MD013": {
+    "code_blocks": false,
+  }
 }
