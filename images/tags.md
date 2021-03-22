@@ -11,8 +11,8 @@ dependencies and tooling useful for work on the project.
 To add a tag to Coder:
 
 1. Go to **Images** and find the original image.
-2. Open the image, then click **Add Tag** in the top-right.
-3. Provide the **tag name** when prompted.
+1. Open the image, then click **Add Tag** in the top-right.
+1. Provide the **tag name** when prompted.
 
 When someone publishes a new version of a tag, Coder notifies users of that tag
 with active environments.

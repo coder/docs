@@ -17,9 +17,9 @@ The following sections will show you how to correct these issues.
 To add certificates to your image and have them recognized by Coder:
 
 1. Add the certificate(s) to the image
-2. Set the NODE_EXTRA_CA_CERTS environment variable to the file in the image
+1. Set the NODE_EXTRA_CA_CERTS environment variable to the file in the image
    that contains the certificates
-3. Add the following to your Dockerfile to ensure that Coder finds and uses your
+1. Add the following to your Dockerfile to ensure that Coder finds and uses your
    newly added certificates when making requests:
 
    ```Dockerfile

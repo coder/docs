@@ -41,7 +41,7 @@ kubectl config set-context --current --namespace=coder
    helm repo add coder https://helm.coder.com
    ```
 
-2. Install the helm chart onto your cluster (see the
+1. Install the helm chart onto your cluster (see the
    [changelog](../changelog/index.md) for a list of Coder versions or run `helm
    search repo coder -l`)
 
@@ -51,7 +51,7 @@ kubectl config set-context --current --namespace=coder
 
    **Steps 3-5 are optional for non-production deployments.**
 
-3. Get a copy of your helm chart so that you can modify it; you'll need to
+1. Get a copy of your helm chart so that you can modify it; you'll need to
    modify the helm chart to update your PostgreSQL databases (step 4) and enable
    Dev URLs (step 5):
 
@@ -67,7 +67,7 @@ kubectl config set-context --current --namespace=coder
       coder coder/coder -n coder --version=<VERSION> -f values.yaml`. **This
       must be done for whenever you update the helm chart.**
 
-4. Ensure that you have superuser privileges to your PostgreSQL database. Add
+1. Ensure that you have superuser privileges to your PostgreSQL database. Add
    the following to your helm chart so that Coder uses your external PostgreSQL
    databases:
 
@@ -89,12 +89,12 @@ kubectl config set-context --current --namespace=coder
    You can find/define these values in your [PostgreSQL server configuration
    file](https://www.postgresql.org/docs/current/config-setting.html).
 
-5. [Enable Dev URL Usage](../admin/devurls.md). Dev URLs allow users to access
+1. [Enable Dev URL Usage](../admin/devurls.md). Dev URLs allow users to access
    the web servers running in your environment. To enable, provide a wildcard
    domain and its DNS certificate and update your helm chart accordingly. This
    step is **optional** but recommended.
 
-6. After you've created the pod, tail the logs to find the randomly generated
+1. After you've created the pod, tail the logs to find the randomly generated
    password for the admin user
 
    ```console
@@ -129,9 +129,9 @@ kubectl config set-context --current --namespace=coder
    The row for the **ingress-nginx** service includes an **EXTERNAL-IP** value;
    this is the IP address you need.
 
-2. In your browser, navigate to the external IP of ingress-nginx.
+1. In your browser, navigate to the external IP of ingress-nginx.
 
-3. Use the admin credentials you obtained in this installation guide's previous
+1. Use the admin credentials you obtained in this installation guide's previous
    step to log in to the Coder platform. If this is the first time you've logged
    in, Coder will prompt you to change your password.
 

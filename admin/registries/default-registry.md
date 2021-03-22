@@ -22,8 +22,8 @@ new environments.
 To do so:
 
 1. Launch the Coder dashboard.
-2. Go to **Manage** > **Admin**.
-3. On the **Infrastructure** tab, uncheck the Import Default Registry option.
-4. Click **Save Registry**.
+1. Go to **Manage** > **Admin**.
+1. On the **Infrastructure** tab, uncheck the Import Default Registry option.
+1. Click **Save Registry**.
 
 ![Import Default Registry](../../assets/import-default-registry.png)

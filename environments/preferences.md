@@ -33,7 +33,7 @@ combination).
 
 The **SSH Key** page is where you'll find the public key corresponding to the
 private key that Coder inserts automatically into your environments. The public
-key is useful for services, such as Git, Bitbucket, GitHub, and Gitlab, that you
+key is useful for services, such as Git, Bitbucket, GitHub, and GitLab, that you
 need to access from your environment.
 
 If necessary, you can regenerate your key. Be sure to provide your updated key

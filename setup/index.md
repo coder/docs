@@ -25,7 +25,7 @@ Coder is free to try, though you'll need a license to do so. You can [generate a
 1. Before you start, we recommend familiarizing yourself with Coder's
    [requirements](#requirements).
 
-2. To begin the deployment process, see our docs on creating a [Kubernetes
+1. To begin the deployment process, see our docs on creating a [Kubernetes
    cluster](kubernetes/index.md) and [installing Coder](installation.md).
 
 ## In This Section

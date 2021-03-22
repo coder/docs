@@ -19,10 +19,10 @@ Once you've [set up SSH access to Coder](./ssh.md), you can work on projects
 from your local VS Code, connected to your Coder environment for compute, etc.
 
 1. Open VS Code locally.
-2. Make sure that you've installed [Remote -
+1. Make sure that you've installed [Remote -
    SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
    extension
-3. In VS Code's left-hand nav bar, click **Remote Explorer** and right-click on
+1. In VS Code's left-hand nav bar, click **Remote Explorer** and right-click on
    an environment to connect
 
 ![VS Code Remote Explorer](../assets/vscode-remote-ssh-panel.png)

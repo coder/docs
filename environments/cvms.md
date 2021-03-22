@@ -38,7 +38,7 @@ disk. CVM Environments have additional levels of persistence:
    between rebuilds.
    This prevents shutdowns and rebuilds from purging the Docker cache.
 
-2. The Environment Image is itself stored in your Environment disk.
+1. The Environment Image is itself stored in your Environment disk.
    Note that this data is never directly accessible to you but will still consume
    data on your disk and count towards the size limit.
 
