@@ -3,17 +3,18 @@ title: Troubleshooting inotify Watcher Limit Problems
 description: Learn how to resolve problems related to the inotify Watcher Limit.
 ---
 
-The [`inotify` facility] allows programs to monitor files and directories for
-changes, so that they will receive an event immediately whenever a user or
-program modifies the file or directory. Many such programs can fall back to
-periodically checking files and directories for changes, also known as polling.
-Using polling avoids the watch limit, but may result in higher system loading
-and a longer interval for the program to detect changes.
+The [`inotify` facility] allows programs to monitor files for changes, so that
+they will receive an event immediately whenever a user or program modifies the
+file. Many such programs can fall back to periodically checking files for
+changes, also known as polling. Using polling avoids the watch limit, but may
+result in higher system loading and a longer interval for the program to detect
+changes.
 
 `inotify` requires kernel resources (memory and processor) for each file it
 tracks. As a result, the Linux kernel limits the number of file watchers that
 each user can register. The default settings vary according to the host system
-distribution; on Ubuntu 20.04 LTS, the default limit is 8,192 watches per instance
+distribution; on Ubuntu 20.04 LTS, the default limit is 8,192 watches per
+instance.
 
 [`inotify` facility]: https://en.wikipedia.org/wiki/Inotify
 
@@ -38,13 +39,13 @@ it is likely that you are encountering this limit.
 
 There are three kernel tuning options related to the `inotify` system:
 
-- `fs.inotify.max_queued_events`, which defines an upper bound on the number of
-  file notification events pending delivery to programs.
-- `fs.inotify.max_user_instances`, which determines the maximum number of
-  `inotify` instances per user. Programs using `inotify` will typically create
-  a single _instance_, so this limit is unlikely to cause issues.
-- `fs.inotify.max_user_watches`, which defines the maximum number of files and
-  folders that programs can monitor for changes.
+- `fs.inotify.max_queued_events`: the upper bound on the number of file
+  notification events pending delivery to programs.
+- `fs.inotify.max_user_instances`: the maximum number of `inotify` instances
+  per user. Programs using `inotify` will typically create a single _instance_,
+  so this limit is unlikely to cause issues.
+- `fs.inotify.max_user_watches`: the maximum number of files and folders that
+  programs can monitor for changes.
 
 For additional detail regarding the `inotify` system, please see
 [inotify(7)](https://man7.org/linux/man-pages/man7/inotify.7.html).
@@ -90,8 +91,8 @@ for its usage.
 
 [`inotify-consumers`]: https://github.com/fatso83/dotfiles/blob/master/utils/scripts/inotify-consumers
 
-To see the specific files and directories that the tools track for changes, you
-can use `strace` to monitor invocations of the `inotify_add_watch` system call:
+To see the specific files that the tools track for changes, you can use `strace`
+to monitor invocations of the `inotify_add_watch` system call:
 
 ```console
 $ strace --follow-forks --trace='inotify_add_watch' inotifywait --quiet test
@@ -104,10 +105,12 @@ to the `test` file.
 ## Resolution
 
 If you encounter the file watcher limit, there are two potential resolutions:
-either reduce the number of file watcher registrations, or increase the maximum
-file watcher limit. We recommend attempting to reduce the file watcher
-registrations first, because increasing the number of file watches may result
-in high processor utilization.
+
+1. Reduce the number of file watcher registrations; or,
+1. Increase the maximum file watcher limit.
+
+We recommend attempting to reduce the file watcher registrations first, because
+increasing the number of file watches may result in high processor utilization.
 
 ### Reduce watchers
 
