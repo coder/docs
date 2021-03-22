@@ -12,9 +12,10 @@ be ready for you at the start of each workday.
 
 ## Criteria for Autostart
 
-Your environment must be
+Your environment must be:
 
-- Active (e.g., has been opened within the last five days)
+- Active (*Active* environments are those that have been opened in the last four
+  days)
 - Off (Autostart doesn't work when environments are *on* to prevent the
   triggering of a rebuild while you're working)
 
