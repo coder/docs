@@ -20,9 +20,7 @@ advanced functionality like X11 forwarding or `sshd_config` specifications.
 If SSH is the primary mode of access to Coder for your users, consider
 running a full OpenSSH server with `systemd` inside your image instead.
 
-To do so:
-
-1. Add the following to your Dockerfile:
+To do so, add the following to your Dockerfile:
 
 ```Dockerfile
 FROM ubuntu:20.04
@@ -41,20 +39,19 @@ RUN rm /etc/environment
 RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
   echo "X11Forwarding yes" >> /etc/ssh/sshd_config && \
   echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
-
 ```
 
-2. Make sure that you're creating your environments with the [CVM
-   option](https://coder.com/docs/environments/cvms) enabled
+Then, make sure that you're creating your environments with the [CVM
+  option](https://coder.com/docs/environments/cvms) enabled.
 
-> If Coder detects a running TCP server on port 22, it will forward incoming SSH
-> traffic to this server. This means that environments should not run
-> a TCP server on port 22 unless it can properly handle incoming SSH traffic.
+> If Coder detects a running TCP server on port 22, it will forward incoming
+> SSH traffic to this server. This means that environments should not run a
+> TCP server on port 22 unless it can properly handle incoming SSH traffic.
 
 At startup, Coder injects the user's SSH key into `~/authorized_keys` inside
 your environment to facilitate authentication with OpenSSH. For the best
-experience, add the following to your `/etc/ssh/sshd_config`
-file inside your image:
+experience, add the following to your `/etc/ssh/sshd_config` file inside your
+image:
 
 ```text
 PermitUserEnvironment yes
