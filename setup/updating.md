@@ -7,26 +7,25 @@ This guide will show you how to update your Coder deployment.
 
 ## Prerequisites
 
-If you haven't already, install [helm](https://helm.sh/docs/intro/install/).
+- If you haven't already, install [helm](https://helm.sh/docs/intro/install/).
 
-Before beginning the update process, please make sure that you've added the
-Coder helm repo to your cluster. You can verify that the Coder repo has been
-added to helm using `helm repo list`:
+- Before beginning the update process, ensure that you've added the Coder helm
+  repo to your cluster. You can verify that the Coder repo has been added to
+  helm using `helm repo list`:
 
-```console
-$ helm repo list
-NAME URL
-coder https://helm.coder.com
-```
+  ```console
+  $ helm repo list
+  NAME URL
+  coder https://helm.coder.com
+  ```
 
-If you don't have the Coder repo, you can add it:
+  If you don't have the Coder repo, you can add it:
 
-```console
-helm repo add coder https://helm.coder.com
-```
+  ```console
+  helm repo add coder https://helm.coder.com
+  ```
 
-Please also ensure that your Kubernetes config is pointing to the cluster on
-which you've deployed Coder.
+- Ensure that you have superuser privileges to your PostgreSQL database.
 
 ## Recommendations
 
