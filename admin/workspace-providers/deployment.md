@@ -124,7 +124,7 @@ when communicating with the Coder deployment.
    For installations using HTTPS, you must [ensure the deployment has a valid certificate](../../guides/ssl-certificates/index.md).
 
    If you're unfamiliar with the helm configuration values file, see our doc on
-   [updating a helm chart](../../guides/helm-charts.md)
+   [updating a helm chart](../../guides/admin/helm-charts.md)
 
 1. Once the helm chart is successfully deployed, fetch the ingress address:
 
