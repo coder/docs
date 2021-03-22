@@ -1,16 +1,37 @@
 name: Quality
-on: push
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
 jobs:
   lint:
     name: Lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
+      - name: Cancel Previous Runs
+        if: github.ref != 'refs/heads/master'
+        uses: styfle/cancel-workflow-action@0.8.0
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache Node Modules
+        uses: actions/cache@v2
+        with:
+          path: "/node_modules"
+          key: node-${{ hashFiles('yarn.lock') }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: 12.x
+
       - name: Install node_modules
         run: yarn
+
       - name: Lint
         run: yarn lint
