@@ -18,7 +18,7 @@ VERSION=""
 RELEASE_DATE=""
 
 # usage prints information for how to use this program
-usage () {
+function usage () {
   echo "Usage: create-clog <version> <release-date>"
   echo "Create a changelog from a template"
   echo "Arguments:"
