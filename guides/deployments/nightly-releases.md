@@ -24,9 +24,9 @@ backup manually.
 
 ## Obtaining the Nightly Releases
 
-We store nightly releases in [this Helm
-repository](https://helm-nightly.coder.com/index.yaml). We store images in a
-publicly accessible gcr.io repository.
+We store nightly releases in
+[this Helm repository](https://helm-nightly.coder.com/index.yaml). We store
+images in a publicly accessible gcr.io repository.
 
 ## Nightly Release Listing
 
@@ -68,7 +68,7 @@ nightly version:
 # Requires curl, yq, jq
 $ curl -sS https://helm-nightly.coder.com/index.yaml \
 | yq r --tojson - \
-| jq -r "[.entries.coder | sort_by(.created) | reverse][0][0].version" 
+| jq -r "[.entries.coder | sort_by(.created) | reverse][0][0].version"
 
 1.11.0-108-g01693c0e2-20200926
 ```
@@ -77,36 +77,36 @@ $ curl -sS https://helm-nightly.coder.com/index.yaml \
 
 1. Add the Helm repo (if you haven't already):
 
-    ```console
-    $ helm repo add coder-nightly https://helm-nightly.coder.com
-    "coder-nightly" has been added to your repositories
-    ```
+   ```console
+   $ helm repo add coder-nightly https://helm-nightly.coder.com
+   "coder-nightly" has been added to your repositories
+   ```
 
-1. Install a specific version to the coder namespace (be sure to
-backup your database before running the following command):
+1. Install a specific version to the coder namespace (be sure to backup your
+   database before running the following command):
 
-    ```console
-    $ helm upgrade --namespace coder coder coder-nightly/coder \
-    --version <VERSION> --atomic --install
+   ```console
+     $ helm upgrade --namespace coder coder coder-nightly/coder \
+     --version <VERSION> --atomic --install
 
-    Release "coder" has been upgraded. Happy Helming!
-    NAME: coder
-    LAST DEPLOYED: Mon Sep 28 16:38:36 2020
-    NAMESPACE: coder
-    STATUS: deployed
-    REVISION: 2
-    TEST SUITE: None
-    ```
+     Release "coder" has been upgraded. Happy Helming!
+     NAME: coder
+     LAST DEPLOYED: Mon Sep 28 16:38:36 2020
+     NAMESPACE: coder
+     STATUS: deployed
+     REVISION: 2
+     TEST SUITE: None
+   ```
 
-    The `--atomic` flag instructs Helm to automatically downgrade if the nightly
-    release isn't ready within the default timeout of 5 minutes. This automatic
-    downgrade on failure is safe and shouldn't require you to manually downgrade
-    to your database backup if it occurs.
+   The `--atomic` flag instructs Helm to automatically downgrade if the nightly
+   release isn't ready within the default timeout of 5 minutes. This automatic
+   downgrade on failure is safe and shouldn't require you to manually downgrade
+   to your database backup if it occurs.
 
 ## Downgrading to a Standard Release
 
 Downgrading is not something we support at this time. If you need to downgrade,
-you must revert to the database backup you made before  installing the nightly
+you must revert to the database backup you made before installing the nightly
 release.
 
 If your currently installed nightly version is sufficiently older than a

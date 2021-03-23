@@ -56,8 +56,8 @@ When prompted, provide the following information:
 
 Coder offers several **advanced** settings that allow you to customize your
 environment. You can choose to run your environment as a container-based virtual
-machine, provide a dotfiles URI for [personalization](personalization.md),
-and set your resource allocation.
+machine, provide a dotfiles URI for [personalization](personalization.md), and
+set your resource allocation.
 
 ![Environment Setup Advanced Settings](../assets/advanced-env-config.png)
 
@@ -105,8 +105,8 @@ for your environment during the build process.
 ## .gitconfig files
 
 If the image you're using to create your environment doesn't include a
-.gitconfig file, Coder will generate one for you automatically using the
-details found in your Coder account.
+.gitconfig file, Coder will generate one for you automatically using the details
+found in your Coder account.
 
 You can modify the .gitconfig file, but we recommend using a
 [personalization](personalization.md) file to customize your environment.

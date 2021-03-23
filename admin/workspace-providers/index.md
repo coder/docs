@@ -5,16 +5,17 @@ state: beta
 ---
 
 Workspace providers are logical groups of resources to which developers can
-deploy environments. They enable a single Coder deployment to provision and manage
-environments across multiple Kubernetes clusters and namespaces, including those
-located in other geographies, regions, or clouds.
+deploy environments. They enable a single Coder deployment to provision and
+manage environments across multiple Kubernetes clusters and namespaces,
+including those located in other geographies, regions, or clouds.
 
 Distributed teams can use this feature to allow users to manage environments in
-the nearest cluster. This reduces network latency and improves
-developers' experience.
+the nearest cluster. This reduces network latency and improves developers'
+experience.
 
 You can also use workspace providers to support data sovereignty requirements or
-increase the isolation between environments running in the same region or cluster.
+increase the isolation between environments running in the same region or
+cluster.
 
 ## Built-In Workspace Provider
 
@@ -33,14 +34,13 @@ create environments.
 
 Remote workspace providers can provide lower latency to developers by locating
 their environments closer to them geographically or can be used for workload
-isolation purposes. See [Deploying A Workspace
-Provider](deployment.md) to learn how you can
-expand your Coder deployment to additional Kubernetes clusters.
+isolation purposes. See [Deploying A Workspace Provider](deployment.md) to learn
+how you can expand your Coder deployment to additional Kubernetes clusters.
 
 ## Admin UI
 
-Site admins and site managers can view the workspace providers configuration page
-available via **Manage** > **Admin** > **Workspace Providers**.
+Site admins and site managers can view the workspace providers configuration
+page available via **Manage** > **Admin** > **Workspace Providers**.
 
 ![Workspace Providers Admin](../../assets/workspace-providers-admin.png)
 
@@ -69,9 +69,9 @@ A workspace provider can have one of the following statuses:
 ### Organization Allowlists
 
 Site admins and site managers can manage which organizations have permissions to
-provision new environments in each workspace provider. When a new organization is
-created, it can provision environments into the `built-in` workspace provider by
-default.
+provision new environments in each workspace provider. When a new organization
+is created, it can provision environments into the `built-in` workspace provider
+by default.
 
 Organizations must not contain any environments in the workspace provider before
 you remove them from a workspace provider's allowlist.
@@ -80,20 +80,19 @@ you remove them from a workspace provider's allowlist.
 
 For deployments with multiple workspace providers, you must ensure that each
 provider can communicate with the Coder deployment (otherwise, you may see
-downtime). If you want to change the Access URL after you've deployed
-workspace providers to complement the `built-in` workspace provider, you must:
+downtime). If you want to change the Access URL after you've deployed workspace
+providers to complement the `built-in` workspace provider, you must:
 
 1. Ensure that the new URL resolves to the Coder deployment
 1. Change the Coder Access URL via the **Manage** > **Admin** >
    **Infrastructure** page. The old URL should continue to resolve to the Coder
    deployment at this step.
-1. [Redeploy each remote workspace
-   provider](./deployment.md#upgrading-the-workspace-provider), making sure that
-   you use the following flag:
+1. [Redeploy each remote workspace provider](./deployment.md#upgrading-the-workspace-provider),
+   making sure that you use the following flag:
 
-  ```bash
-    --set cemanager.accessURL=[NEW_ACCESS_URL]
-  ```
+```bash
+  --set cemanager.accessURL=[NEW_ACCESS_URL]
+```
 
 1. Confirm that the remote workspace providers deployed successfully with the
    new access URL and environments still accessible.

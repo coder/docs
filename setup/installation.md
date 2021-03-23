@@ -42,8 +42,8 @@ kubectl config set-context --current --namespace=coder
    ```
 
 1. Install the helm chart onto your cluster (see the
-   [changelog](../changelog/index.md) for a list of Coder versions or run `helm
-   search repo coder -l`)
+   [changelog](../changelog/index.md) for a list of Coder versions or run
+   `helm search repo coder -l`)
 
    ```console
    helm install coder coder/coder --namespace coder
@@ -55,17 +55,17 @@ kubectl config set-context --current --namespace=coder
    modify the helm chart to update your PostgreSQL databases (step 4) and enable
    Dev URLs (step 5):
 
-   a. Get a copy of your existing helm chart and save as `values.yaml`: `helm
-   show values coder/coder > values.yaml`
+   a. Get a copy of your existing helm chart and save as `values.yaml`:
+   `helm show values coder/coder > values.yaml`
 
    b. Edit the `values.yaml` file as needed. Be sure to remove the lines that
-   you are *not* modifying, otherwise the contents of `values.yaml` will
+   you are _not_ modifying, otherwise the contents of `values.yaml` will
    override those in the default chart.
 
    c. Upgrade/install your Coder deployment with the updated helm chart (be sure
-      to replace the placeholder value with your Coder version): `helm upgrade
-      coder coder/coder -n coder --version=<VERSION> -f values.yaml`. **This
-      must be done for whenever you update the helm chart.**
+   to replace the placeholder value with your Coder version):
+   `helm upgrade coder coder/coder -n coder --version=<VERSION> -f values.yaml`.
+   **This must be done for whenever you update the helm chart.**
 
 1. Ensure that you have superuser privileges to your PostgreSQL database. Add
    the following to your helm chart so that Coder uses your external PostgreSQL
@@ -82,12 +82,12 @@ kubectl config set-context --current --namespace=coder
      sslMode: require
    ```
 
-   To create the `passwordSecret`, run `kubectl create secret generic
-   secret-name --from-literal=password=UserDefinedPassword` (be sure to replace
-   `UserDefinedPassword` with your actual password).
+   To create the `passwordSecret`, run
+   `kubectl create secret generic secret-name --from-literal=password=UserDefinedPassword`
+   (be sure to replace `UserDefinedPassword` with your actual password).
 
-   You can find/define these values in your [PostgreSQL server configuration
-   file](https://www.postgresql.org/docs/current/config-setting.html).
+   You can find/define these values in your
+   [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
 
 1. [Enable Dev URL Usage](../admin/devurls.md). Dev URLs allow users to access
    the web servers running in your environment. To enable, provide a wildcard
@@ -113,8 +113,8 @@ kubectl config set-context --current --namespace=coder
 
    These are the credentials you need to continue setup using Coder's web UI.
 
-> If you lose your admin credentials, you can use the [admin password
-> reset](../admin/access-control/password-reset.md#resetting-the-site-admin-password)
+> If you lose your admin credentials, you can use the
+> [admin password reset](../admin/access-control/password-reset.md#resetting-the-site-admin-password)
 > process to regain access.
 
 ## Accessing Coder

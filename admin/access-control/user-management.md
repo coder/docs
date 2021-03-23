@@ -3,9 +3,9 @@ title: "User Management"
 description: Learn how to add, delete and manage Coder users.
 ---
 
-[Site managers](/access-control/user-roles#site-manager-permissions) can
-create and manage users from the **Users** page, which is accessible under
-**Manage** > **Users**.
+[Site managers](/access-control/user-roles#site-manager-permissions) can create
+and manage users from the **Users** page, which is accessible under **Manage** >
+**Users**.
 
 ## Creating a New User
 
@@ -36,5 +36,5 @@ To delete a user:
 1. You'll be prompted to confirm this action. Click **Delete** to proceed.
 
 If you're using your organization's OpenID Connect Identity Provider to manage
-users, this process revokes the user's access to Coder; it does _not_ delete
-the user from your identity store.
+users, this process revokes the user's access to Coder; it does _not_ delete the
+user from your identity store.

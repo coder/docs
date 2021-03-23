@@ -1,5 +1,5 @@
 ---
-title: Custom Image Creation 
+title: Custom Image Creation
 description: Learn how to write custom images for use with Coder.
 ---
 
@@ -7,14 +7,14 @@ Custom images allow you to define workspaces that include the dependencies,
 scripts, and user preferences helpful for your project.
 
 > If you're unfamiliar with how to create, build, and push Docker Images, please
-see [this tutorial by
-Docker](http://blog.shippable.com/build-a-docker-image-and-push-it-to-docker-hub)
-before proceeding.
+> see
+> [this tutorial by Docker](http://blog.shippable.com/build-a-docker-image-and-push-it-to-docker-hub)
+> before proceeding.
 
 ## Creating a Custom Image
 
-Instead of starting from scratch, we recommend extending one of our [sample
-images](https://github.com/cdr/enterprise-images):
+Instead of starting from scratch, we recommend extending one of our
+[sample images](https://github.com/cdr/enterprise-images):
 
 ```Dockerfile
 # Dockerfile
@@ -28,15 +28,15 @@ COPY file ./
 
 Please note:
 
-- If you're using a different base image, see our [image minimum
-  requirements](https://github.com/cdr/enterprise-images/#image-minimums) to
-  make sure that your image will work with all of Coder's features.
+- If you're using a different base image, see our
+  [image minimum requirements](https://github.com/cdr/enterprise-images/#image-minimums)
+  to make sure that your image will work with all of Coder's features.
 
-- You can build images inside a Coder workspace using the [Docker
-  Sandbox](https://github.com/bpmct/cdr-images/tree/master/docker-sandbox). If,
-  however, you're using [CVMs](../admin/environment-management/cvms.md), you'll
-  need to have the [sysbox runtime](https://github.com/nestybox/sysbox) on your
-  machine.
+- You can build images inside a Coder workspace using the
+  [Docker Sandbox](https://github.com/bpmct/cdr-images/tree/master/docker-sandbox).
+  If, however, you're using [CVMs](../admin/environment-management/cvms.md),
+  you'll need to have the [sysbox runtime](https://github.com/nestybox/sysbox)
+  on your machine.
 
 ## Example: Installing an IntelliJ IDE
 
@@ -58,8 +58,8 @@ RUN ln -s /opt/[IDE]/bin/clion.sh /usr/bin/[IDE]
 ```
 
 Make sure that you replace `[IDE]` with the name of the IDE in lowercase and
-provide its [corresponding
-`[CODE]`](https://plugins.jetbrains.com/docs/marketplace/product-codes.html).
+provide its
+[corresponding `[CODE]`](https://plugins.jetbrains.com/docs/marketplace/product-codes.html).
 
 More specifically, here's how to install the CLion IDE onto your image:
 

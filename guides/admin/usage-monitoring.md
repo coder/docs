@@ -4,9 +4,9 @@ description: Learn how to monitor Coder's compute usage.
 ---
 
 We recommend monitoring your Coder deployment to track compute cost,
-performance, uptime, and deployment stability. Because Coder is
-deployed onto Kubernetes, you can monitor your developer workspaces as you would
-any other server workload.
+performance, uptime, and deployment stability. Because Coder is deployed onto
+Kubernetes, you can monitor your developer workspaces as you would any other
+server workload.
 
 ## Node Utilization Metrics
 
@@ -21,8 +21,8 @@ environment than necessary.
 ![Monitoring Memory Utilization](../../assets/compute-2.png)
 
 There are several tools available to you to balance the tradeoff between
-environment performance and cloud cost. Read more about this on [compute
-resources](resources.md).
+environment performance and cloud cost. Read more about this on
+[compute resources](resources.md).
 
 ## Development Workspace Metrics
 
@@ -38,7 +38,8 @@ container and labels them with the username and environment name identifiers:
 These views can help you track which users may require larger CPU allocations,
 enabling greater "burst-ability" under peak loads. However, remember that using
 a CPU/memory provision rate greater than 1:1 may result in users being throttled
-below their CPU limit if the underlying Kubernetes Node experiences CPU contention.
+below their CPU limit if the underlying Kubernetes Node experiences CPU
+contention.
 
 ## Control Plane Monitoring
 

@@ -32,16 +32,16 @@ have these extensions enabled by running `kubectl get apiservices`):
 
 ## Browsers
 
-Use an up-to-date browser to ensure that you can use all of Coder's features.
-We currently require the following versions _or newer_:
+Use an up-to-date browser to ensure that you can use all of Coder's features. We
+currently require the following versions _or newer_:
 
 - Apple Safari 12.1
 - Google Chrome 66
 - Mozilla Firefox 57
 - Microsoft Edge 79
 
-If you're using [Remote IDEs](../environments/editors.md), allow pop-ups;
-Coder launches the Remote IDE in a pop-up window.
+If you're using [Remote IDEs](../environments/editors.md), allow pop-ups; Coder
+launches the Remote IDE in a pop-up window.
 
 ## Licenses
 
@@ -56,5 +56,5 @@ Deployments using the free trial of Coder:
 - Cannot be deployed in an air-gapped network
 - Must use Coder v1.10.0 or later
 
-The above requirements do not apply to potential customers engaged in our evaluation
-program.
+The above requirements do not apply to potential customers engaged in our
+evaluation program.

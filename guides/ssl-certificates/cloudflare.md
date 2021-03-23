@@ -1,11 +1,14 @@
 ---
 title: Cloudflare
-description: Learn how to use cert-manager to set up SSL certificates using Cloudflare for DNS01 challenges.
+description:
+  Learn how to use cert-manager to set up SSL certificates using Cloudflare for
+  DNS01 challenges.
 ---
 
 [cert-manager](https://cert-manager.io/) allows you to enable HTTPS on your
-Coder installation, regardless of whether you're using [Let's
-Encrypt](https://letsencrypt.org/) or you have your own certificate authority.
+Coder installation, regardless of whether you're using
+[Let's Encrypt](https://letsencrypt.org/) or you have your own certificate
+authority.
 
 This guide will show you how to install cert-manager v1.0.1 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
@@ -20,8 +23,8 @@ you can enable HTTPS on your Coder deployment.
 You must have:
 
 - A Kubernetes cluster (v1.15 or greater) with internet connectivity
-- kubectl with patch version [greater than v1.18.8, v1.17.11, or
-  v1.16.14](https://cert-manager.io/docs/installation/upgrading/upgrading-0.15-0.16/#issue-with-older-versions-of-kubectl)
+- kubectl with patch version
+  [greater than v1.18.8, v1.17.11, or v1.16.14](https://cert-manager.io/docs/installation/upgrading/upgrading-0.15-0.16/#issue-with-older-versions-of-kubectl)
 
 ## Step 1: Add cert-manager to Your Kubernetes Cluster
 
@@ -30,7 +33,7 @@ You must have:
 $ kubectl apply --validate=false -f \
 https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager.yaml
 
-# Kubernetes <1.16 
+# Kubernetes <1.16
 $ kubectl apply --validate=false -f \
 https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager-legacy.yaml
 ```
@@ -52,23 +55,24 @@ cert-manager-webhook-7f68b65458-zvzn9      1/1     Running   0          84s
 
 ## Step 2: Create an ACME Issuer
 
-cert-manager supports HTTP01 and DNS01 challenges, as well as [many DNS
-providers](https://cert-manager.io/docs/configuration/acme/dns01/#supported-dns01-providers).
+cert-manager supports HTTP01 and DNS01 challenges, as well as
+[many DNS providers](https://cert-manager.io/docs/configuration/acme/dns01/#supported-dns01-providers).
 This guide, however, shows you how to use Cloudflare for DNS01 challenges. This
-is necessary to issue wildcard certificates, which are required for Coder's [Dev
-URLs](../../admin/devurls.md) feature.
+is necessary to issue wildcard certificates, which are required for Coder's
+[Dev URLs](../../admin/devurls.md) feature.
 
 First, get the Cloudflare API credentials for cert-manager to use; cert-manager
 needs permission to add a temporary TXT record and delete it after the challenge
 has been completed.
 
-Open the Cloudflare dashboard and go to [My Profile > API
-Tokens](https://dash.cloudflare.com/profile/api-tokens). Click **Create Token**,
-then go to **Create Custom Token** and click **Get Started**.
+Open the Cloudflare dashboard and go to
+[My Profile > API Tokens](https://dash.cloudflare.com/profile/api-tokens). Click
+**Create Token**, then go to **Create Custom Token** and click **Get Started**.
 
 Create a token with the following settings:
 
 - Permissions:
+
   - Zone: DNS = Edit
 
 - Zone Resources:
@@ -94,7 +98,7 @@ metadata:
   namespace: coder # Your Coder deployment namespace
 type: Opaque
 stringData:
-    api-key: "" # Your Cloudflare API token (from earlier)
+  api-key: "" # Your Cloudflare API token (from earlier)
 
 ---
 apiVersion: cert-manager.io/v1alpha2
@@ -109,20 +113,20 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-account-key
     solvers:
-    - dns01:
-        cloudflare:
-          email: "" # Your Cloudflare email address
-          apiTokenSecretRef:
-            name: cloudflare-api-key-secret
-            key: api-key
+      - dns01:
+          cloudflare:
+            email: "" # Your Cloudflare email address
+            apiTokenSecretRef:
+              name: cloudflare-api-key-secret
+              key: api-key
 
-      # This section denotes which domains to use this issuer for. If you didn't
-      # limit which zones the API token had access to, you may wish to remove
-      # this section.
-      selector:
-        dnsZones:
-          # Only use this issuer for the domain example.com and its subdomains.
-          - 'example.com'
+        # This section denotes which domains to use this issuer for. If you didn't
+        # limit which zones the API token had access to, you may wish to remove
+        # this section.
+        selector:
+          dnsZones:
+            # Only use this issuer for the domain example.com and its subdomains.
+            - "example.com"
 ```
 
 ### ClusterIssuers
@@ -136,10 +140,11 @@ following changes:
 - Change the namespace of the secret to **cert-manager**
 - Change the kind of the **Issuer** to **ClusterIssuer**
 - Remove the namespace of the **ClusterIssuer**
-- Change the additional annotations to `cert-manager.io/cluster-issuer: letsencrypt`
+- Change the additional annotations to
+  `cert-manager.io/cluster-issuer: letsencrypt`
 
-For further information, see [Setting Up
-Issuers](https://docs.cert-manager.io/en/release-0.8/tasks/issuers/index.html).
+For further information, see
+[Setting Up Issuers](https://docs.cert-manager.io/en/release-0.8/tasks/issuers/index.html).
 
 Read the comments and fill out the blanks. Once you're done, you can go ahead
 and apply that to your cluster using:
@@ -170,7 +175,7 @@ ingress:
     hostSecretName: coder-root-cert
     devurlsHostSecretName: coder-devurls-cert
   additionalAnnotations:
-  - 'cert-manager.io/issuer: letsencrypt'
+    - "cert-manager.io/issuer: letsencrypt"
 
 devurls:
   host: "*.coder.example.com"

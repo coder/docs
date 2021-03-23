@@ -11,8 +11,8 @@ image metadata.
 
 ## Adding a Registry
 
-You can add registries during the process of [adding
-images](../../images/index.md).
+You can add registries during the process of
+[adding images](../../images/index.md).
 
 To import an image, go to **Images** > **Import Image** in the upper-right. In
 the dialog that opens, you'll be prompted to pick a registry by default.
@@ -26,8 +26,8 @@ You'll be asked to provide:
 - A **username** and **password** combination (if needed for access to the
   registry)
 
-Then, continue with the process of [adding your
-image](../../images/index.md). When done, click **Import**.
+Then, continue with the process of [adding your image](../../images/index.md).
+When done, click **Import**.
 
 ## Deleting a Registry
 

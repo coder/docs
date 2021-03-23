@@ -11,8 +11,8 @@ You can use the configure script to:
 
 - Run [Coder CLI](https://github.com/cdr/coder-cli) commands
 - Check for and clone a GitHub repo if it isn't present
-- Run scripts using [CODER\_\* environment
-  variables](../environments/variables.md)
+- Run scripts using
+  [CODER\_\* environment variables](../environments/variables.md)
 
 Coder will check the image for the presence of a **/coder/configure** file
 during the build process; if Coder finds one, it will execute the instructions
@@ -84,8 +84,7 @@ Step 4: Test the Config File
 You can test your setup by performing the following steps:
 
 1. [Importing your image](importing.md)
-1. [Creating your environment using the newly imported
-   image](../environments/getting-started.md)
+1. [Creating your environment using the newly imported image](../environments/getting-started.md)
 
 Coder will run the configure file during the build process, and you can verify
 this using the Environment Overview page (Coder runs the configure file as the
@@ -118,40 +117,40 @@ script.
 
 1. Create the configure script
 
-    ```shell
-    touch configure
-    chmod +x configure
-    ```
+   ```shell
+   touch configure
+   chmod +x configure
+   ```
 
 1. Modify the image's Dockerfile to move the original configure script (this
    results in Coder using the configure script that you created in the previous
    step while preserving the original script)
 
-    ```Dockerfile
-    # Dockerfile
+   ```Dockerfile
+   # Dockerfile
 
-    FROM codercom/enterprise-configure:ubuntu
+   FROM codercom/enterprise-configure:ubuntu
 
-    USER root
+   USER root
 
-    RUN mv /coder/configure /coder/configure-first
+   RUN mv /coder/configure /coder/configure-first
 
-    # Add the new configure script
-    COPY configure /coder/configure
-    ```
+   # Add the new configure script
+   COPY configure /coder/configure
+   ```
 
 1. Create your new script; in addition to any instructions that you add, this
    script will run the configure script that came with the base image
 
-    ```sh
-    # Configure
+   ```sh
+   # Configure
 
-    # Run the initial configure script
-    sh /coder/configure-first
+   # Run the initial configure script
+   sh /coder/configure-first
 
-    print "And some more commands..."
-    ...
-    ```
+   print "And some more commands..."
+   ...
+   ```
 
 ### Running Coder CLI Commands
 
@@ -171,35 +170,35 @@ coder urls create $CODER_ENVIRONMENT_NAME 3000 --name webapp
 
 1. Create a `settings.json` file:
 
-    ```sh
-    touch settings.json
-    chmod +x settings.json
-    ```
+   ```sh
+   touch settings.json
+   chmod +x settings.json
+   ```
 
 1. Add settings info to your file:
 
-    ```json
-    {
-    "git.enableSmartCommit": true,
-    "git.confirmSync": false,
-    "editor.formatOnSave": true
-    }
-    ```
+   ```json
+   {
+     "git.enableSmartCommit": true,
+     "git.confirmSync": false,
+     "editor.formatOnSave": true
+   }
+   ```
 
 1. Update configure to use the settings file:
 
-    ```sh
-    # configure
+   ```sh
+   # configure
 
-    # Check if there are existing settings
-    if [ -f "/home/coder/.local/share/code-server/User/settings.json" ]
-    then
-        echo "VS Code settings are already present. Remove with and run
-        /coder/configure to revert to defaults"
-    else
-        cp settings.json /home/coder/.local/share/code-server/User/settings.json
+   # Check if there are existing settings
+   if [ -f "/home/coder/.local/share/code-server/User/settings.json" ]
+   then
+       echo "VS Code settings are already present. Remove with and run
+       /coder/configure to revert to defaults"
+   else
+       cp settings.json /home/coder/.local/share/code-server/User/settings.json
 
-        # Install extensions
-        /opt/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
-    fi
-    ```
+       # Install extensions
+       /opt/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
+   fi
+   ```
