@@ -39,11 +39,11 @@ is available and running on and underlying host, the following steps are taken
    injected during this step as well, allowing the latter scripts to perform
    authenticated `git` operations.
 
-2. `Execution of /coder/configure`
+1. `Execution of /coder/configure`
    Execution of this script allows [Images](../images/index.md) to perform startup
    operations consistent across all of its Environments. If an image needs to
    perform modifications to the `/home`, it should do so in this script.
 
-3. `Execution of ~/personalize`
+1. `Execution of ~/personalize`
    Execution of this script allows you to customize your personal development Environment
    on each rebuild. Read more on personalization [here](./personalization.md).

@@ -1,7 +1,7 @@
 # Coder Docs
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-19-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository contains the documentation source files for
@@ -54,6 +54,7 @@ Thanks goes to these wonderful people:
     <td align="center"><a href="https://brownfield.dev/"><img src="https://avatars.githubusercontent.com/u/938684?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mike Terhar</b></sub></a><br /><a href="#content-mterhar" title="Content">🖋</a> <a href="#ideas-mterhar" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-mterhar" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/deansheather"><img src="https://avatars.githubusercontent.com/u/11241812?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dean Sheather</b></sub></a><br /><a href="#content-deansheather" title="Content">🖋</a> <a href="#maintenance-deansheather" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/fuskovic"><img src="https://avatars.githubusercontent.com/u/34631293?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Faris Huskovic</b></sub></a><br /><a href="#content-fuskovic" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/jawnsy"><img src="https://avatars.githubusercontent.com/u/52710?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonathan Yu</b></sub></a><br /><a href="#content-jawnsy" title="Content">🖋</a> <a href="#ideas-jawnsy" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-jawnsy" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 

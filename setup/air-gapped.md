@@ -58,7 +58,7 @@ platform images are hosted in Coder's Docker Hub repo.
    docker pull coderenvs/coder-service:<version>
    ```
 
-2. Tag and push all of the images that you've downloaded in the previous step to
+1. Tag and push all of the images that you've downloaded in the previous step to
    your internal registry; this registry must be accessible from  your
    air-gapped environment. For example, to push `coder-service`:
 
@@ -67,7 +67,7 @@ platform images are hosted in Coder's Docker Hub repo.
     docker push my-registry.com/coderenvs/coder-service:<version>
     ```
 
-3. Once all of the resources are in your air-gapped network, run the following
+1. Once all of the resources are in your air-gapped network, run the following
    to deploy Coder to your Kubernetes cluster:
 
     ```console
@@ -81,7 +81,7 @@ platform images are hosted in Coder's Docker Hub repo.
     --set envbox.image=my-registry.com/coderenvs/envbox:<version>
     ```
 
-4. Next, follow the [Installation](installation.md) guide beginning
+1. Next, follow the [Installation](installation.md) guide beginning
    with **step 6** to get the access URL and the temporary admin password, which
    allows you to proceed with setting up and configuring Coder.
 

@@ -142,7 +142,7 @@ After you've pushed the image to a Docker registry, you can access and import it
 into your Coder deployment.
 
 1. In the Coder UI, go to the **Images** page and click **Import Image**
-3. Add (or select) the image registry where the image is hosted, and provide the
+1. Add (or select) the image registry where the image is hosted, and provide the
    requested values when prompted.
 
 ## Step 3: Create the Dev Environment
@@ -151,8 +151,8 @@ Once you've imported an image into Coder, you can use it to create new
 development environments:
 
 1. In the Coder UI, go to **Environments Overview**
-2. Click **New Environment**
-3. In the modal window that opens, provide a **name** for your environment, select
+1. Click **New Environment**
+1. In the modal window that opens, provide a **name** for your environment, select
    the **image** that you imported, adjust the resources appropriately (if you plan
    to use WebStorm, allocate additional CPU and RAM), and click **Create**
 
@@ -202,9 +202,9 @@ for this to work). To do so:
 
 1. On the Environment Overview of your Coder deployment, go to Dev URLs and
    click **Add URL**.
-2. In **Port**, enter **3000**.
-3. Click **Save**.
-4. Use the generated URL in a web browser to see your application.
+1. In **Port**, enter **3000**.
+1. Click **Save**.
+1. Use the generated URL in a web browser to see your application.
 
 ### Modifying Your Application Code
 

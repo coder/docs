@@ -18,7 +18,7 @@ Dev URLs with Coder.
 in your cluster, you'll need to modify your:
 
 1. Helm chart
-2. Wildcard DNS record
+1. Wildcard DNS record
 
 ### Step 1: Modify the Helm Chart
 

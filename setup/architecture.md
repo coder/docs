@@ -28,7 +28,7 @@ There are two ways to deploy Coder:
 1. The default installation, which is a non-air-gapped option, using the
    Kubernetes provider of your choice; you should be able to access Coder
    resources from this environment freely
-2. A secured, air-gapped option; you can choose to limit access and deploy Coder
+1. A secured, air-gapped option; you can choose to limit access and deploy Coder
    by first pulling in all of the required resources, or you can choose to
    whitelist the URLs/IP addresses needed to access Coder resources
 
