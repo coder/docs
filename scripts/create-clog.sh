@@ -45,7 +45,7 @@ function init () {
   eval set -- "$options"
   
   while true; do
-    case "$1" in
+    case "${1:-}" in
       -h|--help)
         usage
         ;;
