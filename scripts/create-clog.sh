@@ -27,7 +27,7 @@ function usage () {
 }
 
 # init parses arguments and initializes all variables.
-init () {
+function init () {
   lenArgs=2
   if [ "$#" -ne $lenArgs ]; then
     echo "illegal number of arguments."
@@ -54,9 +54,9 @@ init () {
   RELEASE_DATE="${2}"
 }
 
-# createFromTemplate creates a new changelog file from template_changelog.md
+# create_from_template creates a new changelog file from template_changelog.md
 # using VERSION and RELEASE_DATE.
-createFromTemplate () {
+function create_from_template () {
   echo "Creating template using version: ${VERSION} and release date: ${RELEASE_DATE}"
   pushd "$(git rev-parse --show-toplevel)" > /dev/null
     clogPath="./changelog/${VERSION}.md"
@@ -68,5 +68,5 @@ createFromTemplate () {
 
 # main program
 init "$@"
-createFromTemplate
+create_from_template
 echo "Done"
