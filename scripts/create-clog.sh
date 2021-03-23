@@ -50,19 +50,19 @@ function init () {
     exit 1
   fi
   
-  VERSION="${1}"
-  RELEASE_DATE="${2}"
+  VERSION="$1"
+  RELEASE_DATE="$2"
 }
 
 # create_from_template creates a new changelog file from template_changelog.md
 # using VERSION and RELEASE_DATE.
 function create_from_template () {
-  echo "Creating template using version: ${VERSION} and release date: ${RELEASE_DATE}"
+  echo "Creating template using version: $VERSION and release date: $RELEASE_DATE"
   pushd "$(git rev-parse --show-toplevel)" > /dev/null
-    clogPath="./changelog/${VERSION}.md"
-    cp ./scripts/template_changelog.md "${clogPath}"
-    sed -i "s|${VERSION_DELIM}|${VERSION}|g" "${clogPath}"
-    sed -i "s|${RELEASE_DATE_DELIM}|${RELEASE_DATE}|g" "${clogPath}"
+    clogPath="./changelog/$VERSION.md"
+    cp ./scripts/template_changelog.md "$clogPath"
+    sed -i "s|$VERSION_DELIM|$VERSION|g" "$clogPath"
+    sed -i "s|$RELEASE_DATE_DELIM|$RELEASE_DATE|g" "$clogPath"
   popd > /dev/null
 }
 
