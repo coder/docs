@@ -31,8 +31,9 @@ counted against the environment memory limit setting.
 
 ## Diagnosis
 
-If you encounter the error that's the focus of this article, the total number of watchers in use is approaching the `max_user_watches` setting.
-The following sections will show you how to verify if this is the case.
+If you encounter the error that's the focus of this article, the total number of
+watchers in use is approaching the `max_user_watches` setting. The following
+sections will show you how to verify if this is the case.
 
 ### Check tunable settings
 
@@ -243,10 +244,10 @@ $ kubectl delete --namespace=kube-system daemonset more-fs-watchers
 daemonset.apps "more-fs-watchers" deleted
 ```
 
-However, note that the setting will persist until the node restarts or 
-another program sets the `fs.inotify.max_user_watches` setting.
+However, note that the setting will persist until the node restarts or another
+program sets the `fs.inotify.max_user_watches` setting.
 
-## See Also
+## See also
 
 - [INotify watch
   limit](https://blog.passcod.name/2017/jun/25/inotify-watch-limit.html)
