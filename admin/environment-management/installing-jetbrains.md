@@ -1,5 +1,5 @@
 ---
-title: "Install a JetBrains IDEs"
+title: "JetBrains IDE Installation"
 description: Learn how to install JetBrains IDEs in Images.
 ---
 

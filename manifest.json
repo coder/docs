@@ -85,6 +85,7 @@
             { "path": "./admin/environment-management/cvms.md" },
             { "path": "./admin/environment-management/extensions.md" },
             { "path": "./admin/environment-management/gpu-acceleration.md" },
+            { "path": "./admin/environment-management/installing-jetbrains.md" },
             { "path": "./admin/environment-management/memory-overprovisioning.md" },
             { "path": "./admin/environment-management/shutdown.md" },
             { "path": "./admin/environment-management/ssh-access.md" }
