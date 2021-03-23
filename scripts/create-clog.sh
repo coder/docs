@@ -39,8 +39,6 @@ function init () {
             --options="h" \
             -- "$@")
   [ $? -eq 0 ] || { 
-    echo "illegal number of arguments."
-    echo "Expected: 2  Received: $#"
     usage
   }
 
