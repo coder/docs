@@ -16,14 +16,14 @@ relates to an elevated number of inotify watchers in use.
 
 ## Background
 
-[`Inotify`] allows programs to monitor files for changes, so that they receive
+[`inotify`] allows programs to monitor files for changes, so that they receive
 an event whenever a user or program modifies a file. `inotify` requires kernel
 resources (memory and processor) for each file it tracks. As a result, the Linux
 kernel limits the number of file watchers that each user can register. The
 default settings vary according to the host system distribution; on Ubuntu 20.04
 LTS, the default limit is 8,192 watches per instance.
 
-[`Inotify`]: https://en.wikipedia.org/wiki/Inotify
+[`inotify`]: https://en.wikipedia.org/wiki/Inotify
 
 On a 64-bit system, each `inotify` watch that programs register will consume
 ~1 kB of kernel memory, which cannot be swapped to disk and is not
@@ -42,8 +42,8 @@ There are three kernel tuning options related to the `inotify` system:
 - `fs.inotify.max_queued_events`: The upper bound on the number of file
   notification events pending delivery to programs
 - `fs.inotify.max_user_instances`: The maximum number of `inotify` instances per
-  user. Programs using `inotify` will typically create a single _instance_, so
-  this limit is unlikely to cause issues
+  user (programs using `inotify` will typically create a single _instance_, so
+  this limit is unlikely to cause issues)
 - `fs.inotify.max_user_watches`: The maximum number of files and folders that
   programs can monitor for changes
 
@@ -62,7 +62,7 @@ regardless of whether you run the commands on the host system or inside a
 container running on that host.
 
 > See [inotify(7)](https://man7.org/linux/man-pages/man7/inotify.7.html) for
-additional details regarding the `inotify` system.
+> additional details regarding the `inotify` system.
 
 ### Identify inotify consumers
 
@@ -107,7 +107,7 @@ related to the `test` file.
 
 ## Resolution
 
-If you encounter the file watcher limit, you can:
+If you encounter the file watcher limit, you can do one of two things:
 
 1. Reduce the number of file watcher registrations
 1. Increase the maximum file watcher limit
@@ -233,7 +233,7 @@ spec:
 
 This DaemonSet will ensure that the corresponding pod runs on _every_ Linux node
 in the cluster. When new nodes join the cluster, such as during an autoscaling
-event, the DaemonsSet will ensure that the pod runs on the new node as well.
+event, the DaemonSet will ensure that the pod runs on the new node as well.
 
 You can delete the DaemonSet by running:
 
