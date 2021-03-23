@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting inotify Watcher Limit Problems
+title: inotify Watcher Limit Problems
 description: Learn how to resolve problems related to the inotify Watcher Limit.
 ---
 
@@ -39,15 +39,13 @@ sections will show you how to verify if this is the case.
 
 There are three kernel tuning options related to the `inotify` system:
 
-| Option | Description |
-| - | - |
-| `fs.inotify.max_queued_events` | The upper bound on the number of file
-  notification events pending delivery to programs |
-| `fs.inotify.max_user_instances` | The maximum number of `inotify` instances
-  per user. Programs using `inotify` will typically create a single _instance_,
-  so this limit is unlikely to cause issues |
-| `fs.inotify.max_user_watches` | The maximum number of files and folders that
-  programs can monitor for changes |
+- `fs.inotify.max_queued_events`: The upper bound on the number of file
+  notification events pending delivery to programs
+- `fs.inotify.max_user_instances`: The maximum number of `inotify` instances per
+  user. Programs using `inotify` will typically create a single _instance_, so
+  this limit is unlikely to cause issues
+- `fs.inotify.max_user_watches`: The maximum number of files and folders that
+  programs can monitor for changes
 
 To see the values for these settings that are applicable to your environment,
 run:
