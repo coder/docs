@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# create-clog.sh <version> <release-date>
+# create-clog.sh [--version=<version>] [--release-date=<release-date>]
 #
-# Dependencies: sed
+# Dependencies: getopt sed
 # 
 # Description: Uses template_changelog.md to create a new changelog.
 #
 # Examples:
-#  ./scripts/create-clog.sh "1.18.0" "05/18/2021"
+#  ./scripts/create-clog.sh --version="1.18.0" --release-date="05/18/2021"
 
 
 set -eou pipefail
@@ -17,41 +17,67 @@ RELEASE_DATE_DELIM="<% MM/DD/YYYY %>"
 VERSION=""
 RELEASE_DATE=""
 
-# usage prints information for how to use this program
+# usage prints information for how to use this program. Exits with status code
+# 1.
 function usage () {
-  echo "Usage: create-clog <version> <release-date>"
+  echo "Usage: create-clog [--version=<version>] [--release-date=<release-date>]"
   echo "Create a changelog from a template"
   echo "Arguments:"
   echo "    <version>: A version string 'x.y.z'"
   echo "    <release-date>: A date string 'mm/dd/yyyy'"
+  exit 1
 }
 
 # init parses arguments and initializes all variables.
 function init () {
-  lenArgs=2
-  if [ "$#" -ne $lenArgs ]; then
+  options=$(getopt \
+            --name="$(basename "$0")" \
+            --longoptions=" \
+                help, \
+                release-date:, \
+                version:" \
+            --options="h" \
+            -- "$@")
+  [ $? -eq 0 ] || { 
     echo "illegal number of arguments."
-    echo "Expected: $lenArgs  Received: $#"
+    echo "Expected: 2  Received: $#"
     usage
-    exit 1
-  fi
+  }
 
-  if [ -z "${1-}" ]; then
+  eval set -- "$options"
+  
+  while true; do
+    case "$1" in
+      -h|--help)
+        usage
+        ;;
+      --version)
+        shift;
+        VERSION="$1"
+        ;;
+      --release-date)
+        shift;
+        RELEASE_DATE="$1"
+        ;;
+      --)
+        shift
+        break
+        ;;
+    esac
+    shift
+  done
+
+  if [ -z "$VERSION" ]; then
     echo "version argument is empty."
     echo "Expected a version string like 'x.y.z'"
     usage
-    exit 1
   fi
-  
-  if [ -z "${2-}" ]; then
+
+  if [ -z "$RELEASE_DATE" ]; then
     echo "release-date argument is empty."
     echo "Expected a date string like 'mm/dd/yyyy'"
     usage
-    exit 1
   fi
-  
-  VERSION="$1"
-  RELEASE_DATE="$2"
 }
 
 # create_from_template creates a new changelog file from template_changelog.md
