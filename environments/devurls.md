@@ -6,7 +6,7 @@ description: Learn how to access HTTP services running inside your Environment.
 Developer (Dev) URLs allow you to access the web services you're developing in
 your environment.
 
-> You must have [DevURLs enabled](../admin/devurls.md) in your installation.
+> You must have [Dev URLs enabled](../admin/devurls.md) in your installation.
 
 ## Creating a Dev URL
 
@@ -17,7 +17,7 @@ number you want to be used and a friendly **name** for the URL (optional). Next,
 indicate who can **access** the URL and the **internal server scheme** (e.g., whether
 Coder should use HTTP or HTTPS when proxying requests to the internal server).
 
-![Create a DevURL](../assets/create-devurl.png)
+![Create a Dev URL](../assets/create-devurl.png)
 
 ## Access Control
 
@@ -37,11 +37,11 @@ To access a Dev URL, you can click:
 - The **Open in browser** icon to launch a new browser window
 - The **Copy** button to copy the URL for sharing
 
-![DevURLs List](../assets/devurls.png)
+![Dev URLs List](../assets/devurls.png)
 
 ### Direct Access
 
-There are two ways for you to construct DevURLs.
+There are two ways for you to construct Dev URLs.
 
 If you provided a name for the Dev URL when you created it:
 

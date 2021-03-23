@@ -116,7 +116,7 @@ when communicating with the Coder deployment.
    Optionally, you can provide additional helm configuration values by providing
    a `values.yaml` file and adding the argument `-f my-values.yaml` to the
    generated command. Helm values control attributes of the workspace provider,
-   including DevURLs, Kubernetes storage classes, SSH, and more. See the
+   including Dev URLs, Kubernetes storage classes, SSH, and more. See the
    [Workspace Provider Helm Chart
    Values]("https://github.com/cdr/enterprise-helm/blob/workspace-providers-envproxy-only/README.md")
    for more details.
