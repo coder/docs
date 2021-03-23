@@ -21,7 +21,7 @@ RELEASE_DATE=""
 usage () {
   echo "Usage: create-clog <version> <release-date>"
   echo "Create a changelog from a template"
-  echo "Arugments:"
+  echo "Arguments:"
   echo "    <version>: A version string 'x.y.z'"
   echo "    <release-date>: A date string 'mm/dd/yyyy'"
 }
