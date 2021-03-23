@@ -151,6 +151,12 @@
         },
         { "path": "./guides/api.md",
           "navigable": false
+        },
+        { "path": "./guides/troubleshooting/index.md",
+          "navigable": false,
+          "children": [
+            { "path": "./guides/troubleshooting/inotify-watch-limits.md" }
+          ]
         }
       ]
     },
