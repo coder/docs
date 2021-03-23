@@ -82,7 +82,7 @@ to OIDC Bridge`.
 
 1. Navigate to **Authentication**.
 
-2. Select the **Browser** flow from the dropdown in the top-left.
+1. Select the **Browser** flow from the dropdown in the top-left.
 
     ![Default Identity Provider](../../assets/keycloak-default-IdP.png)
 

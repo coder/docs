@@ -84,7 +84,7 @@ Step 4: Test the Config File
 You can test your setup by performing the following steps:
 
 1. [Importing your image](importing.md)
-2. [Creating your environment using the newly imported
+1. [Creating your environment using the newly imported
    image](../environments/getting-started.md)
 
 Coder will run the configure file during the build process, and you can verify
@@ -176,7 +176,7 @@ coder urls create $CODER_ENVIRONMENT_NAME 3000 --name webapp
     chmod +x settings.json
     ```
 
-2. Add settings info to your file:
+1. Add settings info to your file:
 
     ```json
     {
@@ -186,7 +186,7 @@ coder urls create $CODER_ENVIRONMENT_NAME 3000 --name webapp
     }
     ```
 
-3. Update configure to use the settings file:
+1. Update configure to use the settings file:
 
     ```sh
     # configure
