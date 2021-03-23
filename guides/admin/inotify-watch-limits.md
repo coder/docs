@@ -26,7 +26,7 @@ LTS, the default limit is 8,192 watches per instance.
 [`Inotify`]: https://en.wikipedia.org/wiki/Inotify
 
 On a 64-bit system, each `inotify` watch that programs register will consume
-approximately 1 kB of kernel memory, which cannot be swapped to disk and is not
+~1 kB of kernel memory, which cannot be swapped to disk and is not
 counted against the environment memory limit setting.
 
 ## Diagnosis
