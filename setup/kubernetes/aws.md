@@ -91,6 +91,8 @@ When your cluster is ready, you should see the following message:
 EKS cluster "YOUR_CLUSTER_NAME" in "YOUR_REGION" region is ready
 ```
 
+This process may take ~15-30 minutes to complete.
+
 ## Step 2: Adjust the K8 Storage Class
 
 Once you've created the cluster, adjust the default Kubernetes storage class to

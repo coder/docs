@@ -78,6 +78,8 @@ gcloud beta container --project "$PROJECT_ID" \
     --max-nodes "8"
 ```
 
+This process may take ~15-30 minutes to complete.
+
 ## Access Control
 
 GKE allows you to integrate Identity Access and Management (IAM) with
