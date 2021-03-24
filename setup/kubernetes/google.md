@@ -78,7 +78,7 @@ gcloud beta container --project "$PROJECT_ID" \
     --max-nodes "8"
 ```
 
-This process might take roughly ~15-30 minutes to complete.
+This process may take ~15-30 minutes to complete.
 
 ## Access Control
 
