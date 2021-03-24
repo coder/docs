@@ -12,11 +12,11 @@ testing, compilation, and so on.
 ## One-Way File Sync
 
 1. Make sure that you've installed [rsync](https://rsync.samba.org/) on both your
-local machine and Coder enviornment.
+local machine and Coder environment.
 
 1. To establish a one-way directory sync to a remote environment:
 
-    ```bash
+    ```console
     coder sync [local directory] [<env name>:<remote directory>]
     ```
 
@@ -27,7 +27,7 @@ local machine and Coder enviornment.
 To sync your local directory **~/Projects/cdr/coder-cli** to **coder-cli** in
 the home directory of your environment:
 
-```bash
+```console
 $ coder sync ~/Projects/cdr/coder-cli my-env:coder-cli
 2020-05-19 17:57:40 INFO doing initial sync (~/Projects/cdr/coder-cli -> coder-cli)
 2020-05-19 17:57:41 SUCCESS finished initial sync (878ms)
@@ -45,7 +45,7 @@ help ensure your project is in the same state no matter where you make changes.
 
 1. Log into Coder and configure your local SSH client:
 
-    ```bash
+    ```console
     $ coder login https://coder.yourcompany.com
     2020-10-20 11:16:29 SUCCESS Logged in.
     $ coder config-ssh
@@ -61,7 +61,7 @@ help ensure your project is in the same state no matter where you make changes.
    session. Note that the folder must exist on the remote server before you
    begin this step:
 
-    ```bash
+    ```console
     $ cd ~/my-project
     $ coder envs ls
     Name     ImageTag    CPUCores    MemoryGB    DiskGB    GPUs    Updating    Status

@@ -35,7 +35,7 @@ automatically prune old nightly releases, so you'll see a maximum of 100
 entries. The easiest way to view the
 [index](https://helm-nightly.coder.com/index.yaml) is to obtain it using curl:
 
-```bash
+```console
 $ curl https://helm-nightly.coder.com/index.yaml
 
 apiVersion: v1
@@ -64,7 +64,7 @@ crucial that you provide the entire version string to us.
 For automation purposes, you can use the following one-liner to get the current
 nightly version:
 
-```bash
+```console
 # Requires curl, yq, jq
 $ curl -sS https://helm-nightly.coder.com/index.yaml \
 | yq r --tojson - \
@@ -77,7 +77,7 @@ $ curl -sS https://helm-nightly.coder.com/index.yaml \
 
 1. Add the Helm repo (if you haven't already):
 
-    ```bash
+    ```console
     $ helm repo add coder-nightly https://helm-nightly.coder.com
     "coder-nightly" has been added to your repositories
     ```
@@ -85,7 +85,7 @@ $ curl -sS https://helm-nightly.coder.com/index.yaml \
 1. Install a specific version to the coder namespace (be sure to
 backup your database before running the following command):
 
-    ```bash
+    ```console
     $ helm upgrade --namespace coder coder coder-nightly/coder \
     --version <VERSION> --atomic --install
 
@@ -111,5 +111,5 @@ release.
 
 If your currently installed nightly version is sufficiently older than a
 standard release (i.e., more than a week older), consider
-[upgrading](../setup/updating.md) from the nightly release to the standard
+[upgrading](../../setup/updating.md) from the nightly release to the standard
 release.

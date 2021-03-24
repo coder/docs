@@ -24,7 +24,7 @@ such as Istio.
 ## Enabling CVMs in Coder
 
 1. Go to **Manage > Admin > Infrastructure**.
-2. Toggle the **Enable Container-Based Virtual Machines** option to **Enable**.
+1. Toggle the **Enable Container-Based Virtual Machines** option to **Enable**.
 
 ## Setting Up Your Cluster
 
@@ -42,7 +42,7 @@ the following parameters:
 
 You can also provide `latest` instead of specific version numbers. For example:
 
-```bash
+```console
 gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
     --node-version "latest" \
     --cluster-version "latest" \
@@ -80,9 +80,9 @@ and updating your `eksctl` config spec.
       amiFamily: Ubuntu1804
     ```
 
-2. Create your nodegroup (be sure to provide the correct file name):
+1. Create your nodegroup (be sure to provide the correct file name):
 
-    ```bash
+    ```console
     eksctl create nodegroup --config-file=coder-node.yaml
     ```
 

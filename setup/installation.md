@@ -23,13 +23,13 @@ We recommend running Coder in a separate
 [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
 to do so, run
 
-```bash
+```console
 kubectl create namespace coder
 ```
 
 Next, change the kubectl context to point to your newly created namespace:
 
-```bash
+```console
 kubectl config set-context --current --namespace=coder
 ```
 
@@ -37,21 +37,21 @@ kubectl config set-context --current --namespace=coder
 
 1. Add the Coder helm repo
 
-   ```bash
+   ```console
    helm repo add coder https://helm.coder.com
    ```
 
-2. Install the helm chart onto your cluster (see the
+1. Install the helm chart onto your cluster (see the
    [changelog](../changelog/index.md) for a list of Coder versions or run `helm
    search repo coder -l`)
 
-   ```bash
+   ```console
    helm install coder coder/coder --namespace coder
    ```
 
    **Steps 3-5 are optional for non-production deployments.**
 
-3. Get a copy of your helm chart so that you can modify it; you'll need to
+1. Get a copy of your helm chart so that you can modify it; you'll need to
    modify the helm chart to update your PostgreSQL databases (step 4) and enable
    Dev URLs (step 5):
 
@@ -67,8 +67,9 @@ kubectl config set-context --current --namespace=coder
       coder coder/coder -n coder --version=<VERSION> -f values.yaml`. **This
       must be done for whenever you update the helm chart.**
 
-4. Add the following to your helm chart so that Coder uses your external
-   PostgreSQL databases:
+1. Ensure that you have superuser privileges to your PostgreSQL database. Add
+   the following to your helm chart so that Coder uses your external PostgreSQL
+   databases:
 
    ```yaml
    postgres:
@@ -88,15 +89,15 @@ kubectl config set-context --current --namespace=coder
    You can find/define these values in your [PostgreSQL server configuration
    file](https://www.postgresql.org/docs/current/config-setting.html).
 
-5. [Enable Dev URL Usage](../admin/devurls.md). Dev URLs allow users to access
+1. [Enable Dev URL Usage](../admin/devurls.md). Dev URLs allow users to access
    the web servers running in your environment. To enable, provide a wildcard
    domain and its DNS certificate and update your helm chart accordingly. This
    step is **optional** but recommended.
 
-6. After you've created the pod, tail the logs to find the randomly generated
+1. After you've created the pod, tail the logs to find the randomly generated
    password for the admin user
 
-   ```bash
+   ```console
    kubectl logs -n coder -l coder.deployment=cemanager -c cemanager \
     --tail=-1 | grep -A1 -B2 Password
    ```
@@ -121,16 +122,16 @@ kubectl config set-context --current --namespace=coder
 1. To access Coder's web UI, you'll need to get its IP address by running the
    following in the terminal to list the Kubernetes services running:
 
-   ```bash
+   ```console
    kubectl --namespace coder get services
    ```
 
    The row for the **ingress-nginx** service includes an **EXTERNAL-IP** value;
    this is the IP address you need.
 
-2. In your browser, navigate to the external IP of ingress-nginx.
+1. In your browser, navigate to the external IP of ingress-nginx.
 
-3. Use the admin credentials you obtained in this installation guide's previous
+1. Use the admin credentials you obtained in this installation guide's previous
    step to log in to the Coder platform. If this is the first time you've logged
    in, Coder will prompt you to change your password.
 

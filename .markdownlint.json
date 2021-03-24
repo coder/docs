@@ -1,5 +1,24 @@
 {
-  "first-line-heading": false,
-  "no-inline-html": false,
-  "ol-prefix": false
+  "MD004": {
+    "style": "dash"
+  },
+  "MD029": {
+    "style": "one"
+  },
+
+  "MD013": {
+    "code_blocks": false
+  },
+  "MD033": false,
+  "MD044": {
+    "code_blocks": false,
+    "names": [
+      "Bitbucket",
+      "GitHub",
+      "GitLab",
+      "Google",
+      "Kubernetes",
+      "PostgreSQL"
+    ]
+  }
 }

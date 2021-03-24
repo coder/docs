@@ -31,21 +31,21 @@ and configure your AWS account.
 1. Go to AWS' [EC2 Console](https://console.aws.amazon.com/ec2/); this should
    take you to the EC2 page for the AWS region in which you're working (if not,
    change to the correct region using the dropdown in the top-right of the page)
-2. In the **Resources** section in the middle of the page, click **Elastic
+1. In the **Resources** section in the middle of the page, click **Elastic
    IPs**.
-3. Choose either an Elastic IP address you want to use or click **Allocate
+1. Choose either an Elastic IP address you want to use or click **Allocate
    Elastic IP address**. Choose **Amazon's pool of IPv4 addresses** and click
    **Allocate**.
-4. Return to the EC2 Dashboard.
-5. In the **Resources** section in the middle of the page, click **Key Pairs**.
-6. Click **Create key pair** (alternatively, if you already have a local SSH key
+1. Return to the EC2 Dashboard.
+1. In the **Resources** section in the middle of the page, click **Key Pairs**.
+1. Click **Create key pair** (alternatively, if you already have a local SSH key
    you'd like to use, you can click the Actions dropdown and import your key)
-7. Provide a **name** for your key pair and select **pem** as your **file
+1. Provide a **name** for your key pair and select **pem** as your **file
    format**. Click **Create key pair**.
-8. You'll automatically download the keypair; save it to a known directory on
+1. You'll automatically download the keypair; save it to a known directory on
    your local machine (we recommend keeping the default name, which will match
    the name you provided to AWS).
-9. Now that you have the `.pem` file locally extract the public key portion of
+1. Now that you have the `.pem` file locally extract the public key portion of
    the keypair so that you can use it with the eksctl CLI in later steps:
 
    ```sh
@@ -64,7 +64,7 @@ The following will spin up a Kubernetes cluster using the `eksctl`; replace the
 parameters and environment variables as needed to reflect those for your
 environment.
 
-```bash
+```console
 CLUSTER_NAME="YOUR_CLUSTER_NAME" \
   SSH_KEY_PATH="<PATH/TO/KEY>.pub" REGION="YOUR_REGION" \
   eksctl create cluster \
@@ -87,7 +87,7 @@ size](https://aws.amazon.com/ec2/instance-types/t3/) instead.
 
 When your cluster is ready, you should see the following message:
 
-```bash
+```console
 EKS cluster "YOUR_CLUSTER_NAME" in "YOUR_REGION" region is ready
 ```
 
@@ -98,20 +98,20 @@ support immediate volume binding.
 
 1. Make sure that you're pointed to the correct context:
 
-   ```bash
+   ```console
    kubectl config current-context
    ```
 
-2. If you're pointed to the correct context, delete the gp2 storage class:
+1. If you're pointed to the correct context, delete the gp2 storage class:
 
-   ```bash
+   ```console
    kubectl delete sc gp2
    ```
 
-3. Recreate the gp2 storage class with the `volumeBindingMode` set to
+1. Recreate the gp2 storage class with the `volumeBindingMode` set to
    `Immediate`:
 
-   ```bash
+   ```console
    cat <<EOF | kubectl apply -f -
    apiVersion: storage.k8s.io/v1
    kind: StorageClass
@@ -157,9 +157,9 @@ nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-fro
       amiFamily: Ubuntu1804
     ```
 
-2. Create your nodegroup (be sure to provide the correct file name):
+1. Create your nodegroup (be sure to provide the correct file name):
 
-    ```bash
+    ```console
     eksctl create nodegroup --config-file=coder-node.yaml
     ```
 
@@ -171,20 +171,20 @@ implement network segmentation and tenant isolation.
 
 1. Apply the Calico manifest to your cluster:
 
-   ```bash
+   ```console
    kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.9/config/v1.7/calico.yaml
    ```
 
 1. Watch the `calico-system` DaemonSets:
 
-   ```bash
+   ```console
    kubectl get daemonset calico-node --namespace calico-system 
    ```
 
    Wait for the `calico-node` DaemonSet to have the number of pods **desired**
    in the **ready** state; this indicates that Calico is working:
 
-   ```bash
+   ```console
    NAME          DESIRED   CURRENT   READY     UP-TO-DATE   ...
    calico-node   3         3         3         3            ...
    ```

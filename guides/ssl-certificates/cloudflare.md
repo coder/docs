@@ -25,7 +25,7 @@ You must have:
 
 ## Step 1: Add cert-manager to Your Kubernetes Cluster
 
-```bash
+```console
 # Kubernetes 1.16+
 $ kubectl apply --validate=false -f \
 https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager.yaml
@@ -41,7 +41,7 @@ https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager-l
 Once you've started the installation process, you can verify that all the pods
 are running:
 
-```bash
+```console
 $ kubectl get pods -n cert-manager
 
 NAME                                       READY   STATUS    RESTARTS   AGE
@@ -116,13 +116,13 @@ spec:
             name: cloudflare-api-key-secret
             key: api-key
 
-    # This section denotes which domains to use this issuer for. If you didn't
-    # limit which zones the API token had access to, you may wish to remove
-    # this section.
-    selector:
-      dnsZones:
-         # Only use this issuer for the domain example.com and its subdomains.
-         - 'example.com'
+      # This section denotes which domains to use this issuer for. If you didn't
+      # limit which zones the API token had access to, you may wish to remove
+      # this section.
+      selector:
+        dnsZones:
+          # Only use this issuer for the domain example.com and its subdomains.
+          - 'example.com'
 ```
 
 ### ClusterIssuers
@@ -144,7 +144,7 @@ Issuers](https://docs.cert-manager.io/en/release-0.8/tasks/issuers/index.html).
 Read the comments and fill out the blanks. Once you're done, you can go ahead
 and apply that to your cluster using:
 
-```bash
+```console
 $ kubectl apply -f issuer.yaml
 
 secret/cloudflare-api-key-secret created

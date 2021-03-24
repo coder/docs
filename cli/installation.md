@@ -25,18 +25,18 @@ brew install cdr/coder/coder-cli
 
 ### Download (Windows, Linux, Mac)
 
-Download releases [from Github](https://github.com/cdr/coder-cli/releases):
+Download releases [from GitHub](https://github.com/cdr/coder-cli/releases):
 
 1. Click a release and download the tar file for your operating system (ex:
    coder-cli-linux-amd64.tar.gz)
-2. Extract the `coder` binary and copy it to a location you've added to your
+1. Extract the `coder` binary and copy it to a location you've added to your
    `PATH` environment variable
 
 ## Authenticate
 
 Once you've installed the CLI, authenticate the client with your Coder account.
 
-```bash
+```console
 coder login [https://coder.domain.com]
 ```
 
@@ -51,7 +51,7 @@ such as in CI/CD pipelines, the Coder CLI can also be authenticated with the
 
 Generate a static authentication token with the following command:
 
-```bash
+```console
 coder tokens create my-token
 ```
 

@@ -18,10 +18,10 @@ Make sure that you've:
 - Given your image building tool the rights needed to push to a [Docker
   Registry](https://docs.docker.com/registry/introduction/) (e.g., [Docker
   Hub](https://hub.docker.com/))
-- (Optional) Configured [Dev URLs](../admin/devurls.md) for your deployment
+- (Optional) Configured [Dev URLs](../../admin/devurls.md) for your deployment
 
 Your Coder user account must have permissions to [import an
-image](../images/importing.md).
+image](../../images/importing.md).
 
 ## Step 1: Create a Development Image
 
@@ -128,11 +128,11 @@ Docker registry. To do so, run the following command in the directory where your
 Dockerfile is located (be sure to replace the placeholder values with your tag
 and repository name so that the image is pushed to the appropriate location):
 
-```bash
+```console
 docker build -t coderenterprise/react .
 ```
 
-```bash
+```console
 docker push coderenterprise/react
 ```
 
@@ -142,7 +142,7 @@ After you've pushed the image to a Docker registry, you can access and import it
 into your Coder deployment.
 
 1. In the Coder UI, go to the **Images** page and click **Import Image**
-3. Add (or select) the image registry where the image is hosted, and provide the
+1. Add (or select) the image registry where the image is hosted, and provide the
    requested values when prompted.
 
 ## Step 3: Create the Dev Environment
@@ -151,8 +151,8 @@ Once you've imported an image into Coder, you can use it to create new
 development environments:
 
 1. In the Coder UI, go to **Environments Overview**
-2. Click **New Environment**
-3. In the modal window that opens, provide a **name** for your environment, select
+1. Click **New Environment**
+1. In the modal window that opens, provide a **name** for your environment, select
    the **image** that you imported, adjust the resources appropriately (if you plan
    to use WebStorm, allocate additional CPU and RAM), and click **Create**
 
@@ -174,7 +174,7 @@ creators.
 To do this, go to the **Environments** page of your Coder deployment and click
 **Terminal**. Run the following to create the skeleton for your application:
 
-```bash
+```console
 npx create-react-app coder-app
 ```
 
@@ -189,7 +189,7 @@ development server so that you can preview the changes you make to your project.
 You can switch into your app's directory and start the React development server
 (which listens on port 3000) using the Coder deployment's Terminal:
 
-```bash
+```console
 cd coder-app
 yarn start
 ```
@@ -197,14 +197,14 @@ yarn start
 ### Preview Your Application
 
 Once you've started your server, you can preview your application using the web
-browser of your choice (you must have [Dev URLs](../admin/devurls.md) enabled
+browser of your choice (you must have [Dev URLs](../../admin/devurls.md) enabled
 for this to work). To do so:
 
 1. On the Environment Overview of your Coder deployment, go to Dev URLs and
    click **Add URL**.
-2. In **Port**, enter **3000**.
-3. Click **Save**.
-4. Use the generated URL in a web browser to see your application.
+1. In **Port**, enter **3000**.
+1. Click **Save**.
+1. Use the generated URL in a web browser to see your application.
 
 ### Modifying Your Application Code
 

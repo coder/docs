@@ -12,7 +12,7 @@ environments that fit onto a single Kubernetes node.
 A site admin/manager must complete these steps:
 
 1. In the Coder Dashboard's top navigation bar, go to **Manage** > **Admin**.
-2. Under the **Infrastructure** tab, check the box next to **Enable Memory
+1. Under the **Infrastructure** tab, check the box next to **Enable Memory
    Overprovisioning**.
 
 ![Enable memory overprovisioning](../../assets/enable-memory-overprovisioning.png)
@@ -20,8 +20,8 @@ A site admin/manager must complete these steps:
 ## Step 2: Changing the Memory Provisioning Rate
 
 1. Go to **Manage** > **Organizations** and select your organization.
-2. At the top of your organization page, click **Actions** > **Edit**. Scroll
+1. At the top of your organization page, click **Actions** > **Edit**. Scroll
    down to **Memory Provisioning Rate** and set the maximum ratio
-3. Click **Update**.
+1. Click **Update**.
 
 ![Set memory overprovisioning ratios](../../assets/set-memory-ratios.png)

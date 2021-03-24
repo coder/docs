@@ -11,7 +11,7 @@ Administration Guide's [Identity
 Brokering](https://www.keycloak.org/docs/latest/server_admin/#_identity_broker)
 section.
 
-![Identity Broker Process](../assets/SAML-process.png)
+![Identity Broker Process](../../assets/SAML-process.png)
 
 ## Step 1: Create a New Realm in Keycloak
 
@@ -53,7 +53,7 @@ to OIDC Bridge`.
 1. At this point, you should be able to open the **Application Configuration**
    backup on JumpCloud and export the IdP metadata to use with Keycloak.
 
-    ![Export SAML Metadata](../assets/SAML-config-2.png)
+    ![Export SAML Metadata](../../assets/SAML-config-2.png)
 
 1. On the **User Groups** tab, add the JumpCloud User Group(s) that need access
    to Coder.
@@ -68,7 +68,7 @@ to OIDC Bridge`.
     document](https://www.keycloak.org/docs/latest/server_admin/#saml-v2-0-identity-providers)
     provides additional information about adding a SAML 2.0 Identity Provider).
 
-    ![Keycloak Identity Providers](../assets/keycloak-identity-providers.png)
+    ![Keycloak Identity Providers](../../assets/keycloak-identity-providers.png)
 
 1. On the IdP configuration page, specify an **Alias** to use for your IdP
    provider.
@@ -76,35 +76,35 @@ to OIDC Bridge`.
 1. Scroll to the bottom of the configuration page and upload the IdP metadata
     you exported from JumpCloud.
 
-    ![Keycloak Metadata Import](../assets/keycloak-metadata-import.png)
+    ![Keycloak Metadata Import](../../assets/keycloak-metadata-import.png)
 
 ### Optional: Specify JumpCloud as the Default IdP
 
 1. Navigate to **Authentication**.
 
-2. Select the **Browser** flow from the dropdown in the top-left.
+1. Select the **Browser** flow from the dropdown in the top-left.
 
-    ![Default Identity Provider](../assets/keycloak-default-IdP.png)
+    ![Default Identity Provider](../../assets/keycloak-default-IdP.png)
 
 1. Find the **Identity Provider Redirector** row and click **Actions** >
    **Config**.
 
-    ![Identity Provider Redirector](../assets/keycloak-IdP-redirector.png)
+    ![Identity Provider Redirector](../../assets/keycloak-IdP-redirector.png)
 
 1. Set **Alias** and **Default Identity Provider** to the alias of the identity
    provider you created earlier.
 
-    ![Authenticator Config](../assets/keycloak-authenticator-config.png)
+    ![Authenticator Config](../../assets/keycloak-authenticator-config.png)
 
 ## Step 4: Configure the OpenID Connect (OIDC) Connector in Keycloak
 
 1. Navigate to **Clients** and click **Create**.
 
-    ![Create Client Connector](../assets/keycloak-create-client.png)
+    ![Create Client Connector](../../assets/keycloak-create-client.png)
 
 1. Add a new OIDC Client to point to your Coder deployment and click **Save**.
 
-    ![Add OIDC client](../assets/keycloak-add-client.png)
+    ![Add OIDC client](../../assets/keycloak-add-client.png)
 
 1. Once on the **Clients** configuration page, set the **Access Type** to
    **Confidential** and click **Save**.
@@ -112,7 +112,7 @@ to OIDC Bridge`.
 1. Your client configuration should look something like the following (make sure
    that all of the values point to your Coder deployment):
 
-    ![Client Configuration](../assets/keycloak-client-config.png)
+    ![Client Configuration](../../assets/keycloak-client-config.png)
 
 At this point, you can configure your Coder deployment to use the Keycloak OIDC
    Connector.
@@ -128,12 +128,12 @@ At this point, you can configure your Coder deployment to use the Keycloak OIDC
 1. Add the **Secret** to the **Client Secret** field (you can get this value
    from the **Credentials** page in the Keycloak Clients Configuration).
 
-    ![Keycloak Secret](../assets/keycloak-secret.png)
+    ![Keycloak Secret](../../assets/keycloak-secret.png)
 
 1. Add your Keycloak instance and Realm as the `Issuer`. This will be a URL
     formatted as follows: `https://<my-keycloak-url>/auth/realms/<my-realm>`
 
-    ![Coder Keycloak Config](../assets/keycloak-coder-config.png)
+    ![Coder Keycloak Config](../../assets/keycloak-coder-config.png)
 
 1. Click **Save Preferences**.
 
