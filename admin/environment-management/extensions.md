@@ -29,5 +29,5 @@ point Coder to an air-gapped instance of
 
 View the [OpenVSX deployment wiki] for more information.
 
-[OpenVSX deployment wiki]:
-https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX
+[openvsx deployment wiki]:
+  https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX

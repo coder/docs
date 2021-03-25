@@ -17,18 +17,18 @@ one using the [Coder CLI](../cli/index.md):
 1. Run `coder tokens create <TOKEN_NAME>`
 1. Save the token that's returned to use in your HTTP headers:
 
-    ```sh
-    curl \
-    -X GET "https://apidocs.coder.com/api/" \
-    -H "accept: application/json" \
-    -H "Session-Token: Bk...nt"
-    ```
+   ```sh
+   curl \
+   -X GET "https://apidocs.coder.com/api/" \
+   -H "accept: application/json" \
+   -H "Session-Token: Bk...nt"
+   ```
 
 ## Documentation
 
-Please note that the API is under active development; expect breaking changes
-as we finalize the endpoints. We will place stable API routes under the
-`/api/v1` path.
+Please note that the API is under active development; expect breaking changes as
+we finalize the endpoints. We will place stable API routes under the `/api/v1`
+path.
 
 <a href="https://apidocs.coder.com">
     <button> Swagger Docs </button>

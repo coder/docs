@@ -10,16 +10,15 @@ cluster on which Coder can deploy.
 
 You must have an Azure account and paid subscription.
 
-Please make sure that you have the [Azure
-CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
+Please make sure that you have the
+[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
 installed on your machine and that you've logged in (run `az login` and follow
 the prompts).
 
 ## Step 1: Create the Resource Group
 
 To make subsequent steps easier, start by creating environment variables for the
-[Resource
-Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group)
+[Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group)
 and
 [Location](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
 that will host your cluster:
@@ -78,15 +77,14 @@ az aks create \
   --network-policy "calico"
 ```
 
-> [AKS offers built-in
-support](https://docs.microsoft.com/en-us/azure/aks/use-network-policies#create-an-aks-cluster-and-enable-network-policy)
-for the
-[Calico](https://docs.projectcalico.org/getting-started/kubernetes/managed-public-cloud/gke)
-network policy engine, and you can opt-in by including the `--network-policy
-"calico"` flag.
+> [AKS offers built-in support](https://docs.microsoft.com/en-us/azure/aks/use-network-policies#create-an-aks-cluster-and-enable-network-policy)
+> for the
+> [Calico](https://docs.projectcalico.org/getting-started/kubernetes/managed-public-cloud/gke)
+> network policy engine, and you can opt-in by including the
+> `--network-policy "calico"` flag.
 >
 > However, you can only choose Calico as your network policy option when you
-create the cluster; you cannot enable Calico on an existing cluster.
+> create the cluster; you cannot enable Calico on an existing cluster.
 
 This process might take some time (~5-20 minutes), but if you're successful,
 Azure returns a JSON object with your cluster information.

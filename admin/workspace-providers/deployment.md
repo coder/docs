@@ -9,8 +9,8 @@ a [Kubernetes cluster](../../setup/kubernetes/index.md).
 
 [Workspace Providers](index.md) are logical groups of resources to which
 developers can deploy environments. As with the Coder installation, Helm manages
-the deployment of workspace providers into the Kubernetes cluster that will contain
-your environments.
+the deployment of workspace providers into the Kubernetes cluster that will
+contain your environments.
 
 ## Dependencies
 
@@ -75,8 +75,8 @@ You must provide the following arguments:
 
 - `name`: A unique name of the workspace provider
 - `hostname`: The hostname of the workspace provider
-- `cluster-address`: The address of your Kubernetes cluster. You can retrieve this
-  using:
+- `cluster-address`: The address of your Kubernetes cluster. You can retrieve
+  this using:
 
   ```bash
   kubectl config view -o jsonpath='{.clusters[?(@.name == "'"$(kubectl config current-context)"'")].cluster.server}{"\n"}'
@@ -117,11 +117,11 @@ when communicating with the Coder deployment.
    a `values.yaml` file and adding the argument `-f my-values.yaml` to the
    generated command. Helm values control attributes of the workspace provider,
    including Dev URLs, Kubernetes storage classes, SSH, and more. See the
-   [Workspace Provider Helm Chart
-   Values]("https://github.com/cdr/enterprise-helm/blob/workspace-providers-envproxy-only/README.md")
+   [Workspace Provider Helm Chart Values]("https://github.com/cdr/enterprise-helm/blob/workspace-providers-envproxy-only/README.md")
    for more details.
 
-   For installations using HTTPS, you must [ensure the deployment has a valid certificate](../../guides/ssl-certificates/index.md).
+   For installations using HTTPS, you must
+   [ensure the deployment has a valid certificate](../../guides/ssl-certificates/index.md).
 
    If you're unfamiliar with the helm configuration values file, see our doc on
    [updating a helm chart](../../guides/admin/helm-charts.md)

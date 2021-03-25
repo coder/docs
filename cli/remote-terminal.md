@@ -25,5 +25,5 @@ hello world
 
 ## Full Reference
 
-For a full list of the Coder CLI commands available, see the [reference
-pages](https://github.com/cdr/coder-cli/blob/master/docs/coder.md).
+For a full list of the Coder CLI commands available, see the
+[reference pages](https://github.com/cdr/coder-cli/blob/master/docs/coder.md).

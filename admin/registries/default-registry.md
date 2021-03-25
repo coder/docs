@@ -5,9 +5,8 @@ description: Learn how to work with Coder's default registry.
 
 > This feature is unavailable for air-gapped deployments.
 
-Coder is configured to automatically import the default
-[registry](index.md), Docker Hub, to streamline your initial setup
-process.
+Coder is configured to automatically import the default [registry](index.md),
+Docker Hub, to streamline your initial setup process.
 
 This means that your users can create environments using Docker Hub images
 without further configuration on your part.

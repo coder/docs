@@ -1,6 +1,7 @@
 ---
 title: Amazon Elastic Kubernetes Service
-description: Learn how to set up an Amazon EKS cluster for your Coder deployment.
+description:
+  Learn how to set up an Amazon EKS cluster for your Coder deployment.
 ---
 
 This deployment guide shows you how to set up an Amazon Elastic Kubernetes
@@ -12,16 +13,13 @@ Please make sure that you have the following utilities installed on your
 machine:
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-- [AWS Command Line
-  Interface](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
   (you'll also need to
   [configure](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
   the command-line interface to interact with your AWS account; consider AWS'
-  [CLI configuration
-  quickstart](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
+  [CLI configuration quickstart](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
   to fast-track this process
-- [eksctl command line
-  utility](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
+- [eksctl command line utility](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
 
 ## Preliminary Steps
 
@@ -52,11 +50,11 @@ and configure your AWS account.
    ssh-keygen -y -f <PATH/TO/KEY>.pem >> <PATH/TO/KEY/KEY>.pub
    ```
 
-  **Note**: if you run into a bad permissions error, run sudo before the command
-  above.
-  
-  When done, you should have a .pem and .pub file for the same keypair you
-  downloaded from AWS.
+   **Note**: if you run into a bad permissions error, run sudo before the
+   command above.
+
+When done, you should have a .pem and .pub file for the same keypair you
+downloaded from AWS.
 
 ## Step 1: Spin up a K8 Cluster
 
@@ -82,8 +80,8 @@ CLUSTER_NAME="YOUR_CLUSTER_NAME" \
 ```
 
 > Please note that the sample script creates a `t3.medium` instance; depending
-on your needs, you can choose a [larger
-size](https://aws.amazon.com/ec2/instance-types/t3/) instead.
+> on your needs, you can choose a
+> [larger size](https://aws.amazon.com/ec2/instance-types/t3/) instead.
 
 When your cluster is ready, you should see the following message:
 
@@ -130,40 +128,40 @@ support immediate volume binding.
    EOF
    ```
 
-> See the [Kubernetes
-> docs](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode)
+> See the
+> [Kubernetes docs](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode)
 > for information on choosing the right parameter for `volumeBindingMode`; Coder
 > accepts both `Immediate` and `WaitForFirstConsumer`.
 
 ### Modifying Your Cluster to Support CVMs
 
-To create clusters allowing you to [enable container-based virtual machines
-(CVMs)](../../admin/environment-management/cvms.md) as an environment deployment
-option, you'll need to [create a
-nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-from-a-config-file).
+To create clusters allowing you to
+[enable container-based virtual machines (CVMs)](../../admin/environment-management/cvms.md)
+as an environment deployment option, you'll need to
+[create a nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-from-a-config-file).
 
 1. Define your config file (we've named the file `coder-node.yaml`, but you can
    call it whatever you'd like):
 
-    ```yaml
-    apiVersion: eksctl.io/v1alpha5
-    kind: ClusterConfig
+   ```yaml
+   apiVersion: eksctl.io/v1alpha5
+   kind: ClusterConfig
 
-    metadata: 
-      version: "1.17"
-      name: <YOUR_CLUSTER_NAME>
-      region: <YOUR_AWS_REGION>
+   metadata:
+     version: "1.17"
+     name: <YOUR_CLUSTER_NAME>
+     region: <YOUR_AWS_REGION>
 
-    nodeGroups:
-    - name: coder-node-group
-      amiFamily: Ubuntu1804
-    ```
+   nodeGroups:
+     - name: coder-node-group
+       amiFamily: Ubuntu1804
+   ```
 
 1. Create your nodegroup (be sure to provide the correct file name):
 
-    ```console
-    eksctl create nodegroup --config-file=coder-node.yaml
-    ```
+   ```console
+   eksctl create nodegroup --config-file=coder-node.yaml
+   ```
 
 ## Step 3: Install Calico onto Your Cluster
 
@@ -180,7 +178,7 @@ implement network segmentation and tenant isolation.
 1. Watch the `calico-system` DaemonSets:
 
    ```console
-   kubectl get daemonset calico-node --namespace calico-system 
+   kubectl get daemonset calico-node --namespace calico-system
    ```
 
    Wait for the `calico-node` DaemonSet to have the number of pods **desired**

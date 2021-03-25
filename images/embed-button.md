@@ -13,10 +13,10 @@ image as you've configured it and automatically pull in the repository.
 ## Requirements
 
 - You must have Git and SSH installed on your image
-- You must [provide your Coder SSH
-  key](../../environments/preferences.md#linked-accounts) to the service of your
-  choice. This step is required for anyone who wants to use the button to launch
-  a project using the provided image and repo.
+- You must
+  [provide your Coder SSH key](../../environments/preferences.md#linked-accounts)
+  to the service of your choice. This step is required for anyone who wants to
+  use the button to launch a project using the provided image and repo.
 
 ## Create the Embedded Button's Code
 

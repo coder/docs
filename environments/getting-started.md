@@ -24,18 +24,19 @@ existing environments. Click the **New Environment** button.
 1. Click **Create** to proceed.
 
 Coder redirects you to an overview page for your environment during the build
-process. Learn more about the Environment [creation
-parameters](./environment-params.md).
+process. Learn more about the Environment
+[creation parameters](./environment-params.md).
 
 Your environment persists in the home directory, updates to new versions of the
-image, and runs custom configuration on startup. Learn about the [environment
-lifecycle](lifecycle.md).
+image, and runs custom configuration on startup. Learn about the
+[environment lifecycle](lifecycle.md).
 
 ### Advanced
 
 Coder provides advanced settings that allow you to customize your environment.
-You can choose to run your environment as a [Container-based Virtual
-Machine](cvms.md), specifying the resources Coder should allocate.
+You can choose to run your environment as a
+[Container-based Virtual Machine](cvms.md), specifying the resources Coder
+should allocate.
 
 > By default, Coder allocates resources (CPU Cores, Memory, and Disk Space)
 > based on the parent image.

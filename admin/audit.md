@@ -1,6 +1,7 @@
 ---
 title: "Audit"
-description: Learn how Coder audits user and admin actions for greater traceability.
+description:
+  Learn how Coder audits user and admin actions for greater traceability.
 ---
 
 Coder maintains records of all user actions on system resources for auditing

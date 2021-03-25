@@ -20,4 +20,5 @@ The **License** tab displays the details for your current license, including:
 
 You can also upload a new license file by clicking **Upload License**.
 
-> To request a license, [contact our Technical Sales Team](https://coder.com/contact).
+> To request a license,
+> [contact our Technical Sales Team](https://coder.com/contact).

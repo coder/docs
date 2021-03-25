@@ -25,9 +25,9 @@ LTS, the default limit is 8,192 watches per instance.
 
 [`inotify`]: https://en.wikipedia.org/wiki/Inotify
 
-On a 64-bit system, each `inotify` watch that programs register will consume
-~1 kB of kernel memory, which cannot be swapped to disk and is not
-counted against the environment memory limit setting.
+On a 64-bit system, each `inotify` watch that programs register will consume ~1
+kB of kernel memory, which cannot be swapped to disk and is not counted against
+the environment memory limit setting.
 
 ## Diagnosis
 
@@ -88,11 +88,11 @@ $ ./inotify-consumers
 ```
 
 > Please note that this is a third-party script published by an individual who
-is not affiliated with Coder, and as such, we cannot provide a warranty or
-support for its usage.
+> is not affiliated with Coder, and as such, we cannot provide a warranty or
+> support for its usage.
 
 [`inotify-consumers`]:
-https://github.com/fatso83/dotfiles/blob/master/utils/scripts/inotify-consumers
+  https://github.com/fatso83/dotfiles/blob/master/utils/scripts/inotify-consumers
 
 To see the specific files that the tools track for changes, you can use `strace`
 to monitor invocations of the `inotify_add_watch` system call:
@@ -247,29 +247,25 @@ program sets the `fs.inotify.max_user_watches` setting.
 
 ## See also
 
-- [INotify watch
-  limit](https://blog.passcod.name/2017/jun/25/inotify-watch-limit.html)
+- [INotify watch limit](https://blog.passcod.name/2017/jun/25/inotify-watch-limit.html)
   provides additional context on this problem and its resolution
 - [inotify(7)](https://man7.org/linux/man-pages/man7/inotify.7.html), the Linux
   manual page related to the `inotify` system call
 - [Kernel Korner - Intro to inotify](https://www.linuxjournal.com/article/8478)
-- [Filesystem notification, part 1: An overview of dnotify and
-  inotify](https://lwn.net/Articles/604686/) and [Filesystem notification, part
-  2: A deeper investigation of inotify](https://lwn.net/Articles/605128/)
+- [Filesystem notification, part 1: An overview of dnotify and inotify](https://lwn.net/Articles/604686/)
+  and
+  [Filesystem notification, part 2: A deeper investigation of inotify](https://lwn.net/Articles/605128/)
   examine the `inotify` mechanism and its predecessor, `dnotify`, in detail
-- Microsoft's Language Server Protocol (LSP) specification [describes an
-  approach for using file watch
-  notifications](https://microsoft.github.io/language-server-protocol/specification#workspace_didChangeWatchedFiles)
+- Microsoft's Language Server Protocol (LSP) specification
+  [describes an approach for using file watch notifications](https://microsoft.github.io/language-server-protocol/specification#workspace_didChangeWatchedFiles)
   (Visual Studio Code and code-server, along with many other editors, uses this
   protocol for programming language support, and the same constraints and
   limitations apply to those tools)
 - Resources for Visual Studio Code and code-server:
-  - [User and Workspace
-    Settings](https://code.visualstudio.com/docs/getstarted/settings), in
-    particular, the setting called `files.watcherExclude`
+  - [User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings),
+    in particular, the setting called `files.watcherExclude`
   - [VS Code Setting: files.watcherExclude](https://youtu.be/WMNua0ob6Aw)
     (YouTube)
-  - [My ultimate VSCode
-    configuration](https://dev.to/vaidhyanathan93/ulitmate-vscode-configuration-4i2o),
+  - [My ultimate VSCode configuration](https://dev.to/vaidhyanathan93/ulitmate-vscode-configuration-4i2o),
     a blog post describing a user's preferred settings, including file
     exclusions

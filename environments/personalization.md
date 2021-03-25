@@ -1,6 +1,7 @@
 ---
 title: "Personalization"
-description: Learn how to personalize your Environment to augment its base Image.
+description:
+  Learn how to personalize your Environment to augment its base Image.
 ---
 
 Your Coder development environment strikes a balance between consistent team
@@ -67,7 +68,7 @@ echo "[user]\n\temail = youremailhere@gmail.com\n\tname = Your Name" > ~/.gitcon
 
 ### Notes
 
-- *The `-y` flag is required to continue through any prompts. Otherwise, the
+- \*The `-y` flag is required to continue through any prompts. Otherwise, the
   `~/personalize` script will abort.
 - The personalize script must be executable; if you create your script, you may
   need to run `chmod +x ~/personalize` to give the script execute permissions.

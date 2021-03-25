@@ -1,6 +1,8 @@
 ---
 title: Git Integration
-description: Learn how to integrate with your Git provider to automatically authenticate their Environments.
+description:
+  Learn how to integrate with your Git provider to automatically authenticate
+  their Environments.
 ---
 
 The Git Integration allows your developers to connect their Coder accounts to
@@ -18,7 +20,7 @@ Coder integrates with the following service providers for authentication and
   rel="noreferrer noopener">doesn't support</a> managing SSH keys for users via
   OAuth)
 
-Note that linking your Coder account with a git service provider is *not*
+Note that linking your Coder account with a git service provider is _not_
 required. Instead, you can use Visual Studio Code with git, the command-line
 tool, and we expect that this combination will work with most hosting software
 or services. However, Coder doesn't test these and cannot provide

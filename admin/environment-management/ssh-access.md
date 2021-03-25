@@ -15,10 +15,10 @@ to remain accessible via SSH without the need for additional image dependencies.
 
 ## Using OpenSSH
 
-The built-in SSH server is limited, and does not implement
-advanced functionality like X11 forwarding or `sshd_config` specifications.
-If SSH is the primary mode of access to Coder for your users, consider
-running a full OpenSSH server with `systemd` inside your image instead.
+The built-in SSH server is limited, and does not implement advanced
+functionality like X11 forwarding or `sshd_config` specifications. If SSH is the
+primary mode of access to Coder for your users, consider running a full OpenSSH
+server with `systemd` inside your image instead.
 
 To do so, add the following to your Dockerfile:
 
@@ -41,12 +41,12 @@ RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
   echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
 ```
 
-Then, make sure that you're creating your environments with the [CVM
-  option](https://coder.com/docs/environments/cvms) enabled.
+Then, make sure that you're creating your environments with the
+[CVM option](https://coder.com/docs/environments/cvms) enabled.
 
-> If Coder detects a running TCP server on port 22, it will forward incoming
-> SSH traffic to this server. This means that environments should not run a
-> TCP server on port 22 unless it can properly handle incoming SSH traffic.
+> If Coder detects a running TCP server on port 22, it will forward incoming SSH
+> traffic to this server. This means that environments should not run a TCP
+> server on port 22 unless it can properly handle incoming SSH traffic.
 
 At startup, Coder injects the user's SSH key into `~/authorized_keys` inside
 your environment to facilitate authentication with OpenSSH. For the best
@@ -61,16 +61,16 @@ X11UseLocalhost no
 
 ### SSH Environment Variables
 
-OpenSSH handles environment variables differently than most container
-processes. Environment variable overrides for OpenSSH sessions are set by
-`~/.ssh/environment` and `/etc/environment`. Note that these values
-will override those set in the Dockerfile `ENV` directives.
+OpenSSH handles environment variables differently than most container processes.
+Environment variable overrides for OpenSSH sessions are set by
+`~/.ssh/environment` and `/etc/environment`. Note that these values will
+override those set in the Dockerfile `ENV` directives.
 
 At environment startup, Coder injects the image defined environment variables
 into `~/.ssh/environment`, as well as a set of Coder-defined defaults.
 
-The following snippet shows an example of what this file may look like for a
-new environment.
+The following snippet shows an example of what this file may look like for a new
+environment.
 
 ```text
 # --------- START CODER ENVIRONMENT VARIABLES ----------

@@ -14,8 +14,9 @@ You can create a Dev URL from the environment overview page.
 
 In the **Dev URLs** section, click **Add URL**. First, provide the **port**
 number you want to be used and a friendly **name** for the URL (optional). Next,
-indicate who can **access** the URL and the **internal server scheme** (e.g., whether
-Coder should use HTTP or HTTPS when proxying requests to the internal server).
+indicate who can **access** the URL and the **internal server scheme** (e.g.,
+whether Coder should use HTTP or HTTPS when proxying requests to the internal
+server).
 
 ![Create a Dev URL](../assets/create-devurl.png)
 

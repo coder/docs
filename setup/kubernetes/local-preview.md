@@ -33,14 +33,14 @@ apply):
    version installed. You should see the following folders all corresponding to
    your Kernel version:
 
-      ```console
-      $ uname -r
-      5.11.4-arch1-1
-      $ ls /usr/lib/modules
-      5.11.4-arch1-1
-      $ ls /usr/src/
-      linux  linux-headers-5.11.4-arch1-1
-      ```
+   ```console
+   $ uname -r
+   5.11.4-arch1-1
+   $ ls /usr/lib/modules
+   5.11.4-arch1-1
+   $ ls /usr/src/
+   linux  linux-headers-5.11.4-arch1-1
+   ```
 
 1. Docker Desktop for Mac **must** use version [2.5.0.1][docker-mac-url]. This
    specific version is required because of a recent downgrade to Linux Kernel
@@ -99,8 +99,10 @@ after tear down.
 [docker-url]: https://www.docker.com/
 [kind-url]: https://kind.sigs.k8s.io/
 [cvm-url]: https://coder.com/docs/environments/cvms
-[docker-mac-url]: https://docs.docker.com/docker-for-mac/release-notes/#docker-desktop-community-2501
-[docker-windows-url]: https://docs.docker.com/docker-for-windows/release-notes/#docker-desktop-community-2501
+[docker-mac-url]:
+  https://docs.docker.com/docker-for-mac/release-notes/#docker-desktop-community-2501
+[docker-windows-url]:
+  https://docs.docker.com/docker-for-windows/release-notes/#docker-desktop-community-2501
 [docker-bug-url]: https://github.com/docker/for-mac/issues/5044
 [ngrok-url]: https://ngrok.com
 [devurl-url]: https://coder.com/docs/environments/devurls

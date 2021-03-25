@@ -15,13 +15,13 @@ Make sure that you've:
   alternative image building utility (like
   [buildah](https://github.com/containers/buildah/blob/master/README.md)) of
   your choice
-- Given your image building tool the rights needed to push to a [Docker
-  Registry](https://docs.docker.com/registry/introduction/) (e.g., [Docker
-  Hub](https://hub.docker.com/))
+- Given your image building tool the rights needed to push to a
+  [Docker Registry](https://docs.docker.com/registry/introduction/) (e.g.,
+  [Docker Hub](https://hub.docker.com/))
 - (Optional) Configured [Dev URLs](../../admin/devurls.md) for your deployment
 
-Your Coder user account must have permissions to [import an
-image](../../images/importing.md).
+Your Coder user account must have permissions to
+[import an image](../../images/importing.md).
 
 ## Step 1: Create a Development Image
 
@@ -30,9 +30,9 @@ utilities, testing frameworks, source control utilities, and other dependencies
 that a developer needs to start contributing to a project immediately.
 
 Since all of the Coder development environments are created on your Kubernetes
-cluster, you can use [Docker
-Images](https://docs.docker.com/get-started/overview/#docker-objects) to define
-your development images.
+cluster, you can use
+[Docker Images](https://docs.docker.com/get-started/overview/#docker-objects) to
+define your development images.
 
 To demonstrate, we'll create a development image that utilizes
 [Ubuntu](https://ubuntu.com/) as the base Operating System. We'll also install:
@@ -45,10 +45,10 @@ To demonstrate, we'll create a development image that utilizes
   [curl](https://curl.haxx.se/), and [bash](https://www.gnu.org/software/bash/)
   to make our environment more developer-friendly
 
-We have a copy of this image [built and
-pushed](https://hub.docker.com/r/coderenterprise/react) to our Docker Hub
-repository. You can use this and skip to **Step 3: Create the Dev Environment**
-if you don't want to build and push your own image.
+We have a copy of this image
+[built and pushed](https://hub.docker.com/r/coderenterprise/react) to our Docker
+Hub repository. You can use this and skip to **Step 3: Create the Dev
+Environment** if you don't want to build and push your own image.
 
 However, if you want to see how the image is made, please continue with the
 following section.
@@ -84,7 +84,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
 
   # Packages required for multi-editor support
   libxtst6 \
-  libxrender1 \ 
+  libxrender1 \
   libfontconfig1 \
   libxi6 \
   libgtk-3-0
@@ -152,9 +152,10 @@ development environments:
 
 1. In the Coder UI, go to **Environments Overview**
 1. Click **New Environment**
-1. In the modal window that opens, provide a **name** for your environment, select
-   the **image** that you imported, adjust the resources appropriately (if you plan
-   to use WebStorm, allocate additional CPU and RAM), and click **Create**
+1. In the modal window that opens, provide a **name** for your environment,
+   select the **image** that you imported, adjust the resources appropriately
+   (if you plan to use WebStorm, allocate additional CPU and RAM), and click
+   **Create**
 
 The environment will take a few minutes to build the first time due to the
 initial image pulling but should take around 30-90 seconds on subsequent
@@ -167,9 +168,9 @@ on your React application.
 
 ### Set Up Your React App
 
-We'll begin our sample project for this tutorial by [bootstrapping the React
-app](https://github.com/facebook/create-react-app) provided by the language's
-creators.
+We'll begin our sample project for this tutorial by
+[bootstrapping the React app](https://github.com/facebook/create-react-app)
+provided by the language's creators.
 
 To do this, go to the **Environments** page of your Coder deployment and click
 **Terminal**. Run the following to create the skeleton for your application:
