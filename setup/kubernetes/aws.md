@@ -56,7 +56,7 @@ and configure your AWS account.
   above.
   
   When done, you should have a .pem and .pub file for the same keypair you
-  downloaded from AWS
+  downloaded from AWS.
 
 ## Step 1: Spin up a K8 Cluster
 
