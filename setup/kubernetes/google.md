@@ -18,6 +18,8 @@ The following will spin up a Kubernetes cluster using the `gcloud` command (be
 sure to replace the parameters (specifically `PROJECT_ID`,
 `NEW_CLUSTER_NAME`, and `ZONE`) as needed to reflect the needs of your environment).
 
+**Note:** By including `enable-network-policy` below, GKE will deploy [Calico](https://docs.projectcalico.org/getting-started/kubernetes/managed-public-cloud/gke) by default.
+
 ```console
 gcloud beta container --project "$PROJECT_ID" \
 clusters create "$NEW_CLUSTER_NAME" \

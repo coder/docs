@@ -56,6 +56,9 @@ CLUSTER_NAME="<MY_CLUSTER_NAME>" SUBSCRIPTION="<MY_SUBSCRIPTION_SHA>"
 
 Create the Azure Kubernetes Service Cluster:
 
+**Note:** AKS has built-in support for the [Calico](https://docs.projectcalico.org/getting-started/kubernetes/managed-public-cloud/gke) network policy engine. It can only be enabled when the cluster is created. You can't
+enable Calico on an existing AKS cluster.
+
 ```console
 # You may have to run `az extension add --name aks-preview`
 #
