@@ -166,6 +166,7 @@
       "path": "./changelog/index.md",
       "children": [
         { "path": "./changelog/1.17.0.md" },
+        { "path": "./changelog/1.16.3.md" },
         { "path": "./changelog/1.16.2.md" },
         { "path": "./changelog/1.16.1.md" },
         { "path": "./changelog/1.16.0.md" },
