@@ -17,6 +17,9 @@ Currently, Coder supports the following providers:
   rel="noreferrer noopener">doesn't support</a> managing SSH keys for users via
   OAuth)
 
+**Note:** Utilizing one of the above git providers via OAuth integration isn't required.
+You can use any git provider of choice given you manage your own SSH keys. 
+
 ![Configure Git Integration](../assets/git-admin.png)
 
 ## Configuring OAuth
