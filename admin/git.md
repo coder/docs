@@ -8,7 +8,8 @@ their accounts with the Git repository service of choice.
 
 ## Support
 
-Currently, Coder integrates with the following git providers:
+Coder integrates with the following service providers for authentication and
+[user key management](https://coder.com/docs/environments/preferences#linked-accounts):
 
 - GitHub (both GitHub.com and GitHub Enterprise)
 - GitLab (both GitLab.com and self-hosted GitLab)
@@ -17,8 +18,11 @@ Currently, Coder integrates with the following git providers:
   rel="noreferrer noopener">doesn't support</a> managing SSH keys for users via
   OAuth)
 
-> You can use any git provider of choice. Configuring a git integration provides
-a user experience improvement but is not required.
+Note that linking your Coder account with a git service provider is *not*
+required. Instead, you can use Visual Studio Code with git, the command-line
+tool, and we expect that this combination will work with most hosting software
+or services. However, Coder doesn't test these and cannot provide
+recommendations or support.
 
 ![Configure Git Integration](../assets/git-admin.png)
 
