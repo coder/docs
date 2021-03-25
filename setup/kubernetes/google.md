@@ -46,6 +46,10 @@ clusters create "$NEW_CLUSTER_NAME" \
    --max-nodes "8"
 ```
 
+> The example above includes the use of the `enable-network-policy` flag, which will
+result in the [creation of a Calico
+cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
+
 To create clusters capable of supporting use of the
 [CVMs](../../admin/environment-management/cvms.md) deployment option:
 

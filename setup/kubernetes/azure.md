@@ -78,6 +78,16 @@ az aks create \
   --network-policy "calico"
 ```
 
+> [AKS offers built-in
+support](https://docs.microsoft.com/en-us/azure/aks/use-network-policies#create-an-aks-cluster-and-enable-network-policy)
+for the
+[Calico](https://docs.projectcalico.org/getting-started/kubernetes/managed-public-cloud/gke)
+network policy engine, and you can opt-in by including the `--network-policy
+"calico"` flag.
+>
+> However, you can only choose Calico as your network policy option when you
+create the cluster; you cannot enable Calico on an existing cluster.
+
 This process might take some time (~5-20 minutes), but if you're successful,
 Azure returns a JSON object with your cluster information.
 
