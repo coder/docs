@@ -8,7 +8,7 @@ their accounts with the Git repository service of choice.
 
 ## Support
 
-Currently, Coder supports the following providers:
+Currently, Coder integrates with the following git providers:
 
 - GitHub (both GitHub.com and GitHub Enterprise)
 - GitLab (both GitLab.com and self-hosted GitLab)
@@ -17,8 +17,8 @@ Currently, Coder supports the following providers:
   rel="noreferrer noopener">doesn't support</a> managing SSH keys for users via
   OAuth)
 
-**Note:** Utilizing one of the above git providers via OAuth integration isn't required.
-You can use any git provider of choice given you manage your own SSH keys. 
+> You can use any git provider of choice. Configuring a git integration provides
+a user experience improvement but is not required.
 
 ![Configure Git Integration](../assets/git-admin.png)
 
