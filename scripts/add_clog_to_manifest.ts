@@ -46,7 +46,7 @@ const appendClogManifest = (version: string): void => {
   );
 
   if (clogIdx < 0) {
-    console.error("Failed to parse manifest.json");
+    console.error("failed to parse manifest.json");
     process.exit(1);
   }
 
@@ -66,7 +66,7 @@ const appendClogManifest = (version: string): void => {
       versionB === null ||
       versionB.length !== 1
     ) {
-      console.error("Failed to parse manifest.json");
+      console.error("failed to parse manifest.json");
       process.exit(1);
     }
     return -semverCompare(versionA[0], versionB[0]);
@@ -88,8 +88,8 @@ const main = () => {
     return usage();
   }
   appendClogManifest(args.version);
-  console.log("done");
-  console.log("tip: run yarn fmt:fix to prettify manifest.json");
+  console.log("Done");
+  console.info("tip: run yarn fmt:fix to prettify manifest.json");
   process.exit(0);
 };
 
