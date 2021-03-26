@@ -3,68 +3,142 @@
     {
       "path": "./index.md",
       "children": [
-        { "path": "about.md" },
-        { "path": "comparison.md" },
-        { "path": "feedback.md" }
+        {
+          "path": "about.md"
+        },
+        {
+          "path": "comparison.md"
+        },
+        {
+          "path": "feedback.md"
+        }
       ]
     },
     {
       "path": "./environments/index.md",
       "children": [
-        { "path": "./environments/getting-started.md" },
-        { "path": "./environments/lifecycle.md" },
-        { "path": "./environments/editors.md" },
-        { "path": "./environments/autostart.md" },
-        { "path": "./environments/devurls.md" },
-        { "path": "./environments/cvms.md" },
-        { "path": "./environments/environment-params.md" },
-        { "path": "./environments/variables.md" },
-        { "path": "./environments/personalization.md" },
-        { "path": "./environments/preferences.md" },
-        { "path": "./environments/pwa.md" },
-        { "path": "./environments/ssh.md" }
+        {
+          "path": "./environments/getting-started.md"
+        },
+        {
+          "path": "./environments/lifecycle.md"
+        },
+        {
+          "path": "./environments/editors.md"
+        },
+        {
+          "path": "./environments/autostart.md"
+        },
+        {
+          "path": "./environments/devurls.md"
+        },
+        {
+          "path": "./environments/cvms.md"
+        },
+        {
+          "path": "./environments/environment-params.md"
+        },
+        {
+          "path": "./environments/variables.md"
+        },
+        {
+          "path": "./environments/personalization.md"
+        },
+        {
+          "path": "./environments/preferences.md"
+        },
+        {
+          "path": "./environments/pwa.md"
+        },
+        {
+          "path": "./environments/ssh.md"
+        }
       ]
     },
     {
       "path": "./images/index.md",
       "children": [
-        { "path": "./images/importing.md" },
-        { "path": "./images/structure.md" },
-        { "path": "./images/tags.md" },
-        { "path": "./images/configure.md" },
-        { "path": "./images/ssl-certificates.md" },
-        { "path": "./images/deprecating.md" },
-        { "path": "./images/embed-button.md" }
+        {
+          "path": "./images/importing.md"
+        },
+        {
+          "path": "./images/structure.md"
+        },
+        {
+          "path": "./images/tags.md"
+        },
+        {
+          "path": "./images/configure.md"
+        },
+        {
+          "path": "./images/ssl-certificates.md"
+        },
+        {
+          "path": "./images/deprecating.md"
+        },
+        {
+          "path": "./images/embed-button.md"
+        }
       ]
     },
     {
       "path": "./cli/index.md",
       "children": [
-        { "path": "./cli/installation.md" },
-        { "path": "./cli/remote-terminal.md" },
-        { "path": "./cli/file-sync.md" },
-        { "path": "./cli/managing-envs.md" }
+        {
+          "path": "./cli/installation.md"
+        },
+        {
+          "path": "./cli/remote-terminal.md"
+        },
+        {
+          "path": "./cli/file-sync.md"
+        },
+        {
+          "path": "./cli/managing-envs.md"
+        }
       ]
     },
     {
       "path": "./setup/index.md",
       "children": [
-        { "path": "./setup/architecture.md" },
-        { "path": "./setup/requirements.md" },
+        {
+          "path": "./setup/architecture.md"
+        },
+        {
+          "path": "./setup/requirements.md"
+        },
         {
           "path": "./setup/kubernetes/index.md",
           "children": [
-            { "path": "./setup/kubernetes/local-preview.md" },
-            { "path": "./setup/kubernetes/aws.md" },
-            { "path": "./setup/kubernetes/azure.md" },
-            { "path": "./setup/kubernetes/google.md" }
+            {
+              "path": "./setup/kubernetes/local-preview.md"
+            },
+            {
+              "path": "./setup/kubernetes/aws.md"
+            },
+            {
+              "path": "./setup/kubernetes/azure.md"
+            },
+            {
+              "path": "./setup/kubernetes/google.md"
+            }
           ]
         },
-        { "path": "./setup/installation.md" },
-        { "path": "./setup/configuration.md" },
-        { "path": "./setup/licensing.md" },
-        { "path": "./setup/air-gapped.md" },
-        { "path": "./setup/updating.md" }
+        {
+          "path": "./setup/installation.md"
+        },
+        {
+          "path": "./setup/configuration.md"
+        },
+        {
+          "path": "./setup/licensing.md"
+        },
+        {
+          "path": "./setup/air-gapped.md"
+        },
+        {
+          "path": "./setup/updating.md"
+        }
       ]
     },
     {
@@ -73,43 +147,83 @@
         {
           "path": "./admin/access-control/index.md",
           "children": [
-            { "path": "./admin/access-control/user-roles.md" },
-            { "path": "./admin/access-control/organizations.md" },
-            { "path": "./admin/access-control/password-reset.md" },
-            { "path": "./admin/access-control/user-management.md" }
+            {
+              "path": "./admin/access-control/user-roles.md"
+            },
+            {
+              "path": "./admin/access-control/organizations.md"
+            },
+            {
+              "path": "./admin/access-control/password-reset.md"
+            },
+            {
+              "path": "./admin/access-control/user-management.md"
+            }
           ]
         },
         {
           "path": "./admin/environment-management/index.md",
           "children": [
-            { "path": "./admin/environment-management/cvms.md" },
-            { "path": "./admin/environment-management/extensions.md" },
-            { "path": "./admin/environment-management/gpu-acceleration.md" },
+            {
+              "path": "./admin/environment-management/cvms.md"
+            },
+            {
+              "path": "./admin/environment-management/extensions.md"
+            },
+            {
+              "path": "./admin/environment-management/gpu-acceleration.md"
+            },
             {
               "path": "./admin/environment-management/installing-jetbrains.md"
             },
             {
               "path": "./admin/environment-management/memory-overprovisioning.md"
             },
-            { "path": "./admin/environment-management/shutdown.md" },
-            { "path": "./admin/environment-management/ssh-access.md" }
+            {
+              "path": "./admin/environment-management/shutdown.md"
+            },
+            {
+              "path": "./admin/environment-management/ssh-access.md"
+            }
           ]
         },
         {
           "path": "./admin/registries/index.md",
-          "children": [{ "path": "./admin/registries/default-registry.md" }]
+          "children": [
+            {
+              "path": "./admin/registries/default-registry.md"
+            }
+          ]
         },
         {
           "path": "./admin/workspace-providers/index.md",
-          "children": [{ "path": "./admin/workspace-providers/deployment.md" }]
+          "children": [
+            {
+              "path": "./admin/workspace-providers/deployment.md"
+            }
+          ]
         },
-        { "path": "./admin/account-dormancy.md" },
-        { "path": "./admin/appearance.md" },
-        { "path": "./admin/audit.md" },
-        { "path": "./admin/devurls.md" },
-        { "path": "./admin/git.md" },
-        { "path": "./admin/metrics.md" },
-        { "path": "./admin/telemetry.md" }
+        {
+          "path": "./admin/account-dormancy.md"
+        },
+        {
+          "path": "./admin/appearance.md"
+        },
+        {
+          "path": "./admin/audit.md"
+        },
+        {
+          "path": "./admin/devurls.md"
+        },
+        {
+          "path": "./admin/git.md"
+        },
+        {
+          "path": "./admin/metrics.md"
+        },
+        {
+          "path": "./admin/telemetry.md"
+        }
       ]
     },
     {
@@ -120,44 +234,74 @@
           "path": "./guides/admin/index.md",
           "navigable": false,
           "children": [
-            { "path": "./guides/admin/resources.md" },
-            { "path": "./guides/admin/usage-monitoring.md" },
-            { "path": "./guides/admin/helm-charts.md" }
+            {
+              "path": "./guides/admin/resources.md"
+            },
+            {
+              "path": "./guides/admin/usage-monitoring.md"
+            },
+            {
+              "path": "./guides/admin/helm-charts.md"
+            }
           ]
         },
         {
           "path": "./guides/customization/index.md",
           "navigable": false,
           "children": [
-            { "path": "./guides/customization/custom-env.md" },
-            { "path": "./guides/customization/gitconfig.md" },
-            { "path": "./guides/customization/macos-keybinding.md" }
+            {
+              "path": "./guides/customization/custom-env.md"
+            },
+            {
+              "path": "./guides/customization/gitconfig.md"
+            },
+            {
+              "path": "./guides/customization/macos-keybinding.md"
+            }
           ]
         },
         {
           "path": "./guides/deployments/index.md",
           "navigable": false,
           "children": [
-            { "path": "./guides/deployments/nightly-releases.md" },
-            { "path": "./guides/deployments/keycloak.md" },
-            { "path": "./guides/deployments/teardown.md" }
+            {
+              "path": "./guides/deployments/nightly-releases.md"
+            },
+            {
+              "path": "./guides/deployments/keycloak.md"
+            },
+            {
+              "path": "./guides/deployments/teardown.md"
+            }
           ]
         },
         {
           "path": "./guides/ssl-certificates/index.md",
           "navigable": false,
           "children": [
-            { "path": "./guides/ssl-certificates/cloudflare.md" },
-            { "path": "./guides/ssl-certificates/route53.md" }
+            {
+              "path": "./guides/ssl-certificates/cloudflare.md"
+            },
+            {
+              "path": "./guides/ssl-certificates/route53.md"
+            }
           ]
         },
-        { "path": "./guides/mobile-development/index.md", "navigable": false },
-        { "path": "./guides/api.md", "navigable": false },
+        {
+          "path": "./guides/mobile-development/index.md",
+          "navigable": false
+        },
+        {
+          "path": "./guides/api.md",
+          "navigable": false
+        },
         {
           "path": "./guides/troubleshooting/index.md",
           "navigable": false,
           "children": [
-            { "path": "./guides/troubleshooting/inotify-watch-limits.md" }
+            {
+              "path": "./guides/troubleshooting/inotify-watch-limits.md"
+            }
           ]
         }
       ]
@@ -165,21 +309,51 @@
     {
       "path": "./changelog/index.md",
       "children": [
-        { "path": "./changelog/1.17.1.md" },
-        { "path": "./changelog/1.17.0.md" },
-        { "path": "./changelog/1.16.3.md" },
-        { "path": "./changelog/1.16.2.md" },
-        { "path": "./changelog/1.16.1.md" },
-        { "path": "./changelog/1.16.0.md" },
-        { "path": "./changelog/1.15.2.md" },
-        { "path": "./changelog/1.15.1.md" },
-        { "path": "./changelog/1.15.0.md" },
-        { "path": "./changelog/1.14.4.md" },
-        { "path": "./changelog/1.14.3.md" },
-        { "path": "./changelog/1.14.2.md" },
-        { "path": "./changelog/1.14.1.md" },
-        { "path": "./changelog/1.14.0.md" },
-        { "path": "./changelog/1.13.2.md" }
+        {
+          "path": "./changelog/1.17.1.md"
+        },
+        {
+          "path": "./changelog/1.17.0.md"
+        },
+        {
+          "path": "./changelog/1.16.3.md"
+        },
+        {
+          "path": "./changelog/1.16.2.md"
+        },
+        {
+          "path": "./changelog/1.16.1.md"
+        },
+        {
+          "path": "./changelog/1.16.0.md"
+        },
+        {
+          "path": "./changelog/1.15.2.md"
+        },
+        {
+          "path": "./changelog/1.15.1.md"
+        },
+        {
+          "path": "./changelog/1.15.0.md"
+        },
+        {
+          "path": "./changelog/1.14.4.md"
+        },
+        {
+          "path": "./changelog/1.14.3.md"
+        },
+        {
+          "path": "./changelog/1.14.2.md"
+        },
+        {
+          "path": "./changelog/1.14.1.md"
+        },
+        {
+          "path": "./changelog/1.14.0.md"
+        },
+        {
+          "path": "./changelog/1.13.2.md"
+        }
       ]
     }
   ]
