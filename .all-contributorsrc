@@ -17,8 +17,10 @@
       "profile": "https://github.com/khorne3",
       "contributions": [
         "content",
+        "example",
         "ideas",
-        "maintenance"
+        "maintenance",
+        "review"
       ]
     },
     {
@@ -29,7 +31,8 @@
       "contributions": [
         "content",
         "ideas",
-        "maintenance"
+        "maintenance",
+        "review"
       ]
     },
     {
@@ -39,8 +42,11 @@
       "profile": "https://vapurrmaid.ca/",
       "contributions": [
         "content",
+        "example",
         "ideas",
-        "maintenance"
+        "infra",
+        "maintenance",
+        "review"
       ]
     },
     {
@@ -49,9 +55,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/22407953?v=4",
       "profile": "https://bpmct.net/",
       "contributions": [
+        "blog",
         "content",
+        "example",
         "ideas",
-        "maintenance"
+        "maintenance",
+        "review"
       ]
     },
     {
@@ -63,7 +72,9 @@
         "content",
         "design",
         "ideas",
-        "maintenance"
+        "infra",
+        "maintenance",
+        "review"
       ]
     },
     {
@@ -108,6 +119,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/67160019?v=4",
       "profile": "https://github.com/CoderErik",
       "contributions": [
+        "blog",
         "bug"
       ]
     },
@@ -145,8 +157,10 @@
       "profile": "https://github.com/ericpaulsen",
       "contributions": [
         "bug",
-        "maintenance",
-        "content"
+        "content",
+        "example",
+        "ideas",
+        "maintenance"
       ]
     },
     {
@@ -155,7 +169,9 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/2894107?v=4",
       "profile": "https://iamhughes.com/",
       "contributions": [
-        "maintenance"
+        "example",
+        "maintenance",
+        "video"
       ]
     },
     {
@@ -174,8 +190,10 @@
       "profile": "https://brownfield.dev/",
       "contributions": [
         "content",
+        "example",
         "ideas",
-        "maintenance"
+        "maintenance",
+        "video"
       ]
     },
     {
@@ -185,7 +203,9 @@
       "profile": "https://github.com/deansheather",
       "contributions": [
         "content",
-        "maintenance"
+        "example",
+        "maintenance",
+        "review"
       ]
     },
     {
@@ -194,7 +214,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/34631293?v=4",
       "profile": "https://github.com/fuskovic",
       "contributions": [
-        "content"
+        "content",
+        "example"
       ]
     },
     {
@@ -204,8 +225,11 @@
       "profile": "https://github.com/jawnsy",
       "contributions": [
         "content",
+        "example",
         "ideas",
-        "maintenance"
+        "infra",
+        "maintenance",
+        "review"
       ]
     }
   ],
