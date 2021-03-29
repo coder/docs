@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "fmt": "prettier --check '**/*.{json,md,yaml,yml}'",
-    "fmt:fix": "prettier --write '**/*.{json,md,yaml,yml}'",
+    "fmt": "prettier --check '**/*.{json,md,ts,yaml,yml}'",
+    "fmt:fix": "prettier --write '**/*.{json,md,ts,yaml,yml}'",
     "lint": "markdownlint '**/*.md'",
     "lint:fix": "markdownlint --fix '**/*.md'"
   },
@@ -25,7 +25,7 @@
     }
   },
   "lint-staged": {
-    "*.{json,yaml,yml}": "prettier --write",
+    "*.{json,ts,yaml,yml}": "prettier --write",
     "*.md": [
       "markdownlint --fix",
       "prettier --write"
