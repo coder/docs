@@ -14,7 +14,7 @@ code-server functionality.
 - [Manage and distribute workspace images](https://coder.com/docs/images)
 - [Build custom workspaces that include your project's dependencies](https://coder.com/docs/images/structure)
 
-![Coder Dashboard](../assets/jetbrains-launcher-icons.png)
+![Coder Dashboard](../../assets/jetbrains-launcher-icons.png)
 
 ## Developer Workflows
 
@@ -26,7 +26,7 @@ code-server functionality.
 - [Manage workspaces with the Coder CLI](https://coder.com/docs/cli)
 - [Personalize workspaces](https://coder.com/docs/environments/personalization)
 
-![User management icon](../assets/manage-users.png)
+![User management icon](../../assets/manage-users.png)
 
 ## Team Management
 
