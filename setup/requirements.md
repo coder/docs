@@ -43,11 +43,13 @@ currently require the following versions _or newer_:
 If you're using [Remote IDEs](../environments/editors.md), allow pop-ups; Coder
 launches the Remote IDE in a pop-up window.
 
-## Container Network Interface (CNI)
+## Network Policies
 
-Coder uses CNI plugins to implement network segmentation and tenant isolation.
-This enforces network boundaries between pods in the Kubernetes cluster,
-preventing users from accessing other workspaces.
+Coder uses
+[Container Network Interface (CNI)](https://github.com/containernetworking/cni#what-is-cni)
+plugins to implement network segmentation and tenant isolation in the Kubernetes
+cluster. This enforces network boundaries between pods, preventing users from
+accessing other workspaces.
 
 If there is no CNI plugin configured to enforce such policies, workspaces will
 be able to communicate with each other without restriction.
