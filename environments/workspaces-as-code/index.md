@@ -30,9 +30,7 @@ To generate a badge for your repository, navigate to **Manage** > **Admin** >
 **Templates**, and fill out the required fields. Then, the Markdown generated
 can be added to your repository's `README.md`.
 
-![Open In Coder Button](../../assets/workspaces-as-code-badge.png)
-
-![Open In Coder Button Pt. 2](../../assets/workspaces-as-code-badge-preview.png)
+![Open In Coder Button](../../assets/wac-badge.png)
 
 ## Creating a workspace template
 
