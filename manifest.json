@@ -28,9 +28,7 @@
         { "path": "./environments/personalization.md" },
         { "path": "./environments/preferences.md" },
         { "path": "./environments/pwa.md" },
-        { "path": "./environments/ssh.md" },
-        { "path": "./environments/workspaces-as-code.md" },
-        { "path": "./environments/wac-syntax.md" }
+        { "path": "./environments/ssh.md" }
       ]
     },
     {
