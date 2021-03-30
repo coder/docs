@@ -1,14 +1,15 @@
 ---
 title: "Workspaces As Code Syntax"
 description: "WAC Config Specification"
+state: beta
 ---
 
 ## About YAML syntax
 
 Workspaces As Code config files use YAML syntax, typically ending with the
 `.yml` or `.yaml` file extension. In order to create an environment from a
-config file you must save the file to `.coder/coder.yaml` path from the root of
-your repository.
+config file you must save the file to `.coder/coder.yaml` relative to the root
+of your repository.
 
 ## Config
 
