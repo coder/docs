@@ -13,7 +13,7 @@ how to configure environments and their supporting infrastructure.
 
 ## Requirements
 
-- You must configure a [GitHub or GitLab OAuth service](../admin/git.md)
+- You must configure a [GitHub or GitLab OAuth service](../../admin/git.md)
 - The image you use in your template **must** have been
   [imported](../../images/importing.md) into Coder
 
