@@ -1,5 +1,5 @@
 ---
-title: User Roles
+title: User roles
 description: Learn about Coder's user roles and the privileges they offer.
 ---
 

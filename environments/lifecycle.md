@@ -1,6 +1,6 @@
 ---
 title: "Lifecycle"
-description: "Learn about the lifecycle of Environments."
+description: "Learn about the environments lifecycle."
 ---
 
 Environments are designed to sustain scheduled shutdowns and rebuilds. An

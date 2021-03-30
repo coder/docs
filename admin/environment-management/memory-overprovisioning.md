@@ -1,6 +1,6 @@
 ---
-title: "Memory Overprovisioning"
-description: Learn how to overprovision memory requests from Environments.
+title: "Memory overprovisioning"
+description: Learn how to overprovision memory requests from environments.
 ---
 
 Coder allows you to set memory overprovisioning ratios for each of your

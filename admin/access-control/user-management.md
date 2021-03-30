@@ -1,5 +1,5 @@
 ---
-title: "User Management"
+title: "User management"
 description: Learn how to add, delete and manage Coder users.
 ---
 

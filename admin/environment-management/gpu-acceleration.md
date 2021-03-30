@@ -1,6 +1,6 @@
 ---
-title: "GPU Acceleration"
-description: Learn how to use GPUs with Environments.
+title: "GPU acceleration"
+description: Learn how to use GPUs with environments.
 ---
 
 GPUs can be used for performing tasks such as machine learning within

@@ -1,5 +1,5 @@
 ---
-title: "SAML 2.0 Identity Brokering"
+title: "SAML 2.0 identity brokering"
 description:
   "Learn how broker JumpCloud SAML 2.0 logins to Coder using Keycloak."
 ---

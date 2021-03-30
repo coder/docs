@@ -1,5 +1,5 @@
 ---
-title: Custom Image Creation
+title: Custom image creation
 description: Learn how to write custom images for use with Coder.
 ---
 

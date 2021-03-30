@@ -1,5 +1,5 @@
 ---
-title: Managing Git Configuration
+title: Managing Git configuration
 description: Learn how to configure Git in Coder.
 ---
 

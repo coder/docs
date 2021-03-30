@@ -1,5 +1,5 @@
 ---
-title: Installation and Setup
+title: Installation and setup
 description: Learn how to install and configure the Coder CLI.
 ---
 

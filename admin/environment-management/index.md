@@ -1,6 +1,6 @@
 ---
-title: "Environment Management"
-description: Learn how to manage Environments from an admin level.
+title: "Environment management"
+description: Learn how to manage environments from an admin level.
 ---
 
 Administrative users can modify a variety of environment-related behaviors.

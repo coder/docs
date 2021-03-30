@@ -1,5 +1,5 @@
 ---
-title: "Local Preview"
+title: "Local preview"
 description: Set up a Coder deployment locally for testing.
 ---
 

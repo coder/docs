@@ -1,6 +1,6 @@
 ---
 title: "Dev URLs"
-description: Learn how to access HTTP services running inside your Environment.
+description: Learn how to access HTTP services running inside your environment.
 ---
 
 Developer (Dev) URLs allow you to access the web services you're developing in

@@ -1,5 +1,5 @@
 ---
-title: Usage Monitoring
+title: Usage monitoring
 description: Learn how to monitor Coder's compute usage.
 ---
 

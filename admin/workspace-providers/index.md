@@ -1,5 +1,5 @@
 ---
-title: Workspace Providers
+title: Workspace providers
 description: Learn how workspace providers can improve developer experience.
 state: beta
 ---

@@ -1,5 +1,5 @@
 ---
-title: Password Reset
+title: Password reset
 description: Learn how to reset Coder user passwords.
 ---
 
