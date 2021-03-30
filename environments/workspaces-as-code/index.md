@@ -21,3 +21,8 @@ how to configure environments and their supporting infrastructure.
 
 You can find a fully populated workspace template and descriptions of each field
 in our [syntax guide](templates.md).
+
+## Adding an Embeddable Button
+
+To make it easy for your developers to use your template you can generate an
+embeddable Markdown button. See the [admin guide](../../admin/templates.md)
