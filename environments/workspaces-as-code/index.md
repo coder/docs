@@ -17,21 +17,6 @@ how to configure environments and their supporting infrastructure.
 - The image you use in your template **must** have been
   [imported](../../images/importing.md) into Coder
 
-## Getting started
-
-To get started, add a `.coder/coder.yaml` file to your repository.
-
-## Open in Coder badge
-
-To make it easy for users to use your workspace template, you can add an **Open
-in Coder** badge to your repository's `README.md`.
-
-To generate a badge for your repository, navigate to **Manage** > **Admin** >
-**Templates**, and fill out the required fields. Then, the Markdown generated
-can be added to your repository's `README.md`.
-
-![Open In Coder Button](../../assets/wac-badge.png)
-
 ## Creating a workspace template
 
 You can find a fully populated workspace template and descriptions of each field
