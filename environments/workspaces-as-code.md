@@ -23,5 +23,5 @@ generated markdown can be added to your repository's `README.md`.
 
 ## Creating a WAC Config File
 
-All 
-
+A fully populated config file and descriptions on each field can be found in
+the [syntax guide](wac-syntax.md)
