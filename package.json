@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "fmt": "prettier --check '**/*.{json,md,ts,yaml,yml}'",
-    "fmt:fix": "prettier --write '**/*.{json,md,ts,yaml,yml}'",
+    "prepare": "husky install",
+    "format:check": "prettier --check '**/*.{css,html,js,json,jsx,ts,tsx,yaml,yml}'",
+    "format:write": "prettier --write '**/*.{css,html,js,json,jsx,ts,tsx,yaml,yml}'",
     "lint": "markdownlint '**/*.md'",
-    "lint:fix": "markdownlint --fix '**/*.md'",
-    "prepare": "husky install"
+    "lint:fix": "markdownlint --fix '**/*.md'"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.1",
@@ -21,7 +21,9 @@
     "typescript": "^4.2.3"
   },
   "lint-staged": {
-    "*.{json,ts,yaml,yml}": "prettier --write",
+    "*.{css,html,js,json,jsx,ts,tsx,yaml,yml}": [
+      "prettier --write"
+    ],
     "*.md": [
       "markdownlint --fix",
       "prettier --write"
