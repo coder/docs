@@ -53,8 +53,7 @@ workspace:
 
 ### version
 
-The version of the config file being used. The current version is
-`0.1`.
+The version of the config file being used. The current version is `0.1`.
 
 ### workspace
 
@@ -72,11 +71,11 @@ acceptable value is `kubernetes`.
 ### workspace.spec.image
 
 **Required**. The image to use for the environment. The image should include the
-registry and optionally the tag, i.e. `docker.io/ubuntu:18.04`. If the tag
-is omitted, it will default to `latest`.
+registry and optionally the tag, i.e. `docker.io/ubuntu:18.04`. If the tag is
+omitted, it will default to `latest`.
 
-The image must already be imported on the platform else building the
-environment will fail.
+The image must already be imported on the platform else building the environment
+will fail.
 
 ### workspace.spec.labels
 
@@ -93,7 +92,8 @@ workspace:
 
 ### workspace.spec.tolerations
 
-A list of [Kubernetes tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
+A list of
+[Kubernetes tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
 to be added to the environment pod.
 
 #### Tolerations Example
@@ -133,8 +133,8 @@ gigabytes.
 
 ### workspace.configure
 
-A list of commands that are run within the environment when an environment
-is built.
+A list of commands that are run within the environment when an environment is
+built.
 
 ### workspace.configure.start
 
@@ -142,24 +142,24 @@ A list of commands to run every time an environment is started.
 
 ### workspace.configure.start[*].command
 
-**Required**. Runs the provided command within the environment. May use a
-single or multi-line command.
+**Required**. Runs the provided command within the environment. May use a single
+or multi-line command.
 
 - A single-line command:
 
-    ```yaml
-    - name: Install curl
-      run: apt install -y curl
-    ```
+  ```yaml
+  - name: Install curl
+    run: apt install -y curl
+  ```
 
 - A multi-line command:
 
-    ```yaml
-    - name: Update and install curl
-      run: |
-        apt update
-        apt install -y curl
-    ```
+  ```yaml
+  - name: Update and install curl
+    run: |
+      apt update
+      apt install -y curl
+  ```
 
 ### workspace.configure.start[*].name
 
