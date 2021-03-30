@@ -4,9 +4,16 @@ description: "Learn how to describe environment configuration as code."
 state: beta
 ---
 
-Workspaces as Code (WAC) brings Infrastructure As Code to environment
-configuration. Users can use this feature to manage environment config in the
-same repo as their source code; simply add a `.coder/coder.yaml` to get started.
+Workspaces as Code (WAC) brings the Infrastructure As Code paradigm to Coder
+environments. [Workspace Templates](./syntax.md) are declarative YAML files that
+describe how to configure environments and their supporting infrastructure. To
+get started, add a `.coder/coder.yaml` file to your repository.
+
+## Requirements
+
+- A configured [GitHub or GitLab OAuth service](../admin/git.md)
+- The image used in the template **must** be already
+  [imported](../../images/importing.md) on the platform.
 
 ## Open In Coder Badge
 

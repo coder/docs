@@ -11,6 +11,12 @@
     {
       "path": "./environments/index.md",
       "children": [
+        {
+          "path": "./environments/workspaces-as-code/index.md",
+          "children": [
+            { "path": "./environments/workspaces-as-code/syntax.md" }
+          ]
+        },
         { "path": "./environments/getting-started.md" },
         { "path": "./environments/lifecycle.md" },
         { "path": "./environments/editors.md" },
