@@ -6,7 +6,7 @@ description: Learn how to sync files between Coder and your local IDE.
 If you're working in an IDE that's on your local machine, you can use Coder's
 live sync feature to sync changes from your local IDE with your Coder
 environment. Live sync watches your IDE and pushes updates whenever it detects
-changes. This allows yout o work locally while leveraging Coder for testing,
+changes. This allows you to work locally while leveraging Coder for testing,
 compilation, and so on.
 
 ## One-Way File Sync
