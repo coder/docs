@@ -1,5 +1,5 @@
 ---
-title: Account Dormancy
+title: Account dormancy
 description: Learn how to manage the lifecycle of dormant user accounts.
 ---
 

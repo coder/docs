@@ -1,5 +1,5 @@
 ---
-title: "Default Registry"
+title: "Default registry"
 description: Learn how to work with Coder's default registry.
 ---
 

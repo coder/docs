@@ -1,6 +1,6 @@
 ---
-title: Environment Variables
-description: Learn how to work with CODER_* Environment Variables
+title: Environment variables
+description: Learn how to work with CODER_* environment variables
 ---
 
 Coder injects a standard set of environment variables that allow you to access

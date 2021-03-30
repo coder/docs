@@ -1,6 +1,6 @@
 ---
 title: "Shutdown"
-description: Learn how to configure Environment auto-off behavior.
+description: Learn how to configure environment auto-off behavior.
 ---
 
 You can specify the duration of inactivity allowed before an environment

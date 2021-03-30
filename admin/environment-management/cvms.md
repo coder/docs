@@ -1,6 +1,6 @@
 ---
-title: Docker in Environments
-description: Learn how to enable support for secure Docker inside Environments.
+title: Docker in environments
+description: Learn how to enable support for secure Docker inside environments.
 ---
 
 If you're a site admin or a site manager, you can enable

@@ -1,5 +1,5 @@
 ---
-title: Access Control
+title: Access control
 description: Learn how to change how Coder users sign in.
 ---
 

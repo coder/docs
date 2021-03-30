@@ -40,7 +40,7 @@ Note that the instructions provided include logic on whether the instructions
 should be re-run (and when) or if Coder should run the instructions only once.
 We strongly recommend including this logic at all times to minimize overhead.
 
-Step 2: Add the Configure File to the Image
+## Step 2: Add the Configure File to the Image
 
 Once you have a config file, update your image to use it by including the
 following in your Dockerfile:
@@ -59,7 +59,7 @@ RUN apt-get update && apt-get install -y curl
 COPY [ "configure", "/coder/configure" ]
 ```
 
-Step 3: Build and Push the Image and Config File
+## Step 3: Build and Push the Image and Config File
 
 To make your image accessible to Coder, build the development image and push it
 to the Docker registry.
@@ -79,7 +79,7 @@ Once you've built the image, push the image to the Docker registry:
 docker push cdr/config
 ```
 
-Step 4: Test the Config File
+## Step 4: Test the Config File
 
 You can test your setup by performing the following steps:
 

@@ -1,5 +1,5 @@
 ---
-title: "Customization Guides"
+title: "Customization guides"
 description: Learn about tasks related to customizing Coder.
 ---
 

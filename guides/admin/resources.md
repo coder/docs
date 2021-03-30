@@ -1,5 +1,5 @@
 ---
-title: Compute Resources
+title: Compute resources
 description: Learn the unique compute resource management capabilities in Coder.
 ---
 

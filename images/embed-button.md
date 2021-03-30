@@ -1,5 +1,5 @@
 ---
-title: Embeddable Button
+title: Embeddable button
 description: Learn how to embed an "Open in Coder" Button in Your Repo
 ---
 

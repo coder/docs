@@ -1,7 +1,7 @@
 ---
 title: "Structure"
 description:
-  Learn how to best structure Image specifications for use inside your
+  Learn how to best structure image specifications for use inside your
   organization.
 ---
 

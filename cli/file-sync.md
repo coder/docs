@@ -1,5 +1,5 @@
 ---
-title: File Sync
+title: File sync
 description: Learn how to sync files between Coder and your local IDE.
 ---
 

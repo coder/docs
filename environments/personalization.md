@@ -1,7 +1,7 @@
 ---
 title: "Personalization"
 description:
-  Learn how to personalize your Environment to augment its base Image.
+  Learn how to personalize your environment to augment its base image.
 ---
 
 Your Coder development environment strikes a balance between consistent team

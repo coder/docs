@@ -1,5 +1,5 @@
 ---
-title: "Command Line"
+title: "Command line"
 icon:
   "<svg viewBox=\"0 0 512 466\" xmlns=\"http://www.w3.org/2000/svg\">\n<path
   d=\"M46.5 0.837754C20.5 0.837754 0 22.3052 0
