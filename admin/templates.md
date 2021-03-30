@@ -1,13 +1,20 @@
 ---
 title: Templates
 description:
-  Learn how to add an embeddable "Open In Coder" button for your Workspaces As
-  Code Template
+  Learn how to create an embeddable "Open In Coder" button for your Workspaces
+  As Code Template
 ---
 
-The **Admin** > **Templates** tab offers a form for generating an embeddable
-button to make it easy for developers to use your
-[workspace template](../environments/workspaces-as-code/index.md). The generated
-Markdown can be added to your repository's `README.md`.
+The **Templates** tab features a form you can use for generating an embeddable
+button. This button makes it easy for developers to use your
+[workspace template](../environments/workspaces-as-code/index.md).
+
+To create your button:
+
+1. Go to **Manage** > **Admin** > **Templates**.
+1. Fill out the fields.
+
+Once you've filled out the form, Coder generates a custom Markdown snippet,
+which you can then add to your repository's `README.md`.
 
 ![Open In Coder Button](../assets/wac-badge.png)
