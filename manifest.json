@@ -115,7 +115,7 @@
         { "path": "./admin/devurls.md" },
         { "path": "./admin/git.md" },
         { "path": "./admin/metrics.md" },
-        { "path": "./admin/telemetry.md" }
+        { "path": "./admin/telemetry.md" },
         { "path": "./admin/templates.md" }
       ]
     },
