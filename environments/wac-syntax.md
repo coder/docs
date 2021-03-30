@@ -1,6 +1,6 @@
 ---
 title: "Workspaces As Code Syntax"
-description: "WAC Config Specification"
+description: "Details on Workspaces As Code fields"
 state: beta
 ---
 
@@ -82,7 +82,7 @@ environment will fail.
 
 Kubernetes labels to be added to the environment pod.
 
-#### Example
+#### Labels Example
 
 ```yaml
 workspace:
@@ -96,7 +96,7 @@ workspace:
 A list of [Kubernetes tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
 to be added to the environment pod.
 
-#### Example
+#### Tolerations Example
 
 ```yaml
 workspace:
@@ -169,7 +169,7 @@ The name of the command being run.
 
 The shell to use for the command.
 
-#### Example
+#### Shell Example
 
 ```yaml
 start:
@@ -181,7 +181,7 @@ start:
 
 The working directory to run the command from.
 
-#### Example
+#### Directory Example
 
 ```yaml
 start:
@@ -193,7 +193,7 @@ start:
 
 A map of environment variables to set for the command.
 
-#### Example
+#### Environment Variables Example
 
 ```yaml
 start:
