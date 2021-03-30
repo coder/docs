@@ -9,7 +9,7 @@ state: beta
 Workspace template files are written as YAML and have a .yml or .yaml file
 extension. Coder looks for your template at the following path
 
-```
+```bash
 <repository-root>/.coder/coder.yaml
 ```
 
