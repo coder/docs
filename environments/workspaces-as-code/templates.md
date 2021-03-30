@@ -14,7 +14,7 @@ Coder looks for your workspace template at the following path:
 <repository-root>/.coder/coder.yaml
 ```
 
-![Template Location](../../assets/workspaces-as-code-location.png)
+![Template Location](../../assets/wac-location.png)
 
 ## Workspace template sample
 
