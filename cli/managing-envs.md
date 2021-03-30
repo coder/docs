@@ -1,7 +1,6 @@
 ---
 title: Environment management
-description:
-  See example usages of the CLI for personal environment management.
+description: See example usages of the CLI for personal environment management.
 ---
 
 ## List all of your Environments
