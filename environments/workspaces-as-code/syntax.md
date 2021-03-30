@@ -13,6 +13,8 @@ extension. Coder looks for your template at the following path
 <repository-root>/.coder/coder.yaml
 ```
 
+![Template Location](../../assets/workspaces-as-code-location.png)
+
 ## Reference
 
 The following is an example workspace template that makes use of all available
