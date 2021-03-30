@@ -1,20 +1,23 @@
 ---
-title: "Workspaces As Code Syntax"
-description: "Details on Workspaces As Code fields"
+title: "Writing a Workspace template"
+description: "Learn how to write a template for creating workspaces"
 state: beta
 ---
 
 ## About YAML syntax
 
-Workspaces As Code config files use YAML syntax, typically ending with the
-`.yml` or `.yaml` file extension. In order to create an environment from a
-config file you must save the file to `.coder/coder.yaml` relative to the root
-of your repository.
+Workspace template files are written as YAML and have a .yml or .yaml file
+extension. Coder looks for your template at the following path
 
-## Config
+```
+<repository-root>/.coder/coder.yaml
+```
 
-The following demonstrates a fully populated WAC config file. For more detailed
-information on select fields [see below](#config-fields).
+## Reference
+
+The following is an example workspace template that makes use of all available
+fields. You may not need all of these fields depending on your use case. For
+more detailed information on select fields [see below](#config-fields).
 
 ```yaml
 version: 0.1
@@ -49,11 +52,11 @@ workspace:
         GOPATH: /home/coder/go
 ```
 
-## Config Fields
+## Template Fields
 
 ### version
 
-The version of the config file being used. The current version is `0.1`.
+The version of the template file being used. The current version is `0.1`.
 
 ### workspace
 
@@ -110,26 +113,28 @@ workspace:
 
 ### workspace.spec.gpucount
 
-The number of GPUs to inject into the environment.
+The number of GPUs to inject into the environment. Defaults to 0. Requires
+[GPU acceleration](../../admin/environment-management/gpu-acceleration.md).
 
 ### workspace.spec.container-based-vm
 
-Determines whether the environment should be created as a container-based VM.
-Defaults to `false`.
+Determines whether the environment should be created as a
+[container-based VM](../cvms.md). Defaults to `false`.
 
 ### workspace.spec.cpu
 
-**Required**. How many cores to allocate to the environment.
+**Required**. Number of CPU cores to allocate to environments built from this
+template.
 
 ### workspace.spec.memory
 
-**Required**. How much memory to allocate to the environment. Units are in
-gigabytes.
+**Required**. Memory in gigabytes to allocate to environments built from this
+template.
 
 ### workspace.spec.disk
 
-**Required**. How much disk to allocate to the environment. Units are in
-gigabytes.
+**Required**. Disk space in gigabytes to allocate to environments built from
+this template.
 
 ### workspace.configure
 
@@ -179,7 +184,7 @@ start:
 
 ### workspace.configure.start[*].directory
 
-The working directory to run the command from.
+The working directory from which the command is run.
 
 #### Directory Example
 
