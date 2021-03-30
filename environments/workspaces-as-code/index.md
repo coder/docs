@@ -34,7 +34,7 @@ can be added to your repository's `README.md`.
 
 ## Creating a workspace template
 
-A fully populated config file and descriptions on each field can be found in the
+A fully populated template containing descriptions on each field can be found in the
 [syntax guide](wac-syntax.md)
 
 You can find a fully populated workspace template and descriptions of each field
