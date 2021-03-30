@@ -1,5 +1,5 @@
 ---
-title: "Workspace Templates"
+title: "Workspace templates"
 description: "Learn how to write a template for creating environments."
 state: beta
 ---

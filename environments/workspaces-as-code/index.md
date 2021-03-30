@@ -1,5 +1,5 @@
 ---
-title: "Workspaces as Code"
+title: "Workspaces as code"
 description: "Learn how to describe environment configuration as code."
 state: beta
 ---
