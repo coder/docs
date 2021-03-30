@@ -25,4 +25,5 @@ in our [syntax guide](templates.md).
 ## Adding an Embeddable Button
 
 To make it easy for your developers to use your template you can generate an
-embeddable Markdown button. See the [admin guide](../../admin/templates.md)
+embeddable Markdown button. See the [admin guide](../../admin/templates.md) for
+details.
