@@ -11,12 +11,6 @@
     {
       "path": "./environments/index.md",
       "children": [
-        {
-          "path": "./environments/workspaces-as-code/index.md",
-          "children": [
-            { "path": "./environments/workspaces-as-code/templates.md" }
-          ]
-        },
         { "path": "./environments/getting-started.md" },
         { "path": "./environments/lifecycle.md" },
         { "path": "./environments/editors.md" },
@@ -28,7 +22,13 @@
         { "path": "./environments/personalization.md" },
         { "path": "./environments/preferences.md" },
         { "path": "./environments/pwa.md" },
-        { "path": "./environments/ssh.md" }
+        { "path": "./environments/ssh.md" },
+        {
+          "path": "./environments/workspaces-as-code/index.md",
+          "children": [
+            { "path": "./environments/workspaces-as-code/templates.md" }
+          ]
+        }
       ]
     },
     {
