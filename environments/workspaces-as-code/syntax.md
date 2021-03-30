@@ -143,7 +143,7 @@ built.
 
 ### workspace.configure.start
 
-A list of commands to run every time an environment is started.
+A list of commands to run every time an environment is built.
 
 ### workspace.configure.start[*].command
 
