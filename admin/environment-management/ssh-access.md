@@ -1,5 +1,5 @@
 ---
-title: "SSH Configuration"
+title: "SSH configuration"
 description: Learn how to configure SSH access to Coder environments.
 ---
 

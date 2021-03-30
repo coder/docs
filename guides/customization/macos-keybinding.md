@@ -1,5 +1,5 @@
 ---
-title: macOS Keybindings
+title: macOS keybindings
 description: Learn how to use macOS Keybindings with JetBrains IDEs.
 ---
 

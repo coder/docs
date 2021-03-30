@@ -1,5 +1,5 @@
 ---
-title: Mobile Development
+title: Mobile development
 description: Learn how to develop mobile apps with Coder.
 ---
 

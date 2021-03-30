@@ -1,6 +1,6 @@
 ---
-title: "SSL Certificates"
-description: Learn how to add SSL Certificates to Coder Images
+title: "SSL certificates"
+description: Learn how to add SSL certificates to Coder images
 ---
 
 Coder may sometimes fail to download extensions for your IDE if the remote

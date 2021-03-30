@@ -1,5 +1,5 @@
 ---
-title: Custom Environments
+title: Custom environments
 description: Learn how to create a custom environment.
 ---
 

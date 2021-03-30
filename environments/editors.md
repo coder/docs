@@ -1,7 +1,7 @@
 ---
 title: "Editors and IDEs"
 description:
-  Learn how to connect your favorite Editors and IDEs to your remote
+  Learn how to connect your favorite editors and IDEs to your remote
   environment.
 ---
 

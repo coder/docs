@@ -1,6 +1,6 @@
 ---
-title: "SSH Access"
-description: Learn how to configure SSH access to your Environments.
+title: "SSH access"
+description: Learn how to configure SSH access to your environments.
 ---
 
 Before using, configuring, and accessing your environment via SSH:
