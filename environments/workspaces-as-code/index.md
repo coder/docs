@@ -4,7 +4,7 @@ description: "Learn how to describe environment configuration as code."
 state: beta
 ---
 
-Workspaces as code (WAC) brings the *Infrastructure As Code* paradigm to Coder
+Workspaces as code (WAC) brings the _Infrastructure As Code_ paradigm to Coder
 environments. WAC allows you to define and create new environments using
 **workspace templates**.
 

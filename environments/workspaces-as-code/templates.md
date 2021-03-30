@@ -7,9 +7,8 @@ state: beta
 Workspaces as code (WAC) allows you to define and create new environments using
 **workspace templates**.
 
-Workspace templates are written as YAML and have a
-`.yaml` or `.yml` extension. Coder looks for your workspace template at the
-following path:
+Workspace templates are written as YAML and have a `.yaml` or `.yml` extension.
+Coder looks for your workspace template at the following path:
 
 ```text
 <repository-root>/.coder/coder.yaml
@@ -23,8 +22,8 @@ The following is a sample workspace template that makes use of all available
 fields. Depending on your use case, you may not need all of the options
 available.
 
-For detailed information on the fields available, see the [subsequent
-sections](#workspace-template-fields) of this article
+For detailed information on the fields available, see the
+[subsequent sections](#workspace-template-fields) of this article
 
 ```yaml
 version: 0.1
@@ -72,8 +71,8 @@ the environment.
 
 #### workspace.type
 
-**Required**. Determines the type of workspace to be created. Currently, the only
-accepted value is `kubernetes`.
+**Required**. Determines the type of workspace to be created. Currently, the
+only accepted value is `kubernetes`.
 
 #### workspace.spec
 
@@ -91,8 +90,8 @@ otherwise the environment will fail to build.
 
 #### workspace.spec.labels
 
-The [Kubernetes
-labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
+The
+[Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
 to be added to the environment pod.
 
 ```yaml
@@ -104,8 +103,8 @@ workspace:
 
 #### workspace.spec.tolerations
 
-This section defines the [Kubernetes
-tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
+This section defines the
+[Kubernetes tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
 to be added to the pod hosting the environment.
 
 ```yaml
@@ -124,8 +123,8 @@ The number of GPUs to inject into the environment.
 
 #### workspace.spec.container-based-vm
 
-Determines whether the environment should be created as a [container-based
-virtual machine (CVM)](../cvms.md). Default is `false`.
+Determines whether the environment should be created as a
+[container-based virtual machine (CVM)](../cvms.md). Default is `false`.
 
 #### workspace.spec.cpu
 
@@ -141,13 +140,13 @@ virtual machine (CVM)](../cvms.md). Default is `false`.
 
 #### workspace.configure
 
-This section lists the commands that run within the environment after
-Coder builds the environment. See [Configure](../../images/configure.md) for
-more information.
+This section lists the commands that run within the environment after Coder
+builds the environment. See [Configure](../../images/configure.md) for more
+information.
 
 #### workspace.configure.start
 
-The list of commands to run when Coder *starts* an environment.
+The list of commands to run when Coder _starts_ an environment.
 
 #### workspace.configure.start[*].command
 
