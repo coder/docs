@@ -8,6 +8,7 @@
 #
 # Examples:
 #  ./scripts/create-clog.sh --version="1.18.0" --release-date="05/18/2021"
+#  ./scripts/create-clog.sh --version="1.18.0" --release-date=$(date +%D)
 
 
 set -eou pipefail
@@ -90,7 +91,16 @@ function create_from_template () {
   popd > /dev/null
 }
 
+# update_manifest calls a NodeJS script to update manifest.JSON using VERSION
+function update_manifest () {
+  echo "Calling add_clog_to_manifest.ts to update manifest.json"
+  pushd "$(git rev-parse --show-toplevel)" > /dev/null
+    ./node_modules/.bin/ts-node ./scripts/add_clog_to_manifest.ts --version="$VERSION"
+  popd > /dev/null
+}
+
 # main program
 init "$@"
 create_from_template
+update_manifest
 echo "Done"
