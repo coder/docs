@@ -119,7 +119,7 @@ workspace:
 
 #### workspace.spec.gpucount
 
-The number of GPUs to inject into the environment.
+The number of GPUs to allocate for the environment.
 
 #### workspace.spec.container-based-vm
 
