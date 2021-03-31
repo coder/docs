@@ -46,16 +46,17 @@ workspace:
         effect: NoExecute
         tolerationSeconds: 3600
   configure:
-    - name: "install curl"
-      run: |
-        apt update
-        apt install -y curl
-    - name: "install Go binary"
-      run: "go install"
-      directory: /home/coder/go/src/github.com/my-project
-      shell: "bash"
-      env:
-        GOPATH: /home/coder/go
+    start:
+      - name: "install curl"
+        run: |
+          apt update
+          apt install -y curl
+      - name: "install Go binary"
+        run: "go install"
+        directory: /home/coder/go/src/github.com/my-project
+        shell: "bash"
+        env:
+          GOPATH: /home/coder/go
 ```
 
 ## Workspace template fields
