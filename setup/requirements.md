@@ -45,13 +45,13 @@ launches the Remote IDE in a pop-up window.
 
 ## Network Policies
 
-Coder uses
+Coder uses [Kubernetes Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/) to enforce network segmentation and tenant isolation within your cluster. Coder's network isolation policy blocks all ingress traffic to workspaces, with the exception of traffic from the control plane, thereby ensuring that all traffic is auditable. The control plane does not specify egress rules, which allows outbound traffic by default, while allowing you to enforce a more specific network policy if you wish.
 [Container Network Interface (CNI)](https://github.com/containernetworking/cni#what-is-cni)
 plugins to implement network segmentation and tenant isolation in the Kubernetes
 cluster. This enforces network boundaries between pods, preventing users from
 accessing other workspaces.
 
-If there is no CNI plugin configured to enforce such policies, workspaces will
+If your Container Network Interface (CNI) plugin does not support NetworkPolicy enforcement, traffic between workspaces and other containerized workloads within the same cluster will be permitted to communicate without restriction. Consider testing your container networking after installation to ensure that the behavior is as you expect.
 be able to communicate with each other without restriction.
 
 See more:
