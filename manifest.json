@@ -22,7 +22,13 @@
         { "path": "./environments/personalization.md" },
         { "path": "./environments/preferences.md" },
         { "path": "./environments/pwa.md" },
-        { "path": "./environments/ssh.md" }
+        { "path": "./environments/ssh.md" },
+        {
+          "path": "./environments/workspaces-as-code/index.md",
+          "children": [
+            { "path": "./environments/workspaces-as-code/templates.md" }
+          ]
+        }
       ]
     },
     {
@@ -109,7 +115,8 @@
         { "path": "./admin/devurls.md" },
         { "path": "./admin/git.md" },
         { "path": "./admin/metrics.md" },
-        { "path": "./admin/telemetry.md" }
+        { "path": "./admin/telemetry.md" },
+        { "path": "./admin/templates.md" }
       ]
     },
     {
@@ -165,6 +172,7 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        { "path": "./changelog/1.17.2.md" },
         { "path": "./changelog/1.17.1.md" },
         { "path": "./changelog/1.17.0.md" },
         { "path": "./changelog/1.16.3.md" },
