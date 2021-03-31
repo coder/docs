@@ -22,14 +22,14 @@ even if the underlying [Image](../images/index.md) or its dependencies change.
 ## Auto-Off
 
 Organizations can set an auto-off inactivity threshold. After an Environment
-hasn't been access for the specified threshold, it is shutdown. A stopped
-environment requires a [rebuild](#Rebuilds) before you can accessed it again.
+hasn't been accessed for the specified threshold, it is shutdown. A stopped
+environment requires a [rebuild](#Rebuilds) before it can be accessed again.
 Read more about auto-off [here](../admin/environment-management/shutdown.md).
 
 ## Hooks
 
 Coder exposes a few hooks during the build process. Once an Environment is
-available and running on and underlying host, the following steps are taken
+available and running on an underlying host, the following steps are taken:
 
 1. `Injecting secrets into environment` Coder injects authentication for the
    [Coder CLI](https://github.com/cdr/coder-cli), allowing the latter scripts to
