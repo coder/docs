@@ -8,7 +8,7 @@ of your images and environments must be assigned to a specific organization. An
 end-user can only access images that are assigned to the same organization they
 are.
 
-## The Default Organization
+## The default organization
 
 When you first set up Coder, you'll generate the default organization. You can
 then assign users and their environments to that organization.
@@ -16,9 +16,9 @@ then assign users and their environments to that organization.
 There must always be a default organization, but you can change the one set as
 the default once you have two or more organizations.
 
-## Organization Roles
+## Organization roles
 
-Like [User Roles](user-roles.md), members of an organization can be assigned
+Like [User roles](user-roles.md), members of an organization can be assigned
 different roles. There are two roles available:
 
 <table>
@@ -30,14 +30,14 @@ different roles. There are two roles available:
     </thead>
     <tbody>
         <tr>
-            <td><b>Organization Manager</b></td>
+            <td><b>Organization manager</b></td>
             <td>Grants full administrative access to the organization and the
             ability to manage its <b>images</b> and
             <b>members</b>. Can view, modify, and delete <b>environments</b>
             belonging to members of the organization.</td>
         </tr>
         <tr>
-            <td><b>Organization Member</b></td>
+            <td><b>Organization member</b></td>
             <td>Grants basic organization access. Can use and view <b>images</b>
             belonging to the organization. Can create new
             <b>images</b> assigned to the organization. Can only access
@@ -47,10 +47,10 @@ different roles. There are two roles available:
 </table>
 
 Please note that roles are defined per organization. Therefore, assigning
-someone as an Organization Manager does not change their role in another
+someone as an organization manager does not change their role in another
 organization.
 
-### Organization Admin Permissions
+### Organization admin permissions
 
 <table>
     <thead>
@@ -101,7 +101,7 @@ organization.
             <td></td>
         </tr>
         <tr>
-            <td>Image Tags</td>
+            <td>Image tags</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -123,7 +123,7 @@ organization.
             <td></td>
         </tr>
         <tr>
-            <td>Org Members</td>
+            <td>Org members</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -156,7 +156,7 @@ organization.
             <td></td>
         </tr>
         <tr>
-            <td>System Banners</td>
+            <td>System banners</td>
             <td></td>
             <td>X</td>
             <td></td>
@@ -180,7 +180,7 @@ organization.
     </tbody>
 </table>
 
-### Organization Member Permissions
+### Organization member permissions
 
 <table>
     <thead>
@@ -231,7 +231,7 @@ organization.
             <td></td>
         </tr>
         <tr>
-            <td>Image Tags</td>
+            <td>Image tags</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -253,7 +253,7 @@ organization.
             <td></td>
         </tr>
         <tr>
-            <td>Org Members</td>
+            <td>Org members</td>
             <td></td>
             <td></td>
             <td></td>
@@ -286,7 +286,7 @@ organization.
             <td></td>
         </tr>
         <tr>
-            <td>System Banners</td>
+            <td>System banners</td>
             <td></td>
             <td>X</td>
             <td></td>
@@ -312,18 +312,22 @@ organization.
 
 ## Namespaces
 
-**Deprecation Notice**: The `namespaceWhitelist` field has been deprecated in
-[Coder version 1.17](../../changelog/1.17.0.md).
+> **Deprecation notice**: The `namespaceWhitelist` field has been deprecated in
+> [Coder version 1.17](../../changelog/1.17.0.md).
 
 Coder's Helm chart previously included a `namespaceWhitelist` field that
 accepted a list of cluster namespaces and made them available to Coder. The
-[Workspace Provider feature](../workspace-providers/index.md) supersedes this
-field. You will not be able to make any changes _unless_ you are removing
-namespaces that no longer contain environments with Coder deployments v1.17.0 or
-later (if you remove namespaces from the `namespaceWhitelist` field, the
-environments in the namespaces are no longer accessible). For older Coder
-deployments, you can continue using existing environments in whitelisted
-namespaces, though you cannot create new environments in those namespaces.
+[workspace provider feature](../workspace-providers/index.md) supersedes this
+field.
+
+You will not be able to make any changes _unless_ you are removing namespaces
+that no longer contain environments with Coder deployments v1.17.0 or later (if
+you remove namespaces from the `namespaceWhitelist` field, the environments in
+the namespaces are no longer accessible).
+
+For older Coder deployments, you can continue using existing environments in
+whitelisted namespaces, though you cannot create new environments in those
+namespaces.
 
 If you want to separate Coder environments by namespaces in a Kubernetes
 cluster, you can do so by

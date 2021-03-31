@@ -28,7 +28,7 @@ PATH:
 - Code OSS (VS Code, installed by default)
 - WebStorm
 
-## Required Packages
+## Required packages
 
 The following packages are required in your image if you're using an IDE other
 than VS Code. They ensure that the IDE can communicate with Coder:
@@ -36,8 +36,8 @@ than VS Code. They ensure that the IDE can communicate with Coder:
 <table>
     <thead>
         <tr>
-            <th>Debian Package</th>
-            <th>RPM Package</th>
+            <th>Debian package</th>
+            <th>RPM package</th>
             <th>Description</th>
         </tr>
     </thead>

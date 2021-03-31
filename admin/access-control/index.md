@@ -3,9 +3,9 @@ title: Access control
 description: Learn how to change how Coder users sign in.
 ---
 
-The Authentication tab allows you to choose how your users login and gain access
-to Coder. Currently, you can choose between **Built-In Authentication** and
-**OpenID Connect**.
+The **Authentication** tab allows you to choose how your users login and gain
+access to Coder. Currently, you can choose between **Built-In Authentication**
+and **OpenID Connect**.
 
 ## Built-In Authentication
 
@@ -18,7 +18,7 @@ to change their password after they log in the first time.
 The OpenID Connect (OIDC) option allows you to defer identity management to the
 OIDC provider of your choice.
 
-### Set Up Authentication via OIDC
+### Set up authentication via OIDC
 
 Before proceeding, you'll need to register a Coder application with your OIDC
 Provider. You'll need to provide a domain name for the OIDC token callback; use
@@ -37,7 +37,7 @@ the Authentication tab, provide the following parameters:
 If you do not have values for any of these parameters, you can obtain them from
 your OIDC provider.
 
-## Change the Authentication Method
+## Change the authentication method
 
 You can change the authentication method by which a user logs into their Coder
 account.
