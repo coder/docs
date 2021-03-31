@@ -11,10 +11,13 @@ This repository contains the documentation source files for
 
 ## Contributing
 
-Is something confusing, unclear, or just want to contribute something new?
+Is something confusing or unclear? Do you want to contribute something new?
 [Open an issue or pull request](https://github.com/cdr/docs/issues/new)!
 
-Contributions can be previewed in the context of the site using pull request
+Please refer to the [style guide](https://github.com/cdr/styleguide) for general
+writing guidelines.
+
+You can preview contributions in the context of the site using pull request
 deploy previews. :rocket:
 
 Our documentation is published once a day. Expect any merged contributions to be
