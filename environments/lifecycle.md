@@ -22,8 +22,8 @@ even if the underlying [Image](../images/index.md) or its dependencies change.
 ## Auto-Off
 
 Organizations can set an auto-off inactivity threshold. After an Environment
-hasn't been accessed for the specified threshold, it is shutdown. A stopped
-environment requires a [rebuild](#Rebuilds) before it can be accessed again.
+hasn't been accessed for the specified threshold, it is shutdown. You must
+[rebuild](#Rebuilds) a stopped environment before you can be access it again.
 Read more about auto-off [here](../admin/environment-management/shutdown.md).
 
 ## Hooks
