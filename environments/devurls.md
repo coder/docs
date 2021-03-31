@@ -50,7 +50,7 @@ If you provided a name for the Dev URL when you created it:
 <name>-<username>.domain
 ```
 
-If didn't provide a name for the Dev URL when you created it:
+If you didn't provide a name for the Dev URL when you created it:
 
 ```text
 <port>-<environment_name>-<username>.domain
