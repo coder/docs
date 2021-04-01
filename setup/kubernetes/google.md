@@ -60,7 +60,7 @@ gcloud beta container --project "$PROJECT_ID" \
     --no-enable-basic-auth \
     --node-version "latest" \
     --cluster-version "latest" \
-    --machine-type "n1-standard-2" \
+    --machine-type "n1-highmem-4" \
     --image-type "UBUNTU" \
     --disk-type "pd-standard" \
     --disk-size "50" \
