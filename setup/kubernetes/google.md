@@ -24,7 +24,7 @@ clusters create "$NEW_CLUSTER_NAME" \
    --zone "$ZONE" \
    --no-enable-basic-auth \
    --cluster-version "latest" \
-   --machine-type "n1-standard-4" \
+   --machine-type "n1-highmem-4" \
    --image-type "COS" \
    --disk-type "pd-standard" \
    --disk-size "50" \
@@ -60,7 +60,7 @@ gcloud beta container --project "$PROJECT_ID" \
     --no-enable-basic-auth \
     --node-version "latest" \
     --cluster-version "latest" \
-    --machine-type "n1-standard-2" \
+    --machine-type "n1-highmem-4" \
     --image-type "UBUNTU" \
     --disk-type "pd-standard" \
     --disk-size "50" \
