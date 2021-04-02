@@ -12,46 +12,33 @@ Before proceeding, make sure that the
 [gcloud CLI](https://cloud.google.com/sdk/docs/quickstarts) is installed on your
 machine and configured to interact with your Google Cloud Platform account.
 
+Alternatively, you can
+[create your cluster using the Google Cloud Console](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#creating-a-cluster)
+instead of the gcloud CLI. Please refer to the sample CLI commands below for
+assistance selecting the correct options for your cluster.
+
 ## Set Up the GKE Cluster
 
-The following will spin up a Kubernetes cluster using the `gcloud` command (be
-sure to replace the parameters (specifically `PROJECT_ID`, `NEW_CLUSTER_NAME`,
-and `ZONE`) as needed to reflect the needs of your environment).
+The following two sections will show you how to spin up a Kubernetes cluster
+using the `gcloud` command. See
+[Google's docs](https://cloud.google.com/sdk/gcloud/reference/beta/container/clusters/create)
+for more information on each parameter used.
 
-```console
-gcloud beta container --project "$PROJECT_ID" \
-clusters create "$NEW_CLUSTER_NAME" \
-   --zone "$ZONE" \
-   --no-enable-basic-auth \
-   --cluster-version "latest" \
-   --machine-type "n1-highmem-4" \
-   --image-type "COS" \
-   --disk-type "pd-standard" \
-   --disk-size "50" \
-   --metadata disable-legacy-endpoints=true \
-   --scopes "https://www.googleapis.com/auth/cloud-platform" \
-   --num-nodes "2" \
-   --enable-stackdriver-kubernetes \
-   --enable-ip-alias \
-   --network "projects/$PROJECT_ID/global/networks/default" \
-   --subnetwork \
-   "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
-   --default-max-pods-per-node "110" \
-   --addons HorizontalPodAutoscaling,HttpLoadBalancing \
-   --enable-autoupgrade \
-   --enable-autorepair \
-   --enable-network-policy \
-   --enable-autoscaling \
-   --min-nodes "1" \
-   --max-nodes "8"
-```
+Regardless of which option you choose, be sure to replace the following
+parameters to reflect the needs of your environment: `PROJECT_ID`,
+`NEW_CLUSTER_NAME`, `ZONE`.
 
-> The example above includes the use of the `enable-network-policy` flag, which
-> will result in the
-> [creation of a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
+> Both options include the use of the `enable-network-policy` flag, which
+> [creates a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
+> See
+> [Network Policies](https://codercom-lt03v3kjy-codercom.vercel.app/docs/setup/requirements#network-policies)
+> for more information.
 
-To create clusters capable of supporting use of the
-[CVMs](../../admin/environment-management/cvms.md) deployment option:
+### Option 1: Cluster with full support of Coder features
+
+This option uses an Ubuntu node image to enable support of
+[Container-based Virtual Machines (CVMs)](../../admin/environment-management/cvms.md),
+allowing system-level functionalities such as Docker in Docker.
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
@@ -80,6 +67,40 @@ gcloud beta container --project "$PROJECT_ID" \
     --enable-autoscaling \
     --min-nodes "1" \
     --max-nodes "8"
+```
+
+### Option 2: Cluster with minimum requirements for Coder
+
+This option uses a Container-Optimized OS (COS) and meets Coder's minimum
+requirements. It does _not_ enable the use of
+[CVMs](../../admin/environment-management/cvms.md).
+
+```console
+gcloud beta container --project "$PROJECT_ID" \
+clusters create "$NEW_CLUSTER_NAME" \
+   --zone "$ZONE" \
+   --no-enable-basic-auth \
+   --cluster-version "latest" \
+   --machine-type "n1-highmem-4" \
+   --image-type "COS" \
+   --disk-type "pd-standard" \
+   --disk-size "50" \
+   --metadata disable-legacy-endpoints=true \
+   --scopes "https://www.googleapis.com/auth/cloud-platform" \
+   --num-nodes "2" \
+   --enable-stackdriver-kubernetes \
+   --enable-ip-alias \
+   --network "projects/$PROJECT_ID/global/networks/default" \
+   --subnetwork \
+   "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
+   --default-max-pods-per-node "110" \
+   --addons HorizontalPodAutoscaling,HttpLoadBalancing \
+   --enable-autoupgrade \
+   --enable-autorepair \
+   --enable-network-policy \
+   --enable-autoscaling \
+   --min-nodes "1" \
+   --max-nodes "8"
 ```
 
 This process may take ~15-30 minutes to complete.
