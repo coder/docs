@@ -30,6 +30,9 @@ parameters to reflect the needs of your environment: `PROJECT_ID`,
 
 > Both options include the use of the `enable-network-policy` flag, which
 > [creates a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
+> See
+> [Network Policies](https://codercom-lt03v3kjy-codercom.vercel.app/docs/setup/requirements#network-policies)
+> for more information.
 
 ### Option 1: Cluster with full support of Coder features
 
