@@ -12,22 +12,30 @@ Before proceeding, make sure that the
 [gcloud CLI](https://cloud.google.com/sdk/docs/quickstarts) is installed on your
 machine and configured to interact with your Google Cloud Platform account.
 
+Alternatively, you can
+[create your cluster using the Google Cloud Console](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#creating-a-cluster)
+instead of the gcloud CLI. Please refer to the sample CLI commands below for
+assistance selecting the correct options for your cluster.
+
 ## Set Up the GKE Cluster
 
-The following options will spin up a Kubernetes cluster using the `gcloud`
-command (be sure to replace the parameters (specifically `PROJECT_ID`,
-`NEW_CLUSTER_NAME`, and `ZONE`) as needed to reflect the needs of your
-environment).
+The following two sections will show you how to spin up a Kubernetes cluster
+using the `gcloud` command. See
+[Google's docs](https://cloud.google.com/sdk/gcloud/reference/beta/container/clusters/create)
+for more information on each parameter used.
 
-> Both examples include the use of the `enable-network-policy` flag, which will
-> result in the
-> [creation of a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
+Regardless of which option you choose, be sure to replace the following
+parameters to reflect the needs of your environment: `PROJECT_ID`,
+`NEW_CLUSTER_NAME`, `ZONE`.
 
-## Option 1: Full support of Coder features
+> Both options include the use of the `enable-network-policy` flag, which
+> [creates a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
 
-This option uses an Ubuntu node image to support
+### Option 1: Cluster with full support of Coder features
+
+This option uses an Ubuntu node image to enable support of
 [Container-based Virtual Machines (CVMs)](../../admin/environment-management/cvms.md),
-enabling system-level functionalities such as Docker in Docker.
+allowing system-level functionalities such as Docker in Docker.
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
@@ -58,10 +66,10 @@ gcloud beta container --project "$PROJECT_ID" \
     --max-nodes "8"
 ```
 
-## Option 2: Minimum requirements
+### Option 2: Cluster with minimum requirements for Coder
 
-This option uses a Container-Optimized OS (COS), and meets Coder's minimum
-requirements. It does not enable the use of
+This option uses a Container-Optimized OS (COS) and meets Coder's minimum
+requirements. It does _not_ enable the use of
 [CVMs](../../admin/environment-management/cvms.md).
 
 ```console
