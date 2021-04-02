@@ -15,13 +15,17 @@ machine and configured to interact with your Google Cloud Platform account.
 ## Set Up the GKE Cluster
 
 The following commands will spin up a Kubernetes cluster using the `gcloud`
-command (be sure to replace the parameters (specifically `PROJECT_ID`,
-`NEW_CLUSTER_NAME`, and `ZONE`) as needed to reflect the needs of your
-environment). The first option creates a cluster that meets Coder's minimum
-requirements. The second option creates a cluster capable of supporting use of
-the [CVMs](../../admin/environment-management/cvms.md) deployment option.
+command.
 
-**Option 1:**
+The first option creates a cluster that meets Coder's minimum requirements. The
+second option creates a cluster capable of supporting use of the
+[CVMs](../../admin/environment-management/cvms.md) deployment option.
+
+Regardless of which option you choose, be sure to replace the following
+parameters to reflect the needs of your environment: `PROJECT_ID`,
+`NEW_CLUSTER_NAME`, `ZONE`.
+
+### Option 1: Cluster with full support of Coder features
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
@@ -55,7 +59,7 @@ clusters create "$NEW_CLUSTER_NAME" \
 > will result in the
 > [creation of a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
 
-**Option 2:**
+### Option 2: Cluster meeting minimum requirements for Coder
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
