@@ -14,48 +14,20 @@ machine and configured to interact with your Google Cloud Platform account.
 
 ## Set Up the GKE Cluster
 
-The following commands will spin up a Kubernetes cluster using the `gcloud`
+The following options will spin up a Kubernetes cluster using the `gcloud`
 command (be sure to replace the parameters (specifically `PROJECT_ID`,
 `NEW_CLUSTER_NAME`, and `ZONE`) as needed to reflect the needs of your
-environment). The first option creates a cluster that meets Coder's minimum
-requirements. The second option creates a cluster capable of supporting use of
-the [CVMs](../../admin/environment-management/cvms.md) deployment option.
+environment).
 
-**Option 1:**
-
-```console
-gcloud beta container --project "$PROJECT_ID" \
-clusters create "$NEW_CLUSTER_NAME" \
-   --zone "$ZONE" \
-   --no-enable-basic-auth \
-   --cluster-version "latest" \
-   --machine-type "n1-highmem-4" \
-   --image-type "COS" \
-   --disk-type "pd-standard" \
-   --disk-size "50" \
-   --metadata disable-legacy-endpoints=true \
-   --scopes "https://www.googleapis.com/auth/cloud-platform" \
-   --num-nodes "2" \
-   --enable-stackdriver-kubernetes \
-   --enable-ip-alias \
-   --network "projects/$PROJECT_ID/global/networks/default" \
-   --subnetwork \
-   "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
-   --default-max-pods-per-node "110" \
-   --addons HorizontalPodAutoscaling,HttpLoadBalancing \
-   --enable-autoupgrade \
-   --enable-autorepair \
-   --enable-network-policy \
-   --enable-autoscaling \
-   --min-nodes "1" \
-   --max-nodes "8"
-```
-
-> The example above includes the use of the `enable-network-policy` flag, which
-> will result in the
+> Both examples include the use of the `enable-network-policy` flag, which will
+> result in the
 > [creation of a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
 
-**Option 2:**
+## Option 1: Full support of Coder features
+
+This option uses an Ubuntu node image to support
+[Container-based Virtual Machines (CVMs)](../../admin/environment-management/cvms.md),
+enabling system-level functionalities such as Docker in Docker.
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
@@ -84,6 +56,40 @@ gcloud beta container --project "$PROJECT_ID" \
     --enable-autoscaling \
     --min-nodes "1" \
     --max-nodes "8"
+```
+
+## Option 2: Minimum requirements
+
+This option uses a Container-Optimized OS (COS), and meets Coder's minimum
+requirements. It does not enable the use of
+[CVMs](../../admin/environment-management/cvms.md).
+
+```console
+gcloud beta container --project "$PROJECT_ID" \
+clusters create "$NEW_CLUSTER_NAME" \
+   --zone "$ZONE" \
+   --no-enable-basic-auth \
+   --cluster-version "latest" \
+   --machine-type "n1-highmem-4" \
+   --image-type "COS" \
+   --disk-type "pd-standard" \
+   --disk-size "50" \
+   --metadata disable-legacy-endpoints=true \
+   --scopes "https://www.googleapis.com/auth/cloud-platform" \
+   --num-nodes "2" \
+   --enable-stackdriver-kubernetes \
+   --enable-ip-alias \
+   --network "projects/$PROJECT_ID/global/networks/default" \
+   --subnetwork \
+   "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
+   --default-max-pods-per-node "110" \
+   --addons HorizontalPodAutoscaling,HttpLoadBalancing \
+   --enable-autoupgrade \
+   --enable-autorepair \
+   --enable-network-policy \
+   --enable-autoscaling \
+   --min-nodes "1" \
+   --max-nodes "8"
 ```
 
 This process may take ~15-30 minutes to complete.
