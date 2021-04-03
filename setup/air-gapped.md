@@ -31,7 +31,7 @@ can be used.
 - [Docker registry](https://hub.docker.com/_/registry)
 - [DNS server](https://coredns.io) or [HostAliases](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/) patched in
 - [Certificate authority](https://github.com/activecm/docker-ca/blob/master/Dockerfile)
-  or [self-signed certificates](#)
+  or [self-signed certificates](#self-signed-certificate-for-the-registry)
 
 ## Step 1: Pull all Coder resources into your air-gapped environment
 
@@ -63,14 +63,22 @@ platform images are hosted in Coder's Docker Hub repo.
 
    [dashboard](https://hub.docker.com/r/coderenvs/dashboard)
 
-   [nginx-ingress-controller](https://quay.io/kubernetes-ingress-controller/nginx-ingress-controller)
-
    You can pull each of these images from their `coderenvs/<img-name>:<version>`
    registry location using the image's name and Coder version:
 
    ```console
    docker pull coderenvs/coder-service:<version>
    ```
+
+   Additional images may be needed to configure and run workspaces:
+
+   [nginx-ingress-controller](https://quay.io/kubernetes-ingress-controller/nginx-ingress-controller)
+
+   [enterprise-node](https://hub.docker.com/r/codercom/enterprise-node)
+
+   [enterprise-intellij](https://hub.docker.com/r/codercom/enterprise-intellij)
+
+   [ubuntu](https://hub.docker.com/_/ubuntu) as a base image
 
 1. Tag and push all of the images that you've downloaded in the previous step to
    your internal registry; this registry must be accessible from your air-gapped
