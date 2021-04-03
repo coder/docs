@@ -24,12 +24,14 @@ dependencies:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [helm](https://helm.sh/docs/intro/install/)
 
-In the same network as the Kubernetes cluster that will run Coder, additional 
-services need to be configured. Links go to suggestions but many other options 
+In the same network as the Kubernetes cluster that will run Coder, additional
+services need to be configured. Links go to suggestions but many other options
 can be used.
 
 - [Docker registry](https://hub.docker.com/_/registry)
-- [DNS server](https://coredns.io) or [HostAliases](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/) patched in
+- [DNS server](https://coredns.io) or
+  [HostAliases](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
+  patched in
 - [Certificate authority](https://github.com/activecm/docker-ca/blob/master/Dockerfile)
   or [self-signed certificates](#self-signed-certificate-for-the-registry)
 
