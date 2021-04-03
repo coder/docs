@@ -18,11 +18,20 @@ To do so, you must:
 
 ## Dependencies
 
-Before proceeding, please ensure that you've installed the following
+Before proceeding, please ensure that you've installed the following software
 dependencies:
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [helm](https://helm.sh/docs/intro/install/)
+
+In the same network as the Kubernetes cluster that will run Coder, additional 
+services need to be configured. Links go to suggestions but many other options 
+can be used.
+
+- [Docker registry](https://hub.docker.com/_/registry)
+- [DNS server](https://coredns.io) or [HostAliases](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/) patched in
+- [Certificate authority](https://github.com/activecm/docker-ca/blob/master/Dockerfile)
+  or [self-signed certificates](#)
 
 ## Step 1: Pull all Coder resources into your air-gapped environment
 
@@ -53,6 +62,8 @@ platform images are hosted in Coder's Docker Hub repo.
    [timescale](https://hub.docker.com/r/coderenvs/timescale)
 
    [dashboard](https://hub.docker.com/r/coderenvs/dashboard)
+
+   [nginx-ingress-controller](https://quay.io/kubernetes-ingress-controller/nginx-ingress-controller)
 
    You can pull each of these images from their `coderenvs/<img-name>:<version>`
    registry location using the image's name and Coder version:
