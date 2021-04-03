@@ -76,11 +76,17 @@ platform images are hosted in Coder's Docker Hub repo.
 
    [nginx-ingress-controller](https://quay.io/kubernetes-ingress-controller/nginx-ingress-controller)
 
+   [OpenVSX](https://github.com/orgs/eclipse/packages/container/package/openvsx-server)
+
    [enterprise-node](https://hub.docker.com/r/codercom/enterprise-node)
 
    [enterprise-intellij](https://hub.docker.com/r/codercom/enterprise-intellij)
 
    [ubuntu](https://hub.docker.com/_/ubuntu) as a base image
+
+   When building images for the environment with a custom CA, follow the
+   [docs on adding certificates](/docs/images/ssl-certificates#adding-certificates-for-coder)
+   to images.
 
 1. Tag and push all of the images that you've downloaded in the previous step to
    your internal registry; this registry must be accessible from your air-gapped
