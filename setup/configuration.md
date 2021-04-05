@@ -5,7 +5,7 @@ description: Learn how to configure a fresh Coder installation.
 
 After installation, you'll set up and configure Coder using its web UI.
 
-## Before You Start
+## Before you start
 
 You should have completed the [installation](installation.md) process and
 successfully logged in to Coder.
@@ -22,7 +22,7 @@ Make sure you have the following information on hand:
 > If you do not have a license, you can [generate one](https://coder.com/trial)
 > that allows you to try Coder free of charge for 60 days.
 
-### Creating Your License File
+### Creating your license file
 
 Coder provides you with your licensing information, which looks like:
 
@@ -34,14 +34,14 @@ Copy this information into the text editor of your choice, and save it as a .txt
 or a .json file. You'll need to upload this file at two points during the setup
 and configuration processes.
 
-## Providing Your License
+## Providing your license
 
 Immediately after logging into Coder for the first time, you'll be prompted to
 upload your license (you must provide a JSON file).
 
 Once done, you can proceed with the Coder configuration process.
 
-## Configure Your Coder Deployment
+## Configure your Coder deployment
 
 Once you log in to Coder's Web UI, you'll be walked through a configuration
 dashboard. You can specify the authentication method used for logins, provide
@@ -54,7 +54,7 @@ dashboard, where you can create new users, images, and environments.
 > manager** user that can be used to create additional users and resources. **We
 > recommend using the site admin user only for initial configuration purposes.**
 
-### Best Practices
+### Best practices
 
 Coder's default values during the setup/configuration process are acceptable
 only by a deployment used for evaluation purposes.

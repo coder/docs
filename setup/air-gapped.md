@@ -1,5 +1,5 @@
 ---
-title: Air-Gapped Deployment
+title: Air-gapped deployment
 description: Learn how to set up an air-gapped Coder deployment.
 ---
 
@@ -13,7 +13,8 @@ To do so, you must:
 - Deploy Coder from within your air-gapped environment
 
 > Coder licenses issued as part of the trial program do not support air-gapped
-> deployments.
+> deployments. If an air-gapped deployment is a requirement for you, please
+> [reach out to our team](https://coder.com/contact) to discuss a pilot.
 
 ## Dependencies
 
@@ -87,7 +88,7 @@ platform images are hosted in Coder's Docker Hub repo.
    6** to get the access URL and the temporary admin password, which allows you
    to proceed with setting up and configuring Coder.
 
-## Extensions Marketplace
+## Extensions marketplace
 
 You can configure your deployment to use the internal, built-in extension
 marketplace, allowing your developers to utilize whitelisted IDE extensions

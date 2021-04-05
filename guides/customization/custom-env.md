@@ -1,5 +1,5 @@
 ---
-title: Custom Environments
+title: Custom environments
 description: Learn how to create a custom environment.
 ---
 
@@ -18,12 +18,12 @@ Make sure that you've:
 - Given your image building tool the rights needed to push to a
   [Docker Registry](https://docs.docker.com/registry/introduction/) (e.g.,
   [Docker Hub](https://hub.docker.com/))
-- (Optional) Configured [Dev URLs](../../admin/devurls.md) for your deployment
+- (Optional) Configured [dev URLs](../../admin/devurls.md) for your deployment
 
 Your Coder user account must have permissions to
 [import an image](../../images/importing.md).
 
-## Step 1: Create a Development Image
+## Step 1: Create a development image
 
 A Coder development image should include all programming languages, development
 utilities, testing frameworks, source control utilities, and other dependencies
@@ -31,7 +31,7 @@ that a developer needs to start contributing to a project immediately.
 
 Since all of the Coder development environments are created on your Kubernetes
 cluster, you can use
-[Docker Images](https://docs.docker.com/get-started/overview/#docker-objects) to
+[Docker images](https://docs.docker.com/get-started/overview/#docker-objects) to
 define your development images.
 
 To demonstrate, we'll create a development image that utilizes
@@ -53,7 +53,7 @@ Environment** if you don't want to build and push your own image.
 However, if you want to see how the image is made, please continue with the
 following section.
 
-### 1a. Defining Your Dockerfile
+### 1a. Defining your dockerfile
 
 Each development image is defined through a
 [Dockerfile](https://docs.docker.com/engine/reference/builder/). This file can
@@ -121,7 +121,7 @@ RUN adduser --gecos '' --disabled-password coder && \
 USER coder
 ```
 
-### 1b. Build and Push Your Image
+### 1b. Build and push your image
 
 At this point, you'll need to build the development image and push it to the
 Docker registry. To do so, run the following command in the directory where your
@@ -136,7 +136,7 @@ docker build -t coderenterprise/react .
 docker push coderenterprise/react
 ```
 
-## Step 2: Import the Image
+## Step 2: Import the image
 
 After you've pushed the image to a Docker registry, you can access and import it
 into your Coder deployment.
@@ -145,7 +145,7 @@ into your Coder deployment.
 1. Add (or select) the image registry where the image is hosted, and provide the
    requested values when prompted.
 
-## Step 3: Create the Dev Environment
+## Step 3: Create the dev environment
 
 Once you've imported an image into Coder, you can use it to create new
 development environments:
@@ -161,12 +161,12 @@ The environment will take a few minutes to build the first time due to the
 initial image pulling but should take around 30-90 seconds on subsequent
 rebuilds and updates.
 
-## Step 4: Use the Dev Environment
+## Step 4: Use the dev environment
 
 At this point, you have a fully built environment, and you should begin working
 on your React application.
 
-### Set Up Your React App
+### Set up your React app
 
 We'll begin our sample project for this tutorial by
 [bootstrapping the React app](https://github.com/facebook/create-react-app)
@@ -182,7 +182,7 @@ npx create-react-app coder-app
 The command creates a new directory called **coder-app** that contains the
 initial code and configuration settings for your app.
 
-### Start the Development Server
+### Start the development server
 
 Before you begin working on your application, we recommend starting up the
 development server so that you can preview the changes you make to your project.
@@ -195,10 +195,10 @@ cd coder-app
 yarn start
 ```
 
-### Preview Your Application
+### Preview your application
 
 Once you've started your server, you can preview your application using the web
-browser of your choice (you must have [Dev URLs](../../admin/devurls.md) enabled
+browser of your choice (you must have [dev URLs](../../admin/devurls.md) enabled
 for this to work). To do so:
 
 1. On the Environment Overview of your Coder deployment, go to Dev URLs and
@@ -207,7 +207,7 @@ for this to work). To do so:
 1. Click **Save**.
 1. Use the generated URL in a web browser to see your application.
 
-### Modifying Your Application Code
+### Modifying your application code
 
 At this point, you can open the IDE to start working on your project.
 

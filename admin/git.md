@@ -1,8 +1,8 @@
 ---
-title: Git Integration
+title: Git integration
 description:
   Learn how to integrate with your Git provider to automatically authenticate
-  their Environments.
+  your environments.
 ---
 
 The Git Integration allows your developers to connect their Coder accounts to

@@ -73,5 +73,5 @@ jobs:
 
             * _Host_: ${{ steps.preview.outputs.url }}/docs
             * _Last deploy status_: ${{ steps.preview.outcome }}
-            * _Commit_: ${{ github.sha }}
+            * _Commit_: ${{ github.event.pull_request.head.sha }}
             * _Workflow status_: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

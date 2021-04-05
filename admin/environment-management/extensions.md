@@ -6,9 +6,9 @@ description: Learn how to configure the code-server extension marketplace .
 You can customize VS Code with extensions, which allow you to add new features
 and functionality (e.g., languages, debuggers, tools), themes, and more.
 
-## The Extension Marketplace
+## The extension marketplace
 
-You can find the extensions available to you in the Extension Marketplace.
+You can find the extensions available to you in the extension marketplace.
 Access to the marketplace is enabled by default and requires no unique
 configuration on your part. You can, however, choose between two types of
 extensions marketplaces by going to **Manage** > **Admin** > **Infrastructure**,
@@ -18,9 +18,9 @@ then scrolling down to **Extensions**:
 - **Custom**: your organization's custom VS Code extension marketplace API,
   accessed via the URL you provide
 
-![Configuring Extensions Marketplace](../../assets/configure-extensions.png)
+![Configuring extensions marketplace](../../assets/configure-extensions.png)
 
-## Air-Gapped Marketplaces
+## Air-gapped marketplaces
 
 If you run Coder in an air-gapped environment, the public VS Code marketplace is
 inaccessible to end-users. Using the **Custom** configuration option, you can

@@ -1,23 +1,23 @@
 ---
 title: "Personalization"
 description:
-  Learn how to personalize your Environment to augment its base Image.
+  Learn how to personalize your environment to augment its base image.
 ---
 
 Your Coder development environment strikes a balance between consistent team
 configuration and personal customization. The environment's
 [image](../images/index.md) standardizes the system dependencies for
-development, but there are several different mechanisms that Coder offers to
-allow you to customize the environment.
+development, but there are several different mechanisms that Coder offers for
+customizing the environment.
 
-## Persistent Home
+## Persistent home
 
 The `/home/<username>` volume is bound to your environment, and its contents
 persist despite shutdowns and rebuilds. This ensures that personal configuration
 files like `~/.gitconfig` and `~/.zshrc`, source code, and project files, are
 not disrupted.
 
-The environment's [Image](../images/index.md), however, provides all data
+The environment's [image](../images/index.md), however, provides all data
 outside `/home/<username>` and is reset whenever your environment
 [rebuilds](./lifecycle.md).
 
@@ -83,13 +83,13 @@ build log whenever it runs:
 
 ![~/personalize log output](../assets/personalize-log.png)
 
-## Git Integration
+## Git integration
 
 Once your site manager has [set up a Git service](../admin/git.md), you can
 [link your Coder account](preferences.md#linked-accounts). This will
 authenticate all `git` operations performed in your environment.
 
-## Dotfiles Repo
+## Dotfiles repo
 
 A **dotfiles repository** is a Git repository that contains your personal
 environment preferences in the form of static files and setup scripts.
@@ -104,9 +104,9 @@ dot-prefixed files are symlinked to your home directory.
 
 Read more about dotfiles repos [here](http://dotfiles.github.io/).
 
-### Adding Your Dotfiles Repo to Coder
+### Adding your dotfiles repo to Coder
 
 You can provide a link to your dotfiles repo that's hosted with the Git provider
-of your choice under [User Preferences](preferences.md):
+of your choice under [User preferences](preferences.md):
 
-![Dotfiles Preferences](../assets/dotfiles-preferences.png)
+![Dotfiles preferences](../assets/dotfiles-preferences.png)

@@ -1,9 +1,9 @@
 ---
-title: Installation and Setup
+title: Installation and setup
 description: Learn how to install and configure the Coder CLI.
 ---
 
-## Getting Started
+## Getting started
 
 The Coder CLI is automatically injected and authenticated inside of all Coder
 Environments.
@@ -54,8 +54,3 @@ Generate a static authentication token with the following command:
 ```console
 coder tokens create my-token
 ```
-
-## Full Reference
-
-For a full list of the Coder CLI commands available, see the
-[reference pages](https://github.com/cdr/coder-cli/blob/master/docs/coder.md).

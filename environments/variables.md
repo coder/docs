@@ -1,6 +1,6 @@
 ---
-title: Environment Variables
-description: Learn how to work with CODER_* Environment Variables
+title: Environment variables
+description: Learn how to work with CODER_* environment variables
 ---
 
 Coder injects a standard set of environment variables that allow you to access
@@ -13,11 +13,11 @@ To obtain a list of environment variables and their values, launch the
 env | grep CODER_
 ```
 
-## Available Environment Variables
+## Available environment variables
 
 <table>
     <tr>
-        <th>Environment Variable</th>
+        <th>Environment variable</th>
         <th>Description</th>
     </tr>
     <tr>

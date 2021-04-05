@@ -29,6 +29,6 @@ deployment steps.
    [Kubernetes cluster](kubernetes/index.md) and
    [installing Coder](installation.md).
 
-## In This Section
+## In this section
 
 <children></children>

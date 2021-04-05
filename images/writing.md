@@ -1,5 +1,5 @@
 ---
-title: Custom Image Creation
+title: Custom image creation
 description: Learn how to write custom images for use with Coder.
 ---
 
@@ -11,7 +11,7 @@ scripts, and user preferences helpful for your project.
 > [this tutorial by Docker](http://blog.shippable.com/build-a-docker-image-and-push-it-to-docker-hub)
 > before proceeding.
 
-## Creating a Custom Image
+## Creating a custom image
 
 Instead of starting from scratch, we recommend extending one of our
 [sample images](https://github.com/cdr/enterprise-images):
@@ -77,7 +77,7 @@ RUN curl -L \
 RUN ln -s /opt/clion/bin/clion.sh /usr/bin/clion
 ```
 
-## Sample Images
+## Sample images
 
 To get an idea of what you can include in your images, see:
 

@@ -1,5 +1,5 @@
 ---
-title: User Roles
+title: User roles
 description: Learn about Coder's user roles and the privileges they offer.
 ---
 
@@ -18,13 +18,13 @@ There are four roles available:
     </thead>
     <tbody>
         <tr>
-            <td><b>Site Admin</b></td>
+            <td><b>Site admin</b></td>
             <td>Grants full access to the system.
-            Note that here can only be one Site Admin
+            Note that here can only be one site admin
             per system</td>
         </tr>
         <tr>
-            <td><b>Site Manager</b></td>
+            <td><b>Site manager</b></td>
             <td>Allows access to all administrative functionality in
             addition to basic usage rights</td>
         </tr>
@@ -39,7 +39,7 @@ There are four roles available:
     </tbody>
 </table>
 
-### Site Admin Permissions
+### Site admin permissions
 
 <table>
     <thead>
@@ -68,7 +68,7 @@ There are four roles available:
             <td>X</td>
         </tr>
         <tr>
-            <td>Audit Logs</td>
+            <td>Audit logs</td>
             <td></td>
             <td>X</td>
             <td></td>
@@ -123,7 +123,7 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>Image Tags</td>
+            <td>Image tags</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -156,7 +156,7 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>Org Members</td>
+            <td>Org members</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -189,7 +189,7 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>System Banners</td>
+            <td>System banners</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -213,7 +213,7 @@ There are four roles available:
     </tbody>
 </table>
 
-### Site Manager Permissions
+### Site manager permissions
 
 <table>
     <thead>
@@ -231,7 +231,7 @@ There are four roles available:
     </thead>
     <tbody>
         <tr>
-            <td>API Keys</td>
+            <td>API keys</td>
             <td>X</td>
             <td></td>
             <td>X</td>
@@ -242,7 +242,7 @@ There are four roles available:
             <td>X</td>
         </tr>
         <tr>
-            <td>Audit Logs</td>
+            <td>Audit logs</td>
             <td></td>
             <td>X</td>
             <td></td>
@@ -308,7 +308,7 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>Image Tags</td>
+            <td>Image tags</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -341,7 +341,7 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>Org Members</td>
+            <td>Org members</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -374,7 +374,7 @@ There are four roles available:
             <td></td>
         </tr>
         <tr>
-            <td>System Banners</td>
+            <td>System banners</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -398,7 +398,7 @@ There are four roles available:
     </tbody>
 </table>
 
-### Auditor Permissions
+### Auditor permissions
 
 <table>
     <thead>
@@ -416,7 +416,7 @@ There are four roles available:
     </thead>
     <tbody>
         <tr>
-            <td>API Keys</td>
+            <td>API keys</td>
             <td>X</td>
             <td></td>
             <td>X</td>
@@ -427,7 +427,7 @@ There are four roles available:
             <td>X</td>
         </tr>
         <tr>
-            <td>Audit Logs</td>
+            <td>Audit logs</td>
             <td></td>
             <td>X</td>
             <td></td>
@@ -484,7 +484,7 @@ There are four roles available:
     </tbody>
 </table>
 
-### Member Permissions
+### Member permissions
 
 <table>
     <thead>
@@ -502,7 +502,7 @@ There are four roles available:
     </thead>
     <tbody>
         <tr>
-            <td>API Keys</td>
+            <td>API keys</td>
             <td>X</td>
             <td></td>
             <td>X</td>
@@ -559,7 +559,7 @@ There are four roles available:
     </tbody>
 </table>
 
-## Changing a User's Role
+## Changing a user's role
 
 By default, all new users are assigned the **Member** role. These users can be
 upgraded to **Auditor** or **Site Manager** by another user with administrative

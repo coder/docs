@@ -1,5 +1,5 @@
 ---
-title: Workspace Provider Deployment
+title: Workspace provider deployment
 description: Learn how to deploy a workspace provider.
 state: beta
 ---
@@ -7,7 +7,7 @@ state: beta
 This article walks you through the process of deploying a workspace provider to
 a [Kubernetes cluster](../../setup/kubernetes/index.md).
 
-[Workspace Providers](index.md) are logical groups of resources to which
+[Workspace providers](index.md) are logical groups of resources to which
 developers can deploy environments. As with the Coder installation, Helm manages
 the deployment of workspace providers into the Kubernetes cluster that will
 contain your environments.
@@ -32,7 +32,7 @@ Install the following dependencies if you haven't already:
    deployment Access URL.
 1. The Kubernetes cluster address must be reachable from the Coder deployment.
 
-## Connecting to the Cluster
+## Connecting to the cluster
 
 To add a Kubernetes cluster as a workspace provider, you must first make sure
 that you're connected to the cluster you want to expand into. Run the following
@@ -45,7 +45,7 @@ kubectl config current-context
 Confirm that your current kubectl context correct before continuing; otherwise,
 connect to the correct context.
 
-## Creating the Coder Namespace (Optional)
+## Creating the Coder namespace (optional)
 
 We recommend running workspace providers in a separate
 [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
@@ -61,7 +61,7 @@ Next, change the kubectl context to point to your newly created namespace:
 kubectl config set-context --current --namespace=coder
 ```
 
-## Creating the New Workspace Provider
+## Creating the new workspace provider
 
 Using the Coder CLI, create a new workspace provider in the `pending` state.
 
@@ -89,7 +89,7 @@ The returned `REMOTE_ENVPROXY_TOKEN` is a shared secret between the two
 deployments and is what the workspace provider will use to authenticate itself
 when communicating with the Coder deployment.
 
-## Installing a Workspace Provider
+## Installing a workspace provider
 
 1. If you haven't already, add the Coder helm repo:
 
@@ -117,7 +117,7 @@ when communicating with the Coder deployment.
    a `values.yaml` file and adding the argument `-f my-values.yaml` to the
    generated command. Helm values control attributes of the workspace provider,
    including Dev URLs, Kubernetes storage classes, SSH, and more. See the
-   [Workspace Provider Helm Chart Values]("https://github.com/cdr/enterprise-helm/blob/workspace-providers-envproxy-only/README.md")
+   [Workspace provider Helm chart values]("https://github.com/cdr/enterprise-helm/blob/workspace-providers-envproxy-only/README.md")
    for more details.
 
    For installations using HTTPS, you must
@@ -138,7 +138,7 @@ when communicating with the Coder deployment.
 1. Once the Helm chart has deployed successfully, you should see the workspace
    provider in a `ready` state on the Workspace Provider Admin page.
 
-   ![Workspace Providers Admin](../../assets/workspace-providers-admin.png)
+   ![Workspace providers admin](../../assets/workspace-providers-admin.png)
 
 1. From the Workspace Provider Admin page, add the desired organizations to its
    allowlist.
@@ -146,7 +146,7 @@ when communicating with the Coder deployment.
 Users in the allowed organizations can now choose to deploy into the newly set
 up workspace provider.
 
-## Upgrading the Workspace Provider
+## Upgrading the workspace provider
 
 We strongly recommend that you upgrade your workspace providers in lockstep with
 your Coder deployment.
@@ -167,7 +167,7 @@ a values file (`-f myvalues.yaml`) or using with the `--set` flag. Any existing
 values that were set during installation will persist unless you explicitly
 write over them.
 
-## Deleting a Workspace Provider
+## Deleting a workspace provider
 
 You can only remove a workspace provider if it no longer contains any
 environments, so you must remove all environments before deleting the workspace

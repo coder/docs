@@ -1,11 +1,11 @@
 ---
-title: Managing Git Configuration
+title: Managing Git configuration
 description: Learn how to configure Git in Coder.
 ---
 
 This guide will show you how to manage your Git configuration in Coder.
 
-## Personal git Configurations
+## Personal git configurations
 
 Coder will create a global git configuration file located at `~/.gitconfig` in
 all newly created environments and set the user name and email address using the
@@ -23,7 +23,7 @@ using the [~/personalize script](../../environments/personalization.md).
 **Preferences defined using individual `.gitconfig` files take precedence over
 system-level settings.**
 
-## System and Global git Configurations
+## System and global git configurations
 
 If you have a set of git configuration instructions that apply to your
 organization as a whole, you can define and use a system-level git

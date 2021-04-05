@@ -20,7 +20,7 @@ contained.
 
 The following steps will show you how to create and use a config file.
 
-## Step 1: Create the Configure File
+## Step 1: Create the config file
 
 Using the text editor of your choice, create a file named `configure` and add
 the instructions that you want included. For example, the following file shows
@@ -40,7 +40,7 @@ Note that the instructions provided include logic on whether the instructions
 should be re-run (and when) or if Coder should run the instructions only once.
 We strongly recommend including this logic at all times to minimize overhead.
 
-Step 2: Add the Configure File to the Image
+## Step 2: Add the config file to the image
 
 Once you have a config file, update your image to use it by including the
 following in your Dockerfile:
@@ -59,7 +59,7 @@ RUN apt-get update && apt-get install -y curl
 COPY [ "configure", "/coder/configure" ]
 ```
 
-Step 3: Build and Push the Image and Config File
+## Step 3: Build and push the image and config file
 
 To make your image accessible to Coder, build the development image and push it
 to the Docker registry.
@@ -79,7 +79,7 @@ Once you've built the image, push the image to the Docker registry:
 docker push cdr/config
 ```
 
-Step 4: Test the Config File
+## Step 4: Test the config file
 
 You can test your setup by performing the following steps:
 
@@ -96,7 +96,7 @@ penultimate step of the build process):
 
 The following are examples instructions you can include in your configure file.
 
-### Copying Coder's Sample Configure File
+### Copying Coder's sample config file
 
 Coder's [base images](https://github.com/cdr/enterprise-images) include a basic
 configure script, which you can copy and modify:
@@ -109,7 +109,7 @@ FROM ...
 COPY configure /coder/configure
 ```
 
-#### Extending a Configure Script in a Base Image
+#### Extending a configure script in a base image
 
 If you're extending a Coder image that has a configure file that you'd like to
 preserve, the following steps show you how to avoid writing over the original
@@ -152,7 +152,7 @@ script.
    ...
    ```
 
-### Running Coder CLI Commands
+### Running Coder CLI commands
 
 The following shows how to run a Coder CLI command in your configure script by
 demonstrating how you can create a Dev URL:
@@ -166,7 +166,7 @@ coder ...
 coder urls create $CODER_ENVIRONMENT_NAME 3000 --name webapp
 ```
 
-### Modifying VS Code Settings
+### Modifying VS Code settings
 
 1. Create a `settings.json` file:
 

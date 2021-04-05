@@ -1,6 +1,6 @@
 ---
 title: "Shutdown"
-description: Learn how to configure Environment auto-off behavior.
+description: Learn how to configure environment auto-off behavior.
 ---
 
 You can specify the duration of inactivity allowed before an environment
@@ -13,7 +13,7 @@ reduce costs.
 > would like persisted across rebuilds with the
 > [Dotfiles](../../environments/personalization.md) feature.
 
-## Configuring Environment Shutdown Behavior
+## Configuring environment shutdown behavior
 
 If you have administrative privileges, you can configure the environment
 shutdown behavior. Configuring the environment shutdown behavior is done at the

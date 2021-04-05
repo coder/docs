@@ -1,5 +1,5 @@
 ---
-title: Nightly Releases
+title: Nightly releases
 description: Learn how to obtain and use Coder's nightly releases.
 ---
 
@@ -22,13 +22,13 @@ backup manually.
 > We recommend you backup your database before proceeding with any of the steps
 > on this page.
 
-## Obtaining the Nightly Releases
+## Obtaining the nightly releases
 
 We store nightly releases in
 [this Helm repository](https://helm-nightly.coder.com/index.yaml). We store
 images in a publicly accessible gcr.io repository.
 
-## Nightly Release Listing
+## Nightly release listing
 
 The list of nightly releases is maintained in the Helm repository's index. We
 automatically prune old nightly releases, so you'll see a maximum of 100
@@ -73,7 +73,7 @@ $ curl -sS https://helm-nightly.coder.com/index.yaml \
 1.11.0-108-g01693c0e2-20200926
 ```
 
-## Installing a Nightly Release via Helm
+## Installing a nightly release via Helm
 
 1. Add the Helm repo (if you haven't already):
 
@@ -103,7 +103,7 @@ $ curl -sS https://helm-nightly.coder.com/index.yaml \
    downgrade on failure is safe and shouldn't require you to manually downgrade
    to your database backup if it occurs.
 
-## Downgrading to a Standard Release
+## Downgrading to a standard release
 
 Downgrading is not something we support at this time. If you need to downgrade,
 you must revert to the database backup you made before installing the nightly

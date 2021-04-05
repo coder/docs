@@ -1,15 +1,15 @@
 ---
-title: File Sync
+title: File sync
 description: Learn how to sync files between Coder and your local IDE.
 ---
 
 If you're working in an IDE that's on your local machine, you can use Coder's
 live sync feature to sync changes from your local IDE with your Coder
 environment. Live sync watches your IDE and pushes updates whenever it detects
-changes. This allows yout o work locally while leveraging Coder for testing,
+changes. This allows you to work locally while leveraging Coder for testing,
 compilation, and so on.
 
-## One-Way File Sync
+## One-way file sync
 
 1. Make sure that you've installed [rsync](https://rsync.samba.org/) on both
    your local machine and Coder environment.
@@ -34,7 +34,7 @@ $ coder sync ~/Projects/cdr/coder-cli my-env:coder-cli
 2020-05-19 17:57:41 INFO watching ~/Projects/cdr/coder-cli for changes
 ```
 
-## Two-Way File Sync
+## Two-way file sync
 
 Alternatively, you can set up two-way file sync, which allows you to use local
 and remote development tools simultaneously. Setting up two-way file sync can
@@ -74,7 +74,7 @@ help ensure your project is in the same state no matter where you make changes.
 1. Test your connection by running `mutagen sync monitor`. If you're successful,
    your project files should sync on all future changes.
 
-### Pausing/Terminating Your Session
+### Pausing or terminating your session
 
 You can pause your sync by running `mutagen sync pause`.
 

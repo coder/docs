@@ -1,6 +1,6 @@
 ---
-title: Docker in Environments
-description: Learn how to enable support for secure Docker inside Environments.
+title: Docker in environments
+description: Learn how to enable support for secure Docker inside environments.
 ---
 
 If you're a site admin or a site manager, you can enable
@@ -8,13 +8,13 @@ If you're a site admin or a site manager, you can enable
 environment deployment option. CVMs allow users to run system-level programs,
 such as Docker and systemd, in their environments.
 
-## Infrastructure Requirements
+## Infrastructure requirements
 
 - CVMs leverage the
-  [sysbox container runtime](https://github.com/nestybox/sysbox), so the
-  Kubernetes Node must run a supported Linux distro with the minimum Kernel
+  [Sysbox container runtime](https://github.com/nestybox/sysbox), so the
+  Kubernetes Node must run a supported Linux distro with the minimum kernel
   version (see
-  [Sysbox Distro Compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
+  [Sysbox distro compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
   for more information)
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
   about why this is still secure [here](#security).
@@ -27,7 +27,7 @@ such as Istio.
 1. Go to **Manage > Admin > Infrastructure**.
 1. Toggle the **Enable Container-Based Virtual Machines** option to **Enable**.
 
-## Setting Up Your Cluster
+## Setting up your cluster
 
 The following sections show how you can set up your K8 clusters hosted by
 Google, Azure, and Amazon to support CVMs.
@@ -89,15 +89,15 @@ and updating your `eksctl` config spec.
 
 ## Security
 
-The [Container-based Virtual Machine](../../environments/cvms.md) deployment
+The [Container-based virtual machine](../../environments/cvms.md) deployment
 option leverages the
-[sysbox container runtime](https://github.com/nestybox/sysbox) to offer a
+[Sysbox container runtime](https://github.com/nestybox/sysbox) to offer a
 VM-like user experience while retaining the footprint of a typical container.
 
 Coder first launches a supervising container with additional privileges. This
 container is standard and included with the Coder release package. During the
 environment build process, the supervising container launches an inner container
-using the [sysbox container runtime](https://github.com/nestybox/sysbox). This
+using the [Sysbox container runtime](https://github.com/nestybox/sysbox). This
 inner container is the user’s [environment](../../environments/index.md).
 
 The user cannot gain access to the supervising container at any point. The
@@ -105,7 +105,7 @@ isolation between the user's environment container and its outer, supervising
 container is what provides
 [strong isolation](https://github.com/nestybox/sysbox/blob/master/docs/user-guide/security.md).
 
-## Image Configuration
+## Image configuration
 
 The following sections show how you can configure your image to include systemd
 and Docker for use in CVMs.

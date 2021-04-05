@@ -12,46 +12,33 @@ Before proceeding, make sure that the
 [gcloud CLI](https://cloud.google.com/sdk/docs/quickstarts) is installed on your
 machine and configured to interact with your Google Cloud Platform account.
 
-## Set Up the GKE Cluster
+Alternatively, you can
+[create your cluster using the Google Cloud Console](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#creating-a-cluster)
+instead of the gcloud CLI. Please refer to the sample CLI commands below for
+assistance selecting the correct options for your cluster.
 
-The following will spin up a Kubernetes cluster using the `gcloud` command (be
-sure to replace the parameters (specifically `PROJECT_ID`, `NEW_CLUSTER_NAME`,
-and `ZONE`) as needed to reflect the needs of your environment).
+## Set up the GKE cluster
 
-```console
-gcloud beta container --project "$PROJECT_ID" \
-clusters create "$NEW_CLUSTER_NAME" \
-   --zone "$ZONE" \
-   --no-enable-basic-auth \
-   --cluster-version "latest" \
-   --machine-type "n1-standard-4" \
-   --image-type "COS" \
-   --disk-type "pd-standard" \
-   --disk-size "50" \
-   --metadata disable-legacy-endpoints=true \
-   --scopes "https://www.googleapis.com/auth/cloud-platform" \
-   --num-nodes "2" \
-   --enable-stackdriver-kubernetes \
-   --enable-ip-alias \
-   --network "projects/$PROJECT_ID/global/networks/default" \
-   --subnetwork \
-   "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
-   --default-max-pods-per-node "110" \
-   --addons HorizontalPodAutoscaling,HttpLoadBalancing \
-   --enable-autoupgrade \
-   --enable-autorepair \
-   --enable-network-policy \
-   --enable-autoscaling \
-   --min-nodes "1" \
-   --max-nodes "8"
-```
+The following two sections will show you how to spin up a Kubernetes cluster
+using the `gcloud` command. See
+[Google's docs](https://cloud.google.com/sdk/gcloud/reference/beta/container/clusters/create)
+for more information on each parameter used.
 
-> The example above includes the use of the `enable-network-policy` flag, which
-> will result in the
-> [creation of a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
+Regardless of which option you choose, be sure to replace the following
+parameters to reflect the needs of your environment: `PROJECT_ID`,
+`NEW_CLUSTER_NAME`, `ZONE`.
 
-To create clusters capable of supporting use of the
-[CVMs](../../admin/environment-management/cvms.md) deployment option:
+> Both options include the use of the `enable-network-policy` flag, which
+> [creates a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
+> See
+> [Network Policies](https://codercom-lt03v3kjy-codercom.vercel.app/docs/setup/requirements#network-policies)
+> for more information.
+
+### Option 1: Cluster with full support of Coder features
+
+This option uses an Ubuntu node image to enable support of
+[Container-based Virtual Machines (CVMs)](../../admin/environment-management/cvms.md),
+allowing system-level functionalities such as Docker in Docker.
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
@@ -60,7 +47,7 @@ gcloud beta container --project "$PROJECT_ID" \
     --no-enable-basic-auth \
     --node-version "latest" \
     --cluster-version "latest" \
-    --machine-type "n1-standard-2" \
+    --machine-type "n1-highmem-4" \
     --image-type "UBUNTU" \
     --disk-type "pd-standard" \
     --disk-size "50" \
@@ -82,9 +69,43 @@ gcloud beta container --project "$PROJECT_ID" \
     --max-nodes "8"
 ```
 
+### Option 2: Cluster with minimum requirements for Coder
+
+This option uses a Container-Optimized OS (COS) and meets Coder's minimum
+requirements. It does _not_ enable the use of
+[CVMs](../../admin/environment-management/cvms.md).
+
+```console
+gcloud beta container --project "$PROJECT_ID" \
+clusters create "$NEW_CLUSTER_NAME" \
+   --zone "$ZONE" \
+   --no-enable-basic-auth \
+   --cluster-version "latest" \
+   --machine-type "n1-highmem-4" \
+   --image-type "COS" \
+   --disk-type "pd-standard" \
+   --disk-size "50" \
+   --metadata disable-legacy-endpoints=true \
+   --scopes "https://www.googleapis.com/auth/cloud-platform" \
+   --num-nodes "2" \
+   --enable-stackdriver-kubernetes \
+   --enable-ip-alias \
+   --network "projects/$PROJECT_ID/global/networks/default" \
+   --subnetwork \
+   "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
+   --default-max-pods-per-node "110" \
+   --addons HorizontalPodAutoscaling,HttpLoadBalancing \
+   --enable-autoupgrade \
+   --enable-autorepair \
+   --enable-network-policy \
+   --enable-autoscaling \
+   --min-nodes "1" \
+   --max-nodes "8"
+```
+
 This process may take ~15-30 minutes to complete.
 
-## Access Control
+## Access control
 
 GKE allows you to integrate Identity Access and Management (IAM) with
 Kubernetes' native Role-Based Access Control (RBAC) mechanism to authorize user
@@ -95,9 +116,9 @@ authorization right down to the namespace level.
 
 For more information, see:
 
-- [GKE Interaction with IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction)
-- [Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+- [GKE interaction with IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction)
+- [Kubernetes RBAC authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
-## Next Steps
+## Next steps
 
-At this point, you're ready to proceed to [Installation](../installation.md).
+At this point, you're ready to proceed to [installation](../installation.md).

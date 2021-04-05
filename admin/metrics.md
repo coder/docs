@@ -1,5 +1,5 @@
 ---
-title: Usage Metrics
+title: Usage metrics
 description: Learn how to track usage of your Coder deployment.
 ---
 

@@ -67,7 +67,7 @@ To update Coder, follow these steps:
      --version 1.16.1 coder coder/coder --values current-values.yml
    ```
 
-## Fixing a Failed Upgrade
+## Fixing a failed upgrade
 
 While upgrading, the process may fail. You'll see an error message similar to
 the following samples indicating that a field is immutable or that helm doesn't

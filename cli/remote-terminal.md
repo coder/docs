@@ -1,6 +1,6 @@
 ---
-title: "Remote Terminal"
-description: Learn how to use the Coder CLI to access your Environment.
+title: "Remote terminal"
+description: Learn how to use the Coder CLI to access your environment.
 ---
 
 You can access the the shell of your Coder Environment from your local computer
@@ -22,8 +22,3 @@ follows:
 coder sh my-env echo "hello world"
 hello world
 ```
-
-## Full Reference
-
-For a full list of the Coder CLI commands available, see the
-[reference pages](https://github.com/cdr/coder-cli/blob/master/docs/coder.md).

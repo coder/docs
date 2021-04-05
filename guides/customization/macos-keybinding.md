@@ -1,6 +1,6 @@
 ---
-title: macOS Keybindings
-description: Learn how to use macOS Keybindings with JetBrains IDEs.
+title: macOS keybindings
+description: Learn how to use macOS keybindings with JetBrains IDEs.
 ---
 
 You can switch from the default Windows/Linux keybinding to macOS keybindings
@@ -16,4 +16,4 @@ To switch the keybindings:
 1. Use the **Keymap** toggle at the top to switch to **macOS**
 1. Click **OK** to save your changes and proceed
 
-![Configuring macOS Keybindings](../../assets/macos-keybinding.png)
+![Configuring macOS keybindings](../../assets/macos-keybinding.png)

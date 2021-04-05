@@ -1,5 +1,5 @@
 ---
-title: "SAML 2.0 Identity Brokering"
+title: "SAML 2.0 identity brokering"
 description:
   "Learn how broker JumpCloud SAML 2.0 logins to Coder using Keycloak."
 ---
@@ -12,9 +12,9 @@ Administration Guide's
 [Identity Brokering](https://www.keycloak.org/docs/latest/server_admin/#_identity_broker)
 section.
 
-![Identity Broker Process](../../assets/SAML-process.png)
+![Identity broker process](../../assets/SAML-process.png)
 
-## Step 1: Create a New Realm in Keycloak
+## Step 1: Create a new Realm in Keycloak
 
 The first part of configuring the identity broker is to add a new Realm. This
 Realm will be where we will add the
@@ -69,7 +69,7 @@ Realm will be where we will add the
    ([this Keycloak document](https://www.keycloak.org/docs/latest/server_admin/#saml-v2-0-identity-providers)
    provides additional information about adding a SAML 2.0 Identity Provider).
 
-   ![Keycloak Identity Providers](../../assets/keycloak-identity-providers.png)
+   ![Keycloak identity providers](../../assets/keycloak-identity-providers.png)
 
 1. On the IdP configuration page, specify an **Alias** to use for your IdP
    provider.
@@ -77,9 +77,9 @@ Realm will be where we will add the
 1. Scroll to the bottom of the configuration page and upload the IdP metadata
    you exported from JumpCloud.
 
-   ![Keycloak Metadata Import](../../assets/keycloak-metadata-import.png)
+   ![Keycloak metadata import](../../assets/keycloak-metadata-import.png)
 
-### Optional: Specify JumpCloud as the Default IdP
+### Optional: Specify JumpCloud as the default IdP
 
 1. Navigate to **Authentication**.
 

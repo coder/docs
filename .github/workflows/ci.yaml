@@ -31,9 +31,11 @@ jobs:
           node-version: 12.x
 
       - name: Install Node Modules
-        run: yarn
+        run: yarn install
 
       - name: Lint
-        run: |
-          yarn lint
-          yarn fmt
+        run: yarn lint
+
+      - name: Formatting
+        if: always()
+        run: yarn format:check

@@ -1,10 +1,9 @@
 ---
-title: Environment Management
-description:
-  See some example usages of the CLI for personal management of Environment.
+title: Environment management
+description: See example usages of the CLI for personal environment management.
 ---
 
-## List all of your Environments
+## List all of your environments
 
 ```plaintext
 coder envs ls
@@ -15,7 +14,7 @@ dev     latest      8           16          64        0       false       OFF
 denv    latest      8           16          80        0       false       OFF
 ```
 
-## Rebuild an Environment
+## Rebuild an environment
 
 ```plaintext
 coder envs rebuild my-env --follow
@@ -26,15 +25,10 @@ Rebuild environment "my-env"? (will destroy any work outside of /home): y█
 ...
 ```
 
-## Stop all of your Environments
+## Stop all of your environments
 
 ```plaintext
 coder envs ls -o json | jq -r .[].name | xargs coder envs stop
 success: successfully stopped environment "site"
 ...
 ```
-
-## Full Reference
-
-For a full list of the Coder CLI commands available, see the
-[reference pages](https://github.com/cdr/coder-cli/blob/master/docs/coder.md).

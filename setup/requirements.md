@@ -18,7 +18,7 @@ We recommend the following throughput:
 - Read: 3000 IOPS at 50 MB/s
 - Write: 3000 IOPS at 50 MB/s
 
-## Enabled Extensions
+## Enabled extensions
 
 You must enable the following extensions on your K8 cluster (check whether you
 have these extensions enabled by running `kubectl get apiservices`):
@@ -42,6 +42,31 @@ currently require the following versions _or newer_:
 
 If you're using [Remote IDEs](../environments/editors.md), allow pop-ups; Coder
 launches the Remote IDE in a pop-up window.
+
+## Network Policies
+
+Coder uses
+[Kubernetes NetworkPolicies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+to enforce network segmentation and tenant isolation within your cluster.
+
+Coder's network isolation policy blocks all ingress traffic to workspaces except
+traffic from the control plane (this ensures that you can audit all traffic).
+However, the control plane does not specify egress rules; by default, it allows
+outbound traffic. However, you can still enforce a more specific network policy.
+
+[Container network interface (CNI)](https://github.com/containernetworking/cni#what-is-cni)
+plugins implement network segmentation and tenant isolation in the Kubernetes
+cluster. They enforce network boundaries between pods, preventing users from
+accessing other workspaces.
+
+If your container network interface (CNI) plugin does not support NetworkPolicy
+enforcement, traffic between workspaces, and other containerized workloads
+within the same cluster will be permitted to communicate without restriction.
+Consider testing your container networking _after_ installing Coder to ensure
+that the behavior is as expected.
+
+> If you're not sure which CNI plugin, we suggest
+> [Calico](https://docs.projectcalico.org/getting-started/kubernetes/quickstart).
 
 ## Licenses
 
