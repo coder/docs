@@ -8,7 +8,7 @@ Workspaces as code (WAC) brings the _Infrastructure As Code_ paradigm to Coder
 environments. WAC allows you to define and create new environments using
 **workspace templates**.
 
-[Workspace Templates](./templates.md) are declarative YAML files that describe
+[Workspace templates](./templates.md) are declarative YAML files that describe
 how to configure environments and their supporting infrastructure.
 
 ## Requirements
