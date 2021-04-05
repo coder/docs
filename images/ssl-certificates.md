@@ -12,7 +12,7 @@ following reasons:
 
 The following sections will show you how to correct these issues.
 
-## Adding Certificates for Coder
+## Adding certificates for Coder
 
 To add certificates to your image and have them recognized by Coder:
 
@@ -27,7 +27,7 @@ To add certificates to your image and have them recognized by Coder:
     ENV NODE_EXTRA_CA_CERTS /etc/ssl/certs/my-certs.crt
    ```
 
-## Adding Certificates at the System Level
+## Adding certificates at the system level
 
 You can add certificates at the system level so that any process that runs
 within the environment will use the certificates when making requests.
