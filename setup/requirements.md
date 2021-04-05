@@ -18,7 +18,7 @@ We recommend the following throughput:
 - Read: 3000 IOPS at 50 MB/s
 - Write: 3000 IOPS at 50 MB/s
 
-## Enabled Extensions
+## Enabled extensions
 
 You must enable the following extensions on your K8 cluster (check whether you
 have these extensions enabled by running `kubectl get apiservices`):

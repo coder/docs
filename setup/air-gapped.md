@@ -87,7 +87,7 @@ platform images are hosted in Coder's Docker Hub repo.
    6** to get the access URL and the temporary admin password, which allows you
    to proceed with setting up and configuring Coder.
 
-## Extensions Marketplace
+## Extensions marketplace
 
 You can configure your deployment to use the internal, built-in extension
 marketplace, allowing your developers to utilize whitelisted IDE extensions

@@ -13,11 +13,11 @@ Install the following dependencies if you haven't already:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [helm](https://helm.sh/docs/intro/install/)
 
-**For Production deployments:** set up and use an external
+**For production deployments:** set up and use an external
 [PostgreSQL](https://www.postgresql.org/docs/12/admin.html) instance to store
 data, including environment information and session tokens.
 
-## Creating the Coder Namespace (Optional)
+## Creating the Coder namespace (optional)
 
 We recommend running Coder in a separate
 [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
@@ -89,7 +89,7 @@ kubectl config set-context --current --namespace=coder
    You can find/define these values in your
    [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
 
-1. [Enable Dev URL Usage](../admin/devurls.md). Dev URLs allow users to access
+1. [Enable dev URL usage](../admin/devurls.md). Dev URLs allow users to access
    the web servers running in your environment. To enable, provide a wildcard
    domain and its DNS certificate and update your helm chart accordingly. This
    step is **optional** but recommended.

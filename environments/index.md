@@ -25,6 +25,6 @@ on a shared [Image](../images/index.md) and therefore reproducible.
 
 ![Environments](../assets/environments.svg)
 
-## Jump in
+## In this section
 
 <children></children>
