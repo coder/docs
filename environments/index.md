@@ -20,11 +20,11 @@ icon:
 description: "Learn about development environments in Coder."
 ---
 
-An Environment is your remote development workspace. All Environments are
-entirely reproducible, based on a shared [Image](../images/index.md).
+An environment is your remote development workspace. All environment are based
+on a shared [Image](../images/index.md) and therefore reproducible.
 
 ![Environments](../assets/environments.svg)
 
-## Jump In
+## In this section
 
 <children></children>

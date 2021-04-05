@@ -7,7 +7,7 @@ Coder allows you to set memory overprovisioning ratios for each of your
 organizations. By changing this ratio, you can change the number of environments
 that fit onto a single Kubernetes node.
 
-## Step 1: Enabling Memory Overprovisioning
+## Step 1: Enabling memory overprovisioning
 
 A site admin/manager must complete these steps:
 
@@ -17,7 +17,7 @@ A site admin/manager must complete these steps:
 
 ![Enable memory overprovisioning](../../assets/enable-memory-overprovisioning.png)
 
-## Step 2: Changing the Memory Provisioning Rate
+## Step 2: Changing the memory provisioning rate
 
 1. Go to **Manage** > **Organizations** and select your organization.
 1. At the top of your organization page, click **Actions** > **Edit**. Scroll

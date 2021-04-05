@@ -6,9 +6,9 @@ description: Learn how to augment the dashboard appearance.
 Coder offers you appearance customization options for the following:
 
 - System banner messages
-- The Terms of Service display
+- The terms of service display
 
-## System Banner Messages
+## System banner messages
 
 To customize your system banner messages:
 
@@ -18,11 +18,11 @@ To customize your system banner messages:
    in your **Header** and **Footer**.
 1. Click **Save Preferences** to save your changes.
 
-![System Appearance](../assets/system-banners.png)
+![System appearance](../assets/system-banners.png)
 
-## Terms of Service
+## Terms of service
 
-To enable the display of a Terms of Service and to edit the text displayed:
+To enable the display of a terms of service and to edit the text displayed:
 
 1. Go to **Manage** > **Admin** > **Appearance** in the Coder UI.
 1. Toggle the switch to **On**.
@@ -30,7 +30,7 @@ To enable the display of a Terms of Service and to edit the text displayed:
    Markdown formatting.
 1. Click **Save Preferences** to save your changes.
 
-![Terms of Service](../assets/terms-of-service.png)
+![Terms of service](../assets/terms-of-service.png)
 
-**Note**: If you enable the use of a Terms of Service, users will not be able to
-log into Coder without first accepting the Terms of Service.
+**Note**: If you enable the use of a terms of service, users will not be able to
+log into Coder without first accepting the terms of service.

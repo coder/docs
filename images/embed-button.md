@@ -18,7 +18,7 @@ image as you've configured it and automatically pull in the repository.
   to the service of your choice. This step is required for anyone who wants to
   use the button to launch a project using the provided image and repo.
 
-## Create the Embedded Button's Code
+## Create the embedded button's code
 
 Coder can automatically generate the code you need to embed the Open in Coder
 button.
@@ -27,10 +27,10 @@ button.
    to open.
 1. Underneath the name of the image, click **Embed**.
 1. Choose the **Image Tag** and **Git Service** you want to use, and provide
-   your **Git Repoistory URI**.
+   your **Git Repository URI**.
 1. Once you fill in the required fields, Coder generates the code you need in
    Markdown or HTML (you can change the display text of the button by modifying
    the Markdown or HTML snippets). Copy the code and paste it into your
    README.md file.
 
-![Create Embed Button](../assets/embed-2.png)
+![Create embed button](../assets/embed-2.png)

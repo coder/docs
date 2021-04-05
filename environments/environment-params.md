@@ -14,17 +14,17 @@ To create an environment, launch the creation dialog by:
 - Clicking **Create Environment** (if available), or
 - Clicking **New Environment** in the top-right
 
-![Create an Environment](../assets/create-env.png)
+![Create an environment](../assets/create-env.png)
 
 When prompted, provide the following information:
 
 <table>
     <tr>
-        <td><b>Environment Name</b></td>
+        <td><b>Environment name</b></td>
         <td>A friendly name for your environment</td>
     </tr>
     <tr>
-        <td><b>Image Source</b></td>
+        <td><b>Image source</b></td>
         <td>The source of your image; leave as <b>Existing</b> in most cases.
         You can also <b>import</b> a new image if your site manager has imported
             a <a href="../admin/registries/index.md">registry</a> or select a <b><a
@@ -43,7 +43,7 @@ When prompted, provide the following information:
         <td>The version of the image you want to use</td>
     </tr>
     <tr>
-        <td><b>Workspace Provider</b></td>
+        <td><b>Workspace provider</b></td>
         <td>The Kubernetes cluster to which your workspace will be deployed.
         Default: <code>built-in</code></td>
     </tr>
@@ -59,11 +59,11 @@ environment. You can choose to run your environment as a container-based virtual
 machine, provide a dotfiles URI for [personalization](personalization.md), and
 set your resource allocation.
 
-![Environment Setup Advanced Settings](../assets/advanced-env-config.png)
+![Environment setup advanced settings](../assets/advanced-env-config.png)
 
 <table>
     <tr>
-        <td><b>Run as Container-based Virtual Machine</b></td>
+        <td><b>Run as container-based virtual machine</b></td>
         <td>Enable this to allow the running of system-level applications like
         Docker, Systemd, and Kubernetes; this provides a VM-like experience with
         the footprint of a container</td>
@@ -74,7 +74,7 @@ set your resource allocation.
         prescribed every time your environment rebuilds</td>
     </tr>
     <tr>
-        <td><b>CPU Cores</b></td>
+        <td><b>CPU cores</b></td>
         <td>The number of CPU cores you'd like for your environment</td>
     </tr>
     <tr>
@@ -93,7 +93,7 @@ set your resource allocation.
     </tr>
 </table>
 
-> By default, Coder allocates resources (CPU Cores, Memory, and Disk Space)
+> By default, Coder allocates resources (CPU cores, memory, and disk space)
 > based on the parent image.
 >
 > Coder displays a warning if you choose your resource settings and they're less

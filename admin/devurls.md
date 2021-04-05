@@ -7,12 +7,12 @@ Developer (Dev) URLs allow users to access the ports of services they are
 developing within their environment. However, before individual developers can
 set up Dev URLs, an administrator must configure and enable Dev URL usage.
 
-## Before You Proceed
+## Before you proceed
 
 You must own a wildcard DNS record for your custom domain name to enable and use
 Dev URLs with Coder.
 
-## Enabling the Use of Dev URLs
+## Enabling the use of dev URLs
 
 [Dev URLs](../environments/devurls.md) is an opt-in feature. To enable Dev URLs
 in your cluster, you'll need to modify your:
@@ -20,7 +20,7 @@ in your cluster, you'll need to modify your:
 1. Helm chart
 1. Wildcard DNS record
 
-### Step 1: Modify the Helm Chart
+### Step 1: Modify the Helm chart
 
 Set `devurls.host` to a wildcard domain pointing to your ingress controller:
 
@@ -45,7 +45,7 @@ user's environment:
 If you are providing your own ingress controller, then you will need to add the
 rule manually.
 
-### Step 2: Modify the Wildcard DNS Record
+### Step 2: Modify the wildcard DNS record
 
 The final step to enabling Dev URLs is to update your wildcard DNS record. Get
 the **ingress IP address** using `kubectl --namespace coder get ingress` and

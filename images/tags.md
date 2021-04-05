@@ -17,13 +17,13 @@ To add a tag to Coder:
 When someone publishes a new version of a tag, Coder notifies users of that tag
 with active environments.
 
-## Default Tag
+## Default tag
 
 Each image has a default tag. The default tag appears at the top of the list and
 is indicated by an asterisk. Coder automatically selects the default tag when
 you create an environment.
 
-### Changing the Default Tag
+### Changing the default tag
 
 > We encourage you to update an image's default tag whenever you publish new
 > tags since Coder suggests the default tag whenever someone creates a new
@@ -32,9 +32,9 @@ you create an environment.
 When adding a tag, check **Set tag as default** to make it the default tag for
 that image.
 
-![Set Default Tag](../assets/default-tag.png)
+![Set default tag](../assets/default-tag.png)
 
 To use an existing tag as the default tag, click the **vertical ellipses** for a
 tag and select **Make default**.
 
-![Set Existing Tag as Default](../assets/existing-tag-as-default.png)
+![Set existing tag as default](../assets/existing-tag-as-default.png)

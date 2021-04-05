@@ -11,7 +11,7 @@ Docker Hub, to streamline your initial setup process.
 This means that your users can create environments using Docker Hub images
 without further configuration on your part.
 
-## Disable the Importing of the Default Registry
+## Disable the importing of the default registry
 
 If you prefer a more granular experience, you can disable the importing of
 Docker Hub. You'll then have to manually configure registries on a
@@ -25,4 +25,4 @@ To do so:
 1. On the **Infrastructure** tab, uncheck the Import Default Registry option.
 1. Click **Save Registry**.
 
-![Import Default Registry](../../assets/import-default-registry.png)
+![Import default registry](../../assets/import-default-registry.png)

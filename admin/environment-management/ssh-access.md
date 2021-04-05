@@ -59,7 +59,7 @@ X11Forwarding yes
 X11UseLocalhost no
 ```
 
-### SSH Environment Variables
+### SSH environment variables
 
 OpenSSH handles environment variables differently than most container processes.
 Environment variable overrides for OpenSSH sessions are set by
@@ -102,7 +102,7 @@ _=/opt/coder/envagent
 # ----------------- END CODER -----------------------
 ```
 
-## Disable SSH Access
+## Disable SSH access
 
 If you would like to disable SSH access, you can either:
 
@@ -114,6 +114,6 @@ ssh:
   enable: false
 ```
 
-> **For Cloudflare Users:** Cloudflare's **proxied** mode does _not_ support
+> **For Cloudflare users:** Cloudflare's **proxied** mode does _not_ support
 > SSH. If you're using Cloudflare for SSL, add your certificates to your cluster
 > and use the **DNS only** mode to allow SSH.

@@ -22,7 +22,7 @@ enterprise security.
 
   <a href="./environments/getting-started.md">
     <button class="arrow">
-      Get Started
+      Get started
     </button>
   </a>
 
@@ -47,7 +47,7 @@ enterprise security.
 
   <a href="./admin/index.md">
     <button class="arrow outlined">
-      Learn More
+      Learn more
     </button>
   </a>
   </div>
@@ -63,7 +63,7 @@ enterprise security.
 
   <a href="./setup/index.md">
     <button class="arrow outlined">
-      Deploy Now
+      Deploy now
     </button>
   </a>
   </div>

@@ -17,7 +17,7 @@ Alternatively, you can
 instead of the gcloud CLI. Please refer to the sample CLI commands below for
 assistance selecting the correct options for your cluster.
 
-## Set Up the GKE Cluster
+## Set up the GKE cluster
 
 The following two sections will show you how to spin up a Kubernetes cluster
 using the `gcloud` command. See
@@ -105,7 +105,7 @@ clusters create "$NEW_CLUSTER_NAME" \
 
 This process may take ~15-30 minutes to complete.
 
-## Access Control
+## Access control
 
 GKE allows you to integrate Identity Access and Management (IAM) with
 Kubernetes' native Role-Based Access Control (RBAC) mechanism to authorize user
@@ -116,9 +116,9 @@ authorization right down to the namespace level.
 
 For more information, see:
 
-- [GKE Interaction with IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction)
-- [Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+- [GKE interaction with IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#iam-interaction)
+- [Kubernetes RBAC authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
-## Next Steps
+## Next steps
 
-At this point, you're ready to proceed to [Installation](../installation.md).
+At this point, you're ready to proceed to [installation](../installation.md).

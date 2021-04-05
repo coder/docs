@@ -8,6 +8,6 @@ that meets the [requirements](../requirements.md).
 
 To help you get up and running, Coder offers the following deployment guides (if
 you're all set up with a Kubernetes cluster, please proceed to
-[Installation](../installation.md)):
+[installation](../installation.md)):
 
 <children></children>
