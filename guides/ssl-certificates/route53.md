@@ -35,7 +35,7 @@ You should also:
   [Route 53](https://aws.amazon.com/route53/) and
   [IAM](https://aws.amazon.com/iam/)
 
-## Step 1: Add cert-manager to Your Kubernetes Cluster
+## Step 1: Add cert-manager to your Kubernetes cluster
 
 1. [Install](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests)
    cert-manager:
@@ -59,7 +59,7 @@ You should also:
    kubectl get all -n cert-manager
    ```
 
-## Step 2: Delegate Your Domain Names and Set Up DNS01 Challenges
+## Step 2: Delegate your domain names and set up DNS01 challenges
 
 Because Coder dynamically generates domains (specifically the Dev URLs), your
 certificates need to be approved and challenged. The follow steps will show you
@@ -81,7 +81,7 @@ how to use Route 53 for DNS01 challenges.
    values under **Value/Route traffic to** to your domain name (i.e., delegate
    `ns-X.awsdns-32.net` to `coder.exampleCo.com`).
 
-## Step 3: Create an IAM Role for `clusterIssuer`
+## Step 3: Create an IAM role for `clusterIssuer`
 
 To make sure that your `clusterIssuer` can change your DNS settings,
 [create the required IAM role](https://cert-manager.io/docs/configuration/acme/dns01/route53/#set-up-an-iam-role)
