@@ -16,7 +16,7 @@ development operations and cloud resources.
     </tr>
     <tr>
         <th>Used by</th>
-        <td>Organizations & Teams</td>
+        <td>Organizations & teams</td>
         <td>Individuals</td>
     </tr>
     <tr>
@@ -25,38 +25,38 @@ development operations and cloud resources.
         <td>Any machine</td>
     </tr>
     <tr>
-        <th>Cloud Management</th>
+        <th>Cloud management</th>
         <td>Resources automatically scale; each organization
         defines quotas and limits</td>
         <td>None</td>
     </tr>
     <tr>
-        <th>Project Management</th>
+        <th>Project management</th>
         <td>Environments encapsulate a project's code,
         configurations, dependencies and tooling</td>
         <td>Code-only</td>
     </tr>
     <tr>
-        <th>Administration & Security</th>
-        <td>Role-based permission system, Audit logs, Single sign-on</td>
+        <th>Administration & security</th>
+        <td>Role-based permission system, audit logs, single sign-on</td>
         <td>Self-administered</td>
     </tr>
     <tr>
         <th>Delivery</th>
-        <td colspan="2">Browser, Progressive Web App</td>
+        <td colspan="2">Browser, progressive web app</td>
     </tr>
     <tr>
-        <th>Maximum Number of Users</th>
+        <th>Maximum number of users</th>
         <td>Variable</td>
         <td>N/A - one connection allowed</td>
     </tr>
     <tr>
-        <th>Usage Term Length</th>
+        <th>Usage term length</th>
         <td>Variable</td>
-        <td>See <a href="https://github.com/cdr/code-server/blob/v3.5.0/LICENSE.txt">License</a></td>
+        <td>See <a href="https://github.com/cdr/code-server/blob/v3.5.0/LICENSE.txt">license</a></td>
     </tr>
     <tr>
-        <th>Air-Gapped Deployment</th>
+        <th>Air-gapped deployment</th>
         <td>Optional</td>
         <td>Optional</td>
     </tr>
