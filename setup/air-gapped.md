@@ -13,7 +13,8 @@ To do so, you must:
 - Deploy Coder from within your air-gapped environment
 
 > Coder licenses issued as part of the trial program do not support air-gapped
-> deployments.
+> deployments. If an air-gapped deployment is a requirement for you, please
+> [reach out to our team](https://coder.com/contact) to discuss a pilot.
 
 ## Dependencies
 
