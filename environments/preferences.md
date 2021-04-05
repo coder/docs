@@ -29,7 +29,7 @@ combination).
 > organization's account management system. See your system administrator for
 > more information.
 
-## SSH Key
+## SSH key
 
 The **SSH Key** page is where you'll find the public key corresponding to the
 private key that Coder inserts automatically into your environments. The public
@@ -39,7 +39,7 @@ need to access from your environment.
 If necessary, you can regenerate your key. Be sure to provide your updated key
 to all of the services you use. Otherwise, they won't work.
 
-## Linked Accounts
+## Linked accounts
 
 The **Linked Accounts** tab allows you to automatically provide your Coder SSH
 key to the Git service of your choice. You can then perform the Git actions in

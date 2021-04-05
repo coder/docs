@@ -4,11 +4,11 @@ description: "Learn how to describe environment configuration as code."
 state: beta
 ---
 
-Workspaces as code (WAC) brings the _Infrastructure As Code_ paradigm to Coder
+Workspaces as code (WAC) brings the _infrastructure as code_ paradigm to Coder
 environments. WAC allows you to define and create new environments using
 **workspace templates**.
 
-[Workspace Templates](./templates.md) are declarative YAML files that describe
+[Workspace templates](./templates.md) are declarative YAML files that describe
 how to configure environments and their supporting infrastructure.
 
 ## Requirements
@@ -22,7 +22,7 @@ how to configure environments and their supporting infrastructure.
 You can find a fully populated workspace template and descriptions of each field
 in our [syntax guide](templates.md).
 
-## Adding an Embeddable Button
+## Adding an embeddable button
 
 To make it easy for your developers to use your template, you can generate an
 embeddable Markdown button for use in your repo. See the
