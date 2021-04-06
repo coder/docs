@@ -146,7 +146,7 @@ organization.
         </tr>
         <tr>
             <td>Registries</td>
-            <td>X</td>
+            <td></td>
             <td>X</td>
             <td></td>
             <td></td>
