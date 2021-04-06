@@ -48,11 +48,11 @@ workspace:
   configure:
     start:
       - name: "install curl"
-        run: |
+        command: |
           apt update
           apt install -y curl
       - name: "install Go binary"
-        run: "go install"
+        command: "go install"
         directory: /home/coder/go/src/github.com/my-project
         shell: "bash"
         env:
@@ -158,14 +158,14 @@ the use of both single-line and multi-line commands).
 
   ```yaml
   - name: Install curl
-    run: apt install -y curl
+    command: apt install -y curl
   ```
 
 - Multi-line command:
 
   ```yaml
   - name: Update and install curl
-    run: |
+    command: |
       apt update
       apt install -y curl
   ```
