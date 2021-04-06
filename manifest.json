@@ -282,6 +282,9 @@
               "path": "./guides/deployments/keycloak.md"
             },
             {
+              "path": "./guides/deployments/code-server.md"
+            },
+            {
               "path": "./guides/deployments/teardown.md"
             }
           ]
