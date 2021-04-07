@@ -70,6 +70,10 @@ platform images are hosted in Coder's Docker Hub repo.
 1. Pull the images for the Coder platform from the following Docker Hub
    locations:
 
+   > Timescale is an internal database meant for evaluation deployments. It is
+   > not It is not recommended to run this service in production. Connect to an
+   > external Postgres database for production deployments.
+
    [coder-service](https://hub.docker.com/r/coderenvs/coder-service)
 
    [envbox](https://hub.docker.com/r/coderenvs/envbox)
