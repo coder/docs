@@ -24,15 +24,15 @@ dependencies:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [helm](https://helm.sh/docs/intro/install/)
 
-In the same network as the Kubernetes cluster that will run Coder, additional
-services need to be configured. Links go to suggestions but many other options
-can be used.
+Next, configure the following items in the same network as the Kubernetes
+cluster that will run Coder (we've provided links to a suggested option for each
+item type, but you're welcome to use the alternatives of your choice):
 
-- [Docker registry](https://hub.docker.com/_/registry)
-- [DNS server](https://coredns.io) or
-  [HostAliases](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
-  patched in
-- [Certificate authority](https://github.com/activecm/docker-ca/blob/master/Dockerfile)
+- [Docker Registry](https://hub.docker.com/_/registry)
+- A [DNS server](https://coredns.io) (or you can use
+  [HostAliases](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/))
+- A
+  [certificate authority](https://github.com/activecm/docker-ca/blob/master/Dockerfile)
   or [self-signed certificates](#self-signed-certificate-for-the-registry)
 
 ## Step 1: Pull all Coder resources into your air-gapped environment
@@ -72,9 +72,12 @@ platform images are hosted in Coder's Docker Hub repo.
    docker pull coderenvs/coder-service:<version>
    ```
 
-   Additional images may be needed to configure and run workspaces:
+   To access Coder, you'll need an ingress controller; you can use
+   [nginx-ingress-controller](https://quay.io/kubernetes-ingress-controller/nginx-ingress-controller),
+   or you can use your own.
 
-   [nginx-ingress-controller](https://quay.io/kubernetes-ingress-controller/nginx-ingress-controller)
+   The following images are optional, though you're welcome to take advantage of
+   Coder's versions instead of building your own:
 
    [OpenVSX](https://github.com/orgs/eclipse/packages/container/package/openvsx-server)
 
@@ -82,10 +85,11 @@ platform images are hosted in Coder's Docker Hub repo.
 
    [enterprise-intellij](https://hub.docker.com/r/codercom/enterprise-intellij)
 
-   [ubuntu](https://hub.docker.com/_/ubuntu) as a base image
+   [ubuntu](https://hub.docker.com/_/ubuntu)
 
-   When building images for the environment with a custom CA, follow the
-   [docs on adding certificates](/docs/images/ssl-certificates#adding-certificates-for-coder)
+   When building images for your environments that rely on a custom certificate
+   authority, be sure to follow the
+   [docs for adding certificates](/docs/images/ssl-certificates#adding-certificates-for-coder)
    to images.
 
 1. Tag and push all of the images that you've downloaded in the previous step to
