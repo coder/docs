@@ -65,7 +65,7 @@ within the same cluster will be permitted to communicate without restriction.
 Consider testing your container networking _after_ installing Coder to ensure
 that the behavior is as expected.
 
-> If you're not sure which CNI plugin, we suggest
+> If you're not sure which CNI plugin to use, we suggest
 > [Calico](https://docs.projectcalico.org/getting-started/kubernetes/quickstart).
 
 ## Licenses
