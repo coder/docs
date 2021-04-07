@@ -34,7 +34,7 @@ code-server functionality.
 - [Assign user roles](https://coder.com/docs/admin/access-control/user-roles)
 - [Manage organizations](https://coder.com/docs/admin/access-control/organizations)
 
-![Workspace providers](../assets/workspace-providers-admin.png)
+![Workspace providers](../../assets/workspace-providers-admin.png)
 
 ## Operations
 
