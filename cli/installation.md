@@ -40,8 +40,9 @@ Once you've installed the CLI, authenticate the client with your Coder account.
 coder login [https://coder.domain.com]
 ```
 
-If you're logged into Coder via your web browser, the process proceeds
-automatically; otherwise, you'll be asked to provide your username and password.
+If you're logged into Coder via your web browser, the process will open a new
+browser window that displays a session token. Copy the token, and paste it into
+the terminal prompt.
 
 ### Static authentication
 
