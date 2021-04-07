@@ -16,6 +16,7 @@ how to configure environments and their supporting infrastructure.
 - You must configure a [GitHub or GitLab OAuth service](../../admin/git.md)
 - The image you use in your template **must** have been
   [imported](../../images/importing.md) into Coder
+- A `.coder/coder.yaml` file exists in your repository.
 
 ## Creating a workspace template
 
