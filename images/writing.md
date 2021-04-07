@@ -34,7 +34,7 @@ Please note:
 
 - You can build images inside a Coder workspace using the
   [Docker Sandbox](https://github.com/bpmct/cdr-images/tree/master/docker-sandbox).
-  If, however, you're using [CVMs](../admin/environment-management/cvms.md),
+  If, however, you're using [CVMs](../admin/workspace-management/cvms.md),
   you'll need to have the [sysbox runtime](https://github.com/nestybox/sysbox)
   on your machine.
 

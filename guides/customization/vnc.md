@@ -8,7 +8,7 @@ in Coder.
 
 Coder does not have a specific set of VNC providers it supports. Coder will
 render the VNC, as long as it is installed on the image used to create the
-environment.
+workspace.
 
 ## Step 1: Create the Dockerfile
 
@@ -16,7 +16,7 @@ To begin, create a Dockerfile that you'll use to build an
 [image](../../images/index.md) with a virtual network computing (VNC) provider
 installed.
 
-Be sure to set the `HOME`, `USER`, and `PORT` environment variables in the
+Be sure to set the `HOME`, `USER`, and `PORT` workspace variables in the
 Dockerfile:
 
 ```text
@@ -27,9 +27,9 @@ PORT 1234
 
 **Note:** Set `PORT` to the appropriate port number for your VNC instance.
 
-> To help you get started, see this [sample
-> image](https://github.com/cdr/enterprise-images/tree/main/images/vnc) that
-> uses [noVNC](https://github.com/novnc/noVNC) as the client and
+> To help you get started, see this
+> [sample image](https://github.com/cdr/enterprise-images/tree/main/images/vnc)
+> that uses [noVNC](https://github.com/novnc/noVNC) as the client and
 > [TigerVNC](https://tigervnc.org) as the server.
 
 ## Step 2: Build and push the image to Docker Hub
@@ -59,24 +59,24 @@ Coder.
 
 1. Click **Import Image**.
 
-## Step 4: Create an environment with the image
+## Step 4: Create a workspace with the image
 
 Once you've imported your image into Coder, you can use it to create an
-environment.
+workspace.
 
-1. In the Coder UI, go to the **environment overview** page. Click **New
-   Environment** and choose **Custom Environment**
+1. In the Coder UI, go to the **workspace overview** page. Click **New
+   Workspace** and choose **Custom Workspace**
 
-1. Provide an **Environment Name**, and indicate that your **Image Source** is
+1. Provide an **Workspace Name**, and indicate that your **Image Source** is
    **Existing**.
 
 1. Select your **Image** and associated **Tag**.
 
-1. Click **Create Environment**
+1. Click **Create Workspace**
 
 ## Connecting to Coder
 
-There are two ways you can connect to your environment:
+There are two ways you can connect to your workspace:
 
 - Connect via the web
 - Connect using a local VNC client
@@ -84,13 +84,13 @@ There are two ways you can connect to your environment:
 ### Option 1: Connect via web
 
 If your image includes [noVNC](https://github.com/novnc/noVNC), or another
-web-based client, you can use a [dev URL](../../environments/devurls.md) to
-access it securely.
+web-based client, you can use a [dev URL](../../workspaces/devurls.md) to access
+it securely.
 
-1. From the **environment overview** page, click **Add URL**
+1. From the **workspace overview** page, click **Add URL**
 
 1. Provide the **Port** number that the VNC web client is running on (this
-   information is defined in the image you used to build this environment).
+   information is defined in the image you used to build this workspace).
 
 1. Provide a **name** for the dev URL.
 
@@ -102,15 +102,15 @@ You can now access the VNC in Coder by clicking the **Open in Browser** icon
 ### Option 2: Connect using a local VNC client
 
 If your Coder deployment has
-[ssh](https://coder.com/docs/admin/environment-management/ssh-access) enabled,
-you can also connect to Coder using a local client with SSH port forwarding.
+[ssh](https://coder.com/docs/admin/workspace-management/ssh-access) enabled, you
+can also connect to Coder using a local client with SSH port forwarding.
 
 You will need to install [coder-cli](https://github.com/cdr/coder-cli) and a VNC
 client on your local machine.
 
 Run the following commands on your local machine to connect to the VNC server.
 Replace `[vnc-port]` with the port on which the server is running and
-`[workspace-name]` with the environment you created in **Step 4**.
+`[workspace-name]` with the workspace you created in **Step 4**.
 
 ```console
 # Ensure the workspace you created is an SSH target

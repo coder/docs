@@ -14,22 +14,22 @@ enterprise security.
 
 <div class="get-started">
   <div>
-  <h2>Environments</h2>
+  <h2>Workspaces</h2>
 
   <p>
     Welcome to your new computer in the cloud.
   </p>
 
-  <a href="./environments/getting-started.md">
+  <a href="./workspaces/getting-started.md">
     <button class="arrow">
       Get started
     </button>
   </a>
 
   <ul>
-    <li><a href="./environments/lifecycle.md">Lifecycle</a></li>
-    <li><a href="./environments/editors.md">Editors and IDEs</a></li>
-    <li><a href="./environments/personalization.md">Personalization</a></li>
+    <li><a href="./workspaces/lifecycle.md">Lifecycle</a></li>
+    <li><a href="./workspaces/editors.md">Editors and IDEs</a></li>
+    <li><a href="./workspaces/personalization.md">Personalization</a></li>
   </ul>
   </div>
 

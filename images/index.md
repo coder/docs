@@ -21,12 +21,12 @@ icon:
 description: Learn about reproducibility in Coder.
 ---
 
-Coder creates [environments](../environments/index.md) using templates called
+Coder creates [workspaces](../workspaces/index.md) using templates called
 images. Images facilitate and encourage reproducibility of development
-environments.
+workspaces.
 
 Each image contains the language version, tooling, and dependencies users need
-to work on a project. Users create environments from the image and can begin to
+to work on a project. Users create workspaces from the image and can begin to
 contribute immediately to the project for which it's defined.
 
 Coder hooks into Docker Registries, which store images that you can import. You

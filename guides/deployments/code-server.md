@@ -1,5 +1,5 @@
 ---
-title: Managed code-server Environments
+title: Managed code-server Workspaces
 description:
   Learn how Coder can improve your code-server deployment on Kubernetes.
 ---
@@ -9,7 +9,7 @@ Kubernetes, you may want to consider Coder, our solution for developers and
 development teams. Coder runs on Kubernetes and offers the following features in
 addition to the base code-server functionality.
 
-## Environment consistency
+## Workspace consistency
 
 - [Manage and distribute workspace images](https://coder.com/docs/images)
 - [Build custom workspaces that include your project's dependencies](https://coder.com/docs/images/structure)
@@ -18,13 +18,13 @@ addition to the base code-server functionality.
 
 ## Developer workflows
 
-- [Connect to workspaces via web: (code-server, JetBrains)](https://coder.com/docs/environments/editors#jetbrains-ides-in-the-browser)
-- [Connect to workspaces via SSH or VS Code Remote](https://coder.com/docs/environments/ssh)
+- [Connect to workspaces via web: (code-server, JetBrains)](https://coder.com/docs/workspaces/editors#jetbrains-ides-in-the-browser)
+- [Connect to workspaces via SSH or VS Code Remote](https://coder.com/docs/workspaces/ssh)
 - [Sync local files to workspaces](https://coder.com/docs/cli/file-sync)
-- [Use Docker and docker-compose in workspaces](https://coder.com/docs/environments/cvms)
-- [Access and share web services in workspaces](https://coder.com/docs/environments/devurls)
+- [Use Docker and docker-compose in workspaces](https://coder.com/docs/workspaces/cvms)
+- [Access and share web services in workspaces](https://coder.com/docs/workspaces/devurls)
 - [Manage workspaces with the Coder CLI](https://coder.com/docs/cli)
-- [Personalize workspaces](https://coder.com/docs/environments/personalization)
+- [Personalize workspaces](https://coder.com/docs/workspaces/personalization)
 
 ![User management icon](../../assets/manage-users.png)
 
@@ -39,7 +39,7 @@ addition to the base code-server functionality.
 ## Operations
 
 - [Add a private image registry](https://coder.com/docs/admin/registries)
-- [Manage workspaces in multiple regions or clusters](https://coder.com/docs/admin/environment-management/workspace-providers)
+- [Manage workspaces in multiple regions or clusters](https://coder.com/docs/admin/workspace-management/workspace-providers)
 
 <hr />
 

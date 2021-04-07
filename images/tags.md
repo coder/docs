@@ -17,13 +17,13 @@ To add a tag to Coder:
 1. Provide the **tag name** when prompted.
 
 When someone publishes a new version of a tag, Coder notifies users of that tag
-with active environments.
+with active workspaces.
 
 ## Default tag
 
 Each image has a default tag. The default tag appears at the top of the list and
 is indicated by an asterisk. Coder automatically selects the default tag when
-you create an environment.
+you create a workspace.
 
 > For information about how Coder handles image tags, see
 > [Image Tag Names](../guides/admin/image-tag-names.md).
@@ -32,7 +32,7 @@ you create an environment.
 
 > We encourage you to update an image's default tag whenever you publish new
 > tags since Coder suggests the default tag whenever someone creates a new
-> environment. This change does not affect existing environments.
+> workspace. This change does not affect existing workspaces.
 
 When adding a tag, check **Set tag as default** to make it the default tag for
 that image.

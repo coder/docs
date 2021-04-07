@@ -15,7 +15,7 @@ Install the following dependencies if you haven't already:
 
 **For production deployments:** set up and use an external
 [PostgreSQL](https://www.postgresql.org/docs/12/admin.html) instance to store
-data, including environment information and session tokens.
+data, including workspace information and session tokens.
 
 ## Creating the Coder namespace (optional)
 
@@ -92,7 +92,7 @@ kubectl config set-context --current --namespace=coder
    [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
 
 1. [Enable dev URL usage](../admin/devurls.md). Dev URLs allow users to access
-   the web servers running in your environment. To enable, provide a wildcard
+   the web servers running in your workspace. To enable, provide a wildcard
    domain and its DNS certificate and update your helm chart accordingly. This
    step is **optional** but recommended.
 

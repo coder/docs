@@ -27,7 +27,7 @@ LTS, the default limit is 8,192 watches per instance.
 
 On a 64-bit system, each `inotify` watch that programs register will consume ~1
 kB of kernel memory, which cannot be swapped to disk and is not counted against
-the environment memory limit setting.
+the workspace memory limit setting.
 
 ## Diagnosis
 
@@ -47,8 +47,7 @@ There are three kernel tuning options related to the `inotify` system:
 - `fs.inotify.max_user_watches`: The maximum number of files and folders that
   programs can monitor for changes
 
-To see the values for these settings that are applicable to your environment,
-run:
+To see the values for these settings that are applicable to your workspace, run:
 
 ```console
 $ sysctl fs.inotify.{max_queued_events,max_user_instances,max_user_watches}

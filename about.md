@@ -7,14 +7,14 @@ Coder moves software development to the cloud, centralizing your organizations'
 development initiatives and offering improvements in development velocity and
 enterprise security.
 
-Coder's pre-configured environments allow project organization members to define
+Coder's pre-configured workspaces allow project organization members to define
 what language version and tooling are required to provide consistency across the
 organization and allow new members to onboard and contribute. Developers focus
 on their projects and the end product, not on setup.
 
-These pre-configured environments are the foundation of Coder's _Dev
-Environments as Code_ paradigm, allowing a project's language and tooling
-dependencies to be source controlled along with the code itself.
+These pre-configured workspaces are the foundation of Coder's _Dev Workspaces as
+Code_ paradigm, allowing a project's language and tooling dependencies to be
+source controlled along with the code itself.
 
 With Coder, engineers can continue using the development tools, CI/CD pipelines,
 source code management systems, and editors they know and love while leveraging
@@ -23,9 +23,9 @@ the power of cloud and automation.
 ## Our mission
 
 Developers should spend their time writing code, not on getting their
-development environment working. Coder's goal is to empower organizations to
-harness the cloud's power to provide consistent, secure, and performant
-environments for their development teams.
+development workspace ready. Coder's goal is to empower organizations to harness
+the cloud's power to provide consistent, secure, and performant workspaces for
+their development teams.
 
 Our software has been pulled over 19 million times from Docker, received over
 40,000 stars on GitHub, and is used by some of the world's largest enterprises.
@@ -34,22 +34,22 @@ development through Coder.
 
 ## Why Coder
 
-Coder's _dev environments as code_ paradigm is new for software development. Its
+Coder's _dev workspaces as code_ paradigm is new for software development. Its
 key benefits include:
 
-- **Automated setup and instant onboarding**: Because your environments are
+- **Automated setup and instant onboarding**: Because your workspaces are
   created via pre-configured images, there's little setup time involved for your
   developers. New developers can begin contributing right away instead of
-  spending time setting up their working environment.
+  spending time setting up their workspace.
 
   ![Onboarding](assets/onboard.png)
 
-- **Environmental consistency**: Every component of your environments are
-  predefined and preapproved, reducing configuration drift caused by variations
-  in development environments. The images used to create environments can also
-  be source-controlled the way that your code is.
+- **Workspace consistency**: Every component of your workspaces are predefined
+  and preapproved, reducing configuration drift caused by variations in
+  development workspaces. The images used to create workspaces can also be
+  source-controlled the way that your code is.
 
-- **Performant environments**: Coder empowers you to use servers over local
+- **Performant workspaces**: Coder empowers you to use servers over local
   hardware to perform resource-intensive development operations. Developers are,
   therefore, not limited to the compute power of the device on which they're
   working or the slow network uploads of large files. All processes are
@@ -58,15 +58,15 @@ key benefits include:
   ![Performance](assets/performance.png)
 
 - **Zero overhead**: Coder performs all graphical rendering on the client,
-  minimizing network traffic and resulting in zero overhead for most
-  environments. This reduces things like typing lag -- Coder enables remote
-  access with the performance of a local environment.
+  minimizing network traffic and resulting in zero overhead for most workspaces.
+  This reduces things like typing lag -- Coder enables remote access with the
+  performance of a local workspace.
 
 - **Simple updates**: As soon as you push updates to your organization's base
   development image, developers receive notifications in the dashboard that
   there's an update available. Your developers can upgrade when convenient, and
   you can track which versions your developers are using, providing visibility
-  into environmental consistency.
+  into workspace consistency.
 
   ![Updates](assets/update.png)
 
@@ -78,5 +78,5 @@ key benefits include:
 
 - **Improved security**: Development actions are centralized on your internal
   infrastructure, allowing insight into potential threats. Furthermore,
-  deploying Coder into an air-gapped environment will provide additional
-  security around your organization's intellectual property.
+  deploying Coder into an air-gapped workspace will provide additional security
+  around your organization's intellectual property.

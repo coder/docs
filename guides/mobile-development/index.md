@@ -22,7 +22,7 @@ Install](../../assets/android-sdk-missing.png)
 1. [Create and start](https://developer.android.com/studio/run/managing-avds) a
    Virtual Device. ![Android Device](../assets/android-avd.png)
 
-1. Create an environment variable called `ANDROID_SDK_PATH` and set it to the
+1. Create a workspace variable called `ANDROID_SDK_PATH` and set it to the
    installation path of your Android SDK (for example, it's typically
    `~/Library/Android/sdk` on macOS and
    `C:\Users\<USER_NAME>\AppData\Local\Android\sdk` on Windows).
@@ -36,7 +36,7 @@ $ $ANDROID_SDK_PATH/platform-tools/adb tcpip 5555
 restarting in TCP mode port: 5555
 ```
 
-1. Create a Coder environment that includes the Android SDK; you can do this by
+1. Create a Coder workspace that includes the Android SDK; you can do this by
    including the following in your Dockerfile:
 
 ```Dockerfile
@@ -46,12 +46,12 @@ FROM codercom/enterprise-android
 Alternatively, you can import or extend
 [Coder's image](https://github.com/cdr/enterprise-images/blob/master/images/android/Dockerfile.ubuntu))
 
-1. Forward your Android Debug Server to the remote environment:
+1. Forward your Android Debug Server to the remote workspace:
 
 ```console
 # You must have the Coder CLI installed.
 $ coder config-ssh
-$ ssh -R 5555:127.0.0.1:5555 coder.<NAME_OF_YOUR_ENVIRONMENT>
+$ ssh -R 5555:127.0.0.1:5555 coder.<NAME_OF_YOUR_WORKSPACE>
 ```
 
 1. Run `adb devices` to view the emulators forwarded from your local machine:

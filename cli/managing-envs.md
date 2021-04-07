@@ -1,9 +1,9 @@
 ---
-title: Environment management
-description: See example usages of the CLI for personal environment management.
+title: Workspace management
+description: See example usages of the CLI for personal workspace management.
 ---
 
-## List all of your environments
+## List all of your workspaces
 
 ```plaintext
 coder envs ls
@@ -14,21 +14,21 @@ dev     latest      8           16          64        0       false       OFF
 denv    latest      8           16          80        0       false       OFF
 ```
 
-## Rebuild an environment
+## Rebuild a workspace
 
 ```plaintext
 coder envs rebuild my-env --follow
-Rebuild environment "my-env"? (will destroy any work outside of /home): y█
-✅ -- 2020-12-20T02:43:44Z Deleting old environment
+Rebuild workspace "my-env"? (will destroy any work outside of /home): y█
+✅ -- 2020-12-20T02:43:44Z Deleting old workspace
 ✅ -- 2020-12-20T02:43:44Z Deleting old network isolation policy
 ✅ -- 2020-12-20T02:43:44Z Deleting old service
 ...
 ```
 
-## Stop all of your environments
+## Stop all of your workspaces
 
 ```plaintext
 coder envs ls -o json | jq -r .[].name | xargs coder envs stop
-success: successfully stopped environment "site"
+success: successfully stopped workspace "site"
 ...
 ```

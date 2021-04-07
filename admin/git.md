@@ -2,7 +2,7 @@
 title: Git integration
 description:
   Learn how to integrate with your Git provider to automatically authenticate
-  your environments.
+  your workspaces.
 ---
 
 The Git Integration allows your developers to connect their Coder accounts to
@@ -11,7 +11,7 @@ their accounts with the Git repository service of choice.
 ## Support
 
 Coder integrates with the following service providers for authentication and
-[user key management](https://coder.com/docs/environments/preferences#linked-accounts):
+[user key management](../workspaces/preferences#linked-accounts):
 
 - GitHub (both GitHub.com and GitHub Enterprise)
 - GitLab (both GitLab.com and self-hosted GitLab)
