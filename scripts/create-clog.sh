@@ -99,8 +99,16 @@ function update_manifest () {
   popd > /dev/null
 }
 
+function print_pr_info () {
+  branch="$(git branch --show-current)"
+  echo "TIP: After comitting this branch visit"
+  echo "https://github.com/cdr/docs/compare/master...${branch}?template=release-template.md"
+  echo "to open a PR using the Release Template"
+}
+
 # main program
 init "$@"
 create_from_template
 update_manifest
+print_pr_info
 echo "Done"
