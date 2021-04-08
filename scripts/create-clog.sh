@@ -104,7 +104,7 @@ function print_pr_info () {
   echo
   echo "tip: After comitting this branch visit"
   echo
-  echo "https://github.com/cdr/docs/compare/master...${branch}?template=release-template.md"
+  echo "https://github.com/cdr/docs/compare/master...${branch}?template=release-template.md&expand=1"
   echo
   echo "to open a PR using the release PR template"
 }
