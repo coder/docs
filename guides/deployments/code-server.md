@@ -9,14 +9,14 @@ Kubernetes, you may want to consider Coder, our solution for developers and
 development teams. Coder runs on Kubernetes and offers the following features in
 addition to the base code-server functionality.
 
-## Environment Consistency
+## Environment consistency
 
 - [Manage and distribute workspace images](https://coder.com/docs/images)
 - [Build custom workspaces that include your project's dependencies](https://coder.com/docs/images/structure)
 
 ![Coder Dashboard](../../assets/jetbrains-launcher-icons.png)
 
-## Developer Workflows
+## Developer workflows
 
 - [Connect to workspaces via web: (code-server, JetBrains)](https://coder.com/docs/environments/editors#jetbrains-ides-in-the-browser)
 - [Connect to workspaces via SSH or VS Code Remote](https://coder.com/docs/environments/ssh)
@@ -28,7 +28,7 @@ addition to the base code-server functionality.
 
 ![User management icon](../../assets/manage-users.png)
 
-## Team Management
+## Team management
 
 - [Implement single-sign-on](https://coder.com/docs/admin/access-control#openid-connect)
 - [Assign user roles](https://coder.com/docs/admin/access-control/user-roles)
@@ -43,7 +43,7 @@ addition to the base code-server functionality.
 
 <hr />
 
-## Getting Started
+## Getting started
 
 Coder is free to try for 60 days. See our
 [install guide](https://coder.com/docs/setup) for additional details.

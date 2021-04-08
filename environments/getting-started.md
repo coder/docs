@@ -24,7 +24,7 @@ existing environments. Click the **New Environment** button.
 1. Click **Create** to proceed.
 
 Coder redirects you to an overview page for your environment during the build
-process. Learn more about the Environment
+process. Learn more about the environment
 [creation parameters](./environment-params.md).
 
 Your environment persists in the home directory, updates to new versions of the

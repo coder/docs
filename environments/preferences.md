@@ -14,7 +14,7 @@ The **Account** tab allows you to provide or change:
 - Your display name
 - Email address
 - Username (this is the value that Coder uses throughout the platform, including
-  in Dev URLs and the CLI's SSH configuration)
+  in dev URLs and the CLI's SSH configuration)
 - Your dotfiles URI to personalize your environments
 - Your avatar
 

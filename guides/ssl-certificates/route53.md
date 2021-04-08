@@ -13,7 +13,7 @@ authority.
 This guide will show you how to install cert-manager v1.0.1 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
 you can enable HTTPS on your Coder deployment. It will also show you how to
-configure your Coder hostname and Dev URLs.
+configure your Coder hostname and dev URLs.
 
 > We recommend reviewing the official cert-manager
 > [documentation](https://cert-manager.io/docs/) if you encounter any issues or
@@ -61,7 +61,7 @@ You should also:
 
 ## Step 2: Delegate your domain names and set up DNS01 challenges
 
-Because Coder dynamically generates domains (specifically the Dev URLs), your
+Because Coder dynamically generates domains (specifically the dev URLs), your
 certificates need to be approved and challenged. The follow steps will show you
 how to use Route 53 for DNS01 challenges.
 
@@ -165,7 +165,7 @@ URLs work.
 1. Create a new record for your hostname; provide `coder` as the record name and
    paste the external IP as the `value`. Save.
 
-1. Create another record for your Dev URLs: set it to `*.dev.exampleCo` or
+1. Create another record for your dev URLs: set it to `*.dev.exampleCo` or
    similar and use the same external IP as the previous step for `value`. Save.
 
 At this point, you can return to **step 6** of the

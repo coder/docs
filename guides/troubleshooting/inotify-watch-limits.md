@@ -262,7 +262,7 @@ program sets the `fs.inotify.max_user_watches` setting.
   protocol for programming language support, and the same constraints and
   limitations apply to those tools)
 - Resources for Visual Studio Code and code-server:
-  - [User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings),
+  - [User and workspace settings](https://code.visualstudio.com/docs/getstarted/settings),
     in particular, the setting called `files.watcherExclude`
   - [VS Code Setting: files.watcherExclude](https://youtu.be/WMNua0ob6Aw)
     (YouTube)
