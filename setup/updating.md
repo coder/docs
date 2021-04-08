@@ -100,7 +100,9 @@ If this happens, we recommend uninstalling and reinstalling:
 
    > Double-check your values file to ensure it only contains your changes.
 
-1. Run `helm uninstall`:
+1. Run `helm uninstall`. This will uninstall all Coder-related services in the
+   cluster, and keep the housing namespace intact. It will not delete user
+   environments or their associated volumes.
 
    ```console
    helm uninstall --namespace coder coder
