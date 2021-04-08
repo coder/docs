@@ -100,12 +100,13 @@ If this happens, we recommend uninstalling and reinstalling:
 
    > Double-check your values file to ensure it only contains your changes.
 
-1. Run `helm uninstall`. This will uninstall all Coder-related services in the
-   cluster, and keep the housing namespace intact. It will not delete user
+1. Run `helm uninstall`. This will uninstall all Coder-related services on the
+   cluster (though it preserves the namespaces). It will not delete user
    environments or their associated volumes.
 
    > `helm uninstall` will delete the timescale instance internal to the
-   > cluster. If you're using an external Postgres, it will not be affected.
+   > cluster. If you're using an external PostgreSQL database, this will not be
+   > affected.
 
    ```console
    helm uninstall --namespace coder coder
