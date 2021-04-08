@@ -39,12 +39,6 @@ workspace:
     labels:
       com.coder.custom.hello: "hello"
       com.coder.custom.world: "world"
-    tolerations:
-      - key: my-key
-        operator: Equal
-        value: my-value
-        effect: NoExecute
-        tolerationSeconds: 3600
   configure:
     start:
       - name: "install curl"
@@ -100,22 +94,6 @@ workspace:
   labels:
     com.coder.custom.hello: hello
     com.coder.custom.world: world
-```
-
-#### workspace.spec.tolerations
-
-This section defines the
-[Kubernetes tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
-to be added to the pod hosting the environment.
-
-```yaml
-workspace:
-  tolerations:
-    - key: my-key
-      operator: equals
-      value: my-value
-      effect: NoExecute
-      tolerationSeconds: 3600
 ```
 
 #### workspace.spec.gpucount

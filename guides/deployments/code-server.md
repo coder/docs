@@ -1,13 +1,13 @@
 ---
 title: Managed code-server Environments
-description: Learn how Coder can improve your code-server deployment on Kubernetes.
+description:
+  Learn how Coder can improve your code-server deployment on Kubernetes.
 ---
 
 If you're deploying [code-server](https://github.com/cdr/code-server) on
 Kubernetes, you may want to consider Coder, our solution for developers and
-development teams. Coder runs on Kubernetes
-and offers the following features in addition to the base
-code-server functionality.
+development teams. Coder runs on Kubernetes and offers the following features in
+addition to the base code-server functionality.
 
 ## Environment Consistency
 
@@ -45,5 +45,5 @@ code-server functionality.
 
 ## Getting Started
 
-Coder is free to try for 60 days. See our [install
-guide](https://coder.com/docs/setup) for additional details.
+Coder is free to try for 60 days. See our
+[install guide](https://coder.com/docs/setup) for additional details.
