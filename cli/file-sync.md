@@ -57,7 +57,7 @@ help ensure your project is in the same state no matter where you make changes.
        $ ssh coder.yourName
    ```
 
-1. Identify your project directory and Environment name, then create the sync
+1. Identify your project directory and environment name, then create the sync
    session. Note that the folder must exist on the remote server before you
    begin this step:
 

@@ -74,7 +74,7 @@ environment.
 
 ```text
 # --------- START CODER ENVIRONMENT VARIABLES ----------
-# The following has been auto-generated at Environment startup
+# The following has been auto-generated at environment startup
 # You should not hand-edit this section, unless you are deleting it.
 
 SHELL=/bin/bash

@@ -53,7 +53,7 @@ kubectl config set-context --current --namespace=coder
 
 1. Get a copy of your helm chart so that you can modify it; you'll need to
    modify the helm chart to update your PostgreSQL databases (step 4) and enable
-   Dev URLs (step 5):
+   dev URLs (step 5):
 
    a. Get a copy of your existing helm chart and save as `values.yaml`:
    `helm show values coder/coder > values.yaml`

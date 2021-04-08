@@ -21,7 +21,7 @@ description: "Learn about development environments in Coder."
 ---
 
 An environment is your remote development workspace. All environment are based
-on a shared [Image](../images/index.md) and therefore reproducible.
+on a shared [image](../images/index.md) and therefore reproducible.
 
 ![Environments](../assets/environments.svg)
 
