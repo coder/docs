@@ -154,7 +154,7 @@
         { "path": "./setup/licensing.md" },
         {
           "path": "./setup/air-gapped/index.md",
-          "children": [{ "path": "./setup/air-gapped/infrastrucutre.md" }]
+          "children": [{ "path": "./setup/air-gapped/infrastructure.md" }]
         },
         { "path": "./setup/updating.md" }
 >>>>>>> Split docs; edit content

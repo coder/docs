@@ -76,7 +76,12 @@ platform images are hosted in Coder's Docker Hub repo.
 
    [envbuilder](https://hub.docker.com/r/coderenvs/envbuilder)
 
-   [timescale](https://hub.docker.com/r/coderenvs/timescale)
+   [timescale](https://hub.docker.com/r/coderenvs/timescale) (**Note**: We
+   recommend you only use timescale for evaluation purposes if you don't have an
+   external PostgreSQL database available. For production environments, we
+   strong recommend that you use an external PostgreSQL database; the
+   installation section will cover more on updating your Helm chart with your
+   database information.)
 
    [dashboard](https://hub.docker.com/r/coderenvs/dashboard)
 
