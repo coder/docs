@@ -90,7 +90,13 @@ platform images are hosted in Coder's Docker Hub repo.
 
 ## Extensions marketplace
 
-You can configure your deployment to use the internal, built-in extension
-marketplace, allowing your developers to utilize whitelisted IDE extensions
-within your air-gapped environment. For additional details, see
+Coder users in an air-gapped environment cannot access the public VS Code
+marketplace. However, you can point Coder to an air-gapped instance of
+[OpenVSX](https://github.com/eclipse/openvsx) to serve assets to users. For
+instructions on implementing this, see
 [Extensions](../admin/environment-management/extensions.md).
+
+You can also review the [OpenVSX deployment wiki] for more information.
+
+[openvsx deployment wiki]:
+  https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX
