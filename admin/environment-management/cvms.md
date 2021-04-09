@@ -22,6 +22,10 @@ such as Docker and systemd, in their environments.
 **Note:** Coder doesn't support legacy versions of cluster-wide proxy services
 such as Istio.
 
+> NVIDIA GPUs can be added to CVMs on bare metal clusters only. This feature is
+> not supported on Google Kubernetes Engine or other cloud providers at this
+> time.
+>
 > Support for NVIDIA [GPUs](gpu-acceleration.md) is in **beta**. We do not
 > support AMD GPUs at this time.
 
