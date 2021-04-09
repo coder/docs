@@ -105,7 +105,7 @@ If this happens, we recommend uninstalling and reinstalling:
    environments or their associated volumes.
 
    > `helm uninstall` will delete the timescale instance internal to the
-   > cluster, but will not delete its associated volume, so all data will remain
+   > cluster but *not* its associated volume, so all data will remain
    > intact. If you're using an external PostgreSQL database, this will not be
    > affected.
 
