@@ -62,6 +62,8 @@ kubectl config set-context --current --namespace=coder
    you are _not_ modifying, otherwise the contents of `values.yaml` will
    override those in the default chart.
 
+   > View the [configuration options available in the `values.yaml` file.](https://github.com/cdr/enterprise-helm#values)
+
    c. Upgrade/install your Coder deployment with the updated helm chart (be sure
    to replace the placeholder value with your Coder version):
    `helm upgrade coder coder/coder -n coder --version=<VERSION> -f values.yaml`.
