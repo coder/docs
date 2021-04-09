@@ -86,10 +86,10 @@ set your resource allocation.
         <td>The amount of storage space you'd like for your environment</td>
     </tr>
     <tr>
-        <td><b>Add a GPU</b></td>
-        <td>Whether you want a
-        [GPU](../admin/environment-management/gpu-acceleration.md) added to
-        your environment</td>
+        <td><b>GPU</b></td>
+        <td>The number of
+        <a href="../admin/environment-management/gpu-acceleration.md">GPUs</a>
+        you want allocated to your environment</td>
     </tr>
 </table>
 

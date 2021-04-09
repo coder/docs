@@ -22,6 +22,9 @@ such as Docker and systemd, in their environments.
 **Note:** Coder doesn't support legacy versions of cluster-wide proxy services
 such as Istio.
 
+> Support for NVIDIA [GPUs](gpu-acceleration.md) is in **beta**. We do not
+> support AMD GPUs at this time.
+
 ## Enabling CVMs in Coder
 
 1. Go to **Manage > Admin > Infrastructure**.
