@@ -43,8 +43,8 @@ tag and select **Make default**.
 
 ## Image tag lifecycle
 
-Coder uses image tags to determine which image variant on which the user wants
-to base their environment.
+Coder uses image tags to determine the image variant to pull to run an
+environment.
 
 Image tags are expressed using the following notation:
 
@@ -61,8 +61,17 @@ codercom/enterprise-node:ubuntu
 mycorp/myproject:v1
 ```
 
-The name formatting of the tag will change the way Coder behaves regarding image
-updates:
+### Rebuilds use the same tag, not the same image
+
+The important thing to consider when modifying an existing image is whether a
+change will break existing environments that others are using. Taking a semantic
+versioning view of docker image tags may be overkill, but take care with changes
+to prevent a rebuild from preventing a developer from working.
+
+### Latest vs numbered
+
+Below are some examples of how a latest (or rolling) type of tag will behave and
+how that differs from a specific version tag.
 
 - If you build your environment using a `ubuntu:rolling` or `ubuntu:latest` tag,
   Coder prompts you to rebuild for patches, security updates, and major version
