@@ -68,7 +68,7 @@ change will break existing environments that others are using. Taking a semantic
 versioning view of docker image tags may be overkill, but take care with changes
 to prevent a rebuild from preventing a developer from working.
 
-### Latest vs numbered
+### Latest versus version numbered
 
 Below are some examples of how a latest (or rolling) type of tag will behave and
 how that differs from a specific version tag.
@@ -99,3 +99,36 @@ how that differs from a specific version tag.
   associated with a specific project's major version. You can apply the `:v1`
   tag to the most recent build for the image, while you can use `:v1.3` or
   `:v1.3.1` to pull a more specific tag version.
+
+## Coder recommendation
+
+Use image names and tags that follow a consistent format across the organization
+so that users will be comfortable selecting either a versioned or rolling tag.
+
+To avoid pulling images from dockerhub or another external source, always use
+internal registry names and tags or namespaces that the organization controls.
+
+`registry:port/company/department/software:majorversion`
+
+- `registry:port` by using an internal image registry name, there is no risk of
+  pulling an outside image with unapproved content.
+
+- `company` if you're using an internal registry, company may be assumed.
+
+- `department` can help setting a scope for who owns images and can patch or
+  modify them. As more teams pick up development images, they may start using
+  existing images and tags which can make it difficult to change them later.
+- `software` being specific about which software systems are intended to be
+  developed against using the image further reduces the coordination cost
+  related to multiple teams sharing images.
+
+- `majorversion` will likely correlated to an entire software stack which can be
+  helpful in determining which version of various dependencies and build tools
+  are present in the image. A developer is likely to span a couple of versions
+  during a major version tick event and that's the perfect time to have mutliple
+  environments running with separate dependencies.
+
+This recommendation is based on assumptions that may or may not apply to any
+given development organization today, and the applicability may change over
+time. There is no `right way` as long as tags are meaningful to your teams and
+don't create busywork or outages.
