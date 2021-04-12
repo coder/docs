@@ -3,8 +3,8 @@ title: "JetBrains IDE installation"
 description: Learn how to install JetBrains IDEs in images.
 ---
 
-The process of installing an IDE onto your [image](./images) is similar to
-installing the IDE onto a local machine.
+The process of installing an IDE onto your [image](../../images/index.md) is
+similar to installing the IDE onto a local machine.
 
 To see examples demonstrating how to install the various IDEs and configure your
 image to work with Coder's multi editor feature, refer to the
