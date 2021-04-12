@@ -132,23 +132,6 @@
             }
           ]
         },
-<<<<<<< HEAD
-        {
-          "path": "./setup/installation.md"
-        },
-        {
-          "path": "./setup/configuration.md"
-        },
-        {
-          "path": "./setup/licensing.md"
-        },
-        {
-          "path": "./setup/air-gapped.md"
-        },
-        {
-          "path": "./setup/updating.md"
-        }
-=======
         { "path": "./setup/installation.md" },
         { "path": "./setup/configuration.md" },
         { "path": "./setup/licensing.md" },
@@ -157,7 +140,6 @@
           "children": [{ "path": "./setup/air-gapped/infrastructure.md" }]
         },
         { "path": "./setup/updating.md" }
->>>>>>> Split docs; edit content
       ]
     },
     {
