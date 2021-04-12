@@ -3,11 +3,10 @@ title: Air-Gapped Network Setup
 description: Learn how to set up a network for air-gapped Coder deployment.
 ---
 
-This article will walk you through setting up your network to support an
-air-gapped Coder deployment.
+This article walks through setting up a the supporting infrastructure for
+an air-gapped Coder deployment.
 
-If your network already has the following, you can proceed with your
-installation:
+If the network already has the following, proceed with [the installation](../air-gapped):
 
 - A certificate authority
 - A domain name service
@@ -19,12 +18,12 @@ installation:
 
 ## Creating the local registry and generating a self-signed certificate
 
-You will need to create a local registry to store your Coder images and
-self-signed certificates (you can use self-signed certificates in any
-environment, but they're required for air-gapped deployments).
+To operate, Coder needs an image registry to store your Coder images.
+Docker's `registry:2` image assumes that HTTPS will be used and supports
+self-signed certificates.
 
-You can create your local registry to and your self-signed certificate at the
-same time:
+Before starting the registry container, create a self-signed certificate at the
+with a command like:
 
 ```bash
 export REGISTRY_DOMAINNAME=registry.local
@@ -54,10 +53,10 @@ docker run -d -p 443:5000 \
 
 ## Configuring the Kubernetes Node
 
-Before the Kubernetes node can accept your certificate, you'll need to mark your
-`registry.crt` file as trusted. The specific locations where you need to have
-this file depends on your Linux distribution and the container runtime, but here
-is a partial list to help you get started:
+Before the Kubernetes node can accept run local images, it needs to consider the new
+`registry.crt` file as trusted. The specific locations and methods to store and
+trust the certificate vary depending on the Linux distribution and the container 
+runtime, but here is a partial list to start with:
 
 ```plaintext
 /usr/local/share/ca-certificates/registry.crt
@@ -66,7 +65,7 @@ is a partial list to help you get started:
 /etc/pki/tls/registry.crt
 ```
 
-If you're working with containerd, use the following to patch in certificates
+If the cluster uses containerd, apply the following to patch in certificates
 for images in the local registry domain:
 
 ```console
@@ -78,8 +77,8 @@ EOT
 systemctl restart containerd
 ```
 
-Because you'll need to run the steps described in this section on all nodes that
-will be scheduling Coder images, we recommend that you either:
+Because the steps described in this section must be run on all nodes which
+will be scheduling Coder images, it is best to:
 
 1. Include these steps in the image itself
 1. Run an init script including these instructions whenever you add a new node
@@ -87,10 +86,10 @@ will be scheduling Coder images, we recommend that you either:
 
 ## Adding certificate secrets to the Helm chart
 
-Coder validates images and pulls tags using API calls, so issues with your
-certificates may prevent you from adding images. If you see such issues and you
-have a certificate authority in your network, you may need to add the root
-certificate.
+Coder validates images and pulls tags using direct REST API calls to the registry.
+Other internal services (OICD, Git providers, etc) which use HTTPS APIs require
+the Coder container to trust the certificate. The Coder helm chart can be used to
+add a root CA certificate to the Coder service images.
 
 To pass a self-signed certificate to Coder's images, you'll need to:
 
@@ -103,7 +102,7 @@ To create a secret, run:
 kubectl -n coder create secret generic local-registry-cert --from-file=/certs
 ```
 
-When using the above command, you're creating the secret from a directory with a
+When using the above command, `kubectl` creates the secret from a directory with a
 single file. The directory name doesn't matter, but the filename becomes the
 secret **key**.
 
@@ -111,15 +110,14 @@ secret **key**.
 > certificates, or if you moved the certificates, make sure that you adjust the
 > path included with `--from-file=`.
 
-To verify your secret:
+To verify the new secret:
 
 ```console
 kubectl -n coder get secret local-registry-cert -o yaml
 ```
 
-You'll need to add your secret to the Helm chart, and you can do this as part of
-your verification step. To do so, place the following snippet into a YAML file
-named `registry-cert-values.yml`:
+Reference the newly secret from the Helm chart by adding the following
+snippet into a YAML file named `registry-cert-values.yml`:
 
 ```yaml
 certs:
@@ -137,9 +135,10 @@ kubectl -n coder get secret local-registry-cert -o yaml -f registry-cert-values.
 
 ### Resolving the registry using the cluster's DNS or hostAliases
 
-Your Nodes must have their host file set to the `$REGISTRY_DOMAIN` and the
-static IP address of the local registry. For example, if the registry is on
-10.0.0.2, then add this to your Node configuration script:
+Nodes must be able to resolve `$REGISTRY_DOMAIN` name to the static IP address
+of the local registry. One way to do this without an external DNS server is to use the
+node's hosts file. For example, if the registry is on 10.0.0.2, then add this to the Node
+configuration script:
 
 ```console
 echo "10.0.0.2 $REGISTRY_DOMAIN_NAME" >> /etc/hosts
