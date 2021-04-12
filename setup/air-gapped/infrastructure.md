@@ -56,7 +56,8 @@ docker run -d -p 443:5000 \
 
 Before the Kubernetes node can accept your certificate, you'll need to mark your
 `registry.crt` file as trusted. The specific locations where you need to have
-this file depends on your Linux distribution and the container runtime:
+this file depends on your Linux distribution and the container runtime, but here
+is a partial list to help you get started:
 
 ```plaintext
 /usr/local/share/ca-certificates/registry.crt
