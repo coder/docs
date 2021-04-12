@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Cancel Previous Runs
         if: github.ref != 'refs/heads/master'
-        uses: styfle/cancel-workflow-action@0.8.0
+        uses: styfle/cancel-workflow-action@0.9.0
 
       - name: Checkout
         uses: actions/checkout@v2
