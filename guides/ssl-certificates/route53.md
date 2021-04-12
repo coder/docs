@@ -142,7 +142,7 @@ helm install coder coder/coder --namespace coder \
   --set devurls.host="*.exampleCo.com" \
   --set ingress.host="coder.exampleCo.com" \
   --set ingress.tls.enable=true \
-  --set ingress.tls.devUrlsHostSecretName=devUlrCertificate \
+  --set ingress.tls.devUrlsHostSecretName=devUrlCertificate \
   --set ingress.tls.hostSecretName=hostCertificate \
   --set \
   "ingress.additionalAnnotations[0]=cert-manager.io/cluster-issuer:letsencrypt" \
