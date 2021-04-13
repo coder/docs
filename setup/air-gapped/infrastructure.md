@@ -1,5 +1,5 @@
 ---
-title: Air-Gapped Network Setup
+title: Network Setup
 description: Learn how to set up a network for air-gapped Coder deployment.
 ---
 
