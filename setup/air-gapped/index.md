@@ -168,9 +168,9 @@ platform images are hosted in Coder's Docker Hub repo.
       -f registry-cert-values.yml
    ```
 
-1. Next, follow the [Installation](installation.md) guide beginning with **step
-   6** to get the access URL and the temporary admin password, which allows you
-   to proceed with setting up and configuring Coder.
+1. Next, follow the [Installation](../installation.md) guide beginning with
+   **step 6** to get the access URL and the temporary admin password, which
+   allows you to proceed with setting up and configuring Coder.
 
 ## Extensions marketplace
 
