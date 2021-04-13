@@ -3,10 +3,11 @@ title: Air-Gapped Network Setup
 description: Learn how to set up a network for air-gapped Coder deployment.
 ---
 
-This article walks through setting up a the supporting infrastructure for
-an air-gapped Coder deployment.
+This article walks you through setting up the supporting infrastructure for an
+air-gapped Coder deployment.
 
-If the network already has the following, proceed with [the installation](../air-gapped):
+If the network that will run Coder already has the following, skip this tutorial
+and proceed with [the installation](../air-gapped) process:
 
 - A certificate authority
 - A domain name service
@@ -14,16 +15,16 @@ If the network already has the following, proceed with [the installation](../air
 
 > The code snippets provided in this article are sourced from third-party
 > software packages. While we attempt to keep this article up-to-date, we
-> strongly recommend that you verify the snippets as well before using.
+> strongly recommend that you verify the snippets before using them.
 
 ## Creating the local registry and generating a self-signed certificate
 
-To operate, Coder needs an image registry to store your Coder images.
-Docker's `registry:2` image assumes that HTTPS will be used and supports
-self-signed certificates.
+Coder needs an image registry to store your images. It uses Docker's Registry
+2.0 implementation, which supports self-signed certificates and assumes that the
+protocol used will be HTTPS. The following steps will show you how to make sure
+the registry works.
 
-Before starting the registry container, create a self-signed certificate at the
-with a command like:
+Before starting the registry container, create a self-signed certificate:
 
 ```bash
 export REGISTRY_DOMAINNAME=registry.local
@@ -53,10 +54,10 @@ docker run -d -p 443:5000 \
 
 ## Configuring the Kubernetes Node
 
-Before the Kubernetes node can accept run local images, it needs to consider the new
-`registry.crt` file as trusted. The specific locations and methods to store and
-trust the certificate vary depending on the Linux distribution and the container 
-runtime, but here is a partial list to start with:
+Before the Kubernetes node can accept run local images, it needs to consider the
+new `registry.crt` file as trusted. The specific locations and methods to store
+and trust the certificate vary depending on the Linux distribution and the
+container runtime, but here is a partial list to help you get started:
 
 ```plaintext
 /usr/local/share/ca-certificates/registry.crt
@@ -65,8 +66,8 @@ runtime, but here is a partial list to start with:
 /etc/pki/tls/registry.crt
 ```
 
-If the cluster uses containerd, apply the following to patch in certificates
-for images in the local registry domain:
+If the cluster uses containerd, apply the following to patch in certificates for
+images in the local registry domain:
 
 ```console
 update-ca-certificates
@@ -77,19 +78,19 @@ EOT
 systemctl restart containerd
 ```
 
-Because the steps described in this section must be run on all nodes which
-will be scheduling Coder images, it is best to:
+Because the steps described in this section must be run on all nodes which will
+be scheduling Coder images, either:
 
-1. Include these steps in the image itself
-1. Run an init script including these instructions whenever you add a new node
-   to your cluster
+1. Include these steps in the image
+1. Run an init script that includes these instructions whenever you add a new
+   node to your cluster
 
 ## Adding certificate secrets to the Helm chart
 
-Coder validates images and pulls tags using direct REST API calls to the registry.
-Other internal services (OICD, Git providers, etc) which use HTTPS APIs require
-the Coder container to trust the certificate. The Coder helm chart can be used to
-add a root CA certificate to the Coder service images.
+Coder validates images and pulls tags using REST API calls to the registry.
+Other internal services (OIDC, Git providers, etc) that use HTTPS APIs require
+the Coder container to trust the certificate. You can fix this by adding a root
+CA certificate to the Coder service images via the Coder helm chart.
 
 To pass a self-signed certificate to Coder's images, you'll need to:
 
@@ -102,13 +103,13 @@ To create a secret, run:
 kubectl -n coder create secret generic local-registry-cert --from-file=/certs
 ```
 
-When using the above command, `kubectl` creates the secret from a directory with a
-single file. The directory name doesn't matter, but the filename becomes the
-secret **key**.
+When using the above command, `kubectl` creates the secret from a directory
+containing a single file. The directory name doesn't matter, but the filename
+becomes the secret **key**.
 
-> If you changed the `-out` argument on the OpenSSL command used to generate the
-> certificates, or if you moved the certificates, make sure that you adjust the
-> path included with `--from-file=`.
+> If you changed the `-keyout` argument on the OpenSSL command used to generate
+> the certificates, or if you moved the certificates, make sure that you adjust
+> the path included with `--from-file=`.
 
 To verify the new secret:
 
@@ -116,8 +117,8 @@ To verify the new secret:
 kubectl -n coder get secret local-registry-cert -o yaml
 ```
 
-Reference the newly secret from the Helm chart by adding the following
-snippet into a YAML file named `registry-cert-values.yml`:
+Refer to the new secret from the Helm chart by adding the following snippet into
+a YAML file named `registry-cert-values.yml`:
 
 ```yaml
 certs:
@@ -135,10 +136,10 @@ kubectl -n coder get secret local-registry-cert -o yaml -f registry-cert-values.
 
 ### Resolving the registry using the cluster's DNS or hostAliases
 
-Nodes must be able to resolve `$REGISTRY_DOMAIN` name to the static IP address
-of the local registry. One way to do this without an external DNS server is to use the
-node's hosts file. For example, if the registry is on 10.0.0.2, then add this to the Node
-configuration script:
+Nodes must be able to resolve the `$REGISTRY_DOMAIN` name of the local
+registry's static IP address. One way to do this without an external DNS server
+is to use the node's hosts file. For example, if the registry is on 10.0.0.2,
+then add this to the Node configuration script:
 
 ```console
 echo "10.0.0.2 $REGISTRY_DOMAIN_NAME" >> /etc/hosts
