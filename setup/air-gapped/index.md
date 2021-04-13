@@ -113,7 +113,7 @@ platform images are hosted in Coder's Docker Hub repo.
 
    When building images for your environments that rely on a custom certificate
    authority, be sure to follow the
-   [docs for adding certificates](/docs/images/ssl-certificates#adding-certificates-for-coder)
+   [docs for adding certificates](../../images/ssl-certificates#adding-certificates-for-coder)
    to images.
 
 1. Tag and push all of the images that you've downloaded in the previous step to
@@ -178,7 +178,7 @@ Coder users in an air-gapped environment cannot access the public VS Code
 marketplace. However, you can point Coder to an air-gapped instance of
 [OpenVSX](https://github.com/eclipse/openvsx) to serve assets to users. For
 instructions on implementing this, see
-[Extensions](../admin/environment-management/extensions.md).
+[Extensions](../../admin/environment-management/extensions.md).
 
 You can also review the [OpenVSX deployment wiki] for more information.
 

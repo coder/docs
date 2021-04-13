@@ -7,7 +7,7 @@ This article walks you through setting up the supporting infrastructure for an
 air-gapped Coder deployment.
 
 If the network that will run Coder already has the following, skip this tutorial
-and proceed with [the installation](../air-gapped) process:
+and proceed with [the installation](index.md) process:
 
 - A certificate authority
 - A domain name service
