@@ -76,8 +76,11 @@ namespace:
 ```console
 kubectl -n cert-manager create secret generic \
 clouddns-dns01-solver-svc-acct --from-file=./key.json
+```
 
-# If successful, you'll see the following message:
+If successful, you'll see a response similar to:
+
+```console
 secret/clouddns-dns01-solver-svc-acct created
 ```
 
@@ -205,8 +208,8 @@ There are additional steps to make sure that your hostname and Dev URLs work.
 
 1. Set the **Resource Record Type** to **A**
 
-1. Copy and paste the IP address from the **service/ingress-nginx\*** line in
-   your terminal to the `IPv4 Address` field
+1. Copy and paste the IP address from the **service/ingress-nginx** line in your
+   terminal to the `IPv4 Address` field
 
 1. Click **Create**
 
