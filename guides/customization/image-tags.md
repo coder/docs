@@ -1,9 +1,10 @@
 ---
-title: "Image Tag Lifecycle"
-description: Learn about image tags and Coder's naming conventions.
+title: "Image Tag Names"
+description:
+  Learn about image tag naming conventions and recommendations for use.
 ---
 
-Coder uses image tags to determine the image variant to pull to run an
+Coder uses image tags to determine the image variant to use when creating an
 environment.
 
 Image tags are expressed using the following notation:
@@ -15,26 +16,26 @@ Image tags are expressed using the following notation:
 Examples include:
 
 ```text
-ubuntu:20.04
 ubuntu:rolling
-codercom/enterprise-node:ubuntu
+ubuntu:latest
+ubuntu:20.04
 mycorp/myproject:v1
 ```
 
+This article will walk you through how Coder handles image tags and what to
+consider when working with image tags.
+
 ## Rebuilds use the same tag, not the same image
 
-When modifying an image, consider whether the change will break existing
-environments in use. Taking a semantic versioning view of Docker image tags
+When modifying an existing image, be sure to consider whether the changes you're
+making will break existing environments built using that image. You may want to
+consider taking a semantic versioning view of your image tags for more critical
+images.
 
-The important thing to consider when modifying an existing image is whether a
-change will break existing environments that others are using. Taking a semantic
-versioning view of docker image tags may be overkill, but take care with changes
-to prevent a rebuild from preventing a developer from working.
+## Tag behavior
 
-### Latest versus version numbered
-
-Below are some examples of how a latest (or rolling) type of tag will behave and
-how that differs from a specific version tag.
+The following examples show how different tagging schemes change how Coder uses
+the image tag.
 
 - If you build your environment using a `ubuntu:rolling` or `ubuntu:latest` tag,
   Coder prompts you to rebuild for patches, security updates, and major version
@@ -47,51 +48,48 @@ how that differs from a specific version tag.
   Coder does not, however, alert you regarding minor releases (e.g., movement
   from `20.04` to `20.10`). This is a good option for those offering long-term
   support of software with lengthier version cycles or those supporting multiple
-  versions where you expect to revert back to a prior release to investigate and
-  fix issues.
-
-- If you build your environment using a tag like
-  `codercom/enterprise-node:ubuntu`, the image name indicates the company and
-  software architecture (also known as the node), while the tag specifies the
-  base image. Without any additional information, such as a version number, you
-  can expect this to operate like a `rolling` or `latest` tag. You can also
-  assume there are other variants, such as `codercom/enterprise-node:centos` or
-  `codercom/enterprise-node:arch`.
+  versions where you expect to revert to a prior release to investigate and fix
+  issues.
 
 - If you build your environment using `mycorp/myproject:v1`, the image is
   associated with a specific project's major version. You can apply the `:v1`
   tag to the most recent build for the image, while you can use `:v1.3` or
   `:v1.3.1` to pull a more specific tag version.
 
-## Coder recommendation
+## Recommendations
 
-Use image names and tags that follow a consistent format across the organization
-so that users will be comfortable selecting either a versioned or rolling tag.
+- Use image names and tags that follow a consistent format across the
+  organization so that users will be comfortable selecting either a _versioned_
+  or a _rolling_ tag.
 
-To avoid pulling images from dockerhub or another external source, always use
-internal registry names and tags or namespaces that the organization controls.
+- To avoid pulling images from Docker Hub (or another external source), use
+  internal registry names and tags or namespaces that are controlled by your
+  organization.
 
-`registry:port/company/department/software:majorversion`
+## Sample tagging scheme
 
-- `registry:port` by using an internal image registry name, there is no risk of
-  pulling an outside image with unapproved content.
+Let's say that you have the following tag:
 
-- `company` if you're using an internal registry, company may be assumed.
+```text
+registry:port/company/department/software:majorversion
+```
 
-- `department` can help setting a scope for who owns images and can patch or
-  modify them. As more teams pick up development images, they may start using
-  existing images and tags which can make it difficult to change them later.
-- `software` being specific about which software systems are intended to be
-  developed against using the image further reduces the coordination cost
-  related to multiple teams sharing images.
+Here's the information that can be gleaned from the tag name:
 
-- `majorversion` will likely correlated to an entire software stack which can be
-  helpful in determining which version of various dependencies and build tools
-  are present in the image. A developer is likely to span a couple of versions
-  during a major version tick event and that's the perfect time to have mutliple
-  environments running with separate dependencies.
+| **Parameter**                                                                  | **Description**                                                  |
+| ------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| `registry:port`                                                                | By using an internal image registry name, there's no risk of     |
+| pulling an outside image with unapproved content                               |
+| `company`                                                                      | If you're using an internal registry, you can omit this with the |
+| assumption that it's assumed                                                   |
+| `department`                                                                   | Helps set the scope for who owns the image and therefore can     |
+| patch/modify the image                                                         |
+| `software`                                                                     | Offers information about which software systems should be        |
+| developed using the image                                                      |
+| `majorversion`                                                                 | Can correlate to a software stock; helpful in determining        |
+| which version of various dependencies and build tools are present in the image |
 
-This recommendation is based on assumptions that may or may not apply to any
-given development organization today, and the applicability may change over
-time. There is no `right way` as long as tags are meaningful to your teams and
-don't create busywork or outages.
+The above recommendations are based on assumptions that may not apply to all
+organizations, and their applicability may change over time. There's no "right
+way" to tag your images, as long as your tags are meaningful to your teams and
+don't cause issues with your developers' workflows.
