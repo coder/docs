@@ -1,7 +1,6 @@
 ---
 title: "Image Tag Names"
-description:
-  Learn about image tag naming conventions and recommendations for use.
+description: Learn about image tag naming conventions and recommendations for use.
 ---
 
 Coder uses image tags to determine the image variant to use when creating an
