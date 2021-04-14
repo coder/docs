@@ -27,11 +27,11 @@ PORT 1234
 
 **Note:** Set `PORT` to the appropriate port number for your VNC instance.
 
-> To help you get started, see this [sample Dockerfile](sample-dockerfile) that
+> To help you get started, see this [sample image](sample-image) that
 > uses [noVNC](noVNC) as the client and [TigerVNC](TigerVNC) as the server.
 
-[sample-dockerfile]:
-  https://github.com/cdr/enterprise-images/tree/ed66817dfa83e33132322c33bea653a8a5fdc057/images/vnc
+[sample-image]:
+  https://github.com/cdr/enterprise-images/tree/main/images/vnc
 [novnc]: https://github.com/novnc/noVNC
 [tigervnc]: https://tigervnc.org
 
