@@ -37,3 +37,10 @@ When done, click **Import**.
 To delete a registry, go to the **Images** > **Registries** page. Find the
 registry that you'd like to remove, click its **horizontal ellipses** icon, and
 select **Delete**.
+
+## Unsupported registries
+
+The following registries do not behave as indended inside Coder at this time.
+
+- Amazon ECR
+- GitHub Packages
