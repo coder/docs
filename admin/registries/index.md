@@ -40,7 +40,7 @@ select **Delete**.
 
 ## Unsupported registries
 
-The following registries do not behave as indended inside Coder at this time.
+Coder does not support the following registries at this time:
 
 - Amazon ECR
 - GitHub Packages
