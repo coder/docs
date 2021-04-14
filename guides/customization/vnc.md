@@ -1,5 +1,5 @@
 ---
-title: Virtual Network Computing in Coder
+title: Virtual Network Computing
 description: Learn how to set up a VNC in Coder.
 ---
 
