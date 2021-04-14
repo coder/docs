@@ -27,13 +27,10 @@ PORT 1234
 
 **Note:** Set `PORT` to the appropriate port number for your VNC instance.
 
-> To help you get started, see this [sample image](sample-image) that
-> uses [noVNC](noVNC) as the client and [TigerVNC](TigerVNC) as the server.
-
-[sample-image]:
-  https://github.com/cdr/enterprise-images/tree/main/images/vnc
-[novnc]: https://github.com/novnc/noVNC
-[tigervnc]: https://tigervnc.org
+> To help you get started, see this
+> [sample image](https://github.com/cdr/enterprise-images/tree/main/images/vnc)
+> that uses [noVNC](https://github.com/novnc/noVNC) as the client and
+> [TigerVNC](https://tigervnc.org) as the server.
 
 ## Step 2: Build and push the image to Docker Hub
 
