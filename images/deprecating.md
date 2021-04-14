@@ -11,7 +11,7 @@ environments.
 1. Select the **Deprecate this image** checkbox.
 1. Click **Update Image** to save your changes.
 
-![Deprecating an Image](../assets/deprecate-image.png)
+![Deprecating an image](../assets/deprecate-image.png)
 
 > Users cannot create new environments using deprecated images. However, they
 > can continue to use _existing_ environments created with the now-deprecated

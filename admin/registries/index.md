@@ -9,7 +9,7 @@ image metadata.
 > You must be a **site manager** to add a registry or remove registries that
 > aren't in use.
 
-## Adding a Registry
+## Adding a registry
 
 You can add registries during the process of
 [adding images](../../images/index.md).
@@ -29,7 +29,7 @@ You'll be asked to provide:
 Then, continue with the process of [adding your image](../../images/index.md).
 When done, click **Import**.
 
-## Deleting a Registry
+## Deleting a registry
 
 > You cannot delete a registry if there are environments using images from that
 > registry.
@@ -37,3 +37,10 @@ When done, click **Import**.
 To delete a registry, go to the **Images** > **Registries** page. Find the
 registry that you'd like to remove, click its **horizontal ellipses** icon, and
 select **Delete**.
+
+## Unsupported registries
+
+Coder does not support the following registries at this time:
+
+- Amazon ECR
+- GitHub Packages

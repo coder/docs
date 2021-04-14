@@ -15,12 +15,12 @@ Please make sure that you have the
 installed on your machine and that you've logged in (run `az login` and follow
 the prompts).
 
-## Step 1: Create the Resource Group
+## Step 1: Create the resource group
 
 To make subsequent steps easier, start by creating environment variables for the
-[Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group)
+[resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group)
 and
-[Location](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
+[location](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
 that will host your cluster:
 
 ```console
@@ -44,7 +44,7 @@ attention to the `id` field:
 
 You will need the hash provided (i.e., `3afe...d2d`) when creating your cluster.
 
-## Step 2: Create the Azure Kubernetes Service Cluster
+## Step 2: Create the Azure Kubernetes Service cluster
 
 Set two additional environment variables for your cluster name and subscription
 ID:
@@ -89,7 +89,7 @@ az aks create \
 This process might take some time (~5-20 minutes), but if you're successful,
 Azure returns a JSON object with your cluster information.
 
-## Step 3: Configure kubectl to Point to the Cluster
+## Step 3: Configure kubectl to point to the cluster
 
 After deploying your AKS cluster, configure kubectl to point to your cluster:
 
@@ -103,7 +103,7 @@ You should get a message similar to the following if this is successful:
 Merged "<YOUR_CLUSTER_NAME>" as current context in /Users/<YOUR_USER>/.kube/config
 ```
 
-## Access Control
+## Access control
 
 You can configure AKS to use both Azure Active Directory (AD) and Kubernetes
 Role-Based Access Control (RBAC) to limit access to cluster resources based on
@@ -113,8 +113,8 @@ then define roles to assign to users with role bindings via RBAC.
 For more information, see:
 
 - [Azure AD with Kubernetes RBAC](https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac)
-- [Kubernetes RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+- [Kubernetes RBAC authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
-## Next Steps
+## Next steps
 
-At this point, you're ready to proceed to [Installation](../installation.md).
+At this point, you're ready to proceed to [installation](../installation.md).

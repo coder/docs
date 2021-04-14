@@ -18,7 +18,7 @@ We recommend the following throughput:
 - Read: 3000 IOPS at 50 MB/s
 - Write: 3000 IOPS at 50 MB/s
 
-## Enabled Extensions
+## Enabled extensions
 
 You must enable the following extensions on your K8 cluster (check whether you
 have these extensions enabled by running `kubectl get apiservices`):
@@ -65,7 +65,7 @@ within the same cluster will be permitted to communicate without restriction.
 Consider testing your container networking _after_ installing Coder to ensure
 that the behavior is as expected.
 
-> If you're not sure which CNI plugin, we suggest
+> If you're not sure which CNI plugin to use, we suggest
 > [Calico](https://docs.projectcalico.org/getting-started/kubernetes/quickstart).
 
 ## Licenses

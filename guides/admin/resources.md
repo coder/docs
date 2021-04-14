@@ -13,7 +13,7 @@ development velocity. However, traditional approaches to providing developers
 with more hardware for computationally intensive compilations can lead to wasted
 resources.
 
-## Individual vs. Shared Resources
+## Individual vs. shared resources
 
 Consider a project whose compilation is parallelizable up to 16 CPU cores.
 
@@ -37,7 +37,7 @@ minimize resource underutilization.
 
 ![resources-shared.svg](../../assets/resources-new.svg)
 
-## Resource Contention
+## Resource contention
 
 One possible issue with shared resources is resource contention.
 
@@ -49,7 +49,7 @@ However, the nature of developer workflows makes resource contention fairly
 uncommon since this occurs when several users are performing resource-intensive
 tasks, such as compilation, simultaneously.
 
-## Shared Resource Configuration in Coder
+## Shared resource configuration in Coder
 
 Five variables determine how resource allocation and usage affect developers and
 compute costs:

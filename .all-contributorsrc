@@ -240,6 +240,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "f0ssel",
+      "name": "Garrett Delfosse",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19379394?v=4",
+      "profile": "https://github.com/f0ssel",
+      "contributions": [
+        "content",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,

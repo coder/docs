@@ -13,12 +13,12 @@ Any user who is a **Site Manager** or an **Auditor** can log into Coder, go to
 By default, this page displays a chronological list of all actions taken on the
 system.
 
-![Audit Logs](../assets/audit-log.png)
+![Audit logs](../assets/audit-log.png)
 
 You can filter the logs displayed using the search filters available at the top:
 
-- **Resource Type**: The resource on which the action is taken (e.g., Image,
-  Environment, User)
+- **Resource Type**: The resource on which the action is taken (e.g., image,
+  environment, user)
 - **Action**: The action that the user took against a resource (e.g., read,
   write, create)
 - **Resource Target**: The friendly name for the resource (e.g., the user with

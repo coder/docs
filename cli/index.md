@@ -16,7 +16,7 @@ allows you to interact with your environments using your local machine.
 
 <children></children>
 
-## Full Reference
+## Full CLI reference
 
 For a full list of the Coder CLI commands available, see the
 [reference pages](https://github.com/cdr/coder-cli/blob/master/docs/coder.md).

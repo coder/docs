@@ -39,20 +39,14 @@ workspace:
     labels:
       com.coder.custom.hello: "hello"
       com.coder.custom.world: "world"
-    tolerations:
-      - key: my-key
-        operator: Equal
-        value: my-value
-        effect: NoExecute
-        tolerationSeconds: 3600
   configure:
     start:
       - name: "install curl"
-        run: |
+        command: |
           apt update
           apt install -y curl
       - name: "install Go binary"
-        run: "go install"
+        command: "go install"
         directory: /home/coder/go/src/github.com/my-project
         shell: "bash"
         env:
@@ -102,22 +96,6 @@ workspace:
     com.coder.custom.world: world
 ```
 
-#### workspace.spec.tolerations
-
-This section defines the
-[Kubernetes tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
-to be added to the pod hosting the environment.
-
-```yaml
-workspace:
-  tolerations:
-    - key: my-key
-      operator: equals
-      value: my-value
-      effect: NoExecute
-      tolerationSeconds: 3600
-```
-
 #### workspace.spec.gpucount
 
 The number of GPUs to allocate to the environment.
@@ -158,14 +136,14 @@ the use of both single-line and multi-line commands).
 
   ```yaml
   - name: Install curl
-    run: apt install -y curl
+    command: apt install -y curl
   ```
 
 - Multi-line command:
 
   ```yaml
   - name: Update and install curl
-    run: |
+    command: |
       apt update
       apt install -y curl
   ```

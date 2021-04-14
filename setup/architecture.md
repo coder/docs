@@ -15,13 +15,13 @@ Each component runs in its own Kubernetes pod.
 
 ![Architecture](../assets/architecture.png)
 
-## Kubernetes NGINX Ingress
+## Kubernetes NGINX ingress
 
 Coder deploys an NGINX Kubernetes ingress controller to allocate and route
 requests to the appropriate service. You can disable this controller in the helm
 chart if you use your ingress or gateway.
 
-## Deployment Options
+## Deployment options
 
 There are two ways to deploy Coder:
 

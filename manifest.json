@@ -132,20 +132,13 @@
             }
           ]
         },
+        { "path": "./setup/installation.md" },
+        { "path": "./setup/configuration.md" },
+        { "path": "./setup/licensing.md" },
+        { "path": "./setup/updating.md" },
         {
-          "path": "./setup/installation.md"
-        },
-        {
-          "path": "./setup/configuration.md"
-        },
-        {
-          "path": "./setup/licensing.md"
-        },
-        {
-          "path": "./setup/air-gapped.md"
-        },
-        {
-          "path": "./setup/updating.md"
+          "path": "./setup/air-gapped/index.md",
+          "children": [{ "path": "./setup/air-gapped/infrastructure.md" }]
         }
       ]
     },
@@ -285,6 +278,9 @@
               "path": "./guides/deployments/keycloak.md"
             },
             {
+              "path": "./guides/deployments/code-server.md"
+            },
+            {
               "path": "./guides/deployments/teardown.md"
             }
           ]
@@ -323,6 +319,12 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        {
+          "path": "./changelog/1.17.4.md"
+        },
+        {
+          "path": "./changelog/1.17.3.md"
+        },
         {
           "path": "./changelog/1.17.2.md"
         },

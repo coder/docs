@@ -13,7 +13,7 @@ authority.
 This guide will show you how to install cert-manager v1.0.1 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
 you can enable HTTPS on your Coder deployment. It will also show you how to
-configure your Coder hostname and Dev URLs.
+configure your Coder hostname and dev URLs.
 
 > We recommend reviewing the official cert-manager
 > [documentation](https://cert-manager.io/docs/) if you encounter any issues or
@@ -35,7 +35,7 @@ You should also:
   [Route 53](https://aws.amazon.com/route53/) and
   [IAM](https://aws.amazon.com/iam/)
 
-## Step 1: Add cert-manager to Your Kubernetes Cluster
+## Step 1: Add cert-manager to your Kubernetes cluster
 
 1. [Install](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests)
    cert-manager:
@@ -59,9 +59,9 @@ You should also:
    kubectl get all -n cert-manager
    ```
 
-## Step 2: Delegate Your Domain Names and Set Up DNS01 Challenges
+## Step 2: Delegate your domain names and set up DNS01 challenges
 
-Because Coder dynamically generates domains (specifically the Dev URLs), your
+Because Coder dynamically generates domains (specifically the dev URLs), your
 certificates need to be approved and challenged. The follow steps will show you
 how to use Route 53 for DNS01 challenges.
 
@@ -81,7 +81,7 @@ how to use Route 53 for DNS01 challenges.
    values under **Value/Route traffic to** to your domain name (i.e., delegate
    `ns-X.awsdns-32.net` to `coder.exampleCo.com`).
 
-## Step 3: Create an IAM Role for `clusterIssuer`
+## Step 3: Create an IAM role for `clusterIssuer`
 
 To make sure that your `clusterIssuer` can change your DNS settings,
 [create the required IAM role](https://cert-manager.io/docs/configuration/acme/dns01/route53/#set-up-an-iam-role)
@@ -165,7 +165,7 @@ URLs work.
 1. Create a new record for your hostname; provide `coder` as the record name and
    paste the external IP as the `value`. Save.
 
-1. Create another record for your Dev URLs: set it to `*.dev.exampleCo` or
+1. Create another record for your dev URLs: set it to `*.dev.exampleCo` or
    similar and use the same external IP as the previous step for `value`. Save.
 
 At this point, you can return to **step 6** of the

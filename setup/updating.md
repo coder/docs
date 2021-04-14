@@ -67,7 +67,7 @@ To update Coder, follow these steps:
      --version 1.16.1 coder coder/coder --values current-values.yml
    ```
 
-## Fixing a Failed Upgrade
+## Fixing a failed upgrade
 
 While upgrading, the process may fail. You'll see an error message similar to
 the following samples indicating that a field is immutable or that helm doesn't
@@ -100,7 +100,14 @@ If this happens, we recommend uninstalling and reinstalling:
 
    > Double-check your values file to ensure it only contains your changes.
 
-1. Run `helm uninstall`:
+1. Run `helm uninstall`. This will uninstall all Coder-related services on the
+   cluster (though it preserves the namespaces). It will not delete user
+   environments or their associated volumes.
+
+   > `helm uninstall` will delete the timescale instance internal to the
+   > cluster but *not* its associated volume, so all data will remain
+   > intact. If you're using an external PostgreSQL database, this will not be
+   > affected.
 
    ```console
    helm uninstall --namespace coder coder

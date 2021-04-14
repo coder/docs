@@ -26,7 +26,7 @@ You must have:
 - kubectl with patch version
   [greater than v1.18.8, v1.17.11, or v1.16.14](https://cert-manager.io/docs/installation/upgrading/upgrading-0.15-0.16/#issue-with-older-versions-of-kubectl)
 
-## Step 1: Add cert-manager to Your Kubernetes Cluster
+## Step 1: Add cert-manager to your Kubernetes cluster
 
 ```console
 # Kubernetes 1.16+
@@ -53,13 +53,13 @@ cert-manager-cainjector-6546bf7765-ssxhf   1/1     Running   0          84s
 cert-manager-webhook-7f68b65458-zvzn9      1/1     Running   0          84s
 ```
 
-## Step 2: Create an ACME Issuer
+## Step 2: Create an ACME issuer
 
 cert-manager supports HTTP01 and DNS01 challenges, as well as
 [many DNS providers](https://cert-manager.io/docs/configuration/acme/dns01/#supported-dns01-providers).
 This guide, however, shows you how to use Cloudflare for DNS01 challenges. This
 is necessary to issue wildcard certificates, which are required for Coder's
-[Dev URLs](../../admin/devurls.md) feature.
+[dev URLs](../../admin/devurls.md) feature.
 
 First, get the Cloudflare API credentials for cert-manager to use; cert-manager
 needs permission to add a temporary TXT record and delete it after the challenge
@@ -156,7 +156,7 @@ secret/cloudflare-api-key-secret created
 issuer.cert-manager.io/letsencrypt created
 ```
 
-## Step 3: Configure Coder to Issue and Use the Certificates
+## Step 3: Configure Coder to issue and use the certificates
 
 If your installation uses an external egress, you'll need to configure your
 ingress to use the **coder-root-cert** and **coder-devurls-cert**.

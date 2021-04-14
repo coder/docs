@@ -13,11 +13,11 @@ Install the following dependencies if you haven't already:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [helm](https://helm.sh/docs/intro/install/)
 
-**For Production deployments:** set up and use an external
+**For production deployments:** set up and use an external
 [PostgreSQL](https://www.postgresql.org/docs/12/admin.html) instance to store
 data, including environment information and session tokens.
 
-## Creating the Coder Namespace (Optional)
+## Creating the Coder namespace (optional)
 
 We recommend running Coder in a separate
 [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
@@ -53,7 +53,7 @@ kubectl config set-context --current --namespace=coder
 
 1. Get a copy of your helm chart so that you can modify it; you'll need to
    modify the helm chart to update your PostgreSQL databases (step 4) and enable
-   Dev URLs (step 5):
+   dev URLs (step 5):
 
    a. Get a copy of your existing helm chart and save as `values.yaml`:
    `helm show values coder/coder > values.yaml`
@@ -61,6 +61,8 @@ kubectl config set-context --current --namespace=coder
    b. Edit the `values.yaml` file as needed. Be sure to remove the lines that
    you are _not_ modifying, otherwise the contents of `values.yaml` will
    override those in the default chart.
+
+   > View the [configuration options available in the `values.yaml` file.](https://github.com/cdr/enterprise-helm#values)
 
    c. Upgrade/install your Coder deployment with the updated helm chart (be sure
    to replace the placeholder value with your Coder version):
@@ -89,7 +91,7 @@ kubectl config set-context --current --namespace=coder
    You can find/define these values in your
    [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
 
-1. [Enable Dev URL Usage](../admin/devurls.md). Dev URLs allow users to access
+1. [Enable dev URL usage](../admin/devurls.md). Dev URLs allow users to access
    the web servers running in your environment. To enable, provide a wildcard
    domain and its DNS certificate and update your helm chart accordingly. This
    step is **optional** but recommended.

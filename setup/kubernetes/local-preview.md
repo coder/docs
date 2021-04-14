@@ -48,7 +48,7 @@ apply):
 
 ### Dev URLs
 
-Currently, the local preview doesn't support [Dev URLs][devurl-url]. Instead,
+Currently, the local preview doesn't support [dev URLs][devurl-url]. Instead,
 you can use tools like [ngrok][ngrok-url] to preview webpages from inside an
 environment.
 

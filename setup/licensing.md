@@ -16,9 +16,9 @@ The **License** tab displays the details for your current license, including:
 - When the license was issued
 - When the license expires
 
-![License Configuration Screen](../assets/licensing.png)
+![License configuration screen](../assets/licensing.png)
 
 You can also upload a new license file by clicking **Upload License**.
 
 > To request a license,
-> [contact our Technical Sales Team](https://coder.com/contact).
+> [contact our technical sales team](https://coder.com/contact).

@@ -13,11 +13,11 @@ To obtain a list of environment variables and their values, launch the
 env | grep CODER_
 ```
 
-## Available Environment Variables
+## Available environment variables
 
 <table>
     <tr>
-        <th>Environment Variable</th>
+        <th>Environment variable</th>
         <th>Description</th>
     </tr>
     <tr>
