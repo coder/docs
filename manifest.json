@@ -293,6 +293,9 @@
           "navigable": false,
           "children": [
             {
+              "path": "./guides/ssl-certificates/cloudDNS.md"
+            },
+            {
               "path": "./guides/ssl-certificates/cloudflare.md"
             },
             {
