@@ -22,8 +22,8 @@ PORT 1234
 
 Here is an
 [example image](https://github.com/cdr/enterprise-images/tree/ed66817dfa83e33132322c33bea653a8a5fdc057/images/vnc)
-that uses [noVNC](https://github.com/novnc/noVNC) and
-[TigerVNC](https://tigervnc.org).
+that uses [noVNC](https://github.com/novnc/noVNC) as the client and
+[TigerVNC](https://tigervnc.org) as the server.
 
 ## Step 2: Build and and push the image
 
@@ -54,7 +54,7 @@ b. Give your environment a name and select your VNC image from the **Existing**
 dropdown
 
 c. Leave the [Container-based Virtual Machine (CVM)](../../environments/cvms.md)
-option unchecked, as it does not support VNCs at this time
+option unchecked, as it does not support this image at this time
 
 d. Click **Create Environment**
 
