@@ -22,22 +22,26 @@ You must have:
 
 - A Kubernetes cluster with internet connectivity
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- A [Cloud DNS](https://cloud.google.com/dns) account
 - A
-  [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
+  [GCP Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
+  with the `dns.admin` role
 
 ## Step 1: Add cert-manager to your Kubernetes cluster
 
+To add cert-manager to your cluster (which we assume to be running Kubernetes
+1.16+), run:
+
 ```console
-# Kubernetes 1.16+
-$ kubectl apply --validate=false -f \
+kubectl apply --validate=false -f \
 https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager.yaml
 ```
 
 > `--validate=false` is required to bypass kubectl's resource validation on the
 > client-side that exists in older versions of Kubernetes.
 
-Once you've started the installation process, you can verify that all the pods
-are running:
+Once you've started the installation process, verify that all the pods are
+running:
 
 ```console
 $ kubectl get pods -n cert-manager
@@ -48,21 +52,31 @@ cert-manager-cainjector-6546bf7765-ssxhf   1/1     Running   0          84s
 cert-manager-webhook-7f68b65458-zvzn9      1/1     Running   0          84s
 ```
 
-## Step 2: Get private key from service account
+## Step 2: Get the private key from the service account
+
+You can get the private key from the GCP Service Account using:
 
 ```console
 gcloud iam service-accounts keys create key.json \
 --iam-account <service-account-name>@<project-name>.gserviceaccount.com
+```
 
+The response should look similar to the following:
+
+```console
 created key [44...3d] of type [json] as [key.json] for [<service-account-name>@<project-name>.iam.gserviceaccount.com]
 ```
 
 ## Step 3: Configure cluster issuer secret and add it to cert-manager namespace
 
+Next, configure the cluster issuer secret, and add it to cert-manager's
+namespace:
+
 ```console
 kubectl -n cert-manager create secret generic \
 clouddns-dns01-solver-svc-acct --from-file=./key.json
 
+# If successful, you'll see the following message:
 secret/clouddns-dns01-solver-svc-acct created
 ```
 
@@ -97,7 +111,7 @@ spec:
 1. Apply your configuration changes:
 
 ```console
-> kubectl apply -f ./clusterissuer.yaml
+kubectl apply -f ./clusterissuer.yaml
 ```
 
 If successful, you'll see a response similar to:
@@ -169,26 +183,29 @@ There are additional steps to make sure that your hostname and Dev URLs work.
    kubectl get all -n <your_namespace> -o wide
    ```
 
-   Find the **service/ingress-nginx** line and copy its **external IP** value.
+   Find the **service/ingress-nginx** line and copy the **external IP** value
+   shown.
 
-1. Return to Google Cloud Platform, navigate to Cloud DNS, and select the zone
+1. Return to Google Cloud Platform, navigate to the
+   [Cloud DNS](https://cloud.google.com/dns) Console, and select the Zone that
    your cluster is in.
 
-**Note:** You will need to create two A records, one for both the hostname and
-Dev URLs
+   **Note:** You will need to create two A records, one for both the hostname
+   and Dev URLs
 
 1. Click **Add Record Set**
 
-1. Input your DNS name
+1. Provide your **DNS Name**
 
-   a. For the hostname, it will be a normal domain.
+   a. If you're configuring the hostname, this value will be a standard domain
 
-   b. For the Dev URLs, it will be a wildcard domain (e.g. \*.domain.com)
+   b. If you're configuring your dev URLs, this will be a wildcard domain (e.g.,
+   `*.domain.com`)
 
-1. Set the Resource Record Type to **A**
+1. Set the **Resource Record Type** to **A**
 
 1. Copy and paste the IP address from the **service/ingress-nginx\*** line in
-   your terminal into the `IPv4 Address` field
+   your terminal to the `IPv4 Address` field
 
 1. Click **Create**
 
