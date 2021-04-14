@@ -1,70 +1,99 @@
 ---
-title: Using VNC with Coder
-description: Learn how to use a VNC with Coder
+title: Virtual Network Computing in Coder
+description: Learn how to set up a VNC in Coder.
 ---
 
-This guide will show you how to set up a Virtual Network Computing (VNC) system
-in Coder. Coder does not have a specific set of VNC providers it supports. Coder
-will render the VNC, as long as it is installed on the image used to create the
+This guide will show you how to set up a virtual network computing (VNC) system
+in Coder.
+
+Coder does not have a specific set of VNC providers it supports. Coder will
+render the VNC, as long as it is installed on the image used to create the
 environment.
 
-## Step 1: Create a Dockerfile image with a VNC provider installed
+## Step 1: Create the Dockerfile
 
-When creating the image, be sure to set the following variables:
+To begin, create a Dockerfile that you'll use to build an
+[image](../../images/index.md) with a virtual network computing (VNC) provider
+installed.
 
-```console
+Be sure to set the `HOME`, `USER`, and `PORT` environment variables in the
+Dockerfile:
+
+```text
 HOME=/home/coder
 USER coder
 PORT 1234
 ```
 
-**Note:** Set `PORT` to the relevant port number for your VNC instance.
+**Note:** Set `PORT` to the appropriate port number for your VNC instance.
 
-Here is an
-[example image](https://github.com/cdr/enterprise-images/tree/ed66817dfa83e33132322c33bea653a8a5fdc057/images/vnc)
-that uses [noVNC](https://github.com/novnc/noVNC) as the client and
-[TigerVNC](https://tigervnc.org) as the server.
+> To help you get started, see this [sample Dockerfile](sample-dockerfile) that
+> uses [noVNC](noVNC) as the client and [TigerVNC](TigerVNC) as the server.
 
-## Step 2: Build and and push the image
+[sample-dockerfile]:
+  https://github.com/cdr/enterprise-images/tree/ed66817dfa83e33132322c33bea653a8a5fdc057/images/vnc
+[novnc]: https://github.com/novnc/noVNC
+[tigervnc]: https://tigervnc.org
 
-Run the following commands to build the image and push it into Docker Hub:
+## Step 2: Build and push the image to Docker Hub
+
+Once you've created your image, build and push it to Docker Hub:
 
 ```console
 docker build . -t <yourusername>/vnc
 docker push <yourusername>/vnc
 ```
 
-## Step 3: Import image into Coder
+## Step 3: Import the image into Coder
 
-a. Login in to Coder and navigate to **Images** and select **Import Image**
+Now that your image is available via Docker Hub, you can import it for use in
+Coder.
 
-b. Import or select a registry and define the VNC image in the **Repository**
-and **Tag** fields
+1. Log in to Coder and go to **Images** > **Import Image**
 
-c. Set the recommended resources for your VNC instance
+1. Import or select a [registry](../../admin/registries/index.md).
 
-b. Click **Import Image**
+1. Provide the **Repository** and **Tag** of the VNC image. Optionally, you can
+   include a **Description** and the **Source Repo URL** that refers to the
+   image's source.
 
-## Step 4: Create environment with VNC image
+1. Set the recommended resources (CPU cores, memory, disk space) for your VNC
+   instance.
 
-a. Navigate back to the environment dashboard, select **New Environment** and
-choose **Custom Environment**
+1. Click **Import Image**.
 
-b. Give your environment a name and select your VNC image from the **Existing**
-dropdown
+## Step 4: Create an environment with the image
 
-c. Leave the [Container-based Virtual Machine (CVM)](../../environments/cvms.md)
-option unchecked, as it does not support this image at this time
+Once you've imported your image into Coder, you can use it to create an
+environment.
 
-d. Click **Create Environment**
+1. In the Coder UI, go to the **environment overview** page. Click **New
+   Environment** and choose **Custom Environment**
 
-## Step 5: Create Dev URL and access the VNC
+1. Provide an **Environment Name**, and indicate that your **Image Source** is
+   **Existing**.
 
-a. From the environment dashboard, click **Add URL**
+1. Select your **Image** and associated **Tag**.
 
-b. Give it a name and specify the port number the VNC is running on, denoted in
-the image.
+   > Make sure to leave the **Run as Container-based Virtual Machine** option
+   > _unchecked_; this image doesn't currently include support for
+   > [CVMs](../../environments/cvms.md).
 
-c. Click the **Open in Browser** icon to access the VNC
+1. Click **Create Environment**
 
-You can now access the VNC in Coder.
+## Step 5: Create a Dev URL and access the VNC
+
+Now that you've created your environment, you'll need to create a
+[dev URL](../../environments/devurls.md) so that you can access its services.
+
+1. From the **environment overview** page, click **Add URL**
+
+1. Provide the **Port** number that the VNC is running on (this information is
+   defined in the image you used to build this environment).
+
+1. Provide a **name** for the dev URL.
+
+1. Click **Save**.
+
+You can now access the VNC in Coder by clicking the **Open in Browser** icon
+(this will launch a separate window).
