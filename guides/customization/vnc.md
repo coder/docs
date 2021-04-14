@@ -72,9 +72,9 @@ environment.
 
 1. Select your **Image** and associated **Tag**.
 
-   > Make sure to leave the **Run as Container-based Virtual Machine** option
-   > _unchecked_; this image doesn't currently include support for
-   > [CVMs](../../environments/cvms.md).
+   > If you're using the sample image provided above, make sure to leave the
+   > **Run as Container-based Virtual Machine** option _unchecked_; this image
+   > doesn't currently include support for [CVMs](../../environments/cvms.md).
 
 1. Click **Create Environment**
 
