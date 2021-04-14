@@ -76,18 +76,15 @@ registry:port/company/department/software:majorversion
 
 Here's the information that can be gleaned from the tag name:
 
-| **Parameter**                                                                  | **Description**                                                  |
-| ------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
-| `registry:port`                                                                | By using an internal image registry name, there's no risk of     |
-| pulling an outside image with unapproved content                               |
-| `company`                                                                      | If you're using an internal registry, you can omit this with the |
-| assumption that it's assumed                                                   |
-| `department`                                                                   | Helps set the scope for who owns the image and therefore can     |
-| patch/modify the image                                                         |
-| `software`                                                                     | Offers information about which software systems should be        |
-| developed using the image                                                      |
-| `majorversion`                                                                 | Can correlate to a software stock; helpful in determining        |
-| which version of various dependencies and build tools are present in the image |
+- `registry:port`: By using an internal image registry name, there's no risk of
+  pulling an outside image with unapproved content
+- `company`: If you're using an internal registry, you can omit this parameter
+- `department`: Helps set the scope for who owns the image and therefore can
+  patch/modify the image
+- `software`: Offers information about which software systems should be
+  developed using the image
+- `majorversion`: Can correlate to a software stock; helpful in determining
+  which version of various dependencies and build tools are present in the image
 
 The above recommendations are based on assumptions that may not apply to all
 organizations, and their applicability may change over time. There's no "right

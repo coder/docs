@@ -246,6 +246,9 @@
           "navigable": false,
           "children": [
             {
+              "path": "./guides/admin/image-tag-names.md"
+            },
+            {
               "path": "./guides/admin/resources.md"
             },
             {

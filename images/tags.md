@@ -25,6 +25,9 @@ Each image has a default tag. The default tag appears at the top of the list and
 is indicated by an asterisk. Coder automatically selects the default tag when
 you create an environment.
 
+> For information about how Coder handles image tags, see
+> [Image Tag Names](../guides/admin/image-tag-names.md).
+
 ### Changing the default tag
 
 > We encourage you to update an image's default tag whenever you publish new
