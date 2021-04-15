@@ -46,7 +46,7 @@ jobs:
         uses: w3f/action-find-old-files@1.0.1
         id: old_files
         with:
-          minAge: 14
+          minAge: 60
           dirs: '["admin", "cli", "environments", "guides", "images", "setup"]'
 
       - name: Save file
