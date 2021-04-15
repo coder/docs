@@ -38,9 +38,11 @@ Web_ icon.
 
 ## JetBrains IDEs in the browser
 
-If your image includes a JetBrains IDE, you can launch it from the dashboard.
-Coder launches JetBrains IDEs in their own windows; be sure to set your browser
-to allow popup windows so that you can use your IDE.
+If your image
+[includes a JetBrains IDE](../admin/environment-management/installing-jetbrains.md),
+you can launch it from the dashboard. Coder launches JetBrains IDEs in their own
+windows; be sure to set your browser to allow popup windows so that you can use
+your IDE.
 
 ![JetBrains logos](../assets/jetbrains-launcher-icons.png)
 
@@ -51,7 +53,7 @@ to allow popup windows so that you can use your IDE.
 
 You can also manually install JetBrains' IDEs. After following JetBrains' steps
 for installing your IDE (make sure that you install the IDE to your home
-directory), create a symlink, and add it to $PATH.
+directory), create a symlink, and add it to `PATH`.
 
 The symlink names supported by Coder are:
 
