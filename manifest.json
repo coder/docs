@@ -132,20 +132,13 @@
             }
           ]
         },
+        { "path": "./setup/installation.md" },
+        { "path": "./setup/configuration.md" },
+        { "path": "./setup/licensing.md" },
+        { "path": "./setup/updating.md" },
         {
-          "path": "./setup/installation.md"
-        },
-        {
-          "path": "./setup/configuration.md"
-        },
-        {
-          "path": "./setup/licensing.md"
-        },
-        {
-          "path": "./setup/air-gapped.md"
-        },
-        {
-          "path": "./setup/updating.md"
+          "path": "./setup/air-gapped/index.md",
+          "children": [{ "path": "./setup/air-gapped/infrastructure.md" }]
         }
       ]
     },
@@ -246,6 +239,9 @@
           "navigable": false,
           "children": [
             {
+              "path": "./guides/admin/image-tag-names.md"
+            },
+            {
               "path": "./guides/admin/resources.md"
             },
             {
@@ -268,6 +264,9 @@
             },
             {
               "path": "./guides/customization/macos-keybinding.md"
+            },
+            {
+              "path": "./guides/customization/vnc.md"
             }
           ]
         },
@@ -293,6 +292,9 @@
           "path": "./guides/ssl-certificates/index.md",
           "navigable": false,
           "children": [
+            {
+              "path": "./guides/ssl-certificates/cloudDNS.md"
+            },
             {
               "path": "./guides/ssl-certificates/cloudflare.md"
             },
@@ -325,6 +327,12 @@
       "children": [
         {
           "path": "./changelog/1.18.0.md"
+        },
+        {
+          "path": "./changelog/1.17.4.md"
+        },
+        {
+          "path": "./changelog/1.17.3.md"
         },
         {
           "path": "./changelog/1.17.2.md"

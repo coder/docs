@@ -47,8 +47,8 @@ To demonstrate, we'll create a development image that utilizes
 
 We have a copy of this image
 [built and pushed](https://hub.docker.com/r/coderenterprise/react) to our Docker
-Hub repository. You can use this and skip to **Step 3: Create the Dev
-Environment** if you don't want to build and push your own image.
+Hub repository. You can use this and skip to **Step 3: Create the dev
+environment** if you don't want to build and push your own image.
 
 However, if you want to see how the image is made, please continue with the
 following section.
@@ -201,8 +201,8 @@ Once you've started your server, you can preview your application using the web
 browser of your choice (you must have [dev URLs](../../admin/devurls.md) enabled
 for this to work). To do so:
 
-1. On the Environment Overview of your Coder deployment, go to Dev URLs and
-   click **Add URL**.
+1. On the **Environment Overview** of your Coder deployment, go to **Dev URLs**
+   and click **Add URL**.
 1. In **Port**, enter **3000**.
 1. Click **Save**.
 1. Use the generated URL in a web browser to see your application.
@@ -211,9 +211,9 @@ for this to work). To do so:
 
 At this point, you can open the IDE to start working on your project.
 
-On the Environment Overview, click Open Editor. Choose the editor you'd like to
-work in (Coder will open this in a new tab). Once the editor window opens, you
-can navigate to your **coder-app** directory and begin working.
+On the **Environment Overview**, click Open Editor. Choose the editor you'd like
+to work in (Coder will open this in a new tab). Once the editor window opens,
+you can navigate to your **coder-app** directory and begin working.
 
 You can see the changes you're making in the web browser whose URL points to
 your application.

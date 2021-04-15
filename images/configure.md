@@ -87,8 +87,8 @@ You can test your setup by performing the following steps:
 1. [Creating your environment using the newly imported image](../environments/getting-started.md)
 
 Coder will run the configure file during the build process, and you can verify
-this using the Environment Overview page (Coder runs the configure file as the
-penultimate step of the build process):
+this using the **Environment Overview** page (Coder runs the configure file as
+the penultimate step of the build process):
 
 ![Environment Overview Page](../assets/configure.png)
 

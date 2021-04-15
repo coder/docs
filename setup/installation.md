@@ -53,7 +53,7 @@ kubectl config set-context --current --namespace=coder
 
 1. Get a copy of your helm chart so that you can modify it; you'll need to
    modify the helm chart to update your PostgreSQL databases (step 4) and enable
-   Dev URLs (step 5):
+   dev URLs (step 5):
 
    a. Get a copy of your existing helm chart and save as `values.yaml`:
    `helm show values coder/coder > values.yaml`
@@ -61,6 +61,9 @@ kubectl config set-context --current --namespace=coder
    b. Edit the `values.yaml` file as needed. Be sure to remove the lines that
    you are _not_ modifying, otherwise the contents of `values.yaml` will
    override those in the default chart.
+
+   > View the
+   > [configuration options available in the `values.yaml` file.](https://github.com/cdr/enterprise-helm#values)
 
    c. Upgrade/install your Coder deployment with the updated helm chart (be sure
    to replace the placeholder value with your Coder version):

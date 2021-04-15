@@ -116,7 +116,7 @@ when communicating with the Coder deployment.
    Optionally, you can provide additional helm configuration values by providing
    a `values.yaml` file and adding the argument `-f my-values.yaml` to the
    generated command. Helm values control attributes of the workspace provider,
-   including Dev URLs, Kubernetes storage classes, SSH, and more. See the
+   including dev URLs, Kubernetes storage classes, SSH, and more. See the
    [Workspace provider Helm chart values]("https://github.com/cdr/enterprise-helm/blob/workspace-providers-envproxy-only/README.md")
    for more details.
 
@@ -136,12 +136,12 @@ when communicating with the Coder deployment.
    provider.
 
 1. Once the Helm chart has deployed successfully, you should see the workspace
-   provider in a `ready` state on the Workspace Provider Admin page.
+   provider in a `ready` state on the **Workspace provider admin** page.
 
    ![Workspace providers admin](../../assets/workspace-providers-admin.png)
 
-1. From the Workspace Provider Admin page, add the desired organizations to its
-   allowlist.
+1. From the **Workspace provider admin** page, add the desired organizations to
+   its allowlist.
 
 Users in the allowed organizations can now choose to deploy into the newly set
 up workspace provider.

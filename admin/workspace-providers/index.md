@@ -47,12 +47,12 @@ page available via **Manage** > **Admin** > **Workspace Providers**.
 The Admin panel shows an overview of all configured workspace providers and
 indicates their statuses and details. The **default** tag indicates the provider
 that will be selected by default when a user creates an environment using the
-Create an Environment dialog.
+**Create an Environment** dialog.
 
 You can expand individual listings to view in-depth information:
 
-![Detailed Workspace Providers
-Info](../../assets/workspace-providers-detail.png)
+![Detailed workspace providers
+info](../../assets/workspace-providers-detail.png)
 
 ### Status
 

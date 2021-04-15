@@ -2,7 +2,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -61,6 +61,9 @@ Thanks goes to these wonderful people:
     <td align="center"><a href="https://github.com/fuskovic"><img src="https://avatars.githubusercontent.com/u/34631293?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Faris Huskovic</b></sub></a><br /><a href="#content-fuskovic" title="Content">🖋</a> <a href="#example-fuskovic" title="Examples">💡</a></td>
     <td align="center"><a href="https://github.com/jawnsy"><img src="https://avatars.githubusercontent.com/u/52710?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonathan Yu</b></sub></a><br /><a href="#content-jawnsy" title="Content">🖋</a> <a href="#example-jawnsy" title="Examples">💡</a> <a href="#ideas-jawnsy" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-jawnsy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-jawnsy" title="Maintenance">🚧</a> <a href="https://github.com/cdr/docs/pulls?q=is%3Apr+reviewed-by%3Ajawnsy" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/sloanesturz"><img src="https://avatars.githubusercontent.com/u/3239962?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sloane Sturzenegger</b></sub></a><br /><a href="https://github.com/cdr/docs/issues?q=author%3Asloanesturz" title="Bug reports">🐛</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/f0ssel"><img src="https://avatars.githubusercontent.com/u/19379394?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Garrett Delfosse</b></sub></a><br /><a href="#content-f0ssel" title="Content">🖋</a> <a href="#maintenance-f0ssel" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
