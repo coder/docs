@@ -47,7 +47,7 @@ jobs:
         id: old_files
         with:
           minAge: 60
-          dirs: '["admin", "cli", "environments", "guides", "images", "setup"]'
+          dirs: '["."]'
 
       - name: Save file
         uses: actions/upload-artifact@v2
