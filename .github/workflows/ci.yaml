@@ -18,6 +18,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Cache Node Modules
         uses: actions/cache@v2
@@ -39,3 +41,16 @@ jobs:
       - name: Formatting
         if: always()
         run: yarn format:check
+
+      - name: Find old files
+        uses: w3f/action-find-old-files@1.0.1
+        id: old_files
+        with:
+          minAge: 14
+          dirs: '["admin", "cli", "environments", "guides", "images", "setup"]'
+
+      - name: Save file
+        uses: actions/upload-artifact@v2
+        with:
+          name: old-docs
+          path: ${{ steps.old_files.outputs.files }}
