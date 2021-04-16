@@ -25,7 +25,7 @@ Instead, you can use Visual Studio Code with git, the command-line tool, and we
 expect that this combination will work with most hosting software or services.
 However, Coder doesn't test these and cannot provide recommendations or support.
 
-**Note** The public key provided by Coder uses the `ECDSA` key algorithm. Ensure
+**Note** The public key provided by Coder uses the ECDSA key algorithm. Ensure
 this is supported by your git provider.
 
 ![Configure Git Integration](../assets/git-admin.png)

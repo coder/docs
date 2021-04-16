@@ -36,12 +36,12 @@ private key that Coder inserts automatically into your environments. The public
 key is useful for services, such as Git, Bitbucket, GitHub, and GitLab, that you
 need to access from your environment.
 
-Note that the SSH public key uses the ECDSA key algorithm rather than more
-commonly used RSA key. This provides you with a smaller, more performant key for
-the same level of security as RSA.
-
 If necessary, you can regenerate your key. Be sure to provide your updated key
 to all of the services you use. Otherwise, they won't work.
+
+> The SSH public key uses the ECDSA key algorithm instead of the more commonly
+> used RSA key. This provides you with a smaller, more performant key with the
+> same level of security as RSA.
 
 ## Linked accounts
 
