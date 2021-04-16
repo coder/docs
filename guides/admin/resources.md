@@ -41,7 +41,7 @@ minimize resource underutilization.
 
 One possible issue with shared resources is resource contention.
 
-If the resources on the underlying node become contented, the developers will
+If the resources on the underlying node become contended, the developers will
 share CPU cycles on a weighted basis relative to the resource request of the
 Coder environment.
 
