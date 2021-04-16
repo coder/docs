@@ -39,6 +39,10 @@ need to access from your environment.
 If necessary, you can regenerate your key. Be sure to provide your updated key
 to all of the services you use. Otherwise, they won't work.
 
+> The SSH public key uses the ECDSA key algorithm instead of the more commonly
+> used RSA key. This provides you with a smaller, more performant key with the
+> same level of security as RSA.
+
 ## Linked accounts
 
 The **Linked Accounts** tab allows you to automatically provide your Coder SSH
