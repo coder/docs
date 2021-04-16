@@ -3,7 +3,7 @@
     "prepare": "husky install",
     "format:check": "prettier --check '**/*.{css,html,js,json,jsx,ts,tsx,yaml,yml}'",
     "format:write": "prettier --write '**/*.{css,html,js,json,jsx,ts,tsx,yaml,yml}'",
-    "lint": "markdownlint '**/*.md'",
+    "lint": "markdownlint --config .markdownlint-publicdocs.jsonc --rules .markdownlint-rules '**/*.md'",
     "lint:fix": "markdownlint --fix '**/*.md'"
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     ],
     "*.md": [
       "markdownlint --fix",
+      "markdownlint --config .markdownlint-publicdocs.jsonc --rules .markdownlint-rules",
       "prettier --write"
     ]
   }
