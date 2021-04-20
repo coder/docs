@@ -28,8 +28,8 @@ majority of the time.
 However, sharing resources can allow you to provide your developers with access
 to the computing resources while minimizing underutilization.
 
-Coder places each developer into an isolated environment and schedules each
-developer's environment onto the same piece of hardware (in this example, the
+Coder places each developer into an isolated workspace and schedules each
+developer's workspace onto the same piece of hardware (in this example, the
 hardware is a machine with 16 CPU cores). Each developer has access to the
 resources they need during peak load (e.g., compilation, build); this offers
 them a performant experience when required. However, the shared resources
@@ -43,7 +43,7 @@ One possible issue with shared resources is resource contention.
 
 If the resources on the underlying node become contended, the developers will
 share CPU cycles on a weighted basis relative to the resource request of the
-Coder environment.
+Coder workspace.
 
 However, the nature of developer workflows makes resource contention fairly
 uncommon since this occurs when several users are performing resource-intensive
@@ -55,9 +55,9 @@ Five variables determine how resource allocation and usage affect developers and
 compute costs:
 
 - The Kubernetes Node type (virtual CPU count and memory size)
-- The Coder environment's default CPU and memory limits
+- The Coder workspace's default CPU and memory limits
 - The Coder organization's CPU and memory provision ratios
-- The Coder organization's environment inactivity shutdown threshold
+- The Coder organization's workspace inactivity shutdown threshold
 - The magnitude and frequency of code compilation operations
 
 ![cpu_provision_ratio.png](../../assets/cpu_provision_ratio.png)

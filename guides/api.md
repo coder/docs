@@ -13,7 +13,7 @@ Use of the API requires authentication with a session token. You can generate
 one using the [Coder CLI](../cli/index.md):
 
 1. If you haven't already, [authenticate](../cli/installation.md#authenticate)
-   your CLI with your environment.
+   your CLI with your workspace.
 1. Run `coder tokens create <TOKEN_NAME>`
 1. Save the token that's returned to use in your HTTP headers:
 

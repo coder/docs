@@ -7,7 +7,7 @@ description:
 
 The **Templates** tab features a form you can use for generating an embeddable
 button. This button makes it easy for developers to use your
-[workspace template](../environments/workspaces-as-code/index.md).
+[workspace template](../workspaces/workspaces-as-code/index.md).
 
 To create your button:
 

@@ -3,15 +3,15 @@ title: Organizations
 description: Learn how to manage organizations within Coder.
 ---
 
-Organizations are groups that tie together users, environments, and images. All
-of your images and environments must be assigned to a specific organization. An
+Organizations are groups that tie together users, workspaces, and images. All of
+your images and workspaces must be assigned to a specific organization. An
 end-user can only access images that are assigned to the same organization they
 are.
 
 ## The default organization
 
 When you first set up Coder, you'll generate the default organization. You can
-then assign users and their environments to that organization.
+then assign users and their workspaces to that organization.
 
 There must always be a default organization, but you can change the one set as
 the default once you have two or more organizations.
@@ -33,7 +33,7 @@ different roles. There are two roles available:
             <td><b>Organization manager</b></td>
             <td>Grants full administrative access to the organization and the
             ability to manage its <b>images</b> and
-            <b>members</b>. Can view, modify, and delete <b>environments</b>
+            <b>members</b>. Can view, modify, and delete <b>workspaces</b>
             belonging to members of the organization.</td>
         </tr>
         <tr>
@@ -41,7 +41,7 @@ different roles. There are two roles available:
             <td>Grants basic organization access. Can use and view <b>images</b>
             belonging to the organization. Can create new
             <b>images</b> assigned to the organization. Can only access
-            <b>environments</b> within their organization.</td>
+            <b>workspaces</b> within their organization.</td>
         </tr>
     </tbody>
 </table>
@@ -79,7 +79,7 @@ organization.
             <td></td>
         </tr>
         <tr>
-            <td>Environments</td>
+            <td>Workspaces</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -209,7 +209,7 @@ organization.
             <td></td>
         </tr>
         <tr>
-            <td>Environments</td>
+            <td>Workspaces</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -321,18 +321,18 @@ accepted a list of cluster namespaces and made them available to Coder. The
 field.
 
 You will not be able to make any changes _unless_ you are removing namespaces
-that no longer contain environments with Coder deployments v1.17.0 or later (if
-you remove namespaces from the `namespaceWhitelist` field, the environments in
-the namespaces are no longer accessible).
+that no longer contain workspaces with Coder deployments v1.17.0 or later (if
+you remove namespaces from the `namespaceWhitelist` field, the workspaces in the
+namespaces are no longer accessible).
 
-For older Coder deployments, you can continue using existing environments in
-whitelisted namespaces, though you cannot create new environments in those
+For older Coder deployments, you can continue using existing workspaces in
+whitelisted namespaces, though you cannot create new workspaces in those
 namespaces.
 
-If you want to separate Coder environments by namespaces in a Kubernetes
-cluster, you can do so by
+If you want to separate Coder workspaces by namespaces in a Kubernetes cluster,
+you can do so by
 [deploying a new workspace provider](../workspace-providers/deployment.md) to
 each additional namespace in the cluster. The workspace provider provisions
-environments to the namespace it has been deployed to, and you can control
-access to each workspace provider via an organization allowlist to replace the
-previous organization namespace behaviors.
+workspaces to the namespace it has been deployed to, and you can control access
+to each workspace provider via an organization allowlist to replace the previous
+organization namespace behaviors.

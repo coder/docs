@@ -15,49 +15,49 @@
       ]
     },
     {
-      "path": "./environments/index.md",
+      "path": "./workspaces/index.md",
       "children": [
         {
-          "path": "./environments/getting-started.md"
+          "path": "./workspaces/getting-started.md"
         },
         {
-          "path": "./environments/lifecycle.md"
+          "path": "./workspaces/lifecycle.md"
         },
         {
-          "path": "./environments/editors.md"
+          "path": "./workspaces/editors.md"
         },
         {
-          "path": "./environments/autostart.md"
+          "path": "./workspaces/autostart.md"
         },
         {
-          "path": "./environments/devurls.md"
+          "path": "./workspaces/devurls.md"
         },
         {
-          "path": "./environments/cvms.md"
+          "path": "./workspaces/cvms.md"
         },
         {
-          "path": "./environments/environment-params.md"
+          "path": "./workspaces/workspace-params.md"
         },
         {
-          "path": "./environments/variables.md"
+          "path": "./workspaces/variables.md"
         },
         {
-          "path": "./environments/personalization.md"
+          "path": "./workspaces/personalization.md"
         },
         {
-          "path": "./environments/preferences.md"
+          "path": "./workspaces/preferences.md"
         },
         {
-          "path": "./environments/pwa.md"
+          "path": "./workspaces/pwa.md"
         },
         {
-          "path": "./environments/ssh.md"
+          "path": "./workspaces/ssh.md"
         },
         {
-          "path": "./environments/workspaces-as-code/index.md",
+          "path": "./workspaces/workspaces-as-code/index.md",
           "children": [
             {
-              "path": "./environments/workspaces-as-code/templates.md"
+              "path": "./workspaces/workspaces-as-code/templates.md"
             }
           ]
         }
@@ -163,28 +163,28 @@
           ]
         },
         {
-          "path": "./admin/environment-management/index.md",
+          "path": "./admin/workspace-management/index.md",
           "children": [
             {
-              "path": "./admin/environment-management/cvms.md"
+              "path": "./admin/workspace-management/cvms.md"
             },
             {
-              "path": "./admin/environment-management/extensions.md"
+              "path": "./admin/workspace-management/extensions.md"
             },
             {
-              "path": "./admin/environment-management/gpu-acceleration.md"
+              "path": "./admin/workspace-management/gpu-acceleration.md"
             },
             {
-              "path": "./admin/environment-management/installing-jetbrains.md"
+              "path": "./admin/workspace-management/installing-jetbrains.md"
             },
             {
-              "path": "./admin/environment-management/memory-overprovisioning.md"
+              "path": "./admin/workspace-management/memory-overprovisioning.md"
             },
             {
-              "path": "./admin/environment-management/shutdown.md"
+              "path": "./admin/workspace-management/shutdown.md"
             },
             {
-              "path": "./admin/environment-management/ssh-access.md"
+              "path": "./admin/workspace-management/ssh-access.md"
             }
           ]
         },
@@ -257,7 +257,7 @@
           "navigable": false,
           "children": [
             {
-              "path": "./guides/customization/custom-env.md"
+              "path": "./guides/customization/custom-workspace.md"
             },
             {
               "path": "./guides/customization/gitconfig.md"

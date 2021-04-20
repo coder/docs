@@ -102,12 +102,11 @@ If this happens, we recommend uninstalling and reinstalling:
 
 1. Run `helm uninstall`. This will uninstall all Coder-related services on the
    cluster (though it preserves the namespaces). It will not delete user
-   environments or their associated volumes.
+   workspaces or their associated volumes.
 
-   > `helm uninstall` will delete the timescale instance internal to the
-   > cluster but *not* its associated volume, so all data will remain
-   > intact. If you're using an external PostgreSQL database, this will not be
-   > affected.
+   > `helm uninstall` will delete the timescale instance internal to the cluster
+   > but _not_ its associated volume, so all data will remain intact. If you're
+   > using an external PostgreSQL database, this will not be affected.
 
    ```console
    helm uninstall --namespace coder coder

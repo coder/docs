@@ -8,15 +8,15 @@ description: Learn how to work with Coder's default registry.
 Coder is configured to automatically import the default [registry](index.md),
 Docker Hub, to streamline your initial setup process.
 
-This means that your users can create environments using Docker Hub images
-without further configuration on your part.
+This means that your users can create workspaces using Docker Hub images without
+further configuration on your part.
 
 ## Disable the importing of the default registry
 
 If you prefer a more granular experience, you can disable the importing of
 Docker Hub. You'll then have to manually configure registries on a
 per-organization basis before you can import images that can be used to create
-new environments.
+new workspaces.
 
 To do so:
 
