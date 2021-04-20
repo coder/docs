@@ -117,7 +117,7 @@ Replace `[vnc-port]` with the port on which the server is running and
 coder config-ssh
 
 # Forward the remote VNC server to your local machine
-# Note that you will not see an output if this succeeds
+# Note that you will not see any output if this succeeds
 ssh -L -N [vnc-port]:localhost:localhost:[vnc-port] coder.[workspace-name]
 
 # At this point, you can connect your VNC client to localhost:[vnc-port]
