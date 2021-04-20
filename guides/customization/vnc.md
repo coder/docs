@@ -27,9 +27,9 @@ PORT 1234
 
 **Note:** Set `PORT` to the appropriate port number for your VNC instance.
 
-> To help you get started, see this
-> [sample image](https://github.com/cdr/enterprise-images/tree/main/images/vnc)
-> that uses [noVNC](https://github.com/novnc/noVNC) as the client and
+> To help you get started, see this [sample
+> image](https://github.com/cdr/enterprise-images/tree/main/images/vnc) that
+> uses [noVNC](https://github.com/novnc/noVNC) as the client and
 > [TigerVNC](https://tigervnc.org) as the server.
 
 ## Step 2: Build and push the image to Docker Hub
@@ -74,7 +74,14 @@ environment.
 
 1. Click **Create Environment**
 
-## Option 1: Connect via web
+## Connecting to Coder
+
+There are two ways you can connect to your environment:
+
+- Connect via the web
+- Connect using a local VNC client
+
+### Option 1: Connect via web
 
 If your image includes [noVNC](https://github.com/novnc/noVNC), or another
 web-based client, you can use a [dev URL](../../environments/devurls.md) to
@@ -82,7 +89,7 @@ access it securely.
 
 1. From the **environment overview** page, click **Add URL**
 
-1. Provide the **Port** number that noVNC is running on (this information is
+1. Provide the **Port** number that the VNC is running on (this information is
    defined in the image you used to build this environment).
 
 1. Provide a **name** for the dev URL.
@@ -92,25 +99,26 @@ access it securely.
 You can now access the VNC in Coder by clicking the **Open in Browser** icon
 (this will launch a separate window).
 
-## Option 2: Connect with a local VNC Client
+### Option 2: Connect using a local VNC client
 
-If your Coder deployment has [ssh](https://coder.com/docs/admin/environment-management/ssh-access)
-enabled, you can also connect via a local client with SSH port forwarding.
+If your Coder deployment has
+[ssh](https://coder.com/docs/admin/environment-management/ssh-access) enabled,
+you can also connect to Coder using a local client with SSH port forwarding.
 
-You will need to install [coder-cli](https://github.com/cdr/coder-cli), and a
-VNC client on your local machine.
+You will need to install [coder-cli](https://github.com/cdr/coder-cli) and a VNC
+client on your local machine.
 
 Run the following commands on your local machine to connect to the VNC server.
-Replace `[vnc-port]` with the port the server is running on and
-`[workspace-name]` with the environment you created in step 4.
+Replace `[vnc-port]` with the port on which the server is running and
+`[workspace-name]` with the environment you created in **Step 4**.
 
 ```console
-# Ensure the workspace you created is an SSH targer
+# Ensure the workspace you created is an SSH target
 coder config-ssh
 
 # Forward the remote VNC server to your local machine
+# Note that you will not see an output if this succeeds
 ssh -L -N [vnc-port]:localhost:localhost:[vnc-port] coder.[workspace-name]
-# You will not see an output if it succeeds
 
-# Now, you can connect your VNC client to localhost:[vnc-port]
+# At this point, you can connect your VNC client to localhost:[vnc-port]
 ```
