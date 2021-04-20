@@ -23,7 +23,7 @@ chart if you use your ingress or gateway.
 
 ## Ports
 
-Below is a table of the ports associated with Coder resources in the Kubernetes
+Below is a table of the listening ports associated with Coder resources in the
 cluster. The environment ports are:
 
 - code-server: `13337`
@@ -31,6 +31,9 @@ cluster. The environment ports are:
 - envagent (SSH proxy): `12212`
 
 ![Ports](../assets/port-table.png)
+
+**Note**: The chart above represents the current behavior and is subject to
+change in future releases.
 
 ## Deployment options
 
