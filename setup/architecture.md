@@ -21,6 +21,17 @@ Coder deploys an NGINX Kubernetes ingress controller to allocate and route
 requests to the appropriate service. You can disable this controller in the helm
 chart if you use your ingress or gateway.
 
+## Ports
+
+Below is a table of the ports associated with Coder resources in the Kubernetes
+cluster. The environment ports are:
+
+- code-server: `13337`
+- envagent (used for shell sessions): `26337`
+- envagent (SSH proxy): `12212`
+
+![Ports](../assets/port-table.png)
+
 ## Deployment options
 
 There are two ways to deploy Coder:
