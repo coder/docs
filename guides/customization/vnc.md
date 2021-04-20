@@ -89,8 +89,8 @@ access it securely.
 
 1. From the **environment overview** page, click **Add URL**
 
-1. Provide the **Port** number that the VNC is running on (this information is
-   defined in the image you used to build this environment).
+1. Provide the **Port** number that the VNC web client is running on (this
+   information is defined in the image you used to build this environment).
 
 1. Provide a **name** for the dev URL.
 
