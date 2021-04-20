@@ -74,14 +74,15 @@ environment.
 
 1. Click **Create Environment**
 
-## Step 5: Create a Dev URL and access the VNC
+## Option 1: Connect via web
 
-Now that you've created your environment, you'll need to create a
-[dev URL](../../environments/devurls.md) so that you can access its services.
+If your image includes [noVNC](https://github.com/novnc/noVNC), or another
+web-based client, you can use a [dev URL](../../environments/devurls.md) to
+access it securely.
 
 1. From the **environment overview** page, click **Add URL**
 
-1. Provide the **Port** number that the VNC is running on (this information is
+1. Provide the **Port** number that noVNC is running on (this information is
    defined in the image you used to build this environment).
 
 1. Provide a **name** for the dev URL.
@@ -90,3 +91,26 @@ Now that you've created your environment, you'll need to create a
 
 You can now access the VNC in Coder by clicking the **Open in Browser** icon
 (this will launch a separate window).
+
+## Option 2: Connect with a local VNC Client
+
+If your Coder deployment has [ssh](https://coder.com/docs/admin/environment-management/ssh-access)
+enabled, you can also connect via a local client with SSH port forwarding.
+
+You will need to install [coder-cli](https://github.com/cdr/coder-cli), and a
+VNC client on your local machine.
+
+Run the following commands on your local machine to connect to the VNC server.
+Replace `[vnc-port]` with the port the server is running on and
+`[workspace-name]` with the environment you created in step 4.
+
+```console
+# Ensure the workspace you created is an SSH targer
+coder config-ssh
+
+# Forward the remote VNC server to your local machine
+ssh -L -N [vnc-port]:localhost:localhost:[vnc-port] coder.[workspace-name]
+# You will not see an output if it succeeds
+
+# Now, you can connect your VNC client to localhost:[vnc-port]
+```
