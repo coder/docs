@@ -19,9 +19,10 @@ which you can then add to your repository's `README.md`.
 
 ![Open In Coder Button](../assets/wac-badge.png)
 
-## Disabling workspaces as code
+## Enabling workspaces as code
 
-In order to disable the workspaces as code feature, go to the **Admin >
-Templates** page and set _Enable using Workspace Templates_ to _OFF_.
+By default, workspaces as code is an opt-in feature. In order to enable the
+workspaces as code feature, go to the **Admin > Templates** page and set _Enable
+using Workspace Templates_ to _OFF_.
 
-![disable workspaces as code](../assets/wac_disable.png)
+![toggle workspaces as code](../assets/wac_toggle.png)
