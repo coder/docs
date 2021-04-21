@@ -23,13 +23,7 @@ how to configure environments and their supporting infrastructure.
 You can find a fully populated workspace template and descriptions of each field
 in our [syntax guide](templates.md).
 
-## Adding an embeddable button
-
-To make it easy for your developers to use your template, you can generate an
-embeddable Markdown button for use in your repo. See the
-[admin guide](../../admin/templates.md) for details.
-
-## Creating a workspace from a template
+## Creating a workspace using a template
 
 To create a new workspace using a template, go to **New Workspace** > **Create
 from Template**.
@@ -48,3 +42,9 @@ When prompted, provide:
   here
 
 ![Create workspace from template](../../assets/wac-user-form.png)
+
+## Adding an embeddable button
+
+To make it easy for your developers to use your template, you can generate an
+embeddable Markdown button for use in your repo. See the
+[admin guide](../../admin/templates.md) for details.
