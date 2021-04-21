@@ -21,6 +21,11 @@ Before proceeding, please make sure that you have the following installed:
 
 ## Limitations
 
+### Resource requirements
+
+Make sure your host machine meets the [resource allocation minimums](../requirements)
+necessary to run Coder.
+
 ### CVMs
 
 The local preview supports [CVMs][cvm-url] if you meet the following
@@ -53,6 +58,10 @@ you can use tools like [ngrok][ngrok-url] to preview webpages from inside an
 environment.
 
 We are working on bringing Dev URL support to local previews in later releases.
+
+### Air-gapped Clusters
+
+This option does not work in an air-gapped deployment.
 
 ## Installing Coder
 
