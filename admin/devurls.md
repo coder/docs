@@ -4,8 +4,8 @@ description: Learn how to configure dev URL support for a Coder deployment.
 ---
 
 Developer (Dev) URLs allow users to access the ports of services they are
-developing within their environment. However, before individual developers can
-set up dev URLs, an administrator must configure and enable dev URL usage.
+developing within their workspace. However, before individual developers can set
+up dev URLs, an administrator must configure and enable dev URL usage.
 
 ## Before you proceed
 
@@ -14,8 +14,8 @@ dev URLs with Coder.
 
 ## Enabling the use of dev URLs
 
-[Dev URLs](../environments/devurls.md) is an opt-in feature. To enable dev URLs
-in your cluster, you'll need to modify your:
+[Dev URLs](../workspaces/devurls.md) is an opt-in feature. To enable dev URLs in
+your cluster, you'll need to modify your:
 
 1. Helm chart
 1. Wildcard DNS record
@@ -30,7 +30,7 @@ helm upgrade coder coder/coder --set devurls.host="*.my-custom-domain.io"
 
 If you're using the default ingress controller, specifying a value for
 `devurls.host` automatically adds a rule that routes dev URL requests to the
-user's environment:
+user's workspace:
 
 ```yaml
  - host: "*.my-custom-domain.io"

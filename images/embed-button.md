@@ -5,7 +5,7 @@ description: Learn how to embed an "Open in Coder" Button in Your Repo
 
 You can embed an Open in Coder button onto your project's README file or
 documentation to provide developers with a one-click way to start contributing.
-When a developer clicks on the embedded button, their environment will use the
+When a developer clicks on the embedded button, their workspace will use the
 image as you've configured it and automatically pull in the repository.
 
 ![The Embed Button](../assets/embed-1.png)
@@ -14,7 +14,7 @@ image as you've configured it and automatically pull in the repository.
 
 - You must have Git and SSH installed on your image
 - You must
-  [provide your Coder SSH key](../../environments/preferences.md#linked-accounts)
+  [provide your Coder SSH key](../../workspaces/preferences.md#linked-accounts)
   to the service of your choice. This step is required for anyone who wants to
   use the button to launch a project using the provided image and repo.
 

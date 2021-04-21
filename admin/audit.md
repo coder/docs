@@ -18,7 +18,7 @@ system.
 You can filter the logs displayed using the search filters available at the top:
 
 - **Resource Type**: The resource on which the action is taken (e.g., image,
-  environment, user)
+  workspace, user)
 - **Action**: The action that the user took against a resource (e.g., read,
   write, create)
 - **Resource Target**: The friendly name for the resource (e.g., the user with

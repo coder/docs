@@ -31,7 +31,7 @@ When done, click **Import**.
 
 ## Deleting a registry
 
-> You cannot delete a registry if there are environments using images from that
+> You cannot delete a registry if there are workspaces using images from that
 > registry.
 
 To delete a registry, go to the **Images** > **Registries** page. Find the

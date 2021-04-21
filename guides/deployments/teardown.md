@@ -10,7 +10,7 @@ This guide shows you how to tear down Coder and the cluster it is deployed on.
 > [Kubernetes setup tutorials](../../setup/kubernetes/index.md). They do not
 > include teardown steps for any additional resources that you create. If you
 > need to keep your cluster, you can run `helm uninstall coder`, which deletes
-> all Coder services but retains environments and their associated disk space.
+> all Coder services but retains workspaces and their associated disk space.
 
 ## Amazon Elastic Kubernetes Service (EKS)
 
@@ -40,8 +40,8 @@ This guide shows you how to tear down Coder and the cluster it is deployed on.
 
 ## Azure Kubernetes Service (AKS)
 
-1. Make sure that the environment variable for `RESOURCE_GROUP` is set to the
-   one you want to delete in Azure:
+1. Make sure that the workspace variable for `RESOURCE_GROUP` is set to the one
+   you want to delete in Azure:
 
    ```console
    echo $RESOURCE_GROUP
@@ -61,7 +61,7 @@ This guide shows you how to tear down Coder and the cluster it is deployed on.
 
 ## Google Kubernetes Engine (GKE)
 
-1. Ensure that the environment variables for `PROJECT_ID` and `CLUSTER_NAME` are
+1. Ensure that the workspace variables for `PROJECT_ID` and `CLUSTER_NAME` are
    set to those for the cluster you want to delete:
 
    ```console

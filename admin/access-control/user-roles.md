@@ -101,7 +101,7 @@ There are four roles available:
             <td>X</td>
         </tr>
         <tr>
-            <td>Environments</td>
+            <td>Workspaces</td>
             <td>X</td>
             <td>X</td>
             <td></td>
@@ -275,7 +275,7 @@ There are four roles available:
             <td>X</td>
         </tr>
         <tr>
-            <td>Environments</td>
+            <td>Workspaces</td>
             <td>X</td>
             <td>X</td>
             <td></td>

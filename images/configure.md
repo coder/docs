@@ -1,18 +1,17 @@
 ---
 title: "Configure"
-description: Learn how to configure Coder's environment startup behavior.
+description: Learn how to configure Coder's workspace startup behavior.
 ---
 
 If you have configuration instructions that apply to everyone who uses a given
-image to create environments, you can define them using the **/coder/configure**
+image to create workspaces, you can define them using the **/coder/configure**
 file.
 
 You can use the configure script to:
 
 - Run [Coder CLI](https://github.com/cdr/coder-cli) commands
 - Check for and clone a GitHub repo if it isn't present
-- Run scripts using
-  [CODER\_\* environment variables](../environments/variables.md)
+- Run scripts using [CODER\_\* workspace variables](../workspaces/variables.md)
 
 Coder will check the image for the presence of a **/coder/configure** file
 during the build process; if Coder finds one, it will execute the instructions
@@ -84,13 +83,13 @@ docker push cdr/config
 You can test your setup by performing the following steps:
 
 1. [Importing your image](importing.md)
-1. [Creating your environment using the newly imported image](../environments/getting-started.md)
+1. [Creating your workspace using the newly imported image](../workspaces/getting-started.md)
 
 Coder will run the configure file during the build process, and you can verify
-this using the **Environment Overview** page (Coder runs the configure file as
-the penultimate step of the build process):
+this using the **Workspace Overview** page (Coder runs the configure file as the
+penultimate step of the build process):
 
-![Environment Overview Page](../assets/configure.png)
+![Workspace Overview Page](../assets/configure.png)
 
 ## Examples
 
@@ -163,7 +162,7 @@ demonstrating how you can create a Dev URL:
 coder ...
 
 # Create a Dev URL (or update if it already exists)
-coder urls create $CODER_ENVIRONMENT_NAME 3000 --name webapp
+coder urls create $CODER_WORKSPACE_NAME 3000 --name webapp
 ```
 
 ### Modifying VS Code settings

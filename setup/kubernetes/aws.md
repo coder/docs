@@ -59,8 +59,8 @@ downloaded from AWS.
 ## Step 1: Spin up a K8 cluster
 
 The following will spin up a Kubernetes cluster using the `eksctl`; replace the
-parameters and environment variables as needed to reflect those for your
-environment.
+parameters and workspace variables as needed to reflect those for your
+workspace.
 
 ```console
 CLUSTER_NAME="YOUR_CLUSTER_NAME" \
@@ -136,8 +136,8 @@ support immediate volume binding.
 ### Modifying your cluster to support CVMs
 
 To create clusters allowing you to
-[enable container-based virtual machines (CVMs)](../../admin/environment-management/cvms.md)
-as an environment deployment option, you'll need to
+[enable container-based virtual machines (CVMs)](../../admin/workspace-management/cvms.md)
+as a workspace deployment option, you'll need to
 [create a nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-from-a-config-file).
 
 1. Define your config file (we've named the file `coder-node.yaml`, but you can

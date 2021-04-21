@@ -13,8 +13,7 @@ To import an image:
    provide a **description** of the image (this is shown to all users) and a
    **Source Repo URL** to point to the image's source.
 1. Specify the minimum amount of resources (cores, memory, and disk space) the
-   environment should have when using this image.
+   workspace should have when using this image.
 1. Click **Import Image**.
 
-<video autoplay loop="loop" width="100%" controls
-src="../assets/import-image.mp4"></video>
+![Import image window](../assets/import-image.png)

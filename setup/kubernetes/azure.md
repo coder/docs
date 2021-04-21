@@ -17,7 +17,7 @@ the prompts).
 
 ## Step 1: Create the resource group
 
-To make subsequent steps easier, start by creating environment variables for the
+To make subsequent steps easier, start by creating workspace variables for the
 [resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group)
 and
 [location](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
@@ -46,7 +46,7 @@ You will need the hash provided (i.e., `3afe...d2d`) when creating your cluster.
 
 ## Step 2: Create the Azure Kubernetes Service cluster
 
-Set two additional environment variables for your cluster name and subscription
+Set two additional workspace variables for your cluster name and subscription
 ID:
 
 ```console
