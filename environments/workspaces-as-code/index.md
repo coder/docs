@@ -33,7 +33,7 @@ from Template**.
 
 When prompted, provide:
 
-- **Workspace Name**: A friendly name for your workspace
+- **Workspace Name**: A name for your workspace
 - **Git Repository URL**: The git repository that contains your `coder.yaml`
   configuration file. See [Workspace templates](templates.md) for more
   information about these files
