@@ -23,17 +23,107 @@ chart if you use your ingress or gateway.
 
 ## Ports
 
-Below is a table of the listening ports associated with Coder resources in the
-cluster. The environment ports are:
+The following is a table of the listening ports associated with Coder resources
+in the cluster. The environment ports are:
 
 - code-server: `13337`
 - envagent (used for shell sessions): `26337`
 - envagent (SSH proxy): `12212`
 
-![Ports](../assets/port-table.png)
+> **Note**: This table represents Coder's current behavior. It is subject to
+> change in future releases.
 
-**Note**: The chart above represents the current behavior and is subject to
-change in future releases.
+<table>
+      <tr>
+         <th>Pod</th>
+         <th>Source</th>
+         <th>Source port</th>
+         <th>Destination</th>
+         <th>Destination port</th>
+      </tr>
+      <tr>
+         <td rowspan="4">cemanager</td>
+         <td>loadbalancer</td>
+         <td>8080</td>
+         <td>envproxy</td>
+         <td>N/A</td>
+      </tr>
+      <tr>
+         <td>envproxy</td>
+         <td>8080</td>
+         <td>dashboard</td>
+         <td>N/A</td>
+      </tr>
+      <tr>
+         <td>dashboard</td>
+         <td>8080</td>
+         <td>resource</td>
+         <td>N/A</td>
+      </tr>
+      <tr>
+         <td>N/A</td>
+         <td>N/A</td>
+         <td>loadbalancer</td>
+         <td>80, 443</td>
+      </tr>
+      <tr>
+         <td rowspan="3">envproxy</td>
+         <td>loadbalancer</td>
+         <td>8080</td>
+         <td>cemanager</td>
+         <td>8080</td>
+      </tr>
+      <tr>
+         <td>N/A</td>
+         <td>N/A</td>
+         <td>dashboard</td>
+         <td>N/A</td>
+      </tr>
+      <tr>
+         <td>N/A</td>
+         <td>N/A</td>
+         <td>resource</td>
+         <td>13337, 12212, 26337</td>
+      </tr>
+      <tr>
+         <td rowspan="3">dashboard</td>
+         <td>loadbalancer</td>
+         <td>3000</td>
+         <td>cemanager</td>
+         <td>8080</td>
+      </tr>
+      <tr>
+         <td>N/A</td>
+         <td>N/A</td>
+         <td>envproxy</td>
+         <td>N/A</td>
+      </tr>
+      <tr>
+         <td>N/A</td>
+         <td>N/A</td>
+         <td>resource</td>
+         <td>N/A</td>
+      </tr>
+      <tr>
+         <td rowspan="3">resource</td>
+         <td>envproxy</td>
+         <td>13337</td>
+         <td>loadbalancer</td>
+         <td>80, 443</td>
+      </tr>
+      <tr>
+         <td>envproxy</td>
+         <td>26337</td>
+         <td>N/A</td>
+         <td>N/A</td>
+      </tr>
+      <tr>
+         <td>envproxy</td>
+         <td>12212</td>
+         <td>N/A</td>
+         <td>N/A</td>
+      </tr>
+<table>
 
 ## Deployment options
 
