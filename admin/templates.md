@@ -23,6 +23,6 @@ which you can then add to your repository's `README.md`.
 
 By default, workspaces as code is an opt-in feature. In order to enable the
 workspaces as code feature, go to the **Admin > Templates** page and set _Enable
-using Workspace Templates_ to _OFF_.
+using Workspace Templates_ to _ON_.
 
 ![toggle workspaces as code](../assets/wac_toggle.png)
