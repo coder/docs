@@ -52,4 +52,8 @@ env | grep CODER_
         <td><code>CODER_IMAGE_URI</code></td>
         <td>The URI for the image used to build the environment</td>
     </tr>
+    <tr>
+        <td><code>CODER_WP_NAME</code></td>
+        <td>The name of the workspace provider hosting the environment</td>
+    </tr>
 </table>
