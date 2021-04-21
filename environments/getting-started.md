@@ -12,7 +12,11 @@ Ensure you've [imported an image](../images/importing.md) for your
 
 If this is your first time using Coder, you'll see a **Create Environment**
 button in the middle of your screen; otherwise, you'll see a list of your
-existing environments. Click the **New Environment** button.
+existing environments. Click the **New Environment** button and choose **Custom
+Workspace**.
+
+> To learn more about creating an environment from templates, see
+> [Workspaces as code](workspaces-as-code/index.md).
 
 ![Create an environment](../assets/create-env.png)
 
