@@ -203,7 +203,9 @@ start:
 
 #### workspace.devURLs
 
-This lists allows provisioning of dev urls from the workspaces as code configuration file. These urls will be provisioned in addition to any user created dev urls. See [Dev URLs](../devurls.md) for more information.
+This list allows you to provision [dev URLs](../devurls.md) using the workspaces
+as code configuration file. The dev URLs will be provisioned _in addition to_
+any dev URLs you create.
 
 ```yaml
 devURLs:
@@ -215,21 +217,22 @@ devURLs:
 
 #### workspace.devURLs[*].name
 
-The friendly name for the dev url.
+The name of the dev URL to be created.
 
 #### workspace.devURLs[*].port
 
-The port on the workspace to expose via this url.
+The workspace port that the dev URL exposes.
 
 #### workspace.devURLs[*].scheme
 
-Url scheme being `http` or `https`.
+The URL scheme (protocol) to use (i.e., `http` or `https`).
 
 #### workspace.devURLs[*].access
 
-Set the visibility of the dev url.
+The permission level of the dev URL:
 
-- `private` - Only the owner of the workspace can access.
-- `org` - All members of the organization the workspace is in can access.
-- `authed` - All users on the same coder deployment can access.
-- `public` - Anyone on the internet can access.
+- **private**: Can only be accessed by the owner of the workspace
+- **org**: Can be accessed by all members of the organization to which the
+  workspace belongs
+- **authed**: Can be accessed by all users on the Coder deployment
+- **public**: Can be accessed by anyone on the internet
