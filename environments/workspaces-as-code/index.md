@@ -31,15 +31,20 @@ embeddable Markdown button for use in your repo. See the
 
 ## Creating a workspace from a template
 
-When creating a new workspace from the "New Workspace" button, select "Create from Template".
+To create a new workspace using a template, go to **New Workspace** > **Create
+from Template**.
 
-![create from template](../../assets/create-from-template.png)
+![Create from template button](../../assets/create-from-template.png)
 
-The form you will be brought to.
+When prompted, provide:
 
-![wac user form](../../assets/wac-user-form.png)
+- **Workspace Name**: A friendly name for your workspace
+- **Git Repository URL**: The git repository that contains your `coder.yaml`
+  configuration file. See [Workspace templates](templates.md) for more
+  information about these files
+- **Branch**: The branch in your git repo to track
+- **Path to template**: The path to your workspace template. By default, this
+  will be `.coder/coder.yaml`, but if you choose a different path, provide it
+  here
 
-1. Enter a friendly name for your workspace.
-2. Enter the git repository that contains the `coder.yaml` configuration file. See [Workspace templates](templates.md) to learn more about these files.
-3. Choose which branch on the git repo to track.
-4. By default, the configuration file will be at `.coder/coder.yaml` in the project. Alternatively choose a different yaml file.
+![Create workspace from template](../../assets/wac-user-form.png)
