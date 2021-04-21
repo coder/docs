@@ -132,13 +132,25 @@
             }
           ]
         },
-        { "path": "./setup/installation.md" },
-        { "path": "./setup/configuration.md" },
-        { "path": "./setup/licensing.md" },
-        { "path": "./setup/updating.md" },
+        {
+          "path": "./setup/installation.md"
+        },
+        {
+          "path": "./setup/configuration.md"
+        },
+        {
+          "path": "./setup/licensing.md"
+        },
+        {
+          "path": "./setup/updating.md"
+        },
         {
           "path": "./setup/air-gapped/index.md",
-          "children": [{ "path": "./setup/air-gapped/infrastructure.md" }]
+          "children": [
+            {
+              "path": "./setup/air-gapped/infrastructure.md"
+            }
+          ]
         }
       ]
     },
@@ -264,6 +276,9 @@
             },
             {
               "path": "./guides/customization/macos-keybinding.md"
+            },
+            {
+              "path": "./guides/customization/node.md"
             },
             {
               "path": "./guides/customization/vnc.md"
