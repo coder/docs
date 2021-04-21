@@ -14,7 +14,7 @@ how to configure environments and their supporting infrastructure.
 ## Requirements
 
 - You must configure a
-  [the Git OAuth service of your choice](../../admin/git.md)
+  [Git OAuth service of your choice](../../admin/git.md)
 - The image you use in your template **must** have been
   [imported](../../images/importing.md) into Coder
 - A `.coder/coder.yaml` file exists in your repository.
