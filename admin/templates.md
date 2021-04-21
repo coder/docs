@@ -18,3 +18,11 @@ Once you've filled out the form, Coder generates a custom Markdown snippet,
 which you can then add to your repository's `README.md`.
 
 ![Open In Coder Button](../assets/wac-badge.png)
+
+## Enabling workspaces as code
+
+By default, workspaces as code is an opt-in feature. To enable workspaces as
+code, go to **Admin > Templates** and set **Enable using Workspace Templates**
+to **On**.
+
+![toggle workspaces as code](../assets/wac_toggle.png)

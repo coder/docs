@@ -51,6 +51,23 @@ workspace:
         shell: "bash"
         env:
           GOPATH: /home/coder/go
+  devURLs:
+    - name: MyWebsite
+      port: 3000
+      scheme: http
+      access: private
+    - name: PublicPort
+      port: 8080
+      scheme: https
+      access: public
+    - name: OrgWebsite
+      port: 3001
+      scheme: http
+      access: org
+    - name: AuthedSite
+      port: 8081
+      scheme: https
+      access: authed
 ```
 
 ## Workspace template fields
@@ -182,3 +199,39 @@ start:
       HOME: /home/coder
       GOPATH: /home/coder/go
 ```
+
+#### workspace.devURLs
+
+This list allows you to provision [dev URLs](../devurls.md) using the workspaces
+as code configuration file. The dev URLs will be provisioned _in addition to_
+any dev URLs you create.
+
+```yaml
+devURLs:
+  - name: PublicPort
+    port: 8080
+    scheme: https
+    access: public
+```
+
+#### workspace.devURLs[*].name
+
+The name of the dev URL to be created.
+
+#### workspace.devURLs[*].port
+
+The workspace port that the dev URL exposes.
+
+#### workspace.devURLs[*].scheme
+
+The URL scheme (protocol) to use (i.e., `http` or `https`).
+
+#### workspace.devURLs[*].access
+
+The permission level of the dev URL:
+
+- **private**: Can only be accessed by the owner of the workspace
+- **org**: Can be accessed by all members of the organization to which the
+  workspace belongs
+- **authed**: Can be accessed by all users on the Coder deployment
+- **public**: Can be accessed by anyone on the internet
