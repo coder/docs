@@ -132,13 +132,25 @@
             }
           ]
         },
-        { "path": "./setup/installation.md" },
-        { "path": "./setup/configuration.md" },
-        { "path": "./setup/licensing.md" },
-        { "path": "./setup/updating.md" },
+        {
+          "path": "./setup/installation.md"
+        },
+        {
+          "path": "./setup/configuration.md"
+        },
+        {
+          "path": "./setup/licensing.md"
+        },
+        {
+          "path": "./setup/updating.md"
+        },
         {
           "path": "./setup/air-gapped/index.md",
-          "children": [{ "path": "./setup/air-gapped/infrastructure.md" }]
+          "children": [
+            {
+              "path": "./setup/air-gapped/infrastructure.md"
+            }
+          ]
         }
       ]
     },
@@ -325,6 +337,9 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        {
+          "path": "./changelog/1.18.1.md"
+        },
         {
           "path": "./changelog/1.18.0.md"
         },
