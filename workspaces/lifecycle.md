@@ -1,6 +1,6 @@
 ---
 title: "Lifecycle"
-description: "Learn about the workspaces lifecycle."
+description: "Learn about the workspace lifecycle."
 ---
 
 Workspaces are designed to sustain scheduled shutdowns and rebuilds. An
