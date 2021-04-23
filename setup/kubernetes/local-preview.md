@@ -59,9 +59,9 @@ environment.
 
 We are working on bringing Dev URL support to local previews in later releases.
 
-### Air-gapped Clusters
+### Air-gapped clusters
 
-This option does not work in an air-gapped deployment.
+The local preview option does not work in an air-gapped deployment.
 
 ## Installing Coder
 
