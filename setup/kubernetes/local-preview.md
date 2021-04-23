@@ -21,10 +21,11 @@ Before proceeding, please make sure that you have the following installed:
 
 ## Limitations
 
-### Resource requirements
+### Resource allocation and performance
 
-Make sure your host machine meets the [resource allocation minimums](../requirements)
-necessary to run Coder.
+Your experience with the local Coder preview is dependent on your system specs,
+but please note that you can expect slightly degraded performance due to the
+deployment running entirely inside a Docker container.
 
 ### CVMs
 
