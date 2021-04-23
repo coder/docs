@@ -22,6 +22,8 @@ The following is a sample workspace template that makes use of all available
 fields. Depending on your use case, you may not need all of the options
 available.
 
+> Note that the fields are **case-sensitive**.
+
 For detailed information on the fields available, see the
 [subsequent sections](#workspace-template-fields) of this article
 
