@@ -31,7 +31,7 @@ Coder provides you with your licensing information, which looks like:
 ```
 
 Copy this information into the text editor of your choice, and save it as a .txt
-or a .json file. You'll need to upload this file at two points during the setup
+or a JSON file. You'll need to upload this file at two points during the setup
 and configuration processes.
 
 ## Providing your license
