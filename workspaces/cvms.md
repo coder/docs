@@ -3,7 +3,7 @@ title: "Docker in workspaces"
 description: Learn how to securely run Docker inside your workspace.
 ---
 
-Standard Coder workspaces run as normal Docker containers. This carries
+Standard Coder workspaces run as regular Docker containers. This carries
 limitations as to what applications you can run inside your workspace. Most
 notably, it's not possible to run Docker securely within normal Docker
 containers.
