@@ -46,7 +46,8 @@
           "JavaScript",
           "JSON",
           "PostgreSQL",
-          "URL", "URLs"
+          "URL",
+          "URLs"
       ],
       "code_blocks": false
   },
