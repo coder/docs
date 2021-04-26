@@ -25,7 +25,9 @@ available.
 > Note that the fields are **case-sensitive**.
 
 For detailed information on the fields available, see the
-[subsequent sections](#workspace-template-fields) of this article. All `policy` fields correspond to a `value` field and can be used by site admins to limit the usages of the `value` field.
+[subsequent sections](#workspace-template-fields) of this article. 
+All `policy` fields correspond to a `value` field and can be used 
+by site admins to limit the usages of the `value` field.
 
 ```yaml
 version: 0.2
