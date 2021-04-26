@@ -278,6 +278,9 @@
               "path": "./guides/customization/macos-keybinding.md"
             },
             {
+              "path": "./guides/customization/node.md"
+            },
+            {
               "path": "./guides/customization/vnc.md"
             }
           ]
