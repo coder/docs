@@ -31,7 +31,7 @@ they log in.
 To delete a user:
 
 1. Go to **Manage** > **Users**. Find the user you want to delete and click the
-   **vertical ellipses** associated with that user.
+   **vertical ellipsis** associated with that user.
 1. Click **Delete**.
 1. You'll be prompted to confirm this action. Click **Delete** to proceed.
 
