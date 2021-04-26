@@ -29,8 +29,8 @@ button.
 1. Choose the **Image Tag** and **Git Service** you want to use, and provide
    your **Git Repository URI**.
 1. Once you fill in the required fields, Coder generates the code you need in
-   Markdown or HTML (you can change the display text of the button by modifying
-   the Markdown or HTML snippets). Copy the code and paste it into your
-   README.md file.
+   Markdown or HTML (you can change the button's display text by modifying the
+   Markdown or HTML snippets). Copy the code and paste it into your README.md
+   file.
 
 ![Create embed button](../assets/embed-2.png)

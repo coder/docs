@@ -93,7 +93,8 @@ penultimate step of the build process):
 
 ## Examples
 
-The following are examples instructions you can include in your configure file.
+The following are examples of instructions you can include in your configure
+file.
 
 ### Copying Coder's sample config file
 
@@ -184,7 +185,7 @@ coder urls create $CODER_WORKSPACE_NAME 3000 --name webapp
    }
    ```
 
-1. Update configure to use the settings file:
+1. Update `configure` to use the settings file:
 
    ```sh
    # configure
