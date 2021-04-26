@@ -21,6 +21,12 @@ Before proceeding, please make sure that you have the following installed:
 
 ## Limitations
 
+### Resource allocation and performance
+
+Your experience with the local Coder preview is dependent on your system specs,
+but please note that you can expect slightly degraded performance due to the
+deployment running entirely inside a Docker container.
+
 ### CVMs
 
 The local preview supports [CVMs][cvm-url] if you meet the following
@@ -50,9 +56,13 @@ apply):
 
 Currently, the local preview doesn't support [dev URLs][devurl-url]. Instead,
 you can use tools like [ngrok][ngrok-url] to preview webpages from inside an
-environment.
+workspace.
 
 We are working on bringing Dev URL support to local previews in later releases.
+
+### Air-gapped clusters
+
+The local preview option does not work in an air-gapped deployment.
 
 ## Installing Coder
 
@@ -98,11 +108,11 @@ after tear down.
 
 [docker-url]: https://www.docker.com/
 [kind-url]: https://kind.sigs.k8s.io/
-[cvm-url]: https://coder.com/docs/environments/cvms
+[cvm-url]: https://coder.com/docs/workspaces/cvms
 [docker-mac-url]:
   https://docs.docker.com/docker-for-mac/release-notes/#docker-desktop-community-2501
 [docker-windows-url]:
   https://docs.docker.com/docker-for-windows/release-notes/#docker-desktop-community-2501
 [docker-bug-url]: https://github.com/docker/for-mac/issues/5044
 [ngrok-url]: https://ngrok.com
-[devurl-url]: https://coder.com/docs/environments/devurls
+[devurl-url]: https://coder.com/docs/workspaces/devurls

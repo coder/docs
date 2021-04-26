@@ -32,7 +32,7 @@ development operations and cloud resources.
     </tr>
     <tr>
         <th>Project management</th>
-        <td>Environments encapsulate a project's code,
+        <td>Workspaces encapsulate a project's code,
         configurations, dependencies and tooling</td>
         <td>Code-only</td>
     </tr>

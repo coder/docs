@@ -31,7 +31,7 @@ Coder provides you with your licensing information, which looks like:
 ```
 
 Copy this information into the text editor of your choice, and save it as a .txt
-or a .json file. You'll need to upload this file at two points during the setup
+or a JSON file. You'll need to upload this file at two points during the setup
 and configuration processes.
 
 ## Providing your license
@@ -48,7 +48,7 @@ dashboard. You can specify the authentication method used for logins, provide
 your license information, and more.
 
 After you complete this process, you'll be redirected to the main Coder
-dashboard, where you can create new users, images, and environments.
+dashboard, where you can create new users, images, and workspaces.
 
 > After completing the configuration process, we recommend creating a **site
 > manager** user that can be used to create additional users and resources. **We

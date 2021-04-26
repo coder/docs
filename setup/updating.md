@@ -33,7 +33,7 @@ This guide will show you how to update your Coder deployment.
   taking a snapshot of the database before proceeding with the upgrade. In the
   event that there are upgrade issues, it is simpler and safer to roll back
   directly at the database level, since it guarantees restoration of the system
-  to a known-working condition.
+  to a known working condition.
 
 - We recommend updating no more than one major version at a time (i.e., we
   recommend moving from 1.15 to 1.16 only).
@@ -60,7 +60,7 @@ To update Coder, follow these steps:
 1. Provide your helm chart values file and upgrade to the desired version (e.g.,
    1.16.1):
 
-   _Note: If you omit --version, you'll upgrade to the latest version._
+   _Note: If you omit `--version`, you'll upgrade to the latest version._
 
    ```console
    helm upgrade --namespace coder --install --atomic --wait \
@@ -102,12 +102,11 @@ If this happens, we recommend uninstalling and reinstalling:
 
 1. Run `helm uninstall`. This will uninstall all Coder-related services on the
    cluster (though it preserves the namespaces). It will not delete user
-   environments or their associated volumes.
+   workspaces or their associated volumes.
 
-   > `helm uninstall` will delete the timescale instance internal to the
-   > cluster but *not* its associated volume, so all data will remain
-   > intact. If you're using an external PostgreSQL database, this will not be
-   > affected.
+   > `helm uninstall` will delete the timescale instance internal to the cluster
+   > but _not_ its associated volume, so all data will remain intact. If you're
+   > using an external PostgreSQL database, this will not be affected.
 
    ```console
    helm uninstall --namespace coder coder

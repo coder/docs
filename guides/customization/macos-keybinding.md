@@ -8,7 +8,7 @@ when using any of the following JetBrains IDE within Coder.
 
 To switch the keybindings:
 
-1. From your environment overview page, launch the JetBrains IDE of your choice
+1. From your workspace overview page, launch the JetBrains IDE of your choice
 1. In the newly launched multi-editor window, go to **File** > **Settings** >
    **Plugins**
 1. Find the **macOS Keymap** and click **Install**

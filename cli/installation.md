@@ -6,10 +6,10 @@ description: Learn how to install and configure the Coder CLI.
 ## Getting started
 
 The Coder CLI is automatically injected and authenticated inside of all Coder
-Environments.
+workspaces.
 
-The CLI is also useful for use on your local machine. Before you can use the CLI
-locally, you'll need to download, install, and authenticate with Coder.
+You can also use the CLI on your local machine. To do so, you'll need to
+download, install, and authenticate the CLI with Coder.
 
 ## Installation
 

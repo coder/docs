@@ -25,7 +25,7 @@ using the `gcloud` command. See
 for more information on each parameter used.
 
 Regardless of which option you choose, be sure to replace the following
-parameters to reflect the needs of your environment: `PROJECT_ID`,
+parameters to reflect the needs of your workspace: `PROJECT_ID`,
 `NEW_CLUSTER_NAME`, `ZONE`.
 
 > Both options include the use of the `enable-network-policy` flag, which
@@ -37,7 +37,7 @@ parameters to reflect the needs of your environment: `PROJECT_ID`,
 ### Option 1: Cluster with full support of Coder features
 
 This option uses an Ubuntu node image to enable support of
-[Container-based Virtual Machines (CVMs)](../../admin/environment-management/cvms.md),
+[Container-based Virtual Machines (CVMs)](../../admin/workspace-management/cvms.md),
 allowing system-level functionalities such as Docker in Docker.
 
 ```console
@@ -73,7 +73,7 @@ gcloud beta container --project "$PROJECT_ID" \
 
 This option uses a Container-Optimized OS (COS) and meets Coder's minimum
 requirements. It does _not_ enable the use of
-[CVMs](../../admin/environment-management/cvms.md).
+[CVMs](../../admin/workspace-management/cvms.md).
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \

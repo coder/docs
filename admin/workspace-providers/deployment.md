@@ -8,9 +8,9 @@ This article walks you through the process of deploying a workspace provider to
 a [Kubernetes cluster](../../setup/kubernetes/index.md).
 
 [Workspace providers](index.md) are logical groups of resources to which
-developers can deploy environments. As with the Coder installation, Helm manages
+developers can deploy workspaces. As with the Coder installation, Helm manages
 the deployment of workspace providers into the Kubernetes cluster that will
-contain your environments.
+contain your workspaces.
 
 ## Dependencies
 
@@ -163,14 +163,14 @@ helm upgrade coder-workspace-provider coder/workspace-provider \
 ```
 
 If you want to update any of the helm chart's values, you can do so by supplying
-a values file (`-f myvalues.yaml`) or using with the `--set` flag. Any existing
-values that were set during installation will persist unless you explicitly
-write over them.
+a values file (`-f myvalues.yaml`) or using the `--set` flag. Any existing
+values that you set during installation will persist unless you explicitly write
+over them.
 
 ## Deleting a workspace provider
 
 You can only remove a workspace provider if it no longer contains any
-environments, so you must remove all environments before deleting the workspace
+workspaces, so you must remove all workspaces before deleting the workspace
 provider.
 
 To remove a workspace provider, run the following command using the Coder CLI:

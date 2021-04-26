@@ -1,8 +1,6 @@
 ---
 title: Git integration
-description:
-  Learn how to integrate with your Git provider to automatically authenticate
-  your environments.
+description: Learn how to integrate with a Git provider to authenticate workspaces.
 ---
 
 The Git Integration allows your developers to connect their Coder accounts to
@@ -11,7 +9,7 @@ their accounts with the Git repository service of choice.
 ## Support
 
 Coder integrates with the following service providers for authentication and
-[user key management](https://coder.com/docs/environments/preferences#linked-accounts):
+[user key management](../workspaces/preferences#linked-accounts):
 
 - GitHub (both GitHub.com and GitHub Enterprise)
 - GitLab (both GitLab.com and self-hosted GitLab)
@@ -26,7 +24,7 @@ expect that this combination will work with most hosting software or services.
 However, Coder doesn't test these and cannot provide recommendations or support.
 
 **Note** The public key provided by Coder uses the ECDSA key algorithm. Ensure
-this is supported by your git provider.
+your git provider supports this.
 
 ![Configure Git Integration](../assets/git-admin.png)
 

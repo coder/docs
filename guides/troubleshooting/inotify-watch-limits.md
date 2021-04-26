@@ -1,6 +1,6 @@
 ---
 title: inotify watcher limit problems
-description: Learn how to resolve problems related to the inotify watcher limit.
+description: Learn how to resolve issues related to the inotify watcher limit.
 ---
 
 When using some applications and tools, including Webpack or [code-server], you
@@ -12,7 +12,7 @@ may encounter an error similar to the following:
 [code-server]: https://github.com/cdr/code-server
 
 This article will show you how to diagnose and troubleshoot this error, which
-relates to an elevated number of inotify watchers in use.
+relates to a high number of inotify watchers in use.
 
 ## Background
 
@@ -27,7 +27,7 @@ LTS, the default limit is 8,192 watches per instance.
 
 On a 64-bit system, each `inotify` watch that programs register will consume ~1
 kB of kernel memory, which cannot be swapped to disk and is not counted against
-the environment memory limit setting.
+the workspace memory limit setting.
 
 ## Diagnosis
 
@@ -47,8 +47,7 @@ There are three kernel tuning options related to the `inotify` system:
 - `fs.inotify.max_user_watches`: The maximum number of files and folders that
   programs can monitor for changes
 
-To see the values for these settings that are applicable to your environment,
-run:
+To see the values for these settings that are applicable to your workspace, run:
 
 ```console
 $ sysctl fs.inotify.{max_queued_events,max_user_instances,max_user_watches}
@@ -120,7 +119,7 @@ increasing the number of file watches may result in high processor utilization.
 Many applications include files that change rarely (e.g., third-party
 dependencies stored in `node_modules`). Your tools may watch for changes to
 these files and folders, consuming `inotify` watchers. These tools typically
-provide configuration settings to exclude certain files, paths, and patterns
+provide configuration settings to exclude specific files, paths, and patterns
 from file watching.
 
 For example, Visual Studio Code and `code-server` apply the following [user

@@ -8,9 +8,9 @@ air-gapped deployment.
 
 To do so, you must:
 
-- Pull all Coder deployment resources into your air-gapped environment
+- Pull all Coder deployment resources into your air-gapped workspace
 - Push the images to your Docker registry,
-- Deploy Coder from within your air-gapped environment
+- Deploy Coder from within your air-gapped workspace
 
 > Coder licenses issued as part of the trial program do not support air-gapped
 > deployments.
@@ -37,7 +37,7 @@ item type, but you're welcome to use the alternatives of your choice):
 ## Network configuration
 
 Coder requires several preliminary steps to be performed on your network before
-you can deploy Coder. If don't already have the following on your network,
+you can deploy Coder. If you don't already have the following on your network,
 please see our [infrastructure setup guide](infrastructure.md):
 
 - A certificate authority
@@ -50,13 +50,13 @@ Throughout this article, we will suggest changes to the Helm chart that you'll
 obtain from the `.tgz` that's returned when you run `helm pull`. We recommend
 version controlling your files.
 
-## Step 1: Pull all Coder resources into your air-gapped environment
+## Step 1: Pull all Coder resources into your air-gapped workspace
 
 Coder is deployed through [helm](https://helm.sh/docs/intro/install/), and the
 platform images are hosted in Coder's Docker Hub repo.
 
 1. Pull down the Coder helm charts by running the following in a non-air-gapped
-   environment:
+   workspace:
 
    ```console
    helm repo add coder https://helm.coder.com
@@ -82,10 +82,10 @@ platform images are hosted in Coder's Docker Hub repo.
 
    [timescale](https://hub.docker.com/r/coderenvs/timescale) (**Note**: We
    recommend you only use timescale for evaluation purposes if you don't have an
-   external PostgreSQL database available. For production environments, we
-   strong recommend that you use an external PostgreSQL database; the
-   installation section will cover more on updating your Helm chart with your
-   database information.)
+   external PostgreSQL database available. For production workspaces, we strong
+   recommend that you use an external PostgreSQL database; the installation
+   section will cover more on updating your Helm chart with your database
+   information.)
 
    [dashboard](https://hub.docker.com/r/coderenvs/dashboard)
 
@@ -111,14 +111,14 @@ platform images are hosted in Coder's Docker Hub repo.
 
    [ubuntu](https://hub.docker.com/_/ubuntu)
 
-   When building images for your environments that rely on a custom certificate
+   When building images for your workspaces that rely on a custom certificate
    authority, be sure to follow the
    [docs for adding certificates](../../images/ssl-certificates#adding-certificates-for-coder)
    to images.
 
 1. Tag and push all of the images that you've downloaded in the previous step to
    your internal registry; this registry must be accessible from your air-gapped
-   environment. For example, to push `coder-service`:
+   workspace. For example, to push `coder-service`:
 
    ```console
    docker tag coderenvs/coder-service:<version> my-registry.com/coderenvs/coder-service:<version>
@@ -174,11 +174,11 @@ platform images are hosted in Coder's Docker Hub repo.
 
 ## Extensions marketplace
 
-Coder users in an air-gapped environment cannot access the public VS Code
+Coder users in an air-gapped workspace cannot access the public VS Code
 marketplace. However, you can point Coder to an air-gapped instance of
 [OpenVSX](https://github.com/eclipse/openvsx) to serve assets to users. For
 instructions on implementing this, see
-[Extensions](../../admin/environment-management/extensions.md).
+[Extensions](../../admin/workspace-management/extensions.md).
 
 You can also review the [OpenVSX deployment wiki] for more information.
 
