@@ -26,9 +26,9 @@ If you want to configure your system files, Coder workspaces expose the
 [~/personalize rebuild hook](./lifecycle.md#hooks). Coder executes the
 `~/personalize` script every time Coder rebuilds the workspace.
 
-For example, if you want to use the `fish` shell as your default but your
-workspace's image doesn't include it, you can include installation instructions
-in your `~/personalize` script. Whenever Coder rebuilds your workspace, it runs
+For example, if you want to use the `fish` shell as your default, but your
+workspace's image doesn't include it, you can have installation instructions in
+your `~/personalize` script. Whenever Coder rebuilds your workspace, it runs
 your `~/personalize` script, installs `fish`, and changes the default shell.
 
 ```console
