@@ -4,7 +4,8 @@ description:
   Learn how to tear down Coder and the infrastructure on which it's deployed.
 ---
 
-This guide shows you how to tear down Coder and the cluster it is deployed on.
+This guide shows you how to tear down Coder and the cluster on which it is
+deployed.
 
 > These instructions help you remove infrastructure created when following our
 > [Kubernetes setup tutorials](../../setup/kubernetes/index.md). They do not

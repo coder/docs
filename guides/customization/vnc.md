@@ -67,7 +67,7 @@ workspace.
 1. In the Coder UI, go to the **workspace overview** page. Click **New
    Workspace** and choose **Custom Workspace**
 
-1. Provide an **Workspace Name**, and indicate that your **Image Source** is
+1. Provide a **Workspace Name**, and indicate that your **Image Source** is
    **Existing**.
 
 1. Select your **Image** and associated **Tag**.

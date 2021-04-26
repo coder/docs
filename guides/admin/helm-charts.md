@@ -19,7 +19,7 @@ Coder's helm chart.
 1. Open the `values.yaml` file using the text editor of your choice
 
 1. Edit the `values.yaml` file as needed. **Be sure to remove the lines that you
-   are _not_ modifying, otherwise the contents of `values.yaml` will override
+   are _not_ modifying. Otherwise, the contents of `values.yaml` will override
    those in the default chart**
 
 1. Save the `values.yaml` file

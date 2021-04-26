@@ -4,9 +4,9 @@ description: Learn how to monitor Coder's compute usage.
 ---
 
 We recommend monitoring your Coder deployment to track compute cost,
-performance, uptime, and deployment stability. Because Coder is deployed onto
-Kubernetes, you can monitor your developer workspaces as you would any other
-server workload.
+performance, uptime, and deployment stability. Because you deploy Coder onto
+Kubernetes clusters, you can monitor your developer workspaces as you would any
+other server workload.
 
 ## Node utilization metrics
 
