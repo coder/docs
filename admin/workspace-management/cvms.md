@@ -4,7 +4,7 @@ description: Learn how to enable support for secure Docker inside workspaces.
 ---
 
 If you're a site admin or a site manager, you can enable
-[container-based virtual machines (CVMs)](../../workspaces/cvms.md) as an
+[container-based virtual machines (CVMs)](../../workspaces/cvms.md) as a
 workspace deployment option. CVMs allow users to run system-level programs, such
 as Docker and systemd, in their workspaces.
 

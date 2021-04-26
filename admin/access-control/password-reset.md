@@ -38,6 +38,6 @@ kubectl get pods | grep cemanager- | awk '{print $1}' | head -n1
 kubectl exec -it <cemanager pod> -- cemanager reset-admin-password
 ```
 
-You'll be presented with a temporary password for the site admin user; the next
-time the site admin logs in with this set of credentials, Coder will prompt them
-to change the password.
+Coder will present you with a temporary password for the site admin user; the
+next time the site admin logs in with this set of credentials, Coder will prompt
+them to change the password.

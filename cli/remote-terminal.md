@@ -3,8 +3,8 @@ title: "Remote terminal"
 description: Learn how to use the Coder CLI to access your workspace.
 ---
 
-You can access the the shell of your Coder workspace from your local computer
-using the CLI's `coder sh` command.
+You can access the shell of your Coder workspace from your local computer using
+the CLI's `coder sh` command.
 
 ## Usage
 

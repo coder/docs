@@ -8,8 +8,8 @@ and functionality (e.g., languages, debuggers, tools), themes, and more.
 
 ## The extension marketplace
 
-You can find the extensions available to you in the extension marketplace.
-Access to the marketplace is enabled by default and requires no unique
+You can find the extensions available to you in the extension marketplace. Coder
+enables access to the marketplace by default and requires no unique
 configuration on your part. You can, however, choose between two types of
 extensions marketplaces by going to **Manage** > **Admin** > **Infrastructure**,
 then scrolling down to **Extensions**:
