@@ -21,6 +21,12 @@ Before proceeding, please make sure that you have the following installed:
 
 ## Limitations
 
+### Resource allocation and performance
+
+Your experience with the local Coder preview is dependent on your system specs,
+but please note that you can expect slightly degraded performance due to the
+deployment running entirely inside a Docker container.
+
 ### CVMs
 
 The local preview supports [CVMs][cvm-url] if you meet the following
@@ -53,6 +59,10 @@ you can use tools like [ngrok][ngrok-url] to preview webpages from inside an
 workspace.
 
 We are working on bringing Dev URL support to local previews in later releases.
+
+### Air-gapped clusters
+
+The local preview option does not work in an air-gapped deployment.
 
 ## Installing Coder
 
