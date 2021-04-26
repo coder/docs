@@ -9,8 +9,8 @@ enterprise security.
 
 Coder's pre-configured workspaces allow project organization members to define
 what language version and tooling are required to provide consistency across the
-organization and allow new members to onboard and contribute. Developers focus
-on their projects and the end product, not on setup.
+organization and enable new members onboard and contribute. Developers focus on
+their projects and the end product, not on setup.
 
 These pre-configured workspaces are the foundation of Coder's _Dev Workspaces as
 Code_ paradigm, allowing a project's language and tooling dependencies to be
@@ -44,14 +44,14 @@ key benefits include:
 
   ![Onboarding](assets/onboard.png)
 
-- **Workspace consistency**: Every component of your workspaces are predefined
+- **Workspace consistency**: Every component of your workspaces is predefined
   and preapproved, reducing configuration drift caused by variations in
   development workspaces. The images used to create workspaces can also be
   source-controlled the way that your code is.
 
 - **Performant workspaces**: Coder empowers you to use servers over local
   hardware to perform resource-intensive development operations. Developers are,
-  therefore, not limited to the compute power of the device on which they're
+  therefore, not limited to the computing power of the device on which they're
   working or the slow network uploads of large files. All processes are
   performed on the cluster, with only the commands sent over the network.
 

@@ -163,9 +163,9 @@ helm upgrade coder-workspace-provider coder/workspace-provider \
 ```
 
 If you want to update any of the helm chart's values, you can do so by supplying
-a values file (`-f myvalues.yaml`) or using with the `--set` flag. Any existing
-values that were set during installation will persist unless you explicitly
-write over them.
+a values file (`-f myvalues.yaml`) or using the `--set` flag. Any existing
+values that you set during installation will persist unless you explicitly write
+over them.
 
 ## Deleting a workspace provider
 

@@ -15,10 +15,10 @@ to remain accessible via SSH without the need for additional image dependencies.
 
 ## Using OpenSSH
 
-The built-in SSH server is limited, and does not implement advanced
-functionality like X11 forwarding or `sshd_config` specifications. If SSH is the
-primary mode of access to Coder for your users, consider running a full OpenSSH
-server with `systemd` inside your image instead.
+The built-in SSH server is limited and does not implement advanced functionality
+like X11 forwarding or `sshd_config` specifications. If SSH is the primary mode
+of access to Coder for your users, consider running an entire OpenSSH server
+with `systemd` inside your image instead.
 
 To do so, add the following to your Dockerfile:
 
@@ -46,7 +46,7 @@ Then, make sure that you're creating your workspaces with the
 
 > If Coder detects a running TCP server on port 22, it will forward incoming SSH
 > traffic to this server. This means that workspaces should not run a TCP server
-> on port 22 unless it can properly handle incoming SSH traffic.
+> on port 22 unless it can adequately handle incoming SSH traffic.
 
 At startup, Coder injects the user's SSH key into `~/authorized_keys` inside
 your workspace to facilitate authentication with OpenSSH. For the best
@@ -63,8 +63,8 @@ X11UseLocalhost no
 
 OpenSSH handles workspace variables differently than most container processes.
 Workspace variable overrides for OpenSSH sessions are set by `~/.ssh/workspace`
-and `/etc/workspace`. Note that these values will override those set in the
-Dockerfile `ENV` directives.
+and `/etc/workspace`. Note that these values will override those specified in
+the Dockerfile `ENV` directives.
 
 At workspace startup, Coder injects the image defined workspace variables into
 `~/.ssh/workspace`, as well as a set of Coder-defined defaults.
@@ -75,7 +75,7 @@ workspace.
 ```text
 # --------- START CODER WORKSPACE VARIABLES ----------
 # The following has been auto-generated at workspace startup
-# You should not hand-edit this section, unless you are deleting it.
+# You should not hand-edit this section unless you are deleting it.
 
 SHELL=/bin/bash
 CODER_USER_EMAIL=email@coder.com

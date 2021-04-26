@@ -1,5 +1,5 @@
 ---
-title: "Image Tag Names"
+title: "Image tag names"
 description: Learn about image tag naming conventions and recommendations for use.
 ---
 
@@ -39,7 +39,7 @@ the image tag.
 - If you build your workspace using a `ubuntu:rolling` or `ubuntu:latest` tag,
   Coder prompts you to rebuild for patches, security updates, and major version
   releases. If you're supporting a SaaS product or working on mobile apps, you
-  may opt for this to ensure that your tools stay up-to-date.
+  can opt for this to ensure that your tools stay up-to-date.
 
 - If you build your workspace using a specific version tag (e.g.,
   `ubuntu:20.04`), Coder will alert you regarding patches and security updates

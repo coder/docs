@@ -100,7 +100,7 @@ registry and (optionally) the tag, i.e. `docker.io/ubuntu:18.04`. If you omit
 the tag, Coder uses the default value of `latest`.
 
 You must have [imported the image](../../images/importing.md) into Coder,
-otherwise the workspace will fail to build.
+otherwise, the workspace will fail to build.
 
 #### workspace.spec.labels
 

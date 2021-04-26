@@ -21,8 +21,8 @@ We collect your email so that you will be notified when the feature is updated.
 
 If you experience a problem or encounter unexpected behavior, send a detailed
 report using the guidelines below to **support@coder.com**. If the application
-crashes, a report will be generated for you. Copy the report and include it with
-your report.
+crashes, Coder generates a report for you. Copy the report and include it with
+your message.
 
 ![Coder error report](assets/error-report.png)
 
@@ -45,7 +45,7 @@ Describe what you expected to happen
 
 **Actual:**
 
-Describe what actually happened
+Describe what happened
 
 **System information:**
 
@@ -58,7 +58,7 @@ We welcome any additional information that you think may be helpful.
 
 ### Coder version information
 
-One important piece of information you could provide is the version number of
+One critical piece of information you could provide is the version number of
 your deployment. This information is available at the bottom of most pages in
 the Coder UI.
 

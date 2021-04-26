@@ -31,10 +31,10 @@ You can deploy a workspace provider to any existing Kubernetes cluster, enabling
 the cluster to become a selectable pool of resources in which developers can
 create workspaces.
 
-Remote workspace providers can provide lower latency to developers by locating
-their workspaces closer to them geographically or can be used for workload
-isolation purposes. See [Deploying a workspace provider](deployment.md) to learn
-how you can expand your Coder deployment to additional Kubernetes clusters.
+Remote workspace providers can lower developers' latency by locating their
+workspaces closer to them geographically or can be used for workload isolation
+purposes. See [Deploying a workspace provider](deployment.md) to learn how to
+expand your Coder deployment to additional Kubernetes clusters.
 
 ## Admin UI
 

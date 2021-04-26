@@ -22,7 +22,7 @@ To customize your system banner messages:
 
 ## Terms of service
 
-To enable the display of a terms of service and to edit the text displayed:
+To enable the display of terms of service and to edit the text displayed:
 
 1. Go to **Manage** > **Admin** > **Appearance** in the Coder UI.
 1. Toggle the switch to **On**.
@@ -32,5 +32,5 @@ To enable the display of a terms of service and to edit the text displayed:
 
 ![Terms of service](../assets/terms-of-service.png)
 
-**Note**: If you enable the use of a terms of service, users will not be able to
-log into Coder without first accepting the terms of service.
+**Note**: If you enable the use of terms of service, users will not be able to
+log in to Coder without first accepting the terms of service.

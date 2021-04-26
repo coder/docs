@@ -37,7 +37,7 @@ item type, but you're welcome to use the alternatives of your choice):
 ## Network configuration
 
 Coder requires several preliminary steps to be performed on your network before
-you can deploy Coder. If don't already have the following on your network,
+you can deploy Coder. If you don't already have the following on your network,
 please see our [infrastructure setup guide](infrastructure.md):
 
 - A certificate authority

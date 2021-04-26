@@ -3,8 +3,8 @@ title: Organizations
 description: Learn how to manage organizations within Coder.
 ---
 
-Organizations are groups that tie together users, workspaces, and images. All of
-your images and workspaces must be assigned to a specific organization. An
+Organizations are groups that tie together users, workspaces, and images. You
+must assign all of your images and workspaces to a specific organization. An
 end-user can only access images that are assigned to the same organization they
 are.
 
