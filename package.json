@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@types/minimist": "^1.2.1",
-    "@types/node": "^12.20.10",
+    "@types/node": "^15.0.0",
     "@types/semver-compare": "^1.0.1",
     "all-contributors-cli": "^6.20.0",
     "husky": "^6.0.0",
