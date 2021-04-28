@@ -156,6 +156,7 @@ values changes; you can do this with
 
 ```bash
 helm upgrade coder-workspace-provider coder/workspace-provider \
+    --namespace=[your-wp-namespace]
     --version=[CODER_VERSION] \
     --atomic \
     --install \
