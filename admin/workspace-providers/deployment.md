@@ -52,7 +52,7 @@ We recommend running workspace providers in a separate
 to do so, run:
 
 ```bash
-kubectl create namespace coder
+kubectl create namespace [your-wp-namespace]
 ```
 
 Next, change the kubectl context to point to your newly created namespace:
@@ -103,6 +103,7 @@ when communicating with the Coder deployment.
 
    ```bash
    helm upgrade coder-workspace-provider coder/workspace-provider \
+      --namespace=[your-wp-namespace]
       --version=[CODER_VERSION] \
       --atomic \
       --install \
