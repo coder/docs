@@ -1,6 +1,11 @@
 {
   "name": "coder-docs",
-  "private": false,
+  "description": "Documentation for Coder",
+  "homepage": "https://coder.com/docs",
+  "bugs": {
+    "url": "https://github.com/cdr/docs/issues",
+    "email": "support@coder.com"
+  },
   "license": "UNLICENSED",
   "scripts": {
     "prepare": "husky install",
@@ -26,6 +31,7 @@
   "engines": {
     "node": "^12.16.0"
   },
+  "private": true,
   "lint-staged": {
     "*.{css,html,js,json,jsx,ts,tsx,yaml,yml}": [
       "prettier --write"
