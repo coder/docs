@@ -1,4 +1,7 @@
 {
+  "name": "coder-docs",
+  "private": false,
+  "license": "UNLICENSED",
   "scripts": {
     "prepare": "husky install",
     "format:check": "prettier --check '**/*.{css,html,js,json,jsx,ts,tsx,yaml,yml}'",
