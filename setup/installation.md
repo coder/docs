@@ -85,7 +85,7 @@ kubectl config set-context --current --namespace=coder
    ```
 
    To create the `passwordSecret`, run
-   `kubectl create secret generic secret-name --from-literal=password=UserDefinedPassword`
+   `kubectl create secret generic <NAME> --from-file=test=/dev/stdin`
    (be sure to replace `UserDefinedPassword` with your actual password).
 
    You can find/define these values in your
