@@ -91,6 +91,9 @@ kubectl config set-context --current --namespace=coder
    You can find/define these values in your
    [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
 
+   > For more information, [see our guide](../guides/deployments/postgres.md) on
+   setting up a PostgreSQL instance.
+
 1. [Enable dev URL usage](../admin/devurls.md). Dev URLs allow users to access
    the web servers running in your workspace. To enable, provide a wildcard
    domain and its DNS certificate and update your helm chart accordingly. This
