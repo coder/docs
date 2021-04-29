@@ -48,10 +48,10 @@ To update Coder, follow these steps:
    helm repo update
    ```
 
-1. (Optional) Export the current helm chart values into a file:
+1. Export your current helm chart values into a file:
 
    ```console
-   helm get values --namespace coder coder > current-values.yml
+   helm get values --namespace coder coder > current-values.yaml
    ```
 
    > Make sure that your values only contain the changes you want (i.e., if you
@@ -64,7 +64,7 @@ To update Coder, follow these steps:
 
    ```console
    helm upgrade --namespace coder --install --atomic --wait \
-     --version 1.16.1 coder coder/coder --values current-values.yml
+     --version 1.16.1 coder coder/coder --values current-values.yaml
    ```
 
 ## Fixing a failed upgrade
@@ -95,7 +95,7 @@ If this happens, we recommend uninstalling and reinstalling:
 1. Export the helm chart values into a file:
 
    ```console
-   helm get values --namespace coder coder > current-values.yml
+   helm get values --namespace coder coder > current-values.yaml
    ```
 
    > Double-check your values file to ensure it only contains your changes.
@@ -128,7 +128,7 @@ If this happens, we recommend uninstalling and reinstalling:
    ```console
    helm upgrade --namespace coder --atomic \
    --wait --install --version 1.16.1 \
-   coder coder/coder --values current-values.yml
+   coder coder/coder --values current-values.yaml
    ```
 
    The ingress may attach to a new public IP address; if this happens, you must
