@@ -56,7 +56,7 @@ and configure your AWS account.
 When done, you should have a .pem and .pub file for the same keypair you
 downloaded from AWS.
 
-## Step 1: Spin up a K8 cluster
+## Step 1: Spin up a K8s cluster
 
 The following will spin up a Kubernetes cluster using the `eksctl`; replace the
 parameters and workspace variables as needed to reflect those for your
@@ -91,7 +91,7 @@ EKS cluster "YOUR_CLUSTER_NAME" in "YOUR_REGION" region is ready
 
 This process may take ~15-30 minutes to complete.
 
-## Step 2: Adjust the K8 storage class
+## Step 2: Adjust the K8s storage class
 
 Once you've created the cluster, adjust the default Kubernetes storage class to
 support immediate volume binding.
