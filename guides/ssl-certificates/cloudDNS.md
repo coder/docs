@@ -59,7 +59,7 @@ You can get the private key from the GCP Service Account using:
 
 ```console
 gcloud iam service-accounts keys create key.json \
---iam-account <service-account-name>@<project-name>.gserviceaccount.com
+--iam-account <service-account-name>@<project-name>.iam.gserviceaccount.com
 ```
 
 The response should look similar to the following:
