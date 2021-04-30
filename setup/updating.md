@@ -7,11 +7,11 @@ This guide will show you how to update your Coder deployment.
 
 ## Prerequisites
 
-- If you haven't already, install [helm](https://helm.sh/docs/intro/install/).
+- If you haven't already, install [Helm](https://helm.sh/docs/intro/install/).
 
-- Before beginning the update process, ensure that you've added the Coder helm
+- Before beginning the update process, ensure that you've added the Coder Helm
   repo to your cluster. You can verify that the Coder repo has been added to
-  helm using `helm repo list`:
+  Helm using `helm repo list`:
 
   ```console
   $ helm repo list
@@ -48,7 +48,7 @@ To update Coder, follow these steps:
    helm repo update
    ```
 
-1. Export your current helm chart values into a file:
+1. Export your current Helm chart values into a file:
 
    ```console
    helm get values --namespace coder coder > current-values.yaml
@@ -57,7 +57,7 @@ To update Coder, follow these steps:
    > Make sure that your values only contain the changes you want (i.e., if you
    > see references to a prior version, you may need to remove these).
 
-1. Provide your helm chart values file and upgrade to the desired version (e.g.,
+1. Provide your Helm chart values file and upgrade to the desired version (e.g.,
    1.16.1):
 
    _Note: If you omit `--version`, you'll upgrade to the latest version._
@@ -70,7 +70,7 @@ To update Coder, follow these steps:
 ## Fixing a failed upgrade
 
 While upgrading, the process may fail. You'll see an error message similar to
-the following samples indicating that a field is immutable or that helm doesn't
+the following samples indicating that a field is immutable or that Helm doesn't
 control a resource:
 
 ```text
@@ -92,7 +92,7 @@ be set to "coder"; annotation validation error: missing key
 
 If this happens, we recommend uninstalling and reinstalling:
 
-1. Export the helm chart values into a file:
+1. Export the Helm chart values into a file:
 
    ```console
    helm get values --namespace coder coder > current-values.yaml
@@ -122,7 +122,7 @@ If this happens, we recommend uninstalling and reinstalling:
    public IP address or hostname after you reinstall; if this is the case,
    update your DNS provider with your new IP and CNAME.
 
-1. Run the `upgrade` command with the new version number and helm chart values
+1. Run the `upgrade` command with the new version number and Helm chart values
    file:
 
    ```console
