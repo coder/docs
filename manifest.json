@@ -300,6 +300,9 @@
             },
             {
               "path": "./guides/deployments/teardown.md"
+            },
+            {
+              "path": "./guides/deployments/postgres.md"
             }
           ]
         },

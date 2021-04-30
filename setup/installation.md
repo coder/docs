@@ -86,11 +86,14 @@ kubectl config set-context --current --namespace=coder
    ```
 
    To create the `passwordSecret`, run
-   `kubectl create secret generic secret-name --from-literal=password=UserDefinedPassword`
+   `kubectl create secret generic <NAME> --from-file=test=/dev/stdin`
    (be sure to replace `UserDefinedPassword` with your actual password).
 
    You can find/define these values in your
    [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
+
+   > For more information, [see our guide](../guides/deployments/postgres.md) on
+   setting up a PostgreSQL instance.
 
 1. [Enable dev URL usage](../admin/devurls.md). Dev URLs allow users to access
    the web servers running in your workspace. To enable, provide a wildcard
