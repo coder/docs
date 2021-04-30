@@ -6,14 +6,20 @@ description: Learn about the prerequisite infrastructure requirements.
 Coder is deployed onto Kubernetes clusters, and we recommend the following
 resource allocation minimums to ensure quality performance.
 
-For **basic control services**, allocate at least 8 CPU cores, 32 GB of RAM, and
-50 GB of storage (if you later determine via [usage
-monitoring](../guides/admin/usage-monitoring.md) that these are too high/low,
-you can change the allocation).
+For **basic control services**, allocate at least 2 CPU cores, 4 GB of RAM, and
+20 GB of storage.
 
-For **each** active developer, please allocate an additional CPU core, 1 GB of
-RAM, and 10 GB of storage on top of the resources allocated for basic control
-services.
+You will also need to allocate additional CPU cores, RAM, and storage for
+**each** active developer using Coder. The specific amount you should allocate
+will vary based on your project, though you can use the following sets of
+minimum requirements to help you estimate:
+
+- Development using a JetBrains IDE: 8 GB RAM, 4 cores, 10 GB Disk per developer
+- Development using VS Code with an SSH connection to Coder: 1 GB RAM, 1 core
+  per developer
+
+> We recommend [monitoring](../guides/admin/usage-monitoring.md) your usage to
+determine whether you should change your resource allocation.
 
 We recommend the following throughput:
 
