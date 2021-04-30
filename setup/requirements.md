@@ -9,10 +9,9 @@ resource allocation minimums to ensure quality performance.
 For **basic control services**, allocate at least 2 CPU cores, 4 GB of RAM, and
 20 GB of storage.
 
-You will also need to allocate additional CPU cores, RAM, and storage for
-**each** active developer using Coder. The specific amount you should allocate
-will vary based on your project, though you can use the following sets of
-minimum requirements to help you estimate:
+Additionally, allocate additional resources for **each** active developer using
+Coder. The specific amount required per developer varies, though you can use the
+following to help you estimate:
 
 - Development using a JetBrains IDE: 4 CPU cores, 8 GB of RAM, and 10 GB of
   storage per developer
