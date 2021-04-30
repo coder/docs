@@ -70,7 +70,7 @@ kubectl config set-context --current --namespace=coder
    whenever you update the Helm chart:**
 
    ```console
-   helm upgrade coder coder/coder -n coder --version=<VERSION> --values current-values.yaml`
+   helm upgrade coder coder/coder -n coder --version=<VERSION> --values current-values.yaml
    ```
 
    _Note: If you omit `--version`, you'll upgrade to the latest version._

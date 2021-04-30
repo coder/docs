@@ -29,7 +29,7 @@ Coder's Helm chart.
    version):
 
    ```console
-   helm upgrade coder coder/coder -n coder --version=<VERSION> -f current-values.yaml
+   helm upgrade coder coder/coder -n coder --version=<VERSION> --values current-values.yaml
    ```
 
    **Note:** You must complete this step every time you update the Helm chart
