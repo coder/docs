@@ -181,4 +181,7 @@ devurls:
   host: "*.coder.example.com"
 ```
 
-Be sure to redeploy Coder after altering your helm values.
+Be sure to redeploy Coder after altering your helm values. If you are still not
+getting a valid certificate, see
+[this troubleshooting guide](https://cert-manager.io/docs/faq/acme/) by
+cert-manager.

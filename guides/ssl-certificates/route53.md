@@ -170,4 +170,7 @@ URLs work.
 
 At this point, you can return to **step 6** of the
 [installation](../../setup/installation.md) guide to obtain the admin
-credentials you need to log in.
+credentials you need to log in. If you are not getting a valid certificate after
+redeploying, see
+[this troubleshooting guide](https://cert-manager.io/docs/faq/acme/) by
+cert-manager.
