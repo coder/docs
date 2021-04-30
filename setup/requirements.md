@@ -14,12 +14,15 @@ You will also need to allocate additional CPU cores, RAM, and storage for
 will vary based on your project, though you can use the following sets of
 minimum requirements to help you estimate:
 
-- Development using a JetBrains IDE: 8 GB RAM, 4 cores, 10 GB Disk per developer
-- Development using VS Code with an SSH connection to Coder: 1 GB RAM, 1 core
-  per developer
+- Development using a JetBrains IDE: 4 CPU cores, 8 GB of RAM, and 10 GB of
+  storage per developer
+- Development using VS Code with an SSH connection to Coder: 1 CPU core and 1 GB
+  of RAM per developer
 
 > We recommend [monitoring](../guides/admin/usage-monitoring.md) your usage to
 determine whether you should change your resource allocation.
+
+### Throughput
 
 We recommend the following throughput:
 
