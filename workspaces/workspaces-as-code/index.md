@@ -9,14 +9,15 @@ workspaces. WAC allows you to define and create new workspaces using **workspace
 templates**.
 
 [Workspace templates](./templates.md) are declarative YAML files that describe
-how to configure workspaces and their supporting infrastructure.
+how to configure workspaces and their supporting infrastructure. Both `.yaml` and
+`.yml` extensions are supported.
 
 ## Requirements
 
 - You must configure a [Git OAuth service of your choice](../../admin/git.md)
 - The image you use in your template **must** have been
   [imported](../../images/importing.md) into Coder
-- A `.coder/coder.yaml` file exists in your repository.
+- A `.coder/<template-name>.yaml` file exists in your repository.
 
 ## Creating a workspace template
 
