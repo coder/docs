@@ -11,7 +11,7 @@ Workspace templates are written as YAML and have a `.yaml` or `.yml` extension.
 Coder looks for your workspace template at the following path:
 
 ```text
-<repository-root>/.coder/coder.yaml
+<repository-root>/.coder/<template-name>.yaml
 ```
 
 ![Template Location](../../assets/wac-location.png)
@@ -28,7 +28,7 @@ For detailed information on the fields available, see the
 [subsequent sections](#workspace-template-fields) of this article
 
 ```yaml
-version: 0.1
+version: 0.2
 workspace:
   type: kubernetes
   spec:
@@ -76,7 +76,7 @@ workspace:
 
 ### version
 
-The version number of the config file being used. The current version is `0.1`.
+The version number of the config file being used. The current version is `0.2`.
 
 ### workspace
 
