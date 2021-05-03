@@ -53,15 +53,21 @@ ID:
 CLUSTER_NAME="<MY_CLUSTER_NAME>" SUBSCRIPTION="<MY_SUBSCRIPTION_SHA>"
 ```
 
-Create the Azure Kubernetes Service Cluster:
+At this point, you're ready to create your cluster. Please note that:
+
+- You may have to run `az extension add --name aks-preview`
+- You may need to create a service principal manually using `az ad sp
+  create-for-rbac --skip-assignment`, then setting the `--service-principal` and
+  `--client-secret` flags
+- The sample script creates a `Standard_B8ms` instance; depending on your needs,
+  you can choose a [larger
+  size](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)
+  instead. See [requirements](../requirements.md) for help estimating your
+  cluster size.
+
+To create the Azure Kubernetes Service Cluster:
 
 ```console
-# You may have to run `az extension add --name aks-preview`
-#
-# You may also need to create a service principal manually using
-# `az ad sp create-for-rbac --skip-assignment`, then setting the
-# --service-principal and --client-secret flags
-
 az aks create \
   --name "$CLUSTER_NAME" \
   --resource-group "$RESOURCE_GROUP" \
