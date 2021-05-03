@@ -8,7 +8,7 @@ set up a lightweight preview deployment, you can do so locally using using
 [Docker][docker-url] and [kind][kind-url].
 
 > Coder currently supports local preview only on workstations running macOS or
-> Linux.
+> Linux. A single-seat license will automatically be uploaded to Coder upon install.
 
 ## Prerequisites
 
