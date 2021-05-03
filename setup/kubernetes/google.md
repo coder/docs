@@ -40,6 +40,12 @@ This option uses an Ubuntu node image to enable support of
 [Container-based Virtual Machines (CVMs)](../../admin/workspace-management/cvms.md),
 allowing system-level functionalities such as Docker in Docker.
 
+> Please note that the sample script creates a `n1-highmem-4` instance;
+> depending on your needs, you can choose a [larger
+> size](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)
+> instead. See [requirements](../requirements.md) for help estimating your
+> cluster size.
+
 ```console
 gcloud beta container --project "$PROJECT_ID" \
     clusters create "$NEW_CLUSTER_NAME" \
@@ -74,6 +80,12 @@ gcloud beta container --project "$PROJECT_ID" \
 This option uses a Container-Optimized OS (COS) and meets Coder's minimum
 requirements. It does _not_ enable the use of
 [CVMs](../../admin/workspace-management/cvms.md).
+
+> Please note that the sample script creates a `n1-highmem-4` instance;
+> depending on your needs, you can choose a [larger
+> size](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)
+> instead. See [requirements](../requirements.md) for help estimating your
+> cluster size.
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
