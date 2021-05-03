@@ -9,8 +9,8 @@ workspaces. WAC allows you to define and create new workspaces using **workspace
 templates**.
 
 [Workspace templates](./templates.md) are declarative YAML files that describe
-how to configure workspaces and their supporting infrastructure. Both `.yaml` and
-`.yml` extensions are supported.
+how to configure workspaces and their supporting infrastructure. Coder supports
+files with either the `.yaml` or `.yml` extension.
 
 ## Requirements
 
