@@ -100,7 +100,8 @@ At startup, Coder clones your dotfiles repository into `~/dotfiles`. If there's
 an executable `~/dotfiles/install.sh` present, Coder executes it. If not, all
 dot-prefixed files are symlinked to your home directory.  
 
-- _Note: You must mark the `install.sh` file as executable before committing it to your dotfiles repo._
+> You **must** mark `install.sh` as executable before committing it to your
+> dotfiles repo.
 
 Read more about dotfiles repos [here](http://dotfiles.github.io/).
 
