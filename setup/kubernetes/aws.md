@@ -58,13 +58,21 @@ downloaded from AWS.
 
 ## Step 1: Spin up a K8s cluster
 
-The following will spin up a Kubernetes cluster using the `eksctl`; replace the
-parameters and environment variables as needed to reflect those for your
-workspace.
+To make subsequent steps easier, start by creating environment variables for the
+cluster name,
+[region](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions),
+and SSH key path:
 
 ```console
-CLUSTER_NAME="YOUR_CLUSTER_NAME" \
-  SSH_KEY_PATH="<PATH/TO/KEY>.pub" REGION="YOUR_REGION" \
+CLUSTER_NAME="YOUR_CLUSTER_NAME"
+SSH_KEY_PATH="<PATH/TO/KEY>.pub"
+REGION="YOUR_REGION"
+```
+
+The following will spin up a Kubernetes cluster using `eksctl`:
+
+```console
+
   eksctl create cluster \
   --name "$CLUSTER_NAME" \
   --version 1.17 \
