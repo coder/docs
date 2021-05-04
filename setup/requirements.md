@@ -9,9 +9,19 @@ resource allocation minimums to ensure quality performance.
 For **basic control services**, allocate at least 2 CPU cores, 4 GB of RAM, and
 20 GB of storage.
 
-For **each** active developer, please allocate an additional CPU core, 1 GB of
-RAM, and 10 GB of storage on top of the resources allocated for basic control
-services.
+For **each** active developer using Coder, allocate additional resources. The
+specific amount required per developer varies, though you can use the following
+to help you estimate:
+
+- **Development using a JetBrains IDE**: 4 CPU cores, 8 GB of RAM, and 10 GB of
+  storage per developer
+- **Development using VS Code with an SSH connection to Coder**: 1 CPU core and
+  1 GB of RAM per developer
+
+> We recommend [monitoring](../guides/admin/usage-monitoring.md) your usage to
+determine whether you should change your resource allocation.
+
+### Throughput
 
 We recommend the following throughput:
 

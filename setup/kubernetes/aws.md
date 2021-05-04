@@ -87,9 +87,10 @@ The following will spin up a Kubernetes cluster using `eksctl`:
   --managed
 ```
 
-> Please note that the sample script creates a `t3.medium` instance; depending
-> on your needs, you can choose a
-> [larger size](https://aws.amazon.com/ec2/instance-types/t3/) instead.
+Please note that the sample script creates a `t3.medium` instance; depending on
+your needs, you can choose a
+[larger size](https://aws.amazon.com/ec2/instance-types/t3/) instead. See
+[requirements](../requirements.md) for help estimating your cluster size.
 
 When your cluster is ready, you should see the following message:
 
