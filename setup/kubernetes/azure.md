@@ -17,7 +17,7 @@ the prompts).
 
 ## Step 1: Create the resource group
 
-To make subsequent steps easier, start by creating workspace variables for the
+To make subsequent steps easier, start by creating environment variables for the
 [resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group)
 and
 [location](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
@@ -46,7 +46,7 @@ You will need the hash provided (i.e., `3afe...d2d`) when creating your cluster.
 
 ## Step 2: Create the Azure Kubernetes Service cluster
 
-Set two additional workspace variables for your cluster name and subscription
+Set two additional environment variables for your cluster name and subscription
 ID:
 
 ```console
@@ -56,12 +56,12 @@ CLUSTER_NAME="<MY_CLUSTER_NAME>" SUBSCRIPTION="<MY_SUBSCRIPTION_SHA>"
 At this point, you're ready to create your cluster. Please note that:
 
 - You may have to run `az extension add --name aks-preview`
-- You may need to create a service principal manually using `az ad sp
-  create-for-rbac --skip-assignment`, then setting the `--service-principal` and
-  `--client-secret` flags
+- You may need to create a service principal manually using
+  `az ad sp create-for-rbac --skip-assignment`, then setting the
+  `--service-principal` and `--client-secret` flags
 - The sample script creates a `Standard_B8ms` instance; depending on your needs,
-  you can choose a [larger
-  size](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)
+  you can choose a
+  [larger size](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)
   instead. See [requirements](../requirements.md) for help estimating your
   cluster size.
 
