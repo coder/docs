@@ -217,6 +217,9 @@
           ]
         },
         {
+          "path": "./admin/access-url.md"
+        },
+        {
           "path": "./admin/account-dormancy.md"
         },
         {
