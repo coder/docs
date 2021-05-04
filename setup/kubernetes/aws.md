@@ -59,7 +59,7 @@ downloaded from AWS.
 ## Step 1: Spin up a K8s cluster
 
 The following will spin up a Kubernetes cluster using the `eksctl`; replace the
-parameters and workspace variables as needed to reflect those for your
+parameters and environment variables as needed to reflect those for your
 workspace.
 
 ```console
@@ -80,8 +80,8 @@ CLUSTER_NAME="YOUR_CLUSTER_NAME" \
 ```
 
 Please note that the sample script creates a `t3.medium` instance; depending on
-your needs, you can choose a [larger
-size](https://aws.amazon.com/ec2/instance-types/t3/) instead. See
+your needs, you can choose a
+[larger size](https://aws.amazon.com/ec2/instance-types/t3/) instead. See
 [requirements](../requirements.md) for help estimating your cluster size.
 
 When your cluster is ready, you should see the following message:

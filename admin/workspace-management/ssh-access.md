@@ -59,21 +59,21 @@ X11Forwarding yes
 X11UseLocalhost no
 ```
 
-### SSH workspace variables
+### SSH environment variables
 
-OpenSSH handles workspace variables differently than most container processes.
+OpenSSH handles environment variables differently than most container processes.
 Workspace variable overrides for OpenSSH sessions are set by `~/.ssh/workspace`
 and `/etc/workspace`. Note that these values will override those specified in
 the Dockerfile `ENV` directives.
 
-At workspace startup, Coder injects the image defined workspace variables into
+At workspace startup, Coder injects the image defined environment variables into
 `~/.ssh/workspace`, as well as a set of Coder-defined defaults.
 
 The following snippet shows an example of what this file may look like for a new
 workspace.
 
 ```text
-# --------- START CODER WORKSPACE VARIABLES ----------
+# --------- START CODER ENVIRONMENT VARIABLES ----------
 # The following has been auto-generated at workspace startup
 # You should not hand-edit this section unless you are deleting it.
 

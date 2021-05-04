@@ -16,7 +16,7 @@ To begin, create a Dockerfile that you'll use to build an
 [image](../../images/index.md) with a virtual network computing (VNC) provider
 installed.
 
-Be sure to set the `HOME`, `USER`, and `PORT` workspace variables in the
+Be sure to set the `HOME`, `USER`, and `PORT` environment variables in the
 Dockerfile:
 
 ```text

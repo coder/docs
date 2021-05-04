@@ -192,7 +192,7 @@ start:
 
 #### workspace.configure.start[*].env
 
-The map of workspace variables to set for the command.
+The map of environment variables to set for the command.
 
 ```yaml
 start:
