@@ -78,9 +78,9 @@ $ ./inotify-consumers
    WATCHER
     COUNT     PID USER     COMMAND
 --------------------------------------
-     269   254560 coder    /opt/coder/code-server/lib/node /opt/coder/code-server/lib/vscode/out/bootstrap-fork --type=watcherService
-       5     1722 coder    /opt/coder/code-server/lib/node /opt/coder/code-server/lib/vscode/out/vs/server/fork
-       2   254538 coder    /opt/coder/code-server/lib/node /opt/coder/code-server/lib/vscode/out/bootstrap-fork --type=extensionHost
+     269   254560 coder    /var/tmp/coder/code-server/lib/node /var/tmp/coder/code-server/lib/vscode/out/bootstrap-fork --type=watcherService
+       5     1722 coder    /var/tmp/coder/code-server/lib/node /var/tmp/coder/code-server/lib/vscode/out/vs/server/fork
+       2   254538 coder    /var/tmp/coder/code-server/lib/node /var/tmp/coder/code-server/lib/vscode/out/bootstrap-fork --type=extensionHost
        2     1507 coder    gpg-agent --homedir /home/coder/.gnupg --use-standard-socket --daemon
 
      278  WATCHERS TOTAL COUNT
