@@ -19,6 +19,8 @@ as Docker and systemd, in their workspaces.
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
   about why this is still secure [here](#security).
 
+**Note:** CVMs do not currently support NFS as a file system.
+
 **Note:** Coder doesn't support legacy versions of cluster-wide proxy services
 such as Istio.
 
