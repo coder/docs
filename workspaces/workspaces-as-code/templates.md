@@ -37,7 +37,7 @@ workspace:
     cpu: 4
     memory: 16
     disk: 128
-    gpuCount: 1
+    gpu-count: 1
     labels:
       com.coder.custom.hello: "hello"
       com.coder.custom.world: "world"
@@ -115,7 +115,7 @@ workspace:
     com.coder.custom.world: world
 ```
 
-#### workspace.spec.gpucount
+#### workspace.spec.gpu-count
 
 The number of GPUs to allocate to the workspace.
 
