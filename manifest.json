@@ -290,9 +290,6 @@
           "navigable": false,
           "children": [
             {
-              "path": "./guides/deployments/nightly-releases.md"
-            },
-            {
               "path": "./guides/deployments/keycloak.md"
             },
             {
