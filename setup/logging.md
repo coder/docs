@@ -8,10 +8,16 @@ deployment. These logs can be utilized for debugging Coder services and
 monitoring the overall health of your cluster. Below are the logging
 configuration options available in the [Helm chart](https://github.com/cdr/enterprise-helm).
 
-> Coder supports writing logs to multiple output targets. Set these
-values to an empty string to disable.
+Coder supports writing logs to multiple output targets. Set these
+values to an empty string to disable. Note that both `/dev/stdout` and `/dev/stderr`
+can be used interchangeably, as both write to the pod's standard output
+and error directories. You can access such logs by running the following:
 
-## Human logging
+```kubectl
+kubectl -n coder logs <podname>
+```
+
+## Human-readable logging
 
 This is the default value set in the Helm chart, as reflected below:
 
