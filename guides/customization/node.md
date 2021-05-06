@@ -140,8 +140,8 @@ if ! command -v nvm &> /dev/null
 then
     echo "nvm command not found... attempting to add to your profile via the install script"
 
-    # Create a .profile file if it doesn’t exist
-    touch ~/.profile
+    # Create a .bash_profile file if it doesn’t exist
+    touch ~/.bash_profile
 
     # run the install script to add to profile
     $NVM_DIR/install.sh
