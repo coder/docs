@@ -14,7 +14,7 @@ Helm chart](https://github.com/cdr/enterprise-helm).
 
 You can access your logs at any time by running:
 
-```kubectl
+```console
 kubectl -n coder logs <podname>
 ```
 
