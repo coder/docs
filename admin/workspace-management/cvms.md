@@ -3,33 +3,31 @@ title: Docker in workspaces
 description: Learn how to enable support for secure Docker inside workspaces.
 ---
 
-If you're a site admin or a site manager, you can enable
-[container-based virtual machines (CVMs)](../../workspaces/cvms.md) as a
-workspace deployment option. CVMs allow users to run system-level programs, such
-as Docker and systemd, in their workspaces.
+If you're a site admin or a site manager, you can enable [container-based
+virtual machines (CVMs)](../../workspaces/cvms.md) as a workspace deployment
+option. CVMs allow users to run system-level programs, such as Docker and
+systemd, in their workspaces.
 
 ## Infrastructure requirements
 
-- CVMs leverage the
-  [Sysbox container runtime](https://github.com/nestybox/sysbox), so the
-  Kubernetes Node must run a supported Linux distro with the minimum kernel
-  version (see
-  [Sysbox distro compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
+- CVMs leverage the [Sysbox container
+  runtime](https://github.com/nestybox/sysbox), so the Kubernetes Node must run
+  a supported Linux distro with the minimum kernel version (see [Sysbox distro
+  compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
   for more information)
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
   about why this is still secure [here](#security).
 
-**Note:** CVMs do not currently support NFS as a file system.
+> Coder doesn't support legacy versions of cluster-wide proxy services such as
+Istio, and CVMs do not currently support NFS as a file system.
 
-**Note:** Coder doesn't support legacy versions of cluster-wide proxy services
-such as Istio.
+### GPUs
 
-> NVIDIA GPUs can be added to CVMs on bare metal clusters only. This feature is
-> not supported on Google Kubernetes Engine or other cloud providers at this
-> time.
->
-> Support for NVIDIA [GPUs](gpu-acceleration.md) is in **beta**. We do not
-> support AMD GPUs at this time.
+NVIDIA GPUs can be added to CVMs on bare metal clusters only. This feature is
+not supported on Google Kubernetes Engine or other cloud providers at this time.
+
+Support for NVIDIA [GPUs](gpu-acceleration.md) is in **beta**. We do not support
+AMD GPUs at this time.
 
 ## Enabling CVMs in Coder
 
