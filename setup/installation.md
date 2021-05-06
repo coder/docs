@@ -128,6 +128,13 @@ kubectl config set-context --current --namespace=coder
 > [admin password reset](../admin/access-control/password-reset.md#resetting-the-site-admin-password)
 > process to regain access.
 
+## Logging
+
+At this time, we recommend review Coder's default
+[logging](../guides/admin/logging.md) settings. Logs are helpful for monitoring
+the health of your cluster and troubleshooting, and Coder offers you several
+options for obtaining these.
+
 ## Accessing Coder
 
 1. To access Coder's web UI, you'll need to get its IP address by running the
