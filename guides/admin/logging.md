@@ -23,7 +23,7 @@ kubectl -n coder logs <podname>
 The following sections show how you can change your Helm chart values to export
 logs.
 
-> See our guide to [updating your Helm chart](../guides/admin/helm-charts.md) if
+> See our guide to [updating your Helm chart](helm-charts.md) if
 > you're unfamiliar with updating a Helm chart.
 
 Please note that:
