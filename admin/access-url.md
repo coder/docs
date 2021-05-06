@@ -35,8 +35,8 @@ chart](../guides/admin/helm-charts.md) and [redeploy
 Coder](../setup/updating.md):
 
 helm upgrade coder coder/coder \
-  --set devurls.host="*.docs-test.com" \
-  --set ingress.host="coder.docs-test.com" \
+  --set devurls.host="*.example.com" \
+  --set ingress.host="coder.example.com" \
 
 > See the [enterprise-helm repo](https://github.com/cdr/enterprise-helm) for
 > more information on Coder's Helm charts.
