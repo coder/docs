@@ -3,9 +3,9 @@ title: Node.js Projects
 description: Learn how to create custom images for Node.js projects.
 ---
 
-This guide will show you how to create a Coder image for a [sample blog
-project](https://github.com/gatsbyjs/gatsby-starter-blog) that's written in
-Node.js.
+This guide will show you how to create a Coder image for a
+[sample blog project](https://github.com/gatsbyjs/gatsby-starter-blog) that's
+written in Node.js.
 
 The Coder [workspace](../../workspaces/index.md) that you'll create using this
 image and be using for your project includes:
@@ -28,13 +28,13 @@ image and be using for your project includes:
 In Coder, developer workspaces are defined by a Dockerfile that contains the
 apps, tools, and dependencies that you need to work on the project.
 
-> See Docker’s [guide to writing
-> Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+> See Docker’s
+> [guide to writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 > for more information.
 
-To create your Dockerfile, as well as the [configure
-script](../../images/configure) that Coder runs automatically once it has
-started your workspace:
+To create your Dockerfile, as well as the
+[configure script](../../images/configure) that Coder runs automatically once it
+has started your workspace:
 
 Create a folder for the image you're creating:
 
@@ -140,8 +140,18 @@ if ! command -v nvm &> /dev/null
 then
     echo "nvm command not found... attempting to add to your profile via the install script"
 
-    # Create a .profile file if it doesn’t exist
-    touch ~/.profile
+    # Create a .bash_profile file if it doesn't exist
+    if [ ! -f ~/.bash_profile ]; then
+        touch ~/.bash_profile
+        echo "#/bin/sh" > ~/.bash_profile
+        echo "source ~/.bashrc" >> ~/.bash_profile
+    fi
+
+    # Create a .bashrc if it doesn't exist
+    if [ ! -f ~/.bashrc ]; then
+        touch ~/.bashrc
+        echo "#/bin/sh" > ~/.bashrc
+    fi
 
     # run the install script to add to profile
     $NVM_DIR/install.sh
@@ -149,7 +159,6 @@ then
     export NVM_DIR="/usr/bin/nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    exit
 fi
 ```
 
@@ -160,9 +169,9 @@ fi
 ## Step 3: Clone projects automatically
 
 In the `configure` script, you can set `git clone` to run on your behalf
-(assuming that you've [linked your Git
-account](/../../../workspaces/preferences.md#linked-accounts)). We recommend
-using the SSH option.
+(assuming that you've
+[linked your Git account](/../../../workspaces/preferences.md#linked-accounts)).
+We recommend using the SSH option.
 
 In your `configure` script, include:
 
@@ -170,7 +179,7 @@ In your `configure` script, include:
 # configure
 
 # 1. Ensure that you've added GitHub's host key to known_hosts
-if ! ssh-keygen -F github.com > /dev/null; then
+if ! grep github.com ~/.ssh/known_hosts > /dev/null; then
   ssh-keyscan github.com >> ~/.ssh/known_hosts 2> /dev/null
 fi
 
@@ -221,8 +230,7 @@ Some options that you can consider include:
 
 - [Doppler](https://docs.doppler.com/docs/enclave-installation-docker#option-1-dockerfile)
 - [SecretHub.io](https://secrethub.io/docs/reference/cli/install/#linux)
-- [Hashicorp
-  Vault](https://learn.hashicorp.com/tutorials/vault/getting-started-install#install-vault)
+- [Hashicorp Vault](https://learn.hashicorp.com/tutorials/vault/getting-started-install#install-vault)
 
 ## Step 5: Build and push your image
 
