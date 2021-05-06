@@ -251,16 +251,19 @@
           "navigable": false,
           "children": [
             {
-              "path": "./guides/admin/image-tag-names.md"
-            },
-            {
               "path": "./guides/admin/resources.md"
             },
             {
-              "path": "./guides/admin/usage-monitoring.md"
+              "path": "./guides/admin/helm-charts.md"
             },
             {
-              "path": "./guides/admin/helm-charts.md"
+              "path": "./guides/admin/image-tag-names.md"
+            },
+            {
+              "path": "./guides/admin/logging.md"
+            },
+            {
+              "path": "./guides/admin/usage-monitoring.md"
             }
           ]
         },
