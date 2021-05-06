@@ -91,32 +91,32 @@ secret/clouddns-dns01-solver-svc-acct created
    called `letsencrypt.yaml` (you can name it whatever you'd like) that includes
    your newly created private key:
 
-```yaml
-apiVersion: cert-manager.io/v1alpha2
-kind: ClusterIssuer
-metadata:
-  name: letsencrypt
-spec:
-  acme:
-    privateKeySecretRef:
-      name: gclouddnsissuersecret
-    server: https://acme-v02.api.letsencrypt.org/directory
-    solvers:
-      - dns01:
-          clouddns:
-            # The ID of the GCP project
-            project: <project-id>
-            # This is the secret used to access the service account
-            serviceAccountSecretRef:
-              name: clouddns-dns01-solver-svc-acct
-              key: key.json
-```
+    ```yaml
+    apiVersion: cert-manager.io/v1alpha2
+    kind: ClusterIssuer
+    metadata:
+      name: letsencrypt
+    spec:
+      acme:
+        privateKeySecretRef:
+          name: gclouddnsissuersecret
+        server: https://acme-v02.api.letsencrypt.org/directory
+        solvers:
+          - dns01:
+              clouddns:
+                # The ID of the GCP project
+                project: <project-id>
+                # This is the secret used to access the service account
+                serviceAccountSecretRef:
+                  name: clouddns-dns01-solver-svc-acct
+                  key: key.json
+    ```
 
 1. Apply your configuration changes:
 
-```console
-kubectl apply -f ./clusterissuer.yaml
-```
+    ```console
+    kubectl apply -f ./letsencrypt.yaml
+    ```
 
 If successful, you'll see a response similar to:
 
@@ -175,7 +175,7 @@ helm install coder coder/coder --namespace coder \
   --set ingress.tls.devUrlsHostSecretName="coder-devurls-cert" \
   --set ingress.tls.hostSecretName="coder-root-cert" \
   --set \
-  "ingress.additionalAnnotations[0]=cert-manager.io/cluster-issuer:letsencrypt" \
+  ingress.additionalAnnotations[0]="cert-manager.io/cluster-issuer:letsencrypt" \
   --wait
 ```
 
