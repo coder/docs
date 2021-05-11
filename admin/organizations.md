@@ -58,7 +58,6 @@ click **Edit** to launch the **Edit Organizations** dialog.
 
 When you're finished making your changes, click **Update** to save.
 
-
 ## Namespaces
 
 > **Deprecation notice**: The `namespaceWhitelist` field has been deprecated in
