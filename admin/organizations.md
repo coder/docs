@@ -61,11 +61,11 @@ When you're finished making your changes, click **Update** to save.
 ## Namespaces
 
 > **Deprecation notice**: The `namespaceWhitelist` field has been deprecated in
-> [Coder version 1.17](../../changelog/1.17.0.md).
+> [Coder version 1.17](../changelog/1.17.0.md).
 
 Coder's Helm chart previously included a `namespaceWhitelist` field that
 accepted a list of cluster namespaces and made them available to Coder. The
-[workspace provider feature](../workspace-providers/index.md) supersedes this
+[workspace provider feature](workspace-providers/index.md) supersedes this
 field.
 
 You will not be able to make any changes _unless_ you are removing namespaces
@@ -79,7 +79,7 @@ namespaces.
 
 If you want to separate Coder workspaces by namespaces in a Kubernetes cluster,
 you can do so by [deploying a new workspace
-provider](../workspace-providers/deployment.md) to each additional namespace in
+provider](workspace-providers/deployment.md) to each additional namespace in
 the cluster. The workspace provider provisions workspaces to the namespace it
 has been deployed to, and you can control access to each workspace provider via
 an organization allowlist to replace the previous organization namespace
