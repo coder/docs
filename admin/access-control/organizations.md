@@ -1,25 +1,11 @@
 ---
-title: Organizations
-description: Learn how to manage organizations within Coder.
+title: Organization roles
+description: Learn how to manage organization roles.
 ---
 
-Organizations are groups that tie together users, workspaces, and images. You
-must assign all of your images and workspaces to a specific organization. An
-end-user can only access images that are assigned to the same organization they
-are.
-
-## The default organization
-
-When you first set up Coder, you'll generate the default organization. You can
-then assign users and their workspaces to that organization.
-
-There must always be a default organization, but you can change the one set as
-the default once you have two or more organizations.
-
-## Organization roles
-
-Like [User roles](user-roles.md), members of an organization can be assigned
-different roles. There are two roles available:
+Like [User roles](user-roles.md), members of an
+[organization](../organizations.md) can be assigned different roles. There are
+two roles available:
 
 <table>
     <thead>
@@ -309,30 +295,3 @@ organization.
         </tr>
     </tbody>
 </table>
-
-## Namespaces
-
-> **Deprecation notice**: The `namespaceWhitelist` field has been deprecated in
-> [Coder version 1.17](../../changelog/1.17.0.md).
-
-Coder's Helm chart previously included a `namespaceWhitelist` field that
-accepted a list of cluster namespaces and made them available to Coder. The
-[workspace provider feature](../workspace-providers/index.md) supersedes this
-field.
-
-You will not be able to make any changes _unless_ you are removing namespaces
-that no longer contain workspaces with Coder deployments v1.17.0 or later (if
-you remove namespaces from the `namespaceWhitelist` field, the workspaces in the
-namespaces are no longer accessible).
-
-For older Coder deployments, you can continue using existing workspaces in
-whitelisted namespaces, though you cannot create new workspaces in those
-namespaces.
-
-If you want to separate Coder workspaces by namespaces in a Kubernetes cluster,
-you can do so by
-[deploying a new workspace provider](../workspace-providers/deployment.md) to
-each additional namespace in the cluster. The workspace provider provisions
-workspaces to the namespace it has been deployed to, and you can control access
-to each workspace provider via an organization allowlist to replace the previous
-organization namespace behaviors.

@@ -238,6 +238,9 @@
           "path": "./admin/metrics.md"
         },
         {
+          "path": "./admin/organizations.md"
+        },
+        {
           "path": "./admin/telemetry.md"
         },
         {
