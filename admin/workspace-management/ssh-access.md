@@ -59,6 +59,9 @@ X11Forwarding yes
 X11UseLocalhost no
 ```
 
+> X11 forwarding will fail with `X11 forwarding request failed on channel 0` if
+`xauth` is not installed.
+
 ### SSH environment variables
 
 OpenSSH handles environment variables differently than most container processes.
