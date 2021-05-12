@@ -23,15 +23,15 @@ To create a new user:
 Coder will create the new user. If you opted for the **Built-In** auth type,
 Coder will display a temporary password. Provide this password to the user,
 which they can use with their email to access their new account. For increased
-security, the new user will be prompted to change their password immediately
-after they log in.
+security, Coder prompts the new user to change their password immediately after
+they log in.
 
 ## Deleting a user
 
 To delete a user:
 
 1. Go to **Manage** > **Users**. Find the user you want to delete and click the
-   **vertical elipses** associated with that user.
+   **vertical ellipsis** associated with that user.
 1. Click **Delete**.
 1. You'll be prompted to confirm this action. Click **Delete** to proceed.
 

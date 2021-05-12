@@ -3,9 +3,9 @@ title: "Dev URLs"
 description: Learn how to configure dev URL support for a Coder deployment.
 ---
 
-Developer (Dev) URLs allow users to access the ports of services they are
-developing within their workspace. However, before individual developers can set
-up dev URLs, an administrator must configure and enable dev URL usage.
+Developer (Dev) URLs allow users to access the ports of services they develop
+within their workspace. However, before individual developers can set up dev
+URLs, an administrator must configure and enable dev URL usage.
 
 ## Before you proceed
 
@@ -42,8 +42,8 @@ user's workspace:
           servicePort: 8080
 ```
 
-If you are providing your own ingress controller, then you will need to add the
-rule manually.
+If you are providing an ingress controller, then you will need to add the rule
+manually.
 
 ### Step 2: Modify the wildcard DNS record
 

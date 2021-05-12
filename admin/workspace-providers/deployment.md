@@ -52,7 +52,7 @@ We recommend running workspace providers in a separate
 to do so, run:
 
 ```bash
-kubectl create namespace coder
+kubectl create namespace [YOUR_WORKSPACE_PROVIDER_NAMESPACE]
 ```
 
 Next, change the kubectl context to point to your newly created namespace:
@@ -103,6 +103,7 @@ when communicating with the Coder deployment.
 
    ```bash
    helm upgrade coder-workspace-provider coder/workspace-provider \
+      --namespace=[YOUR_WORKSPACE_PROVIDER_NAMESPACE]
       --version=[CODER_VERSION] \
       --atomic \
       --install \
@@ -156,6 +157,7 @@ values changes; you can do this with
 
 ```bash
 helm upgrade coder-workspace-provider coder/workspace-provider \
+    --namespace=[YOUR_WORKSPACE_PROVIDER_NAMESPACE]
     --version=[CODER_VERSION] \
     --atomic \
     --install \
@@ -163,9 +165,9 @@ helm upgrade coder-workspace-provider coder/workspace-provider \
 ```
 
 If you want to update any of the helm chart's values, you can do so by supplying
-a values file (`-f myvalues.yaml`) or using with the `--set` flag. Any existing
-values that were set during installation will persist unless you explicitly
-write over them.
+a values file (`-f myvalues.yaml`) or using the `--set` flag. Any existing
+values that you set during installation will persist unless you explicitly write
+over them.
 
 ## Deleting a workspace provider
 

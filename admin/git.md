@@ -1,8 +1,6 @@
 ---
 title: Git integration
-description:
-  Learn how to integrate with your Git provider to automatically authenticate
-  your workspaces.
+description: Learn how to integrate with a Git provider to authenticate workspaces.
 ---
 
 The Git Integration allows your developers to connect their Coder accounts to
@@ -26,7 +24,7 @@ expect that this combination will work with most hosting software or services.
 However, Coder doesn't test these and cannot provide recommendations or support.
 
 **Note** The public key provided by Coder uses the ECDSA key algorithm. Ensure
-this is supported by your git provider.
+your git provider supports this.
 
 ![Configure Git Integration](../assets/git-admin.png)
 

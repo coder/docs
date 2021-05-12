@@ -11,7 +11,8 @@ You can use the configure script to:
 
 - Run [Coder CLI](https://github.com/cdr/coder-cli) commands
 - Check for and clone a GitHub repo if it isn't present
-- Run scripts using [CODER\_\* workspace variables](../workspaces/variables.md)
+- Run scripts using
+  [CODER\_\* environment variables](../workspaces/variables.md)
 
 Coder will check the image for the presence of a **/coder/configure** file
 during the build process; if Coder finds one, it will execute the instructions
@@ -93,7 +94,8 @@ penultimate step of the build process):
 
 ## Examples
 
-The following are examples instructions you can include in your configure file.
+The following are examples of instructions you can include in your configure
+file.
 
 ### Copying Coder's sample config file
 
@@ -184,7 +186,7 @@ coder urls create $CODER_WORKSPACE_NAME 3000 --name webapp
    }
    ```
 
-1. Update configure to use the settings file:
+1. Update `configure` to use the settings file:
 
    ```sh
    # configure

@@ -19,5 +19,8 @@ updates:
       interval: "daily"
       time: "06:00"
       timezone: "America/Chicago"
+    ignore:
+      - dependency-name: "@types/node"
+        versions: ["15.x", "14.x", "13.x"]
     commit-message:
       prefix: "chore"

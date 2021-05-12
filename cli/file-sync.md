@@ -36,9 +36,10 @@ $ coder sync ~/Projects/cdr/coder-cli my-env:coder-cli
 
 ## Two-way file sync
 
-Alternatively, you can set up two-way file sync, which allows you to use local
-and remote development tools simultaneously. Setting up two-way file sync can
-help ensure your project is in the same state no matter where you make changes.
+Alternatively, you can set up two-way file sync, which allows you to
+simultaneously use local and remote development tools. Setting up two-way file
+sync can help ensure your project is in the same state no matter where you make
+changes.
 
 1. Make sure that you've installed
    [Mutagen](https://mutagen.io/documentation/introduction/installation).

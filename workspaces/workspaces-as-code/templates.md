@@ -11,7 +11,7 @@ Workspace templates are written as YAML and have a `.yaml` or `.yml` extension.
 Coder looks for your workspace template at the following path:
 
 ```text
-<repository-root>/.coder/coder.yaml
+<repository-root>/.coder/<template-name>.yaml
 ```
 
 ![Template Location](../../assets/wac-location.png)
@@ -128,7 +128,7 @@ registry and (optionally) the tag, i.e. `docker.io/ubuntu:18.04`. If you omit
 the tag, Coder uses the default value of `latest`.
 
 You must have [imported the image](../../images/importing.md) into Coder,
-otherwise the workspace will fail to build.
+otherwise, the workspace will fail to build.
 
 #### workspace.specs.kubernetes.labels.value
 
@@ -220,7 +220,7 @@ start:
 
 #### workspace.configure.start.value[*].env
 
-The map of workspace variables to set for the command.
+The map of environment variables to set for the command.
 
 ```yaml
 start:

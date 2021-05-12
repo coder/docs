@@ -62,8 +62,8 @@ You should also:
 ## Step 2: Delegate your domain names and set up DNS01 challenges
 
 Because Coder dynamically generates domains (specifically the dev URLs), your
-certificates need to be approved and challenged. The follow steps will show you
-how to use Route 53 for DNS01 challenges.
+certificates need to be approved and challenged. The following steps will show
+you how to use Route 53 for DNS01 challenges.
 
 1. Log in to AWS Route 53. On the Dashboard, click **Hosted Zone**.
 
@@ -149,7 +149,7 @@ helm install coder coder/coder --namespace coder \
   --wait
 ```
 
-There are also a few additional steps to make sure that your hostname and Dev
+There are also a few additional steps to make sure that your hostname and dev
 URLs work.
 
 1. Check the contents of your namespace:
@@ -170,4 +170,6 @@ URLs work.
 
 At this point, you can return to **step 6** of the
 [installation](../../setup/installation.md) guide to obtain the admin
-credentials you need to log in.
+credentials you need to log in. If you are not getting a valid certificate after
+redeploying, see [cert-manager's troubleshooting
+guide](https://cert-manager.io/docs/faq/acme/) for additional assistance.

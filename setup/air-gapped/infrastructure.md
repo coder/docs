@@ -78,7 +78,7 @@ EOT
 systemctl restart containerd
 ```
 
-Because the steps described in this section must be run on all nodes which will
+Because the steps described in this section must be run on all nodes that will
 be scheduling Coder images, either:
 
 1. Include these steps in the image
@@ -88,7 +88,7 @@ be scheduling Coder images, either:
 ## Adding certificate secrets to the Helm chart
 
 Coder validates images and pulls tags using REST API calls to the registry.
-Other internal services (OIDC, Git providers, etc) that use HTTPS APIs require
+Other internal services (OIDC, Git providers, etc.) that use HTTPS APIs require
 the Coder container to trust the certificate. You can fix this by adding a root
 CA certificate to the Coder service images via the Coder helm chart.
 
@@ -149,7 +149,7 @@ echo "10.0.0.2 $REGISTRY_DOMAIN_NAME" >> /etc/hosts
 > Kubernetes forwards some of its DNS services out of the cluster. If, at a
 > later point, you discover that the hosts file on the node isn't being heeded
 > by pods, you can work around this by extracting the Helm chart from
-> `coder-X.Y.Z.tgz` and patching the ce-manager deployment (this goes at the
+> `coder-X.Y.Z.tgz` and patching the `cemanager` deployment (this goes at the
 > same indentation level as `containers:`):
 >
 > ```yaml

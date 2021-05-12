@@ -217,6 +217,9 @@
           ]
         },
         {
+          "path": "./admin/access-url.md"
+        },
+        {
           "path": "./admin/account-dormancy.md"
         },
         {
@@ -251,16 +254,19 @@
           "navigable": false,
           "children": [
             {
-              "path": "./guides/admin/image-tag-names.md"
-            },
-            {
               "path": "./guides/admin/resources.md"
             },
             {
-              "path": "./guides/admin/usage-monitoring.md"
+              "path": "./guides/admin/helm-charts.md"
             },
             {
-              "path": "./guides/admin/helm-charts.md"
+              "path": "./guides/admin/image-tag-names.md"
+            },
+            {
+              "path": "./guides/admin/logging.md"
+            },
+            {
+              "path": "./guides/admin/usage-monitoring.md"
             }
           ]
         },
@@ -278,6 +284,9 @@
               "path": "./guides/customization/macos-keybinding.md"
             },
             {
+              "path": "./guides/customization/node.md"
+            },
+            {
               "path": "./guides/customization/vnc.md"
             }
           ]
@@ -287,9 +296,6 @@
           "navigable": false,
           "children": [
             {
-              "path": "./guides/deployments/nightly-releases.md"
-            },
-            {
               "path": "./guides/deployments/keycloak.md"
             },
             {
@@ -297,6 +303,9 @@
             },
             {
               "path": "./guides/deployments/teardown.md"
+            },
+            {
+              "path": "./guides/deployments/postgres.md"
             }
           ]
         },

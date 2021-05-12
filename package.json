@@ -1,4 +1,12 @@
 {
+  "name": "coder-docs",
+  "description": "Documentation for Coder",
+  "homepage": "https://coder.com/docs",
+  "bugs": {
+    "url": "https://github.com/cdr/docs/issues",
+    "email": "support@coder.com"
+  },
+  "license": "UNLICENSED",
   "scripts": {
     "prepare": "husky install",
     "format:check": "prettier --check '**/*.{css,html,js,json,jsx,ts,tsx,yaml,yml}'",
@@ -8,7 +16,7 @@
   },
   "devDependencies": {
     "@types/minimist": "^1.2.1",
-    "@types/node": "^12.20.10",
+    "@types/node": "^12.20.12",
     "@types/semver-compare": "^1.0.1",
     "all-contributors-cli": "^6.20.0",
     "husky": "^6.0.0",
@@ -23,6 +31,7 @@
   "engines": {
     "node": "^12.16.0"
   },
+  "private": true,
   "lint-staged": {
     "*.{css,html,js,json,jsx,ts,tsx,yaml,yml}": [
       "prettier --write"

@@ -16,7 +16,7 @@ To begin, create a Dockerfile that you'll use to build an
 [image](../../images/index.md) with a virtual network computing (VNC) provider
 installed.
 
-Be sure to set the `HOME`, `USER`, and `PORT` workspace variables in the
+Be sure to set the `HOME`, `USER`, and `PORT` environment variables in the
 Dockerfile:
 
 ```text
@@ -67,7 +67,7 @@ workspace.
 1. In the Coder UI, go to the **workspace overview** page. Click **New
    Workspace** and choose **Custom Workspace**
 
-1. Provide an **Workspace Name**, and indicate that your **Image Source** is
+1. Provide a **Workspace Name**, and indicate that your **Image Source** is
    **Existing**.
 
 1. Select your **Image** and associated **Tag**.

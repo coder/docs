@@ -13,13 +13,13 @@ Please make sure that you have the following utilities installed on your
 machine:
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-- [AWS command line interface](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- [AWS command-line interface](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
   (you'll also need to
   [configure](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
   the command-line interface to interact with your AWS account; consider AWS'
   [CLI configuration quickstart](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
   to fast-track this process
-- [eksctl command line utility](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
+- [eksctl command-line utility](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
 
 ## Preliminary steps
 
@@ -43,28 +43,36 @@ and configure your AWS account.
 1. You'll automatically download the keypair; save it to a known directory on
    your local machine (we recommend keeping the default name, which will match
    the name you provided to AWS).
-1. Now that you have the `.pem` file locally extract the public key portion of
-   the keypair so that you can use it with the eksctl CLI in later steps:
+1. Now that you have the `.pem` file, extract the public key portion of the
+   keypair so that you can use it with the eksctl CLI in later steps:
 
    ```sh
    ssh-keygen -y -f <PATH/TO/KEY>.pem >> <PATH/TO/KEY/KEY>.pub
    ```
 
-   **Note**: if you run into a bad permissions error, run sudo before the
+   **Note**: if you run into a bad permissions error, run `sudo` before the
    command above.
 
 When done, you should have a .pem and .pub file for the same keypair you
 downloaded from AWS.
 
-## Step 1: Spin up a K8 cluster
+## Step 1: Spin up a K8s cluster
 
-The following will spin up a Kubernetes cluster using the `eksctl`; replace the
-parameters and workspace variables as needed to reflect those for your
-workspace.
+To make subsequent steps easier, start by creating environment variables for the
+cluster name,
+[region](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions),
+and SSH key path:
 
 ```console
-CLUSTER_NAME="YOUR_CLUSTER_NAME" \
-  SSH_KEY_PATH="<PATH/TO/KEY>.pub" REGION="YOUR_REGION" \
+CLUSTER_NAME="YOUR_CLUSTER_NAME"
+SSH_KEY_PATH="<PATH/TO/KEY>.pub"
+REGION="YOUR_REGION"
+```
+
+The following will spin up a Kubernetes cluster using `eksctl`:
+
+```console
+
   eksctl create cluster \
   --name "$CLUSTER_NAME" \
   --version 1.17 \
@@ -79,9 +87,10 @@ CLUSTER_NAME="YOUR_CLUSTER_NAME" \
   --managed
 ```
 
-> Please note that the sample script creates a `t3.medium` instance; depending
-> on your needs, you can choose a
-> [larger size](https://aws.amazon.com/ec2/instance-types/t3/) instead.
+Please note that the sample script creates a `t3.medium` instance; depending on
+your needs, you can choose a
+[larger size](https://aws.amazon.com/ec2/instance-types/t3/) instead. See
+[requirements](../requirements.md) for help estimating your cluster size.
 
 When your cluster is ready, you should see the following message:
 
@@ -91,7 +100,7 @@ EKS cluster "YOUR_CLUSTER_NAME" in "YOUR_REGION" region is ready
 
 This process may take ~15-30 minutes to complete.
 
-## Step 2: Adjust the K8 storage class
+## Step 2: Adjust the K8s storage class
 
 Once you've created the cluster, adjust the default Kubernetes storage class to
 support immediate volume binding.

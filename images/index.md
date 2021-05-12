@@ -22,7 +22,7 @@ description: Learn about reproducibility in Coder.
 ---
 
 Coder creates [workspaces](../workspaces/index.md) using templates called
-images. Images facilitate and encourage reproducibility of development
+images. Images facilitate and encourage the reproducibility of development
 workspaces.
 
 Each image contains the language version, tooling, and dependencies users need

@@ -3,14 +3,14 @@ title: Access control
 description: Learn how to change how Coder users sign in.
 ---
 
-The **Authentication** tab allows you to choose how your users login and gain
+The **Authentication** tab allows you to choose how your users log in and gain
 access to Coder. Currently, you can choose between **Built-In Authentication**
 and **OpenID Connect**.
 
 ## Built-In Authentication
 
 Built-in authentication allows you (or any admin) to manually create users, who
-then log in with their email address and temporary password. They will be asked
+then log in with their email address and temporary password. Coder will ask them
 to change their password after they log in the first time.
 
 ## OpenID Connect

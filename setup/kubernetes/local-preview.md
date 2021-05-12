@@ -10,6 +10,8 @@ set up a lightweight preview deployment, you can do so locally using using
 > Coder currently supports local preview only on workstations running macOS or
 > Linux.
 
+Coder automatically uploads a single-seat license upon installation.
+
 ## Prerequisites
 
 Before proceeding, please make sure that you have the following installed:
@@ -20,6 +22,12 @@ Before proceeding, please make sure that you have the following installed:
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
 ## Limitations
+
+### Resource allocation and performance
+
+Your experience with the local Coder preview is dependent on your system specs,
+but please note that you can expect slightly degraded performance due to the
+deployment running entirely inside a Docker container.
 
 ### CVMs
 
@@ -53,6 +61,10 @@ you can use tools like [ngrok][ngrok-url] to preview webpages from inside an
 workspace.
 
 We are working on bringing Dev URL support to local previews in later releases.
+
+### Air-gapped clusters
+
+The local preview option does not work in an air-gapped deployment.
 
 ## Installing Coder
 

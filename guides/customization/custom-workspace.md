@@ -48,7 +48,7 @@ To demonstrate, we'll create a development image that utilizes
 We have a copy of this image
 [built and pushed](https://hub.docker.com/r/coderenterprise/react) to our Docker
 Hub repository. You can use this and skip to **Step 3: Create the dev
-workspace** if you don't want to build and push your own image.
+workspace** if you don't want to build and push your image.
 
 However, if you want to see how the image is made, please continue with the
 following section.
