@@ -64,7 +64,7 @@ jobs:
           DEPLOY_URL: ${{ steps.preview.outputs.url }}
 
       - name: Comment Credentials
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v2.1.0
         if: always()
         with:
           header: codercom-preview-docs
