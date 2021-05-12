@@ -9,9 +9,10 @@ updates:
     commit-message:
       prefix: "chore"
     ignore:
-      # GitHub always delivers the latest versions for each major
-      # release tag, so handle updates manually
+      # These actions deliver the latest versions by updating the
+      # major release tag, so handle updates manually
       - dependency-name: "actions/*"
+      - dependency-name: "marocchino/sticky-pull-request-comment"
 
   - package-ecosystem: "npm"
     directory: "/"
