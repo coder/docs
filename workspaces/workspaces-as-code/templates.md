@@ -72,9 +72,10 @@ workspace:
           command: "go install"
           directory: /home/coder/go/src/github.com/my-project
           shell: "bash"
+          continue-on-error: true
           env:
             GOPATH: /home/coder/go
-  devURLs:
+  dev-urls:
     policy: write
     value:
       - name: MyWebsite
@@ -217,6 +218,12 @@ start:
     directory: /home/coder
 ```
 
+#### workspace.configure.start.value[*].continue-on-error
+
+Any step that returns a non-zero exit code will "fail". By default, a
+failure prevents the following steps from executing. This boolean field
+alows a step to fail, without stopping the sequence of steps from continuing.
+
 #### workspace.configure.start.value[*].env
 
 The map of environment variables to set for the command.
@@ -229,33 +236,33 @@ start:
       GOPATH: /home/coder/go
 ```
 
-#### workspace.devURLs
+#### workspace.dev-urls
 
 This list allows you to provision [dev URLs](../devurls.md) using the workspaces
 as code configuration file. The dev URLs will be provisioned _in addition to_
 any dev URLs you create.
 
 ```yaml
-devURLs:
+dev-urls:
   - name: PublicPort
     port: 8080
     scheme: https
     access: public
 ```
 
-#### workspace.devURLs.value[*].name
+#### workspace.dev-urls.value[*].name
 
 The name of the dev URL to be created.
 
-#### workspace.devURLs.value[*].port
+#### workspace.dev-urls.value[*].port
 
 The workspace port that the dev URL exposes.
 
-#### workspace.devURLs.value[*].scheme
+#### workspace.dev-urls.value[*].scheme
 
 The URL scheme (protocol) to use (i.e., `http` or `https`).
 
-#### workspace.devURLs.value[*].access
+#### workspace.dev-urls.value[*].access
 
 The permission level of the dev URL:
 
