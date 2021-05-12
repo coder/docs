@@ -51,3 +51,29 @@ The final step to enabling dev URLs is to update your wildcard DNS record. Get
 the **ingress IP address** using `kubectl --namespace coder get ingress` and
 point your wildcard DNS record (e.g., \*.my-custom-domain.io) to the ingress IP
 address.
+
+## Setting dev URL access permissions
+
+Once you've enabled dev URLs for users, you can set the **maximum access
+level**. To do so, go to **Manage** > **Admin**. On the **Infrastructure** tab,
+scroll down to **Dev URL Access Permissions**.
+
+| **Maximum access level** | **Description** |
+| - | - |
+| **Public** | Accessible by anyone (no authentication required) |
+| **Authenticated** | Accessible by any authenticated Coder user |
+| **Organization** | Accessible by anyone in the user's organization |
+| **Private** | Accessible only by the user |
+
+![Setting dev URL permissions](../assets/admin-devurl-permissions.png)
+
+You can set the maximum access level, but developers may choose to restrict
+access further.
+
+For example, if you set the maximum access level as
+**Authenticated**, then any dev URLs created for workspaces in your Coder
+deployment will be accessible to any authenticated Coder user.
+
+The developer, however, can choose to set a stricter permission level (e.g.,
+allowing only those in their organization to use the dev URL). Developers cannot
+choose a more permissive option.
