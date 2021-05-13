@@ -42,7 +42,7 @@ RUN echo "PermitUserWorkspace yes" >> /etc/ssh/sshd_config && \
 ```
 
 Then, make sure that you're creating your workspaces with the
-[CVM option](https://coder.com/docs/workspaces/cvms) enabled.
+[CVM option](../../workspaces/cvms.md) enabled.
 
 > If Coder detects a running TCP server on port 22, it will forward incoming SSH
 > traffic to this server. This means that workspaces should not run a TCP server
