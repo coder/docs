@@ -64,12 +64,17 @@ the block storage requested.
 ## Database
 
 Coder requires the use of a [PostgreSQL](https://www.postgresql.org) database to
-store metadata related to your deployment. By default, Coder will deploy a TimescaleDB
+store metadata related to your deployment.
+
+By default, Coder will deploy a TimescaleDB
 internal to your Kubernetes cluster. This is included for evaluation purposes _only_,
 as it is not backed up. For production deployments, we recommend using a PostgreSQL
 database _external_ to your cluster. You can connect Coder to your external database
 by [modifying the Helm chart](https://coder.com/docs/guides/admin/helm-charts) with
 the appropriate PostgreSQL values.
+
+If providing your own instance, a minimum version of PostgreSQL 11 is required with
+the `contrib` package installed.
 
 ## Network Policies
 
