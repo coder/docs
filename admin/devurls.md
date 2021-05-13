@@ -58,12 +58,28 @@ Once you've enabled dev URLs for users, you can set the **maximum access
 level**. To do so, go to **Manage** > **Admin**. On the **Infrastructure** tab,
 scroll down to **Dev URL Access Permissions**.
 
-| **Maximum access level** | **Description** |
-| - | - |
-| **Public** | Accessible by anyone (no authentication required) |
-| **Authenticated** | Accessible by any authenticated Coder user |
-| **Organization** | Accessible by anyone in the user's organization |
-| **Private** | Accessible only by the user |
+<table>
+  <tr>
+    <th>Maximum access level</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <th>Public</th>
+    <td>Accessible by anyone (no authentication required)</td>
+  </tr>
+  <tr>
+    <th>Authenticated</th>
+    <td>Accessible by any authenticated Coder user</td>
+  </tr>
+  <tr>
+    <th>Organization</th>
+    <td>Accessible by anyone in the user's organization</td>
+  </tr>
+  <tr>
+    <th>Private</th>
+    <td>Accessible only by the user</td>
+  </tr>
+</table>
 
 ![Setting dev URL permissions](../assets/admin-devurl-permissions.png)
 
