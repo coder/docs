@@ -4,6 +4,9 @@ description: "Learn how to write a template for creating workspaces."
 state: beta
 ---
 
+> As of 1.19 only version 0.2 is supported.
+Users must update their templates to version 0.2 to update their workspaces.
+
 Workspaces as code (WAC) allows you to define and create new workspaces using
 **workspace templates**.
 
@@ -26,8 +29,6 @@ available.
 
 For detailed information on the fields available, see the
 [subsequent sections](#workspace-template-fields) of this article. 
-All `policy` fields correspond to a `value` field and can be used 
-by site admins to limit the usages of the `value` field.
 
 ```yaml
 version: 0.2
@@ -38,31 +39,23 @@ workspace:
   specs:
     kubernetes:
       image: 
-        policy: write
         value: index.docker.io/ubuntu:18.04
       container-based-vm:
-        policy: write
         value: true
       cpu:
-        policy: write
         value: 4
       memory:
-        policy: write
         value: 16
       disk:
-        policy: write
         value: 128
       gpu-count:
-        policy: write
         value: 1
       labels:
-        policy: write
         value:
           com.coder.custom.hello: "hello"
           com.coder.custom.world: "world"
   configure:
     start:
-      policy: write
       value:
         - name: "install curl"
           command: |
@@ -76,7 +69,6 @@ workspace:
           env:
             GOPATH: /home/coder/go
   dev-urls:
-    policy: write
     value:
       - name: MyWebsite
         port: 3000
