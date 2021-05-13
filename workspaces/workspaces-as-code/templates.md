@@ -4,8 +4,11 @@ description: "Learn how to write a template for creating workspaces."
 state: beta
 ---
 
-> As of 1.19 only version 0.2 is supported.
-Users must update their templates to version 0.2 to update their workspaces.
+<!-- markdownlint-disable MD044 -->
+
+> As of Coder version *1.19*, only workspace templates version *0.2* is
+supported. To update your workspace, you **must** update your templates to
+version *0.2*.
 
 Workspaces as code (WAC) allows you to define and create new workspaces using
 **workspace templates**.
@@ -28,13 +31,13 @@ available.
 > Note that the fields are **case-sensitive**.
 
 For detailed information on the fields available, see the
-[subsequent sections](#workspace-template-fields) of this article. 
+[subsequent sections](#workspace-template-fields) of this article.
 
 ```yaml
 version: 0.2
 workspace:
-  # Type indicates which provider to use when building the workspace.
-  # It corrosponds to the `kubernetes` section in the `specs` section.
+  # Type indicates the provider to use when building the workspace.
+  # It corresponds to the `kubernetes` section under `specs`.
   type: kubernetes
   specs:
     kubernetes:
@@ -92,7 +95,9 @@ workspace:
 
 ### version
 
-The version number of the config file being used. The current supported version is `0.2`.
+The version number of the config file being used. The currently supported version
+is `0.2`.
+
 ### workspace
 
 **Required**. The section containing all configuration information related to
@@ -108,7 +113,6 @@ only accepted value is `kubernetes`.
 **Required**. This section contains configuration information specific to the
 `workspace.type`.
 
-
 #### workspace.specs.kubernetes
 
 This section contains all the properties related to a `kubernetes` workspace.
@@ -116,7 +120,7 @@ This section contains all the properties related to a `kubernetes` workspace.
 #### workspace.specs.kubernetes.image.value
 
 **Required**. The image to use for the workspace. The image should include the
-registry and (optionally) the tag, i.e. `docker.io/ubuntu:18.04`. If you omit
+registry and (optionally) the tag, e.g., `docker.io/ubuntu:18.04`. If you omit
 the tag, Coder uses the default value of `latest`.
 
 You must have [imported the image](../../images/importing.md) into Coder,
@@ -212,9 +216,10 @@ start:
 
 #### workspace.configure.start.value[*].continue-on-error
 
-Any step that returns a non-zero exit code will "fail". By default, a
-failure prevents the following steps from executing. This boolean field
-alows a step to fail, without stopping the sequence of steps from continuing.
+Any step that returns a non-zero exit code will fail. By default, a
+failure prevents the subsequent steps from executing. If you would like to
+change this behavior, this field (which accepts a Boolean value) will allow a
+step to fail and *not* half subsequent steps.
 
 #### workspace.configure.start.value[*].env
 
