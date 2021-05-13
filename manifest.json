@@ -217,6 +217,9 @@
           ]
         },
         {
+          "path": "./admin/access-url.md"
+        },
+        {
           "path": "./admin/account-dormancy.md"
         },
         {
@@ -251,16 +254,19 @@
           "navigable": false,
           "children": [
             {
-              "path": "./guides/admin/image-tag-names.md"
-            },
-            {
               "path": "./guides/admin/resources.md"
             },
             {
-              "path": "./guides/admin/usage-monitoring.md"
+              "path": "./guides/admin/helm-charts.md"
             },
             {
-              "path": "./guides/admin/helm-charts.md"
+              "path": "./guides/admin/image-tag-names.md"
+            },
+            {
+              "path": "./guides/admin/logging.md"
+            },
+            {
+              "path": "./guides/admin/usage-monitoring.md"
             }
           ]
         },
@@ -289,9 +295,6 @@
           "path": "./guides/deployments/index.md",
           "navigable": false,
           "children": [
-            {
-              "path": "./guides/deployments/nightly-releases.md"
-            },
             {
               "path": "./guides/deployments/keycloak.md"
             },

@@ -10,6 +10,8 @@ set up a lightweight preview deployment, you can do so locally using using
 > Coder currently supports local preview only on workstations running macOS or
 > Linux.
 
+Coder automatically uploads a single-seat license upon installation.
+
 ## Prerequisites
 
 Before proceeding, please make sure that you have the following installed:

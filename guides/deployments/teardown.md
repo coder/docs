@@ -62,7 +62,7 @@ deployed.
 
 ## Google Kubernetes Engine (GKE)
 
-1. Ensure that the workspace variables for `PROJECT_ID` and `CLUSTER_NAME` are
+1. Ensure that the environment variables for `PROJECT_ID` and `CLUSTER_NAME` are
    set to those for the cluster you want to delete:
 
    ```console

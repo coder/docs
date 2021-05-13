@@ -11,7 +11,7 @@ Workspace templates are written as YAML and have a `.yaml` or `.yml` extension.
 Coder looks for your workspace template at the following path:
 
 ```text
-<repository-root>/.coder/coder.yaml
+<repository-root>/.coder/<template-name>.yaml
 ```
 
 ![Template Location](../../assets/wac-location.png)
@@ -28,7 +28,7 @@ For detailed information on the fields available, see the
 [subsequent sections](#workspace-template-fields) of this article
 
 ```yaml
-version: 0.1
+version: 0.2
 workspace:
   type: kubernetes
   spec:
@@ -37,7 +37,7 @@ workspace:
     cpu: 4
     memory: 16
     disk: 128
-    gpuCount: 1
+    gpu-count: 1
     labels:
       com.coder.custom.hello: "hello"
       com.coder.custom.world: "world"
@@ -76,7 +76,7 @@ workspace:
 
 ### version
 
-The version number of the config file being used. The current version is `0.1`.
+The version number of the config file being used. The current version is `0.2`.
 
 ### workspace
 
@@ -115,7 +115,7 @@ workspace:
     com.coder.custom.world: world
 ```
 
-#### workspace.spec.gpucount
+#### workspace.spec.gpu-count
 
 The number of GPUs to allocate to the workspace.
 
@@ -192,7 +192,7 @@ start:
 
 #### workspace.configure.start[*].env
 
-The map of workspace variables to set for the command.
+The map of environment variables to set for the command.
 
 ```yaml
 start:

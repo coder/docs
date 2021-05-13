@@ -7,7 +7,7 @@ To reset a user's password:
 
 1. Go to **Manage** > **Users**.
 1. Find the user whose password you want to reset and click the vertical
-   ellipses to the right.
+   ellipsis to the right.
 1. Click **Reset password**. Coder will display a temporary password that you
    can provide to the user. Click **Reset Password** to proceed with the reset.
 
@@ -36,6 +36,9 @@ kubectl get pods | grep cemanager- | awk '{print $1}' | head -n1
 
 # call the reset-admin-password subcommand
 kubectl exec -it <cemanager pod> -- cemanager reset-admin-password
+
+# alternatively, you can combine the two commands above into one line
+kubectl exec -it $(kubectl get pods | grep cemanager- | awk '{print $1}' | head -n1) -- cemanager reset-admin-password
 ```
 
 Coder will present you with a temporary password for the site admin user; the
