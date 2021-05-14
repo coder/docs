@@ -24,8 +24,7 @@ retains the image, security, and performance properties of typical containers.
 
 To create a workspace capable of securely running system-level applications like
 Docker, make sure that the `Run as Container-based Virtual Machine` box is
-checked when you create a
-new workspace (it should be enabled by default).
+checked when you create a new workspace (it should be enabled by default).
 
 ![Create CVM](../assets/cvm-create.png)
 
