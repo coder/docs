@@ -37,10 +37,14 @@ image, and runs custom configuration on startup. Learn about the
 
 ### Advanced
 
-Coder provides advanced settings that allow you to customize your workspace. By
-default, runs your workspace as a [Container-based virtual machine](cvms.md),
-though you can disable CVMs at this point. You can also specify the resources
-Coder should allocate.
+Coder provides advanced settings that allow you to customize your workspace.
+
+If your Coder deployment has [container-based virtual machines
+enabled](../admin/workspace-management/cvms.md), Coder creates your workspace as
+a [CVMs](cvms.md) by default (you can opt-out of this setting by unchecking the
+**Run as Container-based Virtual Machine** box).
+
+You can also specify the resources Coder should allocate.
 
 > By default, Coder allocates resources (CPU Cores, Memory, and Disk Space)
 > based on the parent image.
