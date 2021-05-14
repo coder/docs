@@ -14,21 +14,21 @@ are.
 
 ## The default organization
 
-When you first set up Coder, you'll generate the default organization. You can
-then assign users and their workspaces to that organization.
+Coder automatically creates a default organization for you during the deployment
+process. You can then assign users and their workspaces to that organization.
 
-There must always be a default organization, but you can change the one set as
-the default once you have two or more organizations.
+If you have multiple organizations, you can set one or more as the default; you
+can also change which organizations are defaults at any time.
 
 ## Create a new organization
 
-Site admins and site managers can create new organizations by going to
-**Manage** > **Organizations** > **New Organization**.
+[Site admins and site managers](access-control/user-roles.md) can create new
+organizations by going to **Manage** > **Organizations** > **New Organization**.
 
 ![Create a new organization dialog](../assets/create-an-org.png)
 
 Provide a **name** and (optionally) a **description** for this organization. If
-you want this to become your **Default organization**, make sure to check the
+you want this to become a **Default organization**, make sure to check the
 box for this.
 
 You can also control how Coder manages resources for workspaces in this
