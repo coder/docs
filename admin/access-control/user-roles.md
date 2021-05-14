@@ -20,7 +20,7 @@ There are four roles available:
         <tr>
             <td><b>Site admin</b></td>
             <td>Grants full access to the system.
-            Note that here can only be one site admin
+            Note that there can only be one site admin
             per system</td>
         </tr>
         <tr>
