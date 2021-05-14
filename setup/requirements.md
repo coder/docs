@@ -55,26 +55,26 @@ launches the Remote IDE in a pop-up window.
 
 ## Storage
 
-Coder requires the use of a [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
-in your Kubernetes cluster to store the code written in user [workspaces](../workspaces/index.md).
-In particular, the block storage type is required for use by the Persistent
-Volume Claim (PVC), which is created at the time of workspace creation to mount
-the block storage requested.
+Coder requires the use of a [persistent
+volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) in your
+Kubernetes cluster to store [workspaces](../workspaces/index.md) data. More
+specifically, the persistent volume claim (PVC) requires the block storage type
+(the PVC is created when you create the workspace to mount the requested block
+storage).
 
 ## Database
 
-Coder requires the use of a [PostgreSQL](https://www.postgresql.org) database to
+Coder requires a [PostgreSQL](https://www.postgresql.org) database to
 store metadata related to your deployment.
 
-By default, Coder will deploy a TimescaleDB
-internal to your Kubernetes cluster. This is included for evaluation purposes _only_,
-as it is not backed up. For production deployments, we recommend using a PostgreSQL
-database _external_ to your cluster. You can connect Coder to your external database
-by [modifying the Helm chart](https://coder.com/docs/guides/admin/helm-charts) with
-the appropriate PostgreSQL values.
+By default, Coder deploys a TimescaleDB internal to your Kubernetes cluster.
+This is included for evaluation purposes _only_, and it is _not_ backed up. For
+production deployments, we recommend using a PostgreSQL database _external_ to
+your cluster. You can connect Coder to your external database by [modifying the
+Helm chart](../guides/admin/helm-charts.md) with information regarding your
+PostgreSQL instance.
 
-If providing your own instance, a minimum version of PostgreSQL 11 is required with
-the `contrib` package installed.
+Coder requires, at minimum, PostgreSQL 11 with the `contrib` package installed.
 
 ## Network Policies
 
