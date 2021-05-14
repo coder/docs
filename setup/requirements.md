@@ -53,6 +53,29 @@ currently require the following versions _or newer_:
 If you're using [Remote IDEs](../workspaces/editors.md), allow pop-ups; Coder
 launches the Remote IDE in a pop-up window.
 
+## Storage
+
+Coder requires the use of a [persistent
+volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) in your
+Kubernetes cluster to store [workspaces](../workspaces/index.md) data. More
+specifically, the persistent volume claim (PVC) requires the block storage type
+(the PVC is created when you create the workspace to mount the requested block
+storage).
+
+## Database
+
+Coder requires a [PostgreSQL](https://www.postgresql.org) database to
+store metadata related to your deployment.
+
+By default, Coder deploys a TimescaleDB internal to your Kubernetes cluster.
+This is included for evaluation purposes _only_, and it is _not_ backed up. For
+production deployments, we recommend using a PostgreSQL database _external_ to
+your cluster. You can connect Coder to your external database by [modifying the
+Helm chart](../guides/admin/helm-charts.md) with information regarding your
+PostgreSQL instance.
+
+Coder requires, at minimum, PostgreSQL 11 with the `contrib` package installed.
+
 ## Network Policies
 
 Coder uses
