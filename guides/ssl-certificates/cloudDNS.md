@@ -136,7 +136,7 @@ metadata:
   name: coder-root
   namespace: # Your Coder deployment namespace
 spec:
-  secretName: # Your Coder base url secret name. Use hyphens in place of spaces.
+  secretName: coder-root-cert # Your Coder base url secret name. Use hyphens in place of spaces.
   duration: 2160h # 90d
   renewBefore: 360h # 15d
   dnsNames:
@@ -172,10 +172,9 @@ helm install coder coder/coder --namespace coder \
   --set devurls.host="*.exampleCo.com" \
   --set ingress.host="coder.exampleCo.com" \
   --set ingress.tls.enable=true \
-  --set ingress.tls.devUrlsHostSecretName="coder-devurls-cert" \
+  --set ingress.tls.devurlsHostSecretName="coder-devurls-cert" \
   --set ingress.tls.hostSecretName="coder-root-cert" \
-  --set \
-  ingress.additionalAnnotations[0]="cert-manager.io/cluster-issuer:letsencrypt" \
+  --set ingress.annotations.cert-manager\.io/cluster-issuer="letsencrypt" \
   --wait
 ```
 
