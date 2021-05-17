@@ -52,3 +52,17 @@ workspace:
 ```console
 rsync -e "coder sh" -a --progress ~/. my-env:~
 ```
+
+## Forwarding dev URLs
+
+To access access your server via SSH port forwarding instead of using dev URLs
+directly:
+
+```console
+ssh -L [localport]:localhost:[remoteport] coder.[workspace]
+```
+
+Where `localport` is the port you want to use on your local machine (e.g.,
+`localhost:3000`) and `remoteport` matches the `port` of your dev URL. See [dev
+URLs](devurls.md) for more information on creating a dev URL for your
+workspace).
