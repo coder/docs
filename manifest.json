@@ -235,6 +235,9 @@
           "path": "./admin/git.md"
         },
         {
+          "path": "./admin/organizations.md"
+        },
+        {
           "path": "./admin/metrics.md"
         },
         {
