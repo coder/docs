@@ -4,6 +4,12 @@ description: "Learn how to write a template for creating workspaces."
 state: beta
 ---
 
+<!-- markdownlint-disable MD044 -->
+
+> As of Coder version *1.19*, only workspace templates version *0.2* is
+supported. To update your workspace, you **must** update your templates to
+version *0.2*.
+
 Workspaces as code (WAC) allows you to define and create new workspaces using
 **workspace templates**.
 
@@ -25,58 +31,72 @@ available.
 > Note that the fields are **case-sensitive**.
 
 For detailed information on the fields available, see the
-[subsequent sections](#workspace-template-fields) of this article
+[subsequent sections](#workspace-template-fields) of this article.
 
 ```yaml
 version: 0.2
 workspace:
+  # Type indicates the provider to use when building the workspace.
+  # It corresponds to the `kubernetes` section under `specs`.
   type: kubernetes
-  spec:
-    image: index.docker.io/ubuntu:18.04
-    container-based-vm: true
-    cpu: 4
-    memory: 16
-    disk: 128
-    gpu-count: 1
-    labels:
-      com.coder.custom.hello: "hello"
-      com.coder.custom.world: "world"
+  specs:
+    kubernetes:
+      image: 
+        value: index.docker.io/ubuntu:18.04
+      container-based-vm:
+        value: true
+      cpu:
+        value: 4
+      memory:
+        value: 16
+      disk:
+        value: 128
+      gpu-count:
+        value: 1
+      labels:
+        value:
+          com.coder.custom.hello: "hello"
+          com.coder.custom.world: "world"
   configure:
     start:
-      - name: "install curl"
-        command: |
-          apt update
-          apt install -y curl
-      - name: "install Go binary"
-        command: "go install"
-        directory: /home/coder/go/src/github.com/my-project
-        shell: "bash"
-        env:
-          GOPATH: /home/coder/go
-  devURLs:
-    - name: MyWebsite
-      port: 3000
-      scheme: http
-      access: private
-    - name: PublicPort
-      port: 8080
-      scheme: https
-      access: public
-    - name: OrgWebsite
-      port: 3001
-      scheme: http
-      access: org
-    - name: AuthedSite
-      port: 8081
-      scheme: https
-      access: authed
+      value:
+        - name: "install curl"
+          command: |
+            apt update
+            apt install -y curl
+        - name: "install Go binary"
+          command: "go install"
+          directory: /home/coder/go/src/github.com/my-project
+          shell: "bash"
+          continue-on-error: true
+          env:
+            GOPATH: /home/coder/go
+  dev-urls:
+    value:
+      - name: MyWebsite
+        port: 3000
+        scheme: http
+        access: private
+      - name: PublicPort
+        port: 8080
+        scheme: https
+        access: public
+      - name: OrgWebsite
+        port: 3001
+        scheme: http
+        access: org
+      - name: AuthedSite
+        port: 8081
+        scheme: https
+        access: authed
 ```
 
 ## Workspace template fields
 
 ### version
 
-The version number of the config file being used. The current version is `0.2`.
+The version number of the config file being used. The currently supported version
+is `0.2`.
 
 ### workspace
 
@@ -88,51 +108,55 @@ the workspace.
 **Required**. Determines the type of workspace to be created. Currently, the
 only accepted value is `kubernetes`.
 
-#### workspace.spec
+#### workspace.specs
 
 **Required**. This section contains configuration information specific to the
 `workspace.type`.
 
-#### workspace.spec.image
+#### workspace.specs.kubernetes
+
+This section contains all the properties related to a `kubernetes` workspace.
+
+#### workspace.specs.kubernetes.image.value
 
 **Required**. The image to use for the workspace. The image should include the
-registry and (optionally) the tag, i.e. `docker.io/ubuntu:18.04`. If you omit
+registry and (optionally) the tag, e.g., `docker.io/ubuntu:18.04`. If you omit
 the tag, Coder uses the default value of `latest`.
 
 You must have [imported the image](../../images/importing.md) into Coder,
 otherwise, the workspace will fail to build.
 
-#### workspace.spec.labels
+#### workspace.specs.kubernetes.labels.value
 
 The
 [Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
 to be added to the workspace pod.
 
 ```yaml
-workspace:
-  labels:
+labels:
+  value:
     com.coder.custom.hello: hello
     com.coder.custom.world: world
 ```
 
-#### workspace.spec.gpu-count
+#### workspace.specs.kubernetes.gpu-count.value
 
 The number of GPUs to allocate to the workspace.
 
-#### workspace.spec.container-based-vm
+#### workspace.specs.kubernetes.container-based-vm.value
 
 Determines whether the workspace should be created as a
 [container-based virtual machine (CVM)](../cvms.md). Default is `false`.
 
-#### workspace.spec.cpu
+#### workspace.specs.kubernetes.cpu.value
 
 **Required**. The number of cores to allocate to the workspace.
 
-#### workspace.spec.memory
+#### workspace.specs.kubernetes.memory.value
 
 **Required**. The amount of memory (in GB) to allocate to the workspace.
 
-#### workspace.spec.disk
+#### workspace.specs.kubernetes.disk.value
 
 **Required**. The amount of disk space (in GB) to allocate to the workspace.
 
@@ -141,11 +165,11 @@ Determines whether the workspace should be created as a
 This section lists the commands that run within the workspace after Coder builds
 the workspace. See [Configure](../../images/configure.md) for more information.
 
-#### workspace.configure.start
+#### workspace.configure.start.value
 
 The list of commands to run when Coder _starts_ a workspace.
 
-#### workspace.configure.start[*].command
+#### workspace.configure.start.value[*].command
 
 **Required**. Runs the provided command within the workspace (Coder supports the
 use of both single-line and multi-line commands).
@@ -166,11 +190,11 @@ use of both single-line and multi-line commands).
       apt install -y curl
   ```
 
-#### workspace.configure.start[*].name
+#### workspace.configure.start.value[*].name
 
 The name of the command being run.
 
-#### workspace.configure.start[*].shell
+#### workspace.configure.start.value[*].shell
 
 The shell Coder should use to run the command.
 
@@ -180,7 +204,7 @@ start:
     shell: /bin/bash
 ```
 
-#### workspace.configure.start[*].directory
+#### workspace.configure.start.value[*].directory
 
 The working directory from which Coder should run the command.
 
@@ -190,7 +214,14 @@ start:
     directory: /home/coder
 ```
 
-#### workspace.configure.start[*].env
+#### workspace.configure.start.value[*].continue-on-error
+
+Any step that returns a non-zero exit code will fail. By default, a
+failure prevents the subsequent steps from executing. If you would like to
+change this behavior, this field (which accepts a Boolean value) will allow a
+step to fail and *not* half subsequent steps.
+
+#### workspace.configure.start.value[*].env
 
 The map of environment variables to set for the command.
 
@@ -202,33 +233,33 @@ start:
       GOPATH: /home/coder/go
 ```
 
-#### workspace.devURLs
+#### workspace.dev-urls
 
 This list allows you to provision [dev URLs](../devurls.md) using the workspaces
 as code configuration file. The dev URLs will be provisioned _in addition to_
 any dev URLs you create.
 
 ```yaml
-devURLs:
+dev-urls:
   - name: PublicPort
     port: 8080
     scheme: https
     access: public
 ```
 
-#### workspace.devURLs[*].name
+#### workspace.dev-urls.value[*].name
 
 The name of the dev URL to be created.
 
-#### workspace.devURLs[*].port
+#### workspace.dev-urls.value[*].port
 
 The workspace port that the dev URL exposes.
 
-#### workspace.devURLs[*].scheme
+#### workspace.dev-urls.value[*].scheme
 
 The URL scheme (protocol) to use (i.e., `http` or `https`).
 
-#### workspace.devURLs[*].access
+#### workspace.dev-urls.value[*].access
 
 The permission level of the dev URL:
 
