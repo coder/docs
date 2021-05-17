@@ -73,5 +73,4 @@ your dev URL list on the dashboard and sets the access level **Private**.
 
 ## Access via SSH port forwarding
 
-You can also access your server via [SSH port
-forwarding](ssh.md#forwarding-dev-urls) instead of dev URLs.
+You can also access your server via [SSH port forwarding](ssh.md#forwarding-dev-urls).
