@@ -62,6 +62,12 @@ specifically, the persistent volume claim (PVC) requires the block storage type
 (the PVC is created when you create the workspace to mount the requested block
 storage).
 
+Additionally, you must enable [dynamic volume
+provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/#enabling-dynamic-provisioning)
+so that Coder can mount the PVC to the workspace (if you're using a custom
+`StorageClass`, be sure that it supports DVP. Otherwise, Coder cannot provision
+workspaces.
+
 ## Database
 
 Coder requires a [PostgreSQL](https://www.postgresql.org) database to
