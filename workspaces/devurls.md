@@ -69,7 +69,7 @@ If, however, you named the dev URL `reactproject`, then your URL is
 `reactproject-user.acme.com`.
 
 If you access a dev URL that hasn't been created, Coder automatically adds it to
-your dev URL list on the dashboard and sets the access level **Private**.
+your dev URL list on the dashboard and sets the access level to **Private**.
 
 ## Access via SSH port forwarding
 
