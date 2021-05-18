@@ -35,7 +35,7 @@ or cluster.
    Kubernetes Secret containing the password:
 
    ```console
-   kubectl create secret generic <NAME> --from-file=test=/dev/stdin
+   kubectl create secret generic <NAME> --from-file=password=/dev/stdin
    ```
 
    We recommend using the syntax provided above, which reads credentials from
