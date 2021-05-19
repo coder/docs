@@ -68,6 +68,9 @@ If you didn't name your dev URL, then your URL is
 If, however, you named the dev URL `reactproject`, then your URL is
 `reactproject-user.acme.com`.
 
-> If you directly access a dev URL that hasn't been created, Coder automatically
-> adds it to your dev URL list on the dashboard with an access level of
-> **Private**.
+If you access a dev URL that hasn't been created, Coder automatically adds it to
+your dev URL list on the dashboard and sets the access level to **Private**.
+
+## Access via SSH port forwarding
+
+You can also access your server via [SSH port forwarding](ssh.md#forwarding-dev-urls).
