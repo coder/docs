@@ -65,7 +65,8 @@ scroll down to **Dev URL Access Permissions**.
   </tr>
   <tr>
     <th>Public</th>
-    <td>Accessible by anyone (no authentication required) with access to the network your cluster is on</td>
+    <td>Accessible by anyone with access to the
+    network your cluster is on</td>
   </tr>
   <tr>
     <th>Authenticated</th>
