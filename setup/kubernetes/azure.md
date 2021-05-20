@@ -100,7 +100,7 @@ Azure returns a JSON object with your cluster information.
 After deploying your AKS cluster, configure kubectl to point to your cluster:
 
 ```console
-az aks get-credentials --name "$CLUSTER_NAME" --resource-group $RESOURCE_GROUP"
+az aks get-credentials --name "$CLUSTER_NAME" --resource-group "$RESOURCE_GROUP"
 ```
 
 You should get a message similar to the following if this is successful:
