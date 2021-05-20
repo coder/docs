@@ -36,7 +36,7 @@ For detailed information on the fields available, see the
 ```yaml
 version: 0.2
 workspace:
-  # Type indicates the provider to use when building the workspace.
+  # Type indicates the provider type to use when building the workspace.
   # It corresponds to the `kubernetes` section under `specs`.
   type: kubernetes
   specs:
@@ -64,13 +64,23 @@ workspace:
           command: |
             apt update
             apt install -y curl
+        # Be careful keyscans like this!
+        - name: "Create organization directory"
+          command: "mkdir -p /home/coder/go/src/github.com/my-org"
+        - name: "Add github to known hosts"
+          command: "sudo ssh-keyscan -H github.com >> /home/coder/.ssh/known_hosts"
+        - name: "Clone Git Project"
+          command: "git clone git@github.com:my-org/my-project.git"
+          continue-on-error: true
+          directory: /home/coder/go/src/github.com/my-org
         - name: "install Go binary"
           command: "go install"
-          directory: /home/coder/go/src/github.com/my-project
+          directory: /home/coder/go/src/github.com/my-org/my-project
           shell: "bash"
           continue-on-error: true
           env:
             GOPATH: /home/coder/go
+            
   dev-urls:
     value:
       - name: MyWebsite
