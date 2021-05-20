@@ -53,13 +53,13 @@ kubectl config set-context --current --namespace=coder
 
 1. Add the Coder Helm repo, as referenced above in Step 1
 
-2. Pull the tar file, which will write to `./coder-<version>.tgz`
+1. Pull the tar file, which will write to `./coder-<version>.tgz`
 
    ```console
    helm pull coder/coder
    ```
 
-3. Install Coder from the archive
+1. Install Coder from the archive
 
    ```console
    helm install coder coder-<version>.tgz \
