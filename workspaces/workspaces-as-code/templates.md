@@ -64,10 +64,10 @@ workspace:
           command: |
             apt update
             apt install -y curl
-        # Be careful keyscans like this!
         - name: "Create organization directory"
           command: "mkdir -p /home/coder/go/src/github.com/my-org"
-        - name: "Add github to known hosts"
+          # Be careful with keyscans like this!
+        - name: "Add Github to known hosts"
           command: "sudo ssh-keyscan -H github.com >> /home/coder/.ssh/known_hosts"
         - name: "Clone Git Project"
           command: "git clone git@github.com:my-org/my-project.git"
