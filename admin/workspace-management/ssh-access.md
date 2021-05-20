@@ -42,7 +42,7 @@ RUN echo "PermitUserWorkspace yes" >> /etc/ssh/sshd_config && \
 ```
 
 Then, make sure that you're creating your workspaces with the
-[CVM option](https://coder.com/docs/workspaces/cvms) enabled.
+[CVM option](../../workspaces/cvms.md) enabled.
 
 > If Coder detects a running TCP server on port 22, it will forward incoming SSH
 > traffic to this server. This means that workspaces should not run a TCP server
@@ -87,7 +87,7 @@ HOSTNAME=dev
 CODER_USERNAME=john
 SSH_AUTH_SOCK=/home/coder/.coder-ssh-agent.sock
 PWD=/home/coder
-CODER_ASSETS_ROOT=/opt/coder
+CODER_ASSETS_ROOT=/var/tmp/coder
 HOME=/home/coder
 LANG=en_US.UTF-8
 CODER_CPU_LIMIT=24.00
@@ -98,9 +98,9 @@ CODER_IMAGE_TAG=latest
 CODER_IMAGE_DIGEST=sha256:1586122346e7d9d64a0c49a28df7538de4c5da5bfe0df672b1552dd52932c9a7
 SERVICE_URL=https://extensions.coder.com/api
 CODER_IMAGE_URI=codercom/enterprise-base:ubuntu
-PATH=/usr/local/google-cloud-sdk/bin:/home/coder/go/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/coder/coder-cli
+PATH=/usr/local/google-cloud-sdk/bin:/home/coder/go/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/tmp/coder/coder-cli
 BASE_PATH=/proxy/workspaces/60162f9e-78809dfc9a9e24b8f5e580ff/ide
-_=/opt/coder/envagent
+_=/var/tmp/coder/envagent
 
 # ----------------- END CODER -----------------------
 ```

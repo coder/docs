@@ -350,6 +350,9 @@
       "path": "./changelog/index.md",
       "children": [
         {
+          "path": "./changelog/1.19.0.md"
+        },
+        {
           "path": "./changelog/1.18.1.md"
         },
         {

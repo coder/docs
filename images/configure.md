@@ -200,6 +200,6 @@ coder urls create $CODER_WORKSPACE_NAME 3000 --name webapp
        cp settings.json /home/coder/.local/share/code-server/User/settings.json
 
        # Install extensions
-       /opt/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
+       /var/tmp/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
    fi
    ```

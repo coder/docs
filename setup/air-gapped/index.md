@@ -78,8 +78,6 @@ platform images are hosted in Coder's Docker Hub repo.
 
    [envbox](https://hub.docker.com/r/coderenvs/envbox)
 
-   [envbuilder](https://hub.docker.com/r/coderenvs/envbuilder)
-
    [timescale](https://hub.docker.com/r/coderenvs/timescale) (**Note**: We
    recommend you only use timescale for evaluation purposes if you don't have an
    external PostgreSQL database available. For production workspaces, we strong
@@ -148,7 +146,6 @@ platform images are hosted in Coder's Docker Hub repo.
    helm --namespace coder install coder /path/to/coder-X.Y.Z.tgz \
    --set cemanager.image=my-registry.com/coderenvs/coder-service:<version> \
    --set envproxy.image=my-registry.com/coderenvs/coder-service:<version> \
-   --set envbuilder.image=my-registry.com/coderenvs/envbuilder:<version> \
    --set timescale.image=my-registry.com/coderenvs/timescale:<version> \
    --set dashboard.image=my-registry.com/coderenvs/dashboard:<version> \
    --set envbox.image=my-registry.com/coderenvs/envbox:<version>
@@ -162,7 +159,6 @@ platform images are hosted in Coder's Docker Hub repo.
       --set cemanager.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
       --set envproxy.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
       --set envbox.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbox:<version> \
-      --set envbuilder.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbuilder:<version> \
       --set timescale.image=$REGISTRY_DOMAIN_NAME/coderenvs/timescale:<version> \
       --set dashboard.image=$REGISTRY_DOMAIN_NAME/coderenvs/dashboard:<version> \
       -f registry-cert-values.yml
