@@ -22,7 +22,7 @@ To do so:
 
 1. Launch the Coder dashboard.
 1. Go to **Manage** > **Admin**.
-1. On the **Infrastructure** tab, uncheck the Import Default Registry option.
-1. Click **Save Registry**.
+1. On the **Infrastructure** tab, uncheck the **Import Default Registry** option.
+3. Click **Save Registry**.
 
 ![Import default registry](../../assets/import-default-registry.png)
