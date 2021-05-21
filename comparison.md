@@ -64,6 +64,6 @@ development operations and cloud resources.
 
 > To get a free trial of Coder, please visit
 > [https://coder.com/trial](https://coder.com/trial).
-> 
-> Note: Coder cannot be deployed to an air-gapped
-> network during the free trial period.
+>
+> Note: Coder cannot be deployed to an air-gapped network during the free trial
+> period.
