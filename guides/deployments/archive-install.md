@@ -14,13 +14,13 @@ guide as written:
    helm repo add coder https://helm.coder.com
    ```
 
-2. Pull the `tar` file, which will be written to `./coder-<version>.tgz`:
+1. Pull the `tar` file, which will be written to `./coder-<version>.tgz`:
 
    ```console
    helm pull coder/coder
    ```
 
-3. Install Coder from the archive:
+1. Install Coder from the archive:
 
    ```console
    helm install coder coder-<version>.tgz \
