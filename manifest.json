@@ -299,16 +299,19 @@
           "navigable": false,
           "children": [
             {
-              "path": "./guides/deployments/keycloak.md"
+              "path": "./guides/deployments/archive-install.md"
             },
             {
               "path": "./guides/deployments/code-server.md"
             },
             {
-              "path": "./guides/deployments/teardown.md"
+              "path": "./guides/deployments/postgres.md"
             },
             {
-              "path": "./guides/deployments/postgres.md"
+              "path": "./guides/deployments/keycloak.md"
+            },
+            {
+              "path": "./guides/deployments/teardown.md"
             }
           ]
         },

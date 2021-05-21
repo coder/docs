@@ -49,24 +49,6 @@ kubectl config set-context --current --namespace=coder
    helm install coder coder/coder --namespace coder
    ```
 
-## Installing Coder into an archive
-
-1. Add the Coder Helm repo, as referenced above in Step 1
-
-1. Pull the tar file, which will write to `./coder-<version>.tgz`
-
-   ```console
-   helm pull coder/coder
-   ```
-
-1. Install Coder from the archive
-
-   ```console
-   helm install coder coder-<version>.tgz \
-      --namespace=coder
-      --values=<my-values.yaml>
-   ```
-
    **Steps 3-5 are optional for non-production deployments.**
 
 1. Get a copy of your Helm chart so that you can modify it; you'll need to
