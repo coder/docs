@@ -9,18 +9,18 @@ database.
 ## Background
 
 For convenience and ease of installation, Coder's default Helm Chart settings
-will  [PostgreSQL database](https://www.postgresql.org/) within the
+will deploy a [PostgreSQL database](https://www.postgresql.org/) within the
 installation's Kubernetes namespace. This is useful for evaluation purposes;
 however, we **recommend using an out-of-cluster database for production**, to
 streamline maintenance operations, such as backups and upgrades. The database
-container is not backed up and will be lost when deleting the namespace or
-Kubernetes cluster.
+state is not backed up and will be lost when deleting the Kubernetes namespace
+or cluster.
 
 > For optimal performance, it is important to ensure that the round-trip latency
 > between the Coder control plane services and the database is low. We recommend
-> ensuring that the database is within the same datacenter as the control plane,
-> such as within the same cloud availability zone. If the latency exceeds 10ms
-> under load, users may observe significantly degraded experience.
+> ensuring that the database is within the same data center as the control
+> plane, such as within the same cloud availability zone. If the latency exceeds
+> 10ms under load, users may observe significantly degraded experience.
 
 1. Set up a PostgreSQL database for use with Coder. If you do not already have
    an instance available, consider using the service from your cloud provider:
