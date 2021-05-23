@@ -8,13 +8,18 @@ database.
 
 ## Background
 
-By default, Coder deploys a [TimescaleDB](https://www.timescale.com) inside the
-Kubernetes cluster to which you've installed Coder. However, we recommend this
-**only for evaluation purposes**, since the database isn't backed up and can be
-lost if the cluster goes down.
+For convenience and ease of installation, Coder's default Helm Chart settings
+will  [PostgreSQL database](https://www.postgresql.org/) within the
+installation's Kubernetes namespace. This is useful for evaluation purposes;
+however, we **recommend using an out-of-cluster database for production**, to
+streamline maintenance operations, such as backups and upgrades. The database
+container is not backed up and will be lost when deleting the namespace or
+Kubernetes cluster.
 
-As such, we strongly recommend using a PostgreSQL database for production
-deployments and hosting it **outside** the Kubernetes cluster hosting Coder.
+> For optimal performance, it is important to ensure that the round-trip latency
+> between the Coder control plane services and the database is low. We recommend
+> ensuring that the database is within the same datacenter as the control plane,
+> such as within the same cloud availability zone.
 
 1. Set up a PostgreSQL instance (if you don't already have one that you can use
    with Coder). How you can do this depends on your cloud provider, but the
@@ -88,14 +93,14 @@ Helm chart.
 To install Coder:
 
 ```console
-helm install coder coder/coder -n <your-coder-namespace> --version=<VERSION> -f current-values.yml
+helm install coder coder/coder --namespace=<your-coder-namespace> --version=<VERSION> --values=current-values.yml
 ```
 
 To upgrade Coder:
 
 ```console
-helm upgrade coder coder/coder -n <your-coder-namespace> --version=<VERSION> -f current-values.yml
+helm upgrade coder coder/coder --namespace=<your-coder-namespace> --version=<VERSION> --values=current-values.yml
 ```
 
-If this process is successful, you'll be able to access Coder using the external
-IP address of the ingress controller in your cluster.
+Once you complete this process, you'll be able to access Coder using the
+external IP address of the ingress controller in your cluster.
