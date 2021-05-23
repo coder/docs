@@ -3,12 +3,13 @@ title: "SSH access"
 description: Learn how to configure SSH access to your workspaces.
 ---
 
-Before using, configuring, and accessing your workspace via SSH:
+Before accessing your workspace via SSH:
 
-- Your site manager must _not_ have
-  [disabled access](../admin/workspace-management/ssh-access.md) via SSH
-- You must have the [Coder CLI](../cli/index.md) installed on your local machine
-  before proceeding.
+- Your site manager must [enable access to workspaces using SSH]
+- You must install the [Coder CLI] on your local machine
+
+[enable access to workspaces using SSH]: ../admin/workspace-management/ssh-access.md
+[Coder CLI]: ../cli/index.md
 
 ## Configuration
 
@@ -45,12 +46,12 @@ SFTP, run `sftp coder.<workspace_name>`.
 
 You can use `rsync` to transfer files to and from Coder.
 
-To do so, use the flag `-e "coder sh"` in your `rsync` transfer invokation. For
+To do so, use the flag `-e "coder ssh"` in your `rsync` transfer invokation. For
 example, the following shows how you can transfer your home directory to your
 workspace:
 
 ```console
-rsync -e "coder sh" -a --progress ~/. my-env:~
+rsync -e "coder ssh" -a --progress ~/. my-env:~
 ```
 
 ## Forwarding dev URLs
