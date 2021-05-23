@@ -9,7 +9,7 @@ the `coder ssh` command.
 ## Usage
 
 ```console
-$ coder ssh <workspace name> [<command [args...]>]
+coder ssh <workspace name> [<command [args...]>]
 ```
 
 This executes a remote command on the workspace; if no command is specified, the
