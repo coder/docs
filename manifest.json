@@ -102,7 +102,7 @@
           "path": "./cli/file-sync.md"
         },
         {
-          "path": "./cli/managing-envs.md"
+          "path": "./cli/managing-workspaces.md"
         }
       ]
     },
