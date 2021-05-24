@@ -11,9 +11,9 @@ database.
 For convenience and ease of installation, Coder's default Helm Chart settings
 will deploy a [PostgreSQL database](https://www.postgresql.org/) within the
 installation's Kubernetes namespace. This is useful for evaluation purposes;
-however, we **recommend using an out-of-cluster database for production**, to
+however, we **recommend using an out-of-cluster database for production** to
 streamline maintenance operations, such as backups and upgrades. The database
-state is not backed up and will be lost when deleting the Kubernetes namespace
+state is *not* backed up and will be lost when deleting the Kubernetes namespace
 or cluster.
 
 > For optimal performance, it is important to ensure that the round-trip latency
@@ -39,8 +39,9 @@ or cluster.
    kubectl create secret generic <NAME> --from-file=test=/dev/stdin
    ```
 
-   We recommend using this syntax, which reads credentials from the console, in
-   order to avoid inadvertently storing credentials in shell history files.
+   We recommend using the syntax provided above, which reads credentials from
+   the console, to avoid inadvertently storing credentials in shell history
+   files.
 
 1. Get the port number for your PostgreSQL instance:
 
@@ -63,7 +64,7 @@ or cluster.
    SELECT current_database();
    ```
 
-1. Get the name of the secret you created for your PostgreSQL instance's
+5. Get the name of the secret you created for your PostgreSQL instance's
    password:
 
    ```console
