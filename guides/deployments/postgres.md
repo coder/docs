@@ -64,7 +64,7 @@ or cluster.
    SELECT current_database();
    ```
 
-5. Get the name of the secret you created for your PostgreSQL instance's
+1. Get the name of the secret you created for your PostgreSQL instance's
    password:
 
    ```console
