@@ -19,8 +19,7 @@ or cluster.
 > For optimal performance, it is important to ensure that the round-trip latency
 > between the Coder control plane services and the database is low. We recommend
 > ensuring that the database is within the same data center as the control
-> plane, such as within the same cloud availability zone. If the latency exceeds
-> 10ms under load, users may observe significantly degraded experience.
+> plane, such as within the same cloud availability zone.
 
 1. Set up a PostgreSQL database for use with Coder. If you do not already have
    an instance available, consider using the service from your cloud provider:
