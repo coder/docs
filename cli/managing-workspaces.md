@@ -5,8 +5,8 @@ description: See example usages of the CLI for personal workspace management.
 
 ## List all of your workspaces
 
-```plaintext
-coder envs ls
+```console
+$ coder workspaces ls
 Name    ImageTag    CPUCores    MemoryGB    DiskGB    GPUs    Updating    Status
 cdev    latest      8           12          96        0       false       ON
 site    ubuntu      1           1           10        0       false       ON
@@ -16,9 +16,9 @@ denv    latest      8           16          80        0       false       OFF
 
 ## Rebuild a workspace
 
-```plaintext
-coder envs rebuild my-env --follow
-Rebuild workspace "my-env"? (will destroy any work outside of /home): y█
+```console
+$ coder workspaces rebuild my-workspace --follow
+Rebuild workspace "my-workspace"? (will destroy any work outside of /home): y█
 ✅ -- 2020-12-20T02:43:44Z Deleting old workspace
 ✅ -- 2020-12-20T02:43:44Z Deleting old network isolation policy
 ✅ -- 2020-12-20T02:43:44Z Deleting old service
@@ -27,8 +27,8 @@ Rebuild workspace "my-env"? (will destroy any work outside of /home): y█
 
 ## Stop all of your workspaces
 
-```plaintext
-coder envs ls -o json | jq -r .[].name | xargs coder envs stop
+```console
+$ coder workspaces ls -o json | jq -r .[].name | xargs coder workspaces stop
 success: successfully stopped workspace "site"
 ...
 ```
