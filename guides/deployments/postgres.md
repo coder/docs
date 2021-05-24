@@ -73,7 +73,7 @@ or cluster.
 
 Set the database name, port number, user, and password secret created in the
 prior steps [in your Helm values file](../admin/helm-charts.md). Coder will use
-these credentials to authenticate with your PostgreSQL instance:
+these credentials to connect to your PostgreSQL instance:
 
 ```yaml
 postgres:
