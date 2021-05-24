@@ -1,8 +1,10 @@
 name: Preview
+
 on:
   pull_request:
     branches:
-      - master
+      - main
+
 jobs:
   preview:
     name: Preview
