@@ -36,7 +36,7 @@ RUN systemctl enable ssh
 RUN rm /etc/workspace
 
 # recommended: adjust OpenSSH config
-RUN echo "PermitUserWorkspace yes" >> /etc/ssh/sshd_config && \
+RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
   echo "X11Forwarding yes" >> /etc/ssh/sshd_config && \
   echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
 ```
