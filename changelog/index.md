@@ -16,7 +16,7 @@ icon:
   (Coder may create multiple release candidates prior to the actual release)
 
 > We do not provide documentation for release candidates, and they should not be
-> used unless asked to do so by Coder.
+> used unless you've been asked to use it by Coder.
 
 - Releases are available the **third Wednesday** of each month
 - _Patch_ releases become available as needed
