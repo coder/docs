@@ -8,36 +8,39 @@ database.
 
 ## Background
 
-By default, Coder deploys a [TimescaleDB](https://www.timescale.com) inside the
-Kubernetes cluster to which you've installed Coder. However, we recommend this
-**only for evaluation purposes**, since the database isn't backed up and can be
-lost if the cluster goes down.
+For convenience and ease of installation, Coder's default Helm Chart settings
+will deploy a [PostgreSQL database](https://www.postgresql.org/) within the
+installation's Kubernetes namespace. This is useful for evaluation purposes;
+however, we **recommend using an out-of-cluster database for production** to
+streamline maintenance operations, such as backups and upgrades. The database
+state is *not* backed up and will be lost when deleting the Kubernetes namespace
+or cluster.
 
-As such, we strongly recommend using a PostgreSQL database for production
-deployments and hosting it **outside** the Kubernetes cluster hosting Coder.
+> For optimal performance, it is important to ensure that the round-trip latency
+> between the Coder control plane services and the database is low. We recommend
+> ensuring that the database is within the same data center as the control
+> plane, such as within the same cloud availability zone.
 
-1. Set up a PostgreSQL instance (if you don't already have one that you can use
-   with Coder). How you can do this depends on your cloud provider, but the
-   following resources are good starting points:
+1. Set up a PostgreSQL database for use with Coder. If you do not already have
+   an instance available, consider using the service from your cloud provider:
 
-   - [Amazon Relational Database Service (RDS) backup & restore using AWS
-     Backup](https://aws.amazon.com/getting-started/hands-on/amazon-rds-backup-restore-using-aws-backup)
-   - [Quickstart: Create an Azure Database for PostgreSQL server by using the
-     Azure
-     portal](https://docs.microsoft.com/en-us/azure/postgresql/quickstart-create-server-database-portal)
-   - [Deploying highly available PostgreSQL with
-     GKE](https://cloud.google.com/architecture/deploying-highly-available-postgresql-with-gke)
+   - [Amazon Relational Database Service (RDS)](https://aws.amazon.com/rds/)
+   - [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/)
+   - [Google Cloud SQL](https://cloud.google.com/sql)
 
-1. Configure a private IP address for use with your PostgreSQL instance (you'll
-   need to refer to this IP address in your [Helm
-   chart](../admin/helm-charts.md)).
+1. Configure a private IP address for use with your PostgreSQL instance. You
+   will set this in the [Helm settings (values file)](../admin/helm-charts.md)).
 
-1. If your PostgreSQL instance requires a password, open the terminal, connect
-   to your cluster, and create a secret for the password:
+1. If your PostgreSQL instance requires a password, you will need to create a
+   Kubernetes Secret containing the password:
 
    ```console
    kubectl create secret generic <NAME> --from-file=test=/dev/stdin
    ```
+
+   We recommend using the syntax provided above, which reads credentials from
+   the console, to avoid inadvertently storing credentials in shell history
+   files.
 
 1. Get the port number for your PostgreSQL instance:
 
@@ -49,7 +52,7 @@ deployments and hosting it **outside** the Kubernetes cluster hosting Coder.
 
 1. Get the user of the PostgreSQL instance:
 
-   ```sql
+   ```plaintext
    \du
    ```
 
@@ -64,13 +67,12 @@ deployments and hosting it **outside** the Kubernetes cluster hosting Coder.
    password:
 
    ```console
-   kubectl get secrets -n <your-coder-namespace>
+   kubectl get secrets --namespace=<your-coder-namespace>
    ```
 
-At this point, you can [modify your Helm chart](../admin/helm-charts.md) to
-include the database name, port number, user, and password secret that you
-identified in the previous steps (these values are required to connect to your
-PostgreSQL instance):
+Set the database name, port number, user, and password secret created in the
+prior steps [in your Helm values file](../admin/helm-charts.md). Coder will use
+these credentials to connect to your PostgreSQL instance:
 
 ```yaml
 postgres:
@@ -85,17 +87,22 @@ postgres:
 At this point, you can install/upgrade your Coder instance using the updated
 Helm chart.
 
-To install Coder:
+To install Coder for the first time:
 
 ```console
-helm install coder coder/coder -n <your-coder-namespace> --version=<VERSION> -f current-values.yml
+helm install coder coder/coder --namespace=<your-coder-namespace> \
+  --version=<VERSION> --values=current-values.yml --wait
 ```
 
 To upgrade Coder:
 
 ```console
-helm upgrade coder coder/coder -n <your-coder-namespace> --version=<VERSION> -f current-values.yml
+helm upgrade coder coder/coder --namespace=<your-coder-namespace> \
+  --version=<VERSION> --values=current-values.yml --wait
 ```
 
-If this process is successful, you'll be able to access Coder using the external
-IP address of the ingress controller in your cluster.
+If the upgrade fails for any reason, please run the `helm rollback` command and
+[contact our support team](../../feedback.md) for assistance.
+
+Once you complete this process, you'll be able to access Coder using the
+external IP address of the ingress controller in your cluster.
