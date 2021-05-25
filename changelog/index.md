@@ -14,6 +14,10 @@ icon:
 
 - Release _candidates_ begin appearing on the **second Wednesday** of each month
   (Coder may create multiple release candidates prior to the actual release)
+
+> We do not provide documentation for release candidates, and they should not be
+> used unless asked to do so by Coder.
+
 - Releases are available the **third Wednesday** of each month
 - _Patch_ releases become available as needed
 
