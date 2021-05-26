@@ -14,7 +14,13 @@ icon:
 
 - Release _candidates_ begin appearing on the **second Wednesday** of each month
   (Coder may create multiple release candidates prior to the actual release)
-- Releases are available the **third Wednesday** of each month
+
+  - We do not provide documentation for release candidates, and you should not
+  use them unless you've been instructed to do so by Coder. You can identify
+  release candidates by the presence of `-rc` in the version number (e.g.,
+  `1.16.0-rc.1`).
+  
+- Releases are available on the **third Wednesday** of each month
 - _Patch_ releases become available as needed
 
 ## Changelogs
