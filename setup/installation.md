@@ -75,9 +75,10 @@ kubectl config set-context --current --namespace=coder
 
    _Note: If you omit `--version`, you'll upgrade to the latest version._
 
-   > We do not provide documentation for release candidates (any version containing
-   > `-rc`), and they should not be used unless you've been instructed to use them
-   > by Coder.
+   > We do not provide documentation for release candidates, and you should not
+   use them unless you've been instructed to do so by Coder. You can identify
+   release candidates by the presence of `-rc` in the version number (e.g.,
+   `1.16.0-rc.1`).
 
 1. Ensure that you have superuser privileges to your PostgreSQL database. Add
    the following to your Helm chart so that Coder uses your external PostgreSQL
