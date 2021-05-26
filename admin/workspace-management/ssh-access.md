@@ -54,7 +54,7 @@ experience, add the following to your `/etc/ssh/sshd_config` file inside your
 image:
 
 ```text
-PermitUserWorkspace yes
+PermitUserEnvironment yes
 X11Forwarding yes
 X11UseLocalhost no
 ```
