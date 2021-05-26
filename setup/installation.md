@@ -73,8 +73,9 @@ kubectl config set-context --current --namespace=coder
    helm upgrade coder coder/coder -n coder --version=<VERSION> --values current-values.yaml
    ```
 
-   _Note: If you omit `--version`, you'll upgrade to the latest version._
-
+   > If you omit `--version`, you'll upgrade to the latest version, excluding
+   > release candidates (RCs). To include RCs, provide the `--devel` flag.
+   >
    > We do not provide documentation for release candidates, and you should not
    use them unless you've been instructed to do so by Coder. You can identify
    release candidates by the presence of `-rc` in the version number (e.g.,
