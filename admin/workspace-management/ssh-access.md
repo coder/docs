@@ -32,8 +32,8 @@ RUN apt-get update && apt-get install -y \
 # Start OpenSSH with systemd
 RUN systemctl enable ssh
 
-# recommended: remove the system-wide workspace override
-RUN rm /etc/workspace
+# recommended: remove the system-wide environment override
+RUN rm /etc/environment
 
 # recommended: adjust OpenSSH config
 RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
