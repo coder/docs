@@ -227,7 +227,7 @@ helm install coder coder/coder --namespace coder \
   --set ingress.tls.enable=true \
   --set ingress.tls.devUrlsHostSecretName=devUrlCertificate \
   --set ingress.tls.hostSecretName=hostCertificate \
-  --set ingress.annotations="cert-manager.io/cluster-issuer:letsencrypt" \
+  --set ingress.annotations.cert-manager\.io/cluster-issuer=letsencrypt \
   --wait
 ```
 

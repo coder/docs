@@ -327,6 +327,9 @@
             },
             {
               "path": "./guides/ssl-certificates/route53.md"
+            },
+            {
+              "path": "./guides/ssl-certificates/azureDNS.md"
             }
           ]
         },
