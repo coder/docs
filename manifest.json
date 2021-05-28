@@ -320,6 +320,9 @@
           "navigable": false,
           "children": [
             {
+              "path": "./guides/ssl-certificates/azureDNS.md"
+            },
+            {
               "path": "./guides/ssl-certificates/cloudDNS.md"
             },
             {
@@ -327,9 +330,6 @@
             },
             {
               "path": "./guides/ssl-certificates/route53.md"
-            },
-            {
-              "path": "./guides/ssl-certificates/azureDNS.md"
             }
           ]
         },
