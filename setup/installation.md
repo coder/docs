@@ -93,10 +93,16 @@ kubectl config set-context --current --namespace=coder
      sslMode: require
    ```
 
-   To create the `passwordSecret`, run
-   `kubectl create secret generic <NAME> --from-file=password=/dev/stdin`
-   so you can enter the password in the command line without logging it. Do not press enter to avoid
-   adding a newline character to the password. Ctrl-D twice will end data entry and save the secret.
+   To create the `passwordSecret`, run:
+
+   ```console
+   kubectl create secret generic <NAME> --from-file=password=/dev/stdin
+   ```
+
+   This allows you to enter the password in the command line without logging it.
+   Do **not** press enter/return to avoid adding a newline character to the
+   password (pressing **Cmd/Ctrl-D** twice will end data entry and save the
+   secret).
 
    > Put a space before the command to prevent it from being saved in your shell
    > history.
