@@ -160,8 +160,7 @@ helm upgrade coder-workspace-provider coder/workspace-provider \
     --namespace=[YOUR_WORKSPACE_PROVIDER_NAMESPACE]
     --version=[CODER_VERSION] \
     --atomic \
-    --install \
-    --force
+    --install
 ```
 
 If you want to update any of the helm chart's values, you can do so by supplying
