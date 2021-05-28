@@ -1,24 +1,23 @@
 ---
-title: Environment variables
-description:
-  Learn how to work with CODER_* environment variables inside workspaces
+title: Workspace variables
+description: Learn how to work with CODER_* workspace variables
 ---
 
-Coder injects a standard set of environment variables that allow you to access
+Coder injects a standard set of workspace variables that allow you to access
 contextual information about your workspace.
 
-To obtain a list of environment variables and their values, launch the
+To obtain a list of workspace variables and their values, launch the
 **Terminal** via the Coder Dashboard and run:
 
 ```console
 env | grep CODER_
 ```
 
-## Available environment variables
+## Available workspace variables
 
 <table>
     <tr>
-        <th>Environment variable</th>
+        <th>Workspace variable</th>
         <th>Description</th>
     </tr>
     <tr>
