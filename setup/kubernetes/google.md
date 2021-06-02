@@ -27,6 +27,9 @@ If you are expecting to provision GPUs to Coder workspaces, you must use a gener
 purpose [N1 machine type](https://cloud.google.com/compute/docs/machine-types#gpus)
 in your GKE cluster.
 
+_Note: GPUs are not supported in Container-based Virtual Machine workspaces unless_
+_running in a bare-metal Kubernetes environment._
+
 ## Set up the GKE cluster
 
 The following two sections will show you how to spin up a Kubernetes cluster

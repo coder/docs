@@ -24,6 +24,9 @@ needs for the workspaces they run. See our guide on [compute resources](../../gu
 If you are expecting to provision GPUs to Coder workspaces, you must use an Azure
 Virtual Machine with support for GPUs. See the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-gpu).
 
+_Note: GPUs are not supported in Container-based Virtual Machine workspaces unless_
+_running in a bare-metal Kubernetes environment._
+
 ## Step 1: Create the resource group
 
 To make subsequent steps easier, start by creating environment variables for the

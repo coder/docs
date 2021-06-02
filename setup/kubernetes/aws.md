@@ -30,6 +30,9 @@ needs for the workspaces they run. See our guide on [compute resources](../../gu
 If you are expecting to provision GPUs to Coder workspaces, you must use an EC2 instance
 from the [AWS Accelerated Computing instance family](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/accelerated-computing-instances.html).
 
+_Note: GPUs are not supported in Container-based Virtual Machine workspaces unless_
+_running in a bare-metal Kubernetes environment._
+
 ## Preliminary steps
 
 Before you can create a cluster, you'll need to perform the following to set up
