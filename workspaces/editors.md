@@ -43,7 +43,7 @@ you can launch it from the dashboard. Coder launches JetBrains IDEs in their own
 windows; be sure to set your browser to allow popup windows so that you can use
 your IDE.
 
-![JetBrains logos](../assets/jetbrains-launcher-icons.png)
+![JetBrains logos](../assets/applications.png)
 
 > If you need a valid license to run your IDE locally, you'll also need one to
 > run it in Coder.
