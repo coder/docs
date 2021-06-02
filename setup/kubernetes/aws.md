@@ -21,6 +21,15 @@ machine:
   to fast-track this process
 - [eksctl command-line utility](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
 
+## Node Considerations
+
+The node type and size you select can impact on how you use the Coder platform.
+Take into account the number of developers expected to use Coder and the resource
+needs for the workspaces they run. See our guide on [compute resources](../../guides/admin/resources.md).
+
+If you are expecting to provision GPUs to Coder workspaces, you must use an EC2 instance
+from the [AWS Accelerated Computing instance family](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/accelerated-computing-instances.html).
+
 ## Preliminary steps
 
 Before you can create a cluster, you'll need to perform the following to set up

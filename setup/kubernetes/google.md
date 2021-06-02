@@ -17,6 +17,16 @@ Alternatively, you can
 instead of the gcloud CLI. Please refer to the sample CLI commands below for
 assistance selecting the correct options for your cluster.
 
+## Node Considerations
+
+The node type and size you select can impact on how you use the Coder platform.
+Take into account the number of developers expected to use Coder and the resource
+needs for the workspaces they run. See our guide on [compute resources](../../guides/admin/resources.md).
+
+If you are expecting to provision GPUs to Coder workspaces, you must use a general-
+purpose [N1 machine type](https://cloud.google.com/compute/docs/machine-types#gpus)
+in your GKE cluster.
+
 ## Set up the GKE cluster
 
 The following two sections will show you how to spin up a Kubernetes cluster
