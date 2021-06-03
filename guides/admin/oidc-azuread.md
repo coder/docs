@@ -1,16 +1,18 @@
 ---
 title: OpenID Connect with Azure AD
-description: Guidance on how to register the application for Azure's Active Directory SSO.
+description:
+  Guidance on how to register the application for Azure's Active Directory SSO.
 ---
 
-Configuring [Coder's OpenID Connect](/docs/admin/access-control#openid-connect) requires 3 pieces of 
-information: Client ID, Client Secret, and Issuer.  Azure's Active Directory has so many options that
-trying to identify these things is like finding a needle in a haystack. 
+Configuring [Coder's OpenID Connect](/docs/admin/access-control#openid-connect)
+requires 3 pieces of information: Client ID, Client Secret, and Issuer. Azure's
+Active Directory has so many options that trying to identify these things is
+like finding a needle in a haystack.
 
-# App Registration
+## App Registration
 
-On the search bar at the top, simply type "App registrations" and it will bring you to the easiest
-starting point. 
+On the search bar at the top, simply type "App registrations" and it will bring
+you to the easiest starting point.
 
 Click on the `New registration` button to get started.
 
@@ -18,40 +20,59 @@ Click on the `New registration` button to get started.
 
 Give it a name
 
-Select the proper tenancy, default should work for testing but fancier setups may need multi-tenancy.
+Select the proper tenancy, default should work for testing but fancier setups
+may need multi-tenancy.
 
-Provide your OIDC Callback URL such as: `https://coder.coderworkshop.com/oidc/callback`
+Provide your OIDC Callback URL such as:
+`https://coder.coderworkshop.com/oidc/callback`
 
-Click `Create`. 
+Click `Create`.
 
 ## Finding the needles
 
 ### Client ID
 
-This one is pretty obvious: 
+This one is pretty obvious:
 
-1.  Under "Essentials", you'll find `Application (client) ID` which is the `Client ID`
+1. Under "Essentials", you'll find `Application (client) ID` which is the
+   `Client ID`
 
 ### Client Secret
 
 The client secret hast to be created.
 
-1.  Under "Certificates and Secrets", you'll find `Client secrets` 
-1.  Seeing as we just created this, there are unlikely to be any client secrets yet.
-1.  Create a new client secret with a reasonable Description and Expiration date.
-1.  Create a calendar notification to make a new client secret before this one expires
-1.  Copy the `Value` field out of the newly created secret (Not the Secret ID).
-1.  Paste it into the `Client Secret` field in Coder.
+1. Under "Certificates and Secrets", you'll find `Client secrets`
+1. Seeing as we just created this, there are unlikely to be any client secrets
+   yet.
+1. Create a new client secret with a reasonable Description and Expiration date.
+1. Create a calendar notification to make a new client secret before this one
+   expires
+1. Copy the `Value` field out of the newly created secret (Not the Secret ID).
+1. Paste it into the `Client Secret` field in Coder.
 
 ### Issuer
 
-At the top of the Overview page, click the button for "Endpoints". In the flyout, find
-`OpenID Connect metadata document` and put that in the issuer. 
+At the top of the Overview page, click the button for "Endpoints". In the
+flyout, find `OpenID Connect metadata document` and use the first 2/3rds of
+that.
 
-Replace the `login.microsoft.com` part with `sts.windows.net`, keep the GUID, and delete the rest after the slash.
+Remove from the end: `/.well-known/openid-configuration` and you should end up
+with something like the example below. Be sure to keep the `v2.0` part and drop
+the `/` from the end.
 
-For example: `https://sts.windows.net/110f0c0f-cd76-4717-a6f8-4eea3d0f8109/`
+For example:
+`https://login.microsoftonline.com/110f0c0f-cd76-4717-a6f8-4eea3d0f8109/v2.0`
 
-The good news is that the error message will tell you what it "got" and what it "expected" so you can
-make the value in the configuration match what it "got" unless it is showing a very different URL.
+The good news is that the error message will tell you what it "got" and what it
+"expected" so you can make the value in the configuration match what it "got"
+unless it is showing a very different URL.
 
+## Save Preferences
+
+When you save this page, it will validate that the configuration is reasonably
+correct before continuing. If it is able to pass this point, you can be
+confident that Coder will be sending OIDC login attempts to Azure.
+
+Since Azure's IAM system has complexity and nuance, there are a lot of reasons
+that an account may or may not be present or allowed to login to Coder. Azure
+expertise will be necessary to troubleshoot further.
