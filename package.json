@@ -40,5 +40,8 @@
       "markdownlint --config .markdownlint.jsonc --rules .markdownlint-rules --fix",
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "markdownlint": "^0.23.1"
   }
 }
