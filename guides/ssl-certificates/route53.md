@@ -127,7 +127,7 @@ To make sure that your `clusterIssuer` can change your DNS settings,
    If successful, you'll see a response similar to
 
    ```console
-   clusterissuer.cert-manager.io/letsencrupt-alt created
+   clusterissuer.cert-manager.io/letsencrypt-alt created
    ```
 
 ## Step 5: Install Coder

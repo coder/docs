@@ -321,6 +321,9 @@
           "navigable": false,
           "children": [
             {
+              "path": "./guides/ssl-certificates/azureDNS.md"
+            },
+            {
               "path": "./guides/ssl-certificates/cloudDNS.md"
             },
             {
