@@ -15,6 +15,22 @@ Please make sure that you have the
 installed on your machine and that you've logged in (run `az login` and follow
 the prompts).
 
+## Node Considerations
+
+The node type and size that you select impact how you use Coder. When choosing,
+be sure to account for the number of developers you expect to use Coder, as well
+as the resources they need to run their workspaces. See our guide on on [compute
+resources](../../guides/admin/resources.md) for additional information.
+
+If you expect to provision GPUs to your Coder workspaces, you **must** use an
+Azure Virtual Machine with support for GPUs. See the [Azure
+documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-gpu)
+for more information.
+
+> GPUs are not supported in workspaces deployed as [container-based virtual
+> machines (CVMs)](../../workspaces/cvms.md) unless you're running Coder in a
+> bare-metal Kubernetes environment.
+
 ## Step 1: Create the resource group
 
 To make subsequent steps easier, start by creating environment variables for the
