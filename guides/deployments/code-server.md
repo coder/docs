@@ -14,7 +14,7 @@ addition to the base code-server functionality.
 - [Manage and distribute workspace images](https://coder.com/docs/images)
 - [Build custom workspaces that include your project's dependencies](https://coder.com/docs/images/structure)
 
-![Coder Dashboard](../../assets/jetbrains-launcher-icons.png)
+![Coder Dashboard](../../assets/applications.png)
 
 ## Developer workflows
 
