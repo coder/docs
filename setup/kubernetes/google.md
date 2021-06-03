@@ -19,17 +19,20 @@ assistance selecting the correct options for your cluster.
 
 ## Node Considerations
 
-The node type and size you select can impact on how you use the Coder platform.
-Take into account the number of developers expected to use Coder and the resource
-needs for the workspaces they run. See our guide on [compute resources](../../guides/admin/resources.md).
+The node type and size that you select impact how you use Coder. When choosing,
+be sure to account for the number of developers you expect to use Coder, as well
+as the resources they need to run their workspaces. See our guide on on [compute
+resources](../../guides/admin/resources.md) for additional information.
 
-If you are expecting to provision GPUs to Coder workspaces, you must use a general-
-purpose [N1 machine type](https://cloud.google.com/compute/docs/machine-types#gpus)
-in your GKE cluster and add GPUs to the nodes. We recommend doing this in a separate
+If you expect to provision GPUs to your Coder workspaces, you **must** use a
+general-purpose [N1 machine
+type](https://cloud.google.com/compute/docs/machine-types#gpus) in your GKE
+cluster and add GPUs to the nodes. We recommend doing this in a separate
 GPU-specific node pool.
 
-_Note: GPUs are not supported in Container-based Virtual Machine workspaces unless_
-_running in a bare-metal Kubernetes environment._
+> GPUs are not supported in workspaces deployed as [container-based virtual
+> machines (CVMs)](../../workspaces/cvms.md) unless you're running Coder in a
+> bare-metal Kubernetes environment.
 
 ## Set up the GKE cluster
 
