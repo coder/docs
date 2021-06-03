@@ -1,7 +1,6 @@
 ---
 title: OpenID Connect with Azure AD
-description:
-  Guidance on how to register the application for Azure's Active Directory SSO.
+description: Guidance on how to register the application for Azure's Active Directory SSO.
 ---
 
 Configuring [Coder's OpenID Connect](/docs/admin/access-control#openid-connect)
