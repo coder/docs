@@ -47,7 +47,7 @@ Realm will be where we will add the
    **ACS URL**:
    `https://<my-keycloak-url>/auth/realms/<realm-name>/broker/<keycloak-idp-alias>/endpoint`
 
-   ![Entity ID](../assets/SAML-config-1.png)
+   ![Entity ID](../../assets/SAML-config-1.png)
 
 1. The remaining parameters can be left as is, so click **Save** to proceed.
 
