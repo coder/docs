@@ -233,7 +233,7 @@ start:
       GOPATH: /home/coder/go
 ```
 
-#### workspace.dev-urls
+#### workspace.dev-urls.value
 
 This list allows you to provision [dev URLs](../devurls.md) using the workspaces
 as code configuration file. The dev URLs will be provisioned _in addition to_
@@ -241,10 +241,15 @@ any dev URLs you create.
 
 ```yaml
 dev-urls:
-  - name: PublicPort
-    port: 8080
-    scheme: https
-    access: public
+  value:
+    - name: PublicPort
+      port: 8080
+      scheme: https
+      access: public
+    - name: PrivatePort
+      port: 8000
+      scheme: https
+      access: private
 ```
 
 #### workspace.dev-urls.value[*].name
