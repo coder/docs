@@ -6,7 +6,7 @@ description: Learn how to use Azure's Active Directory SSO with Coder.
 This article walks you through setting up single sign-on to Coder using Azure's
 Active directory.
 
-Configuring [Coder's OpenID Connect](/docs/admin/access-control#openid-connect)
+Configuring [Coder's OpenID Connect](access-control#openid-connect)
 feature requires you to provide three pieces of information from Azure:
 
 - Client ID
