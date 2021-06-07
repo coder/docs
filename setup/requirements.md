@@ -18,14 +18,14 @@ to help you estimate:
 - **Development using VS Code with an SSH connection to Coder**: 1 CPU core and
   1 GB of RAM per developer
 
-> These estimates can vary greatly based on actual usage within a developer
-> workspace. We recommend starting with the resources you would allocate to a
-> developer's local workspace, then iterate as needed.
->  
-> We also recommend [monitoring](../guides/admin/usage-monitoring.md) your usage
-> to determine whether you should change your resource allocation.
-> Accepting a peak utilization of RAM of around 50% and CPU of around 70% is
-> a good way to balance performance with cost.
+These estimates can vary based on actual usage within a workspace. We recommend
+starting with the amount of resources you'd allocate to a local workspace, then
+iterating as needed.
+
+We also recommend [monitoring](../guides/admin/usage-monitoring.md) your usage
+to determine whether you should change your resource allocation. Accepting a
+peak utilization of RAM of around 50% and CPU of around 70% is a good way to
+balance performance with cost.
 
 ### Throughput
 
