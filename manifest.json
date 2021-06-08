@@ -273,6 +273,9 @@
               "path": "./guides/admin/oidc-azuread.md"
             },
             {
+              "path": "./guides/admin/oidc-oktaad.md"
+            },
+            {
               "path": "./guides/admin/usage-monitoring.md"
             }
           ]
