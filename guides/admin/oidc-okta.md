@@ -65,7 +65,16 @@ On your app's **Overview** page, click the **Sign On** tab. Find the
 
 ![Issuer](../../assets/okta-issuer.jpg)
 
-## Step 3: Configure Coder authentication
+## Step 3: Assign People and/or Groups to Coder
+
+On your app's **Overview** page, click the **Assignments** tab.
+
+![Assignments](../../assets/okta-assign-app.jpg)
+
+From here, you can assign People and Groups to the application to
+provide access to Coder.
+
+## Step 4: Configure Coder authentication
 
 Once you've saved your Okta values, you can complete the remaining steps using the
 Coder UI.
