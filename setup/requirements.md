@@ -24,7 +24,7 @@ iterating as needed.
 
 We also recommend [monitoring](../guides/admin/usage-monitoring.md) your usage
 to determine whether you should change your resource allocation. Accepting a
-peak utilization of RAM of around 50% and CPU of around 70% is a good way to
+utilization of RAM of around 50% and CPU of around 70% is a good way to
 balance performance with cost.
 
 ### Throughput
