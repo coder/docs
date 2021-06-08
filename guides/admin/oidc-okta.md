@@ -53,9 +53,8 @@ Once you've saved your app, you can obtain your:
 
 ### Client ID and Client Secret
 
-On your application's **General** tab, look for the **Client ID** under 
-the **Client Credentials** section. This is the value Coder expects as the
-**Client ID**. Below this is the **Client secret**.
+On your application's **General** tab, look for the **Client ID** under
+the **Client Credentials** section. Below this is the **Client secret**.
 
 ![Client ID and Secret](../../assets/okta-client-id-and-secret.jpg)
 
