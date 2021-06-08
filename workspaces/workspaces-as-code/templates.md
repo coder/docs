@@ -149,6 +149,8 @@ labels:
     com.coder.custom.world: world
 ```
 
+`labels` are disabled by default and must be enabled by a site admin.
+
 #### workspace.specs.kubernetes.gpu-count.value
 
 The number of GPUs to allocate to the workspace.
@@ -169,6 +171,47 @@ Determines whether the workspace should be created as a
 #### workspace.specs.kubernetes.disk.value
 
 **Required**. The amount of disk space (in GB) to allocate to the workspace.
+
+#### workspace.specs.kubernetes.tolerations.value
+
+Adds [Kubernetes tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) to the workspace pod. 
+
+
+```yaml
+      tolerations:
+        value:
+          - key: example1
+            operator: Exists
+            value: value-1
+            effect: NoSchedule
+            tolerationSeconds: 200
+          - key: example-3
+            operator: Equal
+            value: value-2
+            effect: PreferNoSchedule
+            tolerationSeconds: 400
+          - key: example-3
+            value: value-3
+            effect: NoExecute
+ ```
+
+`tolerations` are disabled by default and must be enabled by a site admin.
+
+#### workspace.specs.kubernetes.node-selector.value
+
+Adds [Kubernetes NodeSelectors](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) to the workspace pod. The value is a sequence of key/value pairs. The example below would result in 2 `nodeSelectors` for kubernetes, being `accelerator:nvidia` and `disktype:ssd`.
+
+
+```yaml
+      node-selector:
+        value:
+          - key: accelerator
+            value: nvidia
+          - key: disktype
+            value: ssd
+ ```
+
+`node-selector` is disabled by default and must be enabled by a site admin.
 
 #### workspace.configure
 
