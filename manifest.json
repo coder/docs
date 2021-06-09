@@ -61,7 +61,7 @@
               "path": "./workspaces/workspaces-as-code/templates.md"
             },
             {
-              "path": "./workspaces/workspaces-as-code/intellisense.md"
+              "path": "./workspaces/workspaces-as-code/code-completion.md"
             }
           ]
         }
