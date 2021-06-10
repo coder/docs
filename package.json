@@ -12,7 +12,7 @@
     "format:check": "prettier --check '**/*.{css,html,js,json,jsx,ts,tsx,yaml,yml}'",
     "format:write": "prettier --write '**/*.{css,html,js,json,jsx,ts,tsx,yaml,yml}'",
     "lint": "markdownlint --config .markdownlint.jsonc --rules .markdownlint-rules '**/*.md'",
-    "lint:fix": "markdownlint --fix '**/*.md'"
+    "lint:fix": "markdownlint --config .markdownlint.jsonc --rules .markdownlint-rules --fix '**/*.md'"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.1",
