@@ -48,3 +48,5 @@ helm upgrade coder coder/coder \
 
 1. Provide your custom domain in the **Access URL** field. The URL you provide
    must match the value you provided as `ingress.host` in the previous step.
+   
+> If your Access URL uses the HTTPS protocol, you will not be able to access your deployment over HTTP via the browser. 
