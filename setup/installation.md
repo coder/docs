@@ -46,7 +46,7 @@ kubectl config set-context --current --namespace=coder
    `helm search repo coder -l`)
 
    ```console
-   helm install coder coder/coder --namespace coder
+   helm install coder coder/coder -n coder --version=<VERSION>
    ```
 
    **Steps 3-5 are optional for non-production deployments.**
