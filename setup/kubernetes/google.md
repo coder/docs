@@ -59,7 +59,7 @@ allowing system-level functionalities such as Docker in Docker.
 
 > Please note that the sample script creates a `n1-highmem-4` instance;
 > depending on your needs, you can choose a [larger
-> size](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)
+> size](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
 > instead. See [requirements](../requirements.md) for help estimating your
 > cluster size.
 
@@ -100,7 +100,7 @@ requirements. It does _not_ enable the use of
 
 > Please note that the sample script creates a `n1-highmem-4` instance;
 > depending on your needs, you can choose a [larger
-> size](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)
+> size](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
 > instead. See [requirements](../requirements.md) for help estimating your
 > cluster size.
 
