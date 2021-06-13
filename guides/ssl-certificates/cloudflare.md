@@ -94,11 +94,11 @@ following:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: cloudflare-api-key-secret
+  name: cloudflare-api-token-secret
   namespace: coder # Your Coder deployment namespace
 type: Opaque
 stringData:
-  api-key: "" # Your Cloudflare API token (from earlier)
+  api-token: "" # Your Cloudflare API token (from earlier)
 
 ---
 apiVersion: cert-manager.io/v1alpha2
@@ -117,8 +117,8 @@ spec:
           cloudflare:
             email: "" # Your Cloudflare email address
             apiTokenSecretRef:
-              name: cloudflare-api-key-secret
-              key: api-key
+              name: cloudflare-api-token-secret
+              key: api-token
 
         # This section denotes which domains to use this issuer for. If you didn't
         # limit which zones the API token had access to, you may wish to remove
