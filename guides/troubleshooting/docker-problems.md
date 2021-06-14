@@ -63,7 +63,7 @@ spec:
             - sysctl
             - -w
             - kernel.keys.maxkeys=20000
-            - kernel.keys.maxbytes=100000003
+            - kernel.keys.maxbytes=400000
           resources:
             requests:
               cpu: 10m
