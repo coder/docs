@@ -43,3 +43,11 @@ USER coder
 Your users can then create descendant images. These contain all of the original
 tooling and configuration installed onto the base image and the new
 customizations added by the users.
+
+## Coder assets
+
+Coder inserts assets into each workspace to enable code-server, JetBrains IDEs,
+and the Coder CLI. These assets are installed into the `/var/tmp/coder` directory
+of each workspace.
+
+The minimum GNU libc version supported for such binaries is `2.1`.
