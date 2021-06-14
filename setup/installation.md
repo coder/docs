@@ -46,13 +46,13 @@ kubectl config set-context --current --namespace=coder
    `helm search repo coder -l`)
 
    ```console
-   helm install coder coder/coder -n coder --version=<VERSION>
+   helm install coder coder/coder -namespace coder --version=<VERSION>
    ```
 
    **Steps 3-5 are optional for non-production deployments.**
 
 1. Get a copy of your Helm config values so that you can modify it; you'll need
-   to modify the Helm chart to update your PostgreSQL databases (step 4) and
+   to modify these values to update your PostgreSQL databases (step 4) and
    enable dev URLs (step 5):
 
    a. Get a copy of your existing Helm values and save it as `values.yaml`:
@@ -60,8 +60,8 @@ kubectl config set-context --current --namespace=coder
 
    b. Edit the `values.yaml` file as needed.
 
-   > View the
-   > [configuration options available in the `values.yaml` file.](https://github.com/cdr/enterprise-helm#values)
+   > View the [configuration options available in the `values.yaml`
+   > file.](https://github.com/cdr/enterprise-helm#values)
 
    c. Upgrade/install your Coder deployment with the updated Helm chart (be sure
    to replace the placeholder value with your Coder version). **This must be
