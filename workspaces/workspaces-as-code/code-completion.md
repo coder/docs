@@ -21,7 +21,7 @@ replace the `<deployment_url>` placeholder with your Coder deployment URL):
 ```yaml
 # yaml-language-server: $schema=https://<deployment_url>/api/private/template/schemas/wac.schema.json
 
-# Write your yaml config here
+# Write your YAML config here
 ```
 
 At this point, you can use the code completion and syntax checking features.
