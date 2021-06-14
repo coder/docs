@@ -1,22 +1,22 @@
 ---
 title: "Workspace template code completion"
-description: "A better experience to creating workspace templates."
+description: "Learn how to use code completion when creating workspace templates."
 state: beta
 ---
 
+Coder provides a [JSON Schema](https://json-schema.org/) for workspace templates
+that enables code completion and syntax checking.
 
+## Requirements
 
-Coder provides a [JSON Schema](https://json-schema.org/) for Workspace
-Templates which enables support for completion and syntax checking.
-[YAML Extension by Red Hat](
-https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
-is required to use this feature.
+You must have the [YAML extension by Red
+Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+installed to use this feature.
 
-## How to Use
+## How to use
 
-At the top of your `coder.yaml` file add the following comment. Make sure
-to replace `<deployment_url>` with your Coder deployment URL.
-If the extension is installed, then your file will have code completion.
+Create a file called `coder.yaml`, and add the following to the top (be sure to
+replace the `<deployment_url>` placeholder with your Coder deployment URL):
 
 ```yaml
 # yaml-language-server: $schema=https://<deployment_url>/api/private/template/schemas/wac.schema.json
@@ -24,9 +24,17 @@ If the extension is installed, then your file will have code completion.
 # Write your yaml config here
 ```
 
-Helpful Keyboard Shortcuts: (see extension page for more info)
+At this point, you can use the code completion and syntax checking features.
 
-- Document Outlining (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>)
+## Keyboard shortcuts
+
+Some keyboard shortcuts you may find helpful include:
+
+- Document outlining (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>)
 - Auto completion (<kbd>Ctrl</kbd> + <kbd>Space</kbd>)
+
+See the [YAML extension by Red Hat
+docs](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+for additional shortcuts.
 
 ![Code Completion Demo](../../assets/wac-intellisense-demo.gif)
