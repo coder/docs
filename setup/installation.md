@@ -46,7 +46,7 @@ kubectl config set-context --current --namespace=coder
    `helm search repo coder -l`)
 
    ```console
-   helm install coder coder/coder -namespace coder --version=<VERSION>
+   helm install coder coder/coder --namespace coder --version=<VERSION>
    ```
 
    **Steps 3-5 are optional for non-production deployments.**
@@ -55,20 +55,20 @@ kubectl config set-context --current --namespace=coder
    to modify these values to update your PostgreSQL databases (step 4) and
    enable dev URLs (step 5):
 
-   a. Get a copy of your existing Helm values and save it as `values.yaml`:
-   `helm get values coder -n coder | tail -n +2 > values.yaml`
+   a. Create an empty file called `values.yaml` which will contain your
+   deployment configuration options.
 
    b. Edit the `values.yaml` file as needed.
 
-   > View the [configuration options available in the `values.yaml`
-   > file.](https://github.com/cdr/enterprise-helm#values)
+   > View the
+   > [configuration options available in the `values.yaml` file.](https://github.com/cdr/enterprise-helm#values)
 
    c. Upgrade/install your Coder deployment with the updated Helm chart (be sure
    to replace the placeholder value with your Coder version). **This must be
    done whenever you update the Helm chart:**
 
    ```console
-   helm upgrade coder coder/coder -n coder --version=<VERSION> --values values.yaml
+   helm upgrade coder coder/coder --namespace coder --version=<VERSION> --values values.yaml
    ```
 
    > If you omit `--version`, you'll upgrade to the latest version, excluding
@@ -79,7 +79,7 @@ kubectl config set-context --current --namespace=coder
    > presence of `-rc` in the version number (e.g., `1.16.0-rc.1`).
 
 1. Ensure that you have superuser privileges to your PostgreSQL database. Add
-   the following to your Helm chart so that Coder uses your external PostgreSQL
+   the following to your Helm values so that Coder uses your external PostgreSQL
    databases:
 
    ```yaml
@@ -94,8 +94,16 @@ kubectl config set-context --current --namespace=coder
    ```
 
    To create the `passwordSecret`, run
-   `echo "UserDefinedPassword" | kubectl create secret generic <NAME> --from-file=password=/dev/stdin`
+   `kubectl create secret generic <NAME> --from-literal="password=UserDefinedPassword"`
    (be sure to replace `UserDefinedPassword` with your actual password).
+
+   > Put a space before the command to prevent it from being saved in your shell
+   > history.
+   >
+   > Running this command could potentially expose your database password to
+   > other users on your system through `/proc`. If this is a concern, you can
+   > use `--from-file=password=/dev/stdin` instead of `--from-literal=...` to
+   > enter your password, and hit `Ctrl+D` when you're done to submit it.
 
    You can find/define these values in your
    [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
