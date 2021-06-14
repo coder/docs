@@ -62,7 +62,7 @@ spec:
           command:
             - sysctl
             - -w
-            - kernel.keys.maxkeys=100000003
+            - kernel.keys.maxkeys=20000
             - kernel.keys.maxbytes=100000003
           resources:
             requests:
