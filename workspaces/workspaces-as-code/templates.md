@@ -15,8 +15,9 @@ Workspaces as code (WAC) allows you to define and create new workspaces using
 
 Workspace templates are written in YAML and have a `.yaml` or `.yml` extension.
 For assistance with creating your Coder YAML file, you can use the [template
-intellisense](code-completion.md) feature. Coder looks for your workspace template
-at the following path:
+intellisense](code-completion.md) feature.
+
+Coder looks for your workspace template at the following path:
 
 ```text
 <repository-root>/.coder/<template-name>.yaml
