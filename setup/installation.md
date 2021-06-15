@@ -94,8 +94,9 @@ kubectl config set-context --current --namespace=coder
    ```
 
    To create the `passwordSecret`, run
-   `kubectl create secret generic <NAME> --from-literal="password=UserDefinedPassword"`
-   (be sure to replace `UserDefinedPassword` with your actual password).
+   `kubectl create secret generic <NAME> --from-file=password=/dev/stdin`
+   so you can enter the password in the command line without logging it. Do not press enter to avoid
+   adding a newline character to the password. Ctrl-D twice will end data entry and save the secret.
 
    > Put a space before the command to prevent it from being saved in your shell
    > history.
