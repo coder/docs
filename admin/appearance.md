@@ -25,7 +25,8 @@ To customize your system banner messages:
 
 The service banner allows you to display a message to all users of your Coder
 system. The user can dismiss the message at any time and Coder will not display
-a banner until you change the message.
+a banner until you change the message (or disable and re-enable the current
+message).
 
 1. Go to **Manage** > **Admin** > **Appearance** in the Coder UI.
 1. Toggle the **Service Banner** switch to **On**.
