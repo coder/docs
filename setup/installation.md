@@ -46,42 +46,40 @@ kubectl config set-context --current --namespace=coder
    `helm search repo coder -l`)
 
    ```console
-   helm install coder coder/coder --namespace coder
+   helm install coder coder/coder --namespace coder --version=<VERSION>
    ```
 
    **Steps 3-5 are optional for non-production deployments.**
 
-1. Get a copy of your Helm chart so that you can modify it; you'll need to
-   modify the Helm chart to update your PostgreSQL databases (step 4) and enable
-   dev URLs (step 5):
+1. Get a copy of your Helm config values so that you can modify it; you'll need
+   to modify these values to update your PostgreSQL databases (step 4) and
+   enable dev URLs (step 5):
 
-   a. Get a copy of your existing Helm chart and save it as `current-values.yaml`:
-   `helm show values coder/coder > current-values.yaml`
+   a. Create an empty file called `values.yaml` which will contain your
+   deployment configuration options.
 
-   b. Edit the `current-values.yaml` file as needed. Be sure to remove the lines
-   that you are _not_ modifying, otherwise the contents of `current-values.yaml`
-   will override those in the default chart.
+   b. Edit the `values.yaml` file as needed.
 
    > View the
    > [configuration options available in the `values.yaml` file.](https://github.com/cdr/enterprise-helm#values)
 
    c. Upgrade/install your Coder deployment with the updated Helm chart (be sure
-   to replace the placeholder value with your Coder version). **This must be done
-   whenever you update the Helm chart:**
+   to replace the placeholder value with your Coder version). **This must be
+   done whenever you update the Helm chart:**
 
    ```console
-   helm upgrade coder coder/coder -n coder --version=<VERSION> --values current-values.yaml
+   helm upgrade coder coder/coder --namespace coder --version=<VERSION> --values values.yaml
    ```
 
    > If you omit `--version`, you'll upgrade to the latest version, excluding
    > release candidates (RCs). To include RCs, provide the `--devel` flag.
    >
    > We do not provide documentation for RCs, and you should not use them unless
-   you've been instructed to do so by Coder. You can identify RCs by the
-   presence of `-rc` in the version number (e.g., `1.16.0-rc.1`).
+   > you've been instructed to do so by Coder. You can identify RCs by the
+   > presence of `-rc` in the version number (e.g., `1.16.0-rc.1`).
 
 1. Ensure that you have superuser privileges to your PostgreSQL database. Add
-   the following to your Helm chart so that Coder uses your external PostgreSQL
+   the following to your Helm values so that Coder uses your external PostgreSQL
    databases:
 
    ```yaml
@@ -96,14 +94,22 @@ kubectl config set-context --current --namespace=coder
    ```
 
    To create the `passwordSecret`, run
-   `kubectl create secret generic <NAME> --from-file=test=/dev/stdin`
+   `kubectl create secret generic <NAME> --from-literal="password=UserDefinedPassword"`
    (be sure to replace `UserDefinedPassword` with your actual password).
+
+   > Put a space before the command to prevent it from being saved in your shell
+   > history.
+   >
+   > Running this command could potentially expose your database password to
+   > other users on your system through `/proc`. If this is a concern, you can
+   > use `--from-file=password=/dev/stdin` instead of `--from-literal=...` to
+   > enter your password and press `Ctrl+D` when you're done to submit it.
 
    You can find/define these values in your
    [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
 
    > For more information, [see our guide](../guides/deployments/postgres.md) on
-   setting up a PostgreSQL instance.
+   > setting up a PostgreSQL instance.
 
 1. [Enable dev URL usage](../admin/devurls.md). Dev URLs allow users to access
    the web servers running in your workspace. To enable, provide a wildcard
