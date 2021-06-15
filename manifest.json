@@ -354,6 +354,9 @@
           "children": [
             {
               "path": "./guides/troubleshooting/inotify-watch-limits.md"
+            },
+            {
+              "path": "./guides/troubleshooting/docker-problems.md"
             }
           ]
         }

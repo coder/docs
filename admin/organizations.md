@@ -42,7 +42,8 @@ organization. You can set the:
 
 Finally, you can set **Resource Quotas**. These are limits on the number of
 **CPUs** and **GPUs**, as well as the amount of **memory** and **disk space**,
-each developer can use across *all* of their workspaces in this organization.
+each developer can request concurrently for running workspaces in this
+organization.
 
 When you've set your parameters, click **Create** to proceed.
 

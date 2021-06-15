@@ -57,4 +57,8 @@ env | grep CODER_
         <td><code>CODER_WP_NAME</code></td>
         <td>The name of the workspace provider hosting the environment</td>
     </tr>
+    <tr>
+        <td><code>CODER_RUNTIME</code></td>
+        <td>Whether the workspace is a CVM or not</td>
+    </tr>
 </table>
