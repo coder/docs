@@ -32,7 +32,7 @@ a banner until you change the message.
 1. Set the **Message**.
 1. Click **Save Preferences**.
 
-![Service banner](../assets/system-banners.png)
+![Service banner](../assets/service-banners.png)
 
 ## Terms of service
 
