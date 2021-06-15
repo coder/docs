@@ -104,14 +104,6 @@ kubectl config set-context --current --namespace=coder
    password (pressing **Cmd/Ctrl-D** twice will end data entry and save the
    secret).
 
-   > Put a space before the command to prevent it from being saved in your shell
-   > history.
-   >
-   > Running this command could potentially expose your database password to
-   > other users on your system through `/proc`. If this is a concern, you can
-   > use `--from-file=password=/dev/stdin` instead of `--from-literal=...` to
-   > enter your password and press `Ctrl+D` when you're done to submit it.
-
    You can find/define these values in your
    [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
 
