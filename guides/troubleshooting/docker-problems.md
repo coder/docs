@@ -1,5 +1,5 @@
 ---
-title: Docker key storage issues
+title: Docker troubleshooting
 description: Learn how to solve Docker key storage issues inside Coder workspaces.
 ---
 
