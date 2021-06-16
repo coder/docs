@@ -53,6 +53,7 @@ jobs:
           VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
           VERCEL_PROJECT_ID: QmZRucMRh3GFk1817ZgXjRVuw5fhTspHPHKct3JNQDEPGd
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          CODER_DOCS_MAIN_BRANCH: ${{ github.sha }}
 
       - name: Update Deployment
         # If we don't specify always, it won't run this check if failed.
