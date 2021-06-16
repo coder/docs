@@ -14,7 +14,7 @@ located in Git repositories.
 
 ![Enable workspace templates](../assets/enable-ws-templates.png)
 
-## Template policy
+## Template policy (alpha)
 
 If you enable the use of workspace templates, a **template policy** allows you
 to control which fields users can set and which values can be used when they
