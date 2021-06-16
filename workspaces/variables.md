@@ -59,6 +59,8 @@ env | grep CODER_
     </tr>
     <tr>
         <td><code>CODER_RUNTIME</code></td>
-        <td>Whether the workspace is a CVM or not</td>
+        <td>The container runtime used to start the workspace (either
+        `kubernetes/default` or `kubernetes/sysbox` if the workspace
+        is a CVM</td>
     </tr>
 </table>
