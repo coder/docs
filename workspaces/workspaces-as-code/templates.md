@@ -149,7 +149,7 @@ labels:
     com.coder.custom.world: world
 ```
 
-`labels` are disabled by default and must be enabled by a site admin.
+`labels` is disabled by default and must be enabled by a site admin.
 
 #### workspace.specs.kubernetes.gpu-count.value
 
@@ -174,8 +174,9 @@ Determines whether the workspace should be created as a
 
 #### workspace.specs.kubernetes.tolerations.value
 
-Adds [Kubernetes tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) to the workspace pod. 
-
+Adds [Kubernetes
+tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
+to the workspace pod.
 
 ```yaml
       tolerations:
@@ -195,12 +196,16 @@ Adds [Kubernetes tolerations](https://kubernetes.io/docs/concepts/scheduling-evi
             effect: NoExecute
  ```
 
-`tolerations` are disabled by default and must be enabled by a site admin.
+`tolerations` is disabled by default and must be enabled by a site admin.
 
 #### workspace.specs.kubernetes.node-selector.value
 
-Adds [Kubernetes NodeSelectors](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) to the workspace pod. The value is a sequence of key/value pairs. The example below would result in 2 `nodeSelectors` for kubernetes, being `accelerator:nvidia` and `disktype:ssd`.
+Adds [Kubernetes
+NodeSelectors](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector)
+to the workspace pod. The value is a sequence of key/value pairs.
 
+For example, the following snippet would add two `nodeSelectors` for Kubernetes:
+`accelerator:nvidia` and `disktype:ssd`.
 
 ```yaml
       node-selector:
