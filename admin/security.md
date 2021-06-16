@@ -22,7 +22,8 @@ requests to occur over HTTPS.
 
 The **Secure Cookie** option controls the [`secure` property of cookies] that
 Coder issues. This prevents browsers from sending sensitive cookies, such as
-those containing credentials, over unencrypted (HTTP) connections.
+those containing credentials, over unencrypted (HTTP) connections. We recommend
+enabling this setting if you are serving Coder over HTTPS.
 
 [`secure` property of cookies]:
   https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
