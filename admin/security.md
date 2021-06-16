@@ -8,22 +8,23 @@ are available under **Manage** > **Admin** > **Infrastructure**.
 
 ## HTTP Strict Transport Security
 
-Enabling **HTTP Strict Transport Security** sets [the
-`strict-transport-security`
-header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
-for Coder. If you are serving Coder over HTTPS, we recommend enabling HTTP
-Strict Transport Security, which requests that browsers and clients use HTTPS
-for all connections (many ingress controllers automatically add this header for
-connections served over HTTPS). After you set this header, all users revisiting
-the site will use HTTPS, since clients may no longer access the site via HTTP.
+If you are serving Coder over HTTPS, we recommend enabling the
+**Strict-Transport-Security Header** option, which adds the [HTTP Strict
+Transport Security] header to responses. This browser feature requires future
+requests to occur over HTTPS.
+
+[http strict transport security]:
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
 
 ![HTTP Strict Transport Security](../assets/http-strict-transport-security.png)
 
 ## Secure Cookie
 
-Enabling **Secure Cookie** sets the `secure` property on all [session
-cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), preventing
-browsers from sending sensitive cookies over unencrypted (HTTP) connections. We
-recommend enabling this setting if you are serving Coder over HTTPS.
+The **Secure Cookie** option controls the [`secure` property of cookies] that
+Coder issues. This prevents browsers from sending sensitive cookies, such as
+those containing credentials, over unencrypted (HTTP) connections.
+
+[`secure` property of cookies]:
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 
 ![Secure Cookie](../assets/secure-cookie.png)
