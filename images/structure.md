@@ -50,4 +50,22 @@ Coder inserts assets into each workspace to enable code-server, JetBrains IDEs,
 and the Coder CLI. These assets are installed into the `/var/tmp/coder` directory
 of each workspace.
 
-The minimum GNU libc version supported for such binaries is `2.1`.
+You do not need to include these assets in your own custom images. However, when
+building your own images, the following utilities are required:
+
+- [POSIX Utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)
+- [GNU libc](https://www.gnu.org/software/libc/libc.html)
+  - The minimum GNU libc version supported for the Coder-inserted assets is `2.1`
+  - Alpine is not supported, since it uses musl libc
+- [GNU Core Utilities](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands)
+
+The following utilities are optional:
+
+- [ssh-agent](https://www.ssh.com/academy/ssh/agent) for automatically adding the
+Coder user's public SSH key to the agent
+- [systemd](https://systemd.io) for service supervision
+  - Only available with [CVMs](../workspaces/cvms)
+- [OpenSSH](https://www.openssh.com) server
+  - This can be run from either your `coder/configure` script or `systemd`
+- [gpg](https://www.gnupg.org) & [gpg-agent](https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html#Invoking-GPG_002dAGENT)
+for data encryption
