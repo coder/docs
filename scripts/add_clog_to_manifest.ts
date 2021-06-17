@@ -89,7 +89,7 @@ const main = () => {
   }
   appendClogManifest(args.version)
   console.log("Done")
-  console.info("tip: run yarn fmt:fix to prettify manifest.json")
+  console.info("tip: run yarn format:write to prettify manifest.json")
   process.exit(0)
 }
 
