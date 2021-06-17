@@ -46,8 +46,8 @@ customizations added by the users.
 
 ## Coder assets
 
-Coder inserts assets into each workspace to enable code-server, JetBrains IDEs,
-and the Coder CLI. These assets are installed into the `/var/tmp/coder` directory
+Coder inserts static assets into each workspace, including code-server, JetBrains
+IDEs, and the Coder CLI. These assets are installed into the `/var/tmp/coder` directory
 of each workspace.
 
 You do not need to include these assets in your own custom images. However, when
