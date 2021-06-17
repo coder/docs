@@ -6,9 +6,9 @@ state: beta
 
 <!-- markdownlint-disable MD044 -->
 
-> As of Coder version *1.19*, only workspace templates version *0.2* is
-supported. To update your workspace, you **must** update your templates to
-version *0.2*.
+> As of Coder version _1.19_, only workspace templates version _0.2_ is
+> supported. To update your workspace, you **must** update your templates to
+> version _0.2_.
 
 Workspaces as code (WAC) allows you to define and create new workspaces using
 **workspace templates**.
@@ -44,7 +44,7 @@ workspace:
   type: kubernetes
   specs:
     kubernetes:
-      image: 
+      image:
         value: index.docker.io/ubuntu:18.04
       container-based-vm:
         value: true
@@ -60,6 +60,10 @@ workspace:
         value:
           com.coder.custom.hello: "hello"
           com.coder.custom.world: "world"
+      annotations:
+        value:
+          - key: annotation-key
+            value: annotation-value
   configure:
     start:
       value:
@@ -71,7 +75,8 @@ workspace:
           command: "mkdir -p /home/coder/go/src/github.com/my-org"
           # Be careful with keyscans like this!
         - name: "Add GitHub to known hosts"
-          command: "sudo ssh-keyscan -H github.com >> /home/coder/.ssh/known_hosts"
+          command:
+            "sudo ssh-keyscan -H github.com >> /home/coder/.ssh/known_hosts"
         - name: "Clone Git Project"
           command: "git clone git@github.com:my-org/my-project.git"
           continue-on-error: true
@@ -83,7 +88,7 @@ workspace:
           continue-on-error: true
           env:
             GOPATH: /home/coder/go
-            
+
   dev-urls:
     value:
       - name: MyWebsite
@@ -108,8 +113,8 @@ workspace:
 
 ### version
 
-The version number of the config file being used. The currently supported version
-is `0.2`.
+The version number of the config file being used. The currently supported
+version is `0.2`.
 
 ### workspace
 
@@ -153,6 +158,19 @@ labels:
 ```
 
 `labels` is disabled by default and must be enabled by a site admin.
+
+#### workspace.specs.kubernetes.annotations.value
+
+The
+[Kubernetes annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)
+to be added to the workspace pod.
+
+```yaml
+annotations:
+  value:
+    - key: annotation-key
+      value: annotation-value
+```
 
 #### workspace.specs.kubernetes.gpu-count.value
 
@@ -277,10 +295,10 @@ start:
 
 #### workspace.configure.start.value[*].continue-on-error
 
-Any step that returns a non-zero exit code will fail. By default, a
-failure prevents the subsequent steps from executing. If you would like to
-change this behavior, this field (which accepts a Boolean value) will allow a
-step to fail and *not* half subsequent steps.
+Any step that returns a non-zero exit code will fail. By default, a failure
+prevents the subsequent steps from executing. If you would like to change this
+behavior, this field (which accepts a Boolean value) will allow a step to fail
+and _not_ halt subsequent steps.
 
 #### workspace.configure.start.value[*].env
 
