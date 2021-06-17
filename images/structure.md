@@ -47,11 +47,11 @@ customizations added by the users.
 ## Coder assets
 
 Coder inserts static assets into each workspace, including code-server, JetBrains
-IDEs, and the Coder CLI. These assets are installed into the `/var/tmp/coder` directory
-of each workspace.
+Projector, and the Coder CLI. These assets are installed into the `/var/tmp/coder`
+directory of each workspace.
 
 You do not need to include these assets in your own custom images. However, when
-building your own images, the following utilities are required:
+building your own images, the following software is required:
 
 - [POSIX Utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)
 - [GNU libc](https://www.gnu.org/software/libc/libc.html)
