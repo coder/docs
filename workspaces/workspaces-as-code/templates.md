@@ -247,7 +247,7 @@ start:
 Any step that returns a non-zero exit code will fail. By default, a failure
 prevents the subsequent steps from executing. If you would like to change this
 behavior, this field (which accepts a Boolean value) will allow a step to fail
-and _not_ half subsequent steps.
+and _not_ halt subsequent steps.
 
 #### workspace.configure.start.value[*].env
 
