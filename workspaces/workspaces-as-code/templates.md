@@ -13,7 +13,10 @@ state: beta
 Workspaces as code (WAC) allows you to define and create new workspaces using
 **workspace templates**.
 
-Workspace templates are written as YAML and have a `.yaml` or `.yml` extension.
+Workspace templates are written in YAML and have a `.yaml` or `.yml` extension.
+For assistance with creating your Coder YAML file, you can use the [template
+intellisense](code-completion.md) feature.
+
 Coder looks for your workspace template at the following path:
 
 ```text
@@ -154,6 +157,8 @@ labels:
     com.coder.custom.world: world
 ```
 
+`labels` is disabled by default and must be enabled by a site admin.
+
 #### workspace.specs.kubernetes.annotations.value
 
 The
@@ -187,6 +192,52 @@ Determines whether the workspace should be created as a
 #### workspace.specs.kubernetes.disk.value
 
 **Required**. The amount of disk space (in GB) to allocate to the workspace.
+
+#### workspace.specs.kubernetes.tolerations.value
+
+Adds [Kubernetes
+tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
+to the workspace pod.
+
+```yaml
+      tolerations:
+        value:
+          - key: example1
+            operator: Exists
+            value: value-1
+            effect: NoSchedule
+            tolerationSeconds: 200
+          - key: example-3
+            operator: Equal
+            value: value-2
+            effect: PreferNoSchedule
+            tolerationSeconds: 400
+          - key: example-3
+            value: value-3
+            effect: NoExecute
+ ```
+
+`tolerations` is disabled by default and must be enabled by a site admin.
+
+#### workspace.specs.kubernetes.node-selector.value
+
+Adds [Kubernetes
+NodeSelectors](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector)
+to the workspace pod. The value is a sequence of key/value pairs.
+
+For example, the following snippet would add two `nodeSelectors` for Kubernetes:
+`accelerator:nvidia` and `disktype:ssd`.
+
+```yaml
+      node-selector:
+        value:
+          - key: accelerator
+            value: nvidia
+          - key: disktype
+            value: ssd
+ ```
+
+`node-selector` is disabled by default and must be enabled by a site admin.
 
 #### workspace.configure
 
