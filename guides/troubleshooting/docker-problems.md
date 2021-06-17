@@ -1,6 +1,6 @@
 ---
-title: Docker key storage issues
-description: Learn how to solve Docker key storage issues inside Coder workspaces.
+title: Docker troubleshooting
+description: Learn how to solve Docker issues inside Coder workspaces.
 ---
 
 When using Coder, you may encounter the following error:

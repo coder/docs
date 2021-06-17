@@ -6,14 +6,17 @@ state: beta
 
 <!-- markdownlint-disable MD044 -->
 
-> As of Coder version *1.19*, only workspace templates version *0.2* is
-supported. To update your workspace, you **must** update your templates to
-version *0.2*.
+> As of Coder version _1.19_, only workspace templates version _0.2_ is
+> supported. To update your workspace, you **must** update your templates to
+> version _0.2_.
 
 Workspaces as code (WAC) allows you to define and create new workspaces using
 **workspace templates**.
 
-Workspace templates are written as YAML and have a `.yaml` or `.yml` extension.
+Workspace templates are written in YAML and have a `.yaml` or `.yml` extension.
+For assistance with creating your Coder YAML file, you can use the [template
+intellisense](code-completion.md) feature.
+
 Coder looks for your workspace template at the following path:
 
 ```text
@@ -41,7 +44,7 @@ workspace:
   type: kubernetes
   specs:
     kubernetes:
-      image: 
+      image:
         value: index.docker.io/ubuntu:18.04
       container-based-vm:
         value: true
@@ -57,6 +60,10 @@ workspace:
         value:
           com.coder.custom.hello: "hello"
           com.coder.custom.world: "world"
+      annotations:
+        value:
+          - key: annotation-key
+            value: annotation-value
   configure:
     start:
       value:
@@ -68,7 +75,8 @@ workspace:
           command: "mkdir -p /home/coder/go/src/github.com/my-org"
           # Be careful with keyscans like this!
         - name: "Add GitHub to known hosts"
-          command: "sudo ssh-keyscan -H github.com >> /home/coder/.ssh/known_hosts"
+          command:
+            "sudo ssh-keyscan -H github.com >> /home/coder/.ssh/known_hosts"
         - name: "Clone Git Project"
           command: "git clone git@github.com:my-org/my-project.git"
           continue-on-error: true
@@ -80,7 +88,7 @@ workspace:
           continue-on-error: true
           env:
             GOPATH: /home/coder/go
-            
+
   dev-urls:
     value:
       - name: MyWebsite
@@ -105,8 +113,8 @@ workspace:
 
 ### version
 
-The version number of the config file being used. The currently supported version
-is `0.2`.
+The version number of the config file being used. The currently supported
+version is `0.2`.
 
 ### workspace
 
@@ -149,6 +157,21 @@ labels:
     com.coder.custom.world: world
 ```
 
+`labels` is disabled by default and must be enabled by a site admin.
+
+#### workspace.specs.kubernetes.annotations.value
+
+The
+[Kubernetes annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)
+to be added to the workspace pod.
+
+```yaml
+annotations:
+  value:
+    - key: annotation-key
+      value: annotation-value
+```
+
 #### workspace.specs.kubernetes.gpu-count.value
 
 The number of GPUs to allocate to the workspace.
@@ -169,6 +192,52 @@ Determines whether the workspace should be created as a
 #### workspace.specs.kubernetes.disk.value
 
 **Required**. The amount of disk space (in GB) to allocate to the workspace.
+
+#### workspace.specs.kubernetes.tolerations.value
+
+Adds [Kubernetes
+tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
+to the workspace pod.
+
+```yaml
+      tolerations:
+        value:
+          - key: example1
+            operator: Exists
+            value: value-1
+            effect: NoSchedule
+            tolerationSeconds: 200
+          - key: example-3
+            operator: Equal
+            value: value-2
+            effect: PreferNoSchedule
+            tolerationSeconds: 400
+          - key: example-3
+            value: value-3
+            effect: NoExecute
+ ```
+
+`tolerations` is disabled by default and must be enabled by a site admin.
+
+#### workspace.specs.kubernetes.node-selector.value
+
+Adds [Kubernetes
+NodeSelectors](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector)
+to the workspace pod. The value is a sequence of key/value pairs.
+
+For example, the following snippet would add two `nodeSelectors` for Kubernetes:
+`accelerator:nvidia` and `disktype:ssd`.
+
+```yaml
+      node-selector:
+        value:
+          - key: accelerator
+            value: nvidia
+          - key: disktype
+            value: ssd
+ ```
+
+`node-selector` is disabled by default and must be enabled by a site admin.
 
 #### workspace.configure
 
@@ -226,10 +295,10 @@ start:
 
 #### workspace.configure.start.value[*].continue-on-error
 
-Any step that returns a non-zero exit code will fail. By default, a
-failure prevents the subsequent steps from executing. If you would like to
-change this behavior, this field (which accepts a Boolean value) will allow a
-step to fail and *not* half subsequent steps.
+Any step that returns a non-zero exit code will fail. By default, a failure
+prevents the subsequent steps from executing. If you would like to change this
+behavior, this field (which accepts a Boolean value) will allow a step to fail
+and _not_ halt subsequent steps.
 
 #### workspace.configure.start.value[*].env
 

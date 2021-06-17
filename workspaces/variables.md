@@ -57,4 +57,10 @@ env | grep CODER_
         <td><code>CODER_WP_NAME</code></td>
         <td>The name of the workspace provider hosting the environment</td>
     </tr>
+    <tr>
+        <td><code>CODER_RUNTIME</code></td>
+        <td>The container runtime used to start the workspace (either
+        `kubernetes/default` or `kubernetes/sysbox` if the workspace
+        is a CVM</td>
+    </tr>
 </table>
