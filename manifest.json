@@ -59,6 +59,9 @@
           "children": [
             {
               "path": "./workspaces/workspaces-as-code/templates.md"
+            },
+            {
+              "path": "./workspaces/workspaces-as-code/code-completion.md"
             }
           ]
         }
