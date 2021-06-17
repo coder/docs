@@ -46,26 +46,33 @@ customizations added by the users.
 
 ## Coder assets
 
-Coder inserts static assets into each workspace, including code-server, JetBrains
-Projector, and the Coder CLI. These assets are installed into the `/var/tmp/coder`
-directory of each workspace.
+Coder inserts static assets into each workspace, including:
 
-You do not need to include these assets in your own custom images. However, when
-building your own images, the following software is required:
+- code-server
+- JetBrains Projector
+- Coder CLI
 
-- [POSIX Utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)
+These assets are installed into the `/var/tmp/coder` directory of each
+workspace. You do not need to include these statics assets in your custom
+images. However, the following software are **required** when you build custom
+images:
+
+- [POSIX
+  Utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)
 - [GNU libc](https://www.gnu.org/software/libc/libc.html)
-  - The minimum GNU libc version supported for the Coder-inserted assets is `2.1`
-  - Alpine is not supported, since it uses musl libc
-- [GNU Core Utilities](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands)
+  - The minimum GNU libc version supported for the Coder-inserted assets is
+    `2.1`
+  - Coder doesn't support Alpine, since it uses musl libc
+- [GNU Core Utilities](https://www.gnu.org/software/coreutils/)
 
-The following utilities are optional:
+The following utilities are **optional**:
 
-- [ssh-agent](https://www.ssh.com/academy/ssh/agent) for automatically adding the
-Coder user's public SSH key to the agent
-- [systemd](https://systemd.io) for service supervision
-  - Only available with [CVMs](../workspaces/cvms)
+- [ssh-agent](https://www.ssh.com/academy/ssh/agent) to automatically add the
+  Coder user's public SSH key to the agent
+- [systemd](https://systemd.io) for service supervision (this is only available
+  with [CVMs](../workspaces/cvms)
 - [OpenSSH](https://www.openssh.com) server
-  - This can be run from either your `coder/configure` script or `systemd`
-- [gpg](https://www.gnupg.org) & [gpg-agent](https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html#Invoking-GPG_002dAGENT)
-for data encryption
+  - You can run OpenSSH from either your `coder/configure` script or `systemd`
+- [gpg](https://www.gnupg.org) and
+  [gpg-agent](https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html#Invoking-GPG_002dAGENT)
+  for data encryption
