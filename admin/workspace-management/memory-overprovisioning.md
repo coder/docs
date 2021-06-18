@@ -15,7 +15,7 @@ A site admin/manager must complete these steps:
 1. Under the **Infrastructure** tab, check the box next to **Enable Memory
    Overprovisioning**.
 
-![Enable memory overprovisioning](../../assets/enable-memory-overprovisioning.png)
+![Enable memory overprovisioning](../../assets/admin/enable-memory-overprovisioning.png)
 
 ## Step 2: Changing the memory provisioning rate
 
@@ -24,4 +24,4 @@ A site admin/manager must complete these steps:
    down to **Memory Provisioning Rate** and set the maximum ratio
 1. Click **Update**.
 
-![Set memory overprovisioning ratios](../../assets/set-memory-ratios.png)
+![Set memory overprovisioning ratios](../../assets/admin/set-memory-ratios.png)

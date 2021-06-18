@@ -26,4 +26,4 @@ Click **Edit** in the top-right. In the dialog that opens, use the slider
 underneath **Workspace Shutdown Behavior** to select the maximum allowed
 duration.
 
-![Configure shutdown behavior](../../assets/workspace-shutdown.png)
+![Configure shutdown behavior](../../assets/admin/workspace-shutdown.png)
