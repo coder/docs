@@ -9,7 +9,7 @@ cloud compute and justify more powerful dev machines :).
 
 ## Rebuilds
 
-Rebuilding an [workspace](index.md) allows you to update to the latest image,
+Rebuilding a [workspace](index.md) allows you to update to the latest image,
 edit resource requests, or restart your workspace after a shutdown.
 
 Only the `/home/<username>` directory persists between rebuilds. Rebuilds do not
