@@ -54,7 +54,7 @@ Coder inserts static assets into each workspace, including:
 
 These assets are installed into the `/var/tmp/coder` directory of each
 workspace. You do not need to include these static assets in your custom
-images. However, the following software is **required** when you build custom
+images. However, the following software are **required** when you build custom
 images:
 
 - [POSIX
