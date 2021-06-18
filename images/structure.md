@@ -54,7 +54,7 @@ Coder inserts static assets into each workspace, including:
 
 These assets are installed into the `/var/tmp/coder` directory of each
 workspace. You do not need to include these static assets in your custom
-images. However, the following software are **required** when you build custom
+images. However, the following software is **required** when you build custom
 images:
 
 - [POSIX
@@ -73,6 +73,3 @@ The following utilities are **optional**:
   with [CVMs](../workspaces/cvms)
 - [OpenSSH](https://www.openssh.com) server
   - You can run OpenSSH from either your `coder/configure` script or `systemd`
-- [gpg](https://www.gnupg.org) and
-  [gpg-agent](https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html#Invoking-GPG_002dAGENT)
-  for data encryption
