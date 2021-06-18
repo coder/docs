@@ -8,7 +8,7 @@ documentation to provide developers with a one-click way to start contributing.
 When a developer clicks on the embedded button, their workspace will use the
 image as you've configured it and automatically pull in the repository.
 
-![The Embed Button](../assets/embed-1.png)
+![The Embed Button](../assets/images/embed-1.png)
 
 ## Requirements
 
@@ -33,4 +33,4 @@ button.
    Markdown or HTML snippets). Copy the code and paste it into your README.md
    file.
 
-![Create embed button](../assets/embed-2.png)
+![Create embed button](../assets/images/embed-2.png)

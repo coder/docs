@@ -90,7 +90,7 @@ Coder will run the configure file during the build process, and you can verify
 this using the **Workspace Overview** page (Coder runs the configure file as the
 penultimate step of the build process):
 
-![Workspace Overview Page](../assets/configure.png)
+![Workspace Overview Page](../assets/images/configure.png)
 
 ## Examples
 

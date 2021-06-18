@@ -16,4 +16,4 @@ To import an image:
    workspace should have when using this image.
 1. Click **Import Image**.
 
-![Import image window](../assets/import-image.png)
+![Import image window](../assets/images/import-image.png)
