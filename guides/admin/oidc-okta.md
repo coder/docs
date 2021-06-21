@@ -21,22 +21,22 @@ information you need to provide to Coder.
 1. From the admin dashboard, click **Applications** and click the
    **Applications** sub-menu.
 
-   ![Okta Applications](../../assets/okta-add-app.jpg)
+   ![Okta Applications](../../assets/guides/admin/okta-add-app.jpg)
 
 1. Click **Add Application**.
 
-   ![Okta Add Application](../../assets/okta-create-new-app.jpg)
+   ![Okta Add Application](../../assets/guides/admin/okta-create-new-app.jpg)
 
 1. Click **Create New App**.
 
-   ![Okta Create Application Modal](../../assets/okta-custom-app-creation.jpg)
+   ![Okta Create Application Modal](../../assets/guides/admin/okta-custom-app-creation.jpg)
 
 1. Select **OpenID Connect** and click **Create**
 1. Fill in the **Application name** (i.e. `Coder`), optionally add a logo
 1. Add the **Login redirect URIs** for Coder (it will be formatted similar
    to `https://coder.my-company.com/oidc/callback`).
   
-   ![Okta Create OpenID Application](../../assets/okta-create-openid-integration.jpg)
+   ![Okta Create OpenID Application](../../assets/guides/admin/okta-create-openid-integration.jpg)
 
 1. Click **Save** to proceed.
 
@@ -56,20 +56,20 @@ Once you've saved your app, you can obtain your:
 On your application's **General** tab, look for the **Client ID** under
 the **Client Credentials** section. Below this is the **Client secret**.
 
-![Client ID and Secret](../../assets/okta-client-id-and-secret.jpg)
+![Client ID and Secret](../../assets/guides/admin/okta-client-id-and-secret.jpg)
 
 ### Issuer
 
 On your app's **Overview** page, click the **Sign On** tab. Find the
 **OpenID Connect ID Token** section, and copy the **Issuer**.
 
-![Issuer](../../assets/okta-issuer.jpg)
+![Issuer](../../assets/guides/admin/okta-issuer.jpg)
 
 ## Step 3: Assign People and/or Groups to Coder
 
 On your app's **Overview** page, click the **Assignments** tab.
 
-![Assignments](../../assets/okta-assign-app.jpg)
+![Assignments](../../assets/guides/admin/okta-assign-app.jpg)
 
 From here, you can assign People and Groups to the application to
 provide access to Coder.

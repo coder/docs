@@ -22,7 +22,7 @@ information you need to provide to Coder.
 1. Using the search bar at the top, enter **App registrations** and click the
    matching search result.
 
-   ![App registration](../../assets/app-registration.png)
+   ![App registration](../../assets/guides/admin/app-registration.png)
 
 1. Click **New registration**.
 1. Provide a **Name** for your application.
@@ -30,7 +30,7 @@ information you need to provide to Coder.
    only - Single tenant** option should be sufficient for testing, but you may
    need a **multitenant** option for production environments.
 
-   ![Register your app](../../assets/register.png)
+   ![Register your app](../../assets/guides/admin/register.png)
 
 1. Provide your **Redirect URL** (it will be formatted similar to
    `https://coder.exampleCo.com/oidc/callback`).
@@ -53,7 +53,7 @@ On your application's **Overview**, look for the **Application (client) ID**
 under the **Essentials** section. This is the value Coder expects as the
 **Client ID**.
 
-![Client ID](../../assets/client-id.png)
+![Client ID](../../assets/guides/admin/client-id.png)
 
 ### Client secret
 
@@ -67,14 +67,14 @@ You'll need to create the client secret. To do so:
 1. You'll be redirected back to the **Certificates & secrets** page; save the
    **Value** field string for use as your client secret.
 
-![Client secret value](../../assets/client-secret.png)
+![Client secret value](../../assets/guides/admin/client-secret.png)
 
 ### Issuer
 
 On your app's **Overview** page, click **Endpoints**. Find **OpenID Connect
 metadata document**, and copy the first 2/3s of this value.
 
-![Issuer](../../assets/issuer.png)
+![Issuer](../../assets/guides/admin/issuer.png)
 
 For example, if the full value is:
 

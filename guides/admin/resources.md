@@ -23,7 +23,7 @@ each machine would see 100% utilization of its resources. However, these
 processes are relatively quick, so the machine is underutilized the vast
 majority of the time.
 
-![resources-nonshared.svg](../../assets/resources-old.svg)
+![resources-nonshared.svg](../../assets/guides/admin/resources-old.svg)
 
 However, sharing resources can allow you to provide your developers with access
 to the computing resources while minimizing underutilization.
@@ -35,7 +35,7 @@ resources they need during peak load (e.g., compilation, build); this offers
 them a performant experience when required. However, the shared resources
 minimize resource underutilization.
 
-![resources-shared.svg](../../assets/resources-new.svg)
+![resources-shared.svg](../../assets/guides/admin/resources-new.svg)
 
 ## Resource contention
 
@@ -60,4 +60,4 @@ compute costs:
 - The Coder organization's workspace inactivity shutdown threshold
 - The magnitude and frequency of code compilation operations
 
-![cpu_provision_ratio.png](../../assets/cpu_provision_ratio.png)
+![cpu_provision_ratio.png](../../assets/guides/admin/cpu_provision_ratio.png)
