@@ -19,8 +19,8 @@ to help you estimate:
   1 GB of RAM per developer
 
 These estimates can vary based on actual usage within a workspace. We recommend
-starting with the amount of resources you'd allocate to a local workspace, then
-iterating as needed.
+starting with the amount of resources you'd typically allocate to a local workspace,
+such as 4 CPU and 16 GB of RAM, then iterating as needed.
 
 We also recommend [monitoring](../guides/admin/usage-monitoring.md) your usage
 to determine whether you should change your resource allocation. Accepting a
