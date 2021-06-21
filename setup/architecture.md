@@ -12,7 +12,7 @@ Coder is deployed on Kubernetes and includes the following components:
 
 Each component runs in its own Kubernetes pod.
 
-![Architecture](../assets/architecture.png)
+![Architecture](../assets/setup/architecture.png)
 
 ## Kubernetes NGINX ingress
 
