@@ -29,12 +29,12 @@ all queued workspaces are ready on time.
 
 1. Select the **Autostart** tab and set your desired Autostart time.
 
-   ![Set autostart time](../assets/set_autostart_time.png)
+   ![Set autostart time](../assets/workspaces/set_autostart_time.png)
 
 1. Select the workspaces for which you want to enable Autostart and save.
 
    ![Select workspaces to
-autostart](../assets/autostart_save_preferences.png)
+autostart](../assets/workspaces/autostart_save_preferences.png)
 
 ### Enabling Autostart for new workspaces
 
@@ -42,4 +42,4 @@ When creating a new workspace, you may enable Autostart by checking the box
 labeled **Automatically turn this workspace on at (HH:MM)** (where HH:MM is your
 configured time).
 
-![Enable autostart with new workspace](../assets/enable-autostart.png)
+![Enable autostart with new workspace](../assets/workspaces/enable-autostart.png)

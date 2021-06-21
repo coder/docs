@@ -18,7 +18,7 @@ Workspace**.
 > To learn more about creating an environment from templates, see
 > [Workspaces as code](workspaces-as-code/index.md).
 
-![Create a workspace](../assets/create-workspace.png)
+![Create a workspace](../assets/workspaces/create-workspace.png)
 
 1. Enter a friendly name for your workspace, and choose an
    [image](../images/index.md) to use.
@@ -57,7 +57,7 @@ You can also specify the resources Coder should allocate.
 Once you've created a workspace, it's time to hop in. Read more about how to
 [connect your favorite editor or IDE](./editors.md) with your new workspace!
 
-![Start coding](../assets/applications.png)
+![Start coding](../assets/guides/deployments/applications.png)
 
 > [Integrate with Git](./personalization#git-integration) to have your SSH key
 > injected automatically into Workspaces.

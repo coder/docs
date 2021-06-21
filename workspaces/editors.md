@@ -26,14 +26,14 @@ from your local VS Code, connected to your Coder workspace for compute, etc.
 1. In VS Code's left-hand nav bar, click **Remote Explorer** and right-click on
    a workspace to connect
 
-![VS Code Remote Explorer](../assets/vscode-remote-ssh-panel.png)
+![VS Code Remote Explorer](../assets/workspaces/vscode-remote-ssh-panel.png)
 
 ## VS Code in the browser
 
 Launch VS Code in the browser from the workspaces page by clicking the _Code
 Web_ icon.
 
-![Launch a workspace](../assets/launch-workspace.png)
+![Launch a workspace](../assets/workspaces/launch-workspace.png)
 
 ## JetBrains IDEs in the browser
 
@@ -43,7 +43,7 @@ you can launch it from the dashboard. Coder launches JetBrains IDEs in their own
 windows; be sure to set your browser to allow popup windows so that you can use
 your IDE.
 
-![JetBrains logos](../assets/applications.png)
+![JetBrains logos](../assets/guides/deployments/applications.png)
 
 > If you need a valid license to run your IDE locally, you'll also need one to
 > run it in Coder.

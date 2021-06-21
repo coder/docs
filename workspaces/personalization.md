@@ -79,7 +79,7 @@ echo "[user]\n\temail = youremailhere@gmail.com\n\tname = Your Name" > ~/.gitcon
 The Workspaces page shows the log output of the `~/personalize` script in the
 build log whenever it runs:
 
-![~/personalize log output](../assets/personalize-log.png)
+![~/personalize log output](../assets/workspaces/personalize-log.png)
 
 ## Git integration
 
@@ -110,4 +110,4 @@ Read more about dotfiles repos [here](http://dotfiles.github.io/).
 You can provide a link to your dotfiles repo that's hosted with the Git provider
 of your choice under [User preferences](preferences.md):
 
-![Dotfiles preferences](../assets/dotfiles-preferences.png)
+![Dotfiles preferences](../assets/workspaces/dotfiles-preferences.png)

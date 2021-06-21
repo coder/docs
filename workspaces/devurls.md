@@ -18,7 +18,7 @@ indicate who can **access** the URL and the **internal server scheme** (e.g.,
 whether Coder should use HTTP or HTTPS when proxying requests to the internal
 server).
 
-![Create a dev URL](../assets/create-devurl.png)
+![Create a dev URL](../assets/workspaces/create-devurl.png)
 
 ## Access control
 
@@ -38,7 +38,7 @@ To access a dev URL, you can click:
 - The **Open in browser** icon to launch a new browser window
 - The **Copy** button to copy the URL for sharing
 
-![Dev URLs List](../assets/devurls.png)
+![Dev URLs List](../assets/workspaces/devurls.png)
 
 ### Direct access
 
