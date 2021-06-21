@@ -82,7 +82,7 @@ scroll down to **Dev URL Access Permissions**.
   </tr>
 </table>
 
-![Setting dev URL permissions](../assets/admin-devurl-permissions.png)
+![Setting dev URL permissions](../assets/admin/admin-devurl-permissions.png)
 
 You can set the maximum access level, but developers may choose to restrict
 access further.

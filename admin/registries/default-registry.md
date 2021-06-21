@@ -26,4 +26,4 @@ To do so:
    option.
 1. Click **Save Registry**.
 
-![Import default registry](../../assets/import-default-registry.png)
+![Import default registry](../../assets/admin/import-default-registry.png)

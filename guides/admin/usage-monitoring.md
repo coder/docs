@@ -16,9 +16,9 @@ contention can result in the throttling of developer workspaces, while excessive
 underutilization suggests that you may be spending more on your cloud workspace
 than necessary.
 
-![Monitoring CPU utilization](../../assets/compute-1.png)
+![Monitoring CPU utilization](../../assets/guides/admin/compute-1.png)
 
-![Monitoring Memory utilization](../../assets/compute-2.png)
+![Monitoring Memory utilization](../../assets/guides/admin/compute-2.png)
 
 There are several tools available to you to balance the tradeoff between
 workspace performance and cloud cost. Read more about this on
@@ -31,9 +31,9 @@ cluster resources to Coder's product-level resource identifiers. For example,
 the following chart tracks the CPU/Memory Limit Utilization of each workspace
 container and labels them with the username and workspace name identifiers:
 
-![Monitoring CPU Utilization by workspace and user](../../assets/compute-3.png)
+![Monitoring CPU Utilization by workspace and user](../../assets/guides/admin/compute-3.png)
 
-![Monitoring Memory Utilization by workspace and user](../../assets/compute-4.png)
+![Monitoring Memory Utilization by workspace and user](../../assets/guides/admin/compute-4.png)
 
 These views can help you track which users may require larger CPU allocations,
 enabling greater "burst-ability" under peak loads. However, remember that using
@@ -47,8 +47,8 @@ Monitoring the Coder control plane can help you maintain high uptime. For
 example, the following charts provide high-level insight into the state of the
 Coder API server:
 
-![Monitoring log event severity](../../assets/compute-5.png)
+![Monitoring log event severity](../../assets/guides/admin/compute-5.png)
 
-![Monitoring API status codes](../../assets/compute-6.png)
+![Monitoring API status codes](../../assets/guides/admin/compute-6.png)
 
-![Monitoring HTTP latency](../../assets/compute-7.png)
+![Monitoring HTTP latency](../../assets/guides/admin/compute-7.png)

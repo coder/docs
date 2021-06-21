@@ -14,7 +14,7 @@ addition to the base code-server functionality.
 - [Manage and distribute workspace images](https://coder.com/docs/images)
 - [Build custom workspaces that include your project's dependencies](https://coder.com/docs/images/structure)
 
-![Coder Dashboard](../../assets/applications.png)
+![Coder Dashboard](../../assets/guides/deployments/applications.png)
 
 ## Developer workflows
 
@@ -26,7 +26,7 @@ addition to the base code-server functionality.
 - [Manage workspaces with the Coder CLI](https://coder.com/docs/cli)
 - [Personalize workspaces](https://coder.com/docs/workspaces/personalization)
 
-![User management icon](../../assets/manage-users.png)
+![User management icon](../../assets/guides/deployments/manage-users.png)
 
 ## Team management
 
@@ -34,7 +34,7 @@ addition to the base code-server functionality.
 - [Assign user roles](https://coder.com/docs/admin/access-control/user-roles)
 - [Manage organizations](https://coder.com/docs/admin/access-control/organizations)
 
-![Workspace providers](../../assets/workspace-providers-admin.png)
+![Workspace providers](../../assets/admin/workspace-providers-admin.png)
 
 ## Operations
 

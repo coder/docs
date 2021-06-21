@@ -25,7 +25,7 @@ can also change which organizations are defaults at any time.
 [Site admins and site managers](access-control/user-roles.md) can create new
 organizations by going to **Manage** > **Organizations** > **New Organization**.
 
-![Create a new organization dialog](../assets/create-an-org.png)
+![Create a new organization dialog](../assets/admin/create-an-org.png)
 
 Provide a **name** and (optionally) a **description** for this organization. If
 you want this to become a **Default organization**, make sure to check the
@@ -52,7 +52,7 @@ When you've set your parameters, click **Create** to proceed.
 You can edit an organization at any time by going to **Manage** >
 **Organizations**.
 
-![Edit an organization dialog](../assets/edit-an-org.png)
+![Edit an organization dialog](../assets/admin/edit-an-org.png)
 
 Find the organization you want to edit, and click to open. In the top-right,
 click **Edit** to launch the **Edit Organizations** dialog.

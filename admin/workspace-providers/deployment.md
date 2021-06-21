@@ -139,7 +139,7 @@ when communicating with the Coder deployment.
 1. Once the Helm chart has deployed successfully, you should see the workspace
    provider in a `ready` state on the **Workspace provider admin** page.
 
-   ![Workspace providers admin](../../assets/workspace-providers-admin.png)
+   ![Workspace providers admin](../../assets/admin/workspace-providers-admin.png)
 
 1. From the **Workspace provider admin** page, add the desired organizations to
    its allowlist.

@@ -21,4 +21,4 @@ Go to **Manage** > **Admin**. On the **Infrastructure** tab, find the **GPU
 Vendor** setting, and change it to the GPU vendor of choice (either **AMD** or
 **Nvidia**). Click **Save Vendor**.
 
-![Enable GPU vendor](../../assets/gpu.png)
+![Enable GPU vendor](../../assets/admin/gpu.png)

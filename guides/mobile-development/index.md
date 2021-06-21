@@ -17,19 +17,19 @@ developed remotely on Coder.
 
 1. Start Android Studio, and when prompted, install the SDK.
 
-   ![Android SDK Install](../../assets/android-sdk-missing.png)
+   ![Android SDK Install](../../assets/guides/mobile-development/android-sdk-missing.png)
 
 1. [Create and start](https://developer.android.com/studio/run/managing-avds) a
    Virtual Device.
 
-   ![Android Device](../../assets/android-avd.png)
+   ![Android Device](../../assets/guides/mobile-development/android-avd.png)
 
 1. Create a workspace variable called `ANDROID_SDK_PATH` and set it to the
    installation path of your Android SDK (for example, it's typically
    `~/Library/Android/sdk` on macOS and
    `C:\Users\<USER_NAME>\AppData\Local\Android\sdk` on Windows).
 
-   ![Android SDK Path](../../assets/android-sdk-path.png)
+   ![Android SDK Path](../../assets/guides/mobile-development/android-sdk-path.png)
 
 1. Start the Android Debug Server on port 5555:
 

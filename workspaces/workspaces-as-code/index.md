@@ -29,7 +29,7 @@ in our [syntax guide](templates.md).
 To create a new workspace using a template, go to **New Workspace** > **Create
 from Template**.
 
-![Create from template button](../../assets/create-from-template.png)
+![Create from template button](../../assets/workspaces/workspaces-as-code/create-from-template.png)
 
 When prompted, provide:
 
@@ -42,7 +42,7 @@ When prompted, provide:
   will be `.coder/coder.yaml`, but if you choose a different path, provide it
   here
 
-![Create workspace from template](../../assets/wac-user-form.png)
+![Create workspace from template](../../assets/workspaces/workspaces-as-code/wac-user-form.png)
 
 ## Adding an embeddable button
 

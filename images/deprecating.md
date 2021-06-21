@@ -11,7 +11,7 @@ workspaces.
 1. Select the **Deprecate this image** checkbox.
 1. Click **Update Image** to save your changes.
 
-![Deprecating an image](../assets/deprecate-image.png)
+![Deprecating an image](../assets/images/deprecate-image.png)
 
 > Users cannot create new workspaces using deprecated images. However, they can
 > continue to use _existing_ workspaces created with the now-deprecated images

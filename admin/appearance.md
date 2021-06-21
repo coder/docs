@@ -19,7 +19,7 @@ To customize your system banner messages:
    in your **Header** and **Footer**.
 1. Click **Save Preferences** to save your changes.
 
-![System appearance](../assets/system-banners.png)
+![System appearance](../assets/admin/system-banners.png)
 
 ## Service banners
 
@@ -45,7 +45,7 @@ To enable the display of terms of service and to edit the text displayed:
    Markdown formatting.
 1. Click **Save Preferences** to save your changes.
 
-![Terms of service](../assets/terms-of-service.png)
+![Terms of service](../assets/admin/terms-of-service.png)
 
 **Note**: If you enable the use of terms of service, users will not be able to
 log in to Coder without first accepting the terms of service.

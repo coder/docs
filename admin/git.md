@@ -26,7 +26,7 @@ However, Coder doesn't test these and cannot provide recommendations or support.
 **Note** The public key provided by Coder uses the ECDSA key algorithm. Ensure
 your git provider supports this.
 
-![Configure Git Integration](../assets/git-admin.png)
+![Configure Git Integration](../assets/admin/git-admin.png)
 
 ## Configuring OAuth
 

@@ -16,7 +16,7 @@ The **License** tab displays the details for your current license, including:
 - When the license was issued
 - When the license expires
 
-![License configuration screen](../assets/licensing.png)
+![License configuration screen](../assets/setup/licensing.png)
 
 You can also upload a new license file by clicking **Upload License**.
 

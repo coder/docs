@@ -41,7 +41,7 @@ expand your Coder deployment to additional Kubernetes clusters.
 Site admins and site managers can view the workspace providers configuration
 page available via **Manage** > **Admin** > **Workspace Providers**.
 
-![Workspace providers admin](../../assets/workspace-providers-admin.png)
+![Workspace providers admin](../../assets/admin/workspace-providers-admin.png)
 
 The Admin panel shows an overview of all configured workspace providers and
 indicates their statuses and details. The **default** tag indicates the provider
@@ -51,7 +51,7 @@ that will be selected by default when a user creates a workspace using the
 You can expand individual listings to view in-depth information:
 
 ![Detailed workspace providers
-info](../../assets/workspace-providers-detail.png)
+info](../../assets/admin/workspace-providers-detail.png)
 
 ### Status
 

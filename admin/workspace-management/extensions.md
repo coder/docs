@@ -18,7 +18,7 @@ then scrolling down to **Extensions**:
 - **Custom**: your organization's custom VS Code extension marketplace API,
   accessed via the URL you provide
 
-![Configuring extensions marketplace](../../assets/configure-extensions.png)
+![Configuring extensions marketplace](../../assets/admin/configure-extensions.png)
 
 ## Air-gapped marketplaces
 

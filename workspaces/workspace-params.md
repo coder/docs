@@ -14,7 +14,7 @@ To create a workspace, launch the creation dialog by:
 - Clicking **Create Workspace** (if available), or
 - Clicking **New Workspace** in the top-right
 
-![Create a workspace](../assets/create-workspace.png)
+![Create a workspace](../assets/workspaces/create-workspace.png)
 
 When prompted, provide the following information:
 
@@ -59,7 +59,7 @@ workspace. You can choose to run your workspace as a container-based virtual
 machine, provide a dotfiles URI for [personalization](personalization.md), and
 set your resource allocation.
 
-![Workspace setup advanced settings](../assets/advanced-workspace-config.png)
+![Workspace setup advanced settings](../assets/workspaces/advanced-workspace-config.png)
 
 <table>
     <tr>
