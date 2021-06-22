@@ -22,11 +22,10 @@ define their workspaces.
 
 The following policies can be applied to fields:
 
-```text
-read: workspaces cannot modify the field
-write: workspaces can overrite the field
-append: lists only, workspaces can append items to the field (e.g configure.start steps)
-```
+- **read** - Workspaces cannot modify the field
+- **write** - Workspaces can overrite the field
+- **append** - Workspaces can append items to the field, lists only (e.g
+  configure.start steps)
 
 The default template policy is as follows:
 
