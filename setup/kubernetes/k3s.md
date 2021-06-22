@@ -22,8 +22,8 @@ Before proceeding, please make sure that you have the following:
    cloud compute, AWS EC2, GCP Compute Engine, Azure VMs, Vultr, DigitalOcean
    work well. Make sure the machine specs satisfies Coder's
    [resource requirements](../requirements.md)
-1. Network firewall exposting ports 22 (SSH), 80 (HTTP), 443 (HTTPS), and 8443
-   (Kubernetes API).
+1. Network policy or firewall accepting incoming traffic on ports 22 (SSH), 80
+   (HTTP), 443 (HTTPS), and 8443 (Kubernetes API).
 1. The following software installed on the machine:
    - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
    - [helm](https://helm.sh/docs/intro/install/)
@@ -38,7 +38,8 @@ Your experience with Coder is dependent on your system specs. See our
 If you want to allow
 [SSH into workspaces](https://coder.com/docs/coder/v1.20/workspaces/ssh), you
 will need to change the host's default SSH port to free up port 22. You may also
-need to modify your network policy to open up the alternative port (e.g 5522)
+need to modify your firewall to accept incoming traffic from the alternative
+port (e.g 5522)
 
 [Follow this guide](https://linuxize.com/post/how-to-change-ssh-port-in-linux/)
 by Linuxize if you do not know how to do this.
