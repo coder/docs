@@ -363,7 +363,11 @@
             },
             {
               "path": "./guides/troubleshooting/docker-problems.md"
+            },
+            {
+              "path": "./guides/troubleshooting/registry.md"
             }
+              
           ]
         }
       ]
