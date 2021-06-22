@@ -3,8 +3,8 @@ title: "k3s"
 description: Set up a Coder deployment with a Ubuntu + k3s
 ---
 
-k3s is a lightweight Kubernetes distribution that works great with single-node
-or multi-node clusters alike.
+k3s is a lightweight Kubernetes distribution that works well for single-node or
+multi-node clusters alike.
 
 > This guide only covers installation on a new Ubuntu 20.04 LTS machine. If you
 > are looking to install on a local machine or an existing host,
@@ -15,8 +15,8 @@ or multi-node clusters alike.
 Before proceeding, please make sure that you have the following:
 
 1. **Ubuntu 20.04 machine**: This can be a bare metal or virtual machine. For
-   cloud compute, AWS EC2, GCP Compute Engine, Azure VMs, Vultr, or DigitalOcean
-   all work. Make sure the machine specs satisfies Coder's
+   cloud compute, AWS EC2, GCP Compute Engine, Azure VMs, Vultr, DigitalOcean
+   work well. Make sure the machine specs satisfies Coder's
    [resource requirements](../requirements.md)
 1. Network policy exposting ports 22, 80, 443, and 5522 (alternative SSH port)
 1. The following software installed on the machine:
