@@ -68,6 +68,10 @@ can drag-and-drop the file onto the UI. Click **Save** to persist your changes.
 If, at any time, you want to remove your policy and use Coder's default policy,
 click **Reset to default**.
 
+The template policy applies to all workspaces created and managed in Coder,
+including custom workspaces. If properties of a workspace conflict with the
+template policy, those values in the workspace will be ignored.
+
 ## Embeddable Button
 
 The Embeddable Button section features a form you can use for generating an
