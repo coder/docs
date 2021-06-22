@@ -20,38 +20,46 @@ If you enable the use of workspace templates, a **template policy** allows you
 to control which fields users can set and which values can be used when they
 define their workspaces.
 
+The following policies can be applied to fields:
+
+```text
+read: workspaces cannot modify the field
+write: workspaces can overrite the field
+append: lists only, workspaces can append items to the field (e.g configure.start steps)
+```
+
 The default template policy is as follows:
 
 ```yaml
 version: "0.2"
 workspace:
-    configure:
-        start:
-            policy: write
-    dev-urls:
+  configure:
+    start:
+      policy: write
+  dev-urls:
+    policy: write
+  specs:
+    kubernetes:
+      container-based-vm:
         policy: write
-    specs:
-        kubernetes:
-            container-based-vm:
-                policy: write
-            cpu:
-                policy: write
-            disk:
-                policy: write
-            env:
-                policy: write
-            gpu-count:
-                policy: write
-            image:
-                policy: write
-            labels:
-                policy: read
-            memory:
-                policy: write
-            node-selector:
-                policy: read
-            tolerations:
-                policy: read
+      cpu:
+        policy: write
+      disk:
+        policy: write
+      env:
+        policy: write
+      gpu-count:
+        policy: write
+      image:
+        policy: write
+      labels:
+        policy: read
+      memory:
+        policy: write
+      node-selector:
+        policy: read
+      tolerations:
+        policy: read
 ```
 
 Underneath the policy template preview, you can either upload your policy or you
@@ -62,8 +70,8 @@ click **Reset to default**.
 
 ## Embeddable Button
 
-The Embeddable Button section features a form you can use for generating an embeddable
-button. This button makes it easy for developers to use your
+The Embeddable Button section features a form you can use for generating an
+embeddable button. This button makes it easy for developers to use your
 [workspace template](../workspaces/workspaces-as-code/index.md).
 
 To create your button:
