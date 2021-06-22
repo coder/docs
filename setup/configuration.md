@@ -30,29 +30,29 @@ Coder provides you with your licensing information, which looks like:
 {"owner":"yourName","issued_at":"2020-01-01T00:00:00Z","expires_at":"2020-01-02T00:00:00Z","max_usage":{"user_count":10},"paid":false,"nonce":"MjA...MDA=","version":1,"checksum":"VtG...uQ=="}
 ```
 
-Copy this information into the text editor of your choice, and save it as a .txt
-or a JSON file. You'll need to upload this file at two points during the setup
-and configuration processes.
+Copy this information into the text editor of your choice, and save it as a
+`.txt` or a `.json` file. You'll need to upload this file at **two** points
+during the setup and configuration processes.
 
 ## Providing your license
 
 Immediately after logging into Coder for the first time, you'll be prompted to
-upload your license (you must provide a JSON file).
+upload your license (you must provide a `.txt` or `.json` file).
 
 Once done, you can proceed with the Coder configuration process.
 
 ## Configure your Coder deployment
 
-Once you log in to Coder's Web UI, you'll be walked through a configuration
-dashboard. You can specify the authentication method used for logins, provide
-your license information, and more.
+Immediately after logging in to Coder's Web UI, you'll be walked through a
+configuration dashboard. You can specify the authentication method used for
+logins, provide your license information, and more.
 
-After you complete this process, you'll be redirected to the main Coder
+When you complete this process, you'll be redirected to the main Coder
 dashboard, where you can create new users, images, and workspaces.
 
-> After completing the configuration process, we recommend creating a **site
-> manager** user that can be used to create additional users and resources. **We
-> recommend using the site admin user only for initial configuration purposes.**
+> As part of the configuration process, we recommend creating a **site manager**
+> user that can be used to create additional users and resources. **We suggest
+> using the site admin user only for initial configuration purposes.**
 
 ### Best practices
 
