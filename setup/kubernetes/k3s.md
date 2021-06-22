@@ -85,8 +85,8 @@ kubectl edit cm cni-config -n calico-system
 ### Ensure `$KUBECONFIG` is defined
 
 Sometimes helm will not properly recognize the k3s cluster
-(k3s-io/[k3s#1126](k3s#1126)). To resolve this, add the following to your
-`~/.bashrc`:
+(k3s-io/[k3s#1126](https://github.com/k3s-io/k3s/issues/1126)). To resolve this,
+add the following to your `~/.bashrc`:
 
 ```console
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`
