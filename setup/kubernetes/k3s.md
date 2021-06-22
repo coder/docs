@@ -23,7 +23,7 @@ Before proceeding, please make sure that you have the following:
    work well. Make sure the machine specs satisfies Coder's
    [resource requirements](../requirements.md)
 1. Network policy or firewall accepting incoming traffic on ports 22 (SSH), 80
-   (HTTP), 443 (HTTPS), and 8443 (Kubernetes API).
+   (HTTP), 443 (HTTPS), 5349 (Networking v2 / TURN), and 8443 (Kubernetes API).
 1. The following software installed on the machine:
    - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
    - [helm](https://helm.sh/docs/intro/install/)
