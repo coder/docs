@@ -1,63 +1,65 @@
 ---
-title: "k3s"
-description: Set up a Coder deployment with a Ubuntu + k3s
+title: "K3s"
+description: Set up K3s on an Ubuntu machine to deploy Coder.
 ---
 
-k3s is a lightweight Kubernetes distribution that works well for single-node or
-multi-node clusters alike.
+This article will show you how to install K3s onto a new Ubuntu 20.04 LTS
+machine for use with Coder.
 
-This guide covers installation on a new Ubuntu 20.04 LTS machine. If you are
-looking to install Coder on a local machine or an existing host,
-[Kind](./kind.md) or k3d may be a better choice.
+[K3s](https://k3s.io/) is a lightweight Kubernetes distribution that works well
+for both single-node or multi-node clusters. This guide covers the installation
+of K3s onto a new Ubuntu 20.04 LTS machine, but if you want to install Coder on
+a local machine or an existing host, [Kind](./kind.md) or [k3d](https://k3d.io/)
+are better choices.
 
-> This install method is not officially supported or tested by Coder. If you
-> have questions or run into issues, feel free to reach out on our
+> This installation method is not officially supported or tested by Coder. If
+> you have questions or run into issues, feel free to reach out using our
 > [community Slack channel](https://cdr.co/join-community).
 
 ## Prerequisites
 
-Before proceeding, please make sure that you have the following:
+Before proceeding, please make sure that:
 
-1. **Ubuntu 20.04 machine**: This can be a bare metal or virtual machine. For
-   cloud compute, AWS EC2, GCP Compute Engine, Azure VMs, Vultr, DigitalOcean
-   work well. Make sure the machine specs satisfies Coder's
-   [resource requirements](../requirements.md)
-1. Network policy or firewall accepting incoming traffic on ports 22 (SSH), 80
-   (HTTP), 443 (HTTPS), 5349 (Networking v2 / TURN), and 8443 (Kubernetes API).
-1. The following software installed on the machine:
+1. You have an **Ubuntu 20.04 machine**: This can be a bare metal or a virtual
+   machine. For cloud compute, AWS EC2, GCP Compute Engine, Azure VMs, Vultr,
+   and DigitalOcean all work well.
+
+   Ensure that the machine's specs satisfies
+   Coder's [resource requirements](../requirements.md), since your experience
+   with Coder is dependent on your system specs.
+
+1. You have the following software installed on your machine:
    - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
    - [helm](https://helm.sh/docs/intro/install/)
 
-### Resource allocation and performance
+1. Your network policy or firewall accepts incoming traffic on ports 22 (SSH),
+   80 (HTTP), 443 (HTTPS), 5349 (Networking v2 / TURN), and 8443 (Kubernetes
+   API).
 
-Your experience with Coder is dependent on your system specs. See our
-[resource requirements](../requirements.md) for more details.
+## Step 1: Change the default SSH port
 
-## Change the default SSH port
+To allow [SSH into
+workspaces](https://coder.com/docs/coder/v1.20/workspaces/ssh), you must change
+the host's default SSH port to free up port 22. You may also need to modify your
+firewall to accept incoming traffic from the alternative port (e.g 5522).
 
-If you want to allow
-[SSH into workspaces](https://coder.com/docs/coder/v1.20/workspaces/ssh), you
-will need to change the host's default SSH port to free up port 22. You may also
-need to modify your firewall to accept incoming traffic from the alternative
-port (e.g 5522)
+> If you don't know how to change the SSH port in Linux, please review this
+> [guide from Linuxize](https://linuxize.com/post/how-to-change-ssh-port-in-linux/)
 
-[Follow this guide](https://linuxize.com/post/how-to-change-ssh-port-in-linux/)
-by Linuxize if you do not know how to do this.
+## Step 2: Install K3s with Calico
 
-## Install k3s with Calico
+The following steps are based on [Calico's quickstart
+guide](https://docs.projectcalico.org/getting-started/kubernetes/k3s/quickstart)
+for setting up K3s. However, you will disable the default network policies and
+Traefik in favor of Calico and nginx-ingress.
 
-The following uses
-[Calico's quickstart guide](https://docs.projectcalico.org/getting-started/kubernetes/k3s/quickstart)
-to set up K3s. We will be disabling the default network policies and Traefik in
-favor of Calico and nginx-ingress.
-
-1. Create a single-node k3s cluster.
+1. Create a single-node K3s cluster:
 
    ```console
    curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE="644" INSTALL_K3S_EXEC="--flannel-backend=none --cluster-cidr=192.168.0.0/16 --disable-network-policy --dis55able=traefik" sh -
    ```
 
-   > From the
+   > Per the
    > [Calico docs](https://docs.projectcalico.org/getting-started/kubernetes/k3s/quickstart):
    >
    > If 192.168.0.0/16 is already in use within your network you must select a
@@ -68,9 +70,8 @@ favor of Calico and nginx-ingress.
    > permissions, using K3S_KUBECONFIG_MODE environment you are assigning
    > necessary permissions to the file and make it accessible for other users.
 
-1. Install the Calico operator and CRDs
-
-   Calico is used to implement network segmentation and tenant isolation.
+1. Install the Calico operator and CRDs (Calico is used to implement network
+   segmentation and tenant isolation):
 
    ```console
    kubectl create -f https://docs projectcalico.org/manifests tigera-operator.yaml
@@ -78,18 +79,15 @@ favor of Calico and nginx-ingress.
    kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml
    ```
 
-1. Confirm all of the pods are running
+1. Confirm that all of the pods are running:
 
    ```console
    watch kubectl get pods --all-namespaces
    ```
 
-## Allow IP Forwarding
+## Step 3: Allow IP Forwarding
 
-IP forwarding is necessary for container networking. Modify Calico so that IP
-forwarding is allowed in the container_settings section.
-
-Edit the value in the following places:
+Modify Calico to enable IP forwarding, which is needed for container networking.
 
 ```console
 vim /etc/cni/net.d/10-canal.conflist
@@ -97,26 +95,29 @@ vim /etc/cni/net.d/10-canal.conflist
 kubectl edit cm cni-config -n calico-system
 ```
 
+Under `container_settings`, set `allow_ip_forwarding` to `true`:
+
 ```json
 "container_settings": {
    "allow_ip_forwarding": true
 }
 ```
 
-### Copy your kubeconfig
+## Step 4: Copy over the kubeconfig
 
-Sometimes helm will not properly recognize the k3s cluster
-(k3s-io/[k3s#1126](https://github.com/k3s-io/k3s/issues/1126)).
+Occasionally, Helm will not recognize the K3s cluster
+(see k3s-io/[k3s#1126](https://github.com/k3s-io/k3s/issues/1126) for more information).
+
+If this happens, but you want to interface with the cluster from your local
+machine, copy `/etc/rancher/k3s/k3s.yaml` to `~/.kube/config` on your local
+machine. Ensure that you replace
+`localhost` or `127.0.0.1` with the host's public IP address:
 
 ```console
 # on the host machine:
 cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 ```
 
-If you want to interface with the cluster from your local machine,,
-`/etc/rancher/k3s/k3s.yaml` to `~/.kube/config` on your local machine. Replace
-localhost or 127.0.0.1 with the host's public IP address.
-
 ## Next steps
 
-At this point, you're ready to proceed to [installation](../installation.md).
+At this point, you're ready to proceed to [installing Coder](../installation.md).
