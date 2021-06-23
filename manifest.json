@@ -359,14 +359,14 @@
           "navigable": false,
           "children": [
             {
-              "path": "./guides/troubleshooting/inotify-watch-limits.md"
-            },
-            {
               "path": "./guides/troubleshooting/docker-problems.md"
             },
             {
               "path": "./guides/troubleshooting/registry.md"
-            } 
+            },
+            {
+              "path": "./guides/troubleshooting/inotify-watch-limits.md"
+            }
           ]
         }
       ]
