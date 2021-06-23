@@ -10,10 +10,9 @@ guaranteed minimum capacity, while enabling them to use available capacity for
 improved performance. The guaranteed minimum capacity is equivalent to the total
 CPUs provisioned for a workspace divided by the provisioning ratio.
 
-For example, let's say that you set a CPU provisioning ratio of 8:1. A workspace
-with 4  virtual CPUs (vCPUs) would only have 0.5 physical CPUs reserved on the
-underlying node. However, the workspace could use additional resources available
-for more intensive processes (e.g., building or compiling code).
+For example, let's say that you set a CPU provisioning ratio of 8:1. If a user
+creates a workspace with 4 CPUs, then Coder will reserve 0.5 CPUs on the
+underlying node, with a maximum limit of 4 CPUs.
 
 ## Changing the CPU provisioning ratio
 
