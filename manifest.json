@@ -197,6 +197,9 @@
               "path": "./admin/workspace-management/memory-overprovisioning.md"
             },
             {
+              "path": "./admin/workspace-management/cpu-provisioning.md"
+            },
+            {
               "path": "./admin/workspace-management/shutdown.md"
             },
             {
