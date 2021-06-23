@@ -3,12 +3,10 @@ Title: Code With Me for JetBrains
 Description: Learn how to use JetBrains' Code With Me feature in Coder.
 ---
 
-Coder supports JetBrains' [Code With
-Me](https://www.jetbrains.com/code-with-me/), allowing you to collaborate with
-others in real-time on your project and enabling pair programming.
-
 This article will show you how to set up a Code With Me session when running a
-JetBrains IDE in Coder.
+JetBrains IDE in Coder. JetBrains' [Code With
+Me](https://www.jetbrains.com/code-with-me/) allows you to collaborate with
+others in real-time on your project and enables pair programming.
 
 ## Prerequisites
 
