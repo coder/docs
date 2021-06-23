@@ -36,7 +36,7 @@ To create and host a Code With Me session:
 1. Under **Applications**, launch the JetBrains IDE (e.g., GoLand) of your
    choice.
 
-   ![CWM](../assets/workspaces/code-with-me-1.png)
+   ![Launch IDE](../assets/workspaces/code-with-me-1.png)
 
 1. Click the **Code With Me** icon at the top of your IDE:
 
@@ -44,14 +44,14 @@ To create and host a Code With Me session:
 
 1. Select **Enable Access and Copy Invitation Link...**.
 
-   ![CWM](../assets/workspaces/code-with-me-3.png)
+   ![Enable access and copy link](../assets/workspaces/code-with-me-3.png)
 
 1. Confirm and accept the Terms of Use.
 
 1. Set the permissions for new guests to **Full access** and uncheck the
    **Automatically start voice call** feature. Click **Enable Access**.
 
-   ![CWM](../assets/workspaces/code-with-me-4.png)
+   ![Set permissions](../assets/workspaces/code-with-me-4.png)
 
 1. Once you've enabled access, JetBrains copies the link you must share with
    participants to your clipboard. Send this link to those with whom you'd like
@@ -60,7 +60,7 @@ To create and host a Code With Me session:
    You can recopy this link at any time by clicking the **Code With Me icon**
    and choosing **Copy Invitation Link...**.
 
-   ![CWM](../assets/workspaces/code-with-me-5.png)
+   ![Link confirmation](../assets/workspaces/code-with-me-5.png)
 
 ### Step 2: Request to join the session
 
@@ -72,19 +72,19 @@ If you've received a link to join a Code With Me session as a participant:
 1. On the instructions page to which you were directed, copy the code snippet
    and run it in the terminal.
 
-   ![CWM](../assets/workspaces/code-with-me-6.png)
+   ![Run join command in terminal](../assets/workspaces/code-with-me-6.png)
 
 1. Confirm and accept the User Agreement.
 
 1. You'll be shown a **security code**. Verify with the host of your session
    that they see the same code.
 
-   ![CWM](../assets/workspaces/code-with-me-7.png)
+   ![Security code verification](../assets/workspaces/code-with-me-7.png)
 
 1. Wait for your host to accept your request to join; when they do, your
    JetBrains IDE will launch automatically.
 
-   ![CWM](../assets/workspaces/code-with-me-8.png)
+   ![New JetBrains IDE](../assets/workspaces/code-with-me-8.png)
 
 ### Step 3: Accept the request to the join
 
@@ -92,7 +92,7 @@ If you're the host of the session, you'll see a request that the other
 participant wants to join your project, the permissions you've
 granted to the other user, and a security code.
 
-   ![CWM](../assets/workspaces/code-with-me-9.png)
+   ![Security code verification for host](../assets/workspaces/code-with-me-9.png)
 
 Verify that the security code you see matches the one shown to your
 participants. If they do, click **Accept** to proceed.
