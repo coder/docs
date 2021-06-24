@@ -1,13 +1,13 @@
 ---
-title: "Memory overprovisioning"
-description: Learn how to overprovision memory requests from workspaces.
+title: "Memory provisioning"
+description: Learn how to provision memory requests from workspaces.
 ---
 
-Coder allows you to set memory overprovisioning ratios for each of your
+Coder allows you to set memory provisioning ratios for each of your
 organizations. By changing this ratio, you can change the number of workspaces
 that fit onto a single Kubernetes node.
 
-## Step 1: Enabling memory overprovisioning
+## Step 1: Enabling memory provisioning
 
 A site admin/manager must complete these steps:
 
