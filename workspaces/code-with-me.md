@@ -1,6 +1,6 @@
 ---
-Title: Code With Me
-Description: Learn how to use JetBrains' Code With Me feature in Coder.
+title: Code With Me
+description: Learn how to use JetBrains' Code With Me feature in Coder.
 ---
 
 This article will show you how to set up a Code With Me session when running a
