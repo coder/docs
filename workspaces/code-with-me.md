@@ -1,5 +1,5 @@
 ---
-Title: Code With Me for JetBrains
+Title: Code With Me
 Description: Learn how to use JetBrains' Code With Me feature in Coder.
 ---
 
@@ -36,7 +36,7 @@ To create and host a Code With Me session:
 
    ![Launch IDE](../assets/workspaces/code-with-me-1.png)
 
-1. Click the **Code With Me** icon at the top of your IDE:
+1. Click the **Code With Me** icon at the top of your IDE.
 
     ![Code With Me icon](../assets/workspaces/code-with-me-2.png)
 
