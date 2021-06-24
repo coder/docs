@@ -1,7 +1,6 @@
 ---
 title: CPU provisioning
-description: Learn how to set the CPU provisioning
-ratio.
+description: Learn how to set the CPU provisioning ratio.
 ---
 
 Coder allows you to set the CPU provisioning ratio for each of your
