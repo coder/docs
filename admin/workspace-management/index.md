@@ -17,7 +17,7 @@ Administrative users can modify a variety of workspace-related behaviors.
   - [Browser security](../security.md)
   - [Memory overprovisioning](memory-overprovisioning.md)
 
-- You can modify the [Workspace shutdown behavior](shutdown.md) on a
+- You can modify the [workspace shutdown behavior](shutdown.md) on a
   per-organization basis to optimize resource usage.
 
 - You can [install multiple IDEs](installing-jetbrains.md) onto your image so
@@ -25,5 +25,3 @@ Administrative users can modify a variety of workspace-related behaviors.
 
 - You can [disable SSH access](ssh-access.md) for users by editing the Helm
   values file (Coder enables SSH access to workspaces by default).
-
-<children></children>
