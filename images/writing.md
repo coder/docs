@@ -7,8 +7,8 @@ Custom images allow you to define workspaces that include the dependencies,
 scripts, and user preferences helpful for your project.
 
 > If you're unfamiliar with how to create, build, and push Docker Images, please
-> see
-> [this tutorial by Docker](http://blog.shippable.com/build-a-docker-image-and-push-it-to-docker-hub)
+> review [this tutorial by
+> Docker](http://blog.shippable.com/build-a-docker-image-and-push-it-to-docker-hub)
 > before proceeding.
 
 ## Creating a custom image
@@ -81,7 +81,7 @@ RUN ln -s /opt/clion/bin/clion.sh /usr/bin/clion
 
 To get an idea of what you can include in your images, see:
 
-- [Ben's Coder Images](https://github.com/bpmct/cdr-images) (frequently referred
+- [Ben's Coder images](https://github.com/bpmct/cdr-images) (frequently referred
   to in [Coffee and Coder](https://community.coder.com/coffee-and-coder) and the
   [Coder blog](https://coder.com/blog))
-- [Sample Coder Images](https://github.com/cdr/enterprise-images)
+- [Sample Coder images](https://github.com/cdr/enterprise-images)

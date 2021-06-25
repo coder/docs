@@ -3,6 +3,11 @@ title: "SSL certificates"
 description: Learn how to add SSL certificates to Coder images
 ---
 
+This article will show you how to correct issues regarding SSL certificates in
+Coder.
+
+## Background
+
 Coder may sometimes fail to download extensions for your IDE if the remote
 extension marketplace URL is untrusted. This might happen for one of the
 following reasons:
@@ -10,15 +15,13 @@ following reasons:
 - The image doesn't come with any ca-certificates
 - You're using an internal certificate authority
 
-The following sections will show you how to correct these issues.
-
 ## Adding certificates for Coder
 
 To add certificates to your image and have them recognized by Coder:
 
 1. Add the certificate(s) to the image
-1. Set the NODE_EXTRA_CA_CERTS workspace variable to the file in the image that
-   contains the certificates
+1. Set the `NODE_EXTRA_CA_CERTS` environment variable to the file in the image
+   that contains the certificates
 1. Add the following to your Dockerfile to ensure that Coder finds and uses your
    newly added certificates when making requests:
 

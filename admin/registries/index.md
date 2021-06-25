@@ -14,29 +14,29 @@ image metadata.
 You can add registries during the process of
 [adding images](../../images/index.md).
 
-To import an image, go to **Images** > **Import Image** in the upper-right. In
-the dialog that opens, you'll be prompted to pick a registry by default.
-However, to _add_ a registry, click **Add a new registry**, which is the option
-located immediately below the registry selector.
+To import an image:
 
-You'll be asked to provide:
-
-- A **registry name**
-- The **registry**
-- A **username** and **password** combination (if needed for access to the
-  registry)
-
-Then, continue with the process of [adding your image](../../images/index.md).
-When done, click **Import**.
+1. Go to **Images** > **Import Image** in the upper-right.
+1. In the dialog that opens, you'll be prompted to pick a registry by default.
+   However, to _add_ a registry, click **Add a new registry**, which is the
+   option located immediately below the registry selector.
+1. You'll be asked to provide a **registry name**, the **registry**, and a
+   **username** and **password** combination (if needed for access to the
+   registry).
+1. Then, continue with the process of [adding your
+   image](../../images/index.md).
+1. When done, click **Import**.
 
 ## Deleting a registry
 
 > You cannot delete a registry if there are workspaces using images from that
 > registry.
 
-To delete a registry, go to the **Images** > **Registries** page. Find the
-registry that you'd like to remove, click its **horizontal ellipses** icon, and
-select **Delete**.
+To delete a registry:
+
+1. Go to the **Images** > **Registries** page.
+1. Find the registry that you'd like to remove, click its **horizontal
+   ellipsis** icon, and select **Delete**.
 
 ## Unsupported registries
 

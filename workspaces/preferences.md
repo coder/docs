@@ -3,20 +3,21 @@ title: "User preferences"
 description: Learn how to manage your Coder account preferences.
 ---
 
-The User Preferences area of the Coder UI allows you to manage your account. To
-access this area, click on your avatar in the top-right, and click on either
-**Account** or your avatar in the drop-down menu.
+The **User Preferences** area of the Coder UI allows you to manage your account.
+
+To access **User Preferences**, click on your avatar in the top-right, then
+click on either **Account** or your avatar in the drop-down menu.
 
 ## Account
 
 The **Account** tab allows you to provide or change:
 
+- Your avatar
 - Your display name
 - Email address
 - Username (this is the value that Coder uses throughout the platform, including
-  in dev URLs and the CLI's SSH configuration)
+  dev URLs and the CLI's SSH configuration)
 - Your dotfiles URI to personalize your workspaces
-- Your avatar
 
 ## Security
 
@@ -29,9 +30,9 @@ combination).
 > organization's account management system. See your system administrator for
 > more information.
 
-## SSH key
+## SSH keys
 
-The **SSH Key** page is where you'll find the public key corresponding to the
+The **SSH Keys** page is where you'll find the public key corresponding to the
 private key that Coder inserts automatically into your workspaces. The public
 key is useful for services, such as Git, Bitbucket, GitHub, and GitLab, that you
 need to access from your workspace.
@@ -64,5 +65,9 @@ Please note that:
 - You must enable native notifications for each browser on which you run Coder
   Enterprise
 
-You can check whether notifications are enabled and working by click **Test
-Notifications**.
+You can check whether notifications are enabled and working by click **Test**.
+
+## Autostart
+
+Autostart allows you to set the time when Coder automatically starts and builds
+your workspaces. See [Autostart](autostart.md) for more information.
