@@ -19,6 +19,10 @@ files with either the `.yaml` or `.yml` extension.
   [imported](../../images/importing.md) into Coder
 - A `.coder/<template-name>.yaml` file exists in your repository.
 
+We strongly recommend allowing the Git provider to run a webhook capable of
+reaching the Coder server for immediate template updates. Otherwise, Coder will
+update your WAC templates daily.
+
 ## Creating a workspace template
 
 You can find a fully populated workspace template and descriptions of each field
