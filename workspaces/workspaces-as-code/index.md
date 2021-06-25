@@ -15,12 +15,13 @@ files with either the `.yaml` or `.yml` extension.
 ## Requirements
 
 - You must configure a [Git OAuth service of your choice](../../admin/git.md)
-- The git provider can run a webhook that can reach the Coder server for immediate template updates
 - The image you use in your template **must** have been
   [imported](../../images/importing.md) into Coder
 - A `.coder/<template-name>.yaml` file exists in your repository.
 
-Without connectivity from the git provider, WAC templates are updated daily.
+We strongly recommend allowing the Git provider to run a webhook capable of
+reaching the Coder server for immediate template updates. Otherwise, Coder will
+update your WAC templates daily.
 
 ## Creating a workspace template
 
