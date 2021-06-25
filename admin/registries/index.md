@@ -22,7 +22,7 @@ To import an image:
    option located immediately below the registry selector.
 1. You'll be asked to provide a **registry name**, the **registry**, and a
    **username** and **password** combination (if needed for access to the
-   registry)
+   registry).
 1. Then, continue with the process of [adding your
    image](../../images/index.md).
 1. When done, click **Import**.
