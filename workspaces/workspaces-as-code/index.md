@@ -15,6 +15,7 @@ files with either the `.yaml` or `.yml` extension.
 ## Requirements
 
 - You must configure a [Git OAuth service of your choice](../../admin/git.md)
+- The git provider can run a webhook that can reach the Coder server
 - The image you use in your template **must** have been
   [imported](../../images/importing.md) into Coder
 - A `.coder/<template-name>.yaml` file exists in your repository.
