@@ -31,6 +31,9 @@
           "path": "./workspaces/autostart.md"
         },
         {
+          "path": "./workspaces/code-with-me.md"
+        },
+        {
           "path": "./workspaces/devurls.md"
         },
         {
@@ -197,6 +200,9 @@
               "path": "./admin/workspace-management/memory-overprovisioning.md"
             },
             {
+              "path": "./admin/workspace-management/cpu-provisioning.md"
+            },
+            {
               "path": "./admin/workspace-management/shutdown.md"
             },
             {
@@ -359,14 +365,17 @@
           "navigable": false,
           "children": [
             {
-              "path": "./guides/troubleshooting/inotify-watch-limits.md"
-            },
-            {
               "path": "./guides/troubleshooting/docker-problems.md"
             },
             {
+              "path": "./guides/troubleshooting/registry.md"
+            },
+            {
+              "path": "./guides/troubleshooting/inotify-watch-limits.md"
+            },
+            {
               "path": "./guides/troubleshooting/502error.md"
-            }
+            },
           ]
         }
       ]
@@ -376,6 +385,9 @@
       "children": [
         {
           "path": "./changelog/1.20.0.md"
+        },
+        {
+          "path": "./changelog/1.19.1.md"
         },
         {
           "path": "./changelog/1.19.0.md"

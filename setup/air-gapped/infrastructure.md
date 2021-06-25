@@ -54,7 +54,7 @@ docker run -d -p 443:5000 \
 
 ## Configuring the Kubernetes Node
 
-Before the Kubernetes node can accept run local images, it needs to consider the
+Before the Kubernetes node can accept local images, it needs to consider the
 new `registry.crt` file as trusted. The specific locations and methods to store
 and trust the certificate vary depending on the Linux distribution and the
 container runtime, but here is a partial list to help you get started:
