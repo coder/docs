@@ -363,6 +363,9 @@
             },
             {
               "path": "./guides/troubleshooting/docker-problems.md"
+            },
+            {
+              "path": "./guides/troubleshooting/502error.md"
             }
           ]
         }
