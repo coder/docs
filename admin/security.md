@@ -1,5 +1,5 @@
 ---
-title: Browser Security
+title: Browser security
 description: Learn about Coder's browser security options.
 ---
 
@@ -16,7 +16,7 @@ requests to occur over HTTPS.
 [http strict transport security]:
   https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
 
-![HTTP Strict Transport Security](../assets/http-strict-transport-security.png)
+![Toggle HTTP Strict Transport Security](../assets/admin/http-sts.png)
 
 ## Secure Cookie
 
@@ -28,4 +28,4 @@ enabling this setting if you are serving Coder over HTTPS.
 [`secure` property of cookies]:
   https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 
-![Secure Cookie](../assets/secure-cookie.png)
+![Toggle Secure Cookie](../assets/admin/secure-cookie.png)
