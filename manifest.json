@@ -375,6 +375,9 @@
             },
             {
               "path": "./guides/troubleshooting/inotify-watch-limits.md"
+            },
+            {
+              "path": "./guides/troubleshooting/502error.md"
             }
           ]
         }
