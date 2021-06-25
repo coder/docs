@@ -15,7 +15,7 @@ are better choices.
 > This installation method is not officially supported or tested by Coder. If
 > you have questions or run into issues, feel free to reach out using our
 > [community Slack channel](https://cdr.co/join-community).
-> 
+>
 > **We do not recommend using K3s for production deployments of Coder.**
 
 ## Prerequisites
