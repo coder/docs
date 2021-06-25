@@ -45,8 +45,9 @@ Before proceeding, please make sure that:
 
 To allow [SSH into
 workspaces](https://coder.com/docs/coder/v1.20/workspaces/ssh), you must change
-the host's default SSH port to free up port 22. You may also need to modify your
-firewall to accept incoming traffic from the alternative port (e.g. `5522`).
+the host's default SSH port to free up port `22`. You may also need to modify
+your firewall to accept incoming traffic from the alternative port (e.g., if you
+rename port `22` to `5522`, then your firewall must accept traffic from `5522`).
 
 > If you don't know how to change the SSH port in Linux, please review this
 > [guide from Linuxize](https://linuxize.com/post/how-to-change-ssh-port-in-linux/)
@@ -55,7 +56,7 @@ firewall to accept incoming traffic from the alternative port (e.g. `5522`).
 
 The following steps are based on [Calico's quickstart
 guide](https://docs.projectcalico.org/getting-started/kubernetes/k3s/quickstart)
-for setting up K3s. However, you will disable the default network policies and
+for setting up K3s. However, you will disable K3s' default network policies and
 Traefik in favor of Calico and nginx-ingress.
 
 1. Create a single-node K3s cluster:
