@@ -16,7 +16,7 @@ requests to occur over HTTPS.
 [http strict transport security]:
   https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
 
-![Toggle HTTP Strict Transport Security](../assets/admin/http-sts.png)
+![Toggle HTTP Strict Transport Security Header](../assets/admin/http-strict-transport-security-header.png)]
 
 ## Secure Cookie
 
