@@ -13,6 +13,8 @@ For example, let's say that you set a CPU provisioning ratio of 8:1. If a user
 creates a workspace with 4 CPUs, then Coder will reserve 0.5 CPUs on the
 underlying node, with a maximum limit of 4 CPUs.
 
+[Learn more about how resource utilization in Coder works.](../../guides/admin/resources#individual-vs-shared-resources)
+
 ## Changing the CPU provisioning ratio
 
 1. Go to **Manage** > **Organizations** and select your organization.
