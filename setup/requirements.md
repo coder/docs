@@ -73,7 +73,6 @@ storage, across all workspaces. If there is insufficient node disk storage, Code
 workspaces will not be created, and in some cases, be evicted from the node.
 To avoid this, we recommend creating nodes with a disk space of 100GiB or more.
 
-
 Additionally, you must enable [dynamic volume
 provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/#enabling-dynamic-provisioning)
 so that Coder can mount the PVC to the workspace (if you're using a custom
