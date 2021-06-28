@@ -34,12 +34,6 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      - name: Checkout docs
-        run: |
-          git fetch
-          git checkout "${{ github.head_ref }}"
-        working-directory: ./product/coder.com/site/docs
-
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
