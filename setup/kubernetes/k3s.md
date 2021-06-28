@@ -44,10 +44,15 @@ Before proceeding, please make sure that:
 
 ## Step 1: Change the default SSH port
 
-To allow [SSH into workspaces](../../workspaces/ssh), you must change the host's
-default SSH port to free up port `22`. You may also need to modify your firewall
-to accept incoming traffic from the alternative port (e.g., if you rename port
-`22` to `5522`, then your firewall must accept traffic from `5522`).
+If you enable Networking v2 after installing Coder (in
+`Manage > Admin > Infrastructure`), this step is not necessary to SSH into
+workspaces, as TURNS is used instead.
+
+Otherwise, in order to allow [SSH into workspaces](../../workspaces/ssh), you
+must change the host's default SSH port to free up port `22`. You may also need
+to modify your firewall to accept incoming traffic from the alternative port
+(e.g., if you rename port `22` to `5522`, then your firewall must accept traffic
+from `5522`).
 
 > If you don't know how to change the SSH port in Linux, please review this
 > [guide from Linuxize](https://linuxize.com/post/how-to-change-ssh-port-in-linux/)
