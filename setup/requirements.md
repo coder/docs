@@ -71,7 +71,7 @@ Files stored in the `/home` directory of a workspace are persisted in the PVC.
 All files that live outside of the `/home` directory are written to the node's disk
 storage, across all workspaces. If there is insufficient node disk storage, Coder
 workspaces will not be created, and in some cases, be evicted from the node.
-To avoid this, we recommend creating nodes with a disk space of 100GiB or more.
+To avoid this, we recommend creating nodes with a disk size of 100GiB or more.
 
 Additionally, you must enable [dynamic volume
 provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/#enabling-dynamic-provisioning)
