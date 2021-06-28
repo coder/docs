@@ -1,7 +1,7 @@
 ---
 title: "Workspace template code completion"
 description: "Learn how to use code completion when creating workspace templates."
-state: beta
+state: alpha
 ---
 
 Coder provides a [JSON Schema](https://json-schema.org/) for workspace templates
