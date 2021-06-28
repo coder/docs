@@ -6,11 +6,11 @@ description:
 
 There are five primary ways you can connect an IDE to your Coder workspace:
 
-1. [VS Code remote SSH](#vs-code-remote-ssh) with local VS Code
-1. [VS Code in the browser](#vs-code-in-the-browser) with code-server
-1. [JetBrains in the browser](##jetbrains-ides-in-the-browser) with JetBrains
+1. [VS Code remote SSH](editors.md#vs-code-remote-ssh) with local VS Code
+1. [VS Code in the browser](editors.md#vs-code-in-the-browser) with code-server
+1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with JetBrains
    Projector
-1. JetBrains' [Code With Me](#code-with-me)
+1. [JetBrains' Code With Me](editors.md#code-with-me)
 1. _Any_ local editor with
    [1-way file synchronization](../cli/file-sync.md#one-way-file-sync) or
    [2-way file synchronization over SSH](../cli/file-sync.md#two-way-file-sync)
@@ -91,11 +91,9 @@ workspace with the following resources at a minimum:
 collaborate with others in real-time on your project and enables pair
 programming.
 
-### Prerequisites
-
-You must have a [JetBrains IDE
+> You must have a [JetBrains IDE
 installed](../admin/workspace-management/installing-jetbrains.md) onto your
-[image](../images/index.md).
+[image](../images/index.md) to use Code With Me.
 
 ### Getting started
 
