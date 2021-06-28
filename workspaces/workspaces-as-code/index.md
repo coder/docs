@@ -1,7 +1,7 @@
 ---
 title: "Workspaces as code"
 description: "Learn how to describe workspace configuration as code."
-state: beta
+state: alpha
 ---
 
 Workspaces as code (WAC) brings the _infrastructure as code_ paradigm to Coder
