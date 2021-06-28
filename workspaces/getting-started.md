@@ -31,9 +31,30 @@ Coder redirects you to an overview page for your workspace during the build
 process. Learn more about the workspace
 [creation parameters](./workspace-params.md).
 
-Your workspace persists in the home directory, updates to new versions of the
-image, and runs custom configuration on startup. Learn about the
-[workspace lifecycle](lifecycle.md).
+![Workspace overview](../assets/workspaces/workspace-overview.png)
+
+Your workspace persists in the home directory, updates itself to new versions of
+the image on which it is built, and runs custom configuration on startup. Learn
+about the [workspace lifecycle](lifecycle.md).
+
+### Workspace status
+
+The workspace overview page displays information regarding the status and
+performance of your workspace.
+
+![Workspace overview](../assets/workspaces/status-chip.png)
+
+The following workspace statuses are available:
+
+- **Running**: Your workspace is running
+- **Off**: Your workspace has been shut off either manually or due to inactivity
+- **Error**: An unknown error has occurred
+- **Building**: Your workspace is building
+- **Turning off**: Your workspace is turning off
+- **Unknown**: Your workspace is in an unknown state
+- **Initializing**: The container is initializing
+- **Decommissioned**: Your workspace is being deleted, and compute resources are
+  being released.
 
 ### Advanced
 
