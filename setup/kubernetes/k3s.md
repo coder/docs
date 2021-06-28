@@ -38,7 +38,7 @@ Before proceeding, please make sure that:
    - Port 22 (SSH)
    - Port 80 (HTTP)
    - Port 443 (HTTPS)
-   - Port 5349 (Networking v2 / TURN)
+   - Port 5349 (TURNS)
    - **Optional**: Port 8443 (Kubernetes API)
 
 ## Step 1: Change the default SSH port
