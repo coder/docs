@@ -23,8 +23,7 @@ To import an image:
 1. You'll be asked to provide a **registry name** and the **registry**.
 1. **Optional.** If your registry is a **private registry**, provide the
    **username** and **password** combination required to access the registry.
-1. Then, continue with the process of [adding your
-   image](../../images/index.md).
+1. Continue with the process of [adding your image](../../images/index.md).
 1. When done, click **Import**.
 
 ## Deleting a registry
