@@ -94,4 +94,4 @@ By default, workspaces as code is an opt-in feature. To enable workspaces as
 code, go to **Admin > Templates** and set **Enable using Workspace Templates**
 to **On**.
 
-![Toggle workspaces as code](../assets/wac_toggle.png)
+![Toggle workspaces as code](../assets/admin/wac_toggle.png)
