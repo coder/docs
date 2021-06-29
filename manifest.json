@@ -263,11 +263,9 @@
     },
     {
       "path": "./guides/index.md",
-      "navigable": false,
       "children": [
         {
           "path": "./guides/admin/index.md",
-          "navigable": false,
           "children": [
             {
               "path": "./guides/admin/resources.md"
@@ -294,7 +292,6 @@
         },
         {
           "path": "./guides/customization/index.md",
-          "navigable": false,
           "children": [
             {
               "path": "./guides/customization/custom-workspace.md"
@@ -315,7 +312,6 @@
         },
         {
           "path": "./guides/deployments/index.md",
-          "navigable": false,
           "children": [
             {
               "path": "./guides/deployments/archive-install.md"
@@ -336,7 +332,6 @@
         },
         {
           "path": "./guides/ssl-certificates/index.md",
-          "navigable": false,
           "children": [
             {
               "path": "./guides/ssl-certificates/azureDNS.md"
@@ -354,15 +349,12 @@
         },
         {
           "path": "./guides/mobile-development/index.md",
-          "navigable": false
         },
         {
           "path": "./guides/api.md",
-          "navigable": false
         },
         {
           "path": "./guides/troubleshooting/index.md",
-          "navigable": false,
           "children": [
             {
               "path": "./guides/troubleshooting/docker-problems.md"
