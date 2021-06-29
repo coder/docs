@@ -348,10 +348,10 @@
           ]
         },
         {
-          "path": "./guides/mobile-development/index.md",
+          "path": "./guides/mobile-development/index.md"
         },
         {
-          "path": "./guides/api.md",
+          "path": "./guides/api.md"
         },
         {
           "path": "./guides/troubleshooting/index.md",
