@@ -20,9 +20,9 @@ To import an image:
 1. In the dialog that opens, you'll be prompted to pick a registry by default.
    However, to _add_ a registry, click **Add a new registry**, which is the
    option located immediately below the registry selector.
-1. You'll be asked to provide a **registry name**, the **registry**, and a
-   **username** and **password** combination (if needed for access to the
-   registry).
+1. You'll be asked to provide a **registry name** and the **registry**.
+1. **Optional.** If your registry is a **private registry**, provide the
+   **username** and **password** combination required to access the registry.
 1. Then, continue with the process of [adding your
    image](../../images/index.md).
 1. When done, click **Import**.
