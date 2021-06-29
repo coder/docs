@@ -124,10 +124,27 @@ If successful, you'll see a response similar to:
 clusterissuer.cert-manager.io/letsencrypt created
 ```
 
-## Step 5: Create a certificates.yaml file and apply it
+## Step 5: Install Coder
 
-We will now issue certificates for your Coder instance. Below is a sample
-`certificates.yaml` file:
+At this point, you're ready to [install](../../setup/installation.md) Coder.
+However, to use all of the functionality you set up in this tutorial, use the
+following `helm install` command instead:
+
+```console
+helm install coder coder/coder --namespace coder \
+  --version=<CODER_VERSION> \
+  --set devurls.host="*.exampleCo.com" \
+  --set ingress.host="coder.exampleCo.com" \
+  --set ingress.tls.enable=true \
+  --set ingress.tls.devurlsHostSecretName="coder-devurls-cert" \
+  --set ingress.tls.hostSecretName="coder-root-cert" \
+  --set ingress.annotations.cert-manager\.io/cluster-issuer="letsencrypt" \
+  --wait
+```
+
+The cluster-issuer will create the certificates you need, using the values
+provided in the `helm install` command for the dev URL and host secret. The
+following is a sample `certificates.yaml` file issued for your Coder instance:
 
 ```yaml
 apiVersion: cert-manager.io/v1alpha2
@@ -160,22 +177,6 @@ spec:
   issuerRef:
     name: letsencrypt
     kind: ClusterIssuer
-```
-
-At this point, you're ready to [install](../../setup/installation.md) Coder.
-However, to use all of the functionality you set up in this tutorial, use the
-following `helm install` command instead:
-
-```console
-helm install coder coder/coder --namespace coder \
-  --version=<CODER_VERSION> \
-  --set devurls.host="*.exampleCo.com" \
-  --set ingress.host="coder.exampleCo.com" \
-  --set ingress.tls.enable=true \
-  --set ingress.tls.devurlsHostSecretName="coder-devurls-cert" \
-  --set ingress.tls.hostSecretName="coder-root-cert" \
-  --set ingress.annotations.cert-manager\.io/cluster-issuer="letsencrypt" \
-  --wait
 ```
 
 There are additional steps to make sure that your hostname and Dev URLs work.
