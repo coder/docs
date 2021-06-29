@@ -9,7 +9,7 @@ enterprise security.
 
 Coder's pre-configured workspaces allow project organization members to define
 what language version and tooling are required to provide consistency across the
-organization and enable new members onboard and contribute. Developers focus on
+organization and enable new members to onboard and contribute. Developers focus on
 their projects and the end product, not on setup.
 
 These pre-configured workspaces are the foundation of Coder's _Dev Workspaces as
@@ -28,7 +28,7 @@ the cloud's power to provide consistent, secure, and performant workspaces for
 their development teams.
 
 Our software has been pulled over 19 million times from Docker, received over
-40,000 stars on GitHub, and is used by some of the world's largest enterprises.
+45,000 stars on GitHub, and is used by some of the world's largest enterprises.
 We're also working with pilot organizations to shape the future of remote
 development through Coder.
 
