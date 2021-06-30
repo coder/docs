@@ -21,7 +21,8 @@ To import an image:
    However, to _add_ a registry, click **Add a new registry**, which is the
    option located immediately below the registry selector.
 1. You'll be asked to provide a **registry name** and the **registry**.
-1. **Optional.** If your registry is a **private registry**, provide the
+1. **Optional.** If your registry is a **private registry** or to avoid
+   [rate limiting](https://www.docker.com/increase-rate-limits), provide the
    **username** and **password** combination required to access the registry.
 1. Continue with the process of [adding your image](../../images/index.md).
 1. When done, click **Import**.
