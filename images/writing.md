@@ -6,10 +6,12 @@ description: Learn how to write custom images for use with Coder.
 Custom images allow you to define workspaces that include the dependencies,
 scripts, and user preferences helpful for your project.
 
-> If you're unfamiliar with how to create, build, and push Docker Images, please
-> review [this tutorial by
-> Docker](http://blog.shippable.com/build-a-docker-image-and-push-it-to-docker-hub)
-> before proceeding.
+This guide assumes that you're familiar with:
+
+- [Dockerfiles](https://docs.docker.com/engine/reference/builder/)
+- [docker login](https://docs.docker.com/engine/reference/commandline/login/)
+- [docker build](https://docs.docker.com/engine/reference/commandline/build/)
+- [docker push](https://docs.docker.com/engine/reference/commandline/push/)
 
 ## Creating a custom image
 
