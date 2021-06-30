@@ -215,6 +215,9 @@
           "children": [
             {
               "path": "./admin/registries/default-registry.md"
+            },
+            {
+              "path": "./admin/registries/gcr.md"
             }
           ]
         },
