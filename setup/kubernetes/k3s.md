@@ -9,9 +9,9 @@ machine for use with Coder.
 [K3s](https://k3s.io/) is a lightweight Kubernetes distribution that works well
 for single-node or multi-node clusters. This guide covers the installation of
 K3s onto a new Ubuntu 20.04 LTS machine. If you want to install Coder on a local
-machine or an existing host, a [kind cluster](./kind.md) or
-[k3d cluster](https://k3d.io/) may be a better choice, as it leverages Docker to
-set up/tear down clusters with little hassle.
+machine or an existing host, a [kind cluster](./kind.md) or [k3d
+cluster](https://k3d.io/) may be a better choice, as it leverages Docker to set
+up/tear down clusters with little hassle.
 
 > This installation method is not officially supported or tested by Coder. If
 > you have questions or run into issues, feel free to reach out using our
@@ -23,44 +23,45 @@ set up/tear down clusters with little hassle.
 
 Before proceeding, please make sure that:
 
-1. You have an **Ubuntu 20.04 machine**: This can be a bare metal or a virtual
+- You have an **Ubuntu 20.04 machine**: This can be a bare metal or a virtual
    machine.
 
-   Ensure that the machine's specs satisfy Coder's
-   [resource requirements](../requirements.md), since your experience with Coder
-   is dependent on your system specs.
+   Ensure that the machine's specs satisfy Coder's [resource
+   requirements](../requirements.md), since your experience with Coder is
+   dependent on your system specs.
 
-1. You have the following software installed on your machine:
+- You have the following software installed on your machine:
 
-   - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-   - [helm](https://helm.sh/docs/intro/install/)
+  - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+  - [helm](https://helm.sh/docs/intro/install/)
 
-1. Your network policy or firewall accepts incoming traffic on:
-   - Port 22 (SSH)
-   - Port 80 (HTTP)
-   - Port 443 (HTTPS)
-   - Port 5349 (TURNS)
-   - **Optional**: Port 8443 (Kubernetes API)
+- Your network policy or firewall accepts incoming traffic on:
+
+  - Port 22 (SSH)
+  - Port 80 (HTTP)
+  - Port 443 (HTTPS)
+  - Port 5349 (TURNS)
+  - **Optional**: Port 8443 (Kubernetes API)
 
 ## Step 1: Change the default SSH port
 
-If you enable Networking v2 after installing Coder (in
-`Manage > Admin > Infrastructure`), this step is not necessary to SSH into
-workspaces, as TURNS is used instead.
+> If you've enabled Networking v2 after installing Coder (you can do so by going
+to **Manage** > **Admin** > **Infrastructure**), this step to SSH into
+workspaces isn't necessary, since TURNS is used instead.
 
-Otherwise, in order to allow [SSH into workspaces](../../workspaces/ssh), you
-must change the host's default SSH port to free up port `22`. You may also need
-to modify your firewall to accept incoming traffic from the alternative port
-(e.g., if you rename port `22` to `5522`, then your firewall must accept traffic
-from `5522`).
+To allow [SSH into workspaces](../../workspaces/ssh), you must change the host's
+default SSH port to free up port `22`. You may also need to modify your firewall
+to accept incoming traffic from the alternative port (e.g., if you rename port
+`22` to `5522`, then your firewall must accept traffic from `5522`).
 
 > If you don't know how to change the SSH port in Linux, please review this
-> [guide from Linuxize](https://linuxize.com/post/how-to-change-ssh-port-in-linux/)
+> [guide from
+> Linuxize](https://linuxize.com/post/how-to-change-ssh-port-in-linux/)
 
 ## Step 2: Install K3s with Calico
 
-The following steps are based on
-[Calico's quickstart guide](https://docs.projectcalico.org/getting-started/kubernetes/k3s/quickstart)
+The following steps are based on [Calico's quickstart
+guide](https://docs.projectcalico.org/getting-started/kubernetes/k3s/quickstart)
 for setting up K3s. However, you will disable K3s' default network policies and
 Traefik in favor of Calico and nginx-ingress.
 
@@ -70,8 +71,8 @@ Traefik in favor of Calico and nginx-ingress.
    curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE="644" INSTALL_K3S_EXEC="--flannel-backend=none --cluster-cidr=192.168.0.0/16 --disable-network-policy --disable=traefik" sh -
    ```
 
-   > Per the
-   > [Calico docs](https://docs.projectcalico.org/getting-started/kubernetes/k3s/quickstart):
+   > Per the [Calico
+   > docs](https://docs.projectcalico.org/getting-started/kubernetes/k3s/quickstart):
    >
    > If `192.168.0.0/16` is already in use within your network, you must select
    > a different pod network CIDR by replacing `192.168.0.0/16` in the above
@@ -136,5 +137,5 @@ cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 
 ## Next steps
 
-At this point, you're ready to proceed to
-[installing Coder](../installation.md).
+At this point, you're ready to proceed to [installing
+Coder](../installation.md).
