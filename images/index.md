@@ -33,6 +33,6 @@ Coder hooks into Docker Registries, which store images that you can import. You
 can source control the Dockerfile in your project's repository to provide your
 organization with up-to-date information.
 
-## Get Started
+## In this section
 
 <children></children>

@@ -4,7 +4,7 @@ description: Learn how to add, delete and manage Coder users.
 ---
 
 [Site managers](/access-control/user-roles#site-manager-permissions) can create
-and manage users from the **Users** page, which is accessible under **Manage** >
+and manage users from the **Users** page, which is accessible at **Manage** >
 **Users**.
 
 ## Creating a new user
@@ -12,9 +12,9 @@ and manage users from the **Users** page, which is accessible under **Manage** >
 To create a new user:
 
 1. Go to **Manage** > **Users** > **New User**.
-1. In the new dialog window, provide the user's **name** and **email address**
-   and select the **Auth Type** you want for the account. Select **Built-In** as
-   your Auth Type if you want the user to access Coder with a username/password
+1. When prompted, provide the user's **name** and **email address** and select
+   the **Auth Type** you want for the account. Select **Built-In** as your Auth
+   Type if you want the user to access Coder with a username/password
    combination; select **OpenID Connect** as your Auth Type if you would like to
    use your organization's OpenID Connect Identity Provider.
 1. Finally, choose the **Organization** to which the user belongs (this will

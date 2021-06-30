@@ -9,8 +9,8 @@ and **OpenID Connect**.
 
 ## Built-In Authentication
 
-Built-in authentication allows you (or any admin) to manually create users, who
-then log in with their email address and temporary password. Coder will ask them
+Built-in authentication allows you (or any admin) to manually create users who
+log in with their email address and temporary password. Coder will ask them
 to change their password after they log in the first time.
 
 ## OpenID Connect
