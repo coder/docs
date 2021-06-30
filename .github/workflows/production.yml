@@ -23,7 +23,6 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy to Vercel (Production)
-        id: preview
         env:
           VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
           VERCEL_PROJECT_ID: QmZRucMRh3GFk1817ZgXjRVuw5fhTspHPHKct3JNQDEPGd
