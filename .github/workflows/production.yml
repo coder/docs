@@ -1,0 +1,41 @@
+name: Preview
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  production:
+    name: Production
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.0
+
+      - name: Checkout m
+        uses: actions/checkout@v2
+        with:
+          repository: cdr/m
+          ref: refs/heads/master
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          submodules: true
+          fetch-depth: 0
+
+      - name: Deploy to Vercel (Production)
+        id: preview
+        env:
+          VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
+          VERCEL_PROJECT_ID: QmZRucMRh3GFk1817ZgXjRVuw5fhTspHPHKct3JNQDEPGd
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROD: true
+        run: ./ci/scripts/deploy_vercel.sh
+
+      - name: Slack alert on CI failure
+        uses: 8398a7/action-slack@v3
+        if: failure() && github.ref == 'refs/heads/master'
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,author,workflow,action,eventName
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
