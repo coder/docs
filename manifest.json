@@ -263,6 +263,7 @@
     },
     {
       "path": "./guides/index.md",
+      "navigable": true,
       "children": [
         {
           "path": "./guides/admin/index.md",
