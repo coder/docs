@@ -1,5 +1,5 @@
 ---
-title: Install Coder from an archive
+title: Coder installation from an archive
 description: Learn how to install Coder from an archive
 ---
 

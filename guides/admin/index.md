@@ -1,5 +1,5 @@
 ---
-title: "Admin guides"
+title: "Admin"
 description: Learn about admin tasks for Coder.
 ---
 
