@@ -7,8 +7,8 @@ Custom images allow you to define workspaces that include the dependencies,
 scripts, and user preferences helpful for your project.
 
 > If you're unfamiliar with how to create, build, and push Docker Images, please
-> review
-> [this tutorial by Docker](http://blog.shippable.com/build-a-docker-image-and-push-it-to-docker-hub)
+> review [this tutorial by
+> Docker](http://blog.shippable.com/build-a-docker-image-and-push-it-to-docker-hub)
 > before proceeding.
 
 ## Creating a custom image
@@ -33,16 +33,18 @@ Please note:
   to make sure that your image will work with all of Coder's features.
 
 - You can build images inside a
-  ([CVM](../admin/workspace-management/cvms.md)-enabled) Coder workspace with
-  Docker installed, such as our
-  [base image](https://github.com/cdr/enterprise-images/tree/main/images/base).
+  [CVM](../admin/workspace-management/cvms.md)-enabled Coder workspace with
+  Docker installed (see our [base
+  image](https://github.com/cdr/enterprise-images/tree/main/images/base) for an
+  example of how you can do this).
 
-- If you're using CVM-only features during an image's build time, such as
-  [pre-loading images](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/images.md#building-a-system-container-that-includes-inner-container-images--v012-)
-  in workspaces, you will need to install the
-  [sysbox runtime](https://github.com/nestybox/sysbox) on your local machine and
-  build images there. This is usually not necessary, even if your image installs
-  and enables Docker.
+- If you're using CVM-only features during an image's build time (e.g., you're
+  [pre-loading
+  images](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/images.md#building-a-system-container-that-includes-inner-container-images--v012-)
+  in workspaces), you will need to install the [sysbox
+  runtime](https://github.com/nestybox/sysbox) onto your local machine and build
+  images locally. Note that this isn't usually necessary, even if your image
+  installs and enables Docker.
 
 ## Example: Installing an IntelliJ IDE
 
