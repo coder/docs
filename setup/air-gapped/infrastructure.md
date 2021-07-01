@@ -69,7 +69,7 @@ container runtime, but here is a partial list to help you get started:
 If the cluster uses containerd, apply the following to patch in certificates for
 images in the local registry domain:
 
-```console
+```bash
 update-ca-certificates
 cat <<EOT >> /etc/containerd/config.toml
 [plugins."io.containerd.grpc.v1.cri".registry.configs."$REGISTRY_DOMAIN_NAME".tls]
@@ -99,7 +99,7 @@ To pass a self-signed certificate to Coder's images, you'll need to:
 
 To create a secret, run:
 
-```console
+```bash
 kubectl -n coder create secret generic local-registry-cert --from-file=/certs
 ```
 
@@ -113,7 +113,7 @@ becomes the secret **key**.
 
 To verify the new secret:
 
-```console
+```bash
 kubectl -n coder get secret local-registry-cert -o yaml
 ```
 
@@ -130,7 +130,7 @@ certs:
 Then, add the flag `-f registry-cert-values.yml` to the end of the `helm install`
 or `helm upgrade` command to include the new secrets file:
 
-```console
+```bash
 helm install --wait --atomic --debug --namespace coder coder . \
    --set cemanager.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
    --set envproxy.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
@@ -147,7 +147,7 @@ registry's static IP address. One way to do this without an external DNS server
 is to use the node's hosts file. For example, if the registry is on 10.0.0.2,
 then add this to the Node configuration script:
 
-```console
+```bash
 echo "10.0.0.2 $REGISTRY_DOMAIN_NAME" >> /etc/hosts
 ```
 
