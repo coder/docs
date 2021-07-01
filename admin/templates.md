@@ -1,16 +1,22 @@
 ---
 title: Templates
-description: Learn how to manage your Workspaces as Code Templates.
+description: Learn how to manage your workspaces as code templates.
 ---
 
 The **Templates** tab features options that control the behavior of workspace
-templates.
+templates, which are the basis of [workspaces as code](../workspaces/workspaces-as-code/index.md).
 
-The **Enable using Workspace Templates** toggle allows you to enable or disable
-the creation of [workspaces](../workspaces/index.md) using predefined templates
-located in Git repositories.
+## Enabling workspaces as code
 
-![Enable workspace templates](../assets/enable-ws-templates.png)
+By default, workspaces as code is an opt-in feature. The **Enable using
+Workspace Templates** toggle allows you to enable or disable the creation of
+[workspaces](../workspaces/index.md) using predefined templates located in Git
+repositories.
+
+To enable workspaces as code, go to **Admin > Templates** and set **Enable using
+Workspace Templates** to **On**.
+
+![Toggle workspaces as code](../assets/admin/wac_toggle.png)
 
 ## Template policy
 
@@ -87,11 +93,3 @@ Once you've filled out the form, Coder generates a custom Markdown snippet,
 which you can then add to your repository's `README.md`.
 
 ![Open In Coder Button](../assets/admin/wac-badge.png)
-
-## Enabling workspaces as code
-
-By default, workspaces as code is an opt-in feature. To enable workspaces as
-code, go to **Admin > Templates** and set **Enable using Workspace Templates**
-to **On**.
-
-![Toggle workspaces as code](../assets/admin/wac_toggle.png)
