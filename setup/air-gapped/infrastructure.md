@@ -127,11 +127,11 @@ certs:
     key: "registry.crt"
 ```
 
-Then, add the flag `-f registry-cert-values.yml` to the end of the secret
-verification immediately above:
+Then, add the flag `-f registry-cert-values.yml` to the end of the helm upgrade
+command to include the new secrets file:
 
 ```console
-kubectl -n coder get secret local-registry-cert -o yaml -f registry-cert-values.yml
+helm upgrade -n coder coder . -f current-values.yaml -f registry-cert-values.yml
 ```
 
 ### Resolving the registry using the cluster's DNS or hostAliases
