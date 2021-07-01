@@ -1,5 +1,5 @@
 ---
-title: Network Setup
+title: Network setup
 description: Learn how to set up a network for air-gapped Coder deployment.
 ---
 
@@ -127,11 +127,17 @@ certs:
     key: "registry.crt"
 ```
 
-Then, add the flag `-f registry-cert-values.yml` to the end of the secret
-verification immediately above:
+Then, add the flag `-f registry-cert-values.yml` to the end of the `helm install`
+or `helm upgrade` command to include the new secrets file:
 
 ```console
-kubectl -n coder get secret local-registry-cert -o yaml -f registry-cert-values.yml
+helm install --wait --atomic --debug --namespace coder coder . \
+   --set cemanager.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
+   --set envproxy.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
+   --set envbox.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbox:<version> \
+   --set timescale.image=$REGISTRY_DOMAIN_NAME/coderenvs/timescale:<version> \
+   --set dashboard.image=$REGISTRY_DOMAIN_NAME/coderenvs/dashboard:<version> \
+   -f registry-cert-values.yml
 ```
 
 ### Resolving the registry using the cluster's DNS or hostAliases

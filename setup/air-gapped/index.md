@@ -1,5 +1,5 @@
 ---
-title: Air-Gapped Deployment
+title: Air-gapped deployment
 description: Learn how to set up an air-gapped Coder deployment.
 ---
 
