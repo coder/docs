@@ -127,8 +127,8 @@ certs:
     key: "registry.crt"
 ```
 
-Then, add the flag `-f registry-cert-values.yml` to the end of the `helm install`
-or `helm upgrade` command to include the new secrets file:
+Then, add the flag `-f registry-cert-values.yml` to the end of the `helm
+install` or `helm upgrade` command to include the new secrets file:
 
 ```console
 helm install --wait --atomic --debug --namespace coder coder . \
