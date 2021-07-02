@@ -6,10 +6,12 @@ description: Learn how to write custom images for use with Coder.
 Custom images allow you to define workspaces that include the dependencies,
 scripts, and user preferences helpful for your project.
 
-> If you're unfamiliar with how to create, build, and push Docker Images, please
-> review [this tutorial by
-> Docker](http://blog.shippable.com/build-a-docker-image-and-push-it-to-docker-hub)
-> before proceeding.
+This guide assumes that you're familiar with:
+
+- [Dockerfiles](https://docs.docker.com/engine/reference/builder/)
+- [docker login](https://docs.docker.com/engine/reference/commandline/login/)
+- [docker build](https://docs.docker.com/engine/reference/commandline/build/)
+- [docker push](https://docs.docker.com/engine/reference/commandline/push/)
 
 ## Creating a custom image
 
@@ -32,11 +34,19 @@ Please note:
   [image minimum requirements](https://github.com/cdr/enterprise-images/#image-minimums)
   to make sure that your image will work with all of Coder's features.
 
-- You can build images inside a Coder workspace using the
-  [Docker Sandbox](https://github.com/bpmct/cdr-images/tree/master/docker-sandbox).
-  If, however, you're using [CVMs](../admin/workspace-management/cvms.md),
-  you'll need to have the [sysbox runtime](https://github.com/nestybox/sysbox)
-  on your machine.
+- You can build images inside a
+  [CVM](../admin/workspace-management/cvms.md)-enabled Coder workspace with
+  Docker installed (see our [base
+  image](https://github.com/cdr/enterprise-images/tree/main/images/base) for an
+  example of how you can do this).
+
+- If you're using CVM-only features during an image's build time (e.g., you're
+  [pre-loading
+  images](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/images.md#building-a-system-container-that-includes-inner-container-images--v012-)
+  in workspaces), you will need to install the [sysbox
+  runtime](https://github.com/nestybox/sysbox) onto your local machine and build
+  images locally. Note that this isn't usually necessary, even if your image
+  installs and enables Docker.
 
 ## Example: Installing an IntelliJ IDE
 
