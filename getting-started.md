@@ -54,7 +54,7 @@ that you can use to automate various tasks through code.
 
 ## Connect local IDEs
 
-While Coder supports a variety of IDEs in the browser, such as VSCode and the
+While Coder supports a [variety of IDEs in the browser](https://coder.com/docs/coder/v1.20/workspaces/editors), such as VSCode and the
 JetBrains product suite, some developers may want to use their local
 installation of these tools or other IDEs with Coder. By leveraging the [Coder
 CLI](./cli/index.md), developers will be able to [connect their
