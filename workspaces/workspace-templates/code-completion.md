@@ -1,6 +1,7 @@
 ---
 title: "Workspace template code completion"
-description: "Learn how to use code completion when creating workspace templates."
+description:
+  "Learn how to use code completion when creating workspace templates."
 state: alpha
 ---
 
@@ -9,8 +10,8 @@ that enables code completion and syntax checking.
 
 ## Requirements
 
-You must have the [YAML extension by Red
-Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+You must have the
+[YAML extension by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 installed to use this feature.
 
 ## How to use
@@ -33,8 +34,8 @@ Some keyboard shortcuts you may find helpful include:
 - Document outlining (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>)
 - Auto completion (<kbd>Ctrl</kbd> + <kbd>Space</kbd>)
 
-See the [YAML extension by Red Hat
-docs](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+See the
+[YAML extension by Red Hat docs](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 for additional shortcuts.
 
 ![Code Completion Demo](../../assets/wac-intellisense-demo.gif)

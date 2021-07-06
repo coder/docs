@@ -55,13 +55,13 @@
           "path": "./workspaces/ssh.md"
         },
         {
-          "path": "./workspaces/workspaces-as-code/index.md",
+          "path": "./workspaces/workspace-templates/index.md",
           "children": [
             {
-              "path": "./workspaces/workspaces-as-code/templates.md"
+              "path": "./workspaces/workspace-templates/templates.md"
             },
             {
-              "path": "./workspaces/workspaces-as-code/code-completion.md"
+              "path": "./workspaces/workspace-templates/code-completion.md"
             }
           ]
         }

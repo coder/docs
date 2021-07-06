@@ -16,7 +16,7 @@ workspaces. Click the **New Environment** button and choose **Custom
 Workspace**.
 
 > To learn more about creating an environment from templates, see
-> [Workspaces as code](workspaces-as-code/index.md).
+> [Workspace templates](workspace-templates/index.md).
 
 ![Create a workspace](../assets/workspaces/create-workspace.png)
 
@@ -39,10 +39,10 @@ image, and runs custom configuration on startup. Learn about the
 
 Coder provides advanced settings that allow you to customize your workspace.
 
-If your Coder deployment has [container-based virtual machines
-enabled](../admin/workspace-management/cvms.md), Coder creates your workspace as
-a [CVMs](cvms.md) by default (you can opt-out of this setting by unchecking the
-**Run as Container-based Virtual Machine** box).
+If your Coder deployment has
+[container-based virtual machines enabled](../admin/workspace-management/cvms.md),
+Coder creates your workspace as a [CVMs](cvms.md) by default (you can opt-out of
+this setting by unchecking the **Run as Container-based Virtual Machine** box).
 
 You can also specify the resources Coder should allocate.
 
