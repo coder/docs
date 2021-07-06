@@ -104,7 +104,7 @@ To make sure that your `clusterIssuer` can change your DNS settings,
        preferredChain: ""
        privateKeySecretRef:
          name: example-issuer-account-key
-       server: https://acme-staging-v02.api.letsencrypt.org/directory
+       server: https://acme-v02.api.letsencrypt.org/directory
        solvers:
          - dns01:
              route53:
@@ -139,7 +139,7 @@ following `helm install` command instead:
 ```console
 helm install coder coder/coder --namespace coder \
   --version=<CODER_VERSION> \
-  --set devurls.host="*.exampleCo.com" \
+  --set devurls.host="*.coder.exampleCo.com" \
   --set ingress.host="coder.exampleCo.com" \
   --set ingress.tls.enable=true \
   --set ingress.tls.devurlsHostSecretName=coder-devurls-cert \

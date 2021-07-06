@@ -231,7 +231,7 @@ following `helm install` command instead:
 ```console
 helm install coder coder/coder --namespace coder \
   --version=<CODER_VERSION> \
-  --set devurls.host="*.exampleCo.com" \
+  --set devurls.host="*.coder.exampleCo.com" \
   --set ingress.host="coder.exampleCo.com" \
   --set ingress.tls.enable=true \
   --set ingress.tls.devurlsHostSecretName=coder-devurls-cert \
