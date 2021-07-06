@@ -8,7 +8,7 @@ The **Templates** tab features options that control the behavior of
 
 ## Enabling workspace templates
 
-By default, workspaces templates is an opt-in feature. The **Enable using
+By default, workspace templates is an opt-in feature. The **Enable using
 Workspace Templates** toggle allows you to enable or disable the creation of
 [workspaces](../workspaces/index.md) using predefined templates located in Git
 repositories.
