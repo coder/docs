@@ -104,7 +104,7 @@ To make sure that your `clusterIssuer` can change your DNS settings,
        preferredChain: ""
        privateKeySecretRef:
          name: example-issuer-account-key
-       server: https://acme-staging-v02.api.letsencrypt.org/directory
+       server: https://acme-v02.api.letsencrypt.org/directory
        solvers:
          - dns01:
              route53:
