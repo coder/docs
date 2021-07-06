@@ -3,8 +3,7 @@ title: Templates
 description: Learn how to manage your workspace templates.
 ---
 
-The **Templates** tab features options that control the behavior of workspace
-templates, which are the basis of
+The **Templates** tab features options that control the behavior of
 [workspace templates](../workspaces/workspace-templates/index.md).
 
 ## Enabling workspace templates
