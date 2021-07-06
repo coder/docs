@@ -1,8 +1,7 @@
 ---
 title: "Getting started"
 description: Get started with Coder.
-icon:
-  '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16" width="16" xml:space="preserve"><path d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"/></svg>'
+icon: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16" width="16" xml:space="preserve"><path d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8z"/></svg>'
 ---
 
 We’re excited for you to be part of the growing community of Coder users, and we
@@ -56,8 +55,9 @@ that you can use to automate various tasks through code.
 
 ## Connect local IDEs
 
-While Coder supports a [variety of IDEs in the browser](https://coder.com/docs/coder/v1.20/workspaces/editors), such as VSCode and the
-JetBrains product suite, some developers may want to use their local
+While Coder supports a [variety of IDEs in the
+browser](https://coder.com/docs/coder/v1.20/workspaces/editors), such as VSCode
+and the JetBrains product suite, some developers may want to use their local
 installation of these tools or other IDEs with Coder. By leveraging the [Coder
 CLI](./cli/index.md), developers will be able to [connect their
 terminal](./cli/remote-terminal.md) to the remote environment’s terminal, and
