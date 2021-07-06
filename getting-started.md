@@ -12,17 +12,17 @@ so please feel free to contribute and provide feedback as you desire.
 ## Setup and deploy Coder
 
 To get started with Coder, you’ll need to [deploy Coder](./setup/index.md) to a
-[Kubernetes cluster](./setup/kubernetes/index.md). We have documentation to
-assist you with [creating a cluster](./setup/kubernetes/index.md) if needed.
-Once you have a cluster, you can [install Coder via
-Helm](./setup/installation.md).
+Kubernetes cluster. We have documentation to help you [create a
+cluster](./setup/kubernetes/index.md) if needed. Once you have a cluster, you
+can [install Coder via Helm](./setup/installation.md).
 
 ## Configure Coder
 
 After you deploy Coder, you’ll need to [upload your license
-file](./setup/configuration.md) before you can configure the application. Once
-logged in, you’ll be able to access the [administration
-management](.//admin/index.md) menu to set up things such as [access
+file](./setup/configuration.md) before you can configure the application (you
+can get a trial license for free [here](https://coder.com/trial)). Once logged
+in, you’ll be able to access the [administration management](.//admin/index.md)
+menu to set up things such as [access
 controls](](.//admin/access-control/index.md) with OpenID Connect (OIDC),
 [create organizations](./admin/organizations.md), and create an OAuth app for
 your users to [connect to your Git provider](./admin/git.md).
@@ -37,11 +37,11 @@ workspaces as well.
 ## Provision users
 
 With some base configuration done, you’ll want to allow your developers to begin
-using Coder. [Within our Admin Guides](./guides/admin/index.md), we have steps
-to set up OpenID Connect (OIDC) with [Azure AD](./guides/admin/oidc-azuread.md)
-or [Okta](./guides/admin/oidc-okta.md). If you are using another Identity
-Provider (IdP), the process should be very similar. With OIDC configured, Coder
-will automatically create a user and add them to the [default
+using Coder. You can manually create and invite users, or you can set up OpenID
+Connect (OIDC) with [Azure AD](./guides/admin/oidc-azuread.md) or
+[Okta](./guides/admin/oidc-okta.md). If you are using another Identity Provider
+(IdP), the process should be very similar. With OIDC configured, Coder will
+automatically create a user and add them to the [default
 organization](./admin/organizations.md) when a developer logs in for the first
 time.
 
