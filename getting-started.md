@@ -23,7 +23,7 @@ file](./setup/configuration.md) before you can configure the application (you
 can get a trial license for free [here](https://coder.com/trial)). Once logged
 in, you’ll be able to access the [administration management](.//admin/index.md)
 menu to set up things such as [access
-controls](](.//admin/access-control/index.md) with OpenID Connect (OIDC),
+controls](.//admin/access-control/index.md) with OpenID Connect (OIDC),
 [create organizations](./admin/organizations.md), and create an OAuth app for
 your users to [connect to your Git provider](./admin/git.md).
 
