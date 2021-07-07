@@ -16,6 +16,9 @@
       ]
     },
     {
+      "path": "getting-started.md"
+    },
+    {
       "path": "./workspaces/index.md",
       "children": [
         {
