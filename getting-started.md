@@ -6,7 +6,7 @@ icon: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/19
 
 We’re excited for you to be part of the growing community of Coder users, and we
 wanted to provide an onboarding guide to ensure you have a great experience.
-Coder’s [documentation is completely open-source](https://github.com/cdr/docs),
+Coder’s [documentation is publicly editable](https://github.com/cdr/docs),
 so please feel free to contribute and provide feedback as you desire.
 
 ## Setup and deploy Coder
@@ -21,9 +21,9 @@ can [install Coder via Helm](./setup/installation.md).
 After you deploy Coder, you’ll need to [upload your license
 file](./setup/configuration.md) before you can configure the application (you
 can get a trial license for free [here](https://coder.com/trial)). Once logged
-in, you’ll be able to access the [administration management](.//admin/index.md)
+in, you’ll be able to access the [administration management](./admin/index.md)
 menu to set up things such as [access
-controls](.//admin/access-control/index.md) with OpenID Connect (OIDC),
+controls](./admin/access-control/index.md) with OpenID Connect (OIDC),
 [create organizations](./admin/organizations.md), and create an OAuth app for
 your users to [connect to your Git provider](./admin/git.md).
 
