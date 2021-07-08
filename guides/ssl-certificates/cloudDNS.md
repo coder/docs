@@ -1,8 +1,8 @@
 ---
-title: Cloud DNS
+title: Google Cloud DNS
 description:
-  Learn how to use cert-manager to set up SSL certificates using Cloud DNS for
-  DNS01 challenges.
+  Learn how to use cert-manager to set up SSL certificates using Google Cloud 
+  DNS for DNS01 challenges.
 ---
 
 [cert-manager](https://cert-manager.io/) allows you to enable HTTPS on your
@@ -10,7 +10,7 @@ Coder installation, regardless of whether you're using
 [Let's Encrypt](https://letsencrypt.org/) or you have your own certificate
 authority.
 
-This guide will show you how to install cert-manager v1.0.1 and set up your
+This guide will show you how to install cert-manager v1.4.0 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
 you can enable HTTPS on your Coder deployment. It will also show you how to
 configure your Coder hostname and dev URLs.
@@ -21,7 +21,7 @@ configure your Coder hostname and dev URLs.
 
 You must have:
 
-- A Kubernetes cluster with internet connectivity
+- A Kubernetes cluster [of a supported version](https://kubernetes.io/releases/version-skew-policy/#supported-version-skew) with internet connectivity
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - A [Cloud DNS](https://cloud.google.com/dns) account
 - A
@@ -30,16 +30,13 @@ You must have:
 
 ## Step 1: Add cert-manager to your Kubernetes cluster
 
-To add cert-manager to your cluster (which we assume to be running Kubernetes
-1.16+), run:
+To add cert-manager to your cluster, run:
 
 ```console
-kubectl apply --validate=false -f \
-https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager.yaml
+$ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
 ```
 
-> `--validate=false` is required to bypass kubectl's resource validation on the
-> client-side that exists in older versions of Kubernetes.
+More specifics can be found in the [cert-manager install documentation](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
 
 Once you've started the installation process, verify that all the pods are
 running:
@@ -111,18 +108,22 @@ secret/clouddns-dns01-solver-svc-acct created
                   name: clouddns-dns01-solver-svc-acct
                   key: key.json
     ```
+    
+    More information on the values in the yaml file above can be found in [the dns01
+    solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/)
+
 
 1. Apply your configuration changes:
 
     ```console
-    kubectl apply -f ./letsencrypt.yaml
+    kubectl apply -f letsencrypt.yaml
     ```
 
-If successful, you'll see a response similar to:
+    If successful, you'll see a response similar to:
 
-```console
-clusterissuer.cert-manager.io/letsencrypt created
-```
+    ```console
+    clusterissuer.cert-manager.io/letsencrypt created
+    ```
 
 ## Step 5: Install Coder
 
@@ -143,43 +144,11 @@ helm install coder coder/coder --namespace coder \
 ```
 
 The cluster-issuer will create the certificates you need, using the values
-provided in the `helm install` command for the dev URL and host secret. The
-following is a sample `certificates.yaml` file issued for your Coder instance:
-
-```yaml
-apiVersion: cert-manager.io/v1alpha2
-kind: Certificate
-metadata:
-  name: coder-root
-  namespace: # Your Coder deployment namespace
-spec:
-  secretName: coder-root-cert # Your Coder base url secret name. Use hyphens in place of spaces.
-  duration: 2160h # 90d
-  renewBefore: 360h # 15d
-  dnsNames:
-    - domain.com # Your base domain for Coder
-  issuerRef:
-    name: letsencrypt
-    kind: ClusterIssuer
-
----
-apiVersion: cert-manager.io/v1alpha2
-kind: Certificate
-metadata:
-  name: coder-devurls
-  namespace: # Your Coder deployment namespace
-spec:
-  secretName: coder-devurls-cert # Your Coder devurls secret name
-  duration: 2160h # 90d
-  renewBefore: 360h # 15d
-  dnsNames:
-    - "*.domain.com" # Your dev URLs wildcard subdomain
-  issuerRef:
-    name: letsencrypt
-    kind: ClusterIssuer
-```
+provided in the `helm install` command for the dev URL and host secret. 
 
 There are additional steps to make sure that your hostname and Dev URLs work.
+
+## Step 6: Configure DNS resolution
 
 1. Check the contents of your namespace
 
