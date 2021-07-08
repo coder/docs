@@ -8,7 +8,7 @@ Coder installation, regardless of whether you're using
 [Let's Encrypt](https://letsencrypt.org/) or you have your own certificate
 authority.
 
-This guide will show you how to install cert-manager v1.0.1 and set up your
+This guide will show you how to install cert-manager v1.4.0 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
 you can enable HTTPS on your Coder deployment. It will also show you how to
 configure your Coder hostname and dev URLs.
@@ -31,7 +31,7 @@ are the same regardless of which option you choose.
 
 You must have:
 
-- A Kubernetes cluster with internet connectivity
+- A Kubernetes cluster [of a supported version](https://kubernetes.io/releases/version-skew-policy/#supported-version-skew) with internet connectivity
 - Installed [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - Installed [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
 
@@ -44,8 +44,12 @@ You should also:
 ## Step 1: Create an Azure DNS Zone
 
 Log into the [Azure Portal](portal.azure.com). Using the search bar, look for
-**DNS Zones** and navigate to this service. Click **New** to create a new zone,
-and when prompted:
+**DNS Zones** and navigate to this service. 
+
+If Azure DNS is the registrar for your domain, the zone will already exist so
+you can skip to Step 3.
+
+Click **New** to create a new zone, and when prompted:
 
 1. Select your **subscription** and the **resource group** where your Coder
    deployment is
@@ -70,7 +74,7 @@ the domain you're using for your Coder deployment.
    cert-manager:
 
    ```console
-   kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.2.0/cert-manager.yaml
+   $ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
    ```
 
 1. Check that cert-manager installs correctly by running
@@ -86,6 +90,11 @@ the domain you're using for your Coder deployment.
 
    ```console
    kubectl get all -n cert-manager
+
+   NAME                                       READY   STATUS    RESTARTS   AGE
+   cert-manager-7cd5cdf774-vb2pr              1/1     Running   0          84s
+   cert-manager-cainjector-6546bf7765-ssxhf   1/1     Running   0          84s
+   cert-manager-webhook-7f68b65458-zvzn9      1/1     Running   0          84s
    ```
 
 ## Step 4: Set up a managed identity
@@ -116,13 +125,17 @@ az role assignment create --role "DNS Zone Contributor" --assignee $PRINCIPAL_ID
 
 ## Step 5: Deploy the managed identity
 
-1. Export the following environment variables:
+1. Export the following environment variables with your own values:
 
     ```console
     export SUBSCRIPTION_ID="05e8b285-4ce1-46a3-b4c9-f51ba67d6acc"
     export RESOURCE_GROUP="workshop-202103"
     export CLUSTER_NAME="coder-workshop-202103"
     ```
+    
+    Subscription ID comes from your Azure subscription.
+    Resource group should be set to the resource group that owns the cluster.
+    Cluster name is the name Azure uses to refer to the prereq kubernetes cluster.
 
 1. Deploy the AAD Pod Identity components to an RBAC-enabled cluster:
 
@@ -179,12 +192,18 @@ az role assignment create --role "DNS Zone Contributor" --assignee $PRINCIPAL_ID
                 labels:
                     aadpodidbinding: certman-label # must match selector in AzureIdentityBinding
     ```
+    
+    This label tells the cluster which pods are allowed to use the IAM
+    role specified earlier. For our puropses, we want the cert-manager pod
+    to be able to set the DNS records for dns01 challenges. The side-effect
+    is that any pod with that label will be able to change DNS settings in
+    the authorized zone.
 
 ## Step 6: Create the ACME Issuer
 
 1. Create a file called `letsencrypt.yaml` (you can name it whatever you'd like)
-to specify the `hostedZoneName`, `resourceGroupName` and `subscriptionID` fields
-for the DNS Zone:
+   to specify the `hostedZoneName`, `resourceGroupName` and `subscriptionID` fields
+   for the DNS Zone:
 
     ```yaml
     apiVersion: cert-manager.io/v1
@@ -209,6 +228,10 @@ for the DNS Zone:
               # Azure Cloud Environment, default to AzurePublicCloud
               environment: AzurePublicCloud
     ```
+    
+    More information on the values in the yaml file above can be found in [the dns01
+    solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/)
+
 
 1. Apply your configuration changes:
 
@@ -239,6 +262,10 @@ helm install coder coder/coder --namespace coder \
   --set ingress.annotations."cert-manager\.io/cluster-issuer"="letsencrypt" \
   --wait
 ```
+
+The `hostSecretName` and `devurlsHostSecretName` are abritrary strings
+that you should set to some value that does not conflict with any other
+secrets in the Coder namespace.
 
 There are also a few additional steps to make sure that your hostname and dev
 URLs work.
