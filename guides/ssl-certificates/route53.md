@@ -1,7 +1,7 @@
 ---
 title: Route 53
 description:
-  Learn how to use cert-manager to set up SSL certificates using Route 53 for
+  Learn how to use cert-manager to set up TLS certificates using Route 53 for
   DNS01 challenges.
 ---
 
@@ -10,7 +10,7 @@ Coder installation, regardless of whether you're using
 [Let's Encrypt](https://letsencrypt.org/) or you have your own certificate
 authority.
 
-This guide will show you how to install cert-manager v1.0.1 and set up your
+This guide will show you how to install cert-manager v1.4.0 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
 you can enable HTTPS on your Coder deployment. It will also show you how to
 configure your Coder hostname and dev URLs.
@@ -23,9 +23,9 @@ configure your Coder hostname and dev URLs.
 
 You must have:
 
-- A [Kubernetes cluster](../../setup/kubernetes/index.md) (v1.17 or greater)
-  with internet connectivity
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+
+- A Kubernetes cluster [of a supported version](https://kubernetes.io/releases/version-skew-policy/#supported-version-skew) with internet connectivity
+- kubectl matching cluster version
 
 You should also:
 
@@ -41,7 +41,7 @@ You should also:
    cert-manager:
 
    ```console
-   kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.2.0/cert-manager.yaml
+   $ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
    ```
 
 1. Check that cert-manager installs correctly by running
@@ -57,6 +57,12 @@ You should also:
 
    ```console
    kubectl get all -n cert-manager
+   
+   NAME                                       READY   STATUS    RESTARTS   AGE
+   cert-manager-7cd5cdf774-vb2pr              1/1     Running   0          84s
+   cert-manager-cainjector-6546bf7765-ssxhf   1/1     Running   0          84s
+   cert-manager-webhook-7f68b65458-zvzn9      1/1     Running   0          84s
+
    ```
 
 ## Step 2: Delegate your domain names and set up DNS01 challenges
@@ -64,6 +70,9 @@ You should also:
 Because Coder dynamically generates domains (specifically the dev URLs), your
 certificates need to be approved and challenged. The following steps will show
 you how to use Route 53 for DNS01 challenges.
+
+If your domain name is managed by Route 53, the hosted zone will already exist
+so skip to step 3.
 
 1. Log in to AWS Route 53. On the Dashboard, click **Hosted Zone**.
 
@@ -85,6 +94,10 @@ you how to use Route 53 for DNS01 challenges.
 
 To make sure that your `clusterIssuer` can change your DNS settings,
 [create the required IAM role](https://cert-manager.io/docs/configuration/acme/dns01/route53/#set-up-an-iam-role)
+
+When you create the secret for cert-manager, referenced below as `route53-credentials`
+be sure it is in the cert-manager namespace since it's used by the cert-manager
+pod to perform DNS configuration changes. 
 
 ## Step 4: Create the ACME Issuer
 
@@ -117,6 +130,9 @@ To make sure that your `clusterIssuer` can change your DNS settings,
              dnsZones:
                - yourDomain.com
    ```
+   
+   More information on the values in the yaml file above can be found in [the dns01
+   solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/)
 
 1. Apply your configuration changes
 
@@ -127,7 +143,7 @@ To make sure that your `clusterIssuer` can change your DNS settings,
    If successful, you'll see a response similar to
 
    ```console
-   clusterissuer.cert-manager.io/letsencrypt-alt created
+   clusterissuer.cert-manager.io/letsencrypt created
    ```
 
 ## Step 5: Install Coder
@@ -147,6 +163,10 @@ helm install coder coder/coder --namespace coder \
   --set ingress.annotations."cert-manager\.io/cluster-issuer"="letsencrypt" \
   --wait
 ```
+
+The `hostSecretName` and `devurlsHostSecretName` are abritrary strings
+that you should set to some value that does not conflict with any other
+secrets in the Coder namespace.
 
 There are also a few additional steps to make sure that your hostname and dev
 URLs work.
