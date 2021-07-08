@@ -1,7 +1,7 @@
 ---
 title: Cloudflare
 description:
-  Learn how to use cert-manager to set up SSL certificates using Cloudflare for
+  Learn how to use cert-manager to set up TLS certificates using Cloudflare for
   DNS01 challenges.
 ---
 
@@ -10,7 +10,7 @@ Coder installation, regardless of whether you're using
 [Let's Encrypt](https://letsencrypt.org/) or you have your own certificate
 authority.
 
-This guide will show you how to install cert-manager v1.0.1 and set up your
+This guide will show you how to install cert-manager v1.4.0 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
 you can enable HTTPS on your Coder deployment.
 
@@ -22,24 +22,16 @@ you can enable HTTPS on your Coder deployment.
 
 You must have:
 
-- A Kubernetes cluster (v1.15 or greater) with internet connectivity
-- kubectl with patch version
-  [greater than v1.18.8, v1.17.11, or v1.16.14](https://cert-manager.io/docs/installation/upgrading/upgrading-0.15-0.16/#issue-with-older-versions-of-kubectl)
+- A Kubernetes cluster [of a supported version](https://kubernetes.io/releases/version-skew-policy/#supported-version-skew) with internet connectivity
+- kubectl matching cluster version
 
 ## Step 1: Add cert-manager to your Kubernetes cluster
 
 ```console
-# Kubernetes 1.16+
-$ kubectl apply --validate=false -f \
-https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager.yaml
-
-# Kubernetes <1.16
-$ kubectl apply --validate=false -f \
-https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager-legacy.yaml
+$ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
 ```
 
-> `--validate=false` is required to bypass kubectl's resource validation on the
-> client-side that exists in older versions of Kubernetes.
+More specifics can be found in the [cert-manager install documentation](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
 
 Once you've started the installation process, you can verify that all the pods
 are running:
@@ -95,7 +87,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: cloudflare-api-token-secret
-  namespace: coder # Your Coder deployment namespace
+  namespace: cert-manager # Your cert-manager deployment namespace
 type: Opaque
 stringData:
   api-token: "" # Your Cloudflare API token (from earlier)
@@ -129,6 +121,9 @@ spec:
             - "example.com"
 ```
 
+More information on the values in the yaml file above can be found in [the dns01
+solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/)
+
 ### ClusterIssuers
 
 cert-manager has a concept of **Issuer** (which are per-namespace) or
@@ -140,8 +135,8 @@ following changes:
 - Change the namespace of the secret to **cert-manager**
 - Change the kind of the **Issuer** to **ClusterIssuer**
 - Remove the namespace of the **ClusterIssuer**
-- Change the additional annotations to
-  `cert-manager.io/cluster-issuer: letsencrypt`
+- Change the annotations to
+  `cert-manager.io/cluster-issuer: "letsencrypt"`
 
 For further information, see
 [Setting Up Issuers](https://docs.cert-manager.io/en/release-0.8/tasks/issuers/index.html).
@@ -158,7 +153,7 @@ issuer.cert-manager.io/letsencrypt created
 
 ## Step 3: Configure Coder to issue and use the certificates
 
-If your installation uses an external egress, you'll need to configure your
+If your installation uses an external ingress, you'll need to configure your
 ingress to use the **coder-root-cert** and **coder-devurls-cert**.
 
 However, if you're using the default
@@ -174,12 +169,16 @@ ingress:
     enable: true
     hostSecretName: coder-root-cert
     devurlsHostSecretName: coder-devurls-cert
-  additionalAnnotations:
-    - "cert-manager.io/issuer: letsencrypt"
+  annotations:
+    cert-manager.io/issuer: "letsencrypt"
 
 devurls:
   host: "*.coder.example.com"
 ```
+
+The `hostSecretName` and `devurlsHostSecretName` are abritrary strings
+that you should set to some value that does not conflict with any other
+secrets in the Coder namespace.
 
 Be sure to redeploy Coder after changing your Helm values. If, after
 redeploying, you're not getting a valid certificate, see [cert-manager's
