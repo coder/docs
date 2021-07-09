@@ -93,7 +93,7 @@ stringData:
   api-token: "" # Your Cloudflare API token (from earlier)
 
 ---
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt
