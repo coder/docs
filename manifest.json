@@ -324,6 +324,9 @@
           "path": "./guides/deployments/index.md",
           "children": [
             {
+              "path": "./guides/deployments/aws-lb.md"
+            },
+            {
               "path": "./guides/deployments/archive-install.md"
             },
             {
