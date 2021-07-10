@@ -20,11 +20,18 @@ contained.
 
 The following steps will show you how to create and use a config file.
 
-## Step 1: Create the config file
+## Step 1: Create the configure file
 
-Using the text editor of your choice, create a file named `configure` and add
-the instructions that you want included. For example, the following file shows
-how you can clone a repo at build time:
+Using the text editor of your choice, create a file named `configure` and make
+it executable:
+
+```console
+touch configure
+chmod +x configure
+```
+
+Next, add the instructions that you want included. For example, the following
+file shows how you can clone a repo at build time:
 
 ```console
 #!/bin/bash
