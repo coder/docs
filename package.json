@@ -15,7 +15,7 @@
     "lint:fix": "markdownlint --config .markdownlint.jsonc --rules .markdownlint-rules --fix '**/*.md'"
   },
   "devDependencies": {
-    "@types/minimist": "^1.2.1",
+    "@types/minimist": "^1.2.2",
     "@types/node": "^12.20.15",
     "@types/semver-compare": "^1.0.1",
     "all-contributors-cli": "^6.20.0",
