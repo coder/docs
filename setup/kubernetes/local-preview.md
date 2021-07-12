@@ -56,12 +56,13 @@ apply):
 
 ### Dev URLs
 
-The local preview doesn't support [dev URLs](../workspaces/devurls) by default.
-Instead, you can use tools like [ngrok][ngrok-url] to preview webpages from
-inside a workspace.
+When Coder is installed, dev URLs are not enabled by default.
 
 To enable local dev URLs, follow
 [the instructions below](#enable-local-dev-urls) after installing Coder.
+
+If you do not want to enable dev URLs, you can use SSH portforwarding or tools
+like [ngrok][ngrok-url] to preview webpages from inside a workspace.
 
 ### Air-gapped clusters
 
