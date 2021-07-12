@@ -98,11 +98,24 @@ automatically configured for you, so there's no first-time setup to do.
 
 ## Enable local dev URLs
 
-To enable dev URLs on your local machine, [dnsmasq](dnsmasq-url) can be used to
-create local domains (e.g <http://dashboard.coder> and
-<http://yourdevurl.coder>).
+A wildcard subdomain is required to use dev URLs with Coder. One option is to
+use a service such as [nip.io](nip-url) to route domains local IP.
 
-Here's how:
+[Update Coder](https://coder.com/docs/coder/latest/setup/updating#update-coder)
+with the following helm values added for either your local (127.0.0.1) or
+private (e.g 192.168.1.x) address:
+
+```yaml
+ingress:
+  host: "127.0.0.1.nip.io"
+devurls:
+  host: "*.127.0.0.1.nip.io"
+```
+
+Alternatively, [dnsmasq](dnsmasq-url) can be used to create local domains (e.g
+`http://dashboard.coder` and `http://*.coder`). This may be useful if you do not
+want to rely on an external service/network, or if your network has DNS
+rebinding protection. Here's how:
 
 1. Install dnsmasq
 
@@ -149,19 +162,16 @@ Here's how:
    nameserver 127.0.0.1
    ```
 
-1. Add the domains to the helm config. Your deployment will need the following
-   helm values:
+1. To use the new domains,
+   [update Coder](https://coder.com/docs/coder/latest/setup/updating#update-coder)
+   with these helm values added:
 
    ```yaml
    ingress:
-     host: "dashboard.coder"
+   host: "dashboard.coder"
    devurls:
-     host: "*.coder"
+   host: "*.coder"
    ```
-
-   If you have not done this before, follow our docs to
-   [update coder](https://coder.com/docs/coder/latest/setup/updating#update-coder)
-   while adding helm values.
 
 ## Removing Coder
 
@@ -202,3 +212,4 @@ sudo vim /etc/resolv.conf
 [docker-bug-url]: https://github.com/docker/for-mac/issues/5044
 [ngrok-url]: https://ngrok.com
 [devurl-url]: https://coder.com/docs/workspaces/devurls
+[nip-url]: https://nip.io
