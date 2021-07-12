@@ -3,24 +3,28 @@ title: Kubernetes
 description: Learn how to set up a Kubernetes cluster for your Coder deployment.
 ---
 
-You can deploy Coder into any [compatible Kubernetes cluster]. Coder follows the
-[Kubernetes upstream version support policy], and the latest stable release
-version of Coder supports the previous two minor releases as well as the current
-release of Kubernetes at time of publication. Coder may run successfully with
-older versions of Kubernetes, however, we strongly recommend running one of the
-currently-supported versions, in order to receive applicable fixes, including
-security fixes, from the Kubernetes project maintainers.
-
-Coder continuously removes usage of deprecated Kubernetes API versions once
-the minimum baseline version of Kubernetes supports the necessary features in
-a stable version. We follow this policy in order to ensure that Coder stops
-using deprecated features before they are removed from new versions of
-Kubernetes.
-
 This section contains guides for creating a compatible cluster on common cloud
 platforms, including Microsoft Azure, Google Cloud Platform, and Amazon Web
 Services. If you already have a Kubernetes cluster, you may wish to proceed to
 the [installation guide].
+
+## Supported Kubernetes versions
+
+You can deploy Coder to any [compatible Kubernetes cluster]. Coder follows the
+[Kubernetes upstream version support policy], and the latest stable release
+version of Coder supports the previous two minor releases as well as the current
+release of Kubernetes at time of publication.
+
+Coder may run successfully with
+older versions of Kubernetes. However, we strongly recommend running one of the
+currently-supported versions so that you receive applicable fixes, including
+security updates, from the Kubernetes project maintainers.
+
+Coder continuously removes usage of deprecated Kubernetes API versions once
+the minimum baseline version of Kubernetes supports the necessary features in
+a stable version. We follow this policy to ensure that Coder stops
+using deprecated features before they are removed from new versions of
+Kubernetes.
 
 [compatible kubernetes cluster]: ../requirements.md
 [kubernetes upstream version support policy]:
