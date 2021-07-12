@@ -84,13 +84,14 @@ SSH_KEY_PATH="<PATH/TO/KEY>.pub"
 REGION="YOUR_REGION"
 ```
 
-The following will spin up a Kubernetes cluster using `eksctl`:
+The following will spin up a Kubernetes cluster using `eksctl` (be sure to
+update the parameters as necessary, especially the version number):
 
 ```console
 
   eksctl create cluster \
   --name "$CLUSTER_NAME" \
-  --version 1.17 \
+  --version <version> \
   --region "$REGION" \
   --nodegroup-name standard-workers \
   --node-type t3.medium \
@@ -172,7 +173,7 @@ as a workspace deployment option, you'll need to
    kind: ClusterConfig
 
    metadata:
-     version: "1.17"
+     version: "<YOUR_K8s_VERSION"
      name: <YOUR_CLUSTER_NAME>
      region: <YOUR_AWS_REGION>
 

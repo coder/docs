@@ -22,7 +22,8 @@ you can enable HTTPS on your Coder deployment.
 
 You must have:
 
-- A Kubernetes cluster (v1.17 or greater) with internet connectivity
+- A Kubernetes cluster [meeting Coder's
+  requirements](../../setup/kubernetes/index.md) with internet connectivity
 - kubectl with patch version
   [greater than v1.18.8, v1.17.11, or v1.16.14](https://cert-manager.io/docs/installation/upgrading/upgrading-0.15-0.16/#issue-with-older-versions-of-kubectl)
 
