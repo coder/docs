@@ -11,6 +11,7 @@ There are five primary ways you can connect an IDE to your Coder workspace:
 1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with JetBrains
    Projector
 1. [JetBrains' Code With Me](editors.md#code-with-me)
+1. [RStudio](editors.md#rstudio)
 1. _Any_ local editor with
    [1-way file synchronization](../cli/file-sync.md#one-way-file-sync) or
    [2-way file synchronization over SSH](../cli/file-sync.md#two-way-file-sync)
@@ -178,3 +179,36 @@ participants. If they do, click **Accept** to proceed.
 
 At this point, you'll be able to share your project and work with your partner
 in real-time.
+
+## RStudio
+
+Coder supports [RStudio](rstudio.com). To create a workspace that lets you use
+RStudio:
+
+1. Create an image that includes RStudio (see
+   [rocker/rstudio](https://hub.docker.com/r/rocker/rstudio) for an example).
+
+1. [Create a workspace](getting-started.md#2-create-a-workspace) using the image
+   you created in the previous step.
+
+1. Because RStudio uses an authentication model that matches to your Linux user
+   with a home directory, whereas your image likely uses the `coder` user, we
+   recommend making a new user for your RStudio projects. To do so, go to
+   **Applications** > **Terminal** in Coder and run:
+
+   ```console
+   useradd --create-home myuser     # replace myuser with your username
+   passwd myuser     # provide and confirm your chosen password when prompted
+   ```
+
+1. At this point, you can go to **Applications** to launch RStudio:
+
+   ![Applications with RStudio launcher](../assets/workspaces/rstudio.png)
+
+   Sign in using your RStudio user credentials (RStudio auto-populates
+   the fields your Coder credentials, so you'll need to change these to the ones
+   you just created).
+
+   > All RStudio user data is store in the `home` directory associated with this
+   > user, not your Coder user (that is, you'll find it in `/home/myuser` where
+   > `myuser` is your RStudio username).
