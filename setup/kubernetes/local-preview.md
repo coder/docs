@@ -4,8 +4,8 @@ description: Set up a Coder deployment locally for testing.
 ---
 
 Coder is typically deployed onto Kubernetes cluster, but if you would like to
-set up a lightweight preview deployment, you can do so locally using using [URL]
-and [URL].
+set up a lightweight preview deployment, you can do so locally using using
+[Docker][docker-url] and [kind][kind-url].
 
 > Coder currently supports local preview only on workstations running macOS or
 > Linux.
@@ -31,8 +31,9 @@ deployment running entirely inside a Docker container.
 
 ### CVMs
 
-The local preview supports [URL] if you meet the following requirements (if you
-choose not to try out CVMs, these requirements do not apply):
+The local preview supports [CVMs][cvm-url] if you meet the following
+requirements (if you choose not to try out CVMs, these requirements do not
+apply):
 
 1. Your Linux hosts must be running Linux Kernel 5 and above.
 
@@ -49,14 +50,15 @@ choose not to try out CVMs, these requirements do not apply):
    linux  linux-headers-5.11.4-arch1-1
    ```
 
-1. Docker Desktop for Mac **must** use version [URL]. This specific version is
-   required because of a recent downgrade to Linux Kernel 4.9 due to a
-   [bug](docker-bug-url).
+1. Docker Desktop for Mac **must** use version [2.5.0.1][docker-mac-url]. This
+   specific version is required because of a recent downgrade to Linux Kernel
+   4.9 due to a [bug][docker-bug-url].
 
 ### Dev URLs
 
-The local preview doesn't support [dev URL] by default. Instead, you can use
-tools like [URL] to preview webpages from inside a workspace.
+The local preview doesn't support [dev URLs](../workspaces/devurls) by default.
+Instead, you can use tools like [ngrok][ngrok-url] to preview webpages from
+inside a workspace.
 
 To enable local dev URLs, follow
 [the instructions below](#enable-local-dev-urls) after installing Coder.
@@ -99,7 +101,7 @@ automatically configured for you, so there's no first-time setup to do.
 ## Enable local dev URLs
 
 A wildcard subdomain is required to use dev URLs with Coder. One option is to
-use a service such as [nip.io](nip-url) to route domains local IP.
+use a service such as [nip.io][nip-url] to route domains local IP.
 
 [Update Coder](https://coder.com/docs/coder/latest/setup/updating#update-coder)
 with the following helm values added for either your local (127.0.0.1) or
@@ -112,7 +114,7 @@ devurls:
   host: "*.127.0.0.1.nip.io"
 ```
 
-Alternatively, [dnsmasq](dnsmasq-url) can be used to create local domains (e.g
+Alternatively, [dnsmasq][dnsmasq-url] can be used to create local domains (e.g
 `http://dashboard.coder` and `http://*.coder`). This may be useful if you do not
 want to rely on an external service/network, or if your network has DNS
 rebinding protection. Here's how:
@@ -162,9 +164,8 @@ rebinding protection. Here's how:
    nameserver 127.0.0.1
    ```
 
-1. To use the new domains,
-   [update Coder](https://coder.com/docs/coder/latest/setup/updating#update-coder)
-   with these helm values added:
+1. To use the new domains, [update Coder](../updating#update-coder) with these
+   helm values added:
 
    ```yaml
    ingress:
@@ -184,7 +185,7 @@ curl -fsSL https://coder.com/try.sh | sh -s -- down
 Because Coder runs inside Docker, you should have nothing left on your machine
 after tear down.
 
-If you added custom DNS for [local dev URLs](enable-local-dev-urls), you can
+If you added custom DNS for [local dev URLs](#enable-local-dev-urls), you can
 revert these changes by uninstalling dnsmasq and removing the resolver config:
 
 ```console
