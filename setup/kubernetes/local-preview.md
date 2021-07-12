@@ -66,7 +66,10 @@ We are working on bringing Dev URL support to local previews in later releases.
 
 ### SSH
 
-SSH is not configured to run by default on kind deployments.
+With kind, SSH is not configured to run by default.
+
+With Docker Desktop, SSH will work as long as your machine does not have an
+existing SSH server running on port 22.
 
 ### Air-gapped clusters
 
@@ -107,9 +110,6 @@ automatically configured for you, so there's no first-time setup to do.
 
 [Docker Desktop](docker-desktop-url) includes a standalone Kubernetes server and
 client, which can be used to run Coder.
-
-> Note: While this option does support [SSH access](../../workspaces/ssh) to
-> workspaces, you must not have an existing SSH server running on port 22.
 
 1. Follow [Docker's docs](docker-k8s-docs) to enable the Kubernetes cluster
 1. Ensure Docker has enough resources allocated to meet
