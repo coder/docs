@@ -107,4 +107,4 @@ To do so, you can either:
 - Use SSH tunneling to tunnel the web app to individual developers' `localhost`
   instead of dev URLs (this is also an out-of-the-box feature included with VS
   Code Remote)
-- Use [multiple callback sub-URLs](https://stackoverflow.com/questions/35942009/github-oauth-multiple-authorization-callback-url/38194107#38194107)
+- Use this workaround for [multiple callback sub-URLs](https://stackoverflow.com/questions/35942009/github-oauth-multiple-authorization-callback-url/38194107#38194107)
