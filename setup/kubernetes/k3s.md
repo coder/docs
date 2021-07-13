@@ -137,5 +137,7 @@ cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 
 ## Next steps
 
-At this point, you're ready to proceed to [installing
-Coder](../installation.md).
+Consider reviewing our guides on configuring [SSL certificates](../../guides/ssl-certificates/index.md)
+to access Coder through a secure domain.
+
+Once complete, see our page on [installation](../installation.md).

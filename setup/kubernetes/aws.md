@@ -231,4 +231,7 @@ For more information, see:
 
 ## Next steps
 
-At this point, you're ready to proceed to [installation](../installation.md).
+Consider reviewing our guides on configuring [SSL certificates](../../guides/ssl-certificates/index.md)
+to access Coder through a secure domain.
+
+Once complete, see our page on [installation](../installation.md).
