@@ -46,7 +46,7 @@ SFTP, run `sftp coder.<workspace_name>`.
 
 You can use `rsync` to transfer files to and from Coder.
 
-To do so, use the flag `-e "coder ssh"` in your `rsync` transfer invokation. For
+To do so, use the flag `-e "coder ssh"` in your `rsync` transfer invocation. For
 example, the following shows how you can transfer your home directory to your
 workspace:
 
