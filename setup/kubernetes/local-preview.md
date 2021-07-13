@@ -3,10 +3,8 @@ title: "Local preview"
 description: Set up a Coder deployment locally for testing.
 ---
 
-Docker
-
-Coder is typically deployed to a remote datacenter but [Docker][docker-url] can
-be used to create a lightweight preview deployment of Coder.
+Coder is typically deployed to a remote data center, but you can use
+[Docker][docker-url] to create a lightweight preview deployment of Coder.
 
 > Coder currently supports local preview only on workstations running macOS or
 > Linux.
@@ -66,16 +64,16 @@ We are working on bringing Dev URL support to local previews in later releases.
 
 ### SSH
 
-With kind, SSH is not configured to run by default.
+When using kind for your local preview, SSH is not configured to run by default.
 
-With Docker Desktop, SSH will work as long as your machine does not have an
-existing SSH server running on port 22.
+When using Docker Desktop for your local preview, SSH works as long as your
+machine does not have an existing SSH server running on port `22`.
 
 ### Air-gapped clusters
 
 The local preview option does not work in an air-gapped deployment.
 
-## Option 1) Kind
+## Option 1: Kind
 
 To install Coder, run:
 
@@ -106,31 +104,31 @@ Password: yfu...yu2
 Visit the URL, and log in using the provided credentials. The platform is
 automatically configured for you, so there's no first-time setup to do.
 
-## Option 2) Docker Desktop
+## Option 2: Docker Desktop
 
 [Docker Desktop](docker-desktop-url) includes a standalone Kubernetes server and
-client, which can be used to run Coder.
+client that you can use to run Coder.
 
-1. Follow [Docker's docs](docker-k8s-docs) to enable the Kubernetes cluster
-1. Ensure Docker has enough resources allocated to meet
+1. [Enable the Kubernetes cluster](docker-k8s-docs) inside Docker.
+
+1. Ensure that Docker has enough resources allocated to meet
    [Coder's requirements](https://coder.com/docs/coder/v1.20/setup/requirements)
-   in Docker preferences
+   (you can do so by going to Docker preferences).
 
    ![Docker Desktop Resources](../../assets/setup/docker-desktop-resources.png)
 
 1. Install [metrics-server](https://github.com/kubernetes-sigs/metrics-server)
-   for Coder to get valid metrics from your cluster
+   so that Coder gets valid metrics from your cluster:
 
    ```console
    helm repo add bitnami https://charts.bitnami.com/bitnami
    ```
 
-1. Proceed to our [install docs](../installation) to install Coder on your
-   cluster
+1. [Install Coder](../installation) on to your cluster.
 
 If you run into `OutOfmemory` errors when installing, try increasing your
-resource allocation in Docker. If that fails install Coder with the following
-helm values:
+resource allocation in Docker. If increasing the resource allocation doesn't fix
+the error, reinstall Coder using the following Helm values:
 
 ```console
 helm upgrade --install coder \
