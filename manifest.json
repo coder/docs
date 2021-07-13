@@ -141,12 +141,7 @@
               "path": "./setup/kubernetes/google.md"
             },
             {
-              "path": "./setup/kubernetes/openshift/index.md",
-              "children": [
-                {
-                  "path": "./setup/kubernetes/openshift/images.md"
-                }
-              ]
+              "path": "./setup/kubernetes/openshift.md"
             }
           ]
         },
