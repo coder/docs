@@ -54,16 +54,6 @@ apply):
    specific version is required because of a recent downgrade to Linux Kernel
    4.9 due to a [bug][docker-bug-url].
 
-### Dev URLs
-
-When Coder is installed, dev URLs are not enabled by default.
-
-To enable local dev URLs, follow
-[the instructions below](#enable-local-dev-urls) after installing Coder.
-
-If you do not want to enable dev URLs, you can use SSH portforwarding or tools
-like [ngrok][ngrok-url] to preview webpages from inside a workspace.
-
 ### Air-gapped clusters
 
 The local preview option does not work in an air-gapped deployment.
@@ -77,7 +67,7 @@ curl -fsSL https://coder.com/try.sh | PORT="80" sh -s --
 ```
 
 > Note: you can edit the value of `PORT` to control where the Coder dashboard
-> will be available. However, dev URLs will only work when PORT is 80
+> will be available. However, dev URLs will only work when `PORT` is set to `80`.
 
 When the installation process completes, you'll see the URL and login
 credentials you need to access Coder:
@@ -99,26 +89,34 @@ Password: yfu...yu2
 Visit the URL, and log in using the provided credentials. The platform is
 automatically configured for you, so there's no first-time setup to do.
 
-## Enable local dev URLs
+### Dev URLs
 
-A wildcard subdomain is required to use dev URLs with Coder. One option is to
-use a service such as [nip.io][nip-url] to route domains local IP.
+Coder allows you to access services you're developing in your workspace via [dev
+URLs](../../workspaces/devurls.md). You can enable dev URLs after you've
+installed Coder.
 
-[Update Coder](https://coder.com/docs/coder/latest/setup/updating#update-coder)
-with the following helm values added for either your local (127.0.0.1) or
-private (e.g 192.168.1.x) address:
+> If you do not want to enable dev URLs, you can use SSH port forwarding or
+> tools like [ngrok][ngrok-url] to preview webpages from inside you workspace.
 
-```yaml
-ingress:
-  host: "127.0.0.1.nip.io"
-devurls:
-  host: "*.127.0.0.1.nip.io"
-```
+1. To use dev URLs, you must have a wildcard subdomain. One option to meet this
+requirement is to use a service such as [nip.io][nip-url] to route domains local
+IP address.
 
-Alternatively, [dnsmasq][dnsmasq-url] can be used to create local domains (e.g
+1. [Update Coder](https://coder.com/docs/coder/latest/setup/updating#update-coder)
+with the following Helm values added for either your local (`127.0.0.1`) or
+private (e.g., `192.168.1.x`) address:
+
+   ```yaml
+   ingress:
+   host: "127.0.0.1.nip.io"
+   devurls:
+   host: "*.127.0.0.1.nip.io"
+   ```
+
+Alternatively, you can use [dnsmasq][dnsmasq-url] to create local domains (e.g.,
 `http://dashboard.coder` and `http://*.coder`). This may be useful if you do not
-want to rely on an external service/network, or if your network has DNS
-rebinding protection. Here's how:
+want to rely on an external service/network or if your network has DNS rebinding
+protection. Here's how to do this:
 
 1. Install dnsmasq
 
@@ -130,7 +128,7 @@ rebinding protection. Here's how:
    sudo apt-get install dnsmasq
    ```
 
-1. Create dnsmasq configuration for the .coder domain
+1. Create a dnsmasq configuration for the `.coder` domain
 
    ```console
    # Mac OS
@@ -165,8 +163,8 @@ rebinding protection. Here's how:
    nameserver 127.0.0.1
    ```
 
-1. To use the new domains, [update Coder](../updating#update-coder) with these
-   helm values added:
+1. [Update Coder](../updating#update-coder) with these Helm values added to use
+   your new domains:
 
    ```yaml
    ingress:
@@ -186,7 +184,7 @@ curl -fsSL https://coder.com/try.sh | sh -s -- down
 Because Coder runs inside Docker, you should have nothing left on your machine
 after tear down.
 
-If you added custom DNS for [local dev URLs](#enable-local-dev-urls), you can
+If you added a custom DNS to use [dev URLs](#dev-urls), you can
 revert these changes by uninstalling dnsmasq and removing the resolver config:
 
 ```console
