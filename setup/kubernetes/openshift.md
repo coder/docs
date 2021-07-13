@@ -16,8 +16,8 @@ that ensure an optimal user experience.
 
 ## Prerequisites
 
-* An OpenShift cluster with a Project (Kubernetes namespace) for Coder
-* OpenShift command-line tools (`oc` and `kubectl`)
+- An OpenShift cluster with a Project (Kubernetes namespace) for Coder
+- OpenShift command-line tools (`oc` and `kubectl`)
 
 ## Option 1: Add the environments service account to anyuid or nonroot
 
