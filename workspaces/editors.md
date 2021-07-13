@@ -191,10 +191,11 @@ RStudio:
 1. [Create a workspace](getting-started.md#2-create-a-workspace) using the image
    you created in the previous step.
 
-1. Because RStudio uses an authentication model that matches to your Linux user
-   with a home directory, whereas your image likely uses the `coder` user, we
-   recommend making a new user for your RStudio projects. To do so, go to
-   **Applications** > **Terminal** in Coder and run:
+1. **Optional.** RStudio requires authentication with a Linux user and stores
+   all files in their home directory. If, from your Docker image, you're using the
+   root user, `coder`, or a user that doesn't have a home directory
+   or known password, then we recommend creating a new user for your RStudio
+   projects. To do so, run:
 
    ```console
    useradd --create-home myuser     # replace myuser with your username
@@ -209,6 +210,6 @@ RStudio:
    the fields your Coder credentials, so you'll need to change these to the ones
    you just created).
 
-   > All RStudio user data is store in the `home` directory associated with this
+   > All RStudio user data is stored in the `home` directory associated with this
    > user, not your Coder user (that is, you'll find it in `/home/myuser` where
    > `myuser` is your RStudio username).
