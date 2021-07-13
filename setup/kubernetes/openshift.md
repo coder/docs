@@ -6,7 +6,7 @@ description: Learn about deploying Coder in OpenShift Container Platform
 This deployment guide shows you how to customize your [OpenShift Container
 Platform] cluster in order to deploy Coder. The OpenShift Container Platform
 includes default security features, notably the `restricted` [Security Context
-Constraint], which can interfere with applications, including Coder.
+Constraint] (SCC), which can interfere with applications, including Coder.
 
 This guide describes customizations to the OpenShift cluster as well as Coder
 that ensure an optimal user experience.
@@ -19,12 +19,71 @@ that ensure an optimal user experience.
 - An OpenShift cluster with a Project (Kubernetes namespace) for Coder
 - OpenShift command-line tools (`oc` and `kubectl`)
 
+## Modify pod and container security contexts
+
+OpenShift's SCC feature enforces particular settings that applications must
+run with. The default `restricted` SCC requires that applications run as a user
+within a project-specific range (`MustRunAsRange`) and must not define a
+seccomp profile.
+
+You can view the restrictions using `oc describe scc restricted`:
+
+```console
+$ oc describe scc restricted
+Name:                                           restricted
+Priority:                                       <none>
+Access:
+  Users:                                        <none>
+  Groups:                                       system:authenticated
+Settings:
+  Allow Privileged:                             false
+  Allow Privilege Escalation:                   true
+  Default Add Capabilities:                     <none>
+  Required Drop Capabilities:                   KILL,MKNOD,SETUID,SETGID
+  Allowed Capabilities:                         <none>
+  Allowed Seccomp Profiles:                     <none>
+  Allowed Volume Types:                         configMap,downwardAPI,emptyDir,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:                          <all>
+  Allowed Unsafe Sysctls:                       <none>
+  Forbidden Sysctls:                            <none>
+  Allow Host Network:                           false
+  Allow Host Ports:                             false
+  Allow Host PID:                               false
+  Allow Host IPC:                               false
+  Read Only Root Filesystem:                    false
+  Run As User Strategy: MustRunAsRange
+    UID:                                        <none>
+    UID Range Min:                              <none>
+    UID Range Max:                              <none>
+  SELinux Context Strategy: MustRunAs
+    User:                                       <none>
+    Role:                                       <none>
+    Type:                                       <none>
+    Level:                                      <none>
+  FSGroup Strategy: MustRunAs
+    Ranges:                                     <none>
+  Supplemental Groups Strategy: RunAsAny
+    Ranges:                                     <none>
+```
+
+You can override the default settings by defining the following in your Helm
+Values file:
+
+```yaml
+coderd:
+  podSecurityContext:
+    runAsUser: null
+    seccompProfile: null
+  securityContext:
+    seccompProfile: null
+```
+
 ## Option 1: Add the environments service account to anyuid or nonroot
 
 Coder's default base images for workspaces, such as `enterprise-base`, run as
 the `coder` user (UID 1000). By default, the OpenShift platform does not
-allow running with this user, as service accounts use the `restricted` Security
-Context Constraint by default, and must run with a project-specific UID.
+allow running with this user, as service accounts use the `restricted` SCC by
+default, and must run with a project-specific UID.
 
 Coder creates workspaces in pods with the service account `environments`, and
 we recommend adding this service account to the `anyuid` or `nonroot` Security
