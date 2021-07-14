@@ -99,12 +99,12 @@ installed Coder.
 > tools like [ngrok][ngrok-url] to preview webpages from inside you workspace.
 
 1. To use dev URLs, you must have a wildcard subdomain. One option to meet this
-requirement is to use a service such as [nip.io][nip-url] to route domains local
-IP address.
+   requirement is to use a service such as [nip.io][nip-url] to route domains to
+   a local IP address.
 
-1. [Update Coder](https://coder.com/docs/coder/latest/setup/updating#update-coder)
-with the following Helm values added for either your local (`127.0.0.1`) or
-private (e.g., `192.168.1.x`) address:
+1. [Update Coder](../updating.md#update-coder) with the following Helm values
+   added for either your local (`127.0.0.1`) or private (e.g., `192.168.1.x`)
+   address:
 
    ```yaml
    ingress:
