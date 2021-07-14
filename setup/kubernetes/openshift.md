@@ -4,27 +4,27 @@ description: Learn about deploying Coder in OpenShift Container Platform
 ---
 
 This deployment guide shows you how to customize your [OpenShift Container
-Platform] cluster in order to deploy Coder. The OpenShift Container Platform
-includes default security features, notably the `restricted` [Security Context
-Constraint] (SCC), which can interfere with applications, including Coder.
+Platform] cluster to deploy Coder.
 
-This guide describes customizations to the OpenShift cluster as well as Coder
-that ensure an optimal user experience.
+The OpenShift Container Platform includes security features, notably the
+restricted [Security Context Constraint] (SCC), that can interfere with Coder.
+This guide describes the customizations to the OpenShift cluster and Coder that
+ensure an optimal user experience.
 
 [OpenShift Container Platform]: https://www.openshift.com/products/container-platform
 [Security Context Constraint]: https://docs.openshift.com/container-platform/4.7/authentication/managing-security-context-constraints.html
 
 ## Prerequisites
 
-- An OpenShift cluster with a Project (Kubernetes namespace) for Coder
-- OpenShift command-line tools (`oc` and `kubectl`)
+- An OpenShift cluster with a project (Kubernetes namespace) for Coder
+- OpenShift command-line tools (`oc` and `kubectl`) installed
 
-## Modify pod and container security contexts
+## Step 1: Modify pod and container security contexts
 
-OpenShift's SCC feature enforces particular settings that applications must
-run with. The default `restricted` SCC requires that applications run as a user
-within a project-specific range (`MustRunAsRange`) and must not define a
-seccomp profile.
+OpenShift's SCC feature enforces the settings with which applications must run.
+The default SCC setting, `restricted`, requires applications to run as a user
+within a project-specific range (`MustRunAsRange`) and does not allow apps to
+define a seccomp profile.
 
 You can view the restrictions using `oc describe scc restricted`:
 
@@ -66,8 +66,8 @@ Settings:
     Ranges:                                     <none>
 ```
 
-You can override the default settings by defining the following in your Helm
-Values file:
+You can override the default settings by defining the following in your [Helm
+chart](../../guides/admin/helm-charts.md):
 
 ```yaml
 coderd:
@@ -78,20 +78,28 @@ coderd:
     seccompProfile: null
 ```
 
-## Option 1: Add the environments service account to anyuid or nonroot
+At this point, you need to get your Coder workspaces running with the
+appropriate service account/user. There are two options available to you:
+
+1. Adding the environment's service account to `anyuid` or `nonroot`
+1. Building images compatible with OpenShift
+
+## Option 1: Add the environment's service account to anyuid or nonroot
 
 Coder's default base images for workspaces, such as `enterprise-base`, run as
-the `coder` user (UID 1000). By default, the OpenShift platform does not
-allow running with this user, as service accounts use the `restricted` SCC by
-default, and must run with a project-specific UID.
+the `coder` user (UID 1000). However, OpenShift doesn't allow this, since
+service accounts are required by the `restricted` Security
+Context Constraint (SCC) to run with a
+project-specific UID.
 
-Coder creates workspaces in pods with the service account `environments`, and
-we recommend adding this service account to the `anyuid` or `nonroot` Security
-Context Constraint using:
+To work around this, we we recommend adding this service account to the `anyuid`
+or `nonroot` SCC since Coder creates workspaces in pods with the service account
+`environments`:
 
 ```console
 $ oc adm policy add-scc-to-user nonroot -z environments
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:nonroot added: "environments"
+
 $ oc adm policy who-can use scc nonroot
 resourceaccessreviewresponse.authorization.openshift.io/<unknown> 
 
@@ -105,8 +113,8 @@ Users:  system:admin
 
 ## Option 2: Build images compatible with OpenShift
 
-In order to run Coder workspaces without modifying Security Context Constraints,
-you can modify the user and permissions from the base images. First, determine
+To run Coder workspaces without modifying Security Context Constraints (SCC),
+you can modify the user and permissions in the base images. First, determine
 the UID range for the project using:
 
 ```console
@@ -127,8 +135,8 @@ Quota:                  <none>
 Resource limits:        <none>
 ```
 
-Create a `BuildConfig` that outputs an image with a UID in the given range
-(in this case, sa.scc.uid-range begins with 1000670000):
+Next, create a `BuildConfig` that outputs an image with a UID in the given range
+(in this case, `sa.scc.uid-range` begins with `1000670000`):
 
 ```yaml
 kind: BuildConfig
@@ -164,4 +172,4 @@ spec:
 ```
 
 When creating workspaces, [configure Coder to connect to the internal OpenShift
-registry](../../admin/registries/index.md) and use this base image.
+registry](../../admin/registries/index.md) and use the base image you just created.
