@@ -86,7 +86,7 @@ Traefik in favor of Calico and nginx-ingress.
    networking and policy enforcement):
 
    ```console
-   kubectl create -f https://docs projectcalico.org/manifests tigera-operator.yaml
+   kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
 
    kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml
    ```
@@ -102,7 +102,7 @@ Traefik in favor of Calico and nginx-ingress.
 Modify Calico to enable IP forwarding, which is needed for container networking.
 
 ```console
-vim /etc/cni/net.d/10-canal.conflist
+vim /etc/cni/net.d/10-calico.conflist
 
 kubectl edit cm cni-config -n calico-system
 ```

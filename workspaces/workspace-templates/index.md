@@ -1,12 +1,11 @@
 ---
-title: "Workspaces as code"
+title: "Workspace templates"
 description: "Learn how to describe workspace configuration as code."
 state: alpha
 ---
 
-Workspaces as code (WAC) brings the _infrastructure as code_ paradigm to Coder
-workspaces. WAC allows you to define and create new workspaces using **workspace
-templates**.
+Workspace templates brings the _infrastructure as code_ paradigm to Coder
+workspaces. Templates allow you to define and create new workspaces using YAML.
 
 [Workspace templates](./templates.md) are declarative YAML files that describe
 how to configure workspaces and their supporting infrastructure. Coder supports
@@ -21,7 +20,7 @@ files with either the `.yaml` or `.yml` extension.
 
 We strongly recommend allowing the Git provider to run a webhook capable of
 reaching the Coder server for immediate template updates. Otherwise, Coder will
-update your WAC templates daily.
+update your workspace templates daily.
 
 ## Creating a workspace template
 
@@ -33,7 +32,7 @@ in our [syntax guide](templates.md).
 To create a new workspace using a template, go to **New Workspace** > **Create
 from Template**.
 
-![Create from template button](../../assets/workspaces/workspaces-as-code/create-from-template.png)
+![Create from template button](../../assets/workspaces/workspace-templates/create-from-template.png)
 
 When prompted, provide:
 
@@ -46,7 +45,7 @@ When prompted, provide:
   will be `.coder/coder.yaml`, but if you choose a different path, provide it
   here
 
-![Create workspace from template](../../assets/workspaces/workspaces-as-code/wac-user-form.png)
+![Create workspace from template](../../assets/workspaces/workspace-templates/wac-user-form.png)
 
 ## Adding an embeddable button
 

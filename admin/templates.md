@@ -1,22 +1,22 @@
 ---
 title: Templates
-description: Learn how to manage your workspaces as code templates.
+description: Learn how to manage your workspace templates.
 ---
 
-The **Templates** tab features options that control the behavior of workspace
-templates, which are the basis of [workspaces as code](../workspaces/workspaces-as-code/index.md).
+The **Templates** tab features options that control the behavior of
+[workspace templates](../workspaces/workspace-templates/index.md).
 
-## Enabling workspaces as code
+## Enabling workspace templates
 
-By default, workspaces as code is an opt-in feature. The **Enable using
+By default, workspace templates is an opt-in feature. The **Enable using
 Workspace Templates** toggle allows you to enable or disable the creation of
 [workspaces](../workspaces/index.md) using predefined templates located in Git
 repositories.
 
-To enable workspaces as code, go to **Admin > Templates** and set **Enable using
-Workspace Templates** to **On**.
+To enable workspace templates, go to **Admin > Templates** and set **Enable
+using Workspace Templates** to **On**.
 
-![Toggle workspaces as code](../assets/admin/wac_toggle.png)
+![Toggle workspace templates](../assets/admin/wac_toggle.png)
 
 ## Template policy
 
@@ -82,7 +82,7 @@ defined by the template policy.
 
 The **Embeddable Button** section features a form you can use for generating an
 embeddable button. This button makes it easy for developers to use your
-[workspace template](../workspaces/workspaces-as-code/index.md).
+[workspace template](../workspaces/workspace-templates/index.md).
 
 To create your button:
 
