@@ -23,6 +23,8 @@ Before proceeding, please make sure that you have the following installed:
 
 ## Limitations
 
+**We do not recommend using local previews for production deployments of Coder.**
+
 ### Resource allocation and performance
 
 Your experience with the local Coder preview is dependent on your system specs,
