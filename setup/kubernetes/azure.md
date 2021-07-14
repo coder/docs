@@ -139,7 +139,7 @@ For more information, see:
 
 ## Next steps
 
-Consider reviewing our guides on configuring [SSL certificates](../../guides/ssl-certificates/index.md)
-to access Coder through a secure domain.
+To access Coder through a secure domain, review our guides on configuring and
+using [SSL certificates](../../guides/ssl-certificates/index.md).
 
 Once complete, see our page on [installation](../installation.md).
