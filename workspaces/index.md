@@ -20,10 +20,14 @@ icon:
 description: "Learn about development workspaces in Coder."
 ---
 
-A workspace is your remote development environment. All workspaces are based on
-a shared [image](../images/index.md) and therefore reproducible.
+A workspace is your remote development environment.
 
 ![Workspaces](../assets/workspaces/workspaces.svg)
+
+All workspaces are based on a shared [image](../images/index.md) and therefore
+reproducible.
+
+![The anatomy of a workspace](../assets/workspaces/workspace-anatomy.png)
 
 ## In this section
 
