@@ -20,6 +20,18 @@ then scrolling down to **Extensions**:
 
 ![Configuring extensions marketplace](../../assets/admin/configure-extensions.png)
 
+## Open VSX public extension marketplace
+
+To use the [open-vsx.org](https://open-vsx.org) extensions in your Coder
+environment, you can set the extension marketplace admin value to: 
+
+```
+https://open-vsx.org/vscode/gallery
+```
+
+This value comes from the `serviceUrl` path described in [open-vsx's 
+documentation](https://github.com/eclipse/openvsx/wiki/Using-Open-VSX-in-VS-Code).
+
 ## Air-gapped marketplaces
 
 If you run Coder in an air-gapped workspace, the public VS Code marketplace is
