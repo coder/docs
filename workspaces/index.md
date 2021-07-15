@@ -24,7 +24,7 @@ A workspace is your remote development environment.
 
 ![Workspaces](../assets/workspaces/workspaces.svg)
 
-All workspaces are based on a shared [image](../images/index.md) and therefore
+Coder creates workspaces using a [shared container image](../images/index.md), which improves their reproducibility.
 reproducible.
 
 ![The anatomy of a workspace](../assets/workspaces/workspace-anatomy.png)
