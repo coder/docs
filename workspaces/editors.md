@@ -210,6 +210,7 @@ RStudio:
    the fields your Coder credentials, so you'll need to change these to the ones
    you just created).
 
-   > All RStudio user data is stored in the `home` directory associated with this
-   > user, not your Coder user (that is, you'll find it in `/home/myuser` where
-   > `myuser` is your RStudio username).
+   > All RStudio data is stored in the home directory associated with the user
+   > you sign in as, which may be different than the user on workspace startup
+   > (that is, you'll find the data in `/home/myuser` where myuser is your
+   > RStudio username).
