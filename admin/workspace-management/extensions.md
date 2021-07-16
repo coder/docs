@@ -1,6 +1,6 @@
 ---
 title: "Extensions"
-description: Learn how to configure the code-server extension marketplace .
+description: Learn how to configure the code-server extension marketplace.
 ---
 
 You can customize VS Code with extensions, which allow you to add new features
