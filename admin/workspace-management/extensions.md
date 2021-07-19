@@ -1,6 +1,6 @@
 ---
 title: "Extensions"
-description: Learn how to configure the code-server extension marketplace .
+description: Learn how to configure the code-server extension marketplace.
 ---
 
 You can customize VS Code with extensions, which allow you to add new features
@@ -19,6 +19,17 @@ then scrolling down to **Extensions**:
   accessed via the URL you provide
 
 ![Configuring extensions marketplace](../../assets/admin/configure-extensions.png)
+
+## Open VSX public extension marketplace
+
+To use [open-vsx.org](https://open-vsx.org) extensions in your Coder
+environment:
+
+1. Set the **Extension Marketplace Type** to **Custom**
+1. Set the **Extension Marketplace API URL** to
+   `https://open-vsx.org/vscode/gallery` (this value comes from the `serviceUrl`
+   path described in [open-vsx's
+   documentation](https://github.com/eclipse/openvsx/wiki/Using-Open-VSX-in-VS-Code)).
 
 ## Air-gapped marketplaces
 
