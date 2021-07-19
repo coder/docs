@@ -181,7 +181,7 @@ protection. Here's how to do this:
    devurls:
    host: "*.coder"
    ```
-   
+
 ## Option 2: Docker Desktop
 
 [Docker Desktop](docker-desktop-url) includes a standalone Kubernetes server and
