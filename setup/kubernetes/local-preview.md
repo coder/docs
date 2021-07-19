@@ -3,9 +3,8 @@ title: "Local preview"
 description: Set up a Coder deployment locally for testing.
 ---
 
-Coder is typically deployed onto Kubernetes cluster, but if you would like to
-set up a lightweight preview deployment, you can do so locally using using
-[Docker][docker-url] and [kind][kind-url].
+Coder is typically deployed to a remote data center, but you can use
+[Docker][docker-url] to create a lightweight preview deployment of Coder.
 
 > Coder currently supports local preview only on workstations running macOS or
 > Linux.
@@ -18,10 +17,13 @@ Before proceeding, please make sure that you have the following installed:
 
 1. [Docker](https://hub.docker.com/search?q=docker&type=edition&offering=community)
 1. [helm](https://helm.sh/docs/intro/install)
-1. [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
+1. [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) or
+   [Docker Desktop](docker-desktop-url)
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
 ## Limitations
+
+**We do not recommend using local previews for production deployments of Coder.**
 
 ### Resource allocation and performance
 
@@ -31,7 +33,7 @@ deployment running entirely inside a Docker container.
 
 ### CVMs
 
-The local preview supports [CVMs][cvm-url] if you meet the following
+The kind deployment supports [CVMs][cvm-url] if you meet the following
 requirements (if you choose not to try out CVMs, these requirements do not
 apply):
 
@@ -54,11 +56,18 @@ apply):
    specific version is required because of a recent downgrade to Linux Kernel
    4.9 due to a [bug][docker-bug-url].
 
+### SSH
+
+When using kind for your local preview, SSH is not configured to run by default.
+
+When using Docker Desktop for your local preview, SSH works as long as your
+machine does not have an existing SSH server running on port `22`.
+
 ### Air-gapped clusters
 
 The local preview option does not work in an air-gapped deployment.
 
-## Installing Coder
+## Option 1: Kind
 
 To install Coder, run:
 
@@ -172,6 +181,44 @@ protection. Here's how to do this:
    devurls:
    host: "*.coder"
    ```
+   
+## Option 2: Docker Desktop
+
+[Docker Desktop](docker-desktop-url) includes a standalone Kubernetes server and
+client that you can use to run Coder.
+
+1. [Enable the Kubernetes cluster](docker-k8s-docs) inside Docker.
+
+1. Ensure that Docker has enough resources allocated to meet
+   [Coder's requirements](https://coder.com/docs/coder/v1.20/setup/requirements)
+   (you can do so by going to Docker preferences).
+
+   ![Docker Desktop Resources](../../assets/setup/docker-desktop-resources.png)
+
+1. Install [metrics-server](https://github.com/kubernetes-sigs/metrics-server)
+   so that Coder gets valid metrics from your cluster:
+
+   ```console
+   helm repo add bitnami https://charts.bitnami.com/bitnami
+   ```
+
+1. [Install Coder](../installation) on to your cluster.
+
+If you run into `OutOfmemory` errors when installing, try increasing your
+resource allocation in Docker. If increasing the resource allocation doesn't fix
+the error, reinstall Coder using the following Helm values:
+
+```console
+helm upgrade --install coder \
+    --set ingress.useDefault=false \
+    --set cemanager.resources.requests.cpu="0m" \
+    --set cemanager.resources.requests.memory="0Mi" \
+    --set envproxy.resources.requests.cpu="0m" \
+    --set envproxy.resources.requests.memory="0Mi" \
+    --set timescale.resources.requests.cpu="0m" \
+    --set timescale.resources.requests.memory="0Mi" \
+    coder/coder
+```
 
 ## Removing Coder
 
@@ -203,6 +250,8 @@ sudo vim /etc/resolv.conf
 
 [docker-url]: https://www.docker.com/
 [dnsmasq-url]: https://linux.die.net/man/8/dnsmasq
+[docker-desktop-url]: https://www.docker.com/products/docker-desktop
+[docker-k8s-docs]: https://docs.docker.com/desktop/kubernetes/
 [kind-url]: https://kind.sigs.k8s.io/
 [cvm-url]: https://coder.com/docs/workspaces/cvms
 [docker-mac-url]:

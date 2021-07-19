@@ -43,8 +43,8 @@ helm upgrade coder coder/coder \
 
 ## Step 3: Provide the access URL in the Coder UI
 
-1. Log into Coder as a site admin/site manager and go to **Manage** > **Admin**
-   > **Infrastructure**.
+1. Log into Coder as a site admin/site manager and go to
+   **Manage** > **Admin** > **Infrastructure**.
 
 1. Provide your custom domain in the **Access URL** field. The URL you provide
    must match the value you provided as `ingress.host` in the previous step.

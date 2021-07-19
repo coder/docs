@@ -84,13 +84,14 @@ SSH_KEY_PATH="<PATH/TO/KEY>.pub"
 REGION="YOUR_REGION"
 ```
 
-The following will spin up a Kubernetes cluster using `eksctl`:
+The following will spin up a Kubernetes cluster using `eksctl` (be sure to
+update the parameters as necessary, especially the version number):
 
 ```console
 
   eksctl create cluster \
   --name "$CLUSTER_NAME" \
-  --version 1.17 \
+  --version <version> \
   --region "$REGION" \
   --nodegroup-name standard-workers \
   --node-type t3.medium \
@@ -172,7 +173,7 @@ as a workspace deployment option, you'll need to
    kind: ClusterConfig
 
    metadata:
-     version: "1.17"
+     version: "<YOUR_K8s_VERSION"
      name: <YOUR_CLUSTER_NAME>
      region: <YOUR_AWS_REGION>
 
@@ -196,7 +197,8 @@ implement network segmentation and tenant isolation.
 1. Apply the Calico manifest to your cluster:
 
    ```console
-   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.9/config/v1.7/calico.yaml
+   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/master/config/master/calico-operator.yaml
+   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/master/config/master/calico-crs.yaml
    ```
 
 1. Watch the `calico-system` DaemonSets:
@@ -230,4 +232,7 @@ For more information, see:
 
 ## Next steps
 
-At this point, you're ready to proceed to [installation](../installation.md).
+To access Coder through a secure domain, review our guides on configuring and
+using [SSL certificates](../../guides/ssl-certificates/index.md).
+
+Once complete, see our page on [installation](../installation.md).

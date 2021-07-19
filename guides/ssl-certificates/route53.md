@@ -23,8 +23,8 @@ configure your Coder hostname and dev URLs.
 
 You must have:
 
-- A [Kubernetes cluster](../../setup/kubernetes/index.md) (v1.17 or greater)
-  with internet connectivity
+- A Kubernetes cluster [meeting Coder's
+  requirements](../../setup/kubernetes/index.md) with internet connectivity
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 You should also:

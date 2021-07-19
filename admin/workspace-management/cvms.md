@@ -44,11 +44,11 @@ Google, Azure, and Amazon to support CVMs.
 To use CVMs with GKE, [create a cluster](../../setup/kubernetes/google.md) using
 the following parameters:
 
-- GKE Master version `>= 1.17`
-- `node-version >= 1.17`
+- GKE Master version `latest`
+- `node-version = "latest"`
 - `image-type = "UBUNTU"`
 
-You can also provide `latest` instead of specific version numbers. For example:
+For example:
 
 ```console
 gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
