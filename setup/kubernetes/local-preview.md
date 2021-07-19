@@ -149,7 +149,7 @@ protection. Here's how to do this:
    sudo vim /etc/dnsmasq.d/coder.conf
    ```
 
-   ```conf
+   ```text
    # coder.conf
    address=/coder/127.0.0.1
    ```
