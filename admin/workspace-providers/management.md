@@ -45,6 +45,9 @@ At this point, you can:
   at least one organization, no one will be able to provision workspaces using
   this provider.
 
+  > Organizations must not contain any workspaces in the workspace provider
+  > before you remove them from a workspace provider's allowlist.
+
 - Change the features of the workspace provider. You can enable **end-to-end
   encryption** for this provider, enable **external SSH connections** to the
   provider's workspaces via the Coder CLI, or specify a **Kubernetes storage
@@ -65,9 +68,6 @@ At this point, you can:
   ```
 
 Once you've made your changes, click **Update Provider** to save and continue.
-
-> Organizations must not contain any workspaces in the workspace provider before
-> you remove them from a workspace provider's allowlist.
 
 ## Deleting a workspace provider
 
