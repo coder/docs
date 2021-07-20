@@ -10,8 +10,8 @@ workspaces across multiple Kubernetes clusters and namespaces, including those
 located in other geographies, regions, or clouds.
 
 Distributed teams can use this feature to allow users to manage workspaces in
-the nearest cluster. This reduces network latency and improves developers'
-experience.
+the nearest cluster. When combined with [Coder Satellites](../satellites.md),
+this reduces network latency and improves developers' experience.
 
 You can also use workspace providers to support data sovereignty requirements or
 increase the isolation between workspaces running in the same region or cluster.

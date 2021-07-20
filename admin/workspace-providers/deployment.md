@@ -1,7 +1,6 @@
 ---
 title: Workspace provider deployment
 description: Learn how to deploy a workspace provider.
-state: beta
 ---
 
 This article walks you through the process of deploying a workspace provider to
@@ -11,7 +10,6 @@ a [Kubernetes cluster](../../setup/kubernetes/index.md).
 
 Install the following dependencies if you haven't already:
 
-- [Coder CLI](../../cli/installation.md)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 ## Creating the new workspace provider
@@ -33,18 +31,17 @@ Install the following dependencies if you haven't already:
 
 1. Provide the **namespace** to which Coder should provision new workspaces. If
    you don't already have one, you can create one by running the following in
-   the terminal (replace `default` with the desired name -- this is also the
-   value you'll provide to Coder):
+   the terminal:
 
    ```console
-   kubectl create namespace default
+   kubectl create namespace <NAMESPACE>
    ```
 
 1. Create a service account in the namespace that you specified in the previous
    step (Coder will use this account to provision workspaces):
 
    ```console
-   kubectl apply -n default -f - <<EOF
+   kubectl apply -n <NAMESPACE> -f - <<EOF
    apiVersion: v1
    kind: ServiceAccount
    metadata:
@@ -87,7 +84,7 @@ Install the following dependencies if you haven't already:
 1. Get the tokens required:
 
    ```console
-   kubectl get secrets -n default -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='coder')].data}{'\n'}"
+   kubectl get secrets -n <NAMESPACE> -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='coder')].data}{'\n'}"
    ```
 
    Copy and paste the output returned from this command into the Coder.
@@ -107,3 +104,13 @@ provider.
 
 Users in the allowed organizations can now choose to deploy into the newly set
 up workspace provider.
+
+## Using workspace providers in separate regions
+
+Workspace providers enable a single coder deployment to manage resources
+anywhere Kubernetes can be deployed. A common use case is to co-locate the
+developers physical location and workspace location to the same geographic
+region. To ensure low latency in these scenarios,
+[Coder Satellites](../satellites.md) should be deployed into these addition
+regions. This will enable all traffic to stay local to the region and provide
+the best user experience for latency sensitive applications.
