@@ -267,6 +267,9 @@
         },
         {
           "path": "./admin/templates.md"
+        },
+        {
+          "path": "./admin/satellites.md"
         }
       ]
     },
