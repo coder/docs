@@ -1,6 +1,6 @@
 ---
 title: Workspace providers
-description: Learn how workspace providers can improve developer experience.
+description: Learn how workspace providers can improve the developer experience.
 state: beta
 ---
 
@@ -10,8 +10,8 @@ workspaces across multiple Kubernetes clusters and namespaces, including those
 located in other geographies, regions, or clouds.
 
 Distributed teams can use this feature to allow users to manage workspaces in
-the nearest cluster. When combined with [Coder Satellites](../satellites.md),
-this reduces network latency and improves developers' experience.
+the nearest cluster. When combined with [satellites](../satellites/index.md),
+developers will see an improved experience and reduced network latency.
 
 You can also use workspace providers to support data sovereignty requirements or
 increase the isolation between workspaces running in the same region or cluster.

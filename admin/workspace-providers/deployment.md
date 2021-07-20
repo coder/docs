@@ -37,8 +37,8 @@ Install the following dependencies if you haven't already:
    kubectl create namespace <NAMESPACE>
    ```
 
-1. Create a ServiceAccount, Role, and Rolebinding in the namespace that you
-   specified in the previous step (Coder will use this account to provision
+1. Create a `ServiceAccount`, `Role`, and `Rolebinding` in the namespace that
+   you specified in the previous step (Coder will use this account to provision
    workspaces):
 
    ```console
@@ -82,8 +82,8 @@ Install the following dependencies if you haven't already:
    rolebinding.rbac.authorization.k8s.io/coder created
    ```
 
-1. Next we retrieve the ServiceAccount Token and Certificate which is used to
-   authenticate with the Kubernetes cluster. Get the credentials required:
+1. Retrieve the service account token and certificate, which Coder uses to
+   authenticate with the Kubernetes cluster.
 
    ```console
    kubectl get secrets -n <NAMESPACE> -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='coder')].data}{'\n'}"
@@ -109,10 +109,11 @@ up workspace provider.
 
 ## Using workspace providers in separate regions
 
-Workspace providers enable a single coder deployment to manage resources
-anywhere Kubernetes can be deployed. A common use case is to co-locate the
-developers physical location and workspace location to the same geographic
-region. To ensure low latency in these scenarios,
-[Coder Satellites](../satellites.md) should be deployed into these addition
-regions. This will enable all traffic to stay local to the region and provide
-the best user experience for latency sensitive applications.
+Workspace providers enable a single Coder deployment to manage resources
+anywhere you can deploy Kubernetes. A common use case this feature enables is to
+colocate the developer's physical location and workspace location to the same
+geographic region.
+
+To ensure low latency in these scenarios, you should deploy
+[satellites](../satellites/index.md) into these regions. Satellites enable
+traffic to stay within the region and provide an improved user experience.
