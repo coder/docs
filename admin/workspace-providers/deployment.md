@@ -37,8 +37,9 @@ Install the following dependencies if you haven't already:
    kubectl create namespace <NAMESPACE>
    ```
 
-1. Create a service account in the namespace that you specified in the previous
-   step (Coder will use this account to provision workspaces):
+1. Create a ServiceAccount, Role, and Rolebinding in the namespace that you
+   specified in the previous step (Coder will use this account to provision
+   workspaces):
 
    ```console
    kubectl apply -n <NAMESPACE> -f - <<EOF
@@ -81,13 +82,14 @@ Install the following dependencies if you haven't already:
    rolebinding.rbac.authorization.k8s.io/coder created
    ```
 
-1. Get the tokens required:
+1. Next we retrieve the ServiceAccount Token and Certificate which is used to
+   authenticate with the Kubernetes cluster. Get the credentials required:
 
    ```console
    kubectl get secrets -n <NAMESPACE> -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='coder')].data}{'\n'}"
    ```
 
-   Copy and paste the output returned from this command into the Coder.
+   Copy and paste the output returned from this command into the Coder form.
 
 1. Click **Create Provider** to proceed. Coder will deploy your provider at this
    point.
