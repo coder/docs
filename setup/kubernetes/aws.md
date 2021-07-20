@@ -25,16 +25,16 @@ machine:
 
 The node type and size that you select impact how you use Coder. When choosing,
 be sure to account for the number of developers you expect to use Coder, as well
-as the resources they need to run their workspaces. See our guide on on [compute
-resources](../../guides/admin/resources.md) for additional information.
+as the resources they need to run their workspaces. See our guide on on
+[compute resources](../../guides/admin/resources.md) for additional information.
 
 If you expect to provision GPUs to your Coder workspaces, you **must** use an
-EC2 instance from AWS' [accelerated computing instance
-family](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/accelerated-computing-instances.html).
+EC2 instance from AWS'
+[accelerated computing instance family](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/accelerated-computing-instances.html).
 
-> GPUs are not supported in workspaces deployed as [container-based virtual
-> machines (CVMs)](../../workspaces/cvms.md) unless you're running Coder in a
-> bare-metal Kubernetes environment.
+> GPUs are not supported in workspaces deployed as
+> [container-based virtual machines (CVMs)](../../workspaces/cvms.md) unless
+> you're running Coder in a bare-metal Kubernetes environment.
 
 ## Preliminary steps
 
@@ -197,7 +197,8 @@ implement network segmentation and tenant isolation.
 1. Apply the Calico manifest to your cluster:
 
    ```console
-   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.7.9/config/v1.7/calico.yaml
+   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/master/config/master/calico-operator.yaml
+   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/master/config/master/calico-crs.yaml
    ```
 
 1. Watch the `calico-system` DaemonSets:
@@ -231,4 +232,7 @@ For more information, see:
 
 ## Next steps
 
-At this point, you're ready to proceed to [installation](../installation.md).
+To access Coder through a secure domain, review our guides on configuring and
+using [SSL certificates](../../guides/ssl-certificates/index.md).
+
+Once complete, see our page on [installation](../installation.md).
