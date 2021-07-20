@@ -36,72 +36,17 @@ workspaces closer to them geographically or can be used for workload isolation
 purposes. See [Deploying a workspace provider](deployment.md) to learn how to
 expand your Coder deployment to additional Kubernetes clusters.
 
-## Admin UI
-
-Site admins and site managers can view the workspace providers configuration
-page available via **Manage** > **Admin** > **Workspace Providers**.
-
-![Workspace providers admin](../../assets/admin/workspace-providers-admin.png)
-
-The Admin panel shows an overview of all configured workspace providers and
-indicates their statuses and details. The **default** tag indicates the provider
-that will be selected by default when a user creates a workspace using the
-**Create a Workspace** dialog.
-
-You can expand individual listings to view in-depth information:
-
-![Detailed workspace providers
-info](../../assets/admin/workspace-providers-detail.png)
-
-### Status
-
-A workspace provider can have one of the following statuses:
-
-- **Pending**: The workspace provider has been registered but not deployed to
-  the remote Kubernetes cluster.
-- **Ready**: The workspace provider is online and available, and you can
-  provision new workspaces to it.
-- **Error**: The workspace provider encountered an issue on startup or cannot be
-  reached by the Coder deployment. The workspace provider's details will include
-  an error message.
-
 ### Organization allowlists
 
 Site admins and site managers can manage which organizations have permissions to
 provision new workspaces in each workspace provider. When a new organization is
-created, it can provision workspaces into the `built-in` workspace provider by
+created, it can provision workspaces into the **built-in** workspace provider by
 default.
+
+Before users can provision workspaces using the provider, you must edit the
+provider and indicate the organizations that can use the provider. See
+[Edit a workspace provider](management.md#edit-a-workspace-provider) for more
+information.
 
 Organizations must not contain any workspaces in the workspace provider before
 you remove them from a workspace provider's allowlist.
-
-### Updating the access URL
-
-For deployments with multiple workspace providers, you must ensure that each
-provider can communicate with the Coder deployment (otherwise, you may see
-downtime). If you want to change the Access URL after you've deployed workspace
-providers to complement the `built-in` workspace provider, you must:
-
-1. Ensure that the new URL resolves to the Coder deployment
-1. Change the Coder Access URL via the **Manage** > **Admin** >
-   **Infrastructure** page. The old URL should continue to resolve to the Coder
-   deployment at this step.
-1. [Redeploy each remote workspace provider](./deployment.md#upgrading-the-workspace-provider),
-   making sure that you use the following flag:
-
-```bash
-  --set cemanager.accessURL=[NEW_ACCESS_URL]
-```
-
-1. Confirm that the remote workspace providers deployed successfully with the
-   new access URL and workspaces still accessible.
-1. Remove any DNS records resolving to the old access URL.
-
-### Workspace provider lifecycle
-
-You can create and delete workspace providers via the Coder CLI.
-
-Helm will apply any configuration changes you make to the workspace provider
-details whenever the workspace provider is deployed and updated.
-
-For more information, see [Deploying a workspace provider](deployment.md).
