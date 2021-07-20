@@ -228,6 +228,14 @@
           ]
         },
         {
+          "path": "./admin/satellites/index.md",
+          "children": [
+            {
+              "path": "./admin/satellites/management.md"
+            }
+          ]
+        },
+        {
           "path": "./admin/workspace-providers/index.md",
           "children": [
             {
@@ -267,9 +275,6 @@
         },
         {
           "path": "./admin/templates.md"
-        },
-        {
-          "path": "./admin/satellites.md"
         }
       ]
     },
