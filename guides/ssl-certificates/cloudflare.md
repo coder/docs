@@ -87,7 +87,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: cloudflare-api-token-secret
-  namespace: cert-manager # Your cert-manager deployment namespace
+  namespace: coder # Your Coder deployment namespace
 type: Opaque
 stringData:
   api-token: "" # Your Cloudflare API token (from earlier)
