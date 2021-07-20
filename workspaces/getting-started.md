@@ -37,6 +37,17 @@ Your workspace persists in the home directory, updates itself to new versions of
 the image on which it is built, and runs custom configuration on startup. Learn
 about the [workspace lifecycle](lifecycle.md).
 
+## Cancel workspace builds
+
+If Coder hasn't finished building or rebuilding your workspace, you have the
+option of cancelling this process. Cancelling the workspace will stop the
+workspace and release the resources needed for your workspace.
+
+You can cancel the build process by clicking **Cancel** at the bottom-right of
+the workspace status bar.
+
+![Cancel workspace build](../assets/workspaces/cancel-ws-build.png)
+
 ### Workspace status
 
 The workspace overview page displays information regarding the status and
