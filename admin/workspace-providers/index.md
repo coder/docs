@@ -42,11 +42,3 @@ Site admins and site managers can manage which organizations have permissions to
 provision new workspaces in each workspace provider. When a new organization is
 created, it can provision workspaces into the **built-in** workspace provider by
 default.
-
-Before users can provision workspaces using the provider, you must edit the
-provider and indicate the organizations that can use the provider. See
-[Edit a workspace provider](management.md#edit-a-workspace-provider) for more
-information.
-
-Organizations must not contain any workspaces in the workspace provider before
-you remove them from a workspace provider's allowlist.

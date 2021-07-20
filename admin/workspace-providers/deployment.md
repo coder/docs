@@ -14,47 +14,6 @@ Install the following dependencies if you haven't already:
 - [Coder CLI](../../cli/installation.md)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-## Requirements
-
-1. Workspace providers **must have a hostname set** that is a subdomain of the
-   Coder deployment. For example, if the Coder deployment's hostname is
-   `coder.example.com`, the workspace provider's hostname must match the format
-   `*.coder.example.com`.
-1. The main Coder deployment and the workspace provider must be able to
-   communicate bi-directionally via their respective hostnames.
-1. The workspace provider scheme (HTTP or HTTPS) must match that of the Coder
-   deployment Access URL.
-1. The Kubernetes cluster address must be reachable from the Coder deployment.
-
-## Connecting to the cluster
-
-To add a Kubernetes cluster as a workspace provider, you must first make sure
-that you're connected to the cluster you want to expand into. Run the following
-command:
-
-```bash
-kubectl config current-context
-```
-
-Confirm that your current kubectl context correct before continuing; otherwise,
-connect to the correct context.
-
-## Creating the Coder namespace (optional)
-
-We recommend running workspace providers in a separate
-[namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
-to do so, run:
-
-```bash
-kubectl create namespace [YOUR_WORKSPACE_PROVIDER_NAMESPACE]
-```
-
-Next, change the kubectl context to point to your newly created namespace:
-
-```bash
-kubectl config set-context --current --namespace=coder
-```
-
 ## Creating the new workspace provider
 
 1. Log in to Coder, and go to **Manage** > **Providers**.
@@ -133,4 +92,18 @@ kubectl config set-context --current --namespace=coder
 
    Copy and paste the output returned from this command into the Coder.
 
-1. Click **Create Provider** to proceed.
+1. Click **Create Provider** to proceed. Coder will deploy your provider at this
+   point.
+
+## Allowlist organizations
+
+Before users can provision workspaces using the provider, you must edit the
+provider and indicate the organizations that can use the provider.
+
+Once Coder has deployed your provider, you'll see it listed on the **Providers**
+page. Click the vertical ellipsis to its right, and select **Edit**. Scroll down
+to **Organizations** and select the ones you want to be able to use this
+provider.
+
+Users in the allowed organizations can now choose to deploy into the newly set
+up workspace provider.
