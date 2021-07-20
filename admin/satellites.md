@@ -30,23 +30,23 @@ better developer experience. An example set of records with these features
 enabled could be:
 
 ```text
-CNAME coder.example.com coder-us-east.example.com
+CNAME coder.example.com coder-primary.example.com
 CNAME coder.example.com coder-us-west.example.com
 CNAME coder.example.com coder-eu-west.example.com
 CNAME coder.example.com coder-ap-southeast.example.com
 
-A coder-us-east.example.com      xxx.xxx.xxx.xxx
+A coder-primary.example.com      xxx.xxx.xxx.xxx
 A coder-us-west.example.com      xxx.xxx.xxx.xxx
 A coder-eu-west.example.com      xxx.xxx.xxx.xxx
 A coder-ap-southeast.example.com xxx.xxx.xxx.xxx
 ```
 
 Then developers can connect to `https://coder.example.com` and be serviced by
-the correct replica deployment based off the developer's location.
+the correct deployment based off the developer's location.
 
 ## Creating a Satellite
 
-Creating a new satellite includes deploying the coder helm chart with the
+Creating a new satellite includes deploying the Coder Helm chart with the
 `satellite` mode enabled and using the Coder CLI to register the new deployment.
 
 ## Dependencies
@@ -88,7 +88,7 @@ helm chart with the following required values set:
 - `coderd.satellite.accessURL` - must be set to the URL used to access the
   satellite deployment
 
-An example set of helm values for a deployment with tls and devurls enabled:
+An example `values.yaml` for a deployment with tls and devurls enabled:
 
 ```yaml
 coderd:
@@ -102,6 +102,18 @@ coderd:
     devurlsHostSecretName: "coder-satellite-cert"
 ```
 
+Install via the following commands:
+
+```bash
+helm add coder https://helm.coder.com
+helm repo update
+helm upgrade coder-satellite coder/coder \
+  --namespace=<NAMESPACE>
+  --version=<CODER_VERSION> \
+  --install \
+  -f values.yaml
+```
+
 ## Registering the Satellite
 
 Once the coder satellite has been deployed, it needs to be registered to the
@@ -111,7 +123,7 @@ from the satellite deployment.
 Using the Coder CLI, create a new satellite deployment:
 
 ```bash
-coder satellites create [NAME] [SATELLITE_ACCESS_URL]
+coder satellites create <NAME> <SATELLITE_ACCESS_URL>
 ```
 
 This command will fetch the public key from satellite deployment and register it
@@ -131,8 +143,14 @@ coder satellites ls
 Using the Coder CLI, remove the satellite deployment:
 
 ```bash
-coder satellites rm [NAME]
+coder satellites rm <NAME>
 ```
 
-After removing a registered satellite deployment from Coder, the helm deployment
+After removing a registered satellite deployment from Coder, the Helm deployment
 should also be removed.
+
+Run the following commands:
+
+```bash
+helm uninstall coder-satellite -n <NAMESPACE>
+```
