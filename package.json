@@ -15,12 +15,12 @@
     "lint:fix": "markdownlint --config .markdownlint.jsonc --rules .markdownlint-rules --fix '**/*.md'"
   },
   "devDependencies": {
-    "@types/minimist": "^1.2.1",
-    "@types/node": "^12.20.15",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^12.20.16",
     "@types/semver-compare": "^1.0.1",
     "all-contributors-cli": "^6.20.0",
-    "husky": "^7.0.0",
-    "lint-staged": "^11.0.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1",
     "markdownlint-cli": "^0.27.1",
     "minimist": "^1.2.5",
     "prettier": "2.3.2",

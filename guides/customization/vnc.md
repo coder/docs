@@ -1,10 +1,9 @@
 ---
-title: Virtual Network Computing
+title: VNC
 description: Learn how to set up a VNC in Coder.
 ---
 
-This guide will show you how to set up a virtual network computing (VNC) system
-in Coder.
+This guide will show you how to set up a VNC in Coder.
 
 Coder does not have a specific set of VNC providers it supports. Coder will
 render the VNC, as long as it is installed on the image used to create the
@@ -13,8 +12,7 @@ workspace.
 ## Step 1: Create the Dockerfile
 
 To begin, create a Dockerfile that you'll use to build an
-[image](../../images/index.md) with a virtual network computing (VNC) provider
-installed.
+[image](../../images/index.md) with a VNC provider installed.
 
 Be sure to set the `HOME`, `USER`, and `PORT` environment variables in the
 Dockerfile:

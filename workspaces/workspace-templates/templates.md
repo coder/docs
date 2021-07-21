@@ -279,8 +279,9 @@ The shell Coder should use to run the command.
 
 ```yaml
 start:
-  - name: First step
-    shell: /bin/bash
+  value:
+    - name: First step
+      shell: /bin/bash
 ```
 
 #### workspace.configure.start.value[*].directory
@@ -289,8 +290,9 @@ The working directory from which Coder should run the command.
 
 ```yaml
 start:
-  - name: First step
-    directory: /home/coder
+  value:
+    - name: First step
+      directory: /home/coder
 ```
 
 #### workspace.configure.start.value[*].continue-on-error
@@ -306,10 +308,11 @@ The map of environment variables to set for the command.
 
 ```yaml
 start:
-  - name: First step
-    env:
-      HOME: /home/coder
-      GOPATH: /home/coder/go
+  value:
+    - name: First step
+      env:
+        HOME: /home/coder
+        GOPATH: /home/coder/go
 ```
 
 #### workspace.dev-urls.value

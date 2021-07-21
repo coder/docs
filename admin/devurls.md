@@ -87,10 +87,25 @@ scroll down to **Dev URL Access Permissions**.
 You can set the maximum access level, but developers may choose to restrict
 access further.
 
-For example, if you set the maximum access level as
-**Authenticated**, then any dev URLs created for workspaces in your Coder
-deployment will be accessible to any authenticated Coder user.
+For example, if you set the maximum access level as **Authenticated**, then any
+dev URLs created for workspaces in your Coder deployment will be accessible to
+any authenticated Coder user.
 
 The developer, however, can choose to set a stricter permission level (e.g.,
 allowing only those in their organization to use the dev URL). Developers cannot
 choose a more permissive option.
+
+## Authentication with apps requiring a single callback URL
+
+If you're using GitHub credentials to sign in to an application, and your GitHub
+OAuth app has the authorization callback URL set to `localhost`, you will need
+to work around the fact that GitHub enforces a single callback URL (since each
+workspace gets a unique dev URL).
+
+To do so, you can either:
+
+- Use SSH tunneling to tunnel the web app to individual developers' `localhost`
+  instead of dev URLs (this is also an out-of-the-box feature included with VS
+  Code Remote)
+- Use this workaround for
+  [multiple callback sub-URLs](https://stackoverflow.com/questions/35942009/github-oauth-multiple-authorization-callback-url/38194107#38194107)

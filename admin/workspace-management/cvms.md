@@ -3,23 +3,24 @@ title: Docker in workspaces
 description: Learn how to enable support for secure Docker inside workspaces.
 ---
 
-If you're a site admin or a site manager, you can enable [container-based
-virtual machines (CVMs)](../../workspaces/cvms.md) as a workspace deployment
-option. CVMs allow users to run system-level programs, such as Docker and
-systemd, in their workspaces.
+If you're a site admin or a site manager, you can enable
+[container-based virtual machines (CVMs)](../../workspaces/cvms.md) as a
+workspace deployment option. CVMs allow users to run system-level programs, such
+as Docker and systemd, in their workspaces.
 
 ## Infrastructure requirements
 
-- CVMs leverage the [Sysbox container
-  runtime](https://github.com/nestybox/sysbox), so the Kubernetes Node must run
-  a supported Linux distro with the minimum kernel version (see [Sysbox distro
-  compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
+- CVMs leverage the
+  [Sysbox container runtime](https://github.com/nestybox/sysbox), so the
+  Kubernetes Node must run a supported Linux distro with the minimum kernel
+  version (see
+  [Sysbox distro compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
   for more information)
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
   about why this is still secure [here](#security).
 
 > Coder doesn't support legacy versions of cluster-wide proxy services such as
-Istio, and CVMs do not currently support NFS as a file system.
+> Istio, and CVMs do not currently support NFS as a file system.
 
 ### GPUs
 
@@ -44,11 +45,11 @@ Google, Azure, and Amazon to support CVMs.
 To use CVMs with GKE, [create a cluster](../../setup/kubernetes/google.md) using
 the following parameters:
 
-- GKE Master version `>= 1.17`
-- `node-version >= 1.17`
+- GKE Master version `latest`
+- `node-version = "latest"`
 - `image-type = "UBUNTU"`
 
-You can also provide `latest` instead of specific version numbers. For example:
+For example:
 
 ```console
 gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
