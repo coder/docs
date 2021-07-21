@@ -23,9 +23,10 @@ configure your Coder hostname and dev URLs.
 
 You must have:
 
-
-- A Kubernetes cluster [of a supported version](https://kubernetes.io/releases/version-skew-policy/#supported-version-skew) with internet connectivity
-- kubectl matching cluster version
+- A Kubernetes cluster
+  [of a supported version](../../setup/kubernetes/index.md#supported-kubernetes-versions)
+  with internet connectivity
+- Installed [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 You should also:
 
@@ -41,7 +42,7 @@ You should also:
    cert-manager:
 
    ```console
-   $ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
+   kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
    ```
 
 1. Check that cert-manager installs correctly by running
@@ -57,7 +58,7 @@ You should also:
 
    ```console
    kubectl get all -n cert-manager
-   
+
    NAME                                       READY   STATUS    RESTARTS   AGE
    cert-manager-7cd5cdf774-vb2pr              1/1     Running   0          84s
    cert-manager-cainjector-6546bf7765-ssxhf   1/1     Running   0          84s
@@ -95,9 +96,9 @@ so skip to step 3.
 To make sure that your `clusterIssuer` can change your DNS settings,
 [create the required IAM role](https://cert-manager.io/docs/configuration/acme/dns01/route53/#set-up-an-iam-role)
 
-When you create the secret for cert-manager, referenced below as `route53-credentials`
-be sure it is in the cert-manager namespace since it's used by the cert-manager
-pod to perform DNS configuration changes. 
+When you create the secret for cert-manager, referenced below as
+`route53-credentials` be sure it is in the cert-manager namespace since it's
+used by the cert-manager pod to perform DNS configuration changes.
 
 ## Step 4: Create the ACME Issuer
 
@@ -130,9 +131,9 @@ pod to perform DNS configuration changes.
              dnsZones:
                - yourDomain.com
    ```
-   
-   More information on the values in the yaml file above can be found in [the dns01
-   solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/)
+
+   More information on the values in the YAML file above can be found in
+   [the dns01 solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/).
 
 1. Apply your configuration changes
 
@@ -164,9 +165,9 @@ helm install coder coder/coder --namespace coder \
   --wait
 ```
 
-The `hostSecretName` and `devurlsHostSecretName` are abritrary strings
-that you should set to some value that does not conflict with any other
-secrets in the Coder namespace.
+The `hostSecretName` and `devurlsHostSecretName` are arbitrary strings that you
+should set to some value that does not conflict with any other secrets in the
+Coder namespace.
 
 There are also a few additional steps to make sure that your hostname and dev
 URLs work.
@@ -190,5 +191,6 @@ URLs work.
 At this point, you can return to **step 6** of the
 [installation](../../setup/installation.md) guide to obtain the admin
 credentials you need to log in. If you are not getting a valid certificate after
-redeploying, see [cert-manager's troubleshooting
-guide](https://cert-manager.io/docs/faq/acme/) for additional assistance.
+redeploying, see
+[cert-manager's troubleshooting guide](https://cert-manager.io/docs/faq/acme/)
+for additional assistance.

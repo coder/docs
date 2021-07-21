@@ -1,6 +1,8 @@
 ---
 title: Azure DNS
-description: Learn how to use cert-manager to set up SSL certificates using Azure DNS for DNS01 challenges.
+description:
+  Learn how to use cert-manager to set up SSL certificates using Azure DNS for
+  DNS01 challenges.
 ---
 
 [cert-manager](https://cert-manager.io/) allows you to enable HTTPS on your
@@ -13,8 +15,8 @@ cluster to issue Let's Encrypt certificates for your Coder installation so that
 you can enable HTTPS on your Coder deployment. It will also show you how to
 configure your Coder hostname and dev URLs.
 
-There are three available methods to configuring the Azure DNS DNS01 Challenge via
-cert-manager:
+There are three available methods to configuring the Azure DNS DNS01 Challenge
+via cert-manager:
 
 - [Managed Identity Using AAD Pod Identities](#step-1:-set-up-a-managed-identity)
 - [Managed Identity Using AKS Kubelet Identity](https://cert-manager.io/docs/configuration/acme/dns01/azuredns/#managed-identity-using-aks-kubelet-identity)
@@ -31,20 +33,24 @@ are the same regardless of which option you choose.
 
 You must have:
 
-- A Kubernetes cluster [of a supported version](https://kubernetes.io/releases/version-skew-policy/#supported-version-skew) with internet connectivity
+- A Kubernetes cluster
+  [of a supported version](../../setup/kubernetes/index.md#supported-kubernetes-versions)
+  with internet connectivity
 - Installed [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-- Installed [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
+- Installed
+  [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
 
 You should also:
 
 - Be a cluster admin
 - Have access to your DNS provider
-- Have a paid Azure account that allows you to access [Azure DNS](https://azure.microsoft.com/en-us/services/dns/)
+- Have a paid Azure account that allows you to access
+  [Azure DNS](https://azure.microsoft.com/en-us/services/dns/)
 
 ## Step 1: Create an Azure DNS Zone
 
 Log into the [Azure Portal](portal.azure.com). Using the search bar, look for
-**DNS Zones** and navigate to this service. 
+**DNS Zones** and navigate to this service.
 
 If Azure DNS is the registrar for your domain, the zone will already exist so
 you can skip to Step 3.
@@ -56,8 +62,8 @@ Click **New** to create a new zone, and when prompted:
 
 1. Provide a **name** for your new zone
 
-Click **Review + create**. Review the summary information, and if
-it's correct, click **Create** to proceed.
+Click **Review + create**. Review the summary information, and if it's correct,
+click **Create** to proceed.
 
 Once Azure has deployed your resource, click **Go to resource**. Make a note of
 the name server records (e.g., `ns1-09.azure-dns.com.`) presented to you, since
@@ -74,7 +80,7 @@ the domain you're using for your Coder deployment.
    cert-manager:
 
    ```console
-   $ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
+   kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
    ```
 
 1. Check that cert-manager installs correctly by running
@@ -127,111 +133,110 @@ az role assignment create --role "DNS Zone Contributor" --assignee $PRINCIPAL_ID
 
 1. Export the following environment variables with your own values:
 
-    ```console
-    export SUBSCRIPTION_ID="05e8b285-4ce1-46a3-b4c9-f51ba67d6acc"
-    export RESOURCE_GROUP="workshop-202103"
-    export CLUSTER_NAME="coder-workshop-202103"
-    ```
-    
-    Subscription ID comes from your Azure subscription.
-    Resource group should be set to the resource group that owns the cluster.
-    Cluster name is the name Azure uses to refer to the prereq kubernetes cluster.
+   ```console
+   export SUBSCRIPTION_ID="05e8b285-4ce1-46a3-b4c9-f51ba67d6acc"
+   export RESOURCE_GROUP="workshop-202103"
+   export CLUSTER_NAME="coder-workshop-202103"
+   ```
+
+   The **subscription ID** comes from your Azure subscription. The **resource
+   group** should be set to the resource group that owns the cluster. The
+   **cluster name** is the name Azure uses to refer to the required Kubernetes
+   cluster.
 
 1. Deploy the AAD Pod Identity components to an RBAC-enabled cluster:
 
-    ```console
-    kubectl apply -f https://raw.githubusercontent.com/Azure/ aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
+   ```console
+   kubectl apply -f https://raw.githubusercontent.com/Azure/ aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
 
-    # For AKS clusters, deploy the MIC and AKS add-on exception by running the following
-    kubectl apply -f https://raw.githubusercontent.com/Azure/ aad-pod-identity/master/deploy/infra/mic-exception.yaml
-    ```
+   # For AKS clusters, deploy the MIC and AKS add-on exception by running the following
+   kubectl apply -f https://raw.githubusercontent.com/Azure/ aad-pod-identity/master/deploy/infra/mic-exception.yaml
+   ```
 
-    > If you're using a non-RBAC cluster, remove the `-rbac` flag from the initial
-    > command
+   > If you're using a non-RBAC cluster, remove the `-rbac` flag from the
+   > initial command
 
 1. Deploy AzureIdentity and AzureIdentityBinding. To do so, create an
-    `azureId.yaml` file using the template below to deploy the custom resources
-    required to assign the identity:
+   `azureId.yaml` file using the template below to deploy the custom resources
+   required to assign the identity:
 
-    ```yaml
-    apiVersion: "aadpodidentity.k8s.io/v1"
-    kind: AzureIdentity
-    metadata:
-      annotations:
-        # We recommend using namespaced identities https://azure.github.io/ aad-pod-identity/docs/configure/match_pods_in_namespace/
-        aadpodidentity.k8s.io/Behavior: namespaced 
-      name: certman-identity
-      namespace: cert-manager # Change to your preferred namespace
-    spec:
-      type: 0 # MSI
-      resourceID: <Identity_Id> # Resource ID From Previous step
-      clientID: <Client_Id> # Client ID from previous step
-    ---
-    apiVersion: "aadpodidentity.k8s.io/v1"
-    kind: AzureIdentityBinding
-    metadata:
-      name: certman-id-binding
-      namespace: cert-manager # Change to your preferred namespace
-    spec:
-      azureIdentity: certman-identity
-      selector: certman-label # The label that needs to be set on cert-manager pods
-    ```
+   ```yaml
+   apiVersion: "aadpodidentity.k8s.io/v1"
+   kind: AzureIdentity
+   metadata:
+     annotations:
+       # We recommend using namespaced identities https://azure.github.io/ aad-pod-identity/docs/configure/match_pods_in_namespace/
+       aadpodidentity.k8s.io/Behavior: namespaced
+     name: certman-identity
+     namespace: cert-manager # Change to your preferred namespace
+   spec:
+     type: 0 # MSI
+     resourceID: <Identity_Id> # Resource ID From Previous step
+     clientID: <Client_Id> # Client ID from previous step
+   ---
+   apiVersion: "aadpodidentity.k8s.io/v1"
+   kind: AzureIdentityBinding
+   metadata:
+     name: certman-id-binding
+     namespace: cert-manager # Change to your preferred namespace
+   spec:
+     azureIdentity: certman-identity
+     selector: certman-label # The label that needs to be set on cert-manager pods
+   ```
 
 1. Apply the `azureId.yaml` file:
 
-    ```console
-    kubectl apply -f azureId.yaml
-    ```
+   ```console
+   kubectl apply -f azureId.yaml
+   ```
 
 1. Set the pod identity label on the cert-manager pod:
 
-    ```yaml
-    spec:
-        template:
-            metadata:
-                labels:
-                    aadpodidbinding: certman-label # must match selector in AzureIdentityBinding
-    ```
-    
-    This label tells the cluster which pods are allowed to use the IAM
-    role specified earlier. For our puropses, we want the cert-manager pod
-    to be able to set the DNS records for dns01 challenges. The side-effect
-    is that any pod with that label will be able to change DNS settings in
-    the authorized zone.
+   ```yaml
+   spec:
+     template:
+       metadata:
+         labels:
+           aadpodidbinding: certman-label # must match selector in AzureIdentityBinding
+   ```
+
+   This label tells the cluster which pods are allowed to use the IAM role
+   specified earlier. For our purposes, we want the cert-manager pod to be able
+   to set the DNS records for dns01 challenges. The side effect is that any pod
+   with that label will be able to change DNS settings in the authorized zone.
 
 ## Step 6: Create the ACME Issuer
 
 1. Create a file called `letsencrypt.yaml` (you can name it whatever you'd like)
-   to specify the `hostedZoneName`, `resourceGroupName` and `subscriptionID` fields
-   for the DNS Zone:
+   to specify the `hostedZoneName`, `resourceGroupName` and `subscriptionID`
+   fields for the DNS Zone:
 
-    ```yaml
-    apiVersion: cert-manager.io/v1
-    kind: ClusterIssuer
-    metadata:
-      name: letsencrypt
-    spec:
-      acme:
-        email: user@example.com
-        server: https://acme-v02.api.letsencrypt.org/directory
-        privateKeySecretRef:
-          name: example-issuer-account-key
-        solvers:
-        - selector:
-            dnsZones:
-            - # Your Azure DNS Zone
-          dns01:
-            azureDNS:
-              subscriptionID: SUBSCRIPTION_ID
-              resourceGroupName: RESOURCE_GROUP
-              hostedZoneName: ZONE_ID
-              # Azure Cloud Environment, default to AzurePublicCloud
-              environment: AzurePublicCloud
-    ```
-    
-    More information on the values in the yaml file above can be found in [the dns01
-    solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/)
+   ```yaml
+   apiVersion: cert-manager.io/v1
+   kind: ClusterIssuer
+   metadata:
+     name: letsencrypt
+   spec:
+     acme:
+       email: user@example.com
+       server: https://acme-v02.api.letsencrypt.org/directory
+       privateKeySecretRef:
+         name: example-issuer-account-key
+       solvers:
+         - selector:
+             dnsZones:
+               -  # Your Azure DNS Zone
+           dns01:
+             azureDNS:
+               subscriptionID: SUBSCRIPTION_ID
+               resourceGroupName: RESOURCE_GROUP
+               hostedZoneName: ZONE_ID
+               # Azure Cloud Environment, default to AzurePublicCloud
+               environment: AzurePublicCloud
+   ```
 
+   More information on the values in the YAML file above can be found in
+   [the dns01 solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/).
 
 1. Apply your configuration changes:
 
@@ -263,9 +268,9 @@ helm install coder coder/coder --namespace coder \
   --wait
 ```
 
-The `hostSecretName` and `devurlsHostSecretName` are abritrary strings
-that you should set to some value that does not conflict with any other
-secrets in the Coder namespace.
+The `hostSecretName` and `devurlsHostSecretName` are arbitrary strings that you
+should set to some value that does not conflict with any other secrets in the
+Coder namespace.
 
 There are also a few additional steps to make sure that your hostname and dev
 URLs work.
@@ -280,8 +285,8 @@ URLs work.
 
 1. Return to Azure and go to **DNS zones**.
 
-1. Create a new record for your hostname; provide `coder` as the record name, and
-   paste the external IP as the `value`. Save.
+1. Create a new record for your hostname; provide `coder` as the record name,
+   and paste the external IP as the `value`. Save.
 
 1. Create another record for your dev URLs: set it to `*.dev.exampleCo` or
    similar and use the same external IP as the previous step for `value`. Save.

@@ -22,16 +22,19 @@ you can enable HTTPS on your Coder deployment.
 
 You must have:
 
-- A Kubernetes cluster [of a supported version](https://kubernetes.io/releases/version-skew-policy/#supported-version-skew) with internet connectivity
-- kubectl matching cluster version
+- A Kubernetes cluster
+  [of a supported version](../../setup/kubernetes/index.md#supported-kubernetes-versions)
+  with internet connectivity
+- Installed [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 ## Step 1: Add cert-manager to your Kubernetes cluster
 
 ```console
-$ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
+kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
 ```
 
-More specifics can be found in the [cert-manager install documentation](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
+More specifics can be found in the
+[cert-manager install documentation](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
 
 Once you've started the installation process, you can verify that all the pods
 are running:
@@ -121,8 +124,8 @@ spec:
             - "example.com"
 ```
 
-More information on the values in the yaml file above can be found in [the dns01
-solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/)
+More information on the values in the YAML file above can be found in
+[the dns01 solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/).
 
 ### ClusterIssuers
 
@@ -135,8 +138,7 @@ following changes:
 - Change the namespace of the secret to **cert-manager**
 - Change the kind of the **Issuer** to **ClusterIssuer**
 - Remove the namespace of the **ClusterIssuer**
-- Change the annotations to
-  `cert-manager.io/cluster-issuer: "letsencrypt"`
+- Change the annotations to `cert-manager.io/cluster-issuer: "letsencrypt"`
 
 For further information, see
 [Setting Up Issuers](https://docs.cert-manager.io/en/release-0.8/tasks/issuers/index.html).
@@ -176,11 +178,11 @@ devurls:
   host: "*.coder.example.com"
 ```
 
-The `hostSecretName` and `devurlsHostSecretName` are abritrary strings
-that you should set to some value that does not conflict with any other
-secrets in the Coder namespace.
+The `hostSecretName` and `devurlsHostSecretName` are arbitrary strings that you
+should set to some value that does not conflict with any other secrets in the
+Coder namespace.
 
 Be sure to redeploy Coder after changing your Helm values. If, after
-redeploying, you're not getting a valid certificate, see [cert-manager's
-troubleshooting guide](https://cert-manager.io/docs/faq/acme/) for additional
-assistance.
+redeploying, you're not getting a valid certificate, see
+[cert-manager's troubleshooting guide](https://cert-manager.io/docs/faq/acme/)
+for additional assistance.
