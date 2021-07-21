@@ -1,7 +1,7 @@
 ---
 title: Google Cloud DNS
 description:
-  Learn how to use cert-manager to set up SSL certificates using Google Cloud 
+  Learn how to use cert-manager to set up SSL certificates using Google Cloud
   DNS for DNS01 challenges.
 ---
 
@@ -21,8 +21,10 @@ configure your Coder hostname and dev URLs.
 
 You must have:
 
-- A Kubernetes cluster [of a supported version](https://kubernetes.io/releases/version-skew-policy/#supported-version-skew) with internet connectivity
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- A Kubernetes cluster
+  [of a supported version](../../setup/kubernetes/index.md#supported-kubernetes-versions)
+  with internet connectivity
+- Installed [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - A [Cloud DNS](https://cloud.google.com/dns) account
 - A
   [GCP Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
@@ -33,10 +35,11 @@ You must have:
 To add cert-manager to your cluster, run:
 
 ```console
-$ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
+kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
 ```
 
-More specifics can be found in the [cert-manager install documentation](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
+More specifics can be found in the
+[cert-manager install documentation](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
 
 Once you've started the installation process, verify that all the pods are
 running:
@@ -88,42 +91,41 @@ secret/clouddns-dns01-solver-svc-acct created
    called `letsencrypt.yaml` (you can name it whatever you'd like) that includes
    your newly created private key:
 
-    ```yaml
-    apiVersion: cert-manager.io/v1
-    kind: ClusterIssuer
-    metadata:
-      name: letsencrypt
-    spec:
-      acme:
-        privateKeySecretRef:
-          name: gclouddnsissuersecret
-        server: https://acme-v02.api.letsencrypt.org/directory
-        solvers:
-          - dns01:
-              clouddns:
-                # The ID of the GCP project
-                project: <project-id>
-                # This is the secret used to access the service account
-                serviceAccountSecretRef:
-                  name: clouddns-dns01-solver-svc-acct
-                  key: key.json
-    ```
-    
-    More information on the values in the yaml file above can be found in [the dns01
-    solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/)
+   ```yaml
+   apiVersion: cert-manager.io/v1
+   kind: ClusterIssuer
+   metadata:
+     name: letsencrypt
+   spec:
+     acme:
+       privateKeySecretRef:
+         name: gclouddnsissuersecret
+       server: https://acme-v02.api.letsencrypt.org/directory
+       solvers:
+         - dns01:
+             clouddns:
+               # The ID of the GCP project
+               project: <project-id>
+               # This is the secret used to access the service account
+               serviceAccountSecretRef:
+                 name: clouddns-dns01-solver-svc-acct
+                 key: key.json
+   ```
 
+   More information on the values in the YAML file above can be found in
+   [the dns01 solver configuration documentation](https://cert-manager.io/docs/configuration/acme/dns01/).
 
 1. Apply your configuration changes:
 
-    ```console
-    kubectl apply -f letsencrypt.yaml
-    ```
+   ```console
+   kubectl apply -f letsencrypt.yaml
+   ```
 
-    If successful, you'll see a response similar to:
+   If successful, you'll see a response similar to:
 
-    ```console
-    clusterissuer.cert-manager.io/letsencrypt created
-    ```
+   ```console
+   clusterissuer.cert-manager.io/letsencrypt created
+   ```
 
 ## Step 5: Install Coder
 
@@ -144,7 +146,7 @@ helm install coder coder/coder --namespace coder \
 ```
 
 The cluster-issuer will create the certificates you need, using the values
-provided in the `helm install` command for the dev URL and host secret. 
+provided in the `helm install` command for the dev URL and host secret.
 
 There are additional steps to make sure that your hostname and Dev URLs work.
 
