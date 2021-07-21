@@ -8,8 +8,9 @@ Before accessing your workspace via SSH:
 - Your site manager must [enable access to workspaces using SSH]
 - You must install the [Coder CLI] on your local machine
 
-[enable access to workspaces using SSH]: ../admin/workspace-management/ssh-access.md
-[Coder CLI]: ../cli/index.md
+[enable access to workspaces using ssh]:
+  ../admin/workspace-management/ssh-access.md
+[coder cli]: ../cli/index.md
 
 ## Configuration
 

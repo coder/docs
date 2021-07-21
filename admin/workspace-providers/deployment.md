@@ -1,181 +1,119 @@
 ---
 title: Workspace provider deployment
 description: Learn how to deploy a workspace provider.
-state: beta
 ---
 
 This article walks you through the process of deploying a workspace provider to
 a [Kubernetes cluster](../../setup/kubernetes/index.md).
 
-[Workspace providers](index.md) are logical groups of resources to which
-developers can deploy workspaces. As with the Coder installation, Helm manages
-the deployment of workspace providers into the Kubernetes cluster that will
-contain your workspaces.
-
 ## Dependencies
 
 Install the following dependencies if you haven't already:
 
-- [Coder CLI](../../cli/installation.md)
-- [Helm](https://helm.sh/docs/intro/install/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-
-## Requirements
-
-1. Workspace providers **must have a hostname set** that is a subdomain of the
-   Coder deployment. For example, if the Coder deployment's hostname is
-   `coder.example.com`, the workspace provider's hostname must match the format
-   `*.coder.example.com`.
-1. The main Coder deployment and the workspace provider must be able to
-   communicate bi-directionally via their respective hostnames.
-1. The workspace provider scheme (HTTP or HTTPS) must match that of the Coder
-   deployment Access URL.
-1. The Kubernetes cluster address must be reachable from the Coder deployment.
-
-## Connecting to the cluster
-
-To add a Kubernetes cluster as a workspace provider, you must first make sure
-that you're connected to the cluster you want to expand into. Run the following
-command:
-
-```bash
-kubectl config current-context
-```
-
-Confirm that your current kubectl context correct before continuing; otherwise,
-connect to the correct context.
-
-## Creating the Coder namespace (optional)
-
-We recommend running workspace providers in a separate
-[namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
-to do so, run:
-
-```bash
-kubectl create namespace [YOUR_WORKSPACE_PROVIDER_NAMESPACE]
-```
-
-Next, change the kubectl context to point to your newly created namespace:
-
-```bash
-kubectl config set-context --current --namespace=coder
-```
 
 ## Creating the new workspace provider
 
-Using the Coder CLI, create a new workspace provider in the `pending` state.
+1. Log in to Coder, and go to **Manage** > **Providers**.
 
-```bash
-coder providers create [NAME] \
-    --hostname=[HOSTNAME] \
-    --cluster-address=[CLUSTER_ADDRESS]
-```
+1. Click **Create New** in the top-right corner to launch the **Create a
+   Kubernetes Provider** page.
 
-You must provide the following arguments:
+1. Provide a name for your new provider (e.g., `us-central-gpus`).
 
-- `name`: A unique name of the workspace provider
-- `hostname`: The hostname of the workspace provider
-- `cluster-address`: The address of your Kubernetes cluster. You can retrieve
-  this using:
+1. Under **Cluster Address**, provide the address of your Kubernetes control
+   plane. If you don't know the address, you can get it by running the following
+   in the terminal:
 
-  ```bash
-  kubectl config view -o jsonpath='{.clusters[?(@.name == "'"$(kubectl config current-context)"'")].cluster.server}{"\n"}'
-  ```
-
-The `coder providers create` command will generate a Helm command you will use
-for the next steps, so make sure to save the output.
-
-The returned `REMOTE_ENVPROXY_TOKEN` is a shared secret between the two
-deployments and is what the workspace provider will use to authenticate itself
-when communicating with the Coder deployment.
-
-## Installing a workspace provider
-
-1. If you haven't already, add the Coder helm repo:
-
-   ```bash
-   helm repo add coder https://helm.coder.com
+   ```console
+   kubectl cluster-info
    ```
 
-1. Install the helm chart onto your cluster using helm command you generated in
-   the previous step where you created the workspace provider. The helm command
-   will follow this pattern:
+1. Provide the **namespace** to which Coder should provision new workspaces. If
+   you don't already have one, you can create one by running the following in
+   the terminal:
 
-   ```bash
-   helm upgrade coder-workspace-provider coder/workspace-provider \
-      --namespace=[YOUR_WORKSPACE_PROVIDER_NAMESPACE]
-      --version=[CODER_VERSION] \
-      --atomic \
-      --install \
-      --set envproxy.token=[REMOTE_ENVPROXY_TOKEN] \
-      --set envproxy.accessURL=[HOSTNAME] \
-      --set ingress.host=[HOSTNAME_WITH_NO_PROTOCOL] \
-      --set envproxy.clusterAddress=[CLUSTER_ADDRESS] \
-      --set cemanager.accessURL=[CEMANAGER_ACCESS_URL]
+   ```console
+   kubectl create namespace <NAMESPACE>
    ```
 
-   Optionally, you can provide additional helm configuration values by providing
-   a `values.yaml` file and adding the argument `-f my-values.yaml` to the
-   generated command. Helm values control attributes of the workspace provider,
-   including dev URLs, Kubernetes storage classes, SSH, and more. See the
-   [Workspace provider Helm chart values]("https://github.com/cdr/enterprise-helm/blob/workspace-providers-envproxy-only/README.md")
-   for more details.
+1. Create a `ServiceAccount`, `Role`, and `Rolebinding` in the namespace that
+   you specified in the previous step (Coder will use this account to provision
+   workspaces):
 
-   For installations using HTTPS, you must
-   [ensure the deployment has a valid certificate](../../guides/ssl-certificates/index.md).
-
-   If you're unfamiliar with the helm configuration values file, see our doc on
-   [updating a helm chart](../../guides/admin/helm-charts.md)
-
-1. Once the helm chart is successfully deployed, fetch the ingress address:
-
-   ```bash
-   kubectl get ingress web-ingress
+   ```console
+   kubectl apply -n <NAMESPACE> -f - <<EOF
+   apiVersion: v1
+   kind: ServiceAccount
+   metadata:
+     name: coder
+   ---
+   apiVersion: rbac.authorization.k8s.io/v1
+   kind: Role
+   metadata:
+     name: coder
+   rules:
+     - apiGroups: ["", "apps", "networking.k8s.io"] # "" indicates the core API group
+       resources: ["persistentvolumeclaims", "pods", "deployments", "services", "secrets", "pods/exec","pods/log", "events", "networkpolicies"]
+       verbs: ["create", "get", "list", "watch", "update", "patch", "delete", "deletecollection"]
+     - apiGroups: ["metrics.k8s.io", "storage.k8s.io"]
+       resources: ["pods", "storageclasses"]
+       verbs: ["get", "list", "watch"]
+   ---
+   apiVersion: rbac.authorization.k8s.io/v1
+   kind: RoleBinding
+   metadata:
+     name: coder
+   subjects:
+     - kind: ServiceAccount
+       name: coder
+   roleRef:
+     kind: Role
+     name: coder
+     apiGroup: rbac.authorization.k8s.io
+   EOF
    ```
 
-   Use this IP to create a DNS record for the provided hostname of the workspace
-   provider.
+   You should get a response similar to the following:
 
-1. Once the Helm chart has deployed successfully, you should see the workspace
-   provider in a `ready` state on the **Workspace provider admin** page.
+   ```console
+   serviceaccount/coder created
+   role.rbac.authorization.k8s.io/coder created
+   rolebinding.rbac.authorization.k8s.io/coder created
+   ```
 
-   ![Workspace providers admin](../../assets/admin/workspace-providers-admin.png)
+1. Retrieve the service account token and certificate, which Coder uses to
+   authenticate with the Kubernetes cluster.
 
-1. From the **Workspace provider admin** page, add the desired organizations to
-   its allowlist.
+   ```console
+   kubectl get secrets -n <NAMESPACE> -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='coder')].data}{'\n'}"
+   ```
+
+   Copy and paste the output returned from this command into the Coder form.
+
+1. Click **Create Provider** to proceed. Coder will deploy your provider at this
+   point.
+
+## Allowlist organizations
+
+Before users can provision workspaces using the provider, you must edit the
+provider and indicate the organizations that can use the provider.
+
+Once Coder has deployed your provider, you'll see it listed on the **Providers**
+page. Click the vertical ellipsis to its right, and select **Edit**. Scroll down
+to **Organizations** and select the ones you want to be able to use this
+provider.
 
 Users in the allowed organizations can now choose to deploy into the newly set
 up workspace provider.
 
-## Upgrading the workspace provider
+## Using workspace providers in separate regions
 
-We strongly recommend that you upgrade your workspace providers in lockstep with
-your Coder deployment.
+Workspace providers enable a single Coder deployment to manage resources
+anywhere you can deploy Kubernetes. A common use case this feature enables is to
+colocate the developer's physical location and workspace location to the same
+geographic region.
 
-You only need to update the `--version` flag if you want to make no other helm
-values changes; you can do this with
-
-```bash
-helm upgrade coder-workspace-provider coder/workspace-provider \
-    --namespace=[YOUR_WORKSPACE_PROVIDER_NAMESPACE]
-    --version=[CODER_VERSION] \
-    --atomic \
-    --install
-```
-
-If you want to update any of the helm chart's values, you can do so by supplying
-a values file (`-f myvalues.yaml`) or using the `--set` flag. Any existing
-values that you set during installation will persist unless you explicitly write
-over them.
-
-## Deleting a workspace provider
-
-You can only remove a workspace provider if it no longer contains any
-workspaces, so you must remove all workspaces before deleting the workspace
-provider.
-
-To remove a workspace provider, run the following command using the Coder CLI:
-
-```bash
-coder providers rm [NAME]
-```
+To ensure low latency in these scenarios, you should deploy
+[satellites](../satellites/index.md) into these regions. Satellites enable
+traffic to stay within the region and provide an improved user experience.

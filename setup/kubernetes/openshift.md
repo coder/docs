@@ -11,8 +11,10 @@ restricted [Security Context Constraint] (SCC), that can interfere with Coder.
 This guide describes the customizations to the OpenShift cluster and Coder that
 ensure an optimal user experience.
 
-[OpenShift Container Platform]: https://www.openshift.com/products/container-platform
-[Security Context Constraint]: https://docs.openshift.com/container-platform/4.7/authentication/managing-security-context-constraints.html
+[openshift container platform]:
+  https://www.openshift.com/products/container-platform
+[security context constraint]:
+  https://docs.openshift.com/container-platform/4.7/authentication/managing-security-context-constraints.html
 
 ## Prerequisites
 
@@ -66,8 +68,8 @@ Settings:
     Ranges:                                     <none>
 ```
 
-You can override the default settings by defining the following in your [Helm
-chart](../../guides/admin/helm-charts.md):
+You can override the default settings by defining the following in your
+[Helm chart](../../guides/admin/helm-charts.md):
 
 ```yaml
 coderd:
@@ -88,9 +90,8 @@ appropriate service account/user. There are two options available to you:
 
 Coder's default base images for workspaces, such as `enterprise-base`, run as
 the `coder` user (UID 1000). However, OpenShift doesn't allow this, since
-service accounts are required by the `restricted` Security
-Context Constraint (SCC) to run with a
-project-specific UID.
+service accounts are required by the `restricted` Security Context Constraint
+(SCC) to run with a project-specific UID.
 
 To work around this, we we recommend adding this service account to the `anyuid`
 or `nonroot` SCC since Coder creates workspaces in pods with the service account
@@ -101,7 +102,7 @@ $ oc adm policy add-scc-to-user nonroot -z environments
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:nonroot added: "environments"
 
 $ oc adm policy who-can use scc nonroot
-resourceaccessreviewresponse.authorization.openshift.io/<unknown> 
+resourceaccessreviewresponse.authorization.openshift.io/<unknown>
 
 Namespace: coder
 Verb:      use
@@ -114,8 +115,8 @@ Users:  system:admin
 ## Option 2: Build images compatible with OpenShift
 
 To run Coder workspaces without modifying Security Context Constraints (SCC),
-you can modify the user and permissions in the base images. First, determine
-the UID range for the project using:
+you can modify the user and permissions in the base images. First, determine the
+UID range for the project using:
 
 ```console
 $ oc describe project coderName:                   coder
@@ -168,8 +169,9 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'enterprise-base:latest'
+      name: "enterprise-base:latest"
 ```
 
-When creating workspaces, [configure Coder to connect to the internal OpenShift
-registry](../../admin/registries/index.md) and use the base image you just created.
+When creating workspaces,
+[configure Coder to connect to the internal OpenShift registry](../../admin/registries/index.md)
+and use the base image you just created.

@@ -243,6 +243,9 @@
           "children": [
             {
               "path": "./admin/workspace-providers/deployment.md"
+            },
+            {
+              "path": "./admin/workspace-providers/management.md"
             }
           ]
         },
