@@ -28,8 +28,8 @@ environment:
 1. Set the **Extension Marketplace Type** to **Custom**
 1. Set the **Extension Marketplace API URL** to
    `https://open-vsx.org/vscode/gallery` (this value comes from the `serviceUrl`
-   path described in [open-vsx's
-   documentation](https://github.com/eclipse/openvsx/wiki/Using-Open-VSX-in-VS-Code)).
+   path described in
+   [open-vsx's documentation](https://github.com/eclipse/openvsx/wiki/Using-Open-VSX-in-VS-Code)).
 
 ## Air-gapped marketplaces
 
