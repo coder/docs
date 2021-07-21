@@ -23,7 +23,8 @@ Before proceeding, please make sure that you have the following installed:
 
 ## Limitations
 
-**We do not recommend using local previews for production deployments of Coder.**
+**We do not recommend using local previews for production deployments of
+Coder.**
 
 ### Resource allocation and performance
 
@@ -76,7 +77,8 @@ curl -fsSL https://coder.com/try.sh | PORT="80" sh -s --
 ```
 
 > Note: you can edit the value of `PORT` to control where the Coder dashboard
-> will be available. However, dev URLs will only work when `PORT` is set to `80`.
+> will be available. However, dev URLs will only work when `PORT` is set to
+> `80`.
 
 When the installation process completes, you'll see the URL and login
 credentials you need to access Coder:
@@ -100,8 +102,8 @@ automatically configured for you, so there's no first-time setup to do.
 
 ### Dev URLs
 
-Coder allows you to access services you're developing in your workspace via [dev
-URLs](../../workspaces/devurls.md). You can enable dev URLs after you've
+Coder allows you to access services you're developing in your workspace via
+[dev URLs](../../workspaces/devurls.md). You can enable dev URLs after you've
 installed Coder.
 
 > If you do not want to enable dev URLs, you can use SSH port forwarding or
@@ -231,8 +233,8 @@ curl -fsSL https://coder.com/try.sh | sh -s -- down
 Because Coder runs inside Docker, you should have nothing left on your machine
 after tear down.
 
-If you added a custom DNS to use [dev URLs](#dev-urls), you can
-revert these changes by uninstalling dnsmasq and removing the resolver config:
+If you added a custom DNS to use [dev URLs](#dev-urls), you can revert these
+changes by uninstalling dnsmasq and removing the resolver config:
 
 ```console
 # MacOS
