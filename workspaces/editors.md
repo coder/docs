@@ -187,7 +187,7 @@ RStudio:
 
 1. Create a [custom image](../guides/customization/custom-workspace) with
    RStudio installed, `rserver` and `pgrep` in PATH, and RStudio configured to
-   on the default port (8787).
+   run on the default port (8787).
 
    This example Dockerfile installs RStudio Server Open Source and creates a
    unix user to log in with username: `coder` and password: `rstudio`.
