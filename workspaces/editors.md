@@ -224,8 +224,13 @@ RStudio:
    --user-group && \
    echo "coder ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers.d/nopasswd
 
+   # Ensure rstudio files can be written to by the coder user.
+   RUN chown -R coder:coder /var/lib/rstudio-server 
+   RUN echo "server-pid-file=/tmp/rstudio-server.pid" >> /etc/rstudio/rserver.conf 
+   RUN echo "server-data-dir=/tmp/rstudio" >> /etc/rstudio/rserver.conf 
+   
    # assign password "rstudio" to coder user.
-   RUN chown -R coder:coder /var/lib/rstudio-server RUN echo "server-pid-file=/tmp/rstudio-server.pid" >> /etc/rstudio/rserver.conf RUN echo "server-data-dir=/tmp/rstudio" >> /etc/rstudio/rserver.conf RUN echo 'coder:rstudio' | chpasswd
+   RUN echo 'coder:rstudio' | chpasswd
 
    # assign locale
    RUN locale-gen en_US.UTF-8
