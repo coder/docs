@@ -246,14 +246,10 @@ RStudio:
 
    ![Applications with RStudio launcher](../assets/workspaces/rstudio.png)
 
-   Sign in using your RStudio user credentials (RStudio auto-populates the
-   fields your Coder credentials, so you'll need to change these to the ones you
-   just created).
+   Sign in using your linux username and password (as defined in your image)
 
    > RStudio may take a few additional seconds to start launch after the
    > workspace is built.
    >
    > All RStudio data is stored in the home directory associated with the user
-   > you sign in as, which may be different than the user on workspace startup
-   > (that is, you'll find the data in `/home/myuser` where myuser is your
-   > RStudio username).
+   > you sign in as
