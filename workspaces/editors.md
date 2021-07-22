@@ -186,7 +186,8 @@ Coder supports [RStudio](rstudio.com). To create a workspace that lets you use
 RStudio:
 
 1. Create a [custom image](../guides/customization/custom-workspace) with
-   RStudio installed and includes `rserver` and `pgrep` in PATH.
+   RStudio installed, `rserver` and `pgrep` in PATH, and RStudio configured to
+   on the default port (8787).
 
    This example Dockerfile installs RStudio Server Open Source and creates a
    unix user to log in with username: `coder` and password: `rstudio`.
