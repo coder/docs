@@ -89,7 +89,7 @@
           "path": "./images/configure.md"
         },
         {
-          "path": "./images/ssl-certificates.md"
+          "path": "./images/tls-certificates.md"
         },
         {
           "path": "./images/deprecating.md"

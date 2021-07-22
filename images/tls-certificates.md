@@ -1,9 +1,9 @@
 ---
-title: "SSL certificates"
-description: Learn how to add SSL certificates to Coder images
+title: "TLS certificates"
+description: Learn how to add TLS certificates to Coder images
 ---
 
-This article will show you how to correct issues regarding SSL certificates in
+This article will show you how to correct issues regarding TLS certificates in
 Coder.
 
 ## Background
