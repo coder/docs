@@ -22,6 +22,20 @@ user so Windows and Linux may require deviation.
 gpg (GnuPG) 2.3.1
 ```
 
+When running any gpg command locally, the system knows to start up the `gpg-agent`
+which creates the sockets and performs the cryptographic activity. If you ssh
+into an environment using the `-R` flag to remote forward the sockets, your local
+gpg-agent won't start automatically since it doesn't invoke the gpg binary.
+
+The easiest way to address this is to add the gpg-agent to your local .profile,
+.bashrc, .zshrc, or whatever terminal configuration scripts always run for each
+terminal session.
+
+`gpgconf --launch gpg-agent`
+
+If you don't run this command or `gpg-agent --daemon` to prepare your local
+system, sockets won't exist for mounting and the remote gpg command won't work
+since it will start an agent in the remote system which has no keys.
 
 ## Coder admin configurations
 
@@ -99,7 +113,8 @@ if hash gpg 2>/dev/null; then
   gpg --import ~/dotfiles/.gnupg/mterhar_coder.com-publickey.asc
   echo "16ADA44EDAA5BC7384578654F371232FA31B84AC:6:" | gpg --import-ownertrust
   git config --global user.signingkey F371232FA31B84AC
-  echo "export GPG_TTY=\$(tty)" >> ~/.profile
+  echo "pinentry-mode loopback" > ~/.gnupg/gpg.conf
+  echo "export GPG_TTY=\$(tty)" > ~/.profile
   echo "to enable commit signing, run"
   echo "git config --global commit.gpgsign true"
 else
@@ -113,5 +128,128 @@ repository so that it will be importable.
 The `gpg --import-ownertrust` command is given the fingerprint of the key
 that was just imported with `6` which is "Ultimate" trust level. 
 
+The `"pinentry-mode loopback" > ~/.gnupg/gpg.conf` allows the remote system
+to trigger pinentry inline where you type your passphrase into the same
+terminal that is running the GPG command and it unlocks the mounted socket.
+
 Setting `GPG_TTY` should allow pinentry to send the request for a passphrase
-to the correct place. 
+to the correct place. Note that the user of a single `>` prevents that line
+from being added to .profile repeatedly, but will erase the contents if you
+have anything in that file.
+
+## What it looks like
+
+```console
+% gpgconf --launch gpg-agent
+% ssh -R /run/user/1000/gnupg/S.gpg-agent:/Users/mterhar/.gnupg/S.gpg-agent coder.gpg
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-1039-gke x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+Last login: Thu Jul 22 18:17:57 2021 from 127.0.0.1
+
+$ echo "test " | gpg --clearsign -vvv
+gpg: using character set 'utf-8'
+gpg: using pgp trust model
+gpg: key F371232FA31B84AC: accepted as trusted key
+gpg: writing to stdout
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+test 
+gpg: EDDSA/SHA256 signature from: "F371232FA31B84AC Mike Terhar <mterhar@coder.com>"
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQQWraRO2qW8c4RXhlTzcSMvoxuErAUCYPm2fwAKCRDzcSMvoxuE
+rHYNAQCrGPbF9Z89dDjemFMtgt0dfsPSUcAlgVj1PKGsg/K8lgEAj8MeTXi1RQhv
+dqbC8blPKTAzupH7OeQpe6EbweZHjAI=
+=tgC/
+-----END PGP SIGNATURE-----
+```
+
+## Errors and what they mean
+
+### Connect to <path to default agent port> -2 failed
+
+```console
+connect to /Users/mterhar/.gnupg/S.gpg-agent port -2 failed: No such file or directory
+gpg: no running gpg-agent - starting '/usr/bin/gpg-agent'
+```
+
+This indicates the socket wasn't present on the local machine when the ssh command
+was executed. This could be caused by a lack of `-R` or `ForwardRemote` in the ssh
+configuration.
+
+### No secret key
+
+```console
+gpg: key F371232FA31B84AC: accepted as trusted key
+gpg: no default secret key: No secret key
+gpg: [stdin]: clear-sign failed: No secret key
+```
+
+This can happen if there is a gpg agent running in the remote workspace which is
+intercepting the GPG commands before they get to the remote socket.
+
+Fix with `gpgconf --kill gpg-agent` or by using `ps ax | grep gpg-agent` to find
+and kill all the pids. Reconnect your ssh session to re-establish the socket
+forwarding.
+   
+### Inappropriate ioctl for the device
+
+```console
+$ echo "test " | gpg --clearsign -vvv
+gpg: using character set 'utf-8'
+gpg: using pgp trust model
+gpg: key F371232FA31B84AC: accepted as trusted key
+gpg: writing to stdout
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+test 
+gpg: pinentry launched (1744 curses 1.1.1 - xterm-256color - - 501/20 0)
+gpg: signing failed: Inappropriate ioctl for device
+gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device
+```
+
+If `gpg: pinentry launched (1744 curses 1.1.1 - xterm-256color - - 501/20 0)` does not
+include the `/dev/pts/1` after the version number, you may need to add the GPG_TTY
+environment variable to something that runs prior to trying to run the command.
+
+If GPG_TTY is set to the same output as `tty` then be sure there is a `.gnupg/gpg.conf`
+file which contains `pinentry-mode loopback`.
+
+### SSH troubleshooting
+
+Adding `-v` to the SSH command can show when things are happening that don't typically
+warrant any output. 
+
+### GPG troubleshooting
+   
+The sockets don't appear to be where you expect them? 
+
+```
+$ gpgconf --list-dirs
+sysconfdir:/etc/gnupg
+bindir:/usr/bin
+libexecdir:/usr/lib/gnupg
+libdir:/usr/lib/x86_64-linux-gnu/gnupg
+datadir:/usr/share/gnupg
+localedir:/usr/share/locale
+socketdir:/run/user/1000/gnupg
+dirmngr-socket:/run/user/1000/gnupg/S.dirmngr
+agent-ssh-socket:/run/user/1000/gnupg/S.gpg-agent.ssh
+agent-extra-socket:/run/user/1000/gnupg/S.gpg-agent.extra
+agent-browser-socket:/run/user/1000/gnupg/S.gpg-agent.browser
+agent-socket:/run/user/1000/gnupg/S.gpg-agent
+homedir:/home/coder/.gnupg
+```
+
+The output seem too limited and we need more information, add `--verbose` to the `gpg`
+command.
