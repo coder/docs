@@ -75,7 +75,7 @@ coderd:
 Once you've updated your Helm chart, install the satellite:
 
 ```console
-helm add coder https://helm.coder.com
+helm repo add coder https://helm.coder.com
 helm repo update
 helm upgrade coder-satellite coder/coder \
   --namespace=<NAMESPACE>
