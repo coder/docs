@@ -60,17 +60,17 @@ X11UseLocalhost no
 ```
 
 > X11 forwarding will fail with `X11 forwarding request failed on channel 0` if
-`xauth` is not installed.
+> `xauth` is not installed.
 
 ### SSH environment variables
 
-OpenSSH handles environment variables differently than most container
-processes. Environment variable overrides for OpenSSH sessions are set by
+OpenSSH handles environment variables differently than most container processes.
+Environment variable overrides for OpenSSH sessions are set by
 `~/.ssh/environment` and `/etc/environment`. Note that these values will
 override those specified in the Dockerfile `ENV` directives.
 
-At workspace startup, Coder injects the image defined environment variables
-into `~/.ssh/environment`, as well as a set of Coder-defined defaults.
+At workspace startup, Coder injects the image defined environment variables into
+`~/.ssh/environment`, as well as a set of Coder-defined defaults.
 
 The following snippet shows an example of what this file may look like for a new
 workspace.
@@ -118,5 +118,5 @@ ssh:
 ```
 
 > **For Cloudflare users:** Cloudflare's **proxied** mode does _not_ support
-> SSH. If you're using Cloudflare for SSL, add your certificates to your cluster
+> SSH. If you're using Cloudflare for TLS, add your certificates to your cluster
 > and use the **DNS only** mode to allow SSH.

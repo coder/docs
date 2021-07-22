@@ -122,7 +122,7 @@ when communicating with the Coder deployment.
    for more details.
 
    For installations using HTTPS, you must
-   [ensure the deployment has a valid certificate](../../guides/ssl-certificates/index.md).
+   [ensure the deployment has a valid certificate](../../guides/tls-certificates/index.md).
 
    If you're unfamiliar with the helm configuration values file, see our doc on
    [updating a helm chart](../../guides/admin/helm-charts.md)

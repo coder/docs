@@ -341,19 +341,19 @@
           ]
         },
         {
-          "path": "./guides/ssl-certificates/index.md",
+          "path": "./guides/tls-certificates/index.md",
           "children": [
             {
-              "path": "./guides/ssl-certificates/azureDNS.md"
+              "path": "./guides/tls-certificates/azureDNS.md"
             },
             {
-              "path": "./guides/ssl-certificates/cloudDNS.md"
+              "path": "./guides/tls-certificates/cloudDNS.md"
             },
             {
-              "path": "./guides/ssl-certificates/cloudflare.md"
+              "path": "./guides/tls-certificates/cloudflare.md"
             },
             {
-              "path": "./guides/ssl-certificates/route53.md"
+              "path": "./guides/tls-certificates/route53.md"
             }
           ]
         },
