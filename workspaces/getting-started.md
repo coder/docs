@@ -3,6 +3,9 @@ title: "Getting started"
 description: "Learn how to develop in a workspace."
 ---
 
+This article walks you through creating a new workspace using a pre-defined
+image.
+
 ## 1. Import an image
 
 Ensure you've [imported an image](../images/importing.md) for your
