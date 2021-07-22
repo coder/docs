@@ -1,7 +1,7 @@
 ---
 title: Google Cloud DNS
 description:
-  Learn how to use cert-manager to set up SSL certificates using Google Cloud
+  Learn how to use cert-manager to set up TLS certificates using Google Cloud
   DNS for DNS01 challenges.
 ---
 

@@ -76,7 +76,7 @@ Create a token with the following settings:
 You can also add more zones (or give the token access to all zones in your
 account), and set an expiry date.
 
-![Create Custom Token](../../assets/guides/ssl-certificates/cloudflare-1.png)
+![Create Custom Token](../../assets/guides/tls-certificates/cloudflare-1.png)
 
 Click **Continue to summary**, then **Create Token**. Be sure to copy and save
 the token displayed because Cloudflare will not display it again.

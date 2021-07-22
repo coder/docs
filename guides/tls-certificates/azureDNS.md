@@ -1,7 +1,7 @@
 ---
 title: Azure DNS
 description:
-  Learn how to use cert-manager to set up SSL certificates using Azure DNS for
+  Learn how to use cert-manager to set up TLS certificates using Azure DNS for
   DNS01 challenges.
 ---
 
