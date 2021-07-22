@@ -186,11 +186,12 @@ Coder supports [RStudio](rstudio.com). To create a workspace that lets you use
 RStudio:
 
 1. Create a [custom image](../guides/customization/custom-workspace) with
-   RStudio installed, `rserver` and `pgrep` in PATH, and RStudio configured to
-   run on the default port (8787).
+   RStudio installed, `rserver` and `pgrep` in `PATH`, and RStudio configured to
+   run on the default port (`8787`).
 
-   This example Dockerfile installs RStudio Server Open Source and creates a
-   unix user to log in with username: `coder` and password: `rstudio`.
+   To do this, you can refer to the sample Dockerfile below, which installs
+   RStudio Server Open Source and creates a Unix user to log in with username
+   `coder` and password `rstudio`.
 
    ```Dockerfile
    FROM ubuntu:20.04
@@ -224,10 +225,7 @@ RStudio:
    echo "coder ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers.d/nopasswd
 
    # assign password "rstudio" to coder user.
-   RUN chown -R coder:coder /var/lib/rstudio-server RUN echo
-   "server-pid-file=/tmp/rstudio-server.pid" >> /etc/rstudio/rserver.conf RUN echo
-   "server-data-dir=/tmp/rstudio" >> /etc/rstudio/rserver.conf RUN echo
-   'coder:rstudio' | chpasswd
+   RUN chown -R coder:coder /var/lib/rstudio-server RUN echo "server-pid-file=/tmp/rstudio-server.pid" >> /etc/rstudio/rserver.conf RUN echo "server-data-dir=/tmp/rstudio" >> /etc/rstudio/rserver.conf RUN echo 'coder:rstudio' | chpasswd
 
    # assign locale
    RUN locale-gen en_US.UTF-8
@@ -246,7 +244,8 @@ RStudio:
 
    ![Applications with RStudio launcher](../assets/workspaces/rstudio.png)
 
-   Sign in using your linux username and password (as defined in your image)
+   Sign in using the Unix user (whose username and password you defined in your
+   image).
 
    > RStudio may take a few additional seconds to start launch after the
    > workspace is built.
