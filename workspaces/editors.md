@@ -8,8 +8,8 @@ There are five primary ways you can connect an IDE to your Coder workspace:
 
 1. [VS Code remote SSH](editors.md#vs-code-remote-ssh) with local VS Code
 1. [VS Code in the browser](editors.md#vs-code-in-the-browser) with code-server
-1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with JetBrains
-   Projector
+1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with
+   JetBrains Projector
 1. [JetBrains' Code With Me](editors.md#code-with-me)
 1. [RStudio](editors.md#rstudio)
 1. _Any_ local editor with
@@ -92,9 +92,9 @@ workspace with the following resources at a minimum:
 collaborate with others in real-time on your project and enables pair
 programming.
 
-> You must have a [JetBrains IDE
-installed](../admin/workspace-management/installing-jetbrains.md) onto your
-[image](../images/index.md) to use Code With Me.
+> You must have a
+> [JetBrains IDE installed](../admin/workspace-management/installing-jetbrains.md)
+> onto your [image](../images/index.md) to use Code With Me.
 
 ### Getting started
 
@@ -104,8 +104,8 @@ To set up a Code With Me session:
    session with other participants.
 1. The participants use the information provided by the host to join the session
    and request access.
-1. The host accepts the participants' request to join the session created
-   by the host.
+1. The host accepts the participants' request to join the session created by the
+   host.
 
 #### Step 1: Start and host a session
 
@@ -120,7 +120,7 @@ To create and host a Code With Me session:
 
 1. Click the **Code With Me** icon at the top of your IDE.
 
-    ![Code With Me icon](../assets/workspaces/code-with-me-2.png)
+   ![Code With Me icon](../assets/workspaces/code-with-me-2.png)
 
 1. Select **Enable Access and Copy Invitation Link...**.
 
@@ -169,10 +169,10 @@ If you've received a link to join a Code With Me session as a participant:
 #### Step 3: Accept the request to the join
 
 If you're the host of the session, you'll see a request that the other
-participant wants to join your project, the permissions you've
-granted to the other user, and a security code.
+participant wants to join your project, the permissions you've granted to the
+other user, and a security code.
 
-   ![Security code verification for host](../assets/workspaces/code-with-me-9.png)
+![Security code verification for host](../assets/workspaces/code-with-me-9.png)
 
 Verify that the security code you see matches the one shown to your
 participants. If they do, click **Accept** to proceed.
@@ -185,31 +185,73 @@ in real-time.
 Coder supports [RStudio](rstudio.com). To create a workspace that lets you use
 RStudio:
 
-1. Create an image that includes RStudio (see
-   [rocker/rstudio](https://hub.docker.com/r/rocker/rstudio) for an example).
+1. Create a [custom image](../guides/customization/custom-workspace) with
+   RStudio installed and includes `rserver` and `pgrep` in PATH.
+
+   This example Dockerfile installs RStudio Server Open Source and creates a
+   unix user to log in with username: `coder` and password: `rstudio`.
+
+   ```Dockerfile
+   FROM ubuntu:20.04
+
+   USER root
+
+   # Install dependencies
+   RUN apt-get update && \
+   DEBIAN_FRONTEND="noninteractive" apt-get install --yes \
+   bash \
+   sudo \
+   git \
+   ssh \
+   locales \
+   wget \
+   r-base \
+   gdebi-core
+
+   # install RStudio
+   RUN wget
+   https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.4.1717-amd64.deb
+   && \
+   gdebi --non-interactive rstudio-server-1.4.1717-amd64.deb
+
+   # create coder user
+   RUN useradd coder \
+   --create-home \
+   --shell=/bin/bash \
+   --uid=1000 \
+   --user-group && \
+   echo "coder ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers.d/nopasswd
+
+   # assign password "rstudio" to coder user.
+   RUN chown -R coder:coder /var/lib/rstudio-server RUN echo
+   "server-pid-file=/tmp/rstudio-server.pid" >> /etc/rstudio/rserver.conf RUN echo
+   "server-data-dir=/tmp/rstudio" >> /etc/rstudio/rserver.conf RUN echo
+   'coder:rstudio' | chpasswd
+
+   # assign locale
+   RUN locale-gen en_US.UTF-8
+
+   # run as coder user
+   USER coder
+
+   # add RStudio to path
+   ENV PATH /usr/lib/rstudio-server/bin:${PATH}
+   ```
 
 1. [Create a workspace](getting-started.md#2-create-a-workspace) using the image
    you created in the previous step.
 
-1. **Optional.** RStudio requires authentication with a Linux user and stores
-   all files in their home directory. If, from your Docker image, you're using the
-   root user, `coder`, or a user that doesn't have a home directory
-   or known password, then we recommend creating a new user for your RStudio
-   projects. To do so, run:
-
-   ```console
-   useradd --create-home myuser     # replace myuser with your username
-   passwd myuser     # provide and confirm your chosen password when prompted
-   ```
-
-1. At this point, you can go to **Applications** to launch RStudio:
+1. At this point, you can go to **Applications** to launch RStudio.
 
    ![Applications with RStudio launcher](../assets/workspaces/rstudio.png)
 
-   Sign in using your RStudio user credentials (RStudio auto-populates
-   the fields your Coder credentials, so you'll need to change these to the ones
-   you just created).
+   Sign in using your RStudio user credentials (RStudio auto-populates the
+   fields your Coder credentials, so you'll need to change these to the ones you
+   just created).
 
+   > RStudio may take a few additional seconds to start launch after the
+   > workspace is built.
+   >
    > All RStudio data is stored in the home directory associated with the user
    > you sign in as, which may be different than the user on workspace startup
    > (that is, you'll find the data in `/home/myuser` where myuser is your
