@@ -137,24 +137,25 @@ to the correct place. Note that the user of a single `>` prevents that line
 from being added to .profile repeatedly, but will erase the contents if you
 have anything in that file.
 
-## What it looks like
+## Making the connection
+
+On your local device, ensure the gpg-agent is running and that it works when
+you attempt to perform a GPG action such as `echo "test" | gpg --clearsign".`
+Since you'll have entered a pin, the socket will be opene for a bit unless
+you kill and restart the agent.
+
+```bash
+gpgconf --launch gpg-agent
+coder config-ssh
+ssh -R /run/user/1000/gnupg/S.gpg-agent:/Users/mterhar/.gnupg/S.gpg-agent coder.<workspace name>
+```
+
+After the SSH command, your terminal's prompt should be inside the workspace.
+Now that the connection is made from your local filesystem socket to the
+renote filesystem socket, GPG actions can commence on the remote side.
 
 ```console
-% gpgconf --launch gpg-agent
-% ssh -R /run/user/1000/gnupg/S.gpg-agent:/Users/mterhar/.gnupg/S.gpg-agent coder.gpg
-Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-1039-gke x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
-
-This system has been minimized by removing packages and content that are
-not required on a system that users do not log into.
-
-To restore this content, you can run the 'unminimize' command.
-Last login: Thu Jul 22 18:17:57 2021 from 127.0.0.1
-
-$ echo "test " | gpg --clearsign -vvv
+$ echo "test " | gpg --clearsign -v
 gpg: using character set 'utf-8'
 gpg: using pgp trust model
 gpg: key F371232FA31B84AC: accepted as trusted key
@@ -172,6 +173,96 @@ dqbC8blPKTAzupH7OeQpe6EbweZHjAI=
 =tgC/
 -----END PGP SIGNATURE-----
 ```
+
+If you decide to run a web terminal or use the terminal within code-server, it will
+prompt you for the pin and make use of the ssh socket. This is true for terminals that
+are running from different devices as well. 
+
+### Mitigating the risk
+
+The signing activity only takes a second to complete but the GPG socket remains open
+for a few minutes. 
+
+### What it looks like
+
+```console
+% gpgconf --launch gpg-agent
+% ssh -R /run/user/1000/gnupg/S.gpg-agent:/Users/mterhar/.gnupg/S.gpg-agent coder.gpg
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-1039-gke x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+Last login: Thu Jul 22 18:17:57 2021 from 127.0.0.1
+
+$ echo "test " | gpg --clearsign -v
+gpg: using character set 'utf-8'
+gpg: using pgp trust model
+gpg: key F371232FA31B84AC: accepted as trusted key
+gpg: writing to stdout
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+test 
+gpg: EDDSA/SHA256 signature from: "F371232FA31B84AC Mike Terhar <mterhar@coder.com>"
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQQWraRO2qW8c4RXhlTzcSMvoxuErAUCYPm2fwAKCRDzcSMvoxuE
+rHYNAQCrGPbF9Z89dDjemFMtgt0dfsPSUcAlgVj1PKGsg/K8lgEAj8MeTXi1RQhv
+dqbC8blPKTAzupH7OeQpe6EbweZHjAI=
+=tgC/
+-----END PGP SIGNATURE-----
+```
+
+Or using it to sign git commits with the terminal:
+
+```console
+$ git commit -m "trigger signature"
+[gpg-test 2ece8ea] trigger signature
+ 1 file changed, 2 insertions(+)
+$ git verify-commit 2ece8ea
+gpg: Signature made Thu Jul 22 19:15:50 2021 UTC
+gpg:                using EDDSA key 16ADA44EDAA5BC7384578654F371232FA31B84AC
+gpg: Good signature from "Mike Terhar <mterhar@coder.com>" [ultimate]
+```
+
+After you push this to GitHub or GitLab, you'll see the "verified" icon beside the commit.
+
+### Limitations for code-server
+
+The git functionality in code-server will sign the commit and obey the .gitconfig file
+however it lacks the ability to ask for a GPG pin so it only works if the sockt is already
+open due to some other activity. The git cli in the snippet above will prompt for to
+unlock the gpg key.
+
+The error says: "Git: gpg failed to sign the data" 
+
+Even if the configuration setting is enabled: 
+
+```
+"git.enableCommitSigning": true
+```
+
+## Security considerations
+
+Anytime a private key is used, there is some exposure to the systems that are granted access
+to the key. The act of typing the passphrase or using `gpg-preset-passphrase` to keep the
+socket open each have different risks (shoulder surfing bystander versus someone accessing
+the system with open socket from another terminal).
+
+1.  Setting `default-cache-ttl 30` will request the pin more frequently.
+
+2.  Connect to the local `.extra` socket rather than the primary which helps limit key exposure
+though it breaks this example.
+
+3.  Create a separate subkey for Coder to use to prevent the primary key from being compromised
+if a security incident occurs. This means the subkeys have to be added to your Git provider and if
+there is an incident, the old commits may become unverified.
 
 ## Errors and what they mean
 
@@ -227,6 +318,17 @@ file which contains `pinentry-mode loopback`.
 
 ### SSH troubleshooting
 
+If you receive this error when connecting: 
+
+`Warning: remote port forwarding failed for listen path /run/user/1000/gnupg/S.gpg-agent`
+
+The likely cause is that openssh isn't running. This can be because it's not in the image
+at all, or `systemctl enable ssh` didn't work. It can also be due to the workspace not
+having [CVM](https://coder.com/docs/coder/v1.20/workspaces/cvms#container-based-virtual-machine-cvm)
+enabled.
+
+#### Generally 
+
 Adding `-v` to the SSH command can show when things are happening that don't typically
 warrant any output. 
 
@@ -253,3 +355,15 @@ homedir:/home/coder/.gnupg
 
 The output seem too limited and we need more information, add `--verbose` to the `gpg`
 command.
+
+### GitHub or GitLab "unverified" commits
+
+Signed commits should have a verification status beside them. If you see
+"unverified" it may be that the signing key hasn't been uploaded to the
+account.
+
+* [GitHub Adding a new GPG key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
+* [GitLab Adding a GPG key](https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/#adding-a-gpg-key-to-your-account)
+
+It can also be that the email address in the author field doesn't match
+the username andsigning key's email. 
