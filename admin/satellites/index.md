@@ -18,7 +18,7 @@ workspaces and the primary Coder deployment. Traffic meant for workspaces, such
 as web and SSH connections, are sent directly to the workspaces, while all other
 traffic is routed to the primary Coder deployment.
 
-![Satellites](https://user-images.githubusercontent.com/19379394/126407423-35bc00c3-e40b-4f98-a130-b144085a6daa.png)
+![Satellites](../../assets/admin/satellites.png)
 
 Coder users connect to the satellite deployment that's geographically closest to
 them instead of to the primary deployment, gaining the benefits of local
