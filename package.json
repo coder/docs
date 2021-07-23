@@ -21,7 +21,7 @@
     "all-contributors-cli": "^6.20.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.1",
-    "markdownlint-cli": "^0.27.1",
+    "markdownlint-cli": "^0.28.1",
     "minimist": "^1.2.5",
     "prettier": "2.3.2",
     "semver-compare": "^1.0.0",
