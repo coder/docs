@@ -135,7 +135,6 @@ helm install --wait --atomic --debug --namespace coder coder . \
    --set coderd.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
    --set envbox.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbox:<version> \
    --set timescale.image=$REGISTRY_DOMAIN_NAME/coderenvs/timescale:<version> \
-   --set coderd.image=$REGISTRY_DOMAIN_NAME/coderenvs/dashboard:<version> \
    -f registry-cert-values.yml
 ```
 

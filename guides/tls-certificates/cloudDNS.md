@@ -178,8 +178,8 @@ There are additional steps to make sure that your hostname and Dev URLs work.
 
 1. Set the **Resource Record Type** to **A**
 
-1. Copy and paste the external IP address from your terminal to the
-   `IPv4 Address` field.
+1. Copy and paste the external IP address associate with the **service/coderd**
+   line from your terminal to the `IPv4 Address` field.
 
 1. Click **Create**
 

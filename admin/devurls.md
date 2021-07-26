@@ -19,7 +19,7 @@ your cluster, you'll need to set `devurls.host` to a wildcard domain pointing to
 your ingress controller:
 
 ```shell
-helm upgrade coder coder/coder --set --set devurlsHost="*.my-custom-domain.io"
+helm upgrade coder coder/coder --set devurlsHost="*.my-custom-domain.io"
 ```
 
 ## Setting dev URL access permissions
