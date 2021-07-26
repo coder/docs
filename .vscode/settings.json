@@ -1,3 +1,5 @@
 {
-  "editor.rulers": [80]
+  "editor.rulers": [80],
+  "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+  "editor.formatOnSave": true
 }
