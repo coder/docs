@@ -29,7 +29,7 @@ helm upgrade coder coder/coder --set coderd.devurlsHost="*.my-custom-domain.io"
 ```
 
 **Note:** If you are providing an ingress controller, then you will need to add
-the rule manually to the ingress. If you are unsure, skip this step:
+the rule manually to the ingress.
 
 ```yaml
  - host: "*.my-custom-domain.io"
@@ -53,9 +53,9 @@ LoadBalancer's IP address.
 For secure (HTTPS) dev URLs, you can add (or generate) a TLS certificate for the
 wildcard domain.
 
-- Guides: [TLS with LetsEncrypt](../guides/ssl-certifcates)
-- To add a custom certificate, reference our
-  [helm chart](https://github.com/cdr/enterprise-helm)
+- See our [guide for creating a TLS certificate using LetsEncrypt](../guides/ssl-certifcates)
+- To add a custom certificate, refer to our
+  [Helm chart](https://github.com/cdr/enterprise-helm)
 
 ## Setting dev URL access permissions
 
@@ -92,7 +92,7 @@ scroll down to **Dev URL Access Permissions**.
 You can set the maximum access level, but developers may choose to restrict
 access further.
 
-For example, if you set the maximum access level as **Authenticated**, then any
+For example, if you set the maximum access level as **Authenticated**, then all
 dev URLs created for workspaces in your Coder deployment will be accessible to
 any authenticated Coder user.
 

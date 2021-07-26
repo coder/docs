@@ -79,8 +79,8 @@ Install the following dependencies if you haven't already:
    For installations using HTTPS, you must
    [ensure the deployment has a valid certificate](../../guides/tls-certificates/index.md).
 
-   If you're unfamiliar with the helm configuration values file, see our doc on
-   [updating a helm chart](../../guides/admin/helm-charts.md)
+   If you're unfamiliar with the Helm configuration values file, see our doc on
+   [updating a Helm chart](../../guides/admin/helm-charts.md)
 
 1. Retrieve the service account token and certificate, which Coder uses to
    authenticate with the Kubernetes cluster.
