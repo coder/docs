@@ -42,13 +42,13 @@ in the cluster. The environment ports are:
       <tr>
          <td rowspan="4">cemanager</td>
          <td>loadbalancer</td>
-         <td>8080</td>
+         <td>80</td>
          <td>N/A</td>
          <td>N/A</td>
       </tr>
       <tr>
          <td>dashboard</td>
-         <td>8080</td>
+         <td>80</td>
          <td>resource</td>
          <td>N/A</td>
       </tr>
@@ -75,7 +75,7 @@ in the cluster. The environment ports are:
          <td>loadbalancer</td>
          <td>3000</td>
          <td>cemanager</td>
-         <td>8080</td>
+         <td>80</td>
       </tr>
       <tr>
          <td>N/A</td>
