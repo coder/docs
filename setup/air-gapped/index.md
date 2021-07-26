@@ -146,7 +146,7 @@ platform images are hosted in Coder's Docker Hub repo.
    helm --namespace coder install coder /path/to/coder-X.Y.Z.tgz \
    --set cemanager.image=my-registry.com/coderenvs/coder-service:<version> \
    --set timescale.image=my-registry.com/coderenvs/timescale:<version> \
-   --set dashboard.image=my-registry.com/coderenvs/dashboard:<version> \
+   --set coderd.image=my-registry.com/coderenvs/dashboard:<version> \
    --set envbox.image=my-registry.com/coderenvs/envbox:<version>
    ```
 
@@ -158,7 +158,7 @@ platform images are hosted in Coder's Docker Hub repo.
       --set cemanager.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
       --set envbox.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbox:<version> \
       --set timescale.image=$REGISTRY_DOMAIN_NAME/coderenvs/timescale:<version> \
-      --set dashboard.image=$REGISTRY_DOMAIN_NAME/coderenvs/dashboard:<version> \
+      --set coderd.image=$REGISTRY_DOMAIN_NAME/coderenvs/dashboard:<version> \
       -f registry-cert-values.yml
    ```
 
