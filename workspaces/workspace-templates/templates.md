@@ -96,7 +96,7 @@ workspace:
         scheme: http
         access: private
       - name: PublicPort
-        port: 80
+        port: 443
         scheme: https
         access: public
       - name: OrgWebsite
@@ -325,7 +325,7 @@ any dev URLs you create.
 dev-urls:
   value:
     - name: PublicPort
-      port: 80
+      port: 443
       scheme: https
       access: public
     - name: PrivatePort
