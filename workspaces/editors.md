@@ -94,7 +94,7 @@ programming.
 
 > You must have a
 > [JetBrains IDE installed](../admin/workspace-management/installing-jetbrains.md)
-> onto your [image](../images/index.md) to use Code With Me.
+> in your [image](../images/index.md) to use Code With Me.
 
 ### Getting started
 

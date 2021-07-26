@@ -43,7 +43,7 @@ kubectl config current-context
 Confirm that your current kubectl context is correct before continuing;
 otherwise, connect to the right context.
 
-## Step 2: Creating the new workspace provider
+## Step 2: Creating the new deployment
 
 The following steps are identical to those for
 [deploying the primary Coder installation](../../setup/installation.md).
