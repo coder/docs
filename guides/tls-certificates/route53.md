@@ -214,7 +214,7 @@ URLs work.
    kubectl get all -n <your_namespace> -o wide
    ```
 
-   Find the **service/ingress-nginx** line and copy its **external IP** value.
+   Find the **service/coderd** line, and copy the **external IP** value shown.
 
 1. Return to Route53 and go to **Hosted Zone**.
 

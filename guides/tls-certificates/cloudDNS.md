@@ -198,7 +198,7 @@ There are additional steps to make sure that your hostname and Dev URLs work.
    kubectl get svc -n <your_namespace> -o wide
    ```
 
-   Find the **LoadBalancer** line and copy the **external IP** value shown.
+   Find the **service/coderd** line, and copy the **external IP** value shown.
 
 1. Return to Google Cloud Platform, navigate to the
    [Cloud DNS](https://cloud.google.com/dns) Console, and select the Zone that
@@ -218,8 +218,8 @@ There are additional steps to make sure that your hostname and Dev URLs work.
 
 1. Set the **Resource Record Type** to **A**
 
-1. Copy and paste the IP address from the **service/ingress-nginx** line in your
-   terminal to the `IPv4 Address` field
+1. Copy and paste the external IP address associate with the **service/coderd**
+   line from your terminal to the `IPv4 Address` field.
 
 1. Click **Create**
 

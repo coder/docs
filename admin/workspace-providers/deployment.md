@@ -76,11 +76,11 @@ Install the following dependencies if you haven't already:
 
    You should get a response similar to the following:
 
-   For installations using HTTPS, you must
-   [ensure the deployment has a valid certificate](../../guides/tls-certificates/index.md).
-
-   If you're unfamiliar with the helm configuration values file, see our doc on
-   [updating a helm chart](../../guides/admin/helm-charts.md)
+   ```console
+   serviceaccount/coder created
+   role.rbac.authorization.k8s.io/coder created
+   rolebinding.rbac.authorization.k8s.io/coder created
+   ```
 
 1. Retrieve the service account token and certificate, which Coder uses to
    authenticate with the Kubernetes cluster.

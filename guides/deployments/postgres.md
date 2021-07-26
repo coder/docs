@@ -13,7 +13,7 @@ will deploy a [PostgreSQL database](https://www.postgresql.org/) within the
 installation's Kubernetes namespace. This is useful for evaluation purposes;
 however, we **recommend using an out-of-cluster database for production** to
 streamline maintenance operations, such as backups and upgrades. The database
-state is *not* backed up and will be lost when deleting the Kubernetes namespace
+state is _not_ backed up and will be lost when deleting the Kubernetes namespace
 or cluster.
 
 > For optimal performance, it is important to ensure that the round-trip latency
@@ -56,7 +56,7 @@ or cluster.
    \du
    ```
 
-1. Get the name of the database *within* your PostgreSQL instance in which
+1. Get the name of the database _within_ your PostgreSQL instance in which
    you're currently working:
 
    ```sql
@@ -76,7 +76,6 @@ these credentials to connect to your PostgreSQL instance:
 
 ```yaml
 postgres:
-  useDefault: false
   host: "<your-postgres-private-ip>"
   port: "<your-postgres-port>"
   user: "<your-postgres-user>"

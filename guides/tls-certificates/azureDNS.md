@@ -321,7 +321,7 @@ URLs work.
    kubectl get svc -n <your_namespace> -o wide
    ```
 
-   Find the **LoadBalancer** line and copy its **external IP** value.
+   Find the **service/coderd** line, and copy the **external IP** value shown.
 
 1. Return to Azure and go to **DNS zones**.
 

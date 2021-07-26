@@ -13,10 +13,10 @@ by acting as local proxies to the workspaces, keeping traffic from the
 developer's machine to the workspaces within the same region instead of
 requiring the traffic to cross regions back to the primary Coder deployment.
 
-Satellites, on the other hand, act as a secure reverse proxy to both Coder
-workspaces and the primary Coder deployment. Traffic meant for workspaces, such
-as web and SSH connections, are sent directly to the workspaces, while all other
-traffic is routed to the primary Coder deployment.
+Satellites act as a secure reverse proxy to both Coder workspaces and the
+primary Coder deployment. Traffic meant for workspaces, such as web and SSH
+connections, are sent directly to the workspaces, while all other traffic is
+routed to the primary Coder deployment.
 
 ![Satellites](../../assets/admin/satellites.png)
 

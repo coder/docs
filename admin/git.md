@@ -24,8 +24,9 @@ Instead, you can use Visual Studio Code with git, the command-line tool, and we
 expect that this combination will work with most hosting software or services.
 However, Coder doesn't test these and cannot provide recommendations or support.
 
-**Note** The public key provided by Coder uses the Ed25519 key algorithm. Ensure
-your git provider supports this.
+> Ensure that your Git provider supports the keygen algorithm that Coder uses;
+> you can choose the algorithm in **Manage** > **Admin** > **Security** >
+> **SSH**.
 
 ![Configure Git Integration](../assets/admin/git-admin.png)
 
