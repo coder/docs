@@ -140,6 +140,6 @@ For more information, see:
 ## Next steps
 
 To access Coder through a secure domain, review our guides on configuring and
-using [SSL certificates](../../guides/ssl-certificates/index.md).
+using [TLS certificates](../../guides/tls-certificates/index.md).
 
 Once complete, see our page on [installation](../installation.md).

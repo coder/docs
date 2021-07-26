@@ -25,7 +25,7 @@ shown.
    to the external IP address you obtained in the previous step.
 
 > If your custom domain uses the HTTPS protocol, make sure that you have
-> [SSL certificates](../guides/ssl-certificates/index.md) for use with your
+> [TLS certificates](../guides/tls-certificates/index.md) for use with your
 > Coder deployment. Otherwise, you can skip this step.
 
 ## Step 2: Update the Helm chart and redeploy Coder

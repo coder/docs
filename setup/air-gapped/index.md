@@ -111,7 +111,7 @@ platform images are hosted in Coder's Docker Hub repo.
 
    When building images for your workspaces that rely on a custom certificate
    authority, be sure to follow the
-   [docs for adding certificates](../../images/ssl-certificates#adding-certificates-for-coder)
+   [docs for adding certificates](../../images/tls-certificates#adding-certificates-for-coder)
    to images.
 
 1. Tag and push all of the images that you've downloaded in the previous step to
