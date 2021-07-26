@@ -213,8 +213,8 @@ the error, reinstall Coder using the following Helm values:
 ```console
 helm upgrade --install coder \
     --set ingress.useDefault=false \
-    --set cemanager.resources.requests.cpu="0m" \
-    --set cemanager.resources.requests.memory="0Mi" \
+    --set coderd.resources.requests.cpu="0m" \
+    --set coderd.resources.requests.memory="0Mi" \
     --set timescale.resources.requests.cpu="0m" \
     --set timescale.resources.requests.memory="0Mi" \
     coder/coder

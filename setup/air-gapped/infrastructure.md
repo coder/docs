@@ -132,7 +132,7 @@ Then, add the flag `-f registry-cert-values.yml` to the end of the
 
 ```console
 helm install --wait --atomic --debug --namespace coder coder . \
-   --set cemanager.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
+   --set coderd.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
    --set envbox.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbox:<version> \
    --set timescale.image=$REGISTRY_DOMAIN_NAME/coderenvs/timescale:<version> \
    --set coderd.image=$REGISTRY_DOMAIN_NAME/coderenvs/dashboard:<version> \
@@ -154,8 +154,8 @@ echo "10.0.0.2 $REGISTRY_DOMAIN_NAME" >> /etc/hosts
 > Kubernetes forwards some of its DNS services out of the cluster. If, at a
 > later point, you discover that the hosts file on the node isn't being heeded
 > by pods, you can work around this by extracting the Helm chart from
-> `coder-X.Y.Z.tgz` and patching the `cemanager` deployment (this goes at the
-> same indentation level as `containers:`):
+> `coder-X.Y.Z.tgz` and patching the `coderd` deployment (this goes at the same
+> indentation level as `containers:`):
 >
 > ```yaml
 > hostAliases:
