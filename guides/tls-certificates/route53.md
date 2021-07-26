@@ -10,8 +10,9 @@ Coder installation, regardless of whether you're using
 [Let's Encrypt](https://letsencrypt.org/) or you have your own certificate
 authority.
 
-> Note: This guide is for Coder v1.21 which has a slightly different way of
-> handling certificates. Ensure you are reading the docs for your Coder version.
+> This guide is for Coder v1.21.0 and later, which handle certificates
+> differently from earlier versions of Coder. Ensure that you're reading the
+> docs applicable to your Coder version.
 
 This guide will show you how to install cert-manager v1.4.0 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
