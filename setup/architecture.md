@@ -41,7 +41,7 @@ in the cluster. The environment ports are:
          <th>Destination port</th>
       </tr>
       <tr>
-         <td rowspan="4">cemanager</td>
+         <td rowspan="4">coderd</td>
          <td>loadbalancer</td>
          <td>8080</td>
          <td>envproxy</td>
@@ -69,7 +69,7 @@ in the cluster. The environment ports are:
          <td rowspan="3">envproxy</td>
          <td>loadbalancer</td>
          <td>8080</td>
-         <td>cemanager</td>
+         <td>coderd</td>
          <td>8080</td>
       </tr>
       <tr>
@@ -88,7 +88,7 @@ in the cluster. The environment ports are:
          <td rowspan="3">dashboard</td>
          <td>loadbalancer</td>
          <td>3000</td>
-         <td>cemanager</td>
+         <td>coderd</td>
          <td>8080</td>
       </tr>
       <tr>

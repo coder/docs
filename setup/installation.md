@@ -120,7 +120,7 @@ kubectl config set-context --current --namespace=coder
    password for the admin user
 
    ```console
-   kubectl logs -n coder -l coder.deployment=cemanager -c cemanager \
+   kubectl logs -n coder -l coder.deployment=coderd -c coderd \
     --tail=-1 | grep -A1 -B2 Password
    ```
 

@@ -144,7 +144,7 @@ platform images are hosted in Coder's Docker Hub repo.
    ```console
    kubectl create namespace coder
    helm --namespace coder install coder /path/to/coder-X.Y.Z.tgz \
-   --set cemanager.image=my-registry.com/coderenvs/coder-service:<version> \
+   --set coderd.image=my-registry.com/coderenvs/coder-service:<version> \
    --set envproxy.image=my-registry.com/coderenvs/coder-service:<version> \
    --set timescale.image=my-registry.com/coderenvs/timescale:<version> \
    --set dashboard.image=my-registry.com/coderenvs/dashboard:<version> \
@@ -156,7 +156,7 @@ platform images are hosted in Coder's Docker Hub repo.
 
    ```bash
    helm install --wait --atomic --debug --namespace coder coder . \
-      --set cemanager.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
+      --set coderd.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
       --set envproxy.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
       --set envbox.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbox:<version> \
       --set timescale.image=$REGISTRY_DOMAIN_NAME/coderenvs/timescale:<version> \

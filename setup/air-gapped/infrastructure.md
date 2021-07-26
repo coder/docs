@@ -54,10 +54,10 @@ docker run -d -p 443:5000 \
 
 ## Configuring the Kubernetes Node
 
-Before the Kubernetes node can accept local images, it needs to consider the
-new `registry.crt` file as trusted. The specific locations and methods to store
-and trust the certificate vary depending on the Linux distribution and the
-container runtime, but here is a partial list to help you get started:
+Before the Kubernetes node can accept local images, it needs to consider the new
+`registry.crt` file as trusted. The specific locations and methods to store and
+trust the certificate vary depending on the Linux distribution and the container
+runtime, but here is a partial list to help you get started:
 
 ```plaintext
 /usr/local/share/ca-certificates/registry.crt
@@ -127,12 +127,12 @@ certs:
     key: "registry.crt"
 ```
 
-Then, add the flag `-f registry-cert-values.yml` to the end of the `helm install`
-or `helm upgrade` command to include the new secrets file:
+Then, add the flag `-f registry-cert-values.yml` to the end of the
+`helm install` or `helm upgrade` command to include the new secrets file:
 
 ```console
 helm install --wait --atomic --debug --namespace coder coder . \
-   --set cemanager.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
+   --set coderd.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
    --set envproxy.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
    --set envbox.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbox:<version> \
    --set timescale.image=$REGISTRY_DOMAIN_NAME/coderenvs/timescale:<version> \
@@ -155,8 +155,8 @@ echo "10.0.0.2 $REGISTRY_DOMAIN_NAME" >> /etc/hosts
 > Kubernetes forwards some of its DNS services out of the cluster. If, at a
 > later point, you discover that the hosts file on the node isn't being heeded
 > by pods, you can work around this by extracting the Helm chart from
-> `coder-X.Y.Z.tgz` and patching the `cemanager` deployment (this goes at the
-> same indentation level as `containers:`):
+> `coder-X.Y.Z.tgz` and patching the `coderd` deployment (this goes at the same
+> indentation level as `containers:`):
 >
 > ```yaml
 > hostAliases:
