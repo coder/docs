@@ -8,8 +8,9 @@ Before accessing your workspace via SSH:
 - Your site manager must [enable access to workspaces using SSH]
 - You must install the [Coder CLI] on your local machine
 
-[enable access to workspaces using SSH]: ../admin/workspace-management/ssh-access.md
-[Coder CLI]: ../cli/index.md
+[enable access to workspaces using ssh]:
+  ../admin/workspace-management/ssh-access.md
+[coder cli]: ../cli/index.md
 
 ## Configuration
 
@@ -46,7 +47,7 @@ SFTP, run `sftp coder.<workspace_name>`.
 
 You can use `rsync` to transfer files to and from Coder.
 
-To do so, use the flag `-e "coder ssh"` in your `rsync` transfer invokation. For
+To do so, use the flag `-e "coder ssh"` in your `rsync` transfer invocation. For
 example, the following shows how you can transfer your home directory to your
 workspace:
 

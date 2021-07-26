@@ -142,6 +142,9 @@
             },
             {
               "path": "./setup/kubernetes/google.md"
+            },
+            {
+              "path": "./setup/kubernetes/openshift.md"
             }
           ]
         },
@@ -228,10 +231,21 @@
           ]
         },
         {
+          "path": "./admin/satellites/index.md",
+          "children": [
+            {
+              "path": "./admin/satellites/management.md"
+            }
+          ]
+        },
+        {
           "path": "./admin/workspace-providers/index.md",
           "children": [
             {
               "path": "./admin/workspace-providers/deployment.md"
+            },
+            {
+              "path": "./admin/workspace-providers/management.md"
             }
           ]
         },
@@ -385,6 +399,9 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        {
+          "path": "./changelog/1.21.0.md"
+        },
         {
           "path": "./changelog/1.20.0.md"
         },
