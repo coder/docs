@@ -28,8 +28,8 @@ Set `devurls.host` to a wildcard domain:
 helm upgrade coder coder/coder --set coderd.devurlsHost="*.my-custom-domain.io"
 ```
 
-**Note:** If you are providing a custom ingress controller, then you will need
-to add the rule manually to the ingress:
+**Note:** If you are providing an ingress controller, then you will need to add
+the rule manually to the ingress. If you are unsure, skip this step:
 
 ```yaml
  - host: "*.my-custom-domain.io"

@@ -10,6 +10,9 @@ Coder installation, regardless of whether you're using
 [Let's Encrypt](https://letsencrypt.org/) or you have your own certificate
 authority.
 
+> Note: This guide is for Coder v1.21 which has a slightly different way of
+> handling certificates. Ensure you are reading the docs for your Coder version.
+
 This guide will show you how to install cert-manager v1.4.0 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
 you can enable HTTPS on your Coder deployment.
@@ -69,6 +72,7 @@ Create a token with the following settings:
 - Permissions:
 
   - Zone: DNS = Edit
+  - Zone: Zone = Read
 
 - Zone Resources:
   - Include: Specific Zone = your-domain.com
@@ -135,7 +139,8 @@ cert-manager only for Coder, you may choose to use the **Issuer** configuration
 above. If you want to use a **ClusterIssuer** instead, you'll need to make the
 following changes:
 
-- Change the namespace of the secret to **cert-manager**
+- Change the namespace of the secret (and certificate object created in the next
+  step) to **cert-manager**
 - Change the kind of the **Issuer** to **ClusterIssuer**
 - Remove the namespace of the **ClusterIssuer**
 - Change the annotations to `cert-manager.io/cluster-issuer: "letsencrypt"`
@@ -153,36 +158,70 @@ secret/cloudflare-api-key-secret created
 issuer.cert-manager.io/letsencrypt created
 ```
 
-## Step 3: Configure Coder to issue and use the certificates
+## Step 3: Create a certificate
 
-If your installation uses an external ingress, you'll need to configure your
-ingress to use the **coder-root-cert** and **coder-devurls-cert**.
+> Note: If you are providing an ingress, certificates can be automatically
+> created with an ingress annotation. See the
+> [cert-manager docs](https://cert-manager.io/docs/usage/ingress/) for details.
+> If you are unsure whether you are using an ingress or not, continue with this
+> step.
 
-However, if you're using the default
-[ingress](https://cert-manager.io/docs/usage/ingress/) included in the helm
-chart, you can use the following helm values to configure the internal ingress
-and automatically create your certificate:
+In a text editor, create a new file called **certificate.yaml** and paste the
+following:
 
 ```yaml
-ingress:
-  useDefault: true
-  host: "coder.example.com"
-  tls:
-    enable: true
-    hostSecretName: coder-root-cert
-    devurlsHostSecretName: coder-devurls-cert
-  annotations:
-    cert-manager.io/issuer: "letsencrypt"
-
-devurls:
-  host: "*.coder.example.com"
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: coder-certs
+  namespace: coder # Your Coder deployment namespace
+spec:
+  commonName: "*.coder.example.com"
+  dnsNames:
+    - "coder.example.com"
+    - "*.coder.example.com"
+  issuerRef:
+    kind: Issuer
+    name: letsencrypt
+  secretName: coder-certs
 ```
 
-The `hostSecretName` and `devurlsHostSecretName` are arbitrary strings that you
-should set to some value that does not conflict with any other secrets in the
-Coder namespace.
+Be sure to change `coder.example.com` to the domain for your Coder deployment.
+While this example uses a single domain, a separate domain can be created for
+dev URLs or even omitted if you do not have
+[dev URLs enabled](../admin/devurls).
 
-Be sure to redeploy Coder after changing your Helm values. If, after
-redeploying, you're not getting a valid certificate, see
+Once you're done, deploy the certificates.
+
+```console
+kubectl apply -f certificate.yaml
+```
+
+## Step 4: Configure Coder to issue and use the certificates
+
+If you're using the default LoadBalancer to access Coder, you can use the
+following helm values to use the certificate.
+
+```yaml
+coderd:
+  devurlsHost: "*.coder.example.com"
+  tls:
+    devurlsHostSecretName: "coder-certs"
+    hostSecretName: "coder-certs"
+```
+
+Be sure to change `coder.example.com` to the domain for your Coder deployment.
+The `hostSecretName` and `devurlsHostSecretName` correspond to the secret
+specified by the certificate(s) created in step 2. The secret name(s) are
+arbitrary, but ensure they do not conflict with any other secrets in the Coder
+namespace.
+
+Be sure to [redeploy Coder](../setup/updating) after changing your Helm values.
+Then, log in to Coder and change your access URL in `Manage > Admin` to use
+HTTPS.
+
+## Troubleshooting
+
+If, after redeploying, you're not getting a valid certificate, see
 [cert-manager's troubleshooting guide](https://cert-manager.io/docs/faq/acme/)
 for additional assistance.

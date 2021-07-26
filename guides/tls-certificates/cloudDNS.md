@@ -10,6 +10,9 @@ Coder installation, regardless of whether you're using
 [Let's Encrypt](https://letsencrypt.org/) or you have your own certificate
 authority.
 
+> Note: This guide is for Coder v1.21 which has a slightly different way of
+> handling certificates. Ensure you are reading the docs for your Coder version.
+
 This guide will show you how to install cert-manager v1.4.0 and set up your
 cluster to issue Let's Encrypt certificates for your Coder installation so that
 you can enable HTTPS on your Coder deployment. It will also show you how to
@@ -127,21 +130,57 @@ secret/clouddns-dns01-solver-svc-acct created
    clusterissuer.cert-manager.io/letsencrypt created
    ```
 
-## Step 5: Install Coder
+## Step 5: Create a certificate
+
+> Note: If you are providing an ingress, certificates can be automatically
+> created with an ingress annotation. See the
+> [cert-manager docs](https://cert-manager.io/docs/usage/ingress/) for details.
+> If you are unsure whether you are using an ingress or not, continue with this
+> step.
+
+In a text editor, create a new file called **certificate.yaml** and paste the
+following:
+
+```yaml
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: coder-certs
+  namespace: coder # Your Coder deployment namespace
+spec:
+  commonName: "*.coder.example.com"
+  dnsNames:
+    - "coder.example.com"
+    - "*.coder.example.com"
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt
+  secretName: coder-certs
+```
+
+Be sure to change `coder.example.com` to the domain for your Coder deployment.
+While this example uses a single domain, a separate domain can be created for
+dev URLs or even omitted if you do not have
+[dev URLs enabled](../admin/devurls).
+
+Once you're done, deploy the certificates.
+
+```console
+kubectl apply -f certificate.yaml
+```
+
+## Step 6: Install/upgrade Coder
 
 At this point, you're ready to [install](../../setup/installation.md) Coder.
 However, to use all of the functionality you set up in this tutorial, use the
-following `helm install` command instead:
+following command instead:
 
 ```console
-helm install coder coder/coder --namespace coder \
+helm upgrade --install coder coder/coder --namespace coder \
   --version=<CODER_VERSION> \
-  --set devurls.host="*.exampleCo.com" \
-  --set ingress.host="coder.exampleCo.com" \
-  --set ingress.tls.enable=true \
-  --set ingress.tls.devurlsHostSecretName="coder-devurls-cert" \
-  --set ingress.tls.hostSecretName="coder-root-cert" \
-  --set ingress.annotations.cert-manager\.io/cluster-issuer="letsencrypt" \
+  --set coderd.devurlsHost="coder.example.com" \
+  --set coderd.tls.devurlsHostSecretName="coder-certs" \
+  --set coderd.tls.hostSecretName="coder-certs" \
   --wait
 ```
 
@@ -155,11 +194,10 @@ There are additional steps to make sure that your hostname and Dev URLs work.
 1. Check the contents of your namespace
 
    ```console
-   kubectl get all -n <your_namespace> -o wide
+   kubectl get svc -n <your_namespace> -o wide
    ```
 
-   Find the **service/ingress-nginx** line and copy the **external IP** value
-   shown.
+   Find the **LoadBalancer** line and copy the **external IP** value shown.
 
 1. Return to Google Cloud Platform, navigate to the
    [Cloud DNS](https://cloud.google.com/dns) Console, and select the Zone that
@@ -175,7 +213,7 @@ There are additional steps to make sure that your hostname and Dev URLs work.
    a. If you're configuring the hostname, this value will be a standard domain
 
    b. If you're configuring your dev URLs, this will be a wildcard domain (e.g.,
-   `*.domain.com`)
+   `*.example.com`)
 
 1. Set the **Resource Record Type** to **A**
 
