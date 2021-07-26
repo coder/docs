@@ -94,10 +94,6 @@ platform images are hosted in Coder's Docker Hub repo.
    docker pull coderenvs/coder-service:<version>
    ```
 
-   To access Coder, you'll need an ingress controller; you can use
-   [nginx-ingress-controller](https://quay.io/kubernetes-ingress-controller/nginx-ingress-controller),
-   or you can use your own.
-
    The following images are optional, though you're welcome to take advantage of
    Coder's versions instead of building your own:
 
@@ -121,21 +117,6 @@ platform images are hosted in Coder's Docker Hub repo.
    ```console
    docker tag coderenvs/coder-service:<version> my-registry.com/coderenvs/coder-service:<version>
    docker push my-registry.com/coderenvs/coder-service:<version>
-   ```
-
-1. Modify the image used for the ingress controller. In `coder-X.Y.Z.tgz`, which
-   you obtained by running `helm pull`, find the `templates/ingress.yaml` file.
-   You'll see that this file has only one instance of `image:`. Replace this
-   line:
-
-   ```yaml
-   quay.io/kubernetes-ingress-controller/nginx-ingress-controller:<version>
-   ```
-
-   with the image for your local ingress controller image:
-
-   ```yaml
-   <your_registry>/nginx-ingress-controller:<version>
    ```
 
 1. Once all of the resources are in your air-gapped network, run the following

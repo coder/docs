@@ -155,10 +155,10 @@ options for obtaining these.
    kubectl --namespace coder get services
    ```
 
-   The row for the **ingress-nginx** service includes an **EXTERNAL-IP** value;
-   this is the IP address you need.
+   You'll see a row named **coderd** with an **EXTERNAL-IP** value; this is the
+   IP address you need.
 
-1. In your browser, navigate to the external IP of ingress-nginx.
+1. In your browser, navigate to the external IP.
 
 1. Use the admin credentials you obtained in this installation guide's previous
    step to log in to the Coder platform. If this is the first time you've logged

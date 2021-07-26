@@ -13,12 +13,6 @@ Each component runs in its own Kubernetes pod.
 
 ![Architecture](../assets/setup/architecture.png)
 
-## Kubernetes NGINX ingress
-
-Coder deploys an NGINX Kubernetes ingress controller to allocate and route
-requests to the appropriate service. You can disable this controller in the helm
-chart if you use your ingress or gateway.
-
 ## Ports
 
 The following is a list of the listening ports associated with Coder resources
@@ -27,7 +21,7 @@ in the cluster. The environment ports are:
 - code-server: `13337`
 - envagent (used for shell sessions): `26337`
 - envagent (SSH proxy): `12212`
-- TCP Ports 80, 443
+- For external traffic: 80, 443
 
 ## Deployment options
 
