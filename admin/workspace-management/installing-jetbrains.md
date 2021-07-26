@@ -26,7 +26,7 @@ PATH:
 - Rider
 - RStudio (see
   [rocker-versioned](https://github.com/rocker-org/rocker-versioned/tree/master/rstudio)
-  for sample images installing RStudio)
+  for sample images containing RStudio)
 - RubyMine
 - Code OSS (VS Code, installed by default)
 - WebStorm
