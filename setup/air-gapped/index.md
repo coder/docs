@@ -94,10 +94,6 @@ platform images are hosted in Coder's Docker Hub repo.
    docker pull coderenvs/coder-service:<version>
    ```
 
-   To access Coder, you'll need an ingress controller; you can use
-   [nginx-ingress-controller](https://quay.io/kubernetes-ingress-controller/nginx-ingress-controller),
-   or you can use your own.
-
    The following images are optional, though you're welcome to take advantage of
    Coder's versions instead of building your own:
 
@@ -123,31 +119,14 @@ platform images are hosted in Coder's Docker Hub repo.
    docker push my-registry.com/coderenvs/coder-service:<version>
    ```
 
-1. Modify the image used for the ingress controller. In `coder-X.Y.Z.tgz`, which
-   you obtained by running `helm pull`, find the `templates/ingress.yaml` file.
-   You'll see that this file has only one instance of `image:`. Replace this
-   line:
-
-   ```yaml
-   quay.io/kubernetes-ingress-controller/nginx-ingress-controller:<version>
-   ```
-
-   with the image for your local ingress controller image:
-
-   ```yaml
-   <your_registry>/nginx-ingress-controller:<version>
-   ```
-
 1. Once all of the resources are in your air-gapped network, run the following
    to deploy Coder to your Kubernetes cluster:
 
    ```console
    kubectl create namespace coder
    helm --namespace coder install coder /path/to/coder-X.Y.Z.tgz \
-   --set cemanager.image=my-registry.com/coderenvs/coder-service:<version> \
-   --set envproxy.image=my-registry.com/coderenvs/coder-service:<version> \
+   --set postgres.default.image=my-registry.com/coderenvs/coder-service:<version> \
    --set timescale.image=my-registry.com/coderenvs/timescale:<version> \
-   --set dashboard.image=my-registry.com/coderenvs/dashboard:<version> \
    --set envbox.image=my-registry.com/coderenvs/envbox:<version>
    ```
 
@@ -156,11 +135,9 @@ platform images are hosted in Coder's Docker Hub repo.
 
    ```bash
    helm install --wait --atomic --debug --namespace coder coder . \
-      --set cemanager.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
-      --set envproxy.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
+      --set postgres.default.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
       --set envbox.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbox:<version> \
       --set timescale.image=$REGISTRY_DOMAIN_NAME/coderenvs/timescale:<version> \
-      --set dashboard.image=$REGISTRY_DOMAIN_NAME/coderenvs/dashboard:<version> \
       -f registry-cert-values.yml
    ```
 
