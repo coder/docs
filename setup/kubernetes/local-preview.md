@@ -215,8 +215,6 @@ helm upgrade --install coder \
     --set ingress.useDefault=false \
     --set cemanager.resources.requests.cpu="0m" \
     --set cemanager.resources.requests.memory="0Mi" \
-    --set envproxy.resources.requests.cpu="0m" \
-    --set envproxy.resources.requests.memory="0Mi" \
     --set timescale.resources.requests.cpu="0m" \
     --set timescale.resources.requests.memory="0Mi" \
     coder/coder

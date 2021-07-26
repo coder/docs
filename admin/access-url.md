@@ -35,8 +35,7 @@ When changing your access URL, you'll need to
 [redeploy Coder](../setup/updating.md):
 
 helm upgrade coder coder/coder \
- --set devurls.host="\*.example.com" \
- --set ingress.host="coder.example.com" \
+ --set devurlsHost="\*.example.com"
 
 > See the [enterprise-helm repo](https://github.com/cdr/enterprise-helm) for
 > more information on Coder's Helm charts.

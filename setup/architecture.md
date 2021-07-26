@@ -7,7 +7,6 @@ Coder is deployed on Kubernetes and includes the following components:
 
 - **Manager**: the central authority; provides authentication and supports the
   Dashboard and an API which you can use to create and interact with Workspaces
-- **Envproxy**: the WebSocket proxy to a workspace's editor and terminal
 - **PostgreSQL**: data storage for session tokens, workspace information, etc.
 
 Each component runs in its own Kubernetes pod.
@@ -44,13 +43,7 @@ in the cluster. The environment ports are:
          <td rowspan="4">cemanager</td>
          <td>loadbalancer</td>
          <td>8080</td>
-         <td>envproxy</td>
          <td>N/A</td>
-      </tr>
-      <tr>
-         <td>envproxy</td>
-         <td>8080</td>
-         <td>dashboard</td>
          <td>N/A</td>
       </tr>
       <tr>
@@ -64,13 +57,6 @@ in the cluster. The environment ports are:
          <td>N/A</td>
          <td>loadbalancer</td>
          <td>80, 443</td>
-      </tr>
-      <tr>
-         <td rowspan="3">envproxy</td>
-         <td>loadbalancer</td>
-         <td>8080</td>
-         <td>cemanager</td>
-         <td>8080</td>
       </tr>
       <tr>
          <td>N/A</td>
@@ -94,32 +80,7 @@ in the cluster. The environment ports are:
       <tr>
          <td>N/A</td>
          <td>N/A</td>
-         <td>envproxy</td>
-         <td>N/A</td>
-      </tr>
-      <tr>
-         <td>N/A</td>
-         <td>N/A</td>
          <td>resource</td>
-         <td>N/A</td>
-      </tr>
-      <tr>
-         <td rowspan="3">resource</td>
-         <td>envproxy</td>
-         <td>13337</td>
-         <td>loadbalancer</td>
-         <td>80, 443</td>
-      </tr>
-      <tr>
-         <td>envproxy</td>
-         <td>26337</td>
-         <td>N/A</td>
-         <td>N/A</td>
-      </tr>
-      <tr>
-         <td>envproxy</td>
-         <td>12212</td>
-         <td>N/A</td>
          <td>N/A</td>
       </tr>
 <table>

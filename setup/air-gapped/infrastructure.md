@@ -54,10 +54,10 @@ docker run -d -p 443:5000 \
 
 ## Configuring the Kubernetes Node
 
-Before the Kubernetes node can accept local images, it needs to consider the
-new `registry.crt` file as trusted. The specific locations and methods to store
-and trust the certificate vary depending on the Linux distribution and the
-container runtime, but here is a partial list to help you get started:
+Before the Kubernetes node can accept local images, it needs to consider the new
+`registry.crt` file as trusted. The specific locations and methods to store and
+trust the certificate vary depending on the Linux distribution and the container
+runtime, but here is a partial list to help you get started:
 
 ```plaintext
 /usr/local/share/ca-certificates/registry.crt
@@ -127,13 +127,12 @@ certs:
     key: "registry.crt"
 ```
 
-Then, add the flag `-f registry-cert-values.yml` to the end of the `helm install`
-or `helm upgrade` command to include the new secrets file:
+Then, add the flag `-f registry-cert-values.yml` to the end of the
+`helm install` or `helm upgrade` command to include the new secrets file:
 
 ```console
 helm install --wait --atomic --debug --namespace coder coder . \
    --set cemanager.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
-   --set envproxy.image=$REGISTRY_DOMAIN_NAME/coderenvs/coder-service:<version> \
    --set envbox.image=$REGISTRY_DOMAIN_NAME/coderenvs/envbox:<version> \
    --set timescale.image=$REGISTRY_DOMAIN_NAME/coderenvs/timescale:<version> \
    --set dashboard.image=$REGISTRY_DOMAIN_NAME/coderenvs/dashboard:<version> \
