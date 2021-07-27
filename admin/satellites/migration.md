@@ -73,6 +73,8 @@ At this point, rebuild a workspace to ensure connectivity between the workspace
 provider and the workspace. Note that latency to the workspace may be negatively
 impacted until users connect to the new satellite deployments.
 
+Repeat this step for each of your workspace providers.
+
 ### Step 3: Annotate the Kubernetes resources
 
 At this point, the old `envproxy`-based workspace provider deployment (and its
