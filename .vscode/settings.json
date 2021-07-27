@@ -4,5 +4,6 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.markdownlint": true
-  }
+  },
+  "rewrap.autoWrap.enabled": true
 }
