@@ -41,7 +41,7 @@ Before proceeding, please make sure that:
   - Port 80 (HTTP)
   - Port 443 (HTTPS)
   - Port 5349 (TURNS)
-  - **Optional**: Port 8443 (Kubernetes API)
+  - **Optional**: Port 443 (Kubernetes API)
 
 ## Step 1: Change the default SSH port
 
@@ -127,7 +127,7 @@ After copying this file from the K3s node to your local workstation:
 
 - Ensure that you replace `localhost` or `127.0.0.1` with the host's public IP
   address in the copied file
-- Ensure that your firewall permits traffic through port `8443`
+- Ensure that your firewall permits traffic through port `443`
 
 ```console
 # on the host machine:

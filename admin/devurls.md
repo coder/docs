@@ -22,15 +22,14 @@ your cluster, you'll need to modify your:
 
 ### Step 1: Modify the Helm chart
 
-Set `devurls.host` to a wildcard domain pointing to your ingress controller:
+Set `devurls.host` to a wildcard domain:
 
 ```shell
-helm upgrade coder coder/coder --set devurls.host="*.my-custom-domain.io"
+helm upgrade coder coder/coder --set coderd.devurlsHost="*.my-custom-domain.io"
 ```
 
-If you're using the default ingress controller, specifying a value for
-`devurls.host` automatically adds a rule that routes dev URL requests to the
-user's workspace:
+**Note:** If you are providing an ingress controller, then you will need to add
+the rule manually to the ingress.
 
 ```yaml
  - host: "*.my-custom-domain.io"
@@ -38,19 +37,26 @@ user's workspace:
       paths:
       - path: /
         backend:
-          serviceName: envproxy
+          serviceName: coderd
           servicePort: 8080
 ```
-
-If you are providing an ingress controller, then you will need to add the rule
-manually.
 
 ### Step 2: Modify the wildcard DNS record
 
 The final step to enabling dev URLs is to update your wildcard DNS record. Get
-the **ingress IP address** using `kubectl --namespace coder get ingress` and
-point your wildcard DNS record (e.g., \*.my-custom-domain.io) to the ingress IP
-address.
+the **LoadBalancer IP address** using `kubectl --namespace coder get svc` and
+point your wildcard DNS record (e.g., \*.my-custom-domain.io) to the
+**external-IP** value found in the `ingress-nginx` or the `coderd` lines.
+
+## Step 3 (Optional): Add a TLS certificate
+
+For secure (HTTPS) dev URLs, you can add (or generate) a TLS certificate for the
+wildcard domain.
+
+- See our
+  [guide for creating a TLS certificate using LetsEncrypt](../guides/ssl-certifcates)
+- To add a custom certificate, refer to our
+  [Helm chart](https://github.com/cdr/enterprise-helm)
 
 ## Setting dev URL access permissions
 
@@ -87,7 +93,7 @@ scroll down to **Dev URL Access Permissions**.
 You can set the maximum access level, but developers may choose to restrict
 access further.
 
-For example, if you set the maximum access level as **Authenticated**, then any
+For example, if you set the maximum access level as **Authenticated**, then all
 dev URLs created for workspaces in your Coder deployment will be accessible to
 any authenticated Coder user.
 

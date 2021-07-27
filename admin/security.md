@@ -29,3 +29,12 @@ enabling this setting if you are serving Coder over HTTPS.
   https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 
 ![Toggle Secure Cookie](../assets/admin/secure-cookie.png)
+
+## SSH
+
+You can choose the SSH keygen algorithm Coder uses when generating SSH keys for
+users.
+
+Coder allows you to choose between **Ed25519** and **ECDSA**.
+
+![Choose SSH keygen algorithm](../assets/admin/ssh-keygen-algo.png)

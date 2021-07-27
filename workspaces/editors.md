@@ -8,9 +8,10 @@ There are five primary ways you can connect an IDE to your Coder workspace:
 
 1. [VS Code remote SSH](editors.md#vs-code-remote-ssh) with local VS Code
 1. [VS Code in the browser](editors.md#vs-code-in-the-browser) with code-server
-1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with JetBrains
-   Projector
+1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with
+   JetBrains Projector
 1. [JetBrains' Code With Me](editors.md#code-with-me)
+1. [RStudio](editors.md#rstudio)
 1. _Any_ local editor with
    [1-way file synchronization](../cli/file-sync.md#one-way-file-sync) or
    [2-way file synchronization over SSH](../cli/file-sync.md#two-way-file-sync)
@@ -91,9 +92,9 @@ workspace with the following resources at a minimum:
 collaborate with others in real-time on your project and enables pair
 programming.
 
-> You must have a [JetBrains IDE
-installed](../admin/workspace-management/installing-jetbrains.md) onto your
-[image](../images/index.md) to use Code With Me.
+> You must have a
+> [JetBrains IDE installed](../admin/workspace-management/installing-jetbrains.md)
+> in your [image](../images/index.md) to use Code With Me.
 
 ### Getting started
 
@@ -103,8 +104,8 @@ To set up a Code With Me session:
    session with other participants.
 1. The participants use the information provided by the host to join the session
    and request access.
-1. The host accepts the participants' request to join the session created
-   by the host.
+1. The host accepts the participants' request to join the session created by the
+   host.
 
 #### Step 1: Start and host a session
 
@@ -119,7 +120,7 @@ To create and host a Code With Me session:
 
 1. Click the **Code With Me** icon at the top of your IDE.
 
-    ![Code With Me icon](../assets/workspaces/code-with-me-2.png)
+   ![Code With Me icon](../assets/workspaces/code-with-me-2.png)
 
 1. Select **Enable Access and Copy Invitation Link...**.
 
@@ -168,13 +169,91 @@ If you've received a link to join a Code With Me session as a participant:
 #### Step 3: Accept the request to the join
 
 If you're the host of the session, you'll see a request that the other
-participant wants to join your project, the permissions you've
-granted to the other user, and a security code.
+participant wants to join your project, the permissions you've granted to the
+other user, and a security code.
 
-   ![Security code verification for host](../assets/workspaces/code-with-me-9.png)
+![Security code verification for host](../assets/workspaces/code-with-me-9.png)
 
 Verify that the security code you see matches the one shown to your
 participants. If they do, click **Accept** to proceed.
 
 At this point, you'll be able to share your project and work with your partner
 in real-time.
+
+## RStudio
+
+Coder supports [RStudio](rstudio.com). To create a workspace that lets you use
+RStudio:
+
+1. Create a [custom image](../guides/customization/custom-workspace) with
+   RStudio installed, `rserver` and `pgrep` in `PATH`, and RStudio configured to
+   run on the default port (`8787`).
+
+   To do this, you can refer to the sample Dockerfile below, which installs
+   RStudio Server Open Source and creates a Unix user to log in with username
+   `coder` and password `rstudio`.
+
+   ```Dockerfile
+   FROM ubuntu:20.04
+
+   USER root
+
+   # Install dependencies
+   RUN apt-get update && \
+   DEBIAN_FRONTEND="noninteractive" apt-get install --yes \
+   bash \
+   sudo \
+   git \
+   ssh \
+   locales \
+   wget \
+   r-base \
+   gdebi-core
+
+   # Install RStudio
+   RUN wget
+   https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.4.1717-amd64.deb
+   && \
+   gdebi --non-interactive rstudio-server-1.4.1717-amd64.deb
+
+   # Create coder user
+   RUN useradd coder \
+   --create-home \
+   --shell=/bin/bash \
+   --uid=1000 \
+   --user-group && \
+   echo "coder ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers.d/nopasswd
+
+   # Ensure rstudio files can be written to by the coder user.
+   RUN chown -R coder:coder /var/lib/rstudio-server
+   RUN echo "server-pid-file=/tmp/rstudio-server.pid" >> /etc/rstudio/rserver.conf
+   RUN echo "server-data-dir=/tmp/rstudio" >> /etc/rstudio/rserver.conf
+
+   # Assign password "rstudio" to coder user.
+   RUN echo 'coder:rstudio' | chpasswd
+
+   # Assign locale
+   RUN locale-gen en_US.UTF-8
+
+   # Run as coder user
+   USER coder
+
+   # Add RStudio to path
+   ENV PATH /usr/lib/rstudio-server/bin:${PATH}
+   ```
+
+1. [Create a workspace](getting-started.md#2-create-a-workspace) using the image
+   you created in the previous step.
+
+1. At this point, you can go to **Applications** to launch RStudio.
+
+   ![Applications with RStudio launcher](../assets/workspaces/rstudio.png)
+
+   Sign in using the Unix user (whose username and password you defined in your
+   image).
+
+   > RStudio may take a few additional seconds to start launch after the
+   > workspace is built.
+   >
+   > All RStudio data is stored in the home directory associated with the user
+   > you sign in as

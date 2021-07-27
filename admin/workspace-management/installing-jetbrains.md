@@ -1,6 +1,6 @@
 ---
-title: "JetBrains IDE installation"
-description: Learn how to install JetBrains IDEs in images.
+title: "IDE installation"
+description: Learn how to install IDEs in images.
 ---
 
 The process of installing an IDE onto your [image](../../images/index.md) is
@@ -24,6 +24,9 @@ PATH:
 - PhpStorm
 - PyCharm
 - Rider
+- RStudio (see
+  [rocker-versioned](https://github.com/rocker-org/rocker-versioned/tree/master/rstudio)
+  for sample images containing RStudio)
 - RubyMine
 - Code OSS (VS Code, installed by default)
 - WebStorm

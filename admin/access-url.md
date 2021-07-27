@@ -18,11 +18,10 @@ general steps required are as follows:
 kubectl get all -n <your_namespace> -o wide
 ```
 
-Find the **service/ingress-nginx** line and copy the **external IP** value
-shown.
+Find the **service/coderd** line, and copy the **external IP** value shown.
 
-1. Get the ingress IP address and point your DNS records from your custom domain
-   to the external IP address you obtained in the previous step.
+Point your DNS records from your custom domain to the external IP address you
+obtained in the previous step.
 
 > If your custom domain uses the HTTPS protocol, make sure that you have
 > [TLS certificates](../guides/tls-certificates/index.md) for use with your
@@ -35,8 +34,7 @@ When changing your access URL, you'll need to
 [redeploy Coder](../setup/updating.md):
 
 helm upgrade coder coder/coder \
- --set devurls.host="\*.example.com" \
- --set ingress.host="coder.example.com" \
+ --set devurlsHost="\*.example.com"
 
 > See the [enterprise-helm repo](https://github.com/cdr/enterprise-helm) for
 > more information on Coder's Helm charts.

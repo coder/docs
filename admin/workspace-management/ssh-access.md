@@ -107,16 +107,14 @@ _=/var/tmp/coder/envagent
 
 ## Disable SSH access
 
-If you would like to disable SSH access, you can either:
+If you would like to disable SSH access:
 
-- Run `helm install --set ssh.enable=false`
-- Add the following to your helm chart and run `helm install -f values.yaml`
+1. Log into the Coder UI with a site manager account, and go to **Manage** >
+   **Providers**.
+1. Select the workspace provider where you want to disable SSH. Click on the
+   **vertical ellipses** to its right and select **edit**.
+1. Scroll down to the **Features** section and toggle **External Connect** to
+   **off**.
 
-```yaml
-ssh:
-  enable: false
-```
-
-> **For Cloudflare users:** Cloudflare's **proxied** mode does _not_ support
-> SSH. If you're using Cloudflare for TLS, add your certificates to your cluster
-> and use the **DNS only** mode to allow SSH.
+Repeat these steps for each workspace provider where you want to disable SSH
+connections.
