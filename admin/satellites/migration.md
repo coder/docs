@@ -15,14 +15,6 @@ the Networking v2 architecture present in Coder 1.21.x and later.
 > v1.21.0), see
 > [Rearchitecting Coder’s networking with WebRTC](https://coder.com/blog/rearchitecting-coder-networking-with-webrtc).
 
-## Dependencies
-
-Install the following dependencies if you haven't already:
-
-- [Coder CLI](../../cli/installation.md)
-- [Helm](https://helm.sh/docs/intro/install/)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-
 ## Overview
 
 Each region that currently has an `envproxy`-based workspace provider deployment
@@ -39,6 +31,14 @@ Coder deployment closed to them geographically. Therefore, they should use the
 access URL for the satellite deployment (e.g., those in the
 `australia-southeast1` region would use `coder-sydney.example.com`) instead of
 the access URL for the primary Coder deployment (e.g., `coder.example.com`)
+
+## Dependencies
+
+Install the following dependencies if you haven't already:
+
+- [Coder CLI](../../cli/installation.md)
+- [Helm](https://helm.sh/docs/intro/install/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 ## Migration
 
