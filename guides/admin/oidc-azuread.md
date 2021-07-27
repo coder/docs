@@ -27,8 +27,7 @@ information you need to provide to Coder.
 1. Click **New registration**.
 1. Provide a **Name** for your application.
 1. Select the access option that best fits your needs; the **Default Directory
-   only - Single tenant** option should be sufficient for testing, but you may
-   need a **multitenant** option for production environments.
+   only - Single tenant** should be used unless your AD requires multi-tenant.
 
    ![Register your app](../../assets/guides/admin/register.png)
 
