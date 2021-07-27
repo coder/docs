@@ -15,12 +15,48 @@ dev URLs with Coder.
 ## Enabling the use of dev URLs
 
 [Dev URLs](../workspaces/devurls.md) is an opt-in feature. To enable dev URLs in
-your cluster, you'll need to set `devurls.host` to a wildcard domain pointing to
-your ingress controller:
+your cluster, you'll need to modify your:
+
+1. Helm chart
+1. Wildcard DNS record
+
+### Step 1: Modify the Helm chart
+
+Set `devurls.host` to a wildcard domain:
 
 ```shell
-helm upgrade coder coder/coder --set devurlsHost="*.my-custom-domain.io"
+helm upgrade coder coder/coder --set coderd.devurlsHost="*.my-custom-domain.io"
 ```
+
+**Note:** If you are providing an ingress controller, then you will need to add
+the rule manually to the ingress.
+
+```yaml
+ - host: "*.my-custom-domain.io"
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: coderd
+          servicePort: 8080
+```
+
+### Step 2: Modify the wildcard DNS record
+
+The final step to enabling dev URLs is to update your wildcard DNS record. Get
+the **LoadBalancer IP address** using `kubectl --namespace coder get svc` and
+point your wildcard DNS record (e.g., \*.my-custom-domain.io) to the
+**external-IP** value found in the `ingress-nginx` line.
+
+## Step 3 (Optional): Add a TLS certificate
+
+For secure (HTTPS) dev URLs, you can add (or generate) a TLS certificate for the
+wildcard domain.
+
+- See our
+  [guide for creating a TLS certificate using LetsEncrypt](../guides/ssl-certifcates)
+- To add a custom certificate, refer to our
+  [Helm chart](https://github.com/cdr/enterprise-helm)
 
 ## Setting dev URL access permissions
 
@@ -57,7 +93,7 @@ scroll down to **Dev URL Access Permissions**.
 You can set the maximum access level, but developers may choose to restrict
 access further.
 
-For example, if you set the maximum access level as **Authenticated**, then any
+For example, if you set the maximum access level as **Authenticated**, then all
 dev URLs created for workspaces in your Coder deployment will be accessible to
 any authenticated Coder user.
 
