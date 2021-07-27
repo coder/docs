@@ -46,7 +46,7 @@ the rule manually to the ingress.
 The final step to enabling dev URLs is to update your wildcard DNS record. Get
 the **LoadBalancer IP address** using `kubectl --namespace coder get svc` and
 point your wildcard DNS record (e.g., \*.my-custom-domain.io) to the
-**external-IP** value found in the `ingress-nginx` line.
+**external-IP** value found in the `ingress-nginx` or the `coderd` lines.
 
 ## Step 3 (Optional): Add a TLS certificate
 

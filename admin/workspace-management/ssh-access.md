@@ -112,7 +112,7 @@ If you would like to disable SSH access:
 1. Log into the Coder UI with a site manager account, and go to **Manage** >
    **Providers**.
 1. Select the workspace provider where you want to disable SSH. Click on the
-   **vertical ellipses** to its right.
+   **vertical ellipses** to its right and select **edit**.
 1. Scroll down to the **Features** section and toggle **External Connect** to
    **off**.
 
