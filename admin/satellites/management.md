@@ -65,8 +65,8 @@ coderd:
   satellite:
     enable: "true"
     primaryURL: "https://coder.example.com"
-    accessURL: "https://eu-west.example.com"
-  devurlsHost: "*.eu-west.example.com"
+    accessURL: "https://coder-eu-west.example.com"
+  devurlsHost: "*.coder-eu-west.example.com"
   tls:
     hostSecretName: "coder-satellite-cert"
     devurlsHostSecretName: "coder-satellite-cert"
