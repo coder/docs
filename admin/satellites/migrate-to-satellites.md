@@ -1,6 +1,6 @@
 ---
 title: Migrate to satellite deployments
-description:
+description: |
   Learn the steps for upgrading to satellites for workspace providers deployed
   before the 1.21 release.
 ---
@@ -52,11 +52,14 @@ The first step will be to deploy new satellite deployments in each region you
 wish to expand into. Follow the steps outlined in
 [satellite management](./management.md) for creating a Satellite deployment. It
 is recommended to deploy the satellite into a different namespace from the
-existing workspace provider. The access URL for these deployments will be used
-by developers to connect to the Satellites instead of the primary Coder
-deployment. A common pattern for hostnames may be `coder.example.com` for the
-primary Coder deployment and `coder-sydney.example.com` for the
-`australia-southeast1` region.
+existing workspace provider. In fact, the satellite deployment has no
+dependencies on the workspaces and can be deployed to any namespace and any
+cluster.
+
+The access URL for these deployments will be used by developers to connect to
+the Satellites instead of the primary Coder deployment. A common pattern for
+hostnames may be `coder.example.com` for the primary Coder deployment and
+`coder-sydney.example.com` for the `australia-southeast1` region.
 
 ## Enable NetworkingV2
 
@@ -65,7 +68,7 @@ the NetworkingV2 toggle and save.
 
 Rebuild a workspace and ensure connectivity to the workspace before moving onto
 the next steps. Note that latency to the workspace may be negatively impacted in
-this step until users are connecting to the new replica deployments.
+this step until users are connecting to the new satellite deployments.
 
 ## Using the satellite access URLs
 
@@ -79,6 +82,10 @@ The old envproxy-based workspace provider deployment is no longer in use.
 However the Kubernetes ServiceAccount, Role, and RoleBindings created by the
 helm chart are still required. To safely remove the unused helm chart, we will
 add an annotation to the resources we'd like to keep first.
+
+WARNING: If these resources are removed the existing workspace provider will
+become non-functional and a new workspace provider will need to be created in
+it's place.
 
 Ensure the following commands are ran with the namespace flag of the
 `coder/workspace-provider` helm chart. You can check by running

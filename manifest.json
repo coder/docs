@@ -235,6 +235,9 @@
           "children": [
             {
               "path": "./admin/satellites/management.md"
+            },
+            {
+              "path": "./admin/satellites/migrate-to-satellites.md"
             }
           ]
         },
