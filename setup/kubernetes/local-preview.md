@@ -70,7 +70,8 @@ The local preview option does not work in an air-gapped deployment.
 
 ## Option 1: Kind
 
-To install Coder, run:
+The kind install script currently installs Coder v1.18.1 and is currently
+incompatible with Coder v1.21. To install Coder, run:
 
 ```console
 curl -fsSL https://coder.com/try.sh | PORT="80" sh -s --
@@ -98,10 +99,6 @@ Password: yfu...yu2
 ```
 
 Visit the URL, and log in using the provided credentials.
-
-> Note: For Coder versions v1.21+, you will need to update your access URL (in
-> Manage > Admin) to your private IP address (e.g `192.168.1.x`) instead of
-> localhost.
 
 ### Dev URLs
 
