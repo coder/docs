@@ -179,7 +179,7 @@ following command instead:
 ```console
 helm upgrade --install coder coder/coder --namespace coder \
   --version=<CODER_VERSION> \
-  --set coderd.devurlsHost="coder.example.com" \
+  --set coderd.devurlsHost="*.coder.example.com" \
   --set coderd.tls.devurlsHostSecretName="coder-certs" \
   --set coderd.tls.hostSecretName="coder-certs" \
   --wait
