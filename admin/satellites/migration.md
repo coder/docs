@@ -75,11 +75,11 @@ Repeat this step for each of your workspace providers.
 
 ### Step 3: Ensure connectivity
 
-Developers located in the corresponding regions should now be able to connect
-via the satellite's hostname, like `coder-sydney.example.com` for example, and
-have a low latency experience when connecting to the workspaces nearby.
+Developers should now be able to connect to their nearest region using the
+satellite's hostname (e.g., `coder-sydney.example.com`) and can expect low
+latency when using their workspaces.
 
-The `coder/workspace-provider` helm chart is not updated after release 1.20. To
-allow proper rollback opportunites the helm chart must stay deployed for the
-1.21 release, and instructions on how to clean up this helm chart will be
-provided in the following 1.22 Coder release.
+> As of v1.21, Coder will no longer update the `coder/workspace-provider` Helm
+> chart. However, this Helm chart must stay deployed to allow for rollback
+> opportunities. Coder will issue instructions on how to remove this chart
+> beginning with v1.22.
