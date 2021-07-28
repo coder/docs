@@ -54,7 +54,7 @@ For secure (HTTPS) dev URLs, you can add (or generate) a TLS certificate for the
 wildcard domain.
 
 - See our
-  [guide for creating a TLS certificate using LetsEncrypt](../guides/ssl-certifcates)
+  [guide for creating a TLS certificate using LetsEncrypt](../guides/tls-certificates)
 - To add a custom certificate, refer to our
   [Helm chart](https://github.com/cdr/enterprise-helm)
 
