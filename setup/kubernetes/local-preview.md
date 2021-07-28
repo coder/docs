@@ -70,16 +70,17 @@ The local preview option does not work in an air-gapped deployment.
 
 ## Option 1: Kind
 
-The kind install script currently installs Coder v1.18.1 and is currently
-incompatible with Coder v1.21. To install Coder, run:
+**Note:** The kind script installs Coder v1.18.1 and is currently incompatible
+with Coder v1.21.
+
+To install Coder, run:
 
 ```console
 curl -fsSL https://coder.com/try.sh | PORT="80" sh -s --
 ```
 
-> Note: you can edit the value of `PORT` to control where the Coder dashboard
-> will be available. However, dev URLs will only work when `PORT` is set to
-> `80`.
+> You can edit the value of `PORT` to control where the Coder dashboard will be
+> available. However, dev URLs will only work when `PORT` is set to `80`.
 
 When the installation process completes, you'll see the URL and login
 credentials you need to access Coder:
@@ -98,7 +99,7 @@ User:     admin
 Password: yfu...yu2
 ```
 
-Visit the URL, and log in using the provided credentials.
+Visit the URL shown, and log in using the provided credentials.
 
 ### Dev URLs
 
@@ -215,9 +216,9 @@ helm upgrade --install coder \
     coder/coder
 ```
 
-> Note: For Coder versions v1.21+, you will need to update your access URL (in
-> Manage > Admin) to your private IP address (e.g `192.168.1.x`) instead of
-> localhost.
+> For Coder v1.21+, you will need to update your access URL (go to **Manage** >
+> **Admin**) to your private IP address (e.g `192.168.1.x`) instead of using
+> `localhost`.
 
 ## Removing Coder
 
