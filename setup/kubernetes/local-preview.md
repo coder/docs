@@ -97,8 +97,11 @@ User:     admin
 Password: yfu...yu2
 ```
 
-Visit the URL, and log in using the provided credentials. The platform is
-automatically configured for you, so there's no first-time setup to do.
+Visit the URL, and log in using the provided credentials.
+
+> Note: For Coder versions v1.21+, you will need to update your access URL (in
+> Manage > Admin) to your private IP address (e.g `192.168.1.x`) instead of
+> localhost.
 
 ### Dev URLs
 
@@ -212,13 +215,12 @@ the error, reinstall Coder using the following Helm values:
 
 ```console
 helm upgrade --install coder \
-    --set ingress.useDefault=false \
-    --set coderd.resources.requests.cpu="0m" \
-    --set coderd.resources.requests.memory="0Mi" \
-    --set timescale.resources.requests.cpu="0m" \
-    --set timescale.resources.requests.memory="0Mi" \
     coder/coder
 ```
+
+> Note: For Coder versions v1.21+, you will need to update your access URL (in
+> Manage > Admin) to your private IP address (e.g `192.168.1.x`) instead of
+> localhost.
 
 ## Removing Coder
 
