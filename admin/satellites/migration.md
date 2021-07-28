@@ -46,8 +46,6 @@ To migrate, you must:
 
 1. Deploy satellites in each additional region
 1. Enable Networking v2 for each workspace provider
-1. Annotate the Kubernetes resources
-1. Uninstall the `envproxy`-based Helm chart
 
 Though we expect you to see no downtime, end-users may experience negative
 impact to latency during the migration process for their region.
@@ -74,45 +72,3 @@ provider and the workspace. Note that latency to the workspace may be negatively
 impacted until users connect to the new satellite deployments.
 
 Repeat this step for each of your workspace providers.
-
-### Step 3: Annotate the Kubernetes resources
-
-At this point, the old `envproxy`-based workspace provider deployment (and its
-Helm chart) is no longer in use. However, Coder still requires the Kubernetes
-`ServiceAccount`, `Role`, and `RoleBindings` created by the Helm chart. These
-are required for Coder to authenticate to the Kubernetes cluster and provision
-workspaces.
-
-To safely remove the unused Helm chart, add an annotation to the resources you
-need to keep.
-
-> **WARNING**: If these resources are removed, the existing workspace provider
-> becomes non-functional, and you will need to create a new workspace provider
-> in its place.
-
-Ensure that you run the following commands with the namespace flag of the
-`coder/workspace-provider` helm chart. You can verify this by running:
-
-```console
-helm list -n <NAMESPACE>
-```
-
-Add the following annotations to the Kubenetes resources:
-
-```console
-kubectl annotate serviceaccount coder "helm.sh/resource-policy=keep" -n <NAMESPACE>
-kubectl annotate role coder "helm.sh/resource-policy=keep" -n <NAMESPACE>
-kubectl annotate rolebinding coder "helm.sh/resource-policy=keep" -n <NAMESPACE>
-```
-
-Now, the authentication resources will be protected when you run
-`helm uninstall`.
-
-### Step 4: Uninstall the workspace provider Helm chart
-
-Uninstall the `coder/workspace-provider` Helm chart (be sure to update the
-following with your namespace):
-
-```console
-helm uninstall coder-workspace-provider -n <NAMESPACE>
-```
