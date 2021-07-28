@@ -72,3 +72,14 @@ provider and the workspace. Note that latency to the workspace may be negatively
 impacted until users connect to the new satellite deployments.
 
 Repeat this step for each of your workspace providers.
+
+### Step 3: Ensure connectivity
+
+Developers should now be able to connect to their nearest region using the
+satellite's hostname (e.g., `coder-sydney.example.com`) and can expect low
+latency when using their workspaces.
+
+> As of v1.21, Coder will no longer update the `coder/workspace-provider` Helm
+> chart. However, this Helm chart must stay deployed to allow for rollback
+> opportunities. Coder will issue instructions on how to remove this chart
+> beginning with v1.22.
