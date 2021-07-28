@@ -6,7 +6,8 @@ description: Learn how to use Azure's Active Directory SSO with Coder.
 This article walks you through setting up single sign-on to Coder using Azure's
 Active directory.
 
-Configuring [Coder's OpenID Connect](../../admin/access-control/index.md#openid-connect)
+Configuring
+[Coder's OpenID Connect](../../admin/access-control/index.md#openid-connect)
 feature requires you to provide three pieces of information from Azure:
 
 - Client ID
@@ -26,9 +27,8 @@ information you need to provide to Coder.
 
 1. Click **New registration**.
 1. Provide a **Name** for your application.
-1. Select the access option that best fits your needs; the **Default Directory
-   only - Single tenant** option should be sufficient for testing, but you may
-   need a **multitenant** option for production environments.
+1. Select the access option that best fits your needs; use **Default Directory
+   only - Single tenant** unless your AD requires multi-tenancy.
 
    ![Register your app](../../assets/guides/admin/register.png)
 
@@ -97,8 +97,8 @@ Be sure to keep `v2.0`, though you must omit the `/` from the end.
 
 ## Step 3: Configure Coder authentication
 
-Once you've saved your Azure values, you can complete the remaining steps using the
-Coder UI.
+Once you've saved your Azure values, you can complete the remaining steps using
+the Coder UI.
 
 1. Log in to Coder, and go to **Manage** > **Admin** > **Authentication**.
 1. In the top-most drop-down box, select **OpenID Connect**.
