@@ -18,7 +18,7 @@ Before proceeding, please make sure that you have the following installed:
 1. [Docker](https://hub.docker.com/search?q=docker&type=edition&offering=community)
 1. [helm](https://helm.sh/docs/intro/install)
 1. [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) or
-   [Docker Desktop](docker-desktop-url)
+   [Docker Desktop][docker-desktop-url]
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
 ## Limitations
@@ -187,14 +187,14 @@ protection. Here's how to do this:
 
 ## Option 2: Docker Desktop
 
-[Docker Desktop](docker-desktop-url) includes a standalone Kubernetes server and
+[Docker Desktop][docker-desktop-url] includes a standalone Kubernetes server and
 client that you can use to run Coder.
 
-1. [Enable the Kubernetes cluster](docker-k8s-docs) inside Docker.
+1. [Enable the Kubernetes cluster][docker-k8s-docs] inside Docker.
 
 1. Ensure that Docker has enough resources allocated to meet
-   [Coder's requirements](https://coder.com/docs/coder/v1.20/setup/requirements)
-   (you can do so by going to Docker preferences).
+   [Coder's requirements](../requirements) (you can do so by going to Docker
+   preferences).
 
    ![Docker Desktop Resources](../../assets/setup/docker-desktop-resources.png)
 
