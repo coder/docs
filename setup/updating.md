@@ -68,21 +68,36 @@ To update Coder, follow these steps:
 
    ```
 
-1. Pull your updated Helm chart and
-   [make the the following changes](../guides/admin/helm-charts.md):
+1. [Update your Helm chart](../guides/admin/helm-charts.md) as follows:
 
-   a. Rename all instances of `cemanager` to `coderd`. b. Remove all
-   `dashboard.*` values. Route any traffic to `coderd`. c. Remove all
-   `envproxy.*` values. Route any traffice to `coderd`. d. Redirect all traffic
-   from your custom ingress to `coderd`. e. `coderd` now serves TLS
-   certificates; to upgrade the NGINX ingress controller, set
-   `coderd.serviceNext` to `true`. f. Move TCP port `8080` to `80`. g. Move TCP
-   port `8443` to `443`.
+   Rename all instances of `cemanager` to `coderd`.
 
-1. Upgrade workspaces to use Coder's new Networking v2 functionality. If all of
-   your workspaces are local, go to Manage > Providers. Find your provider,
-   click the **vertical ellipses** to its right, and click **Edit**. Toggle
-   **Networking v2** to enable.
+   Remove all `dashboard.*` values. Route any traffic to `coderd`.
+
+   Remove all `envproxy.*` values. Route any traffic to `coderd`.
+
+   Redirect all traffic from your custom ingress to `coderd`.
+
+   `coderd` now serves TLS certificates; to upgrade the NGINX ingress
+   controller, set `coderd.serviceNext` to `true`. (See our
+   [TLS certificates](../guides/tls-certificates/index.md) for more information
+   on how to configure Coder to issue and use certificates.)
+
+   Move TCP port `8080` to `80`.
+
+   Move TCP port `8443` to `443`.
+
+1. Update Coder with your new Helm chart values:
+
+   ```console
+   helm upgrade coder coder/coder -n coder --version=<VERSION> --values current-values.yaml
+   ```
+
+1. Upgrade workspaces to use Coder's new Networking v2 functionality.
+
+   If all of your workspaces are local, go to Manage > Providers. Find your
+   provider, click the **vertical ellipses** to its right, and click **Edit**.
+   Toggle **Networking v2** to enable.
 
    Alternatively, if your workspaces are distributed, migrate the providers to
    [satellites](../admin/satellites/index.md).
