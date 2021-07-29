@@ -119,6 +119,11 @@ isolation between the user's workspace container and its outer, supervising
 container is what provides
 [strong isolation](https://github.com/nestybox/sysbox/blob/master/docs/user-guide/security.md).
 
+## Images hosted in private registries
+
+Please note that CVM-enabled workspaces cannot be created using images hosted in
+a private registry unless you permit unauthenticated access to the images.
+
 ## Image configuration
 
 The following sections show how you can configure your image to include systemd
