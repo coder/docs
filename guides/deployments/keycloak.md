@@ -12,8 +12,6 @@ Administration Guide's
 [Identity Brokering](https://www.keycloak.org/docs/latest/server_admin/#_identity_broker)
 section.
 
-![Identity broker process](../../assets/guides/deployments/SAML-process.png)
-
 ## Step 1: Create a new Realm in Keycloak
 
 The first part of configuring the identity broker is to add a new Realm. This
@@ -69,7 +67,7 @@ Realm will be where we will add the
    ([this Keycloak document](https://www.keycloak.org/docs/latest/server_admin/#saml-v2-0-identity-providers)
    provides additional information about adding a SAML 2.0 Identity Provider).
 
-   ![Keycloak identity providers](../../assets/guides/deployments/keycloak-identity-providers.png)
+   ![Keycloak identity providers](../../assets/guides/deployments/SAML-config-3.png)
 
 1. On the IdP configuration page, specify an **Alias** to use for your IdP
    provider.
@@ -77,7 +75,7 @@ Realm will be where we will add the
 1. Scroll to the bottom of the configuration page and upload the IdP metadata
    you exported from JumpCloud.
 
-   ![Keycloak metadata import](../../assets/guides/deployments/keycloak-metadata-import.png)
+   ![Keycloak metadata import](../../assets/guides/deployments/SAML-config-4.png)
 
 ### Optional: Specify JumpCloud as the default IdP
 
@@ -85,27 +83,27 @@ Realm will be where we will add the
 
 1. Select the **Browser** flow from the dropdown in the top-left.
 
-   ![Default Identity Provider](../../assets/guides/deployments/keycloak-default-IdP.png)
+   ![Default Identity Provider](../../assets/guides/deployments/SAML-config-5.png)
 
 1. Find the **Identity Provider Redirector** row and click **Actions** >
    **Config**.
 
-   ![Identity Provider Redirector](../../assets/guides/deployments/keycloak-IdP-redirector.png)
+   ![Identity Provider Redirector](../../assets/guides/deployments/SAML-config-6.png)
 
 1. Set **Alias** and **Default Identity Provider** to the alias of the identity
    provider you created earlier.
 
-   ![Authenticator Config](../../assets/guides/deployments/keycloak-authenticator-config.png)
+   ![Authenticator Config](../../assets/guides/deployments/SAML-config-7.png)
 
 ## Step 4: Configure the OpenID Connect (OIDC) Connector in Keycloak
 
 1. Navigate to **Clients** and click **Create**.
 
-   ![Create Client Connector](../../assets/guides/deployments/keycloak-create-client.png)
+   ![Create Client Connector](../../assets/guides/deployments/SAML-config-8.png)
 
 1. Add a new OIDC Client to point to your Coder deployment and click **Save**.
 
-   ![Add OIDC client](../../assets/guides/deployments/keycloak-add-client.png)
+   ![Add OIDC client](../../assets/guides/deployments/SAML-config-9.png)
 
 1. Once on the **Clients** configuration page, set the **Access Type** to
    **Confidential** and click **Save**.
@@ -113,7 +111,7 @@ Realm will be where we will add the
 1. Your client configuration should look something like the following (make sure
    that all of the values point to your Coder deployment):
 
-   ![Client Configuration](../../assets/guides/deployments/keycloak-client-config.png)
+   ![Client Configuration](../../assets/guides/deployments/SAML-config-10.png)
 
 At this point, you can configure your Coder deployment to use the Keycloak OIDC
 Connector.
@@ -129,7 +127,7 @@ Connector.
 1. Add the **Secret** to the **Client Secret** field (you can get this value
    from the **Credentials** page in the Keycloak Clients Configuration).
 
-   ![Keycloak Secret](../../assets/guides/deployments/keycloak-secret.png)
+   ![Keycloak Secret](../../assets/guides/deployments/SAML-config-11.png)
 
 1. Add your Keycloak instance and Realm as the `Issuer`. This will be a URL
    formatted as follows: `https://<my-keycloak-url>/auth/realms/<my-realm>`
