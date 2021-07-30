@@ -19,6 +19,12 @@ as Docker and systemd, in their workspaces.
 - The cluster must allow privileged containers and `hostPath` mounts. Read more
   about why this is still secure [here](#security).
 
+> You can use any cloud provider that supports the above requirements, but we
+> have instructions on how to set up supported clusters on
+> [AWS](../../setup/kubernetes/aws.md) and
+> [Google](../../setup/kubernetes/google.md). Azure-hosted clusters will meet
+> these requirements as long as you use Kubernetes version 1.18+.
+>
 > Coder doesn't support legacy versions of cluster-wide proxy services such as
 > Istio, and CVMs do not currently support NFS as a file system.
 
@@ -112,6 +118,11 @@ The user cannot gain access to the supervising container at any point. The
 isolation between the user's workspace container and its outer, supervising
 container is what provides
 [strong isolation](https://github.com/nestybox/sysbox/blob/master/docs/user-guide/security.md).
+
+## Images hosted in private registries
+
+Please note that CVM-enabled workspaces cannot be created using images hosted in
+a private registry unless you permit unauthenticated access to the images.
 
 ## Image configuration
 
