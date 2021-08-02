@@ -107,7 +107,7 @@ secret/clouddns-dns01-solver-svc-acct created
        server: https://acme-v02.api.letsencrypt.org/directory
        solvers:
          - dns01:
-             clouddns:
+             cloudDNS:
                # The ID of the GCP project
                project: <project-id>
                # This is the secret used to access the service account
