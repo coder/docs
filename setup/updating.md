@@ -68,7 +68,9 @@ To update Coder, follow these steps:
 
    ```
 
-1. [Update your Helm chart](../guides/admin/helm-charts.md) as follows:
+1. [Update your Helm chart](../guides/admin/helm-charts.md) via the steps below.
+Refer to the `1.21` [helm chart](https://github.com/cdr/enterprise-helm/blob/main/values.yaml)
+when making such changes:
 
    Rename all instances of `cemanager` to `coderd`.
 
@@ -82,6 +84,8 @@ To update Coder, follow these steps:
    controller, set `coderd.serviceNext` to `true`. (See our
    [TLS certificates](../guides/tls-certificates/index.md) for more information
    on how to configure Coder to issue and use certificates.)
+
+1. Migrate the following ports. This may need to be done within your cloud provider:
 
    Move TCP port `8080` to `80`.
 
