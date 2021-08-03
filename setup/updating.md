@@ -68,15 +68,13 @@ To update Coder, follow these steps:
 
    ```
 
-1. [Update your Helm chart](../guides/admin/helm-charts.md) via the steps below.
-Refer to the `1.21` [helm chart](https://github.com/cdr/enterprise-helm/blob/main/values.yaml)
-when making such changes:
+1. If you're upgrading from v1.20 to v1.21,
+   [update your Helm chart](../guides/admin/helm-charts.md) via the steps below.
+   Refer to the `1.21`
+   [helm chart](https://github.com/cdr/enterprise-helm/blob/main/values.yaml)
+   when making such changes:
 
    Rename all instances of `cemanager` to `coderd`.
-
-   Remove all `dashboard.*` values. Route any traffic to `coderd`.
-
-   Remove all `envproxy.*` values. Route any traffic to `coderd`.
 
    Redirect all traffic from your custom ingress to `coderd`.
 
@@ -85,7 +83,15 @@ when making such changes:
    [TLS certificates](../guides/tls-certificates/index.md) for more information
    on how to configure Coder to issue and use certificates.)
 
-1. Migrate the following ports. This may need to be done within your cloud provider:
+   > To manage SSH, go to **Manage** > **Providers**. Select the provider you
+   > want to modify, click the **vertical ellipses** to its right, and click
+   > **Edit**. Under **Features**, you can toggle **External Connect** on/off.
+   >
+   > To manage the Access URL, go to **Manage** > **Admin** >
+   > **Infrastructure**.
+
+1. Migrate the following ports (this may need to be done using your cloud
+   provider):
 
    Move TCP port `8080` to `80`.
 
@@ -99,9 +105,10 @@ when making such changes:
 
 1. Upgrade workspaces to use Coder's new Networking v2 functionality.
 
-   If all of your workspaces are local, go to Manage > Providers. Find your
-   provider, click the **vertical ellipses** to its right, and click **Edit**.
-   Toggle **Networking v2** to enable.
+   If you're using only the built-in provider and don't have additional
+   workspace providers, go to Manage > Providers. Find your provider, click the
+   **vertical ellipses** to its right, and click **Edit**. Toggle **Networking
+   v2** to enable.
 
    Alternatively, if your workspaces are distributed, migrate the providers to
    [satellites](../admin/satellites/index.md).
