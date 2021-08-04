@@ -13,16 +13,6 @@ Each component runs in its own Kubernetes pod.
 
 ![Architecture](../assets/setup/coderd-arch-basic.png)
 
-## Ports
-
-The following is a list of the listening ports associated with Coder resources
-in the cluster. The environment ports are:
-
-- code-server: `13337`
-- envagent (used for shell sessions): `26337`
-- envagent (SSH proxy): `12212`
-- For external traffic: 80, 443
-
 ## Deployment options
 
 There are two ways to deploy Coder:
