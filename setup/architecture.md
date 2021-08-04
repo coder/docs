@@ -11,7 +11,7 @@ Coder is deployed on Kubernetes and includes the following components:
 
 Each component runs in its own Kubernetes pod.
 
-![Architecture](../assets/setup/architecture.png)
+![Architecture](../assets/setup/coderd-arch-basic.png)
 
 ## Ports
 
