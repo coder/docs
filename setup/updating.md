@@ -40,7 +40,11 @@ This guide will show you how to update your Coder deployment.
 
 ## Update Coder
 
-To update Coder, follow these steps:
+Though Coder v1.21 removes the built-in ingress controller, the process to
+upgrade from 1.20 to 1.21 differs slightly depending on whether you're using a
+custom ingress controller or not.
+
+### Updating Coder when using the built-in ingress controller
 
 1. Retrieve the latest repository information:
 
@@ -68,8 +72,45 @@ To update Coder, follow these steps:
 
    ```
 
-1. If you're upgrading from v1.20 to v1.21,
-   [update your Helm chart](../guides/admin/helm-charts.md) via the steps below.
+1. Upgrade workspaces to use Coder's new Networking v2 functionality.
+
+   If you're using only the built-in provider and don't have additional
+   workspace providers, go to Manage > Providers. Find your provider, click the
+   **vertical ellipses** to its right, and click **Edit**. Toggle **Networking
+   v2** to enable.
+
+   Alternatively, if your workspaces are distributed, migrate the providers to
+   [satellites](../admin/satellites/index.md).
+
+### Updating Coder when using a custom ingress controller
+
+1. Retrieve the latest repository information:
+
+   ```console
+   helm repo update
+   ```
+
+1. Export your current Helm chart values into a file:
+
+   ```console
+   helm get values --namespace coder coder > current-values.yaml
+   ```
+
+   > Make sure that your values only contain the changes you want (i.e., if you
+   > see references to a prior version, you may need to remove these).
+
+1. Provide your Helm chart values file and upgrade to the desired version (e.g.,
+   1.16.1):
+
+   _Note: If you omit `--version`, you'll upgrade to the latest version._
+
+   ```console
+   helm upgrade --namespace coder --install --atomic --wait \
+     --version 1.16.1 coder coder/coder --values current-values.yaml
+
+   ```
+
+1. [Update your Helm chart](../guides/admin/helm-charts.md) via the steps below.
    Refer to the `1.21`
    [helm chart](https://github.com/cdr/enterprise-helm/blob/main/values.yaml)
    when making such changes:
