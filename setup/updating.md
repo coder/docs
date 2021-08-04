@@ -90,8 +90,7 @@ To update Coder, follow these steps:
    > To manage the Access URL, go to **Manage** > **Admin** >
    > **Infrastructure**.
 
-1. Migrate the following ports (this may need to be done using your cloud
-   provider):
+1. Update the following ports:
 
    Move TCP port `8080` to `80`.
 
