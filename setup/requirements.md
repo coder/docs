@@ -19,12 +19,15 @@ to help you estimate:
   1 GB of RAM per developer
 
 These estimates can vary based on actual usage within a workspace. We recommend
-starting with 4 CPUs and 16 GB of RAM, then iterating as needed.
+starting with 4 CPUs and 16 GB of RAM, then iterating as needed. Developers are
+free to request the resource allocation that fits their usage:
+
+![Workspace resource request](../assets/setup/resource-request.png)
 
 We also recommend [monitoring](../guides/admin/usage-monitoring.md) your usage
 to determine whether you should change your resource allocation. Accepting a
-utilization of RAM of around 50% and CPU of around 70% is a good way to
-balance performance with cost.
+utilization of RAM of around 50% and CPU of around 70% is a good way to balance
+performance with cost.
 
 ### Throughput
 
@@ -60,37 +63,37 @@ launches the Remote IDE in a pop-up window.
 
 ## Storage
 
-Coder requires the use of a [persistent
-volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) in your
-Kubernetes cluster to store [workspaces](../workspaces/index.md) data. More
-specifically, the persistent volume claim (PVC) requires the block storage type
-(the PVC is created when you create the workspace to mount the requested block
-storage).
+Coder requires the use of a
+[persistent volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+in your Kubernetes cluster to store [workspaces](../workspaces/index.md) data.
+More specifically, the persistent volume claim (PVC) requires the block storage
+type (the PVC is created when you create the workspace to mount the requested
+block storage).
 
 Files stored in the `/home` directory of a workspace are persisted in the PVC.
-All files that live *outside* of the `/home` directory are written to the node's
+All files that live _outside_ of the `/home` directory are written to the node's
 disk storage (the node's disk storage is shared across all workspaces on that
 node). If there's insufficient node disk storage, Coder cannot create new
 workspaces (and, in some cases, workspaces may be evicted from the node). To
 avoid this, we recommend creating nodes with a disk size of at least 100 GiB.
 
-Additionally, you must enable [dynamic volume
-provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/#enabling-dynamic-provisioning)
+Additionally, you must enable
+[dynamic volume provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/#enabling-dynamic-provisioning)
 so that Coder can mount the PVC to the workspace (if you're using a custom
 `StorageClass`, be sure that it supports DVP. Otherwise, Coder cannot provision
 workspaces.
 
 ## Database
 
-Coder requires a [PostgreSQL](https://www.postgresql.org) database to
-store metadata related to your deployment.
+Coder requires a [PostgreSQL](https://www.postgresql.org) database to store
+metadata related to your deployment.
 
 By default, Coder deploys a TimescaleDB internal to your Kubernetes cluster.
 This is included for evaluation purposes _only_, and it is _not_ backed up. For
 production deployments, we recommend using a PostgreSQL database _external_ to
-your cluster. You can connect Coder to your external database by [modifying the
-Helm chart](../guides/admin/helm-charts.md) with information regarding your
-PostgreSQL instance.
+your cluster. You can connect Coder to your external database by
+[modifying the Helm chart](../guides/admin/helm-charts.md) with information
+regarding your PostgreSQL instance.
 
 Coder requires, at minimum, PostgreSQL 11 with the `contrib` package installed.
 
