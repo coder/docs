@@ -1,5 +1,5 @@
 ---
-title: Docker troubleshooting
+title: Docker
 description: Learn how to solve Docker issues inside Coder workspaces.
 ---
 
@@ -21,7 +21,7 @@ and size of keys each user can have.
 ## Resolution
 
 To fix this error, you can increase `maxkeys` and `maxbytes`. These are global
-settings that apply to *all* users sharing the same system. You can modify this
+settings that apply to _all_ users sharing the same system. You can modify this
 by adding the following to the `sysctl` configuration file:
 
 ```console
