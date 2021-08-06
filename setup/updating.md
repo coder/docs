@@ -52,7 +52,7 @@ This guide will show you how to update your Coder deployment.
    helm get values --namespace coder coder > current-values.yaml
    ```
 
-   > Make sure that your values only contain the changes you want (i.e., if you
+   > Make sure that your values only contain the changes you want (e.g., if you
    > see references to a prior version, you may need to remove these).
 
 1. Provide your Helm chart values file and upgrade to the desired version (e.g.,
@@ -80,6 +80,9 @@ This guide will show you how to update your Coder deployment.
    ```
 
 ### Updating Coder when using a custom ingress controller
+
+If you're using a custom ingress controller, the upgrade process from 1.20 to
+1.21 requires a few more steps:
 
 1. Retrieve the latest repository information:
 
