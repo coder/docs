@@ -66,6 +66,7 @@ The symlink names supported by Coder are:
 - `pycharm-community`
 - `rider`
 - `rubymine`
+- `studio` (Android Studio)
 - `webstorm`
 
 ### System requirements
