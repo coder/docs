@@ -5,7 +5,7 @@ description: Learn about the technical architecture of the Coder platform.
 
 Coder is deployed on Kubernetes and includes the following components:
 
-- **Manager**: the central authority; provides authentication and supports the
+- **coderd**: the central authority; provides authentication and supports the
   Dashboard and an API which you can use to create and interact with Workspaces
 - **PostgreSQL**: data storage for session tokens, workspace information, etc.
 
