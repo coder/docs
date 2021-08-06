@@ -15,6 +15,7 @@ image to work with Coder's multi editor feature, refer to the
 Coder can find and start the following IDEs if their binaries exist in your
 PATH:
 
+- Android Studio
 - CLion
 - DataGrip
 - GoLand
