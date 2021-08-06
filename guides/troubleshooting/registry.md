@@ -1,5 +1,5 @@
 ---
-title: Image registry troubleshooting
+title: Image registry
 description: Learn how to resolve issues connecting to an image registry.
 ---
 
@@ -18,8 +18,7 @@ certificate signed by unknown authority
 The local registry you are configuring is expecting a valid certificate to
 authenticate the connection with Coder. You will receive this error if:
 
-- You do not have a certificate
-configured
+- You do not have a certificate configured
 - There is an issue with the certificate itself
 
 > Coder uses Docker's Registry 2.0 implementation, which supports self-signed
@@ -28,8 +27,9 @@ configured
 ## Troubleshooting steps
 
 - If you haven't created the local registry, and you haven't generated the
-  self-signed certificate, [please see our
-  documentation](../../setup/air-gapped/infrastructure.md) on setting these up.
+  self-signed certificate,
+  [please see our documentation](../../setup/air-gapped/infrastructure.md) on
+  setting these up.
 
 - Check to see if your `registry.crt` file is stored in the correct location on
   each of your Kubernetes nodes. Depending upon your Linux distribution and
@@ -53,9 +53,9 @@ configured
 Ensure that you've created the self-signed certificate secret in your Kubernetes
 cluster:
 
-  ```console
-  kubectl -n coder get secret local-registry-cert -o yaml
-  ```
+```console
+kubectl -n coder get secret local-registry-cert -o yaml
+```
 
-If none of these steps resolve the issue, please [contact
-us](https://coder.com/contact) for further support.
+If none of these steps resolve the issue, please
+[contact us](https://coder.com/contact) for further support.
