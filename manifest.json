@@ -384,7 +384,13 @@
           "path": "./guides/troubleshooting/index.md",
           "children": [
             {
+              "path": "./guides/troubleshooting/admin-pwd.md"
+            },
+            {
               "path": "./guides/troubleshooting/docker-problems.md"
+            },
+            {
+              "path": "./guides/troubleshooting/git-oauth.md"
             },
             {
               "path": "./guides/troubleshooting/registry.md"

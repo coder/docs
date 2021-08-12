@@ -268,3 +268,6 @@ program sets the `fs.inotify.max_user_watches` setting.
   - [My ultimate VSCode configuration](https://dev.to/vaidhyanathan93/ulitmate-vscode-configuration-4i2o),
     a blog post describing a user's preferred settings, including file
     exclusions
+
+If none of these steps resolve the issue, please
+[contact us](https://coder.com/contact) for further support.

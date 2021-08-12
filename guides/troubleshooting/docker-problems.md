@@ -113,3 +113,6 @@ daemonset.apps "increase-limits" deleted
 
 However, note that the setting will persist until the node restarts or another
 program sets the `kernel.keys.maxkeys` and `kernel.keys.maxkeys` settings.
+
+If this doesn't resolve the issue, please
+[contact us](https://coder.com/contact) for further support.
