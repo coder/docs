@@ -251,6 +251,17 @@ Even if the configuration setting is enabled:
 "git.enableCommitSigning": true
 ```
 
+## Working with a Yubikey or other smart card
+
+The Yubikey configurations required to make GPG work with the local machine
+are all that is necessary to use it as a smart card. The pinentry prompt from
+the prior examples needs to be given the Yubikey's pin number rather than the
+private key passphrase.
+
+As soon as the cryptogrpahic action is complete, removing the Yubikey from the
+usb port prevents any additional cryptographic actions from happening through
+the GPG forwarding socket.
+
 ## Security considerations
 
 Anytime a private key is used, there is some exposure to the systems that are
@@ -333,7 +344,22 @@ the image at all, or `systemctl enable ssh` didn't work. It can also be due to
 the workspace not having
 [CVM](https://coder.com/docs/coder/v1.20/workspaces/cvms#container-based-virtual-machine-cvm)
 enabled.
+  
+#### After disconnecting the session, signing still works
+  
+Coder CLI's `coder config-ssh` command uses a session caching which involves:
 
+```plaintext
+Host coder.[workspace name]
+   [...]
+   ControlMaster auto
+   ControlPath ~/.ssh/.connection-%r@%h:%p
+   ControlPersist 600
+```
+
+So the connection will persist after the shell is exited. This makes opening a new shell
+very speedy but also keeps the GPG socket forwarding open.
+  
 #### Generally
 
 Adding `-v` to the SSH command can show when things are happening that don't
