@@ -32,3 +32,6 @@ attempts to add your public key again to GitHub.
 If the steps above do not fix the problem, the error may be related to the
 GitHub configuration values set using Coder's **Admin** panel. Site managers can
 view and update these values at **Manage** > **Admin** > **Git OAuth**.
+
+If this doesn't resolve the issue, please
+[contact us](https://coder.com/contact) for further support.

@@ -394,6 +394,12 @@
             },
             {
               "path": "./guides/troubleshooting/502error.md"
+            },
+            {
+              "path": "./guides/troubleshooting/git-oauth.md"
+            },
+            {
+              "path": "./guides/troubleshooting/admin-pwd.md"
             }
           ]
         }
