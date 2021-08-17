@@ -357,8 +357,8 @@ Host coder.[workspace name]
    ControlPersist 600
 ```
 
-So the connection will persist after the shell is exited. This makes opening a new shell
-very speedy but also keeps the GPG socket forwarding open.
+So the connection will persist after the shell is exited. This makes opening a
+new shell very speedy but also keeps the GPG socket forwarding open.
   
 #### Generally
 
