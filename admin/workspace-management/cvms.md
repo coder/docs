@@ -41,6 +41,16 @@ AMD GPUs at this time.
 1. Go to **Manage > Admin > Infrastructure**.
 1. Toggle the **Enable Container-Based Virtual Machines** option to **Enable**.
 
+### Enabling cached CVMs
+
+To improve the startup time for CVM-based workspaces, you can enable
+[`rootfs` caching](https://www.kernel.org/doc/Documentation/filesystems/ramfs-rootfs-initramfs.txt).
+This feature requires
+[the `shiftfs` kernel](https://github.com/linuxkit/linuxkit/tree/master/projects/shiftfs)
+to be present on the node; if desired, you can have Coder auto-load this module.
+
+![Cached CVMs](../../assets/admin/cached-cvms.png)
+
 ## Setting up your cluster
 
 The following sections show how you can set up your K8 clusters hosted by
