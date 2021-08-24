@@ -93,11 +93,14 @@ set your resource allocation.
     </tr>
 </table>
 
-> By default, Coder allocates resources (CPU cores, memory, and disk space)
-> based on the parent image.
->
-> Coder displays a warning if you choose your resource settings and they're less
-> than the image-recommended default, but you can still create the workspace.
+By default, Coder allocates resources (CPU cores, memory, and disk space) based
+on the parent image. You can modify these starting values, though the maximum
+number of CPU cores, amount of memory, and allocation of disk space you can
+request for your workspace are determined by the Coder
+[site manager on an organization level](../admin/organizations.md#create-a-new-organization).
+
+Coder displays a warning if you choose your resource settings and they're less
+than the image-recommended default, but you can still create the workspace.
 
 When done, click **Create** to proceed. Coder redirects you to an overview page
 for your workspace during the build process.
