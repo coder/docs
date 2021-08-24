@@ -20,6 +20,10 @@ strongly recommend running one of the currently-supported versions so that you
 receive applicable fixes, including security updates, from the Kubernetes
 project maintainers.
 
+> At installation, Coder checks to ensure that your cluster meets the minimum
+> requirements; if not, the installation process fails, and you'll receive an
+> error message with additional information.
+
 Coder continuously removes usage of deprecated Kubernetes API versions once the
 minimum baseline version of Kubernetes supports the necessary features in a
 stable version. We follow this policy to ensure that Coder stops using
