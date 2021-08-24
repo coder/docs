@@ -45,10 +45,10 @@ Finally, you can set **Resource Quotas**. These are limits on the number of
 each developer can request concurrently for running workspaces in this
 organization. The limits for what you can set are as follows:
 
-- CPUs: 128 CPU cores
-- Memory: 256 GBs
-- Disk: 8192 GB
-- GPUs: 20 GPUs
+- **CPUs**: 128 CPU cores
+- **Memory**: 256 GBs
+- **Disk**: 8192 GB
+- **GPUs**: 20 GPUs
 
 When you've set your parameters, click **Create** to proceed.
 
