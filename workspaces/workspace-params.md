@@ -102,8 +102,8 @@ request for your workspace are determined by the Coder
 Coder displays a warning if you choose your resource settings and they're less
 than the image-recommended default, but you can still create the workspace.
 
-When done, click **Create** to proceed. Coder redirects you to an overview page
-for your workspace during the build process.
+When you're done making changes, click **Create** to proceed. Coder redirects
+you to an overview page for your workspace during the build process.
 
 ## .gitconfig files
 
