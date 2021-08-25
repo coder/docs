@@ -41,9 +41,9 @@ AMD GPUs at this time.
 1. Go to **Manage > Admin > Infrastructure**.
 1. Toggle the **Enable Container-Based Virtual Machines** option to **Enable**.
 
-### Enabling cached CVMs (alpha)
+### Enabling cached CVMs
 
-> GPUs are not supported with cached CVMs.
+> Cached CVMs are currently an **alpha** feature.
 
 To improve the startup time for CVM-based workspaces, you can enable caching.
 
@@ -55,6 +55,8 @@ output is returned, then you do not have `shiftfs` installed.
 If you don't want to install `shiftfs` yourself, you can have Coder install the
 module automatically for you. **It is important that you do not have secure boot
 enabled if you want Coder to install `shiftfs` on your behalf.**
+
+> GPUs are not supported with cached CVMs.
 
 ![Cached CVMs](../../assets/admin/cached-cvms.png)
 
