@@ -41,9 +41,9 @@ AMD GPUs at this time.
 1. Go to **Manage > Admin > Infrastructure**.
 1. Toggle the **Enable Container-Based Virtual Machines** option to **Enable**.
 
-### Enabling cached CVMs
+### Enabling cached CVMs (alpha)
 
-> Cached CVMs are an **alpha** feature.
+> GPUs are not supported with cached CVMs.
 
 To improve the startup time for CVM-based workspaces, you can enable caching.
 
