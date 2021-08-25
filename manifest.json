@@ -277,13 +277,16 @@
           "path": "./admin/organizations.md"
         },
         {
-          "path": "./admin/metrics.md"
+          "path": "./admin/stun.md"
         },
         {
           "path": "./admin/telemetry.md"
         },
         {
           "path": "./admin/templates.md"
+        },
+        {
+          "path": "./admin/metrics.md"
         }
       ]
     },

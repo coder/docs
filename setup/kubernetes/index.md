@@ -20,6 +20,11 @@ strongly recommend running one of the currently-supported versions so that you
 receive applicable fixes, including security updates, from the Kubernetes
 project maintainers.
 
+> During installation, the Helm package manager will check to ensure that Coder
+> is compatible with your cluster version; if not, the installation process will
+> fail, and you will receive an error message indicating the minimum cluster
+> version required.
+
 Coder continuously removes usage of deprecated Kubernetes API versions once the
 minimum baseline version of Kubernetes supports the necessary features in a
 stable version. We follow this policy to ensure that Coder stops using
