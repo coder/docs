@@ -15,11 +15,6 @@ You can deploy Coder to any [compatible Kubernetes cluster]. Coder follows the
 version of Coder supports the previous two minor releases as well as the current
 release of Kubernetes at time of publication.
 
-Coder may run successfully with older versions of Kubernetes. However, we
-strongly recommend running one of the currently-supported versions so that you
-receive applicable fixes, including security updates, from the Kubernetes
-project maintainers.
-
 Coder continuously removes usage of deprecated Kubernetes API versions once the
 minimum baseline version of Kubernetes supports the necessary features in a
 stable version. We follow this policy to ensure that Coder stops using
