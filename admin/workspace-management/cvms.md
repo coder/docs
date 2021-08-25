@@ -47,7 +47,7 @@ To improve the startup time for CVM-based workspaces, you can enable
 caching.
 This feature requires
 [the `shiftfs` kernel](https://github.com/linuxkit/linuxkit/tree/master/projects/shiftfs)
-to be present on the node; if desired, you can have Coder auto-load this module.
+to be present on the node. Some distributions such as Ubuntu include `shiftfs` as part of their kernel. If you are unsure if `shiftfs` is present on your nodes you can run `modinfo shiftfs`. If no output is returned then you do not have `shiftfs` installed. If you do not wish to install `shiftfs` yourself then you can have Coder automatically install the module for you. It is important that you do not have secure boot enabled if you want Coder to install `shiftfs`.
 
 ![Cached CVMs](../../assets/admin/cached-cvms.png)
 
