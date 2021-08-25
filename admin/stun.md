@@ -1,5 +1,5 @@
 ---
-title: "P2P Workspace Connections"
+title: "Direct Workspace Connections"
 description: Learn how to enable P2P connections to workspaces.
 ---
 
