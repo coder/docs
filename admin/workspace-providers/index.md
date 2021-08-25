@@ -1,7 +1,6 @@
 ---
 title: Workspace providers
 description: Learn how workspace providers can improve the developer experience.
-state: beta
 ---
 
 Workspace providers are logical groups of resources to which developers can

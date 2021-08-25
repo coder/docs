@@ -1,7 +1,6 @@
 ---
 title: Workspace provider management
 description: Learn how to manage a workspace provider.
-state: beta
 ---
 
 This article walks you through the process of managing your workspace provider
