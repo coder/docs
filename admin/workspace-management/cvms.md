@@ -43,11 +43,18 @@ AMD GPUs at this time.
 
 ### Enabling cached CVMs
 
-To improve the startup time for CVM-based workspaces, you can enable
-caching.
-This feature requires
-[the `shiftfs` kernel](https://github.com/linuxkit/linuxkit/tree/master/projects/shiftfs)
-to be present on the node. Some distributions such as Ubuntu include `shiftfs` as part of their kernel. If you are unsure if `shiftfs` is present on your nodes you can run `modinfo shiftfs`. If no output is returned then you do not have `shiftfs` installed. If you do not wish to install `shiftfs` yourself then you can have Coder automatically install the module for you. It is important that you do not have secure boot enabled if you want Coder to install `shiftfs`.
+> Cached CVMs are an **alpha** feature.
+
+To improve the startup time for CVM-based workspaces, you can enable caching.
+
+Cached CVMs require the `shiftfs` kernel to be present on the node. Some
+distributions (such as Ubuntu) include `shiftfs`. If you're unsure if `shiftfs`
+is present on your nodes, you can check by running `modinfo shiftfs`. If no
+output is returned, then you do not have `shiftfs` installed.
+
+If you don't want to install `shiftfs` yourself, you can have Coder install the
+module automatically for you. **It is important that you do not have secure boot
+enabled if you want Coder to install `shiftfs` on your behalf.**
 
 ![Cached CVMs](../../assets/admin/cached-cvms.png)
 
