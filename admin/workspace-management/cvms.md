@@ -44,7 +44,7 @@ AMD GPUs at this time.
 ### Enabling cached CVMs
 
 To improve the startup time for CVM-based workspaces, you can enable
-[`rootfs` caching](https://www.kernel.org/doc/Documentation/filesystems/ramfs-rootfs-initramfs.txt).
+caching.
 This feature requires
 [the `shiftfs` kernel](https://github.com/linuxkit/linuxkit/tree/master/projects/shiftfs)
 to be present on the node; if desired, you can have Coder auto-load this module.
