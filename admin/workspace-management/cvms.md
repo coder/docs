@@ -54,9 +54,10 @@ output is returned, then you do not have `shiftfs` installed.
 
 If you don't want to install `shiftfs` yourself, you can have Coder install the
 module automatically for you. **It is important that you do not have secure boot
-enabled if you want Coder to install `shiftfs` on your behalf.**
+enabled and that you have the kernel headers installed if you want Coder to
+install `shiftfs` on your behalf.**
 
-> GPUs are not supported with cached CVMs.
+> GPUs are not supported with cached CVMs at this time.
 
 ![Cached CVMs](../../assets/admin/cached-cvms.png)
 

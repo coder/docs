@@ -11,3 +11,6 @@ To connect to workspaces using WebRTC STUN:
 
 1. In the Coder UI, go to **Manage** > **Admin** > **Infrastructure**.
 1. Scroll down to **P2P workspace connections**, and provide the **STUN URI**.
+
+> If you don't have a STUN server, you can use Google's publicly accessible
+> option. The URL for Google's STUN server is `stun:stun.l.google.com:19302`.
