@@ -8,9 +8,9 @@ must assign all of your images and workspaces to a specific organization. An
 end-user can only access images that are assigned to the same organization they
 are.
 
-> Be sure to familiarize yourself with the [types of
-> roles](access-control/organizations.md) you can assign users within an
-> organization.
+> Be sure to familiarize yourself with the
+> [types of roles](access-control/organizations.md) you can assign users within
+> an organization.
 
 ## The default organization
 
@@ -28,8 +28,8 @@ organizations by going to **Manage** > **Organizations** > **New Organization**.
 ![Create a new organization dialog](../assets/admin/create-an-org.png)
 
 Provide a **name** and (optionally) a **description** for this organization. If
-you want this to become a **Default organization**, make sure to check the
-box for this.
+you want this to become a **Default organization**, make sure to check the box
+for this.
 
 You can also control how Coder manages resources for workspaces in this
 organization. You can set the:
@@ -43,7 +43,12 @@ organization. You can set the:
 Finally, you can set **Resource Quotas**. These are limits on the number of
 **CPUs** and **GPUs**, as well as the amount of **memory** and **disk space**,
 each developer can request concurrently for running workspaces in this
-organization.
+organization. The limits for what you can set are as follows:
+
+- **CPUs**: 128 CPU cores
+- **Memory**: 256 GBs
+- **Disk**: 8192 GB
+- **GPUs**: 20 GPUs
 
 When you've set your parameters, click **Create** to proceed.
 
@@ -79,9 +84,9 @@ whitelisted namespaces, though you cannot create new workspaces in those
 namespaces.
 
 If you want to separate Coder workspaces by namespaces in a Kubernetes cluster,
-you can do so by [deploying a new workspace
-provider](workspace-providers/deployment.md) to each additional namespace in
-the cluster. The workspace provider provisions workspaces to the namespace it
-has been deployed to, and you can control access to each workspace provider via
-an organization allowlist to replace the previous organization namespace
-behaviors.
+you can do so by
+[deploying a new workspace provider](workspace-providers/deployment.md) to each
+additional namespace in the cluster. The workspace provider provisions
+workspaces to the namespace it has been deployed to, and you can control access
+to each workspace provider via an organization allowlist to replace the previous
+organization namespace behaviors.
