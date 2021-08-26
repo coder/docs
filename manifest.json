@@ -327,6 +327,9 @@
               "path": "./guides/customization/gitconfig.md"
             },
             {
+              "path": "./guides/customization/gpg-forwarding.md"
+            },
+            {
               "path": "./guides/customization/macos-keybinding.md"
             },
             {
