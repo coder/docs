@@ -412,6 +412,9 @@
       "path": "./changelog/index.md",
       "children": [
         {
+          "path": "./changelog/1.21.2.md"
+        },
+        {
           "path": "./changelog/1.21.1.md"
         },
         {
