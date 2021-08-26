@@ -19,7 +19,7 @@ Before proceeding, please make sure that you have the following installed:
    [Docker Desktop][docker-desktop-url]
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
-You will need to also need to
+You will also need to
 [generate a free Coder license](https://coder.com/trial) which can be uploaded
 upon installation.
 
