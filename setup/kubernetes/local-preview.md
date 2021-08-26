@@ -20,7 +20,7 @@ Before proceeding, please make sure that you have the following installed:
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
 You will also need to
-[generate a free Coder license](https://coder.com/trial) which can be uploaded
+[generate a free Coder license](https://coder.com/trial), which can be uploaded
 upon installation.
 
 ## Limitations
