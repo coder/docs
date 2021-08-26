@@ -9,8 +9,6 @@ Coder is typically deployed to a remote data center, but you can use
 > Coder currently supports local preview only on workstations running macOS or
 > Linux.
 
-Coder automatically uploads a single-seat license upon installation.
-
 ## Prerequisites
 
 Before proceeding, please make sure that you have the following installed:
@@ -20,6 +18,10 @@ Before proceeding, please make sure that you have the following installed:
 1. [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) or
    [Docker Desktop][docker-desktop-url]
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
+
+You will need to also need to
+[generate a free Coder license](https://coder.com/trial) which will be uploaded
+upon installation.
 
 ## Limitations
 
@@ -57,21 +59,11 @@ apply):
    specific version is required because of a recent downgrade to Linux Kernel
    4.9 due to a [bug][docker-bug-url].
 
-### SSH
-
-When using kind for your local preview, SSH is not configured to run by default.
-
-When using Docker Desktop for your local preview, SSH works as long as your
-machine does not have an existing SSH server running on port `22`.
-
 ### Air-gapped clusters
 
 The local preview option does not work in an air-gapped deployment.
 
 ## Option 1: Kind
-
-**Note:** The kind script installs Coder v1.18.1 and is currently incompatible
-with Coder v1.21.
 
 To install Coder, run:
 
@@ -120,9 +112,9 @@ installed Coder.
 
    ```yaml
    ingress:
-   host: "127.0.0.1.nip.io"
+     host: "127.0.0.1.nip.io"
    devurls:
-   host: "*.127.0.0.1.nip.io"
+     host: "*.127.0.0.1.nip.io"
    ```
 
 Alternatively, you can use [dnsmasq][dnsmasq-url] to create local domains (e.g.,
