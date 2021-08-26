@@ -1,5 +1,5 @@
 {
-  "versions": ["v1.21", "v1.20", "v1.19", "v1.18", "v1.17"],
+  "versions": ["v1.22", "v1.21", "v1.20", "v1.19", "v1.18", "v1.17"],
   "routes": [
     {
       "path": "./index.md",
@@ -277,13 +277,16 @@
           "path": "./admin/organizations.md"
         },
         {
-          "path": "./admin/metrics.md"
+          "path": "./admin/stun.md"
         },
         {
           "path": "./admin/telemetry.md"
         },
         {
           "path": "./admin/templates.md"
+        },
+        {
+          "path": "./admin/metrics.md"
         }
       ]
     },
@@ -325,6 +328,9 @@
             },
             {
               "path": "./guides/customization/gitconfig.md"
+            },
+            {
+              "path": "./guides/customization/gpg-forwarding.md"
             },
             {
               "path": "./guides/customization/macos-keybinding.md"
@@ -408,6 +414,9 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        {
+          "path": "./changelog/1.22.0.md"
+        },
         {
           "path": "./changelog/1.21.1.md"
         },
