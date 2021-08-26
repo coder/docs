@@ -1,70 +1,77 @@
 ---
-title: GPG Forwarding
+title: GPG forwarding
 description: Learn how to configure GPG agent forwarding Coder.
 ---
 
-This guide will show you how to sign, encrypt, and decrypt content using GPG
-within a workspace while the private key stays on your local machine.
+This guide will show you how to sign, encrypt, and decrypt content where GPG is
+in a Coder workspace while the private key is on your local machine.
 
-## Local configuration
+## Step 1: Configure your local machine
 
-This guide assumes you already have the capability of using and signing GPG on
-your local machine. The guide examples are from the perspective of a MacOS 11
-(Big Sur) user so Windows and Linux may require deviation.
+We assume that you're already capable of using and signing GPG on your local
+machine.
 
-- Install gnupg using [Homebrew](https://formulae.brew.sh/formula/gnupg) or
-  [gpg-suite](https://gpgtools.org/)
-- Verify that pinentry is installed or install it
-- Create or import your GPG key (both private and public)
+The examples in this guide were created using macOS 11 (Big Sur); Windows and
+Linux users may need to modify the provided instructions.
+
+First, make sure that you've:
+
+- Installed GnuPG (GPG) using [Homebrew](https://formulae.brew.sh/formula/gnupg)
+  or [gpg-suite](https://gpgtools.org/)
+- Verified that `pinentry` is installed (if not, install `pinentry`)
+- Created or imported both your public and private GPG keys
+
+You can verify your GnuPG installation and version number as follows:
 
 ```console
 gpg --version
 gpg (GnuPG) 2.3.1
 ```
 
-When running any gpg command locally, the system knows to start up the
-`gpg-agent` which creates the sockets and performs the cryptographic activity.
-If you ssh into an environment using the `-R` flag to remote forward the
-sockets, your local gpg-agent won't start automatically since it doesn't invoke
-the gpg binary.
+### Starting GnuPG
 
-The easiest way to address this is to add the gpg-agent to your local .profile,
-.bashrc, .zshrc, or whatever terminal configuration scripts always run for each
-terminal session.
+When running any `gpg` command, your system knows to start `gpg-agent`, which
+creates the sockets needed and performs the cryptographic activity. However, if
+you connect to a workspace via SSH using the `-R` flag to remote forward the
+sockets, your local `gpg-agent` won't start automatically since this process
+doesn't invoke the `gpg` binary.
 
-`gpgconf --launch gpg-agent`
+To address this issue, add the gpg-agent to your local `.profile`, `.bashrc`,
+`.zshrc`, or configuration script that runs for each terminal session:
 
-If you don't run this command or `gpg-agent --daemon` to prepare your local
-system, sockets won't exist for mounting and the remote gpg command won't work
-since it will start an agent in the remote system which has no keys.
+```console
+gpgconf --launch gpg-agent
+```
 
-## Coder admin configurations
+Alternatively, you can run `gpg-agent --daemon` to prepare your local system.
 
-To use GPG agent forwarding, the Coder instance needs to have two capabilities
-enabled:
+If you don't perform either of the steps above, there won't be sockets for
+mounting and the remote `gpg` command won't work (instead, you'll end up
+starting an agent in the remote system that has no keys).
 
-1. SSH access to environemnts
-1. CVMs (Container-based virtual machines) enabled
+## Step 2: Configure Coder
 
-[See the SSH docs](../../admin/workspace-management/ssh-access) for how to
-configure the sysem to allow SSH connections and how to send those to OpenSSH.
-Without OpenSSH, the basic libssh server will be used which doesn't support
-forwarding.
+> The following steps must be performed by a Coder user assigned the **site
+> manager** role.
 
-[See the CVM docs](../../admin/workspace-management/cvms) for configuration
-details. Without CVMs enabled, systemd cannot be run inside the container which
-prevents OpenSSH from starting.
+To use GPG agent forwarding, ensure that you've enabled:
 
-## Coder image configurations
+- [SSH access to workspaces](../../admin/workspace-management/ssh-access.md);
+  you must use OpenSSH (the basic `libssh` server doesn't support forwarding)
+- [Container-based virtual machines (CVMs)](../../admin/workspace-management/cvms.md);
+  CVMs are required to run `systemd`, which is required for OpenSSH to start
 
-The dependencies for GPG forwarding include having
+## Step 3: Configure a Coder image to support GPG forwarding
 
-- openssh-server and gnupg2 installed
-- `StreamLocalBindUnlink yes` set in the /etc/ssh/sshd_config file
-- socket masking
-- enable openssh so that Coder doesn't inject its own
+Update the image on which your workspace is based to include the following
+dependencies for GPG forwarding:
 
-Dockerfile excerpt would look like this
+- `openssh-server` and `gnupg2` installed
+- `StreamLocalBindUnlink yes` set in the `/etc/ssh/sshd_config` file
+- Socket masking
+- `OpenSSH` enabled (so that Coder doesn't inject it's own instance of OpenSSH)
+
+Your updated Dockerfile would look something like:
 
 ```dockerfile
 FROM ubuntu:20:04
@@ -82,38 +89,49 @@ RUN echo  "StreamLocalBindUnlink yes" >> /etc/ssh/sshd_config && \
     systemctl enable ssh
 ```
 
-Starting from the
+Alternatively, you can create a new image from scratch. If so, we recommend
+starting with Coder's
 [Enterprise Base](https://github.com/cdr/enterprise-images/blob/main/images/base/Dockerfile.ubuntu)
-image helps by establishing some dependencies and conventions that makes using
-Coder a better experience. If you choose the Enterprise Base as a starting
-point, just `apt-get install gnupg2 openssh-server` and then add the second run
-block for configuration.
+image, which helps establish dependencies and conventions that improves the
+Coder user experience.
 
-### Running the image
+If you use the Enterprise Base image as your starting point:
 
-When you import the image, it does not need any special configurations.
+1. run `apt-get install gnupg2 openssh-server`
+1. Add the following to the Dockerfile:
 
-When creating a new workspace from the image, make sure to select the "CVM"
-option.
+   ```dockerfile
+   RUN echo  "StreamLocalBindUnlink yes" >> /etc/ssh/sshd_config && \
+       systemctl --global mask gpg-agent.service \
+       gpg-agent.socket gpg-agent-ssh.socket \
+       gpg-agent-extra.socket gpg-agent-browser.socket && \
+       systemctl enable ssh
+   ```
 
-## Environment-startup configurations (Dotfiles)
+## Step 4: Create/update a workspace using the image
 
-The configurations in this section need to be run after the workspace has
-started and should be run within the user context.
-[Coder personalization scripts (otherwise known as dotfiles)](../../workspaces/personalization.md)
-are the best leverage point for these configurations.
+Once you've created your image, you can [import it](../../images/importing.md)
+for use. When creating a workspace using that image, be sure to
+[create a CVM-enabled workspace](../../workspaces/getting-started.md).
 
-To be able to use your local private key on the remote workspace, the workspace
-needs to have a reference to the public key and have it be trusted.
+## Step 5: Define the workspace-startup configurations using dotfiles
 
-Since some images will have GPG and others won't, we can add this to the
-install.sh script in our dotfiles repo.
+The configuration detailed in this section must be be run _after_ you've created
+and started your workspace (the configurations must be run within the context of
+your user). We recommend defining your configuration using
+[Coder personalization scripts (otherwise known as dotfiles)](../../workspaces/personalization.md#dotfiles-repo).
 
-```console
+To use your local private key on the remote Coder workspace, you must provide
+the workspace a reference to the public key and the key must be trusted. You
+must also account for the fact that not all images will include GPG. To do both,
+add the following to an `install.sh` script, then add the file to your dotfiles
+repo:
+
+```sh
 if hash gpg 2>/dev/null; then
   echo "gpg found, configuring public key"
   gpg --import ~/dotfiles/.gnupg/mterhar_coder.com-publickey.asc
-  echo "16ADA44EDAA5BC7384578654F371232FA31B84AC:6:" | gpg --import-ownertrust
+  echo "16AD...B84AC:6:" | gpg --import-ownertrust
   git config --global user.signingkey F371232FA31B84AC
   echo "pinentry-mode loopback" > ~/.gnupg/gpg.conf
   echo "export GPG_TTY=\$(tty)" > ~/.profile
@@ -124,27 +142,29 @@ else
 fi
 ```
 
-You can see that I've added the public key export directly to the dotfiles
-repository so that it will be importable.
+**Notes regarding the sample script:**
 
-The `gpg --import-ownertrust` command is given the fingerprint of the key that
-was just imported with `6` which is "Ultimate" trust level.
+- Adding the public key export directly to the dotfiles repository (as shown in
+  the example) allows it to be imported.
+- The `gpg --import-ownertrust` command gets the fingerprint of the key that was
+  just imported with a trust level of `6` (this indicates a trust level of
+  **ultimate**).
+- The `"pinentry-mode loopback" > ~/.gnupg/gpg.conf` allows the remote system to
+  trigger `pinentry` inline so that you can type your passphrase into the same
+  terminal where you're running the GPG command to unlock the mounted socket.
+- Setting `GPG_TTY` allows `pinentry` time to send the request for a passphrase
+  to the correct place. The use of a single `>` prevents that line from being
+  added to `.profile` repeatedly, though anything you have in the file will be
+  erased.
 
-The `"pinentry-mode loopback" > ~/.gnupg/gpg.conf` allows the remote system to
-trigger pinentry inline where you type your passphrase into the same terminal
-that is running the GPG command and it unlocks the mounted socket.
+## Step 6: Connect to Coder
 
-Setting `GPG_TTY` should allow pinentry to send the request for a passphrase to
-the correct place. Note that the user of a single `>` prevents that line from
-being added to .profile repeatedly, but will erase the contents if you have
-anything in that file.
+On your local machine, ensure that `gpg-agent` is running and that it works when
+you attempt to perform a GPG action (e.g., `echo "test" | gpg --clearsign`).
+Note that you'll be prompted to provide your pin; as such, the socket will be
+open for a bit unless you kill and restart the GPG agent.
 
-## Making the connection
-
-On your local device, ensure the gpg-agent is running and that it works when you
-attempt to perform a GPG action such as `echo "test" | gpg --clearsign".` Since
-you'll have entered a pin, the socket will be opene for a bit unless you kill
-and restart the agent.
+To launch `gpg-agent` and connect to Coder:
 
 ```bash
 gpgconf --launch gpg-agent
@@ -152,9 +172,8 @@ coder config-ssh
 ssh -R /run/user/1000/gnupg/S.gpg-agent:/Users/mterhar/.gnupg/S.gpg-agent coder.<workspace name>
 ```
 
-After the SSH command, your terminal's prompt should be inside the workspace.
-Now that the connection is made from your local filesystem socket to the renote
-filesystem socket, GPG actions can commence on the remote side.
+At this point, there is a connection from your local filesystem socket to the
+remote filesystem socket, so you can begin running GPG actions:
 
 ```console
 $ echo "test " | gpg --clearsign -v
@@ -176,16 +195,13 @@ dqbC8blPKTAzupH7OeQpe6EbweZHjAI=
 -----END PGP SIGNATURE-----
 ```
 
-If you decide to run a web terminal or use the terminal within code-server, it
-will prompt you for the pin and make use of the ssh socket. This is true for
-terminals that are running from different devices as well.
+If you decide to run a web terminal or use the terminal within code-server,
+you'll be prompted for to enter your pin and to use the SSH socket (this is true
+for terminals that are running from different devices as well).
 
-### Mitigating the risk
+### Example: GPG forwarding action
 
-The signing activity only takes a second to complete but the GPG socket remains
-open for a few minutes.
-
-### What it looks like
+The following is an example of what a GPG forwarding action looks like:
 
 ```console
 % gpgconf --launch gpg-agent
@@ -221,7 +237,7 @@ dqbC8blPKTAzupH7OeQpe6EbweZHjAI=
 -----END PGP SIGNATURE-----
 ```
 
-Or using it to sign git commits with the terminal:
+To sign Git commits via the command line:
 
 ```console
 $ git commit -m "trigger signature"
@@ -233,65 +249,83 @@ gpg:                using EDDSA key 16ADA44EDAA5BC7384578654F371232FA31B84AC
 gpg: Good signature from "Mike Terhar <mterhar@coder.com>" [ultimate]
 ```
 
-After you push this to GitHub or GitLab, you'll see the "verified" icon beside
-the commit.
+Now, when you push commits to GitHub/GitLab, you'll see that the commits are
+flagged as verified.
 
-### Limitations for code-server
+## Using a Yubikey or other smart card
 
-The git functionality in code-server will sign the commit and obey the
-.gitconfig file however it lacks the ability to ask for a GPG pin so it only
-works if the sockt is already open due to some other activity. The git cli in
-the snippet above will prompt for to unlock the gpg key.
+The Yubikey configurations required to make GPG work with the local machine are
+all that is necessary to use it as a smart card.
 
-The error says: "Git: gpg failed to sign the data"
+Once you've configured Yibikey, you can follow the steps detailed in this
+article to set up GPG forwarding; the only difference is that you should provide
+`pinentry` with your Yubikey PIN, not the private key passphrase.
 
-Even if the configuration setting is enabled:
+As soon as the cryptographic action is complete, be sure remove the Yubikey from
+the USB port to prevent any additional cryptographic actions from occurring
+through the GPG forwarding socket.
+
+## Limitations for code-server users
+
+The Git functionality in code-server will sign the commit and obey the
+`.gitconfig` file. However, it lacks the ability to ask for a GPG pin, so the
+forwarding process only works if the socket is already open due to some other
+activity. For example, the following Git CLI command would typically prompt you
+to unlock the GPG key:
+
+```text
+git verify-commit <commit>
+```
+
+However, if the socket isn't already open, you'd get an error saying
+`Git: gpg failed to sign the data`, even if the configuration setting is
+enabled:
 
 ```console
 "git.enableCommitSigning": true
 ```
 
-## Working with a Yubikey or other smart card
-
-The Yubikey configurations required to make GPG work with the local machine
-are all that is necessary to use it as a smart card. The pinentry prompt from
-the prior examples needs to be given the Yubikey's pin number rather than the
-private key passphrase.
-
-As soon as the cryptogrpahic action is complete, removing the Yubikey from the
-usb port prevents any additional cryptographic actions from happening through
-the GPG forwarding socket.
-
 ## Security considerations
 
-Anytime a private key is used, there is some exposure to the systems that are
-granted access to the key. The act of typing the passphrase or using
-`gpg-preset-passphrase` to keep the socket open each have different risks
-(shoulder surfing bystander versus someone accessing the system with open socket
-from another terminal).
+Any time you use a private key, you expose it to the systems that are granted
+access to the key.
 
-1. Setting `default-cache-ttl 30` will request the pin more frequently.
+Furthermore, actions such as typing the passphrase or using
+`gpg-preset-passphrase` to keep the socket open each have different risk
+profiles associated (e.g., the risk of someone looking over your shoulder and
+the risk of someone accessing the system with open socket from another
+terminal).
 
-1. Connect to the local `.extra` socket rather than the primary which helps
-   limit key exposure though it breaks this example.
+The following are steps you can take to minimize your risk:
 
-1. Create a separate subkey for Coder to use to prevent the primary key from
-   being compromised if a security incident occurs. This means the subkeys have
-   to be added to your Git provider and if there is an incident, the old commits
-   may become unverified.
+1. Setting `default-cache-ttl 30`, which will prompt you for your PIN more
+   frequently. While the signing activity only takes a short amount of time to
+   complete, the GPG socket remains open longer.
 
-## Errors and what they mean
+1. Connect to the local `.extra` socket rather than the primary socket, which
+   helps limit key exposure (if you do this, modify examples in this article to
+   use the appropriate socket).
 
-### Connect to <path to default agent port> -2 failed
+1. Create a separate sub-key for Coder to use to prevent the primary key from
+   being compromised if a security incident occurs. You'll need to add the
+   sub-keys to your Git provider, and if there's a security incident, the old
+   commits signed using the affected keys may be considered unverified.
+
+## Troubleshooting
+
+The following sections explain how you can troubleshoot errors you may see when
+using up GPG forwarding.
+
+### Unable to connect to the default agent port
 
 ```console
 connect to /Users/mterhar/.gnupg/S.gpg-agent port -2 failed: No such file or directory
 gpg: no running gpg-agent - starting '/usr/bin/gpg-agent'
 ```
 
-This indicates the socket wasn't present on the local machine when the ssh
-command was executed. This could be caused by a lack of `-R` or `ForwardRemote`
-in the ssh configuration.
+If you see this error, the socket wasn't present on the local machine when you
+executed your `ssh` command. This is caused by a lack of `-R` or `ForwardRemote`
+in the `ssh` configuration, so update your configuration accordingly.
 
 ### No secret key
 
@@ -301,12 +335,15 @@ gpg: no default secret key: No secret key
 gpg: [stdin]: clear-sign failed: No secret key
 ```
 
-This can happen if there is a gpg agent running in the remote workspace which is
-intercepting the GPG commands before they get to the remote socket.
+This error can happen if there's a `gpg` agent running in the remote workspace
+that is intercepting the GPG commands _before_ they get to the remote socket.
 
-Fix with `gpgconf --kill gpg-agent` or by using `ps ax | grep gpg-agent` to find
-and kill all the pids. Reconnect your ssh session to re-establish the socket
-forwarding.
+You can fix this by:
+
+1. Running `gpgconf --kill gpg-agent`
+1. Using `ps ax | grep gpg-agent` to find and kill all of the pids.
+
+Then, reconnect your `ssh` session to re-establish the socket forwarding.
 
 ### Inappropriate ioctl for the device
 
@@ -327,27 +364,46 @@ gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device
 
 If `gpg: pinentry launched (1744 curses 1.1.1 - xterm-256color - - 501/20 0)`
 does not include the `/dev/pts/1` after the version number, you may need to add
-the GPG_TTY environment variable to something that runs prior to trying to run
-the command.
+the `GPG_TTY` environment variable to a process that runs before trying to use
+`gpg`.
 
-If GPG_TTY is set to the same output as `tty` then be sure there is a
-`.gnupg/gpg.conf` file which contains `pinentry-mode loopback`.
+If `GPG_TTY` is set to the same output as `tty`, be sure you have a
+`.gnupg/gpg.conf` file that contains `pinentry-mode loopback`.
 
-### SSH troubleshooting
+### SSH error with remote port forwarding
 
-If you receive this error when connecting:
+If you receive this error when connecting via SSH:
 
-`Warning: remote port forwarding failed for listen path /run/user/1000/gnupg/S.gpg-agent`
+```console
+Warning: remote port forwarding failed for listen path
+/run/user/1000/gnupg/S.gpg-agent
+```
 
-The likely cause is that openssh isn't running. This can be because it's not in
-the image at all, or `systemctl enable ssh` didn't work. It can also be due to
-the workspace not having
-[CVM](https://coder.com/docs/coder/v1.20/workspaces/cvms#container-based-virtual-machine-cvm)
-enabled.
-  
-#### After disconnecting the session, signing still works
-  
-Coder CLI's `coder config-ssh` command uses a session caching which involves:
+The likely cause is that `openssh` isn't running. This could be a result of:
+
+- The image you're using doesn't include `openssh`
+- The `systemctl enable ssh` command didn't work
+- The workspace doesn't have
+  [CVMs](https://coder.com/docs/coder/v1.20/workspaces/cvms#container-based-virtual-machine-cvm)
+  enabled.
+
+### Unverified commits in GitHub or GitLab
+
+Both GitHub and GitLab display verification statuses beside signed commits. If
+you see a commit that's unverified, it could be that the signing key hasn't been
+uploaded to the associated account.
+
+To fix this issue, add the GPG key to your account:
+
+- [GitHub: Adding a GPG key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
+- [GitLab: Adding a GPG key](https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/#adding-a-gpg-key-to-your-account)
+
+If this doesn't fix the issue, ensure that the email address in the author field
+matches the email associated with the username and signing key.
+
+### The signing still works after disconnecting the session
+
+Coder CLI's `coder config-ssh` command uses session caching:
 
 ```plaintext
 Host coder.[workspace name]
@@ -357,17 +413,18 @@ Host coder.[workspace name]
    ControlPersist 600
 ```
 
-So the connection will persist after the shell is exited. This makes opening a
-new shell very speedy but also keeps the GPG socket forwarding open.
-  
-#### Generally
+Therefore, the connection persists for some time and the GPG socket forwarding
+remains open to make opening a new shell fast.
 
-Adding `-v` to the SSH command can show when things are happening that don't
-typically warrant any output.
+### Verbose logging
 
-### GPG troubleshooting
+If you're having issues with GPG forwarding, getting verbose logs is helpful for
+pinpointing where the issue may be. One way to do so is to add `-v` to the SSH
+command you run.
 
-The sockets don't appear to be where you expect them?
+You can also add `--verbose` to the `gpg` command. For example, if your sockets
+aren't where you expected them and you receive the following output, you'll need
+to get additional information via verbose logs:
 
 ```console
 $ gpgconf --list-dirs
@@ -385,17 +442,3 @@ agent-browser-socket:/run/user/1000/gnupg/S.gpg-agent.browser
 agent-socket:/run/user/1000/gnupg/S.gpg-agent
 homedir:/home/coder/.gnupg
 ```
-
-The output seem too limited and we need more information, add `--verbose` to the
-`gpg` command.
-
-### GitHub or GitLab "unverified" commits
-
-Signed commits should have a verification status beside them. If you see
-"unverified" it may be that the signing key hasn't been uploaded to the account.
-
-- [GitHub Adding a new GPG key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
-- [GitLab Adding a GPG key](https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/#adding-a-gpg-key-to-your-account)
-
-It can also be that the email address in the author field doesn't match the
-username andsigning key's email.
