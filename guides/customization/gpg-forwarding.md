@@ -69,7 +69,7 @@ dependencies for GPG forwarding:
 - `openssh-server` and `gnupg2` installed
 - `StreamLocalBindUnlink yes` set in the `/etc/ssh/sshd_config` file
 - Socket masking
-- `OpenSSH` enabled (so that Coder doesn't inject it's own instance of OpenSSH)
+- `OpenSSH` enabled (so that Coder doesn't inject its own ssh daemon)
 
 Your updated Dockerfile would look something like:
 
@@ -310,6 +310,12 @@ The following are steps you can take to minimize your risk:
    being compromised if a security incident occurs. You'll need to add the
    sub-keys to your Git provider, and if there's a security incident, the old
    commits signed using the affected keys may be considered unverified.
+
+1. As of Coder 1.22, `coder config-ssh` enables the ControlMaster mechanism which
+   caches connections even after the interactive shell is exited. This means GPG actions
+   on the remote system can take place when there is no apparent connection. To disable
+   this mechanism on your GPG forwarded ssh connection, add the command line options:
+   `-o ControlMaster=no -o ControlPath=none`
 
 ## Troubleshooting
 
