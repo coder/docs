@@ -20,7 +20,7 @@ Before proceeding, please make sure that you have the following installed:
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
 You will need to also need to
-[generate a free Coder license](https://coder.com/trial) which will be uploaded
+[generate a free Coder license](https://coder.com/trial) which can be uploaded
 upon installation.
 
 ## Limitations
@@ -111,10 +111,8 @@ installed Coder.
    address:
 
    ```yaml
-   ingress:
-     host: "127.0.0.1.nip.io"
-   devurls:
-     host: "*.127.0.0.1.nip.io"
+   coderd:
+     devurlsHost: "*.127.0.0.1.nip.io"
    ```
 
 Alternatively, you can use [dnsmasq][dnsmasq-url] to create local domains (e.g.,
@@ -171,10 +169,8 @@ protection. Here's how to do this:
    your new domains:
 
    ```yaml
-   ingress:
-   host: "dashboard.coder"
-   devurls:
-   host: "*.coder"
+   coderd:
+     devurlsHost: "*.coder"
    ```
 
 ## Option 2: Docker Desktop
