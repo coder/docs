@@ -311,11 +311,12 @@ The following are steps you can take to minimize your risk:
    sub-keys to your Git provider, and if there's a security incident, the old
    commits signed using the affected keys may be considered unverified.
 
-1. As of Coder 1.22, `coder config-ssh` enables the ControlMaster mechanism which
-   caches connections even after the interactive shell is exited. This means GPG actions
-   on the remote system can take place when there is no apparent connection. To disable
-   this mechanism on your GPG forwarded ssh connection, add the command line options:
-   `-o ControlMaster=no -o ControlPath=none`
+1. As of Coder v1.22.x, running `coder config-ssh` enables the `ControlMaster`
+   mechanism, which caches connections even you exit the interactive shell. This
+   means that GPG actions on the remote system can occur even if there's no
+   apparent connection. To disable `ControlMaster` on your GPG-forwarded SSH
+   connection, add the following options to your command:
+   `-o ControlMaster=no -o ControlPath=none`.
 
 ## Troubleshooting
 
