@@ -26,7 +26,7 @@
     "prettier": "2.3.2",
     "semver-compare": "^1.0.0",
     "ts-node": "^10.2.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.2"
   },
   "engines": {
     "node": "^12.16.0"
