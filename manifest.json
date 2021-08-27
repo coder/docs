@@ -387,6 +387,10 @@
           "path": "./guides/api.md"
         },
         {
+          "path": "./guides/test.md",
+          "navigable": false
+        },
+        {
           "path": "./guides/troubleshooting/index.md",
           "children": [
             {
