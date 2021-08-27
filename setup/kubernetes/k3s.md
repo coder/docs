@@ -32,32 +32,15 @@ Before proceeding, please make sure that:
 
 - You have the following software installed on your machine:
 
-  - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
   - [helm](https://helm.sh/docs/intro/install/)
 
 - Your network policy or firewall accepts incoming traffic on:
 
-  - Port 22 (SSH)
   - Port 80 (HTTP)
   - Port 443 (HTTPS)
-  - Port 5349 (TURNS)
-  - **Optional**: Port 443 (Kubernetes API)
+  - **Optional**: Port 6443 (Kubernetes API)
 
-## Step 1: Change the default SSH port
-
-> If you've enabled Networking v2 after installing Coder (you can do so by going
-> to **Manage** > **Admin** > **Infrastructure**), this step to SSH into
-> workspaces isn't necessary, since TURNS is used instead.
-
-To allow [SSH into workspaces](../../workspaces/ssh), you must change the host's
-default SSH port to free up port `22`. You may also need to modify your firewall
-to accept incoming traffic from the alternative port (e.g., if you rename port
-`22` to `5522`, then your firewall must accept traffic from `5522`).
-
-> If you don't know how to change the SSH port in Linux, please review this
-> [guide from Linuxize](https://linuxize.com/post/how-to-change-ssh-port-in-linux/)
-
-## Step 2: Install K3s with Calico
+## Step 1: Install K3s with Calico
 
 The following steps are based on
 [Calico's quickstart guide](https://docs.projectcalico.org/getting-started/kubernetes/k3s/quickstart)
@@ -96,7 +79,7 @@ Traefik in favor of Calico and nginx-ingress.
    watch kubectl get pods --all-namespaces
    ```
 
-## Step 3: Allow IP Forwarding
+## Step 2: Allow IP Forwarding
 
 Modify Calico to enable IP forwarding, which is needed for container networking.
 
@@ -114,7 +97,7 @@ Under `container_settings`, set `allow_ip_forwarding` to `true`:
 }
 ```
 
-## Step 4: Copy over the kubeconfig
+## Step 3: Copy over the kubeconfig
 
 Occasionally, Helm will not recognize the K3s cluster (see
 k3s-io/[k3s#1126](https://github.com/k3s-io/k3s/issues/1126) for more
