@@ -53,9 +53,7 @@ apply):
    linux  linux-headers-5.11.4-arch1-1
    ```
 
-1. Docker Desktop for Mac **must** use version [2.5.0.1][docker-mac-url]. This
-   specific version is required because of a recent downgrade to Linux Kernel
-   4.9 due to a [bug][docker-bug-url].
+1. CVMs do not currently work on Docker Desktop for Mac.
 
 ### SSH
 
