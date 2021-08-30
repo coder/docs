@@ -13,7 +13,7 @@ platform. With this model, Coder hosts the control plane, and you host your
 compute and development workspaces. The benefits include:
 
 - Automatic upgrades
-- No installation or DNS configuration
+- No DNS or TLS configuration
 - Managed logging & monitoring
 
 If you interested in trying the limited beta, [contact us](https://coder.com/contact?note=I%20would%20like%20to%20try%20the%20hosted%20offer.%0A%0ANumber%20of%20developers%3A%0A%0AUse%20case%3A))
@@ -28,8 +28,6 @@ Curious how this works? Here's a breakdown of the architecture:
       receives their own `coderd` instance
 - A PostgreSQL DB - Stores metadata related to your Coder instance,
   such as user information, session tokens, etc.
-  - Coder uses a single PostgreSQL instance with each deployment having their
-    own database within the instance
 
 **Your infrastructure**:
 
@@ -46,15 +44,13 @@ your cluster, enabling you to create workspaces in your cluster.
 
    - Deployment URL should be `<your-name>.coder.com`
 
-   - Username should be `admin`
+   - Username should be the email address you provided
 
    - Password should be similar to `Lv7...k3`
 
 > These credentials are emailed to your Coder admin.
 
 1. Once logged in, you'll be prompted to change your temporary password
-
-1. Enter the license file provided to you by email
 
 You're in! Now that you've successfully accessed your hosted Coder deployment,
 it's time to connect your Kubernetes cluster to Coder. See our guide on creating
