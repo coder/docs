@@ -16,6 +16,8 @@ compute and development workspaces. The benefits include:
 - No installation or DNS configuration
 - Managed logging & monitoring
 
+If you interested in trying the limited beta, [contact us](https://coder.com/contact?note=I%20would%20like%20to%20try%20the%20hosted%20offer.%0A%0ANumber%20of%20developers%3A%0A%0AUse%20case%3A))
+
 Curious how this works? Here's a breakdown of the architecture:
 
 **Coder's infrastructure**:
@@ -40,13 +42,15 @@ your cluster, enabling you to create workspaces in your cluster.
 
 ## Accessing your Coder hosted beta
 
-1. Navigate to your deployment URL and login with the provided credentials:
+1. Navigate to your deployment URL and login with the following credentials:
 
    - Deployment URL should be `<your-name>.coder.com`
 
    - Username should be `admin`
 
    - Password should be similar to `Lv7...k3`
+
+> These credentials are emailed to your Coder admin.
 
 1. Once logged in, you'll be prompted to change your temporary password
 
