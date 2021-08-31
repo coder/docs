@@ -71,6 +71,22 @@ If, however, you named the dev URL `reactproject`, then your URL is
 If you access a dev URL that hasn't been created, Coder automatically adds it to
 your dev URL list on the dashboard and sets the access level to **Private**.
 
+## Programmatically accessing dev URLs
+
+If you need programmatic access to authenticated dev URLs (i.e., dev URLs with
+access levels set to **private**, **organization**, or **authorized users**),
+you can run the following in the terminal:
+
+```console
+# Generate an API token with the Coder CLI
+$ coder tokens create devurl
+<TOKEN>
+
+# Send HTTP requests to the dev URL using the devurl_session cookie
+$ curl --cookie "devurl_session=<TOKEN>" <dev-url>
+```
+
 ## Access via SSH port forwarding
 
-You can also access your server via [SSH port forwarding](ssh.md#forwarding-dev-urls).
+You can also access your server via
+[SSH port forwarding](ssh.md#forwarding-dev-urls).
