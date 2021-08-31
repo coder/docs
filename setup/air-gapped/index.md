@@ -85,8 +85,6 @@ platform images are hosted in Coder's Docker Hub repo.
    section will cover more on updating your Helm chart with your database
    information.)
 
-   [dashboard](https://hub.docker.com/r/coderenvs/dashboard)
-
    You can pull each of these images from their `coderenvs/<img-name>:<version>`
    registry location using the image's name and Coder version:
 
