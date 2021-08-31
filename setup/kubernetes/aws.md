@@ -173,7 +173,7 @@ as a workspace deployment option, you'll need to
    kind: ClusterConfig
 
    metadata:
-     version: "<YOUR_K8s_VERSION"
+     version: "<YOUR_K8s_VERSION>"
      name: <YOUR_CLUSTER_NAME>
      region: <YOUR_AWS_REGION>
 
