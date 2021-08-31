@@ -1,57 +1,57 @@
 ---
-title: Getting started with Coder's hosted beta
+title: Getting started
 description: Get started with a hosted Coder deployment.
 ---
 
-To help you get started, we've put together this guide to help you understand
-how the Coder hosted beta works and how to access your deployment.
+This guide helps you understand how Coder's hosted beta offering works and how
+you can access your deployment to get started.
 
-## What is Coder hosted beta?
+## What is Coder's hosted beta offering?
 
-The Coder hosted beta is a hybrid cloud offering of Coder's self-hosted
-platform. With this model, Coder hosts the control plane, and you host your
-compute and development workspaces. The benefits include:
+The hosted beta offering is a hybrid cloud offering of Coder's self-hosted
+platform. Coder hosts the control plane, while you host your compute and
+development workspaces. The benefits of this setup include:
 
 - Automatic upgrades
 - No DNS or TLS configuration
-- Managed logging & monitoring
+- Managed logging and monitoring
 
-If you interested in trying the limited beta, [contact us](https://coder.com/contact?note=I%20would%20like%20to%20try%20the%20hosted%20offer.%0A%0ANumber%20of%20developers%3A%0A%0AUse%20case%3A))
+If you are interested in trying the hosted beta,
+[contact us](https://coder.com/contact?note=I%20would%20like%20to%20try%20the%20hosted%20offer.%0A%0ANumber%20of%20developers%3A%0A%0AUse%20case%3A)).
 
-Curious how this works? Here's a breakdown of the architecture:
+## How the hosted beta works
 
-**Coder's infrastructure**:
+Curious how the hosted beta works? Here's a breakdown of the underlying
+architecture.
 
-- The `coderd` service - Responsible for rendering the dashboard UI,
-  provisioning workspaces and user authentication, including a variety of other functions
-  - Your `coderd` instance is _not_ shared across other Coder accounts. Each deployment
-      receives their own `coderd` instance
-- A PostgreSQL DB - Stores metadata related to your Coder instance,
-  such as user information, session tokens, etc.
+### Coder infrastructure
 
-**Your infrastructure**:
+- The `coderd` service: responsible for rendering the dashboard UI, provisioning
+  workspaces, user authentication, and many more functions.
+  - Your `coderd` instance is _not_ shared across other Coder accounts. Each
+    deployment has its own `coderd` instance.
+- A PostgreSQL database: stores metadata related to your Coder instance, such as
+  user information, session tokens, etc.
 
-- Kubernetes cluster - Hosts your Coder workspaces, in addition to your source
-  code, which is stored on [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
-  that are mounted to each workspace pod
+### Your infrastructure
 
-`coderd` connects to your infrastructure through a service account created in
-your cluster, enabling you to create workspaces in your cluster.
+- A Kubernetes cluster: hosts your Coder workspaces, as well as your source code
+  (your source code is stored on
+  [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+  mounted to each workspace pod)
+
+`coderd` connects to your infrastructure via a service account created in your
+cluster, enabling you to create workspaces.
 
 ## Accessing your Coder hosted beta
 
-1. Navigate to your deployment URL and login with the following credentials:
+1. Navigate to your deployment URL (e.g., `<your-name>.coder.com`).
 
-   - Deployment URL should be `<your-name>.coder.com`
+1. Log in with the email address you provided to Coder the password Coder
+   provided you.
 
-   - Username should be the email address you provided
+1. Once you've logged in, you'll be prompted to change your temporary password.
 
-   - Password should be similar to `Lv7...k3`
-
-> These credentials are emailed to your Coder admin.
-
-1. Once logged in, you'll be prompted to change your temporary password
-
-You're in! Now that you've successfully accessed your hosted Coder deployment,
-it's time to connect your Kubernetes cluster to Coder. See our guide on creating
-a workspace provider (insert link here).
+You're in! At this point, you'll need to
+[connect your Kubernetes cluster to Coder](#link-here) before you can create
+workspaces.
