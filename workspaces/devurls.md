@@ -77,10 +77,10 @@ If you need programmatic access to authenticated dev URLs (Private,
 Organization, or Authenticated Users), you can run the following commands:
 
 ```console
-# Generate a token
+# Generate an API token with the coder-cli
 coder@dev ~ coder tokens create devurl
 <TOKEN>
-# Curl Dev URL
+# Send HTTP requests to the dev URL with the devurl_session cookie
 coder@dev ~ curl --cookie "devurl_session=<TOKEN>" <dev-url>
 ```
 
