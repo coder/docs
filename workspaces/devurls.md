@@ -74,7 +74,7 @@ your dev URL list on the dashboard and sets the access level to **Private**.
 ## Programmatically accessing dev URLs
 
 If you need programmatic access to authenticated dev URLs (Private,
-Organization, or Authenticated Users), you can do the following:
+Organization, or Authenticated Users), you can run the following commands:
 
 ```console
 # Generate a token
