@@ -31,6 +31,9 @@ If you need to reset the password for a site admin, you can do so using coderd's
 To reset the password, run the following in the terminal:
 
 ```console
+# If you are not yet in the coder namespace:
+kubectl config set-context --current --namespace=coder
+
 # get any coderd pod
 kubectl get pods | grep coderd- | awk '{print $1}' | head -n1
 
