@@ -19,14 +19,15 @@ Before proceeding, please make sure that you have the following installed:
    [Docker Desktop][docker-desktop-url]
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
-You will also need to
-[generate a free Coder license](https://coder.com/trial), which can be uploaded
-upon installation.
+You will also need to [generate a free Coder license](https://coder.com/trial),
+which can be uploaded upon installation.
 
 ## Limitations
 
 **We do not recommend using local previews for production deployments of
 Coder.**
+
+Local preview does not work as a workspace provider on Coder's hosted beta.
 
 ### Resource allocation and performance
 
