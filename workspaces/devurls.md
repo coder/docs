@@ -81,6 +81,7 @@ you can run the following in the terminal:
 # Generate an API token with the Coder CLI
 $ coder tokens create devurl
 <TOKEN>
+
 # Send HTTP requests to the dev URL using the devurl_session cookie
 $ curl --cookie "devurl_session=<TOKEN>" <dev-url>
 ```
