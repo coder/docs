@@ -27,7 +27,7 @@ which you can upload upon installation.
 **We do not recommend using local previews for production deployments of
 Coder.**
 
-Local preview does not work as a workspace provider on Coder's hosted beta.
+The local preview does not work as a workspace provider for Coder's hosted beta.
 
 ### Resource allocation and performance
 
