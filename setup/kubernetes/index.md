@@ -6,7 +6,7 @@ description: Learn how to set up a Kubernetes cluster compatible with Coder.
 This section contains guides for creating a compatible cluster on common cloud
 platforms, including Microsoft Azure, Google Cloud Platform, and Amazon Web
 Services. If you already have a Kubernetes cluster that meets Coder's
-[requirements](../requirements.md), you may wish to proceed to the [installation
+[requirements](../requirements.md), you can proceed to the [installation
 guide].
 
 ## Supported Kubernetes versions
