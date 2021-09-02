@@ -22,8 +22,6 @@ specifies the Kubernetes cluster containing the Coder deployment. This allows
 users to create workspaces in the same cluster as the Coder deployment with no
 additional configuration.
 
-You cannot delete the `built-in` workspace provider.
-
 ## Remote workspace providers
 
 You can deploy a workspace provider to any existing Kubernetes cluster, enabling

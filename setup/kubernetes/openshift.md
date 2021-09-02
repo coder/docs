@@ -175,3 +175,10 @@ spec:
 When creating workspaces,
 [configure Coder to connect to the internal OpenShift registry](../../admin/registries/index.md)
 and use the base image you just created.
+
+## Next steps
+
+To access Coder through a secure domain, review our guides on configuring and
+using [TLS certificates](../../guides/tls-certificates/index.md).
+
+Once complete, see our page on [installation](../installation.md).
