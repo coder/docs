@@ -141,8 +141,8 @@ container is what provides
 
 ## Images hosted in private registries
 
-Please note that _non-cached_ CVM workspaces cannot be created using images hosted
-in a private registry unless you permit unauthenticated access to the images.
+Please note that CVM-enabled workspaces cannot be created using images hosted in
+a private registry unless you permit unauthenticated access to the images.
 
 ## Image configuration
 
