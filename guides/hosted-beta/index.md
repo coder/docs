@@ -53,5 +53,7 @@ cluster, enabling you to create workspaces.
 1. Once you've logged in, you'll be prompted to change your temporary password.
 
 You're in! At this point, you'll need to
-[connect your Kubernetes cluster to Coder](#link-here) before you can create
-workspaces.
+[create a Kubernetes cluster](../../setup/kubernetes/index.md) (if you don't
+already have one you'd like to use with Coder) and
+[connect the cluster to Coder](../../admin/workspace-providers/deployment.md)
+before you can create workspaces.
