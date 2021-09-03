@@ -141,8 +141,12 @@ container is what provides
 
 ## Images hosted in private registries
 
-Please note that _non-cached_ CVM workspaces cannot be created using images hosted
-in a private registry unless you permit unauthenticated access to the images.
+Please note that in order to use CVM workspaces with private images, a [registry](../registries/index.md#adding-a-registry)
+*must* be created with authentication credentials. Private images that can
+be pulled directly by the node will not work with CVMs.
+
+This restriction is removed when [cached CVMs](#enabling-cached-cvms) are
+enabled.
 
 ## Image configuration
 
