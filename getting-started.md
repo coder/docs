@@ -16,8 +16,8 @@ Coder’s [documentation is publicly editable](https://github.com/cdr/docs), so
 please feel free to contribute and provide feedback as you desire.
 
 If you're participating in our hosted beta, please see our
-[hosted beta guide](guides/hosted-beta/index.md). If you're deploying Coder to
-your own clusters, please proceed with this article.
+[guide on getting started](guides/hosted-beta/index.md). If you're deploying
+Coder to your own clusters, please proceed with this article.
 
 ## Setup and deploy Coder
 
