@@ -17,7 +17,7 @@ development workspaces. The benefits of this setup include:
 - Managed logging and monitoring
 
 If you are interested in trying the hosted beta,
-[contact us](https://coder.com/contact?note=I%20would%20like%20to%20try%20the%20hosted%20offer.%0A%0ANumber%20of%20developers%3A%0A%0AUse%20case%3A)).
+[contact us](https://coder.com/contact?note=I%20would%20like%20to%20try%20the%20hosted%20offer.%0A%0ANumber%20of%20developers%3A%0A%0AUse%20case%3A).
 
 ## How the hosted beta works
 
