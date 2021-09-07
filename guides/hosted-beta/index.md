@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Hosted beta
 description: Get started with a hosted Coder deployment.
 ---
 

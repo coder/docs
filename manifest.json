@@ -381,13 +381,13 @@
           ]
         },
         {
+          "path": "./guides/hosted-beta/index.md"
+        },
+        {
           "path": "./guides/mobile-development/index.md"
         },
         {
           "path": "./guides/api.md"
-        },
-        {
-          "path": "./guides/hosted-beta/index.md"
         },
         {
           "path": "./guides/troubleshooting/index.md",
