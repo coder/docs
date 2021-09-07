@@ -39,15 +39,15 @@ enterprise security.
 <div class="guides">
 <div class="guide">
   <div>
-  <h2>Administration</h2>
+  <h2>Setup</h2>
 
   <p>
     Learn how to leverage Coder for your team.
   </p>
 
-  <a href="./admin/index.md">
+  <a href="./setup/index.md">
     <button class="arrow outlined">
-      Learn more
+      Deploy now
     </button>
   </a>
   </div>
@@ -55,15 +55,15 @@ enterprise security.
 
 <div class="guide">
   <div>
-  <h2>Setup</h2>
+  <h2>Administration</h2>
 
   <p>
     Learn how to manage your Coder deployment.
   </p>
 
-  <a href="./setup/index.md">
+  <a href="./admin/index.md">
     <button class="arrow outlined">
-      Deploy now
+      Learn more
     </button>
   </a>
   </div>

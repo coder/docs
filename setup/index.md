@@ -9,8 +9,11 @@ icon:
   0l2.3-2.3c.5-.4.5-1.1.1-1.4z"></path></svg>
 ---
 
-The articles in this section will walk you through setting up a cluster to which
-Coder deploys and then deploying Coder.
+The articles in this section will walk you through:
+
+- Setting up a cluster to which Coder deploys or which you can use as a
+  [workspace provider](../admin/workspace-providers/index.md)
+- Deploying Coder
 
 Coder is free to try, though you'll need a license to do so. You can
 [generate a license](https://coder.com/trial) that allows you to try Coder free
@@ -27,7 +30,9 @@ deployment steps.
 
 1. To begin the deployment process, see our docs on creating a
    [Kubernetes cluster](kubernetes/index.md) and
-   [installing Coder](installation.md).
+   [installing Coder](installation.md). Alternatively, if you're participating
+   in our hosted beta, please see
+   [our hosted beta getting started guide](../guides/hosted-beta/index.md).
 
 ## In this section
 
