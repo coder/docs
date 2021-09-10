@@ -324,9 +324,6 @@
           "path": "./guides/customization/index.md",
           "children": [
             {
-              "path": "./guides/customization/custom-workspace.md"
-            },
-            {
               "path": "./guides/customization/gitconfig.md"
             },
             {

@@ -15,7 +15,7 @@ This guide assumes that you're familiar with:
 
 ## Resources
 
-To get an idea of what you can include in your images, see:
+For ideas on what you can include in your images, see:
 
 - [Sample Coder images](https://github.com/cdr/enterprise-images)
 - [Guide: Node.js image for Coder](../guides/customization/node)
@@ -44,9 +44,9 @@ Please note:
 
 - Coder workspaces mount a
   [home volume](../workspaces/personalization#persistent-home). Any files in the
-  image's home directory will be replaced by this persistent volume. Some
-  install scripts (e.g Rust) must be configured to install software in another
-  directory.
+  image's home directory will be replaced by this persistent volume. If you have
+  install scripts (e.g., those for Rust), you must configure them to install
+  software in another directory.
 
 - If you're using a different base image, see our
   [image minimum requirements](https://github.com/cdr/enterprise-images/#image-minimums)
@@ -60,10 +60,10 @@ Please note:
 
 - If you're using CVM-only features during an image's build time (e.g., you're
   [pre-loading images](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/images.md#building-a-system-container-that-includes-inner-container-images--v012-)
-  in workspaces), you will need to install the
+  in workspaces), you may need to install the
   [sysbox runtime](https://github.com/nestybox/sysbox) onto your local machine
-  and build images locally. Note that this isn't usually necessary, even if your
-  image installs and enables Docker.
+  and build your images locally. Note that this isn't usually necessary, even if
+  your image installs and enables Docker.
 
 ## Example: Installing an IntelliJ IDE
 
