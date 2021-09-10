@@ -13,6 +13,13 @@ This guide assumes that you're familiar with:
 - [docker build](https://docs.docker.com/engine/reference/commandline/build/)
 - [docker push](https://docs.docker.com/engine/reference/commandline/push/)
 
+## Resources
+
+For ideas on what you can include in your images, see:
+
+- [Sample Coder images](https://github.com/cdr/enterprise-images)
+- [Guide: Node.js image for Coder](../guides/customization/node)
+
 ## Creating a custom image
 
 Instead of starting from scratch, we recommend extending one of our
@@ -22,13 +29,24 @@ Instead of starting from scratch, we recommend extending one of our
 # Dockerfile
 FROM codercom/enterprise-base:ubuntu
 
+USER root
+
+# Add software, files, dev tools, and dependencies here
 RUN apt-get install -y ...
 COPY file ./
+
+USER coder
 
 ...
 ```
 
 Please note:
+
+- Coder workspaces mount a
+  [home volume](../workspaces/personalization#persistent-home). Any files in the
+  image's home directory will be replaced by this persistent volume. If you have
+  install scripts (e.g., those for Rust), you must configure them to install
+  software in another directory.
 
 - If you're using a different base image, see our
   [image minimum requirements](https://github.com/cdr/enterprise-images/#image-minimums)
@@ -36,17 +54,16 @@ Please note:
 
 - You can build images inside a
   [CVM](../admin/workspace-management/cvms.md)-enabled Coder workspace with
-  Docker installed (see our [base
-  image](https://github.com/cdr/enterprise-images/tree/main/images/base) for an
-  example of how you can do this).
+  Docker installed (see our
+  [base image](https://github.com/cdr/enterprise-images/tree/main/images/base)
+  for an example of how you can do this).
 
 - If you're using CVM-only features during an image's build time (e.g., you're
-  [pre-loading
-  images](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/images.md#building-a-system-container-that-includes-inner-container-images--v012-)
-  in workspaces), you will need to install the [sysbox
-  runtime](https://github.com/nestybox/sysbox) onto your local machine and build
-  images locally. Note that this isn't usually necessary, even if your image
-  installs and enables Docker.
+  [pre-loading images](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/images.md#building-a-system-container-that-includes-inner-container-images--v012-)
+  in workspaces), you may need to install the
+  [sysbox runtime](https://github.com/nestybox/sysbox) onto your local machine
+  and build your images locally. Note that this isn't usually necessary, even if
+  your image installs and enables Docker.
 
 ## Example: Installing an IntelliJ IDE
 
@@ -86,12 +103,3 @@ RUN curl -L \
 | tar -C /opt/clion --strip-components 1 -xzvf
 RUN ln -s /opt/clion/bin/clion.sh /usr/bin/clion
 ```
-
-## Sample images
-
-To get an idea of what you can include in your images, see:
-
-- [Ben's Coder images](https://github.com/bpmct/cdr-images) (frequently referred
-  to in [Coffee and Coder](https://community.coder.com/coffee-and-coder) and the
-  [Coder blog](https://coder.com/blog))
-- [Sample Coder images](https://github.com/cdr/enterprise-images)

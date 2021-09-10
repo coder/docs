@@ -77,9 +77,6 @@
           "path": "./images/importing.md"
         },
         {
-          "path": "./images/structure.md"
-        },
-        {
           "path": "./images/tags.md"
         },
         {
@@ -87,6 +84,9 @@
         },
         {
           "path": "./images/configure.md"
+        },
+        {
+          "path": "./images/structure.md"
         },
         {
           "path": "./images/tls-certificates.md"
@@ -323,9 +323,6 @@
         {
           "path": "./guides/customization/index.md",
           "children": [
-            {
-              "path": "./guides/customization/custom-workspace.md"
-            },
             {
               "path": "./guides/customization/gitconfig.md"
             },
