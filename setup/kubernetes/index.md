@@ -6,8 +6,7 @@ description: Learn how to set up a Kubernetes cluster compatible with Coder.
 This section contains guides for creating a compatible cluster on common cloud
 platforms, including Microsoft Azure, Google Cloud Platform, and Amazon Web
 Services. If you already have a Kubernetes cluster that meets Coder's
-[requirements](../requirements.md), you can proceed to the [installation
-guide].
+[requirements](../requirements.md), you can proceed to the [installation guide].
 
 ## Supported Kubernetes versions
 
@@ -31,3 +30,8 @@ deprecated features before they are removed from new versions of Kubernetes.
 [installation guide]: ../installation.md
 
 <children></children>
+
+## Incompatible Kubernetes distributions
+
+- [DigitalOcean Managed Kubernetes](https://www.digitalocean.com/products/kubernetes/)
+  does not support [CVMs](../../admin/workspace-management/cvms) with Coder.
