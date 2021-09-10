@@ -1,5 +1,5 @@
 ---
-title: "Configure"
+title: "Configure script"
 description: Learn how to configure Coder's workspace startup behavior.
 ---
 

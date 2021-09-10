@@ -77,9 +77,6 @@
           "path": "./images/importing.md"
         },
         {
-          "path": "./images/structure.md"
-        },
-        {
           "path": "./images/tags.md"
         },
         {
@@ -87,6 +84,9 @@
         },
         {
           "path": "./images/configure.md"
+        },
+        {
+          "path": "./images/structure.md"
         },
         {
           "path": "./images/tls-certificates.md"
