@@ -67,7 +67,7 @@ The following workspace statuses are available:
 - **Turning off**: Your workspace is turning off
 - **Unknown**: Your workspace is in an unknown state
 - **Initializing**: The container is initializing
-- **Decommissioned**: Your workspace is being deleted, and compute resources are
+- **Deleting**: Your workspace is being deleted, and compute resources are
   being released.
 
 ### Advanced
