@@ -27,9 +27,10 @@ deployment steps.
 
 1. To begin the deployment process, see our docs on creating a
    [Kubernetes cluster](kubernetes/index.md) and
-   [installing Coder](installation.md). Alternatively, if you're participating
-   in our hosted beta, please see
-   [our guide for how to get started](../guides/hosted-beta/index.md).
+   [installing Coder](installation.md).
+
+   > If you're participating in our hosted beta, please see
+   > [our guide for how to get started](../guides/hosted-beta/index.md).
 
 ## In this section
 

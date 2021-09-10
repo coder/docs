@@ -24,6 +24,8 @@ If you are interested in trying the hosted beta,
 Curious how the hosted beta works? Here's a breakdown of the underlying
 architecture.
 
+![Hosted beta infrastructure](../../assets/guides/hosted-beta/infrastructure_diagram.png)
+
 ### Coder infrastructure
 
 - The `coderd` service: responsible for rendering the dashboard UI, provisioning
