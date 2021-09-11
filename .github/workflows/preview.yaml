@@ -91,4 +91,5 @@ jobs:
           path: "docs"
 
       - name: Install dependencies
-        run: ./docs/scripts/install_deps.sh
+        run: ./scripts/install_deps.sh
+        working-directory: "./docs"
