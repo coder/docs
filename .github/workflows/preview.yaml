@@ -39,20 +39,20 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: Cache Node Modules
+      - name: Cache Node.js modules
         uses: actions/cache@v2
         with:
           path: "/node_modules"
           key: node-${{ hashFiles('yarn.lock') }}
 
-      - name: Create Deployment
+      - name: Create deployment
         id: deployment
         run: ./ci/scripts/github_deployment.sh create
         env:
           GITHUB_TOKEN: ${{ github.token }}
           DEPLOY_ENVIRONMENT: codercom-preview-docs
 
-      - name: Deploy Preview to Vercel
+      - name: Deploy preview to Vercel
         id: preview
         run: ./ci/scripts/deploy_vercel.sh
         env:
@@ -61,7 +61,7 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           CODER_DOCS_MAIN_BRANCH: ${{ github.event.pull_request.head.sha }}
 
-      - name: Update Deployment
+      - name: Update deployment
         # If we don't specify always, it won't run this check if failed.
         # This means the deployment would be stuck pending.
         if: always()
@@ -72,7 +72,7 @@ jobs:
           DEPLOY_STATUS: ${{ steps.preview.outcome }}
           DEPLOY_URL: ${{ steps.preview.outputs.url }}
 
-      - name: Comment Link
+      - name: Comment link
         uses: marocchino/sticky-pull-request-comment@v2
         if: always()
         with:
@@ -91,4 +91,4 @@ jobs:
           path: "docs"
 
       - name: Install dependencies
-        run: ./docs/scripts/isntall_deps.sh
+        run: ./docs/scripts/install_deps.sh
