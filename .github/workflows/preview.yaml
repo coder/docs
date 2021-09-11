@@ -72,7 +72,7 @@ jobs:
           DEPLOY_STATUS: ${{ steps.preview.outcome }}
           DEPLOY_URL: ${{ steps.preview.outputs.url }}
 
-      - name: Comment Credentials
+      - name: Comment Link
         uses: marocchino/sticky-pull-request-comment@v2
         if: always()
         with:
@@ -84,3 +84,11 @@ jobs:
             * _Last deploy status_: ${{ steps.preview.outcome }}
             * _Commit_: ${{ github.event.pull_request.head.sha }}
             * _Workflow status_: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+      - name: Checkout docs
+        uses: actions/checkout@v2
+        with:
+          path: "docs"
+
+      - name: Install dependencies
+        run: ./docs/scripts/isntall_deps.sh
