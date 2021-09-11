@@ -93,3 +93,10 @@ jobs:
       - name: Install dependencies
         run: ./scripts/install_deps.sh
         working-directory: "./docs"
+
+      - name: Check links
+        run: |
+          ./scripts/check_links.sh \
+            --base-url="${{ steps.preview.outputs.url }}/docs" \
+            --github-token="${{ github.token }}"
+        working-directory: "./docs"
