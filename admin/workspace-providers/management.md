@@ -16,7 +16,7 @@ page available via **Manage** > **Workspace Providers**.
 The Admin panel shows an overview of all configured workspace providers and
 indicates their statuses and details.
 
-### Status
+## Statuses
 
 A workspace provider can have one of the following statuses:
 
@@ -28,7 +28,7 @@ A workspace provider can have one of the following statuses:
   reached by the Coder deployment. The workspace provider's details will include
   an error message.
 
-## Editing a workspace provider
+## Edit a workspace provider
 
 To edit a workspace provider, log in to Coder, and go to **Manage** >
 **Providers**.
@@ -68,7 +68,7 @@ At this point, you can:
 
 Once you've made your changes, click **Update Provider** to save and continue.
 
-## Deleting a workspace provider
+## Delete a workspace provider
 
 1. Log in to Coder, and go to **Manage** > **Providers**.
 
