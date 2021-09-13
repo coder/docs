@@ -30,27 +30,19 @@ apps:
     # File path to icon used in launcher
     icon_path: /home/coder/1920px-Python.svg.png
     # Command to start the application
-    command: python
+    command: python3
     # Array of arguments for command
-    args: ["-m", "SimpleHTTPServer"]
+    args: ["-m", "http.server"]
     # Health checks to get running application status
     # Can use exec or http health checks to localhost
-    #
-    # health_check:
-    #   # Exec health check:
-    #   exec:
-    #     command: "pgrep"
-    #     args: ["python"]
-    #
-    #   # HTTP health check:
-    #   http:
-    #     scheme: "http"
-    #     path: "/"
-    #     port: 8080
     health_check:
       exec:
         command: "pgrep"
-        args: ["python"]
+        args: ["python3"]
+      http:
+        scheme: "http"
+        path: "/"
+        port: 8000
 ```
 
 The applications specification file can be written into the workspace image and
