@@ -9,6 +9,8 @@ Coder connects developers to web applications installed in their workspaces by
 using an applications specification file file located at
 `/coder/apps/config.yaml` on the workspace filesystem.
 
+![Application Launcher](../assets/workspaces/applications.png)
+
 ## Application Specification File
 
 You may specify the following options for an application:
