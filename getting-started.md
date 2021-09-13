@@ -15,6 +15,10 @@ wanted to provide an onboarding guide to ensure you have a great experience.
 Coder’s [documentation is publicly editable](https://github.com/cdr/docs), so
 please feel free to contribute and provide feedback as you desire.
 
+If you're participating in our hosted beta, please see our
+[guide on getting started](guides/hosted-beta/index.md). If you're deploying
+Coder to your own clusters, please proceed with this article.
+
 ## Setup and deploy Coder
 
 To get started with Coder, you’ll need to [deploy Coder](./setup/index.md) to a
@@ -36,8 +40,9 @@ your users to [connect to your Git provider](./admin/git.md).
 At a minimum, you’ll want to ensure you
 [add a container registry](./admin/registries/index.md) for your development
 environments to pull from, and [import an image](./images/importing.md) with the
-tools your developers need. You can [create custom images](images/writing.md)
-for your developer workspaces as well.
+tools your developers need. You can
+[create custom images](./guides/customization/custom-workspace.md) for your
+developer workspaces as well.
 
 ## Provision users
 
