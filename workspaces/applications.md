@@ -19,7 +19,7 @@ You may specify the following options for an application:
 # /coder/apps/config.yaml
 
 apps:
-  # Name of application in launcher
+    # Name of application in launcher
   - name: projector
     # Application scheme
     scheme: http
