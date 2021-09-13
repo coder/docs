@@ -3,7 +3,7 @@ title: "About"
 description: "Learn about Coder, our mission, and why to choose us."
 ---
 
-Coder moves software development to the cloud, centralizing your organizations'
+Coder helps move software development to the cloud, centralizing your organizations'
 development initiatives and offering improvements in development velocity and
 enterprise security.
 
