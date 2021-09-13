@@ -20,29 +20,29 @@ You may specify the following options for an application:
 
 apps:
   # Name of application in launcher
-  - name: python
+  - name: projector
     # Application scheme
     scheme: http
     # Application port
-    port: 8000
+    port: 9999
     # Working directory
     dir: /home/coder
     # File path to icon used in launcher
-    icon_path: /home/coder/1920px-Python.svg.png
+    icon_path: /home/coder/goland.svg
     # Command to start the application
-    command: python3
+    command: /home/coder/.local/bin/projector
     # Array of arguments for command
-    args: ["-m", "http.server"]
+    args: ["run"]
     # Health checks to get running application status
     # Can use exec or http health checks to localhost
     health_check:
       exec:
         command: "pgrep"
-        args: ["python3"]
+        args: ["projector"]
       http:
         scheme: "http"
         path: "/"
-        port: 8000
+        port: 9999
 ```
 
 The applications specification file can be written into the workspace image and
