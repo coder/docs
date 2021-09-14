@@ -75,10 +75,10 @@ coder update
 
 The `coder update` command accepts the following arguments:
 
-* `--coder` argument allows you to specify the exact Coder instance from which
+- `--coder` argument allows you to specify the exact Coder instance from which
 to query the version.
-* `--version` allows you to manually specify a given verison of Coder CLI to
+- `--version` allows you to manually specify a given verison of Coder CLI to
 download.
-* `--force` causes Coder CLI to not ask for confirmation.
+- `--force` causes Coder CLI to not ask for confirmation.
 
 **Note:** Coder CLI will refuse to auto-update if it is under certain paths.
