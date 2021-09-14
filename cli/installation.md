@@ -55,3 +55,30 @@ Generate a static authentication token with the following command:
 ```console
 coder tokens create my-token
 ```
+
+### Automatic Update (Linux, Mac, Windows)
+
+As of version `v1.23`, Coder CLI supports automatically updating itself.
+
+This works by querying the version of the currently logged in Coder instance,
+downloading the corresponding version from GitHub, extracting it, and updating
+the running binary in-place.
+
+You will be asked for confirmation before any changes are performed.
+
+To update `coder` to the version corresponding to your currently authenticated
+Coder session, just run:
+
+```console
+coder update
+```
+
+The `coder update` command accepts the following arguments:
+
+* `--coder` argument allows you to specify the exact Coder instance from which
+to query the version.
+* `--version` allows you to manually specify a given verison of Coder CLI to
+download.
+* `--force` causes Coder CLI to not ask for confirmation.
+
+**Note:** Coder CLI will refuse to auto-update if it is under certain paths.
