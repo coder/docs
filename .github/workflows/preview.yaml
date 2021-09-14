@@ -64,6 +64,8 @@ jobs:
       # This ensures the docs site is built properly
       # as it will sometimes throw a 404 or 500
       # error if Markdown/parsing errors are present
+      - name: Install node_modules
+        run: yarn install
       - name: Check docs
         run: yarn ts-node ./product/coder.com/site/scripts/checkDocs.ts
         env:
