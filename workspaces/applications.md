@@ -5,9 +5,9 @@ description:
 state: alpha
 ---
 
-Coder connects developers to web applications installed in their workspaces by
-using an applications specification file file located at
-`/coder/apps/config.yaml` on the workspace filesystem.
+You can connect to web applications installed on your workspace using the
+applications specification file located at `/coder/apps/config.yaml` of the
+workspace filesystem.
 
 ![Application Launcher](../assets/workspaces/applications.png)
 
@@ -19,7 +19,7 @@ You may specify the following options for an application:
 # /coder/apps/config.yaml
 
 apps:
-    # Name of application in launcher
+  # Name of application in launcher
   - name: projector
     # Application scheme
     scheme: http
