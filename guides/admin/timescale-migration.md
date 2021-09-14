@@ -1,12 +1,12 @@
 ---
-title: Migrating data from TimescaleDB
-description: Learn how to migrate data from the TimescaleDB to a PostgreSQL
-instance.
+title: Migrating data from Coder's built-in PostgreSQL database
+description: Learn how to migrate data from the built-in PostgreSQL to an
+external PostgreSQL instance.
 ---
 
 ## Background
 
-By default, Coder will deploy a Timescale database within the installation's
+By default, Coder will deploy a built-in database within the installation's
 Kubernetes namespace. We recommend using this database _only_ for evaluation
 purposes. With this in mind, you might want to migrate the data stored in your
 Timescale instance over to an out-of-cluster PostgreSQL database
@@ -15,27 +15,33 @@ Timescale instance over to an out-of-cluster PostgreSQL database
 
 ## Migration Steps
 
-1. Access the timescale pod and dump the database into a file:
+1. Access the database pod and dump the database into a file:
 
 ```console
 kubectl exec -it statefulset/timescale -n coder -- pg_dump -U coder -d coder > backup.sql
 ```
 
-> If your database is large, you can truncate Coder's telemetry, metrics, and
-> audit log to reduce the file size.
+1. (Optional) If your database is large, you can truncate Coder's telemetry,
+   metrics, and audit log to reduce the file size:
 
-1. Access your PostgreSQL instance and create user `coder`
+    ```psql
+    TRUNCATE metric_events;
+    TRUNCATE environment_stats;
+    TRUNCATE audit_logs;
+    ```
+
+1. Access your PostgreSQL instance and create user and database `coder`
 
 1. Import the data into your database:
 
-``` console
-cat backup.sql > psql -U coder
+``` psql
+psql -U coder < backup.sql
 ```
 
 1. Connect your Coder instance to the database:
 
 ```console
-helm upgrade -n coder coder coder/coder \
+helm upgrade --reuse-values -n coder coder coder/coder \
     --set postgres.default.enable=false \
     --set postgres.host=<HOST_ADDRESS> \
     --set postgres.port=<PORT_NUMBER> \
