@@ -2,7 +2,7 @@
 title: "Applications"
 description:
   Learn how to access web applications running on your remote workspace.
-state: alpha
+state: beta
 ---
 
 You can connect to web applications installed on your workspace using the
@@ -11,9 +11,11 @@ workspace filesystem.
 
 ![Application Launcher](../assets/workspaces/applications.png)
 
-## Application Specification File
+## Application specification file
 
-You may specify the following options for an application:
+The application specification file allows you to define what Coder needs to
+launch the application. Within the file, you can specify the following for each
+application:
 
 ```yaml
 # /coder/apps/config.yaml
@@ -27,7 +29,7 @@ apps:
     port: 9999
     # Working directory
     dir: /home/coder
-    # File path to icon used in launcher
+    # File path to icon used in application launcher
     icon_path: /home/coder/goland.svg
     # Command to start the application
     command: /home/coder/.local/bin/projector
@@ -45,5 +47,6 @@ apps:
         port: 9999
 ```
 
-The applications specification file can be written into the workspace image and
-also supports editing via [personalization](./personalization.md) scripts.
+You can include the applications specification file in your
+[workspace image](../images/writing.md). You an also modify the file via
+[personalization](./personalization.md) scripts.
