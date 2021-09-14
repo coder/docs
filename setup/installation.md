@@ -84,7 +84,8 @@ kubectl config set-context --current --namespace=coder
 
    ```yaml
    postgres:
-     useDefault: false
+     default:
+      enable: false
      host: HOST_ADDRESS
      port: PORT_NUMBER
      user: YOUR_USER_NAME
