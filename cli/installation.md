@@ -71,4 +71,4 @@ The `coder update` command accepts the following arguments:
 - `--version`: specify the version that the CLI should download and upgrade to
 - `--force`: omit prompts asking for change confirmations
 
-**Note:** Coder CLI will not update if it is under certain paths.
+**Note:** Coder CLI will not update if it is located under `/var/tmp/coder` or `C:\Windows`.
