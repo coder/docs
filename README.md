@@ -3,7 +3,7 @@
 # Coder Docs
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-30-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository contains the documentation source files for
@@ -73,6 +73,7 @@ Thanks goes to these wonderful people:
   </tr>
   <tr>
     <td align="center"><a href="http://www.linkedin.com/in/presleypizzo/"><img src="https://avatars.githubusercontent.com/u/1290996?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Presley Pizzo</b></sub></a><br /><a href="#content-presleyp" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/lilshoff"><img src="https://avatars.githubusercontent.com/u/78573475?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Lily Hoffman</b></sub></a><br /><a href="https://github.com/cdr/docs/issues?q=author%3Alilshoff" title="Bug reports">🐛</a> <a href="#content-lilshoff" title="Content">🖋</a></td>
   </tr>
 </table>
 
