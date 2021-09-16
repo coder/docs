@@ -1,5 +1,5 @@
 ---
-title: Migrating data Coder's database
+title: Database migration
 description: Learn how to migrate data from Coder's built-in PostgreSQL database
 to an external PostgreSQL instance.
 ---
