@@ -253,6 +253,15 @@
         "content",
         "maintenance"
       ]
+    },
+    {
+      "login": "Radruler",
+      "name": "Zakary French",
+      "avatar_url": "https://avatars.githubusercontent.com/u/492821?v=4",
+      "profile": "http://about.me/radruler",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
