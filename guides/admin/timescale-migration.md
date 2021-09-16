@@ -30,7 +30,7 @@ This article will walk you through the process of doing so.
    TRUNCATE audit_logs;
    ```
 
-1. Access your PostgreSQL instance and create user and database `coder`
+1. Access your PostgreSQL instance and create user `coder` and database `coder`
 
 1. Import the data you exported in the first step into your external database:
 
