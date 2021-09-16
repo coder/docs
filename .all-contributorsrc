@@ -280,6 +280,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "brianbegy",
+      "name": "Brian Begy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17928652?v=4",
+      "profile": "https://github.com/brianbegy",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,
