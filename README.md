@@ -3,7 +3,7 @@
 # Coder Docs
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository contains the documentation source files for
@@ -64,6 +64,7 @@ Thanks goes to these wonderful people:
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/f0ssel"><img src="https://avatars.githubusercontent.com/u/19379394?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Garrett Delfosse</b></sub></a><br /><a href="#content-f0ssel" title="Content">🖋</a> <a href="#maintenance-f0ssel" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="http://about.me/radruler"><img src="https://avatars.githubusercontent.com/u/492821?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zakary French</b></sub></a><br /><a href="https://github.com/cdr/docs/issues?q=author%3ARadruler" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
