@@ -3,7 +3,7 @@
 # Coder Docs
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-27-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository contains the documentation source files for
@@ -68,6 +68,7 @@ Thanks goes to these wonderful people:
     <td align="center"><a href="https://github.com/dmatking"><img src="https://avatars.githubusercontent.com/u/42384667?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dmatking</b></sub></a><br /><a href="https://github.com/cdr/docs/issues?q=author%3Admatking" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/horizzzzon"><img src="https://avatars.githubusercontent.com/u/89654740?v=4?s=100" width="100px;" alt=""/><br /><sub><b>horizzzzon</b></sub></a><br /><a href="#content-horizzzzon" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/brianbegy"><img src="https://avatars.githubusercontent.com/u/17928652?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brian Begy</b></sub></a><br /><a href="#content-brianbegy" title="Content">🖋</a></td>
+    <td align="center"><a href="https://cianjohnston.ie"><img src="https://avatars.githubusercontent.com/u/4949514?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cian Johnston</b></sub></a><br /><a href="#content-johnstcn" title="Content">🖋</a></td>
   </tr>
 </table>
 
