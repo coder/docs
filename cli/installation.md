@@ -55,3 +55,20 @@ Generate a static authentication token with the following command:
 ```console
 coder tokens create my-token
 ```
+
+## Update
+
+To update the CLI to the version corresponding to your current Coder deployment,
+run (you will be asked to confirm all changes before they're performed):
+
+```console
+coder update
+```
+
+The `coder update` command accepts the following arguments:
+
+- `--coder`: specify the Coder instance the CLI should use to query the version
+- `--version`: specify the version that the CLI should download and upgrade to
+- `--force`: omit prompts asking for change confirmations
+
+**Note:** Coder CLI will not update if it is located under `/var/tmp/coder` or `C:\Windows`.
