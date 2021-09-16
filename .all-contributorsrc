@@ -308,6 +308,15 @@
         "bug",
         "content"
       ]
+    },
+    {
+      "login": "presleyp",
+      "name": "Presley Pizzo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1290996?v=4",
+      "profile": "http://www.linkedin.com/in/presleypizzo/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,
