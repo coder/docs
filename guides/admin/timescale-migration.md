@@ -1,7 +1,6 @@
 ---
 title: Database migration
-description: Learn how to migrate data from Coder's built-in PostgreSQL database
-to an external PostgreSQL instance.
+description: Learn how to migrate data from Coder's built-in database.
 ---
 
 By default, Coder deploys a built-in database in the installation's Kubernetes
@@ -24,7 +23,7 @@ This article will walk you through the process of doing so.
 1. **Optional**: If your database is large, you can truncate Coder's telemetry,
    metrics, and audit log data to reduce the file size:
 
-   ```psql
+   ```sql
    TRUNCATE metric_events;
    TRUNCATE environment_stats;
    TRUNCATE audit_logs;
@@ -34,7 +33,7 @@ This article will walk you through the process of doing so.
 
 1. Import the data you exported in the first step into your external database:
 
-   ```psql
+   ```sql
    psql -U coder < backup.sql
    ```
 
