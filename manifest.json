@@ -192,7 +192,11 @@
         },
         {
           "path": "./admin/organizations/index.md",
-          "children": ["./admin/organizations/manage.md"]
+          "children": [
+            {
+              "path": "./admin/organizations/manage.md"
+            }
+          ]
         },
         {
           "path": "./admin/registries/index.md",
