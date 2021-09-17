@@ -60,6 +60,7 @@ The symlink names supported by Coder are:
 
 - `clion`
 - `datagrip`
+- `dataspell`
 - `goland`
 - `intellij-idea-ultimate`
 - `intellij-idea-community`

@@ -18,6 +18,7 @@ PATH:
 - Android Studio
 - CLion
 - DataGrip
+- DataSpell
 - GoLand
 - IntelliJ IDEA Community Edition
 - IntelliJ IDEA Ultimate
