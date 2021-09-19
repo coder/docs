@@ -77,11 +77,11 @@ gcloud beta container --project "$PROJECT_ID" \
     --metadata disable-legacy-endpoints=true \
     --scopes "https://www.googleapis.com/auth/cloud-platform" \
     --num-nodes "2" \
-    --enable-stackdriver-kubernetes \
+    --logging=SYSTEM,WORKLOAD \
+    --monitoring=SYSTEM \
     --enable-ip-alias \
     --network "projects/$PROJECT_ID/global/networks/default" \
-    --subnetwork \
-    "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
+    --subnetwork "projects/$PROJECT_ID/regions/$REGION/subnetworks/default" \
     --default-max-pods-per-node "110" \
     --addons HorizontalPodAutoscaling,HttpLoadBalancing \
     --enable-autoupgrade \
@@ -117,11 +117,11 @@ clusters create "$NEW_CLUSTER_NAME" \
    --metadata disable-legacy-endpoints=true \
    --scopes "https://www.googleapis.com/auth/cloud-platform" \
    --num-nodes "2" \
-   --enable-stackdriver-kubernetes \
+   --logging=SYSTEM,WORKLOAD \
+   --monitoring=SYSTEM \
    --enable-ip-alias \
    --network "projects/$PROJECT_ID/global/networks/default" \
-   --subnetwork \
-   "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
+   --subnetwork "projects/$PROJECT_ID/regions/$REGION/subnetworks/default" \
    --default-max-pods-per-node "110" \
    --addons HorizontalPodAutoscaling,HttpLoadBalancing \
    --enable-autoupgrade \
