@@ -43,7 +43,9 @@ for more information on each parameter used.
 
 Regardless of which option you choose, be sure to replace the following
 parameters to reflect the needs of your workspace: `PROJECT_ID`,
-`NEW_CLUSTER_NAME`, `ZONE`.
+`NEW_CLUSTER_NAME`, `ZONE`, and `REGION`. You can [choose the zone and
+region](https://cloud.google.com/compute/docs/regions-zones#choosing_a_region_and_zone)
+that makes the most sense for your location.
 
 > Both options include the use of the `enable-network-policy` flag, which
 > [creates a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
@@ -77,11 +79,11 @@ gcloud beta container --project "$PROJECT_ID" \
     --metadata disable-legacy-endpoints=true \
     --scopes "https://www.googleapis.com/auth/cloud-platform" \
     --num-nodes "2" \
-    --enable-stackdriver-kubernetes \
+    --logging=SYSTEM,WORKLOAD \
+    --monitoring=SYSTEM \
     --enable-ip-alias \
     --network "projects/$PROJECT_ID/global/networks/default" \
-    --subnetwork \
-    "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
+    --subnetwork "projects/$PROJECT_ID/regions/$REGION/subnetworks/default" \
     --default-max-pods-per-node "110" \
     --addons HorizontalPodAutoscaling,HttpLoadBalancing \
     --enable-autoupgrade \
@@ -117,11 +119,11 @@ clusters create "$NEW_CLUSTER_NAME" \
    --metadata disable-legacy-endpoints=true \
    --scopes "https://www.googleapis.com/auth/cloud-platform" \
    --num-nodes "2" \
-   --enable-stackdriver-kubernetes \
+   --logging=SYSTEM,WORKLOAD \
+   --monitoring=SYSTEM \
    --enable-ip-alias \
    --network "projects/$PROJECT_ID/global/networks/default" \
-   --subnetwork \
-   "projects/$PROJECT_ID/regions/$ZONE/subnetworks/default" \
+   --subnetwork "projects/$PROJECT_ID/regions/$REGION/subnetworks/default" \
    --default-max-pods-per-node "110" \
    --addons HorizontalPodAutoscaling,HttpLoadBalancing \
    --enable-autoupgrade \
