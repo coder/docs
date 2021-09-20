@@ -166,3 +166,18 @@ options for obtaining these.
    in, Coder will prompt you to change your password.
 
 At this point, you're ready to proceed to [configuring Coder](configuration.md).
+
+## EKS Troubleshooting
+
+If you're unable to access your Coder deployment via the external IP generated
+by EKS, this is likely due to Load Balancer health checks failing. To resolve
+this issue, set the `externalTrafficPolicy` helm value to `Cluster` by running
+the following command:
+
+```console
+helm upgrade --install coder coder/coder --set coderd.serviceSpec.externalTrafficPolicy=Cluster
+```
+
+Note that setting `externalTrafficPolicy` to `Cluster` masks the source IP
+address of your Coder users. For more information on this value, [see the
+Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip).
