@@ -142,7 +142,7 @@ kubectl config set-context --current --namespace=coder
 
 ## Logging
 
-At this time, we recommend review Coder's default
+At this time, we recommend reviewing Coder's default
 [logging](../guides/admin/logging.md) settings. Logs are helpful for monitoring
 the health of your cluster and troubleshooting, and Coder offers you several
 options for obtaining these.
