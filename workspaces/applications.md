@@ -1,7 +1,6 @@
 ---
 title: "Applications"
-description:
-  Learn how to access web applications running on your remote workspace.
+description: Learn how to access web apps running in your workspace.
 state: beta
 ---
 
@@ -23,7 +22,7 @@ application:
 apps:
   # Name of application in launcher
   - name: projector
-    # Application scheme
+    # Application scheme - must be http or https
     scheme: http
     # Application port
     port: 9999
@@ -46,6 +45,13 @@ apps:
         path: "/"
         port: 9999
 ```
+
+**Notes**:
+
+- All top-level fields in the `config.yaml` file are required
+- You must include at least one health check, though we recommend both. The
+  `exec` health check looks for an exit code of `0`, while the `http` health
+  check looks for the return of `HTTP 200`.
 
 You can include the applications specification file in your
 [workspace image](../images/writing.md). You an also modify the file via
