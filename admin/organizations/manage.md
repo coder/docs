@@ -35,7 +35,7 @@ organization. The limits for what you can set are as follows:
 
 When you've set your parameters, click **Create** to proceed.
 
-## Viewing organizations
+## Viewing an organization
 
 You can view information about an organization at any time by going to
 **Manage** > **Organizations** and selecting the org of interest.
