@@ -3,6 +3,8 @@ title: Org management
 description: Learn about managing organizations.
 ---
 
+This article shows how you can create, view, edit, or delete an organization.
+
 ## Create a new organization
 
 [Site admins and site managers](../access-control/user-roles.md) can create new
