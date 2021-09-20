@@ -16,6 +16,8 @@ streamline maintenance operations, such as backups and upgrades. The database
 state is _not_ backed up and will be lost when deleting the Kubernetes namespace
 or cluster.
 
+## Configuration steps
+
 > For optimal performance, it is important to ensure that the round-trip latency
 > between the Coder control plane services and the database is low. We recommend
 > ensuring that the database is within the same data center as the control

@@ -301,6 +301,9 @@
               "path": "./guides/admin/resources.md"
             },
             {
+              "path": "./guides/admin/timescale-migration.md"
+            },
+            {
               "path": "./guides/admin/helm-charts.md"
             },
             {
