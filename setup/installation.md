@@ -172,8 +172,9 @@ At this point, you're ready to proceed to [configuring Coder](configuration.md).
 If you're unable to access your Coder deployment via the external IP generated
 by EKS, this is likely due to Load Balancer health checks failing. See the
 related [GitHub
-issue](https://github.com/kubernetes/kubernetes/issues/80897#issuecomment-567911824).
-To resolve this issue, set the `externalTrafficPolicy` Helm value to `Cluster`
+issue](https://github.com/kubernetes/kubernetes/issues/80897#issuecomment-567911824)
+for more information.
+To resolve this, set the `externalTrafficPolicy` Helm value to `Cluster`
 by running the following command:
 
 ```console
