@@ -75,3 +75,11 @@ You can check whether notifications are enabled and working by click **Test**.
 
 Autostart allows you to set the time when Coder automatically starts and builds
 your workspaces. See [Autostart](autostart.md) for more information.
+
+## Dark theme
+
+> Dark theme is currently a beta feature.
+
+If you'd like to use Coder's dark theme, you can enable it by clicking on your
+avatar and selecting **Feature Preview**. Then, click **Dark theme** and select
+**Enable**.
