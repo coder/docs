@@ -191,6 +191,36 @@
           ]
         },
         {
+          "path": "./admin/organizations/index.md",
+          "children": [
+            {
+              "path": "./admin/organizations/manage.md"
+            }
+          ]
+        },
+        {
+          "path": "./admin/registries/index.md",
+          "children": [
+            {
+              "path": "./admin/registries/default-registry.md"
+            },
+            {
+              "path": "./admin/registries/gcr.md"
+            }
+          ]
+        },
+        {
+          "path": "./admin/satellites/index.md",
+          "children": [
+            {
+              "path": "./admin/satellites/management.md"
+            },
+            {
+              "path": "./admin/satellites/migration.md"
+            }
+          ]
+        },
+        {
           "path": "./admin/workspace-management/index.md",
           "children": [
             {
@@ -216,28 +246,6 @@
             },
             {
               "path": "./admin/workspace-management/ssh-access.md"
-            }
-          ]
-        },
-        {
-          "path": "./admin/registries/index.md",
-          "children": [
-            {
-              "path": "./admin/registries/default-registry.md"
-            },
-            {
-              "path": "./admin/registries/gcr.md"
-            }
-          ]
-        },
-        {
-          "path": "./admin/satellites/index.md",
-          "children": [
-            {
-              "path": "./admin/satellites/management.md"
-            },
-            {
-              "path": "./admin/satellites/migration.md"
             }
           ]
         },
@@ -272,9 +280,6 @@
         },
         {
           "path": "./admin/git.md"
-        },
-        {
-          "path": "./admin/organizations.md"
         },
         {
           "path": "./admin/stun.md"
