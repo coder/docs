@@ -357,6 +357,9 @@
             },
             {
               "path": "./guides/deployments/teardown.md"
+            },
+            {
+              "path": "./guides/deployments/terraform.md"
             }
           ]
         },
