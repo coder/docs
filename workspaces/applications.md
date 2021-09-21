@@ -10,6 +10,14 @@ workspace filesystem.
 
 ![Application Launcher](../assets/workspaces/applications.png)
 
+## Enabling custom apps
+
+If you'd like to use custom apps in Coder, you can enable this feature in the
+UI:
+
+1. In the top-right, click on your avatar and select **Feature Preview**
+1. Click **Generic applications** and select **Enable**.
+
 ## Application specification file
 
 The application specification file allows you to define what Coder needs to
