@@ -34,8 +34,8 @@ the application (you can get a trial license for free
 [here](https://coder.com/trial)). Once logged in, you’ll be able to access the
 [administration management](./admin/index.md) menu to set up things such as
 [access controls](./admin/access-control/index.md) with OpenID Connect (OIDC),
-[create organizations](./admin/organizations.md), and create an OAuth app for
-your users to [connect to your Git provider](./admin/git.md).
+[create organizations](./admin/organizations/index.md), and create an OAuth app
+for your users to [connect to your Git provider](./admin/git.md).
 
 At a minimum, you’ll want to ensure you
 [add a container registry](./admin/registries/index.md) for your development
@@ -52,8 +52,8 @@ Connect (OIDC) with [Azure AD](./guides/admin/oidc-azuread.md) or
 [Okta](./guides/admin/oidc-okta.md). If you are using another Identity Provider
 (IdP), the process should be very similar. With OIDC configured, Coder will
 automatically create a user and add them to the
-[default organization](./admin/organizations.md) when a developer logs in for
-the first time.
+[default organization](./admin/organizations/index.md) when a developer logs in
+for the first time.
 
 ## Automate
 
