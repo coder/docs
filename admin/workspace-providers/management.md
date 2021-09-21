@@ -47,11 +47,15 @@ At this point, you can:
   > Organizations must not contain any workspaces in the workspace provider
   > before you remove them from a workspace provider's allowlist.
 
-- Change the features of the workspace provider. You can enable **end-to-end
-  encryption** for this provider, enable **external SSH connections** to the
-  provider's workspaces via the Coder CLI, or specify a **Kubernetes storage
-  class** to use when Coder provisions workspaces (this is useful for improving
-  disk performance).
+- Change the features of the workspace provider. You can:
+
+  - Enable **end-to-end encryption** for this provider
+  - Enable **external SSH connections** to the provider's workspaces via the
+    Coder CLI
+  - Specify a **Kubernetes storage class** to use when Coder provisions
+    workspaces (this is useful for improving disk performance)
+  - Specify the **Kubernetes service account** that Coder uses to provision
+    workspaces
 
   > If you enable **end-to-end encryption**, end-users using SSH need to rerun
   > `coder config-ssh`.
