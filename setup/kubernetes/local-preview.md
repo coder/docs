@@ -94,7 +94,42 @@ Password: yfu...yu2
 
 Visit the URL shown, and log in using the provided credentials.
 
-### Dev URLs
+## Option 2: Docker Desktop
+
+[Docker Desktop][docker-desktop-url] includes a standalone Kubernetes server and
+client that you can use to run Coder.
+
+1. [Enable the Kubernetes cluster][docker-k8s-docs] inside Docker.
+
+1. Ensure that Docker has enough resources allocated to meet
+   [Coder's requirements](../requirements) (you can do so by going to Docker
+   preferences).
+
+   ![Docker Desktop Resources](../../assets/setup/docker-desktop-resources.png)
+
+1. Install [metrics-server](https://github.com/kubernetes-sigs/metrics-server)
+   so that Coder gets valid metrics from your cluster:
+
+   ```console
+   helm repo add bitnami https://charts.bitnami.com/bitnami
+   ```
+
+1. [Install Coder](../installation) on to your cluster.
+
+If you run into `OutOfmemory` errors when installing, try increasing your
+resource allocation in Docker. If increasing the resource allocation doesn't fix
+the error, reinstall Coder using the following Helm values:
+
+```console
+helm upgrade --install coder \
+    coder/coder
+```
+
+> For Coder v1.21+, you will need to update your access URL (go to **Manage** >
+> **Admin**) to your private IP address (e.g `192.168.1.x`) instead of using
+> `localhost`.
+
+## Using Dev URLs with local preview
 
 Coder allows you to access services you're developing in your workspace via
 [dev URLs](../../workspaces/devurls.md). You can enable dev URLs after you've
@@ -173,41 +208,6 @@ protection. Here's how to do this:
    coderd:
      devurlsHost: "*.coder"
    ```
-
-## Option 2: Docker Desktop
-
-[Docker Desktop][docker-desktop-url] includes a standalone Kubernetes server and
-client that you can use to run Coder.
-
-1. [Enable the Kubernetes cluster][docker-k8s-docs] inside Docker.
-
-1. Ensure that Docker has enough resources allocated to meet
-   [Coder's requirements](../requirements) (you can do so by going to Docker
-   preferences).
-
-   ![Docker Desktop Resources](../../assets/setup/docker-desktop-resources.png)
-
-1. Install [metrics-server](https://github.com/kubernetes-sigs/metrics-server)
-   so that Coder gets valid metrics from your cluster:
-
-   ```console
-   helm repo add bitnami https://charts.bitnami.com/bitnami
-   ```
-
-1. [Install Coder](../installation) on to your cluster.
-
-If you run into `OutOfmemory` errors when installing, try increasing your
-resource allocation in Docker. If increasing the resource allocation doesn't fix
-the error, reinstall Coder using the following Helm values:
-
-```console
-helm upgrade --install coder \
-    coder/coder
-```
-
-> For Coder v1.21+, you will need to update your access URL (go to **Manage** >
-> **Admin**) to your private IP address (e.g `192.168.1.x`) instead of using
-> `localhost`.
 
 ## Removing Coder
 
