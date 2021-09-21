@@ -142,7 +142,7 @@ kubectl config set-context --current --namespace=coder
 
 ## Logging
 
-At this time, we recommend review Coder's default
+At this time, we recommend reviewing Coder's default
 [logging](../guides/admin/logging.md) settings. Logs are helpful for monitoring
 the health of your cluster and troubleshooting, and Coder offers you several
 options for obtaining these.
@@ -166,3 +166,21 @@ options for obtaining these.
    in, Coder will prompt you to change your password.
 
 At this point, you're ready to proceed to [configuring Coder](configuration.md).
+
+## EKS Troubleshooting
+
+If you're unable to access your Coder deployment via the external IP generated
+by EKS, this is likely due to Load Balancer health checks failing. See the
+related [GitHub
+issue](https://github.com/kubernetes/kubernetes/issues/80897#issuecomment-567911824)
+for more information.
+To resolve this, set the `externalTrafficPolicy` Helm value to `Cluster`
+by running the following command:
+
+```console
+helm upgrade --install coder coder/coder --set coderd.serviceSpec.externalTrafficPolicy=Cluster
+```
+
+Note that setting `externalTrafficPolicy` to `Cluster` masks the source IP
+address of your Coder users. For more information on this value, [see the
+Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip).
