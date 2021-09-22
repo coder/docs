@@ -22,6 +22,10 @@
       "path": "./workspaces/index.md",
       "children": [
         {
+          "path": "./workspaces/applications.md",
+          "navigable": false
+        },
+        {
           "path": "./workspaces/getting-started.md"
         },
         {
