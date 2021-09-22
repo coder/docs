@@ -23,7 +23,7 @@
       "children": [
         {
           "path": "./workspaces/applications.md",
-          "navigable": false
+          "navigable": true
         },
         {
           "path": "./workspaces/getting-started.md"
