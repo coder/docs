@@ -57,7 +57,7 @@ apps:
 **Notes**:
 
 - All top-level fields in the `config.yaml` file are required
-- You must include at least one health check, though we recommend both. The
+- You must include at least one health check. The
   `exec` health check looks for an exit code of `0`, while the `http` health
   check looks for the return of `HTTP 200`.
 
