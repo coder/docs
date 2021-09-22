@@ -37,14 +37,14 @@ apps:
     # Working directory
     dir: /home/coder
     # File path to icon used in application launcher
-    icon_path: /home/coder/goland.svg
+    icon-path: /home/coder/goland.svg
     # Command to start the application
     command: /home/coder/.local/bin/projector
     # Array of arguments for command
     args: ["run"]
     # Health checks to get running application status
     # Can use exec or http health checks to localhost
-    health_check:
+    health-check:
       exec:
         command: "pgrep"
         args: ["projector"]
@@ -57,9 +57,9 @@ apps:
 **Notes**:
 
 - All top-level fields in the `config.yaml` file are required
-- You must include at least one health check. The
-  `exec` health check looks for an exit code of `0`, while the `http` health
-  check looks for the return of `HTTP 200`.
+- You must include at least one health check. The `exec` health check looks for
+  an exit code of `0`, while the `http` health check looks for the return of
+  `HTTP 200`.
 
 You can include the applications specification file in your
 [workspace image](../images/writing.md). You an also modify the file via
