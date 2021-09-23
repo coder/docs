@@ -34,7 +34,6 @@ apps:
   # Name of application in launcher. Name may consist of alphanumeric
   # characters, dashes, underscores. Names must begin with an alphanumeric
   # character. Names must be unique per application. Required.
-  # Regex used "^[a-zA-Z0-9]+[a-zA-Z0-9-_ ]{0,62}$".
   - name: projector
     # Application scheme - must be http or https. Required.
     scheme: http
