@@ -46,7 +46,7 @@ apps:
     # Working directory for the start command. Required.
     working-directory: /home/coder
     # File path to icon used in application launcher. Icons should be either
-    # PNG, SVG, or JPG.
+    # PNG, SVG, or JPG. Required.
     icon-path: /home/coder/goland.svg
     # Command to start the application. Required.
     command: /home/coder/.local/bin/projector
@@ -74,7 +74,7 @@ apps:
         # inherits the application port. Optional.
         port: 9999
         # Path to use for the health check. If not specified defaults to
-        # "/".
+        # "/". Optional.
         path: "/healthz"
 ```
 
