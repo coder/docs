@@ -80,7 +80,7 @@ apps:
 
 **Notes**:
 
-- A health check _must_ report healthy in order to access the application.
+- A health check _must_ report healthy for you to access the application.
 - If you specify both the HTTP and Exec health checks, Coder prioritizes HTTP.
 
 You can include the applications specification file in your
