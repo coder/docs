@@ -81,7 +81,7 @@ apps:
 **Notes**:
 
 - A health check _must_ report healthy in order to access the application.
-- If both HTTP and Exec health checks are specified then HTTP is preferred.
+- If you specify both the HTTP and Exec health checks, Coder prioritizes HTTP.
 
 You can include the applications specification file in your
 [workspace image](../images/writing.md). You an also modify the file via
