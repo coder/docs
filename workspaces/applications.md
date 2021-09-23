@@ -28,14 +28,14 @@ application:
 # /coder/apps/config.yaml
 
 apps:
-  # Name of application in launcher
+    # Name of application in launcher
   - name: projector
     # Application scheme - must be http or https
     scheme: http
     # Application port
     port: 9999
     # Working directory
-    dir: /home/coder
+    working-directory: /home/coder
     # File path to icon used in application launcher
     icon-path: /home/coder/goland.svg
     # Command to start the application
