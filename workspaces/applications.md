@@ -20,7 +20,7 @@ UI:
 
 ## Application specification file
 
-In order to specify custom applications, add a configuration file at path
+To define custom applications, add a configuration file at
 `/coder/apps/config.yaml` to your image.
 
 The config file specifies the parameters Coder requires in order to
