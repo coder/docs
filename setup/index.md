@@ -23,7 +23,7 @@ deployment steps.
 ## Deploying Coder
 
 1. Before you start, we recommend familiarizing yourself with Coder's
-   [requirements](#requirements).
+   [requirements](requirements.md).
 
 1. To begin the deployment process, see our docs on creating a
    [Kubernetes cluster](kubernetes/index.md) and

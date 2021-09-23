@@ -17,6 +17,15 @@ Install the following dependencies if you haven't already:
 [PostgreSQL](https://www.postgresql.org/docs/12/admin.html) instance to store
 data, including workspace information and session tokens.
 
+## Doctor
+
+Before proceeding, we strongly recommend running
+[Doctor](https://github.com/cdr/coder-doctor), which is Coder-supplied
+command-line tool that evaluates whether your environment is ready to install
+Coder. If there are issues with your cluster that may impact the installation
+process, Doctor will return information on what the issue is and suggestions on
+how you can fix it.
+
 ## Creating the Coder namespace (optional)
 
 We recommend running Coder in a separate

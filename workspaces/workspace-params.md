@@ -97,7 +97,7 @@ By default, Coder allocates resources (CPU cores, memory, and disk space) based
 on the parent image. You can modify these starting values, though the maximum
 number of CPU cores, amount of memory, and allocation of disk space you can
 request for your workspace are determined by the Coder
-[site manager on an organization level](../admin/organizations.md#create-a-new-organization).
+[site manager on an organization level](../admin/organizations/index.md#create-a-new-organization).
 
 Coder displays a warning if you choose your resource settings and they're less
 than the image-recommended default, but you can still create the workspace.

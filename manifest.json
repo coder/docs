@@ -1,5 +1,5 @@
 {
-  "versions": ["v1.22", "v1.21", "v1.20", "v1.19", "v1.18", "v1.17"],
+  "versions": ["v1.23", "v1.22", "v1.21", "v1.20", "v1.19", "v1.18", "v1.17"],
   "routes": [
     {
       "path": "./index.md",
@@ -21,6 +21,10 @@
     {
       "path": "./workspaces/index.md",
       "children": [
+        {
+          "path": "./workspaces/applications.md",
+          "navigable": true
+        },
         {
           "path": "./workspaces/getting-started.md"
         },
@@ -191,6 +195,36 @@
           ]
         },
         {
+          "path": "./admin/organizations/index.md",
+          "children": [
+            {
+              "path": "./admin/organizations/manage.md"
+            }
+          ]
+        },
+        {
+          "path": "./admin/registries/index.md",
+          "children": [
+            {
+              "path": "./admin/registries/default-registry.md"
+            },
+            {
+              "path": "./admin/registries/gcr.md"
+            }
+          ]
+        },
+        {
+          "path": "./admin/satellites/index.md",
+          "children": [
+            {
+              "path": "./admin/satellites/management.md"
+            },
+            {
+              "path": "./admin/satellites/migration.md"
+            }
+          ]
+        },
+        {
           "path": "./admin/workspace-management/index.md",
           "children": [
             {
@@ -216,28 +250,6 @@
             },
             {
               "path": "./admin/workspace-management/ssh-access.md"
-            }
-          ]
-        },
-        {
-          "path": "./admin/registries/index.md",
-          "children": [
-            {
-              "path": "./admin/registries/default-registry.md"
-            },
-            {
-              "path": "./admin/registries/gcr.md"
-            }
-          ]
-        },
-        {
-          "path": "./admin/satellites/index.md",
-          "children": [
-            {
-              "path": "./admin/satellites/management.md"
-            },
-            {
-              "path": "./admin/satellites/migration.md"
             }
           ]
         },
@@ -272,9 +284,6 @@
         },
         {
           "path": "./admin/git.md"
-        },
-        {
-          "path": "./admin/organizations.md"
         },
         {
           "path": "./admin/stun.md"
@@ -421,6 +430,9 @@
       "path": "./changelog/index.md",
       "children": [
         {
+          "path": "./changelog/1.23.0.md"
+        },
+        {
           "path": "./changelog/1.22.2.md"
         },
         {
@@ -428,6 +440,9 @@
         },
         {
           "path": "./changelog/1.22.0.md"
+        },
+        {
+          "path": "./changelog/1.21.4.md"
         },
         {
           "path": "./changelog/1.21.3.md"
