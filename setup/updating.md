@@ -38,10 +38,9 @@ This guide will show you how to update your Coder deployment.
 - We recommend updating no more than one major version at a time (i.e., we
   recommend moving from 1.15 to 1.16 only).
 
-- Coder v1.21 introduces new networking features. To take advantage of these
-  features, you must migrate your workspace providers individually after
-  upgrading to v1.21; see [Upgrade steps for v1.21](#upgrading-to-v121) for more
-  information.
+- Coder v1.21 introduces new networking features. To opt in, you must migrate
+  your workspace providers individually after upgrading to v1.21; see
+  [Upgrade steps for v1.21](#upgrading-to-v121) for more information.
 
 ## Update Coder
 
