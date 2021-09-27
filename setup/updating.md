@@ -230,7 +230,7 @@ If this happens, we recommend uninstalling and reinstalling:
 We introduced networking V2 (a.k.a. NetV2) in v1.21 as an optional operating
 mode for [workspace providers](/docs/admin/workspace-providers). The following
 steps walk you through upgrading from an earlier version of Coder to v1.21, then
-from v1.21 to v1.22.
+from v1.21 to v1.22 (or later).
 
 1. Upgrade the main Coder deployment to the most recent v1.21 patch (e.g.,
    `1.21.4`).
