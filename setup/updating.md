@@ -39,9 +39,9 @@ This guide will show you how to update your Coder deployment.
   recommend moving from 1.15 to 1.16 only).
 
 - When upgrading from a version before Coder 1.21, that version includes a new
-  networking topology that can be enabled. Each workspace provider will need
-  to be individually migrated. More information in the **Upgrade steps for 
-  1.21** section.
+  networking topology that can be enabled. Each workspace provider will need to
+  be individually migrated. More information in the **Upgrade steps for 1.21**
+  section.
 
 ## Update Coder
 
@@ -228,34 +228,33 @@ If this happens, we recommend uninstalling and reinstalling:
 ## Upgrade steps for 1.21
 
 Networking V2 (NetV2) was introduced in Coder version 1.21 as an optional
-operating mode for [workspace provider](/docs/admin/workspace-providers). The 
+operating mode for [workspace provider](/docs/admin/workspace-providers). The
 upgrade path to get from 1.20 to 1.22 requires upgrading to 1.21, upgrading the
 workspace providers to NetV2, and then upgrading to 1.22.
 
 Steps for upgrading and configuring:
 
-1. Upgrade each minor version's highest patch as recommended above. 
+1. Upgrade each minor version's highest patch as recommended above.
 
-2. Upgrade the main Coder deployment to 1.21's most recent patch
+1. Upgrade the main Coder deployment to 1.21's most recent patch
 
-3. Upgrade workspace providers (called Satellites in newer versions) to the
-   same patch of 1.21.
+1. Upgrade workspace providers (called Satellites in newer versions) to the same
+   patch of 1.21.
 
-4. Login to Coder as Admin or Site Manager, open the "Manage" > "Workspace 
-   Providers", and enable NetV2 on the Built-in provider. 
+1. Login to Coder as Admin or Site Manager, open the "Manage" > "Workspace
+   Providers", and enable NetV2 on the Built-in provider.
 
-5. Enable NetV2 on workspace providers one-by-one. Validate that rebuilding a
+1. Enable NetV2 on workspace providers one-by-one. Validate that rebuilding a
    workspace succeeds. There are some network configuration changes that may
-   require some DNS or TLS configuration changes in the clusters. 
+   require some DNS or TLS configuration changes in the clusters.
 
-6. After all workspace providers are upgraded, have NetV2 enabled, and validated
+1. After all workspace providers are upgraded, have NetV2 enabled, and validated
    in 1.21, upgrade to version 1.22's latest patch on the main deployment.
 
-7. The final version for workspace provider helm chart is 1.21. Upgrading to
+1. The final version for workspace provider helm chart is 1.21. Upgrading to
    that release disowns the service account from helm so uninstalling it will
    not damage the workspace provider.
 
-8. To re-establish the Cluster as a Coder satellite, upgrade Coder to the latest
-   version and then [follow the satellite installation steps](/docs/admin/ 
+1. To re-establish the Cluster as a Coder satellite, upgrade Coder to the latest
+   version and then [follow the satellite installation steps](/docs/admin/
    satellites/migration).
-
