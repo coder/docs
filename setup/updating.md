@@ -229,7 +229,7 @@ If this happens, we recommend uninstalling and reinstalling:
 We introduced [networking
 V2](https://coder.com/blog/rearchitecting-coder-networking-with-webrtc) (a.k.a.
 NetV2) in v1.21 as an optional operating mode for [workspace
-providers](/docs/admin/workspace-providers). The following steps walk you
+providers](../admin/workspace-providers/index.md). The following steps walk you
 through upgrading from an earlier version of Coder to v1.21, then from v1.21 to
 v1.22 (or later).
 
@@ -244,7 +244,7 @@ v1.22 (or later).
    **Workspace** Providers and enable **NetV2** for the **Built-in provider**.
 
 1. Enable **NetV2** for each of your workspace providers. Validate that you can
-   rebuild your workspaces.. You may need to update DNS or TLS configurations
+   rebuild your workspaces. You may need to update DNS or TLS configurations
    for your clusters.
 
 1. After you've upgraded all of your workspace providers, enabled NetV2, and
