@@ -38,6 +38,10 @@ This guide will show you how to update your Coder deployment.
 - We recommend updating no more than one major version at a time (i.e., we
   recommend moving from 1.15 to 1.16 only).
 
+- Coder v1.21 introduces new networking features. To opt in, you must migrate
+  your workspace providers individually after upgrading to v1.21; see
+  [Upgrade steps for v1.21](#upgrading-to-v121) for more information.
+
 ## Update Coder
 
 1. Retrieve the latest repository information:
@@ -219,3 +223,39 @@ If this happens, we recommend uninstalling and reinstalling:
 
    The ingress may attach to a new public IP address; if this happens, you must
    update the host and Dev URL IP addresses with your DNS provider.
+
+## Upgrading to v1.21
+
+We introduced [networking
+V2](https://coder.com/blog/rearchitecting-coder-networking-with-webrtc) (a.k.a.
+NetV2) in v1.21 as an optional operating mode for [workspace
+providers](../admin/workspace-providers/index.md). The following steps walk you
+through upgrading from an earlier version of Coder to v1.21, then from v1.21 to
+v1.22 (or later).
+
+1. Upgrade the main Coder deployment to the most recent v1.21 patch (e.g.,
+   `1.21.4`).
+
+1. Upgrade your workspace providers (called
+   [Satellites](../admin/satellites/index.md) in newer versions) to the same
+   patch of 1.21.
+
+1. Log in to Coder as a site admin or site manager. Go to **Manage** >
+   **Workspace** Providers and enable **NetV2** for the **Built-in provider**.
+
+1. Enable **NetV2** for each of your workspace providers. Validate that you can
+   rebuild your workspaces. You may need to update DNS or TLS configurations
+   for your clusters.
+
+1. After you've upgraded all of your workspace providers, enabled NetV2, and
+   validated your changes, upgrade the main deployment to the latest v1.22
+   patch.
+
+1. Remove the workspace provider Helm chart. The final Coder version that uses
+   the workspace provider Helm chart is v1.21; because the release disowns the
+   service account from Helm, uninstalling the chart will not impact the
+   workspace providers.
+
+1. To re-establish the individual clusters as Coder satellites, upgrade Coder to
+   the latest version and
+   [follow the satellite installation steps](../admin/satellites/migration.md).
