@@ -433,6 +433,9 @@
           "path": "./changelog/1.23.0.md"
         },
         {
+          "path": "./changelog/1.22.3.md"
+        },
+        {
           "path": "./changelog/1.22.2.md"
         },
         {
@@ -440,6 +443,9 @@
         },
         {
           "path": "./changelog/1.22.0.md"
+        },
+        {
+          "path": "./changelog/1.21.5.md"
         },
         {
           "path": "./changelog/1.21.4.md"
