@@ -26,7 +26,7 @@ env | grep CODER_
         <td>Your email address</td>
     </tr>
     <tr>
-        <td><code>CODER_WORKSPACE_NAME</code></td>
+        <td><code>CODER_ENVIRONMENT_NAME</code></td>
         <td>The name of your workspace</td>
     </tr>
     <tr>
