@@ -34,12 +34,29 @@ env | grep CODER_
         <td>Your user name</td>
     </tr>
     <tr>
+      <td><code>CODER_URL</code></td>
+      <td>The base url of Coder</td>
+    </tr>
+    <tr>
+        <td><code>CODER_WP_NAME</code></td>
+        <td>The name of the workspace provider hosting the workspace</td>
+    </tr>
+    <tr>
+        <td><code>CODER_ASSETS_ROOT</code></td>
+        <td>The directory where coder adds coder-specific assets during
+            workspace creation, such as the coder-cli binary</td>
+    </tr>
+    <tr>
         <td><code>CODER_CPU_LIMIT</code></td>
         <td>The CPU core limit given to your workspace</td>
     </tr>
     <tr>
         <td><code>CODER_MEMORY_LIMIT</code></td>
         <td>The memory limit given to your workspace in GB</td>
+    </tr>
+    <tr>
+        <td><code>CODER_SHELL</code></td>
+        <td>The default</td>
     </tr>
     <tr>
         <td><code>CODER_IMAGE_TAG</code></td>
@@ -50,17 +67,13 @@ env | grep CODER_
         <td>The content-addressable identifier for your image</td>
     </tr>
     <tr>
-        <td><code>CODER_IMAGE_URI</code></td>
-        <td>The URI for the image used to build the workspace</td>
-    </tr>
-    <tr>
-        <td><code>CODER_WP_NAME</code></td>
-        <td>The name of the workspace provider hosting the environment</td>
-    </tr>
-    <tr>
         <td><code>CODER_RUNTIME</code></td>
         <td>The container runtime used to start the workspace (either
         `kubernetes/default` or `kubernetes/sysbox` if the workspace
         is a CVM</td>
+    </tr>
+    <tr>
+        <td><code>CODER_IMAGE_URI</code></td>
+        <td>The URI for the image used to build the workspace</td>
     </tr>
 </table>
