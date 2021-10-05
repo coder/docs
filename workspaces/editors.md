@@ -230,6 +230,7 @@ RStudio:
    RUN chown -R coder:coder /var/lib/rstudio-server
    RUN echo "server-pid-file=/tmp/rstudio-server.pid" >> /etc/rstudio/rserver.conf
    RUN echo "server-data-dir=/tmp/rstudio" >> /etc/rstudio/rserver.conf
+   RUN echo "www-frame-origin=same" >> /etc/rstudio/rserver.conf
 
    # Assign password "rstudio" to coder user.
    RUN echo 'coder:rstudio' | chpasswd
