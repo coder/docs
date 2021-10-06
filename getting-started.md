@@ -40,7 +40,7 @@ for your users to [connect to your Git provider](./admin/git.md).
 At a minimum, you’ll want to ensure you [add a container
 registry](./admin/registries/index.md) for your development environments to pull
 from, and [import an image](./images/importing.md) with the tools your
-developers need. You can [create custom images](images/writing.md) for your
+developers need. You can [create custom images](./images/writing.md) for your
 developer workspaces as well.
 
 ## Provision users
