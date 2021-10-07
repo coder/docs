@@ -1,5 +1,5 @@
 ---
-title: "User preferences"
+title: "Preferences"
 description: Learn how to manage your Coder account preferences.
 ---
 

@@ -22,17 +22,13 @@
       "path": "./workspaces/index.md",
       "children": [
         {
-          "path": "./workspaces/applications.md",
-          "navigable": true
-        },
-        {
           "path": "./workspaces/getting-started.md"
         },
         {
           "path": "./workspaces/lifecycle.md"
         },
         {
-          "path": "./workspaces/editors.md"
+          "path": "./workspaces/applications.md"
         },
         {
           "path": "./workspaces/autostart.md"
@@ -44,7 +40,7 @@
           "path": "./workspaces/cvms.md"
         },
         {
-          "path": "./workspaces/workspace-params.md"
+          "path": "./workspaces/editors.md"
         },
         {
           "path": "./workspaces/variables.md"
@@ -60,6 +56,9 @@
         },
         {
           "path": "./workspaces/ssh.md"
+        },
+        {
+          "path": "./workspaces/workspace-params.md"
         },
         {
           "path": "./workspaces/workspace-templates/index.md",
