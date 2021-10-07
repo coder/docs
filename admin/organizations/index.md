@@ -23,7 +23,7 @@ can also change which organizations are defaults at any time.
 ## Namespaces
 
 > **Deprecation notice**: The `namespaceWhitelist` field has been deprecated in
-> [Coder version 1.17](../../changelog/1.17.0.md).
+> [Coder version 1.17](../../changelog/archive/1.17.0.md).
 
 Coder's Helm chart previously included a `namespaceWhitelist` field that
 accepted a list of cluster namespaces and made them available to Coder. The
