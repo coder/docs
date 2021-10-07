@@ -469,7 +469,6 @@
           "path": "./changelog/archive/index.md",
           "navigable": false,
           "children": [
-            
             {
               "path": "./changelog/archive/1.20.0.md",
               "navigable": false
