@@ -29,9 +29,11 @@ deprecated features before they are removed from new versions of Kubernetes.
   https://kubernetes.io/docs/setup/release/version-skew-policy/
 [installation guide]: ../installation.md
 
+<children></children>
+
 ## Incompatible Kubernetes distributions
 
 - [DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/)
   does not support Coder with [CVMs](../../admin/workspace-management/cvms).
 
-<children></children>
+
