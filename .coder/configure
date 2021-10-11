@@ -14,7 +14,9 @@ GIT_REMOTE=https://github.com/cdr/docs
 if [ ! -d $PROJECT_FOLDER ]; then
     echo "$PROJECT_FOLDER is empty"
     git clone $GIT_REMOTE $PROJECT_FOLDER
-    cd $PROJECT_FOLDER && yarn install
+
+    # Install dependencies and hooks
+    cd $PROJECT_FOLDER && yarn install && yarn prepare
 fi
 
 # Tell code-server to open the docs repo, if there isn't a previous session

@@ -36,6 +36,6 @@ Enable the "Workspace applications" feature preview for the best experience:
 
 - [ ] Before merging: edit Open in Coder link and instructions to point to main
       branch
-- [ ] Add DockerHub credentials to GitHub actions
+- [ ] Add DockerHub credentials to GitHub actions, change image in template
 - [ ] Add to root README
 - [ ] Look into other IDEs or editors for markdown
