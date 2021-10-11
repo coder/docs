@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Enable custom applications feature flag on behalf of the Coder user
+
+# Install code-server extensions from the image
+for filename in /coder/extensions/*.vsix; do
+    code-server --install-extension $filename
+done
+
+# Install code-server extensions from the marketplace
+# (none right now)
+
+# Clone the docs repo, if it doesn't exist
+PROJECT_FOLDER=/home/coder/docs
+GIT_REMOTE=https://github.com/cdr/docs
+if [ ! -d $PROJECT_FOLDER ]; then
+    echo "$PROJECT_FOLDER is empty"
+    git clone $GIT_REMOTE $PROJECT_FOLDER
+    cd $PROJECT_FOLDER && yarn install
+fi
+
+# Tell code-server to open the docs repo, if there isn't a previous session
+CODE_SERVER_SESSION_FOLDER=$HOME/.local/share/code-server
+if [ ! -f "$CODE_SERVER_SESSION_FOLDER/coder.json" ]; then
+    # download the "sample" session
+    wget --backups=1 https://gist.githubusercontent.com/bpmct/b48b99007284444eea94fe9e96d4a329/raw/coder.json -P $CODE_SERVER_SESSION_FOLDER
+    
+    # inject the project folder to open
+    sed -i "s|OPEN_DIR_HERE|$PROJECT_FOLDER|g" "$CODE_SERVER_SESSION_FOLDER/coder.json"
+fi
