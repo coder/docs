@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# Enable custom applications feature flag on behalf of the Coder user
-
 # Install code-server extensions from the image
 for filename in /coder/extensions/*.vsix; do
     code-server --install-extension $filename
