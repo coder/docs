@@ -10,9 +10,10 @@ Coder](https://cdn.coder.com/embed-button.svg)](https://sandbox.coder.com/wac/bu
 Your own deployment:
 
 ```text
+Add image: bencdr/coder:latest (DockerHub)
+
 New workspace > Create from template
 
-Add image: bencdr/coder:latest (DockerHub)
 Repo url: https://github.com/cdr/docs
 Branch: bpmct/add-coder
 ```
