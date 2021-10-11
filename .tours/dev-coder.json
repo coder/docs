@@ -1,0 +1,36 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Start Developing (Coder)",
+  "steps": [
+    {
+      "file": "README.md",
+      "description": "# Welcome!\n\nThis is a [CodeTour](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour) that walks you through a codebase.\n\nThanks to Coder, you're already set up with this project and ready to start developing. Go to the next step for more details.",
+      "line": 1,
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 2,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": ".vscode/settings.json",
+      "description": "# IDE settings\n\nThis project has some IDE settings so that everyone is on the same page. However, you can set some personal settings too. To start, let's go into dark mode. Tap the command below:\n\n>> echo \"{ \\\"workbench.colorTheme\\\": \\\"Default Dark+\\\" }\" > ~/.local/share/code-server/User/settings.json\n\nYour IDE settings can also be managed in the Ui, just like VS Code: *File -> Preferences -> Settings*\n\n",
+      "line": 9
+    },
+    {
+      "file": "README.md",
+      "description": "# Fork the project\n\nIf you don't work for Coder, you'll want to fork the cdr/docs repository so you can commit changes. This image includes the `gh` CLI, so you can do this right from VS Code.\n\n1) Log in\n>> gh auth login\n\n2) Fork this repo (it will add as a remote)\n>> gh repo fork\n\nThat's it, check out the next step for our contributing docs",
+      "line": 1
+    },
+    {
+      "file": "README.md",
+      "description": "# Contributing\n\nRead above for instructions on how to contribute. Once you're ready, you can submit a pull request with the `gh` CLI or on [the Github.com repo](https://github.com.cdr/docs).",
+      "line": 25
+    }
+  ]
+}
