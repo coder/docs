@@ -13,6 +13,7 @@ Your own deployment:
 New workspace > Create from template
 
 Repo url: https://github.com/cdr/docs
+Branch: bpmct/add-coder
 ```
 
 ## In this folder
@@ -27,6 +28,7 @@ Repo url: https://github.com/cdr/docs
 
 ## TODO
 
+- [ ] Before merging: edit Open in Coder link and instructions to point to main
+      branch
 - [ ] Add CI to push image
-- [ ] Create CodeTour?
 - [ ] Look into other IDEs or editors for markdown
