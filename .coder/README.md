@@ -5,7 +5,7 @@
 With sandbox.coder.com:
 
 [![Open in
-Coder](https://cdn.coder.com/embed-button.svg)](https://sandbox.coder.com.dev/wac/build?project_oauth_service=github&template_oauth_service=github&template_ref=bpmct%2Fadd-coder&template_url=https://github.com/cdr/docs)
+Coder](https://cdn.coder.com/embed-button.svg)](https://sandbox.coder.com/wac/build?project_oauth_service=github&template_oauth_service=github&template_ref=bpmct%2Fadd-coder&template_url=https://github.com/cdr/docs)
 
 Your own deployment:
 
