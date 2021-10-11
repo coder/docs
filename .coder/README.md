@@ -20,6 +20,8 @@ Enable the "Workspace applications" feature preview for the best experience:
 
 ![Enabling Workspace Applicaitons in Coder Dashboard](enable_feature_preview.gif)
 
+---
+
 ## In this folder
 
 - [coder.yaml](./config.yaml): Coder
