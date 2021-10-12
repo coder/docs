@@ -47,7 +47,7 @@ and updating your `eksctl` config spec.
    kind: ClusterConfig
 
    metadata:
-     version: "1.17"
+     version: "1.21"
      name: <YOUR_CLUSTER_NAME>
      region: <YOUR_AWS_REGION>
 
