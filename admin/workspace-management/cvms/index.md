@@ -30,7 +30,7 @@ as Docker and systemd, in their workspaces.
 
 ## Security
 
-The [Container-based virtual machine](../../workspaces/cvms.md) deployment
+The [Container-based virtual machine](../../../workspaces/cvms.md) deployment
 option leverages the
 [Sysbox container runtime](https://github.com/nestybox/sysbox) to offer a
 VM-like user experience while retaining the footprint of a typical container.
@@ -39,7 +39,7 @@ Coder first launches a supervising container with additional privileges. This
 container is standard and included with the Coder release package. During the
 workspace build process, the supervising container launches an inner container
 using the [Sysbox container runtime](https://github.com/nestybox/sysbox). This
-inner container is the user’s [workspace](../../workspaces/index.md).
+inner container is the user’s [workspace](../../../workspaces/index.md).
 
 The user cannot gain access to the supervising container at any point. The
 isolation between the user's workspace container and its outer, supervising
@@ -51,7 +51,7 @@ container is what provides
 NVIDIA GPUs can be added to CVMs on bare metal clusters only. This feature is
 not supported on Google Kubernetes Engine or other cloud providers at this time.
 
-Support for NVIDIA [GPUs](gpu-acceleration.md) is in **beta**. We do not support
+Support for NVIDIA [GPUs](../gpu-acceleration.md) is in **beta**. We do not support
 AMD GPUs at this time.
 
 ## Next Steps

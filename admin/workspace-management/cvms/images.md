@@ -63,8 +63,9 @@ RUN ln -s /lib/systemd/systemd /sbin/init
 ## Private registries
 
 To use CVM workspaces with private images, you **must** create a
-[registry](../registries/index.md#adding-a-registry) with authentication
+[registry](../../registries/index.md#adding-a-registry) with authentication
 credentials. Private images that can be pulled directly by the node will not
 work with CVMs.
 
-This restriction is removed if you enable [cached CVMs](#enabling-cached-cvms).
+This restriction is removed if you enable [cached
+CVMs](../cvms/management.md#enabling-cached-cvms).
