@@ -327,6 +327,15 @@
         "bug",
         "content"
       ]
+    },
+    {
+      "login": "mukundshah",
+      "name": "Mukund Shah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39938037?v=4",
+      "profile": "http://mukundshah.com",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
