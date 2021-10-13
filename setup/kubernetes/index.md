@@ -24,10 +24,12 @@ minimum baseline version of Kubernetes supports the necessary features in a
 stable version. We follow this policy to ensure that Coder stops using
 deprecated features before they are removed from new versions of Kubernetes.
 
+<!-- markdownlint-disable -->
 [compatible kubernetes cluster]: ../requirements.md
 [kubernetes upstream version support policy]:
   https://kubernetes.io/docs/setup/release/version-skew-policy/
 [installation guide]: ../installation.md
+<!-- markdownlint-restore -->
 
 ## Incompatible Kubernetes distributions
 
