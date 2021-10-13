@@ -3,6 +3,8 @@ title: "Local preview"
 description: Set up a Coder deployment locally for testing.
 ---
 
+<!-- markdownlint-disable -->
+
 Coder is typically deployed to a remote data center, but you can use
 [Docker][docker-url] to create a lightweight preview deployment of Coder.
 
