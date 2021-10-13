@@ -8,7 +8,7 @@ by Google, Azure, and Amazon to support CVMs.
 
 ## Google Cloud Platform w/ GKE
 
-To use CVMs with GKE, [create a cluster](../../setup/kubernetes/google.md) using
+To use CVMs with GKE, [create a cluster](../../../setup/kubernetes/google.md) using
 the following parameters:
 
 - GKE Master version `latest`
@@ -29,12 +29,12 @@ gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
 
 If you're using Kubernetes version 1.18, Azure defaults to the correct Ubuntu
 node base image. When
-[creating your cluster](../../../setup/Kubernetes/azure.md), set
+[creating your cluster](../../../setup/kubernetes/azure.md), set
 `--kubernetes-version` to `1.18.x` or newer for CVMs.
 
 ## Amazon Web Services w/ EKS
 
-You can modify an existing [AWS-hosted container](../../setup/kubernetes/aws.md)
+You can modify an existing [AWS-hosted container](../../../setup/kubernetes/aws.md)
 to support CVMs by
 [creating a nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-from-a-config-file)
 and updating your `eksctl` config spec.

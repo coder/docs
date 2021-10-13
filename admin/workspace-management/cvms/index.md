@@ -21,8 +21,8 @@ as Docker and systemd, in their workspaces.
 
 > You can use any cloud provider that supports the above requirements, but we
 > have instructions on how to set up supported clusters on
-> [AWS](../../setup/kubernetes/aws.md) and
-> [Google](../../setup/kubernetes/google.md). Azure-hosted clusters will meet
+> [AWS](../../../setup/kubernetes/aws.md) and
+> [Google](../../../setup/kubernetes/google.md). Azure-hosted clusters will meet
 > these requirements as long as you use Kubernetes version 1.18+.
 >
 > Coder doesn't support legacy versions of cluster-wide proxy services such as
