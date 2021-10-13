@@ -37,5 +37,3 @@ deprecated features before they are removed from new versions of Kubernetes.
 
 - [DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/)
   does not support Coder with [CVMs](../../admin/workspace-management/cvms).
-
-
