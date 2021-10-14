@@ -25,7 +25,7 @@ Add your private GCR registry during the process of
    However, to _add_ a registry, click **Add a new registry**, which is the
    option located immediately below the registry selector.
 1. You'll be asked to provide a **registry name** and the **registry**. You can
-   leave the **registry kind** as the default "Generic" value.
+   leave the **registry kind** as the default **Generic** value.
 1. Since your registry is a **private registry**, provide the `_json_key` string
    for the **username** and the file's contents for **password**.
 1. Continue with the process of [adding your image](../../images/index.md).
