@@ -81,7 +81,7 @@ Additionally, you must enable
 [dynamic volume provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/#enabling-dynamic-provisioning)
 so that Coder can mount the PVC to the workspace (if you're using a custom
 `StorageClass`, be sure that it supports DVP. Otherwise, Coder cannot provision
-workspaces.
+workspaces).
 
 ## Database
 
