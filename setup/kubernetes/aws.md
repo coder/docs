@@ -36,14 +36,6 @@ EC2 instance from AWS'
 > [container-based virtual machines (CVMs)](../../workspaces/cvms.md) unless
 > you're running Coder in a bare-metal Kubernetes environment.
 
-### Using multi-zone clusters
-
-If you opt for a multi-zone cluster, your workspace pods can only be scheduled
-where you initially provisioned them. As such, make sure that there are nodes
-available in each zone. Please note, however, that if a zone becomes
-unavailable, the workspace pods will be unavailable because the persistent
-volumes are tied to the zone.
-
 ## Preliminary steps
 
 Before you can create a cluster, you'll need to perform the following to set up
@@ -188,7 +180,10 @@ as a workspace deployment option, you'll need to
    nodeGroups:
      - name: coder-node-group
        amiFamily: Ubuntu2004
+       ami: <your Ubuntu 20.04 AMI ID>
    ```
+
+> [See here for a list of Ubuntu AMIs](https://cloud-images.ubuntu.com/locator/ec2/)
 
 1. Create your nodegroup (be sure to provide the correct file name):
 
