@@ -43,8 +43,8 @@ env | grep CODER_
     </tr>
     <tr>
         <td><code>CODER_ASSETS_ROOT</code></td>
-        <td>The directory where Coder adds Coder-specific assets during
-            workspace creation, such as the coder-cli binary</td>
+        <td>The directory where coder adds Coder-specific assets during
+            workspace creation, such as the <code>coder-cli</code> binary</td>
     </tr>
     <tr>
         <td><code>CODER_CPU_LIMIT</code></td>
