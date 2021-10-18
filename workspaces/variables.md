@@ -35,7 +35,7 @@ env | grep CODER_
     </tr>
     <tr>
         <td><code>CODER_URL</code></td>
-        <td>The base URL of Coder</td>
+        <td>The base URL of your Coder deployment</td>
     </tr>
     <tr>
         <td><code>CODER_WP_NAME</code></td>
@@ -43,7 +43,7 @@ env | grep CODER_
     </tr>
     <tr>
         <td><code>CODER_ASSETS_ROOT</code></td>
-        <td>The directory where coder adds coder-specific assets during
+        <td>The directory where Coder adds Coder-specific assets during
             workspace creation, such as the coder-cli binary</td>
     </tr>
     <tr>
@@ -70,6 +70,6 @@ env | grep CODER_
     </tr>
     <tr>
         <td><code>CODER_IMAGE_URI</code></td>
-        <td>The URI for the image used to build the workspace</td>
+        <td>The URI of the image used to build the workspace</td>
     </tr>
 </table>
