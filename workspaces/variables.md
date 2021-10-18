@@ -34,8 +34,8 @@ env | grep CODER_
         <td>Your user name</td>
     </tr>
     <tr>
-      <td><code>CODER_URL</code></td>
-      <td>The base url of Coder</td>
+        <td><code>CODER_URL</code></td>
+        <td>The base URL of Coder</td>
     </tr>
     <tr>
         <td><code>CODER_WP_NAME</code></td>
