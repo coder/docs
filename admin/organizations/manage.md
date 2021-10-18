@@ -24,6 +24,9 @@ organization. You can set the:
   node, though it will also lead to greater CPU contention
 - **Workspace Shutdown Behavior**: The number of hours a workspace may be idle
   before Coder stops it automatically to help free up resources
+- **User-controlled workspace shutdown behavior**: Whether end-users can set the
+  desired workspace shutdown behavior. If disabled, Coder uses the
+  organization's default setting.
 
 Finally, you can set **Resource Quotas**. These are limits on the number of
 **CPUs** and **GPUs**, as well as the amount of **memory** and **disk space**,
