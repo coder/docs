@@ -19,7 +19,7 @@ If you're participating in our hosted beta, please see our
 [guide on getting started](guides/hosted-beta/index.md). If you're deploying
 Coder to your own clusters, please proceed with this article.
 
-## Setup and deploy Coder
+## Set up and deploy Coder
 
 To get started with Coder, you’ll need to [deploy Coder](./setup/index.md) to a
 Kubernetes cluster. We have documentation to help you
