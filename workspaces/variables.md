@@ -55,10 +55,6 @@ env | grep CODER_
         <td>The memory limit given to your workspace in GB</td>
     </tr>
     <tr>
-        <td><code>CODER_SHELL</code></td>
-        <td>The default</td>
-    </tr>
-    <tr>
         <td><code>CODER_IMAGE_TAG</code></td>
         <td>The image tag used to create your workspace</td>
     </tr>
