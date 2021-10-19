@@ -353,6 +353,9 @@
               "path": "./guides/customization/node.md"
             },
             {
+              "path": "./guides/customization/tailscale.md"
+            },
+            {
               "path": "./guides/customization/vnc.md"
             }
           ]
