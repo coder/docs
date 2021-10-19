@@ -10,7 +10,14 @@ At the end of your evaluation period, you may need to migrate the data from the
 built-in database to an out-of-cluster PostgreSQL database for production use.
 This article will walk you through the process of doing so.
 
-> You must be a cluster admin for your Kubernetes cluster.
+## Requirements
+
+- You must be a cluster admin for your Kubernetes cluster.
+
+- **Azure database users**: if you're using Azure Database for PostgreSQL, note
+  that Coder only works with Single Server; the Flexible Server (Preview) and
+  Hyperscale (Citus) options do _not_ support the TimescaleDB extension
+  required.
 
 ## Migration Steps
 
