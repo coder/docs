@@ -65,8 +65,8 @@ env | grep CODER_
     <tr>
         <td><code>CODER_RUNTIME</code></td>
         <td>The container runtime used to start the workspace (either
-        `kubernetes/default` or `kubernetes/sysbox` if the workspace
-        is a CVM</td>
+        <code>kubernetes/default</code> or <code>kubernetes/sysbox</code>
+        if the workspace is a CVM</td>
     </tr>
     <tr>
         <td><code>CODER_IMAGE_URI</code></td>
