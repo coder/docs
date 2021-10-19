@@ -1,5 +1,5 @@
 ---
-title: Tailscale in Coder
+title: Tailscale
 description: Learn how to use Tailscale in your Coder workspace.
 ---
 
@@ -31,17 +31,17 @@ package manager and running it in userspace networking mode. As a consequence:
 - Inbound connections from other devices on the tailnet to your workspace will
   appear to originate from localhost
 - Outbound connections to other devices on the tailnet will require support for
-  HTTP proxies, or use a wrapper such as `proxychains4`.
+  HTTP proxies, or use a wrapper such as `proxychains4`
 - This example applies to Ubuntu 20.04 LTS (Focal Fossa), and you may need to
-  adapt it for compatibility with your preferred base image.
+  adapt it for compatibility with your preferred base image
 
 Tailscale does not require root access to operate in userspace networking mode,
 and the requirement to use [Container-based Virtual Machine] workspaces applies
 only to the instructions in this guide. [Contact our support team] if you are
 interested in using Tailscale in your Coder workspace without root access.
 
-[Contact our support team](../../feedback.md) [Container-based Virtual Machine]:
-../../workspaces/cvms.md
+[contact our support team]: ../../feedback.md
+[container-based virtual machine]: ../../workspaces/cvms.md
 
 ## Step 1: Create the Dockerfile
 
