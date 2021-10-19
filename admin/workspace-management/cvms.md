@@ -106,14 +106,17 @@ and updating your `eksctl` config spec.
    kind: ClusterConfig
 
    metadata:
-     version: "1.17"
+     version: "<YOUR_K8s_VERSION>"
      name: <YOUR_CLUSTER_NAME>
      region: <YOUR_AWS_REGION>
 
    nodeGroups:
      - name: coder-node-group
-       amiFamily: Ubuntu1804
+       amiFamily: Ubuntu2004
+       ami: <your Ubuntu 20.04 AMI ID>
    ```
+
+> [See here for a list of EKS-compatible Ubuntu AMIs](https://cloud-images.ubuntu.com/docs/aws/eks/)
 
 1. Create your nodegroup (be sure to provide the correct file name):
 
