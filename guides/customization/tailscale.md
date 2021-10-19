@@ -83,7 +83,7 @@ reproducible image and examine the change history for individual files.
 
 Create the folder hierarchy using:
 
-```shell-session
+```console
 $ mkdir --parents --verbose \
     files/etc/apt/preferences.d \
     files/etc/apt/sources.list.d \
@@ -138,7 +138,7 @@ Pin-Priority: 500
 Retrieve the signing key from Tailscale and store the binary (dearmored) key
 file in `files/usr/share/keyrings/tailscale.gpg`:
 
-```shell-session
+```console
 $ curl --silent --show-error --location "https://pkgs.tailscale.com/stable/ubuntu/focal.gpg" | \
     gpg --dearmor --yes --output=files/usr/share/keyrings/tailscale.gpg
 ```
@@ -202,7 +202,7 @@ ENV http_proxy=http://localhost:3128
 Start a workspace using the container image. Initially, `tailscaled` should be
 running, but will indicate that it requires authentication:
 
-```shell-session
+```console
 $ systemctl status tailscaled
 ● tailscaled.service - Tailscale node agent
      Loaded: loaded (/lib/systemd/system/tailscaled.service; enabled; vendor preset: enabled)
@@ -222,7 +222,7 @@ $ systemctl status tailscaled
 Authenticate using `sudo tailscale up`, then verify that other network devices
 are visible:
 
-```shell-session
+```console
 $ tailscale status
 100.101.102.103 ("hello")            services@    linux   -
 100.90.56.90    jawnsy-tailscale-1   jonathan@    linux   -
@@ -238,7 +238,7 @@ By creating two workspaces from the same image, authenticated to Tailscale, we
 can verify connectivity works as expected. In one workspace, run the Python web
 server:
 
-```shell-session
+```console
 $ python3 -m http.server 3000
 Serving HTTP on 0.0.0.0 port 3000 (http://0.0.0.0:3000/) ...
 ```
@@ -246,7 +246,7 @@ Serving HTTP on 0.0.0.0 port 3000 (http://0.0.0.0:3000/) ...
 From another workspace, verify that `tailscaled` is listening for connections on
 the configured proxy ports:
 
-```shell-session
+```console
 $ ss -nltp
 State     Recv-Q     Send-Q         Local Address:Port          Peer Address:Port    Process
 LISTEN    0          1024               127.0.0.1:3128               0.0.0.0:*
@@ -256,7 +256,7 @@ LISTEN    0          1024               127.0.0.1:1080               0.0.0.0:*
 Check that the `http_proxy` environment variable is set to the address of the
 local `tailscaled` proxy:
 
-```shell-session
+```console
 $ env | grep -i proxy
 http_proxy=http://localhost:3128
 ALL_PROXY=socks5://localhost:1080
@@ -266,7 +266,7 @@ Run `curl` (which respects the `http_proxy` command) to connect to the web
 server running in the other workspace. Since we proxy the connection through the
 local `tailscaled` instance, we can use the internal host name:
 
-```shell-session
+```console
 $ curl http://jawnsy-tailscale-1:3000
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
