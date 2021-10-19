@@ -112,7 +112,8 @@ and updating your `eksctl` config spec.
 
    nodeGroups:
      - name: coder-node-group
-       amiFamily: Ubuntu1804
+       amiFamily: Ubuntu2004
+       ami: <your Ubuntu 20.04 AMI ID>
    ```
 
 1. Create your nodegroup (be sure to provide the correct file name):
