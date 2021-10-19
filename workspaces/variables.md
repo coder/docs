@@ -15,7 +15,7 @@ env | grep CODER_
 ```
 
 ## Available environment variables
-
+<!-- markdownlint-disable MD044 -->
 <table>
     <tr>
         <th>Environment variable</th>
