@@ -183,7 +183,7 @@ as a workspace deployment option, you'll need to
        ami: <your Ubuntu 20.04 AMI ID>
    ```
 
-> [See here for a list of Ubuntu AMIs](https://cloud-images.ubuntu.com/locator/ec2/)
+> [See here for a list of EKS-compatible Ubuntu AMIs](https://cloud-images.ubuntu.com/docs/aws/eks/)
 
 1. Create your nodegroup (be sure to provide the correct file name):
 
