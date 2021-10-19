@@ -157,7 +157,8 @@ need to modify the service settings in order to:
 If you do not require outbound connections from the workspace to other services
 running in the tailnet, you may skip configuring the proxies.
 
-Save the following to `files/etc/systemd/system/tailscaled.service.d`:
+Override the `ExecStart` setting for the `tailscaled` service by saving the
+following to `files/etc/systemd/system/tailscaled.service.d/tailscale.conf`:
 
 ```text
 [Service]
