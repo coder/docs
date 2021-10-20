@@ -33,7 +33,7 @@ message).
 1. Set the **Message**.
 1. Click **Save Preferences**.
 
-![Service banner](../assets/service-banners.png)
+![Service banner](../assets/admin/service-banners.png)
 
 ## Terms of service
 
