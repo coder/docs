@@ -24,7 +24,8 @@ To import an image:
 1. **Optional.** If your registry is a **private registry** or you want to avoid
    hitting [rate limits](https://www.docker.com/increase-rate-limits), provide
    the **username** and **password** combination required to access the
-   registry.
+   registry. If your registry is a private **Amazon ECR Registry**, follow the
+   steps specific to [AWS ECR](./ecr.md).
 1. Continue with the process of [adding your image](../../images/index.md).
 1. When done, click **Import**.
 
@@ -43,5 +44,4 @@ To delete a registry:
 
 Coder does not support the following registries at this time:
 
-- Amazon ECR
 - GitHub Packages

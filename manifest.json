@@ -1,5 +1,14 @@
 {
-  "versions": ["v1.23", "v1.22", "v1.21", "v1.20", "v1.19", "v1.18", "v1.17"],
+  "versions": [
+    "v1.24",
+    "v1.23",
+    "v1.22",
+    "v1.21",
+    "v1.20",
+    "v1.19",
+    "v1.18",
+    "v1.17"
+  ],
   "routes": [
     {
       "path": "./index.md",
@@ -206,6 +215,9 @@
           "children": [
             {
               "path": "./admin/registries/default-registry.md"
+            },
+            {
+              "path": "./admin/registries/ecr.md"
             },
             {
               "path": "./admin/registries/gcr.md"
@@ -437,6 +449,9 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        {
+          "path": "./changelog/1.24.0.md"
+        },
         {
           "path": "./changelog/1.23.1.md",
           "children": [
