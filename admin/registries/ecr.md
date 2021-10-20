@@ -4,7 +4,7 @@ description: Add a private Amazon ECR to Coder.
 ---
 
 This article will show you how to add your private ECR to Coder. If you're using
-public ECR registry, you do not need to follow the steps below.
+a public ECR registry, you do not need to follow the steps below.
 
 Amazon requires users to [request temporary login credentials to access a
 private Elastic Container Registry (ECR)
