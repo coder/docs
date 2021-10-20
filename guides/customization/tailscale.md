@@ -54,7 +54,7 @@ interested in using Tailscale in your Coder workspace without root access.
 In Coder, developer workspaces are defined by a Dockerfile that contains the
 apps, tools, and dependencies that you need to work on the project.
 
-> See our [custom image docs] andDocker’s [guide to writing Dockerfiles] for
+> See our [custom image docs] and Docker’s [guide to writing Dockerfiles] for
 > more information.
 
 [custom image docs]: ../../images/writing
