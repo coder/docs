@@ -7,9 +7,9 @@ This guide walks you through configuring [Tailscale networking] for use inside
 [Coder workspaces]. With Tailscale networking, you can access services running
 inside Coder and services running on your [tailnet (Tailscale private network)].
 
-[tailscale networking]: <https://tailscale.com/> [tailnet (tailscale private
-network)]: <https://tailscale.com/kb/1136/tailnet/> [coder workspaces]:
-../../workspaces/index.md
+[tailscale networking]: https://tailscale.com/
+[tailnet (tailscale private network)]: https://tailscale.com/kb/1136/tailnet/
+[coder workspaces]: ../../workspaces/index.md
 
 ## Creating the image
 
@@ -22,8 +22,8 @@ use to create new Coder workspaces. The container image will include:
 - A [SOCKS5 proxy] to listen for connections on `localhost:1080`
 - A [HTTP proxy] to listen for connections on `localhost:3128`
 
-[socks5 proxy]: <https://en.wikipedia.org/wiki/SOCKS> [http proxy]:
-<https://en.wikipedia.org/wiki/Proxy_server#Web_proxy_servers>
+[socks5 proxy]: https://en.wikipedia.org/wiki/SOCKS
+[http proxy]: https://en.wikipedia.org/wiki/Proxy_server#Web_proxy_servers
 
 ## Limitations
 
@@ -46,16 +46,18 @@ and the requirement to use [container-based virtual machine] workspaces applies
 only to the instructions in this guide. [Contact our support team] if you are
 interested in using Tailscale in your Coder workspace without root access.
 
-[contact our support team]: ../../feedback.md [container-based virtual machine]:
-../../workspaces/cvms.md
+[contact our support team]: ../../feedback.md
+[container-based virtual machine]: ../../workspaces/cvms.md
 
 ## Step 1: Create the Dockerfile
 
 In Coder, developer workspaces are defined by a Dockerfile that contains the
 apps, tools, and dependencies that you need to work on the project.
 
-> See Docker’s [guide to writing Dockerfiles] for more information.
+> See our [custom image docs] andDocker’s [guide to writing Dockerfiles] for
+> more information.
 
+[custom image docs]: ../../images/writing
 [guide to writing dockerfiles]:
   https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 
@@ -90,11 +92,20 @@ reproducible image and examine the change history for individual files.
 Create the folder hierarchy:
 
 ```console
-mkdir --parents --verbose \
+mkdir --parents \
     files/etc/apt/preferences.d \
     files/etc/apt/sources.list.d \
     files/etc/systemd/system/tailscaled.service.d \
     files/usr/share/keyrings
+```
+
+Then, create the following files (we'll walk you through the contents of each in
+the following steps):
+
+```console
+touch files/etc/apt/preferences.d/tailscale \
+    files/etc/apt/sources.list.d/tailscale.list \
+    files/etc/systemd/system/tailscaled.service.d/tailscale.conf
 ```
 
 ### Step 1a: Add image repository
@@ -104,7 +115,6 @@ Add the Tailscale package repository to `tailscale.list` in the local path
 the resulting image, with the following contents:
 
 ```text
-# Tailscale packages for Ubuntu Focal Fossa
 deb [signed-by=/usr/share/keyrings/tailscale.gpg] https://pkgs.tailscale.com/stable/ubuntu focal main
 ```
 
@@ -134,7 +144,7 @@ Retrieve the signing key from Tailscale, and store the binary (dearmored) key
 file in `files/usr/share/keyrings/tailscale.gpg`:
 
 ```console
-$ curl --silent --show-error --location "https://pkgs.tailscale.com/stable/ubuntu/focal.gpg" | \
+curl --silent --show-error --location "https://pkgs.tailscale.com/stable/ubuntu/focal.gpg" | \
     gpg --dearmor --yes --output=files/usr/share/keyrings/tailscale.gpg
 ```
 
@@ -150,8 +160,7 @@ Coder). We will need to modify the service settings to:
 - Enable the HTTP proxy (optional)
 
 If you do not require outbound connections from the workspace to other services
-running in the tailnet, you may skip the final two steps configuring the
-proxies.
+running in the tailnet, you may skip the steps where you configure the proxies.
 
 Override the `ExecStart` setting for the `tailscaled` service by saving the
 following to `files/etc/systemd/system/tailscaled.service.d/tailscale.conf`:
@@ -201,30 +210,13 @@ be running, but it will indicate that it requires authentication:
 
 ```console
 systemctl status tailscaled
-
-● tailscaled.service - Tailscale node agent
-     Loaded: loaded (/lib/systemd/system/tailscaled.service; enabled; vendor preset: enabled)
-    Drop-In: /etc/systemd/system/tailscaled.service.d
-             └─tailscale.conf
-     Active: active (running) since Tue 2021-10-19 21:32:52 UTC; 1min 18s ago
-       Docs: https://tailscale.com/kb/
-    Process: 1464 ExecStartPre=/usr/sbin/tailscaled --cleanup (code=exited, status=0/SUCCESS)
-   Main PID: 1511 (tailscaled)
-     Status: "Stopped; run 'tailscale up' to log in"
-      Tasks: 18 (limit: 309528)
-     Memory: 16.7M
-     CGroup: /system.slice/tailscaled.service
-             └─1511 /usr/sbin/tailscaled --state=/home/coder/.config/tailscaled.state --socket
 ```
 
 Authenticate using `sudo tailscale up`, then verify that other network devices
 are visible:
 
 ```console
-$ tailscale status
-100.101.102.103 ("hello")            services@    linux   -
-100.90.56.90    jawnsy-tailscale-1   jonathan@    linux   -
-100.93.121.122  jawnsy-tailscale-2   jonathan@    linux   -
+tailscale status
 ```
 
 `tailscale` should maintain connectivity across workspace rebuilds, since we
@@ -240,8 +232,6 @@ web server:
 
 ```console
 python3 -m http.server 3000
-
-Serving HTTP on 0.0.0.0 port 3000 (http://0.0.0.0:3000/) ...
 ```
 
 In another workspace, verify that `tailscaled` is listening for connections on
@@ -249,10 +239,6 @@ the configured proxy ports:
 
 ```console
 ss -nltp
-
-State     Recv-Q     Send-Q         Local Address:Port          Peer Address:Port    Process
-LISTEN    0          1024               127.0.0.1:3128               0.0.0.0:*
-LISTEN    0          1024               127.0.0.1:1080               0.0.0.0:*
 ```
 
 Check that the `http_proxy` environment variable is set to the address of the
@@ -260,9 +246,6 @@ local `tailscaled` proxy:
 
 ```console
 env | grep -i proxy
-
-http_proxy=http://localhost:3128
-ALL_PROXY=socks5://localhost:1080
 ```
 
 Run `curl` (which respects the `http_proxy` command) to connect to the webserver
@@ -271,9 +254,6 @@ running in the other workspace. Since we proxy the connection through the local
 
 ```console
 curl http://jawnsy-tailscale-1:3000
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
 ```
 
 For applications that do not respect the `http_proxy` or `ALL_PROXY` environment
