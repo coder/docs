@@ -19,8 +19,10 @@ use to create new Coder workspaces. The container image will include:
 - The Tailscale daemon (`tailscaled`)
 - A transparent proxy tool (`proxychains4`)
 - Environment variables to control proxy behavior for outbound connections
-- A [SOCKS5 proxy] to listen for connections on `localhost:1080`
-- A [HTTP proxy] to listen for connections on `localhost:3128`
+- A [SOCKS5 proxy] included in `tailscaled` to facilitate connections to the
+  tailnet, listening on `localhost:1080`
+- An [HTTP proxy] included in `tailscaled` to facilitate connections to the
+  tailnet, listening on `localhost:3128`
 
 [socks5 proxy]: https://en.wikipedia.org/wiki/SOCKS
 [http proxy]: https://en.wikipedia.org/wiki/Proxy_server#Web_proxy_servers
