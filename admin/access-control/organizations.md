@@ -36,7 +36,7 @@ Please note that roles are defined per organization. Therefore, assigning
 someone as an organization manager does not change their role in another
 organization.
 
-### Organization admin permissions
+### Organization manager permissions
 
 <table>
     <thead>
