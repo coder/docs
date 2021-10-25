@@ -30,16 +30,15 @@ deployment option.
 
 ## Security
 
-The [container-based virtual machine](../../../workspaces/cvms.md) deployment
-option leverages the
-[Sysbox container runtime](https://github.com/nestybox/sysbox) to offer a
-VM-like user experience while retaining the footprint of a typical container.
+The container-based virtual machine deployment option leverages the Sysbox
+container runtime to offer a VM-like user experience while retaining the
+footprint of a typical container.
 
 Coder first launches a supervising container with additional privileges. This
 container is standard and included with the Coder release package. During the
 workspace build process, the supervising container launches an inner container
-using the [Sysbox container runtime](https://github.com/nestybox/sysbox). This
-inner container is the user’s [workspace](../../../workspaces/index.md).
+using the Sysbox container runtime. This inner container is the user’s
+[workspace](../../../workspaces/index.md).
 
 The user cannot gain access to the supervising container at any point. The
 isolation between the user's workspace container and its outer, supervising

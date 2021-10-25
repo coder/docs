@@ -3,8 +3,9 @@ title: Images
 description: Learn how to work with images for CVM-enabled workspaces.
 ---
 
-This article walks you through how to configure images for use with CVMs, as
-well as how to access images located in private registries.
+This article walks you through how to
+[configure images](../../../images/configure.md) for use with CVMs, as well as
+how to access images located in private [registries](../../registries/index.md).
 
 ## Image configuration
 
