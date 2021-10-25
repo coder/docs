@@ -67,5 +67,5 @@ To use CVM workspaces with private images, you **must** create a
 credentials. Private images that can be pulled directly by the node will not
 work with CVMs.
 
-This restriction is removed if you enable [cached
-CVMs](../cvms/management.md#enabling-cached-cvms).
+This restriction does not apply if you enable
+[cached CVMs](../cvms/management.md#enabling-cached-cvms).

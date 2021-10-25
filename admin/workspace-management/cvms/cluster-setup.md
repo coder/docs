@@ -8,14 +8,14 @@ by Google, Azure, and Amazon to support CVMs.
 
 ## Google Cloud Platform w/ GKE
 
-To use CVMs with GKE, [create a cluster](../../../setup/kubernetes/google.md) using
-the following parameters:
+To use CVMs with GKE, [create a cluster](../../../setup/kubernetes/google.md)
+with the following parameters set:
 
 - GKE Master version `latest`
 - `node-version = "latest"`
 - `image-type = "UBUNTU"`
 
-For example:
+Example:
 
 ```console
 gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
@@ -27,15 +27,15 @@ gcloud beta container clusters create "YOUR_NEW_CLUSTER" \
 
 ## Azure Kubernetes Service
 
-If you're using Kubernetes version 1.18, Azure defaults to the correct Ubuntu
+If you're using Kubernetes version `1.18`, Azure defaults to the correct Ubuntu
 node base image. When
 [creating your cluster](../../../setup/kubernetes/azure.md), set
 `--kubernetes-version` to `1.18.x` or newer for CVMs.
 
 ## Amazon Web Services w/ EKS
 
-You can modify an existing [AWS-hosted container](../../../setup/kubernetes/aws.md)
-to support CVMs by
+You can modify an existing
+[AWS-hosted container](../../../setup/kubernetes/aws.md) to support CVMs by
 [creating a nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-from-a-config-file)
 and updating your `eksctl` config spec.
 
@@ -57,10 +57,10 @@ and updating your `eksctl` config spec.
        ami: <your Ubuntu 20.04 AMI ID>
    ```
 
-   > [See here for a list of EKS-compatible Ubuntu
-   > AMIs](https://cloud-images.ubuntu.com/docs/aws/eks/)
+   > [See here for a list of EKS-compatible Ubuntu AMI IDs](https://cloud-images.ubuntu.com/docs/aws/eks/)
 
-1. Create your nodegroup (be sure to provide the correct file name):
+1. Create your nodegroup using the config file you just created (be sure to
+   provide the correct file name):
 
    ```console
    eksctl create nodegroup --config-file=coder-node.yaml

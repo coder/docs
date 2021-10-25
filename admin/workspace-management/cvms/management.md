@@ -9,7 +9,7 @@ a site manager must enable CVMs. To do so:
 1. Go to **Manage > Admin > Infrastructure**.
 1. Toggle the **Enable Container-Based Virtual Machines** option to **Enable**.
 
-### Enabling cached CVMs
+## Cached CVMs
 
 > Cached CVMs are currently an **alpha** feature.
 
