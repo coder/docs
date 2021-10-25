@@ -66,3 +66,16 @@ Now that you've registered the Client ID for Coder, you can now input the
 1. Input the **Issuer**, which is `accounts.google.com`.
 
 You can now use Google as an SSO provider with Coder.
+
+## Optional: Enable token refresh and redirect options
+
+You can set values in the Coder helm chart if you'd like to enable
+session token refresh and/or define redirect options:
+
+```yaml
+  oidc:
+    enableRefresh: true
+    redirectOptions: {}
+```
+
+To apply these values once set, see our [documentation on upgrading Coder](../../setup/updating.md).
