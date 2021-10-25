@@ -239,7 +239,18 @@
           "path": "./admin/workspace-management/index.md",
           "children": [
             {
-              "path": "./admin/workspace-management/cvms.md"
+              "path": "./admin/workspace-management/cvms/index.md",
+              "children": [
+                {
+                  "path": "./admin/workspace-management/cvms/cluster-setup.md"
+                },
+                {
+                  "path": "./admin/workspace-management/cvms/images.md"
+                },
+                {
+                  "path": "./admin/workspace-management/cvms/management.md"
+                }
+              ]
             },
             {
               "path": "./admin/workspace-management/extensions.md"
