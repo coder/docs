@@ -5,77 +5,79 @@ description: Learn how to use Google SSO with Coder.
 
 This article walks you through setting up single sign-on to Coder using Google.
 
-Configuring [Coder's OpenID
-Connect](../../admin/access-control/index.md#openid-connect) feature requires
-you to provide three pieces of information from Okta:
+Configuring
+[Coder's OpenID Connect](../../admin/access-control/index.md#openid-connect)
+feature requires you to provide three pieces of information from Google:
 
 - Client ID
 - Client Secret
 - Issuer
 
-This guide will show you how to set up an app on Okta and obtain the information
-you need to provide to Coder.
+This guide will show you how to set up an app on Google and obtain the
+information you need to provide to Coder.
 
-> Note: this guide assumes you've enabled the Identity Platform in your Google
-> Cloud account. If not already
-> completed, [see here for setup documentation](https://cloud.google.com/identity-platform/docs/web/oidc).
+## Prerequisites
 
-## Step 1: Create OAuth consent screen
+Before proceeding, please ensure that you've
+[enabled and configured the Identity Platform](https://cloud.google.com/identity-platform/docs/web/oidc)
+for your Google Cloud account.
 
-1. Navigate to <https://console.cloud.google.com/>
+## Step 1: Create the OAuth consent screen
 
-1. From the dashboard, to go **APIs & Services**
+1. Navigate to your [GCP console](https://console.cloud.google.com).
 
-1. Navigate to **OAuth consent screen** and set the following fields:
+1. Go to **APIs & Services** > **OAuth consent screen**. Create a new app or
+   edit an existing app, setting the following fields:
 
-- App name
-- User support email
-- App domain(s)
-- Authorizations domains (e.g. <coder.your-domain.com>)
+   - **App name**
+   - **User support email**
+   - App domains (at minimum, you must provide the **Application home page**)
+   - Authorized domains (e.g. `coder.your-domain.com`)
 
-1. Click **Save**
+1. Click **Save and continue** to proceed.
 
-## Step 2: Create OAuth Client ID
+## Step 2: Create the OAuth Client
 
-1. Navigate to **Credentials** and click **Create Credentials**
+1. Under **APIs & Services**, go to **Credentials**.
 
-1. Select **OAuth Client ID**
+1. Click **Create Credentials** and select **OAuth Client ID**.
 
-1. Choose **Web Application**
+1. When prompted for your **Application type**, choose **Web Application**.
 
-1. Fill out the following fields:
+1. Provide a **Name** for your application.
 
-- Name
-- Authorized redirect URIs (e.g. <coder.your-domain.com/oidc/callback>)
+1. Under **Authorized redirect URIs**, click **Add URI**, and provide your URI
+   (e.g. `coder.your-domain.com/oidc/callback`).
 
-1. Click **Create**
+1. Click **Create**. Google shows you both your **Client ID** and **Client
+   Secret**; copy both values and save them, since you'll need to provide these
+   Coder.
 
-## Step 3: Input OIDC credentials into Coder
+## Step 3: Provide the OIDC credentials to Coder
 
-Now that you've registered the Client ID for Coder, you can now input the
-**Client ID**, **Client Secret**, and **Issuer** into Coder.
+Now that you've registered an app, you can provide the relevant **Client ID**,
+**Client Secret**, and **Issuer** to Coder.
 
-1. Navigate to your Coder deployment
+1. Log into Coder, and go to **Manage** > **Admin** > **Authentication**.
 
-1. Go to **Manage** > **Admin** > **Authentication**
+1. Toggle the top-most field to **OpenID Connect**.
 
-1. Toggle to **OpenID Connect**
+1. Provide the **Client ID** and **Client Secret** supplied by Google.
 
-1. Input the **Client ID** & **Client Secret** values from Google
+1. For the **Issuer**, provide `accounts.google.com`.
 
-1. Input the **Issuer**, which is `accounts.google.com`.
+1. Click **Save preferences**.
 
 You can now use Google as an SSO provider with Coder.
 
 ## Optional: Enable token refresh and redirect options
 
-You can set values in the Coder helm chart if you'd like to enable
-session token refresh and/or define redirect options:
+If you'd like to enable session token refresh and define redirect options, set
+the following values in Coder's
+[Helm chart and update your deployment](helm-charts.md):
 
 ```yaml
-  oidc:
-    enableRefresh: true
-    redirectOptions: {}
+oidc:
+  enableRefresh: true
+  redirectOptions: {}
 ```
-
-To apply these values once set, see our [documentation on upgrading Coder](../../setup/updating.md).
