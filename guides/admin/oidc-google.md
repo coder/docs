@@ -79,5 +79,5 @@ the following values in Coder's
 ```yaml
 oidc:
   enableRefresh: true
-  redirectOptions: {}
+  redirectOptions: { access_type: offline, prompt: consent }
 ```
