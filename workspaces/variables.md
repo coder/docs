@@ -27,7 +27,7 @@ env | grep CODER_
     </tr>
     <tr>
         <td><code>CODER_WORKSPACE_ID</code></td>
-        <td>The unique id of your workspace</td>
+        <td>The unique ID of your workspace</td>
     </tr>
     <tr>
         <td><code>CODER_WORKSPACE_NAME</code></td>
