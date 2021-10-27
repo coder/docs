@@ -1,6 +1,6 @@
 ---
 title: "Shutdown"
-description: Learn how to configure workspace auto-off behavior.
+description: Learn how to configure workspace Auto-off behavior.
 ---
 
 You can specify the duration of inactivity allowed before a workspace
