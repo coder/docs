@@ -97,7 +97,7 @@ To make sure that your `clusterIssuer` can change your DNS settings,
 [create the required IAM role](https://cert-manager.io/docs/configuration/acme/dns01/route53/#set-up-an-iam-role)
 
 When you create the secret for cert-manager, referenced below as
-`route53-credentials` be sure it is in the cert-manager namespace since it's
+`route53-credentials`, be sure it is in the cert-manager namespace since it's
 used by the cert-manager pod to perform DNS configuration changes:
 
 ```console
