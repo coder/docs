@@ -189,7 +189,7 @@ spec:
           command:
             - sysctl
             - -w
-            - fs.inotify.max_user_watches=16384
+            - fs.inotify.max_user_watches=2147000000
           resources:
             requests:
               cpu: 10m
