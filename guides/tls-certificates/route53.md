@@ -31,7 +31,7 @@ You must have:
 You should also:
 
 - Be a cluster admin
-- Have access to your DNS provider.
+- Have access to your DNS provider
 - Have an AWS account so that you can access
   [Route 53](https://aws.amazon.com/route53/) and
   [IAM](https://aws.amazon.com/iam/)
@@ -97,8 +97,14 @@ To make sure that your `clusterIssuer` can change your DNS settings,
 [create the required IAM role](https://cert-manager.io/docs/configuration/acme/dns01/route53/#set-up-an-iam-role)
 
 When you create the secret for cert-manager, referenced below as
-`route53-credentials` be sure it is in the cert-manager namespace since it's
-used by the cert-manager pod to perform DNS configuration changes.
+`route53-credentials`, be sure it is in the cert-manager namespace since it's
+used by the cert-manager pod to perform DNS configuration changes:
+
+```console
+kubectl --namespace cert-manager \
+create secret generic route53-credentials \
+--from-literal="secret-access-key=<YOUR-AWS-SECRET-ACCESS-KEY>"
+```
 
 ## Step 4: Create the ACME Issuer
 
