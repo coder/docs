@@ -33,8 +33,9 @@ The audit logs capture information about the following actions (those who
 When reviewing Coder's audit logs, specifically, you will see the following
 actions included:
 
-- `auto_off`: Coder automatically turned on a workspace was at the preset time
-- `auto_start`: Coder automatically turned off a workspace due to inactivity
+- `auto_off`: Coder automatically turned off a workspace due to inactivity
+- `auto_start`: Coder automatically turned on a workspace at the time preset by
+  its owner
 - `connect`: a user connected to an existing workspace
 - `cordon`: a workspace provider became unavailable for new workspace creation
   requests.
@@ -46,7 +47,7 @@ actions included:
 - `login`: a user logs in via basic authentication or OIDC, with Coder
   exchanging a token as a result
 - `open`: a user opened a workspace using an IDE through the browser
-- `ssh`: a user opened a web terminal or used SSH via `envproxy`
+- `ssh`: a user opened a web terminal or used SSH to access Coder
 - `stop`: a user manually stopped a workspace
 - `uncordon`: a workspace provider became available for new workspace creation
   requests.
