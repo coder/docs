@@ -43,8 +43,8 @@ for more information on each parameter used.
 
 Regardless of which option you choose, be sure to replace the following
 parameters to reflect the needs of your workspace: `PROJECT_ID`,
-`NEW_CLUSTER_NAME`, `ZONE`, and `REGION`. You can [choose the zone and
-region](https://cloud.google.com/compute/docs/regions-zones#choosing_a_region_and_zone)
+`NEW_CLUSTER_NAME`, `ZONE`, and `REGION`. You can
+[choose the zone and region](https://cloud.google.com/compute/docs/regions-zones#choosing_a_region_and_zone)
 that makes the most sense for your location.
 
 > Both options include the use of the `enable-network-policy` flag, which
@@ -154,7 +154,7 @@ For more information, see:
 
 If you have already installed Coder or are using our hosted beta, you can add
 this cluster as a
-[workspace provider](../../admin/workspace-providers/deployment.md).
+[workspace provider](../../admin/workspace-providers/deployment/index.md).
 
 To access Coder through a secure domain, review our guides on configuring and
 using [TLS certificates](../../guides/tls-certificates/index.md).

@@ -30,8 +30,8 @@ create workspaces.
 
 Remote workspace providers can lower developers' latency by locating their
 workspaces closer to them geographically or can be used for workload isolation
-purposes. See [Deploying a workspace provider](deployment.md) to learn how to
-expand your Coder deployment to additional Kubernetes clusters.
+purposes. See [Deploying a workspace provider](deployment/index.md) to learn how
+to expand your Coder deployment to additional Kubernetes clusters.
 
 ### Organization allowlists
 

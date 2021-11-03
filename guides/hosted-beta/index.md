@@ -57,5 +57,5 @@ cluster, enabling you to create workspaces.
 You're in! At this point, you'll need to
 [create a Kubernetes cluster](../../setup/kubernetes/index.md) (if you don't
 already have one you'd like to use with Coder) and
-[connect the cluster to Coder](../../admin/workspace-providers/deployment.md)
+[connect the cluster to Coder](../../admin/workspace-providers/deployment/index.md)
 before you can create workspaces.
