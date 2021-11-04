@@ -47,6 +47,10 @@ Note that the instructions provided include logic on whether the instructions
 should be re-run (and when) or if Coder should run the instructions only once.
 We strongly recommend including this logic at all times to minimize overhead.
 
+Also note that any commands run via `sudo` will, by default, not include the
+environment variables of your user. In this case, pass the `-E` flag to your
+`sudo` invocation. See the manual page for `sudo` for more information.
+
 ## Step 2: Add the config file to the image
 
 Once you have a config file, update your image to use it by including the
