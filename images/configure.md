@@ -47,9 +47,10 @@ Note that the instructions provided include logic on whether the instructions
 should be re-run (and when) or if Coder should run the instructions only once.
 We strongly recommend including this logic at all times to minimize overhead.
 
-Also note that any commands run via `sudo` will, by default, not include the
-environment variables of your user. In this case, pass the `-E` flag to your
-`sudo` invocation. See the manual page for `sudo` for more information.
+> Any commands run with `sudo` will, by default, not include the environment
+> variables of your user. If you'd like to preserve your existing env variables,
+> [pass the `-E` flag to your `sudo`
+> invocation](https://man7.org/linux/man-pages/man8/sudo.8.html).
 
 ## Step 2: Add the config file to the image
 
