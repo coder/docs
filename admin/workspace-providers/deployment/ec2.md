@@ -11,6 +11,9 @@ an EC2 instance.
 You must have an
 [**AWS access key ID** and **secret access key**](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).
 
+We recommend having the [AWS CLI](https://aws.amazon.com/cli/) installed and
+configured as well.
+
 ## Creating a workspace provider
 
 1. Log into Coder as a site manager, and go to **Manage** > **Workspace
