@@ -47,11 +47,11 @@ roles, but a summary of the roles are:
 - All users are (or have the permissions of) a **member**
 - An **auditor** has the permissions of a member, plus the ability to work with
   audit logs
-- A **site manager** has the permissions of a member or an auditor, please
-  additional administrative rights
-- A **site admin** has the permissions of a member, auditor, and site manager,
-  as well as additional admin rights (e.g., creating site managers, access to
-  API keys).
+- A site manager has the permissions of a member or an auditor, plus additional
+  administrative rights
+- A site admin has the permissions of a member, auditor, and site manager, as
+  well as additional admin rights (e.g., creating site managers, access to API
+  keys)
 
 ### Site admin permissions
 
