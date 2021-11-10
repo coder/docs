@@ -221,6 +221,11 @@ are visible:
 tailscale status
 ```
 
+> You may also use a [pre-authentication key] with `tailscale up --authkey` to
+> avoid needing to sign in via a web browser.
+
+[pre-authentication key]: https://tailscale.com/kb/1085/auth-keys/
+
 `tailscale` should maintain connectivity across workspace rebuilds, since we
 chose to store the state file in a persistent volume.
 
