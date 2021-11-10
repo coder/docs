@@ -7,9 +7,10 @@ This article will show you how to add your private ECR to Coder. If you're using
 a public ECR registry, you do not need to follow the steps below.
 
 Amazon requires users to
-[request temporary login credentials to access a private Elastic Container Registry (ECR) registry](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html).
-When interacting with ECR, Coder will request temporary credentials from the
-registry using the AWS credentials linked to the registry.
+[request temporary login credentials](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html)
+to access a private Elastic Container Registry (ECR) registry. When interacting
+with ECR, Coder will request temporary credentials from the registry using the
+AWS credentials linked to the registry.
 
 ## Step 1: Setting up authentication for Coder
 
