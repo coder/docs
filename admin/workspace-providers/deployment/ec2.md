@@ -1,6 +1,7 @@
 ---
 title: EC2
 description: Learn how to deploy a workspace provider to an EC2 cluster.
+state: alpha
 ---
 
 This article walks you through the process of deploying a workspace provider to
@@ -51,6 +52,11 @@ configured as well.
    - **Privileged mode**: Optional. check this box if you would like the
      workspace container to have read/write access to the EC2 instance's host
      filesystem
+
+     > Privileged mode may pose a security risk to your organization. We
+     > recommend enabling this feature only if users need full access to the
+     > host (e.g., kernel driver development or running Docker-in-Docker).
+
    - **AMI ID**: the Amazon machine image ID to be used when creating the EC2
      instances; the machine image used must contain and start a Docker daemon.
      If blank, Coder defaults to an image that meets the requirements
@@ -62,8 +68,8 @@ configured as well.
    - **Root volume size**: the storage capacity to be reserved for the copy of
      the AMI
    - **Docker volume size**: the storage capacity used for the Docker daemon
-     directory; stores the workspace image and any data outside of the home
-     directory
+     directory; stores the workspace image and any ephemeral data outside of the
+     home directory
 
 1. Toggle **external connect** on if you would like to enable SSH connections to
    your workspaces via the Coder CLI.
