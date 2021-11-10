@@ -32,29 +32,31 @@ configured as well.
      account
    - **AWS region ID**: The AWS region where the EC2 instances should be created
    - **AWS availability zone**: The AWS availability zone associated with the
-     region where the EC2 instances are created. You can find an available zone
-     by running `aws ec2 describe-availability-zones --region region-name`
+     region where the EC2 instances are created
 
 1. Provide the networking options:
 
-   - VPC ID: the VPC network to which instances should be attached. If you leave
-     this field empty, Coder uses the default VPC ID in the specified region for
-     your EC2 instances
-   - Subnet ID: the
+   - VPC ID: Optional. The VPC network to which instances should be attached. If
+     you leave this field empty, Coder uses the default VPC ID in the specified
+     region for your EC2 instances
+   - Subnet ID: Optional. The
      [ID of the subnet](https://docs.aws.amazon.com/managedservices/latest/userguide/find-subnet.html)
-     associated with your VPC and availability zone
+     associated with your VPC and availability zone. If you leave this field
+     empty, Coder uses the default subnet associated with the VPC (specified or
+     default) in your region and availability zone.
 
 1. Specify the Amazon Machine Image configuration you want to be used when
    launching workspaces:
 
-   - **Privileged mode**: check this box if you would like the workspace
-     container to have read/write access to the EC2 instance's host filesystem
+   - **Privileged mode**: Optional. check this box if you would like the
+     workspace container to have read/write access to the EC2 instance's host
+     filesystem
    - **AMI ID**: the Amazon machine image ID to be used when creating the EC2
      instances; the machine image used must contain and start a Docker daemon.
      If blank, Coder defaults to an image that meets the requirements
-   - **Instance types**: the EC2 instance types that users can provision using
-     the workspace provider. Provide each instance type on a separate line;
-     wildcard characters are allowed
+   - **Instance types**: Optional. The EC2 instance types that users can
+     provision using the workspace provider. Provide each instance type on a
+     separate line; wildcard characters are allowed
    - **AMI SSH username**: the SSH login username used by Coder to connect to
      EC2 instances. Must be set if you provide a custom AMI ID
    - **Root volume size**: the storage capacity to be reserved for the copy of
