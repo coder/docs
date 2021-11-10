@@ -16,18 +16,19 @@ registry using the AWS credentials linked to the registry.
 To access a private ECR registry, Coder needs to authenticate with AWS. Coder
 supports two methods of authentication with AWS ECR:
 
-- Static Credentials
-- IAM Roles for Service Accounts
+- Static credentials
+- IAM roles for service accounts
 
-### Option A: Provision Static Credentials for Coder
+### Option A: Provision static credentials for Coder
 
-You can use an Access Key ID and Secret Access Key tied to either your own AWS
-account, _or_ credentials tied to a dedicated IAM user (recommended).
+You can use an **Access Key ID** and **Secret Access Key** tied to either your
+own AWS account _or_ credentials tied to a dedicated IAM user (we recommend the
+latter option).
 
-**Note:** you are not limited to providing one single set of AWS credentials.
-For example, you can use a set of credentials with access to all of your ECR
-repositories, or you can use individual sets of credentials, each with access to
-a single repository.
+> You are not limited to providing a single set of AWS credentials. For example,
+> you can use a set of credentials with access to all of your ECR repositories,
+> or you can use individual sets of credentials, each with access to a single
+> repository.
 
 To provision static credentials for Coder:
 
@@ -40,26 +41,28 @@ To provision static credentials for Coder:
 1. [Create an access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
    for the IAM user to be used with Coder (if one does not already exist).
 
-### Option B: Link an AWS IAM role to the Coder Kubernetes Service Account (IRSA)
+### Option B: Link an AWS IAM role to the Coder Kubernetes service account (IRSA)
 
 Coder can use an
-[IAM role linked to Coder's Kubernetes service account](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/).
-This is only supported when Coder is running in AWS EKS, as the
+[IAM role linked to Coder's Kubernetes service account](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/),
+though this is only supported when Coder is running in AWS EKS. This is because
+the
 [EKS Pod Identity Webhook](https://github.com/aws/amazon-eks-pod-identity-webhook/)
 is required to provision and inject the required token into the `coderd` pod.
 
-For more information on IAM Roles for Service Accounts, please consult the
-[AWS Documentation](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html).
+> For more information on IAM Roles for Service Accounts (IRSA), please consult
+> the
+> [AWS Documentation](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html).
 
 To link an IAM role to Coder's Kubernetes service account:
 
-1. Create an IAM OIDC Provider for your EKS cluster, if it does not already
-   exist.
+1. Create an IAM OIDC Provider for your EKS cluster (if it does not already
+   exist).
 
-1. [Create the IAM role to be used by Coder, if it does not already exist.](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html#create-service-account-iam-role).
-   Ensure that you also create and attach a trust policy that permits the Coder
-   service account the action `sts:AssumeRoleWithWebIdentity`. The trust policy
-   will look similar to the following:
+1. [Create the IAM role to be used by Coder (if it does not already exist).](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html#create-service-account-iam-role).
+   Ensure that you also create and attach a trust policy that permits the action
+   `sts:AssumeRoleWithWebIdentity` for the Coder service account. The trust
+   policy will look similar to the following:
 
    ```json
    {
