@@ -56,10 +56,11 @@ To link an IAM role to Coder's Kubernetes service account:
 1. Create an IAM OIDC Provider for your EKS cluster, if it does not already
    exist.
 
-1. [Create the IAM role to be used by Coder, if it does not already exist.](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html#create-service-account-iam-role).
-   Ensure that you also create and attach a trust policy that permits the Coder
-   service account the action `sts:AssumeRoleWithWebIdentity`. The trust policy
-   will look similar to the following:
+1. [Create the IAM role to be used by Coder, if it does not already exist](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html#create-service-account-iam-role).
+
+   **Note:** Ensure that you also create and attach a trust policy that permits
+   the Coder service account the action `sts:AssumeRoleWithWebIdentity`. The
+   trust policy will look similar to the following:
 
    ```json
    {
@@ -83,8 +84,7 @@ To link an IAM role to Coder's Kubernetes service account:
 
 1. Annotate the Coder service account with the role ARN:
 
-   1. Add the following to your Helm `values.yaml`, replacing the variables
-      `ACCT_ID` and `ROLE_NAME` where appropriate:
+   a) Add the following to your `values.yaml` for your Coder helm deployment:
 
       ```yaml
       coderd:
@@ -95,13 +95,13 @@ To link an IAM role to Coder's Kubernetes service account:
            eks.amazonaws.com/role-arn: my-role-arn
       ```
 
-   1. Update the Helm deployment:
+   b) Update the Helm deployment:
 
    ```shell
    helm upgrade coder coder/coder --values values.yaml
    ```
 
-   1. Verify that the Coder service account now has the correct annotation:
+   c) Verify that the Coder service account now has the correct annotation:
 
    ```shell
    kubectl get serviceaccount coder -o yaml | grep eks.amazonaws.com/role-arn
