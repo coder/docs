@@ -59,7 +59,8 @@ To link an IAM role to Coder's Kubernetes service account:
 1. Create an IAM OIDC Provider for your EKS cluster (if it does not already
    exist).
 
-1. [Create the IAM role to be used by Coder, if it does not already exist](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html#create-service-account-iam-role).
+1. [Create the IAM role](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html#create-service-account-iam-role)
+   to be used by Coder, if it does not already exist.
 
    **Note:** Ensure that you also create and attach a trust policy that permits
    the Coder service account the action `sts:AssumeRoleWithWebIdentity`. The
