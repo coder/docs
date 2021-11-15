@@ -170,7 +170,12 @@
           "path": "./setup/licensing.md"
         },
         {
-          "path": "./setup/updating.md"
+          "path": "./setup/updating/index.md",
+          "children": [
+            {
+              "path": "./setup/updating/considerations.md"
+            }
+          ]
         },
         {
           "path": "./setup/air-gapped/index.md",
