@@ -33,8 +33,7 @@ all queued workspaces are ready on time.
 
 1. Select the workspaces for which you want to enable Autostart and save.
 
-   ![Select workspaces to
-autostart](../assets/workspaces/autostart_save_preferences.png)
+   ![Select workspaces to autostart](../assets/workspaces/autostart_save_preferences.png)
 
 ### Enabling Autostart for new workspaces
 
