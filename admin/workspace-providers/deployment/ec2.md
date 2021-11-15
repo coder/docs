@@ -7,6 +7,13 @@ state: alpha
 This article walks you through the process of deploying a workspace provider to
 an EC2 instance.
 
+The use of EC2 providers is currently an **alpha** feature. Before using, please
+enable this feature under **Feature Preview**:
+
+1. Log into Coder as a site manager or site admin.
+1. In the top-right, click on your avatar and select **Feature Preview**.
+1. Select **Amazon EC2 (Docker) providers** and click **Enable**.
+
 ## Prerequisites
 
 You must have an
