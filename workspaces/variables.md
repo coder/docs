@@ -15,35 +15,12 @@ env | grep CODER_
 ```
 
 ## Available environment variables
+
 <!-- markdownlint-disable MD044 -->
 <table>
     <tr>
         <th>Environment variable</th>
         <th>Description</th>
-    </tr>
-    <tr>
-        <td><code>CODER_USER_EMAIL</code></td>
-        <td>Your email address</td>
-    </tr>
-    <tr>
-        <td><code>CODER_WORKSPACE_ID</code></td>
-        <td>The unique ID of your workspace</td>
-    </tr>
-    <tr>
-        <td><code>CODER_WORKSPACE_NAME</code></td>
-        <td>The name of your workspace</td>
-    </tr>
-    <tr>
-        <td><code>CODER_USERNAME</code></td>
-        <td>Your user name</td>
-    </tr>
-    <tr>
-        <td><code>CODER_URL</code></td>
-        <td>The base URL of your Coder deployment</td>
-    </tr>
-    <tr>
-        <td><code>CODER_WP_NAME</code></td>
-        <td>The name of the workspace provider hosting the workspace</td>
     </tr>
     <tr>
         <td><code>CODER_ASSETS_ROOT</code></td>
@@ -55,16 +32,24 @@ env | grep CODER_
         <td>The CPU core limit given to your workspace</td>
     </tr>
     <tr>
-        <td><code>CODER_MEMORY_LIMIT</code></td>
-        <td>The memory limit given to your workspace in GB</td>
+        <td><code>CODER_IMAGE_DIGEST</code></td>
+        <td>The content-addressable identifier for your image</td>
     </tr>
     <tr>
         <td><code>CODER_IMAGE_TAG</code></td>
         <td>The image tag used to create your workspace</td>
     </tr>
     <tr>
-        <td><code>CODER_IMAGE_DIGEST</code></td>
-        <td>The content-addressable identifier for your image</td>
+        <td><code>CODER_IMAGE_URI</code></td>
+        <td>The URI of the image used to build the workspace</td>
+    </tr>
+    <tr>
+        <td><code>CODER_MEMORY_LIMIT</code></td>
+        <td>The memory limit given to your workspace in GB</td>
+    </tr>
+    <tr>
+        <td><code>CODER_ORGANIZATION_ID</code></td>
+        <td>The ID of the organization to which the workspace belongs.</td>
     </tr>
     <tr>
         <td><code>CODER_RUNTIME</code></td>
@@ -73,7 +58,27 @@ env | grep CODER_
         if the workspace is a CVM</td>
     </tr>
     <tr>
-        <td><code>CODER_IMAGE_URI</code></td>
-        <td>The URI of the image used to build the workspace</td>
+        <td><code>CODER_URL</code></td>
+        <td>The base URL of your Coder deployment</td>
+    </tr>
+    <tr>
+        <td><code>CODER_USER_EMAIL</code></td>
+        <td>Your email address</td>
+    </tr>
+    <tr>
+        <td><code>CODER_USERNAME</code></td>
+        <td>Your user name</td>
+    </tr>
+    <tr>
+        <td><code>CODER_WORKSPACE_ID</code></td>
+        <td>The unique ID of your workspace</td>
+    </tr>
+    <tr>
+        <td><code>CODER_WORKSPACE_NAME</code></td>
+        <td>The name of your workspace</td>
+    </tr>
+    <tr>
+        <td><code>CODER_WP_NAME</code></td>
+        <td>The name of the workspace provider hosting the workspace</td>
     </tr>
 </table>
