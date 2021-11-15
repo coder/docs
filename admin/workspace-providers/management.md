@@ -60,13 +60,20 @@ At this point, you can:
   > If you enable **end-to-end encryption**, end-users using SSH need to rerun
   > `coder config-ssh`.
 
-- Specify the Kubernetes `tolerations` and `nodeSelector` for the workspaces
-  deployed with this provider:
+- Specify the Kubernetes `pod_tolerations`, `pod_node_selector`, and
+  `service_account_annotations` for the workspaces deployed with this provider:
 
   ```json
   {
-    "tolerations": [],
-    "nodeSelector": {}
+    "pod_tolerations": [
+      {
+        "key": "com.coder.workspace",
+        "operator": "Exists",
+        "effect": "NoSchedule"
+      }
+    ],
+    "pod_node_selector": {},
+    "service_account_annotations": {}
   }
   ```
 
