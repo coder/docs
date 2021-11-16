@@ -25,8 +25,18 @@ You must be using a machine that is running **macOS** and has
    ```
 
    When this process is complete, Coder will print the URL you can use to access
-   your deployment, as well as the admin credentials you'll need to log in. Make
-   a note of these values, because you will need these in the subsequent step.
+   your deployment, as well as the admin credentials you'll need to log in:
+
+   ```console
+   > Welcome to Coder! 👋
+   > Head to http://localhost:7080 to get started!
+
+   > 🙋 Username: admin
+   > 🔑 Password: 5h...7n
+   ```
+
+   Make a note of these values, because you will need these in the subsequent
+   step.
 
 1. Launch a web browser and navigate to the URL provided by Coder (e.g.,
    `http://localhost:7080`). Log in using the credentials Coder provided.
@@ -49,6 +59,21 @@ started your deployment:
 
 ![Console realtime info](../assets/setup/coder-for-docker-console.png)
 
+## Dev URLs
+
+To use a dev URL, set an environment variable when issuing the `docker run`
+command to start your deployment:
+
+```console
+-e DEVURL_HOST=yourHost
+```
+
+For example:
+
+```console
+docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder codercom/coder -e DEVURL_HOST=yourHost
+```
+
 ## Scaling
 
 Coder for Docker is limited by the resources of the machine on which it runs. We
@@ -56,3 +81,10 @@ recommend using Kubernetes or AWS EC2 providers if you would like automatic
 multi-machine scaling.
 
 For organizations, we recommend one Docker host per team of 5-10 developers.
+
+## Known issues
+
+Currently, Coder for Docker does not support:
+
+- External PostgreSQL databases
+- The use of your own TLS certificates
