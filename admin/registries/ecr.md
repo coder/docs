@@ -18,7 +18,7 @@ To access a private ECR registry, Coder needs to authenticate with AWS. Coder
 supports two methods of authentication with AWS ECR:
 
 - Static credentials
-- IAM roles for service accounts (`alpha`)
+- **Alpha:** IAM roles for service accounts
 
 ### Option A: Provision static credentials for Coder
 
@@ -44,7 +44,7 @@ To provision static credentials for Coder:
 
 ### Option B: Link an AWS IAM role to the Coder Kubernetes service account (IRSA)
 
-**Note:** This is currently an `alpha` feature.
+**Note:** This is currently an **alpha** feature.
 
 Coder can use an
 [IAM role linked to Coder's Kubernetes service account](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/),
