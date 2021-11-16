@@ -21,7 +21,7 @@ You must be using a machine that is running **macOS** and has
    include the images, and set up your Coder deployment:
 
    ```console
-   docker run -it --rm -p 7080:7080 -v ~/.coder:/var/run/coder -v /var/run/docker.sock:/var/run/docker.sock -e ENVBOX_IMAGE=kylecarbs/test-image-2:latest kylecarbs/test-image:0.4.0
+   docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder codercom/coder
    ```
 
    When this process is complete, Coder will print the URL you can use to access
