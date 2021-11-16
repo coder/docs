@@ -273,6 +273,9 @@
               "path": "./admin/workspace-management/cpu-provisioning.md"
             },
             {
+              "path": "./admin/workspace-management/self-contained-builds.md"
+            },
+            {
               "path": "./admin/workspace-management/shutdown.md"
             },
             {
