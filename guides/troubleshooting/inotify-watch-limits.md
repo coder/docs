@@ -50,7 +50,12 @@ There are three kernel tuning options related to the `inotify` system:
 To see the values for these settings that are applicable to your workspace, run:
 
 ```console
-$ sysctl fs.inotify.{max_queued_events,max_user_instances,max_user_watches}
+sysctl fs.inotify.{max_queued_events,max_user_instances,max_user_watches}
+```
+
+You should see output similar to the following:
+
+```text
 fs.inotify.max_queued_events = 16384
 fs.inotify.max_user_instances = 128
 fs.inotify.max_user_watches = 8192
@@ -69,8 +74,9 @@ To identify the programs consuming `inotify` watches, you can use a script that
 summarizes the information available in the `/proc` filesystem, such as
 [`inotify-consumers`].
 
-This script will show the names of programs along with the number of `inotify`
-watches registered with the kernel:
+Running `./inotify-consumers` will show the names of programs along with the
+number of `inotify` watches registered with the kernel, which will look like the
+following:
 
 ```console
 $ ./inotify-consumers
@@ -94,7 +100,7 @@ $ ./inotify-consumers
   https://github.com/fatso83/dotfiles/blob/master/utils/scripts/inotify-consumers
 
 To see the specific files that the tools track for changes, you can use `strace`
-to monitor invocations of the `inotify_add_watch` system call:
+to monitor invocations of the `inotify_add_watch` system call, for example:
 
 ```console
 $ strace --follow-forks --trace='inotify_add_watch' inotifywait --quiet test
@@ -154,7 +160,7 @@ For example, you can create a file called `/etc/sysctl.d/watches.conf` and
 include the following contents:
 
 ```text
-fs.inotify.max_user_watches = 65536
+fs.inotify.max_user_watches = 10485760
 ```
 
 Alternatively, you can use the following DaemonSet with `kubectl apply`:
@@ -186,10 +192,21 @@ spec:
       initContainers:
         - name: sysctl
           image: alpine:3
+          env:
+            # Each inotify watch consumes kernel memory, and existing container memory
+            # limits do not account for this. While you can set an arbitrary limit here,
+            # note that permitting large numbers of watches may result in performance
+            # degradation and out-of-memory errors. The required memory per watcher is
+            # platform-dependent and defined as INOTIFY_WATCH_COST in fs/notify:
+            # https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/notify/inotify/inotify_user.c
+            #
+            # The default in this file is 10 million watchers per user.
+            - name: "USER_WATCHES_MAX"
+              value: "10485760"
           command:
             - sysctl
             - -w
-            - fs.inotify.max_user_watches=16384
+            - fs.inotify.max_user_watches=$(USER_WATCHES_MAX)
           resources:
             requests:
               cpu: 10m
@@ -269,5 +286,7 @@ program sets the `fs.inotify.max_user_watches` setting.
     a blog post describing a user's preferred settings, including file
     exclusions
 
-If none of these steps resolve the issue, please
-[contact us](https://coder.com/contact) for further support.
+If none of these steps resolve the issue, please [contact us] for further
+support.
+
+[contact us]: https://coder.com/contact

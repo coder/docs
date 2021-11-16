@@ -13,10 +13,9 @@ Ensure you've [imported an image](../images/importing.md) for your
 
 ## 2. Create a workspace
 
-If this is your first time using Coder, you'll see a **Create Workspace** button
-in the middle of your screen; otherwise, you'll see a list of your existing
-workspaces. Click the **New Environment** button and choose **Custom
-Workspace**.
+If this is your first time using Coder, you'll see a **New workspace** button in
+the middle of your screen; otherwise, you'll see a list of your existing
+workspaces. Click the **New workspace** button to proceed.
 
 > To learn more about creating an environment from templates, see
 > [Workspace templates](workspace-templates/index.md).
@@ -28,7 +27,7 @@ Workspace**.
 
 1. Set the [parameters](workspace-params.md) for your workspace.
 
-1. Click **Create** to proceed.
+1. Click **Create workspace** to proceed.
 
 Coder redirects you to an overview page for your workspace during the build
 process. Learn more about the workspace
@@ -67,8 +66,8 @@ The following workspace statuses are available:
 - **Turning off**: Your workspace is turning off
 - **Unknown**: Your workspace is in an unknown state
 - **Initializing**: The container is initializing
-- **Deleting**: Your workspace is being deleted, and compute resources are
-  being released.
+- **Deleting**: Your workspace is being deleted, and compute resources are being
+  released.
 
 ### Advanced
 

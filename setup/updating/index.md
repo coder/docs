@@ -5,6 +5,9 @@ description: Learn how to update your Coder deployment.
 
 This guide will show you how to update your Coder deployment.
 
+> Before proceeding, review the [updating considerations](considerations.md)
+> article for information breaking charges, architecture changes, and so on.
+
 ## Prerequisites
 
 - If you haven't already, install [Helm](https://helm.sh/docs/intro/install/).
@@ -226,12 +229,12 @@ If this happens, we recommend uninstalling and reinstalling:
 
 ## Upgrading to v1.21
 
-We introduced [networking
-V2](https://coder.com/blog/rearchitecting-coder-networking-with-webrtc) (a.k.a.
-NetV2) in v1.21 as an optional operating mode for [workspace
-providers](../admin/workspace-providers/index.md). The following steps walk you
-through upgrading from an earlier version of Coder to v1.21, then from v1.21 to
-v1.22 (or later).
+We introduced
+[networking V2](https://coder.com/blog/rearchitecting-coder-networking-with-webrtc)
+(a.k.a. NetV2) in v1.21 as an optional operating mode for
+[workspace providers](../admin/workspace-providers/index.md). The following
+steps walk you through upgrading from an earlier version of Coder to v1.21, then
+from v1.21 to v1.22 (or later).
 
 1. Upgrade the main Coder deployment to the most recent v1.21 patch (e.g.,
    `1.21.4`).
@@ -244,8 +247,8 @@ v1.22 (or later).
    **Workspace** Providers and enable **NetV2** for the **Built-in provider**.
 
 1. Enable **NetV2** for each of your workspace providers. Validate that you can
-   rebuild your workspaces. You may need to update DNS or TLS configurations
-   for your clusters.
+   rebuild your workspaces. You may need to update DNS or TLS configurations for
+   your clusters.
 
 1. After you've upgraded all of your workspace providers, enabled NetV2, and
    validated your changes, upgrade the main deployment to the latest v1.22

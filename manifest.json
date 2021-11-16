@@ -170,7 +170,12 @@
           "path": "./setup/licensing.md"
         },
         {
-          "path": "./setup/updating.md"
+          "path": "./setup/updating/index.md",
+          "children": [
+            {
+              "path": "./setup/updating/considerations.md"
+            }
+          ]
         },
         {
           "path": "./setup/air-gapped/index.md",
@@ -266,6 +271,9 @@
             },
             {
               "path": "./admin/workspace-management/cpu-provisioning.md"
+            },
+            {
+              "path": "./admin/workspace-management/self-contained-builds.md"
             },
             {
               "path": "./admin/workspace-management/shutdown.md"
@@ -472,47 +480,50 @@
       "path": "./changelog/index.md",
       "children": [
         {
+          "path": "./changelog/1.25.0.md"
+        },
+        {
           "path": "./changelog/1.24.0.md"
         },
         {
-          "path": "./changelog/1.23.1.md",
+          "path": "./changelog/1.23.0.md",
           "children": [
             {
-              "path": "./changelog/1.23.0.md"
+              "path": "./changelog/1.23.1.md"
             }
           ]
         },
         {
-          "path": "./changelog/1.22.3.md",
+          "path": "./changelog/1.22.0.md",
           "children": [
-            {
-              "path": "./changelog/1.22.2.md"
-            },
             {
               "path": "./changelog/1.22.1.md"
             },
             {
-              "path": "./changelog/1.22.0.md"
+              "path": "./changelog/1.22.2.md"
+            },
+            {
+              "path": "./changelog/1.22.3.md"
             }
           ]
         },
         {
-          "path": "./changelog/1.21.5.md",
+          "path": "./changelog/1.21.0.md",
           "children": [
             {
-              "path": "./changelog/1.21.4.md"
-            },
-            {
-              "path": "./changelog/1.21.3.md"
+              "path": "./changelog/1.21.1.md"
             },
             {
               "path": "./changelog/1.21.2.md"
             },
             {
-              "path": "./changelog/1.21.1.md"
+              "path": "./changelog/1.21.3.md"
             },
             {
-              "path": "./changelog/1.21.0.md"
+              "path": "./changelog/1.21.4.md"
+            },
+            {
+              "path": "./changelog/1.21.5.md"
             }
           ]
         },

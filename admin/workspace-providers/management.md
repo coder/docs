@@ -61,7 +61,8 @@ At this point, you can:
   > `coder config-ssh`.
 
 - Specify the Kubernetes `pod_tolerations`, `pod_node_selector`, and
-  `service_account_annotations` for the workspaces deployed with this provider:
+  `service_account_annotations`, and affinity for the workspaces deployed with
+  this provider:
 
   ```json
   {
@@ -73,8 +74,33 @@ At this point, you can:
       }
     ],
     "pod_node_selector": {},
-    "service_account_annotations": {}
+    "service_account_annotations": {},
+    "affinity": {}
   }
+  ```
+
+  Configuring affinities allows you to control how workspaces are scheduled
+  across nodes. Enabling affinities allows Coder to schedule workspaces across
+  nodes, instead of being scheduled together onto a single node:
+
+  ```json
+  "affinity": {
+        "podAffinity": {
+            "preferredDuringSchedulingIgnoredDuringExecution": [
+                {
+                    "weight": 1,
+                    "podAffinityTerm": {
+                        "labelSelector": {
+                            "matchLabels": {
+                                "com.coder.resource": "true"
+                            }
+                        },
+                        "topologyKey": "kubernetes.io/hostname"
+                    }
+                }
+            ]
+        }
+    }
   ```
 
 Once you've made your changes, click **Update Provider** to save and continue.

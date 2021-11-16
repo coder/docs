@@ -52,16 +52,16 @@ apps:
     # Array of arguments for command. Optional.
     args: ["run"]
     # Health checks to get running application status. Can use exec or http
-    # health checks to localhost. It is recommended to specify a health-check
-    # although not strictly required. If one is not supplied then an http
-    # request is sent to the application root path "/".
+    # health checks to localhost. Optional, but we recommend specifying a
+    # health check. If you don't supply one, then an http request is sent to
+    # the application root path "/".
     health-check:
       # Exec commands require an exit code of '0' to report healthy.
       exec:
         command: "pgrep"
         args: ["projector"]
       # http sends a GET request to the address specified via the parameters.
-      # It expects a 200 status code to report healthy.
+      # Expects the status codes to match; default is HTTP 200.
       http:
         # Scheme must be "http" or "https". If not specified it inherits
         # the application scheme. Optional.

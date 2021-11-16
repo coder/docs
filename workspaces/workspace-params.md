@@ -9,10 +9,10 @@ If this is your first time using Coder, you'll see a **Create Workspace** button
 in the middle of your screen; otherwise, you'll see a list of your existing
 workspaces.
 
-To create a workspace, launch the creation dialog by:
-
-- Clicking **Create Workspace** (if available), or
-- Clicking **New Workspace** in the top-right
+To create a workspace, launch the creation dialog by clicking **New Workspace**
+in the top-right. If you'd like to create a new workspace based on a
+[template](workspace-templates/index.md), click the drop-down arrow next to
+**New Workspace** and select **New workspace from template**.
 
 ![Create a workspace](../assets/workspaces/create-workspace.png)
 
@@ -46,11 +46,6 @@ When prompted, provide the following information:
         <td><b>Workspace provider</b></td>
         <td>The Kubernetes cluster to which your workspace will be deployed.
         Default: <code>built-in</code></td>
-    </tr>
-        <tr>
-        <td><b>Autostart</b></td>
-        <td>Whether you want your workspace to turn on automatically at a
-        specific time (you can set the autostart time in User Preferences.</td>
     </tr>
 </table>
 
@@ -91,6 +86,11 @@ set your resource allocation.
         <a href="../admin/workspace-management/gpu-acceleration.md">GPUs</a>
         you want allocated to your workspace</td>
     </tr>
+    <tr>
+        <td><b>Autostart</b></td>
+        <td>Whether you want your workspace to turn on automatically at a
+        specific time (you can set the autostart time in User Preferences.</td>
+    </tr>
 </table>
 
 By default, Coder allocates resources (CPU cores, memory, and disk space) based
@@ -102,8 +102,8 @@ request for your workspace are determined by the Coder
 Coder displays a warning if you choose your resource settings and they're less
 than the image-recommended default, but you can still create the workspace.
 
-When you're done making changes, click **Create** to proceed. Coder redirects
-you to an overview page for your workspace during the build process.
+When you're done making changes, click **Create workspace** to proceed. Coder
+redirects you to an overview page for your workspace during the build process.
 
 ## .gitconfig files
 
