@@ -59,7 +59,7 @@ is required to provision and inject the required token into the `coderd` pod.
 
 To link an IAM role to Coder's Kubernetes service account:
 
-1. Enable the feature under Admin > Infrastructure > ECR IAM Role
+1. Enable the feature under Manage > Admin > Infrastructure > ECR IAM Role
    Authentication.
 
 1. Create an IAM OIDC Provider for your EKS cluster (if it does not already
