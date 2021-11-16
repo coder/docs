@@ -10,8 +10,7 @@ assets (including the Coder agent, code-server, and JetBrains Projector) from
 
 However, Coder offers the option of using **self-contained workspace builds**.
 Enabling this option changes the Coder deployment so that workspaces control the
-boot sequence internally, with Coder downloading assets from `coderd` to the
-workspace when the latter starts.
+boot sequence internally, with the workspace downloading assets from `coderd`.
 
 > At this time, Coder does not support certificate injectioin with
 > self-contained workspace builds.
