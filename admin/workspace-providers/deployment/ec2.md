@@ -22,6 +22,54 @@ You must have an
 We recommend having the [AWS CLI](https://aws.amazon.com/cli/) installed and
 configured as well.
 
+### IAM permissions
+
+To manage EC2 providers for your Coder deployment, create an IAM policy and
+attach it to the IAM identity (e.g., role) that will be managing your resources
+(be sure to update or remove `aws:RequestedRegion` accordingly):
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": "ec2:*",
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeSubnets",
+        "ec2:CreateSecurityGroup",
+        "ec2:DescribeSecurityGroups",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:DeleteSecurityGroup",
+        "ec2:ImportKeyPair",
+        "ec2:DescribeKeyPairs",
+        "ec2:CreateVolume",
+        "ec2:DescribeVolumes",
+        "ec2:AttachVolume",
+        "ec2:DeleteVolume",
+        "ec2:RunInstances",
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceStatus",
+        "ec2:TerminateInstances",
+        "ec2:DescribeInstanceTypes",
+        "ec2:CreateTags"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
 ## Creating a workspace provider
 
 1. Log into Coder as a site manager, and go to **Manage** > **Workspace
@@ -38,8 +86,9 @@ configured as well.
    - **Access key ID**: the AWS access key associated with your account
    - **Secret access key**: the AWS secret access key associated with your
      account
-   - **AWS region ID**: The AWS region where the EC2 instances should be created
-   - **AWS availability zone**: The AWS availability zone associated with the
+   - **AWS region ID**: select the AWS region where the EC2 instances should be
+     created
+   - **AWS availability zone**: the AWS availability zone associated with the
      region where the EC2 instances are created
 
 1. Provide the networking options:
@@ -50,8 +99,8 @@ configured as well.
    - Subnet ID: Optional. The
      [ID of the subnet](https://docs.aws.amazon.com/managedservices/latest/userguide/find-subnet.html)
      associated with your VPC and availability zone. If you leave this field
-     empty, Coder uses the default subnet associated with the VPC (specified or
-     default) in your region and availability zone.
+     empty, Coder uses the default subnet associated with the VPC in your region
+     and availability zone.
 
 1. Specify the Amazon Machine Image configuration you want to be used when
    launching workspaces:
@@ -66,12 +115,15 @@ configured as well.
 
    - **AMI ID**: the Amazon machine image ID to be used when creating the EC2
      instances; the machine image used must contain and start a Docker daemon.
-     If blank, Coder defaults to an image that meets the requirements
+     If blank, Coder defaults to an image that meets the requirements. If you
+     selected a supported AWS region, this will auto-populate with a supported
+     AMI (though you are welcome to change it)
    - **Instance types**: Optional. The EC2 instance types that users can
      provision using the workspace provider. Provide each instance type on a
      separate line; wildcard characters are allowed
    - **AMI SSH username**: the SSH login username used by Coder to connect to
-     EC2 instances. Must be set if you provide a custom AMI ID
+     EC2 instances. Must be set if you provide a custom AMI ID (this value may
+     be auto-populated depending on the AMI you choose))
    - **Root volume size**: the storage capacity to be reserved for the copy of
      the AMI
    - **Docker volume size**: the storage capacity used for the Docker daemon
