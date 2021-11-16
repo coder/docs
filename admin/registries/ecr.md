@@ -18,7 +18,7 @@ To access a private ECR registry, Coder needs to authenticate with AWS. Coder
 supports two methods of authentication with AWS ECR:
 
 - Static credentials
-- IAM roles for service accounts
+- IAM roles for service accounts (`alpha`)
 
 ### Option A: Provision static credentials for Coder
 
@@ -44,6 +44,8 @@ To provision static credentials for Coder:
 
 ### Option B: Link an AWS IAM role to the Coder Kubernetes service account (IRSA)
 
+**Note:** This is currently an `alpha` feature.
+
 Coder can use an
 [IAM role linked to Coder's Kubernetes service account](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/),
 though this is only supported when Coder is running in AWS EKS. This is because
@@ -56,6 +58,9 @@ is required to provision and inject the required token into the `coderd` pod.
 > [AWS Documentation](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html).
 
 To link an IAM role to Coder's Kubernetes service account:
+
+1. Enable the feature under Admin > Infrastructure > ECR IAM Role
+   Authentication.
 
 1. Create an IAM OIDC Provider for your EKS cluster (if it does not already
    exist).
