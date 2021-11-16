@@ -60,14 +60,47 @@ At this point, you can:
   > If you enable **end-to-end encryption**, end-users using SSH need to rerun
   > `coder config-ssh`.
 
-- Specify the Kubernetes `tolerations` and `nodeSelector` for the workspaces
-  deployed with this provider:
+- Specify the Kubernetes `pod_tolerations`, `pod_node_selector`, and
+  `service_account_annotations`, and affinity for the workspaces deployed with
+  this provider:
 
   ```json
   {
-    "tolerations": [],
-    "nodeSelector": {}
+    "pod_tolerations": [
+      {
+        "key": "com.coder.workspace",
+        "operator": "Exists",
+        "effect": "NoSchedule"
+      }
+    ],
+    "pod_node_selector": {},
+    "service_account_annotations": {},
+    "affinity": {}
   }
+  ```
+
+  Configuring affinities allows you to control how workspaces are scheduled
+  across nodes. Enabling affinities allows Coder to schedule workspaces across
+  nodes, instead of being scheduled together onto a single node:
+
+  ```json
+  "affinity": {
+        "podAffinity": {
+            "preferredDuringSchedulingIgnoredDuringExecution": [
+                {
+                    "weight": 1,
+                    "podAffinityTerm": {
+                        "labelSelector": {
+                            "matchLabels": {
+                                "com.coder.resource": "true"
+                            }
+                        },
+                        "topologyKey": "kubernetes.io/hostname"
+                    }
+                }
+            ]
+        }
+    }
   ```
 
 Once you've made your changes, click **Update Provider** to save and continue.
