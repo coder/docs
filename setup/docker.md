@@ -11,9 +11,11 @@ quickly.
 You must be using a machine that is running **macOS** and has
 [Docker Desktop](https://www.docker.com/products/docker-desktop) installed.
 
-## Getting started
+## Installing Coder for Docker
 
 1. Launch Docker Desktop.
+
+1. If you've previously installed Coder, run `rm -rf ~/.coder` in the terminal.
 
 1. In the terminal, run the following to download the resources you need,
    include the images, and set up your Coder deployment:
@@ -46,3 +48,11 @@ You can also view runtime information (i.e., API calls) in the console where you
 started your deployment:
 
 ![Console realtime info](../assets/setup/coder-for-docker-console.png)
+
+## Scaling
+
+Coder for Docker is limited by the resources of the machine on which it runs. We
+recommend using Kubernetes or AWS EC2 providers if you would like automatic
+multi-machine scaling.
+
+For organizations, we recommend one Docker host per team of 5-10 developers.
