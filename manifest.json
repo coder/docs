@@ -287,7 +287,15 @@
           "path": "./admin/workspace-providers/index.md",
           "children": [
             {
-              "path": "./admin/workspace-providers/deployment.md"
+              "path": "./admin/workspace-providers/deployment/index.md",
+              "children": [
+                {
+                  "path": "./admin/workspace-providers/deployment/ec2.md"
+                },
+                {
+                  "path": "./admin/workspace-providers/deployment/kubernetes.md"
+                }
+              ]
             },
             {
               "path": "./admin/workspace-providers/management.md"

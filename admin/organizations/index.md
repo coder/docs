@@ -41,8 +41,8 @@ namespaces.
 
 If you want to separate Coder workspaces by namespaces in a Kubernetes cluster,
 you can do so by
-[deploying a new workspace provider](../workspace-providers/deployment.md) to
-each additional namespace in the cluster. The workspace provider provisions
+[deploying a new workspace provider](../workspace-providers/deployment/index.md)
+to each additional namespace in the cluster. The workspace provider provisions
 workspaces to the namespace it has been deployed to, and you can control access
 to each workspace provider via an organization allowlist to replace the previous
 organization namespace behaviors.

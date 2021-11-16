@@ -1,12 +1,12 @@
 ---
-title: Workspace provider deployment
-description: Learn how to deploy a workspace provider.
+title: Kubernetes
+description: Learn how to deploy a workspace provider to a Kubernetes cluster.
 ---
 
 This article walks you through the process of deploying a workspace provider to
 a Kubernetes cluster. If you do not have one, you can use our
-[cluster guides](../../setup/kubernetes/index.md) to create one compatible with
-Coder.
+[cluster guides](../../../setup/kubernetes/index.md) to create one compatible
+with Coder.
 
 ## Dependencies
 
