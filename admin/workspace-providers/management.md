@@ -100,9 +100,9 @@ At this point, you can:
     }
   }
   ```
-  
+
   > Currently any changes made to the workspace container via mutating webhooks
-  > will not propogate to CVM workspaces, resulting in environment variables and 
+  > will not propogate to CVM workspaces, resulting in environment variables and
   > files inject by authentication providers will be missing.
 
   Once set, you will see a workspace build set where a service account is
