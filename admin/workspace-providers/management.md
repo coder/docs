@@ -82,7 +82,14 @@ At this point, you can:
   Configuring ServiceAccount Annotations allows you to create Kubernetes
   service accounts for each workspace and attach custom annotations to
   the ServiceAccount. This is commonly used to integrate OIDc authentication
-  into the workspace pods. The Annotations can use `{{ .UserEmail }}` to render
+  into the workspace pods. 
+  
+  > To set service account annotations the RBAC Role for the coder workspace
+  > provider must have the correct permissions for controlling the 
+  > serviceaccounts resource. See [Creating a Kubernetes Workspace Provider](./deployment/kubernetes)
+  > for a reference to the Kubernetes RBAC Role required. 
+
+  The Annotations can use `{{ .UserEmail }}` to render
   the workspace user's email:
 
     ```json
