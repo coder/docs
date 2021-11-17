@@ -8,7 +8,7 @@ quickly.
 
 ## Prerequisites
 
-You must be using a machine that is running **macOS** and has
+You must be using a machine that is running Linux/macOS and has
 [Docker Desktop](https://www.docker.com/products/docker-desktop) installed.
 
 ## Installing Coder for Docker
