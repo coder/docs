@@ -56,7 +56,7 @@ Install the following dependencies if you haven't already:
      name: coder
    rules:
      - apiGroups: ["", "apps", "networking.k8s.io"] # "" indicates the core API group
-       resources: ["persistentvolumeclaims", "pods", "deployments", "services", "secrets", "pods/exec","pods/log", "events", "networkpolicies"]
+       resources: ["persistentvolumeclaims", "pods", "deployments", "services", "secrets", "pods/exec","pods/log", "events", "networkpolicies", "serviceaccounts"]
        verbs: ["create", "get", "list", "watch", "update", "patch", "delete", "deletecollection"]
      - apiGroups: ["metrics.k8s.io", "storage.k8s.io"]
        resources: ["pods", "storageclasses"]
