@@ -62,16 +62,16 @@ started your deployment:
 ## Dev URLs
 
 To use a dev URL, set an environment variable when issuing the `docker run`
-command to start your deployment:
+command to start your deployment (be sure to replace the placeholder URL):
 
 ```console
--e DEVURL_HOST=yourHost
+DEVURL_HOST="*.mycompany.com"
 ```
 
 For example:
 
 ```console
-docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder codercom/coder -e DEVURL_HOST=yourHost
+docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder codercom/coder -e DEVURL_HOST="*.mycompany.com"
 ```
 
 ## Scaling
@@ -87,4 +87,6 @@ For organizations, we recommend one Docker host per team of 5-10 developers.
 Currently, Coder for Docker does not support:
 
 - External PostgreSQL databases
-- The use of your own TLS certificates
+- The use of your own TLS certificates. If you'd like to use TLS with Coder for
+  Docker, you'll need to run Coder behind a reverse proxy (e.g., Caddy or nginx)
+  and terminate TLS at that point.
