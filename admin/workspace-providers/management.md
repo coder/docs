@@ -60,14 +60,89 @@ At this point, you can:
   > If you enable **end-to-end encryption**, end-users using SSH need to rerun
   > `coder config-ssh`.
 
-- Specify the Kubernetes `tolerations` and `nodeSelector` for the workspaces
-  deployed with this provider:
+- Specify the Kubernetes `pod_tolerations`, `pod_node_selector`,
+  `service_account_annotations`, and `affinity` for the workspaces deployed with
+  this provider:
 
   ```json
   {
-    "tolerations": [],
-    "nodeSelector": {}
+    "pod_tolerations": [
+      {
+        "key": "com.coder.workspace",
+        "operator": "Exists",
+        "effect": "NoSchedule"
+      }
+    ],
+    "pod_node_selector": {},
+    "service_account_annotations": {},
+    "affinity": {}
   }
+  ```
+
+  Configuring service account annotations allows you to create Kubernetes
+  service accounts for each workspace and attach custom annotations to the
+  service account. This is commonly used to integrate OIDC authentication into
+  the workspace pods.
+
+  > To set service account annotations, the RBAC role for the Coder workspace
+  > provider must have the correct permissions for controlling the service
+  > accounts resource. See
+  > [Creating a Kubernetes Workspace Provider](./deployment/kubernetes) for
+  > information on role required.
+
+  The annotations can use `{{ .UserEmail }}` to render the workspace user's
+  email:
+
+  ```json
+  {
+    "service_account_annotations": {
+      "eks.amazonaws.com/role-arn": "arn:aws:iam::123456789123:role/coder-role-{{.UserEmail}}"
+    }
+  }
+  ```
+
+  > Currently, any changes made to the workspace container via mutating webhooks
+  > will not propagate to CVM workspaces. As such, environment variables and
+  > files injected by authentication providers will be missing.
+
+  Once set, you will see a workspace build set where a service account is
+  created and the user email is populated properly.
+
+  ![ServiceAccountAnnotations](../../assets/admin/service-account-annotations.png)
+
+  Configuring affinities allows you to control how workspaces are scheduled
+  across nodes. By default, Coder sets a default pod affinity that favors
+  scheduling pods on Nodes that have other workspaces running to optimize for
+  cost savings. The default affinity is the following:
+
+  ```json
+  "affinity": {
+        "podAffinity": {
+            "preferredDuringSchedulingIgnoredDuringExecution": [
+                {
+                    "weight": 1,
+                    "podAffinityTerm": {
+                        "labelSelector": {
+                            "matchLabels": {
+                                "com.coder.resource": "true"
+                            }
+                        },
+                        "topologyKey": "kubernetes.io/hostname"
+                    }
+                }
+            ]
+        }
+    }
+  ```
+
+  For Kubernetes clusters with nodes spread across multiple availability zones,
+  it may not be favorable to use Coder's default `affinity`. Because persistent
+  disks are often zonal, this can cause pods to become saturated in a single
+  zone and become unschedulable. You can unset this affinity by setting it to an
+  empty object and allow the default behavior of the Kubernetes scheduler.
+
+  ```json
+    "affinity": {}
   ```
 
 Once you've made your changes, click **Update Provider** to save and continue.

@@ -1,5 +1,6 @@
 {
   "versions": [
+    "v1.25",
     "v1.24",
     "v1.23",
     "v1.22",
@@ -170,7 +171,12 @@
           "path": "./setup/licensing.md"
         },
         {
-          "path": "./setup/updating.md"
+          "path": "./setup/updating/index.md",
+          "children": [
+            {
+              "path": "./setup/updating/considerations.md"
+            }
+          ]
         },
         {
           "path": "./setup/air-gapped/index.md",
@@ -179,6 +185,9 @@
               "path": "./setup/air-gapped/infrastructure.md"
             }
           ]
+        },
+        {
+          "path": "./setup/docker.md"
         }
       ]
     },
@@ -268,6 +277,9 @@
               "path": "./admin/workspace-management/cpu-provisioning.md"
             },
             {
+              "path": "./admin/workspace-management/self-contained-builds.md"
+            },
+            {
               "path": "./admin/workspace-management/shutdown.md"
             },
             {
@@ -279,7 +291,15 @@
           "path": "./admin/workspace-providers/index.md",
           "children": [
             {
-              "path": "./admin/workspace-providers/deployment.md"
+              "path": "./admin/workspace-providers/deployment/index.md",
+              "children": [
+                {
+                  "path": "./admin/workspace-providers/deployment/ec2.md"
+                },
+                {
+                  "path": "./admin/workspace-providers/deployment/kubernetes.md"
+                }
+              ]
             },
             {
               "path": "./admin/workspace-providers/management.md"
@@ -464,6 +484,9 @@
       "path": "./changelog/index.md",
       "children": [
         {
+          "path": "./changelog/1.25.0.md"
+        },
+        {
           "path": "./changelog/1.24.0.md"
         },
         {
@@ -489,29 +512,33 @@
           ]
         },
         {
-          "path": "./changelog/1.21.0.md",
-          "children": [
-            {
-              "path": "./changelog/1.21.1.md"
-            },
-            {
-              "path": "./changelog/1.21.2.md"
-            },
-            {
-              "path": "./changelog/1.21.3.md"
-            },
-            {
-              "path": "./changelog/1.21.4.md"
-            },
-            {
-              "path": "./changelog/1.21.5.md"
-            }
-          ]
-        },
-        {
           "path": "./changelog/archive/index.md",
           "navigable": false,
           "children": [
+            {
+              "path": "./changelog/archive/1.21.5.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.4.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.3.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.2.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.1.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.0.md",
+              "navigable": false
+            },
             {
               "path": "./changelog/archive/1.20.0.md",
               "navigable": false

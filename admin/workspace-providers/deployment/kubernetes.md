@@ -1,12 +1,12 @@
 ---
-title: Workspace provider deployment
-description: Learn how to deploy a workspace provider.
+title: Kubernetes
+description: Learn how to deploy a workspace provider to a Kubernetes cluster.
 ---
 
 This article walks you through the process of deploying a workspace provider to
 a Kubernetes cluster. If you do not have one, you can use our
-[cluster guides](../../setup/kubernetes/index.md) to create one compatible with
-Coder.
+[cluster guides](../../../setup/kubernetes/index.md) to create one compatible
+with Coder.
 
 ## Dependencies
 
@@ -56,7 +56,7 @@ Install the following dependencies if you haven't already:
      name: coder
    rules:
      - apiGroups: ["", "apps", "networking.k8s.io"] # "" indicates the core API group
-       resources: ["persistentvolumeclaims", "pods", "deployments", "services", "secrets", "pods/exec","pods/log", "events", "networkpolicies"]
+       resources: ["persistentvolumeclaims", "pods", "deployments", "services", "secrets", "pods/exec","pods/log", "events", "networkpolicies", "serviceaccounts"]
        verbs: ["create", "get", "list", "watch", "update", "patch", "delete", "deletecollection"]
      - apiGroups: ["metrics.k8s.io", "storage.k8s.io"]
        resources: ["pods", "storageclasses"]
