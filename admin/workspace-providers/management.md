@@ -79,18 +79,18 @@ At this point, you can:
   }
   ```
 
-  Configuring ServiceAccount Annotations allows you to create Kubernetes service
-  accounts for each workspace and attach custom annotations to the
-  ServiceAccount. This is commonly used to integrate OIDc authentication into
+  Configuring service account annotations allows you to create Kubernetes
+  service accounts for each workspace and attach custom annotations to the
+  service account. This is commonly used to integrate OIDC authentication into
   the workspace pods.
 
-  > To set service account annotations the RBAC Role for the coder workspace
-  > provider must have the correct permissions for controlling the
-  > serviceaccounts resource. See
-  > [Creating a Kubernetes Workspace Provider](./deployment/kubernetes) for a
-  > reference to the Kubernetes RBAC Role required.
+  > To set service account annotations, the RBAC role for the Coder workspace
+  > provider must have the correct permissions for controlling the service
+  > accounts resource. See
+  > [Creating a Kubernetes Workspace Provider](./deployment/kubernetes) for
+  > information on role required.
 
-  The Annotations can use `{{ .UserEmail }}` to render the workspace user's
+  The annotations can use `{{ .UserEmail }}` to render the workspace user's
   email:
 
   ```json
@@ -131,11 +131,11 @@ At this point, you can:
     }
   ```
 
-  For Kubernetes clusters with Nodes spread across multiple availability zones
-  it may not be favorable to use the default `affinity`. Due to persistent disks
-  often being zonal it can cause pods to become saturated in a single zone and
-  cause pods to become unschedulable. You can unset this affinity by setting it
-  to an empty object and allow the default behavior of the Kubernetes scheduler.
+  For Kubernetes clusters with nodes spread across multiple availability zones,
+  it may not be favorable to use Coder's default `affinity`. Because persistent
+  disks are often zonal, this can cause pods to become saturated in a single
+  zone and become unschedulable. You can unset this affinity by setting it to an
+  empty object and allow the default behavior of the Kubernetes scheduler.
 
   ```json
     "affinity": {}

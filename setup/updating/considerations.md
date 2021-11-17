@@ -10,6 +10,7 @@ updating, such as architecture updates and breaking changes.
 ## Updating from v1.24 to v1.25
 
 - In 1.25, dev URLs use double dashes `--` as delimiters, instead of single
-  dashes `-`. This may affect bookmarks pointing to dev URLs.
+  dashes `-`. Please update bookmarks accordingly.
+
 - v1.25 updates the username format to allow the use of alphanumeric character
   and hyphens. The length of the username can be 1-39 characters, inclusive.
