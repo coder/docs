@@ -508,29 +508,33 @@
           ]
         },
         {
-          "path": "./changelog/1.21.0.md",
-          "children": [
-            {
-              "path": "./changelog/1.21.1.md"
-            },
-            {
-              "path": "./changelog/1.21.2.md"
-            },
-            {
-              "path": "./changelog/1.21.3.md"
-            },
-            {
-              "path": "./changelog/1.21.4.md"
-            },
-            {
-              "path": "./changelog/1.21.5.md"
-            }
-          ]
-        },
-        {
           "path": "./changelog/archive/index.md",
           "navigable": false,
           "children": [
+            {
+              "path": "./changelog/archive/1.21.0.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.1.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.2.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.3.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.4.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.21.5.md",
+              "navigable": false
+            },
             {
               "path": "./changelog/archive/1.20.0.md",
               "navigable": false
