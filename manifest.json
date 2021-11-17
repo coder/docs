@@ -184,6 +184,9 @@
               "path": "./setup/air-gapped/infrastructure.md"
             }
           ]
+        },
+        {
+          "path": "./setup/docker.md"
         }
       ]
     },
