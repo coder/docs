@@ -516,6 +516,10 @@
           "navigable": false,
           "children": [
             {
+              "path": "./changelog/archive/1.21.6.md",
+              "navigable": false
+            },
+            {
               "path": "./changelog/archive/1.21.5.md",
               "navigable": false
             },
