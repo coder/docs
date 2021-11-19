@@ -15,7 +15,7 @@ You must be using a machine that is running Linux/macOS and has
 
 1. Launch Docker Desktop.
 
-1. If you've previously installed Coder, run `rm -rf ~/.coder` in the terminal.
+1. If you've previously installed Coder, run `sudo rm -rf ~/.coder` in the terminal.
 
 1. In the terminal, run the following to download the resources you need,
    include the images, and set up your Coder deployment:
