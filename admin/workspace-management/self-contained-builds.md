@@ -12,7 +12,7 @@ However, Coder offers the option of using **self-contained workspace builds**.
 Enabling this option changes the Coder deployment so that workspaces control the
 boot sequence internally, with the workspace downloading assets from `coderd`.
 
-> At this time, Coder does not support certificate injectioin with
+> At this time, Coder does not support certificate injection with
 > self-contained workspace builds.
 
 To enable self-contained workspace builds:
