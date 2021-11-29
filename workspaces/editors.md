@@ -8,8 +8,8 @@ There are several primary ways you can connect an IDE to your Coder workspace:
 
 1. [VS Code remote SSH](editors.md#vs-code-remote-ssh) with local VS Code
 1. [VS Code in the browser](editors.md#vs-code-in-the-browser) with code-server
-1. [Local JetBrains and SSH](editors.md#local-jetbrains-and-ssh-with-jetbrains-gateway)
-   with JetBrains Gateway
+1. [JetBrains and SSH](editors.md#jetbrains-ides-remote-ssh) with JetBrains
+   Gateway
 1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with
    JetBrains Projector
 1. [JetBrains' Code With Me](editors.md#code-with-me)
@@ -39,7 +39,7 @@ Web_ icon.
 
 ![Launch a workspace](../assets/workspaces/launch-workspace.png)
 
-## Local JetBrains and SSH with JetBrains Gateway
+## JetBrains IDEs remote SSH
 
 If your image
 [includes a JetBrains IDE](../admin/workspace-management/installing-jetbrains.md)
