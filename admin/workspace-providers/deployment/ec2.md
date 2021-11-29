@@ -1,6 +1,6 @@
 ---
 title: EC2
-description: Learn how to deploy a workspace provider to an EC2 cluster.
+description: Learn how to deploy a workspace provider to an EC2 instance.
 state: alpha
 ---
 
@@ -107,7 +107,7 @@ Provide the following networking options if desired:
 
 ## 4. Provide AMI configuration information
 
-Specify the Amazon Machine Image configuration you want to be used when
+Specify the Amazon Machine Image (AMI) configuration you want to be used when
 launching workspaces:
 
 - **Privileged mode**: Optional. check this box if you would like the workspace
