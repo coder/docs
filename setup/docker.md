@@ -21,7 +21,12 @@ You must be using a machine that is running Linux/macOS and has
    include the images, and set up your Coder deployment:
 
    ```console
-   docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder codercom/coder:1.25.0
+   docker run --rm -it \
+      -p 7080:7080 \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      -v ~/.coder:/var/run/coder \
+      -e DEVURL_HOST="*.mycompany.com" \
+      codercom/coder:1.25.0
    ```
 
    When this process is complete, Coder will print the URL you can use to access
