@@ -82,6 +82,13 @@ apps:
 - A health check _must_ report healthy for you to access the application.
 - If you specify both the HTTP and Exec health checks, Coder prioritizes HTTP.
 
-You can include the applications specification file in your
-[workspace image](../images/writing.md). You an also modify the file via
-[personalization](./personalization.md) scripts.
+## Sample usage
+
+Coder offers an
+[image](https://github.com/cdr/enterprise-images/tree/91ef8f521b2275783fed54b27052cc544153cd99/images/vnc)
+that helps you [set up a VNC](../guides/customization/vnc.md). With a VNC
+available, you can add an icon to your **Browser applications** via setting the
+[config file](https://github.com/cdr/enterprise-images/blob/91ef8f521b2275783fed54b27052cc544153cd99/images/vnc/coder/apps/config.yaml).
+
+You can also see our blog post for further samples on adding tools like
+Portainer, Insomnia, and various versions of code-server.
