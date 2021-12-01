@@ -8,7 +8,7 @@ such as those involved with data science/machine learning projects.
 
 You can allocate GPUs to workspaces once a site manager configures and enables
 this feature. Enabling GPU acceleration requires that you've configured your
-Kubernetes cluster appropriately and
+Kubernetes cluster and
 [scheduled GPUs](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/).
 For instructions on how to schedule GPUs with your specific cloud vendor, see:
 
