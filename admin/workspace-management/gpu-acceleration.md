@@ -10,6 +10,7 @@ You can allocate GPUs to workspaces once a site manager configures and enables
 this feature. Enabling GPU acceleration requires that you've configured your
 Kubernetes cluster appropriately and
 [scheduled GPUs](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/).
+For instructions on how to schedule GPUs with your specific cloud vendor, see:
 
 - [Amazon Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html)
 - [Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/gpu-cluster)
