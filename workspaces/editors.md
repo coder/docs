@@ -8,8 +8,7 @@ There are several primary ways you can connect an IDE to your Coder workspace:
 
 1. [VS Code remote SSH](editors.md#vs-code-remote-ssh) with local VS Code
 1. [VS Code in the browser](editors.md#vs-code-in-the-browser) with code-server
-1. [JetBrains and SSH](editors.md#jetbrains-ides-remote-ssh) with JetBrains
-   Gateway
+1. [JetBrains Gateway and SSH](editors.md#jetbrains-gateway-with-ssh)
 1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with
    JetBrains Projector
 1. [JetBrains' Code With Me](editors.md#code-with-me)
@@ -39,7 +38,7 @@ Web_ icon.
 
 ![Launch a workspace](../assets/workspaces/launch-workspace.png)
 
-## JetBrains IDEs remote SSH
+## JetBrains Gateway with SSH
 
 If your image
 [includes a JetBrains IDE](../admin/workspace-management/installing-jetbrains.md)
@@ -79,23 +78,20 @@ Please note that:
 
    ![Test Gateway Connection](../assets/workspaces/gateway-test-connection.png)
 
-1. Select or install a JetBrains IDE from the IDE version drop-down. If one is
-   auto-installed on your workspace, it should show up here. Next, click the
-   folder icon and select your `/home/coder` directory in your Coder workspace.
+1. Select a JetBrains IDE from the IDE version drop-down. Choose the IDE
+   installed in your Coder workspace, and click the folder icon and select your
+   `/home/coder` directory in your Coder workspace.
 
-   ![Select JetBrains IDE and working
-directory](../assets/workspaces/gateway-ide-and-project.png)
+   ![Select JetBrains IDE and working directory](../assets/workspaces/gateway-ide-and-project.png)
 
 1. During this installation step, Gateway downloads the IDE and a JetBrains
    client. This may take a couple minutes.
 
-   ![Gateway downloading IDE and
-client](../assets/workspaces/gateway-download-client.png)
-   ![Code with Me
-starting up](../assets/workspaces/gateway-code-with-me-loading.png)
+   ![Gateway downloading IDE and client](../assets/workspaces/gateway-download-client.png)
 
-   ![A running
-JetBrains IDE in Gateway](../assets/workspaces/gateway-ide-running.png)
+   ![Code with Me starting up](../assets/workspaces/gateway-code-with-me-loading.png)
+
+   ![A running JetBrains IDE in Gateway](../assets/workspaces/gateway-ide-running.png)
 
 > If your Coder deployment is configured with ECDSA ssh key algorithm, change
 > the Gateway authentication type to **Key pair** and create the Coder public
