@@ -3,22 +3,22 @@ title: "GPU acceleration"
 description: Learn how to use GPUs with workspaces.
 ---
 
-GPUs can be used for performing tasks such as machine learning within
-workspaces.
+Graphical processing units (GPUs) are useful with compute-intensive workloads,
+such as those involved with data science/machine learning projects.
 
-By default, users cannot create workspaces with GPUs until a site manager
-configures and enables this feature.
+You can allocate GPUs to workspaces once a site manager configures and enables
+this feature. Enabling GPU acceleration requires that you've configured your
+Kubernetes cluster appropriately and
+[scheduled GPUs](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/).
 
-### Step 1: Configure your Kubernetes cluster
+- [Amazon Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html)
+- [Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/gpu-cluster)
+- [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus)
 
-<a href="https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/"
-target="_blank" rel="noreferrer noopener">Configure</a> your Kubernetes cluster
-with the available GPUs and all necessary device plugins and drivers.
+Once your Kubernetes cluster has been configured, you can enable GPUs in Coder.
 
-### Step 2: Enable GPU vendor in Coder
-
-Go to **Manage** > **Admin**. On the **Infrastructure** tab, find the **GPU
-Vendor** setting, and change it to the GPU vendor of choice (either **AMD** or
-**Nvidia**). Click **Save Vendor**.
+To do so, go to **Manage** > **Admin**. On the **Infrastructure** tab, find the
+**GPU Vendor** setting, and change it to the GPU vendor of choice (either
+**AMD** or **Nvidia**). Click **Save Vendor**.
 
 ![Enable GPU vendor](../../assets/admin/gpu.png)
