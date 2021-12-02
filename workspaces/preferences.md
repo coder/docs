@@ -71,10 +71,10 @@ Please note that:
 
 You can check whether notifications are enabled and working by click **Test**.
 
-## Autostart
+## Auto-start
 
-Autostart allows you to set the time when Coder automatically starts and builds
-your workspaces. See [Autostart](autostart.md) for more information.
+Auto-start allows you to set the time when Coder automatically starts and builds
+your workspaces. See [auto-start](autostart.md) for more information.
 
 ## Dark theme
 

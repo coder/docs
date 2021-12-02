@@ -87,9 +87,9 @@ set your resource allocation.
         you want allocated to your workspace</td>
     </tr>
     <tr>
-        <td><b>Autostart</b></td>
+        <td><b>Auto-start</b></td>
         <td>Whether you want your workspace to turn on automatically at a
-        specific time (you can set the autostart time in User Preferences.</td>
+        specific time (you can set the auto-start time in User Preferences.</td>
     </tr>
 </table>
 
