@@ -5,8 +5,12 @@ for filename in /coder/extensions/*.vsix; do
     code-server --install-extension $filename
 done
 
-# Install code-server extensions from the marketplace
-# (none right now)
+# Install code-server extensions from the open-vsx
+export SERVICE_URL=https://open-vsx.org/vscode/gallery
+export ITEM_URL=https://open-vsx.org/vscode/item
+code-server --install-extension stkb.rewrap
+code-server --install-extension streetsidesoftware.code-spell-checker
+
 
 # Clone the docs repo, if it doesn't exist
 PROJECT_FOLDER=/home/coder/docs
