@@ -182,9 +182,6 @@
               "path": "./setup/air-gapped/infrastructure.md"
             }
           ]
-        },
-        {
-          "path": "./setup/docker.md"
         }
       ]
     },
@@ -409,6 +406,9 @@
         {
           "path": "./guides/deployments/index.md",
           "children": [
+            {
+              "path": "./guides/deployments/docker.md"
+            },
             {
               "path": "./guides/deployments/archive-install.md"
             },
