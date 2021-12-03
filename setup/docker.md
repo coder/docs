@@ -29,7 +29,7 @@ You must be using a machine that is running Linux/macOS and has
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v ~/.coder:/var/run/coder \
       -e DEVURL_HOST="*.mycompany.com" \
-      codercom/coder:1.25.0
+      codercom/coder:1.25.1
    ```
 
    When this process is complete, Coder will print the URL you can use to access
