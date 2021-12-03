@@ -168,20 +168,20 @@
           "path": "./setup/configuration.md"
         },
         {
-          "path": "./setup/updating/index.md",
-          "children": [
-            {
-              "path": "./setup/updating/considerations.md"
-            }
-          ]
-        },
-        {
           "path": "./setup/air-gapped/index.md",
           "children": [
             {
               "path": "./setup/air-gapped/infrastructure.md"
             }
           ]
+        }
+      ]
+    },
+    {
+      "path": "./upgrade/index.md",
+      "children": [
+        {
+          "path": "./upgrade/considerations.md"
         }
       ]
     },
