@@ -168,9 +168,6 @@
           "path": "./setup/configuration.md"
         },
         {
-          "path": "./setup/licensing.md"
-        },
-        {
           "path": "./setup/updating/index.md",
           "children": [
             {
@@ -325,10 +322,13 @@
           "path": "./admin/devurls.md"
         },
         {
+          "path": "./admin/stun.md"
+        },
+        {
           "path": "./admin/git.md"
         },
         {
-          "path": "./admin/stun.md"
+          "path": "./admin/licensing.md"
         },
         {
           "path": "./admin/telemetry.md"
