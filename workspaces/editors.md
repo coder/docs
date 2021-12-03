@@ -47,7 +47,8 @@ to run a local JetBrains IDE connected to your Coder workspace.
 
 Please note that:
 
-- Your Coder workspace with the JetBrains IDE must be running
+- Your Coder workspace must be running. Gateway needs compute resources, so
+  monitor your resource usage on the Coder dashboard and adjust accordingly.
 - If you use a premium JetBrains IDE (e.g., GoLand, IntelliJ IDEA Ultimate), you
   will still need a license to use it remotely with Coder.
 
