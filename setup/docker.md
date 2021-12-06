@@ -28,7 +28,6 @@ You must be using a machine that is running Linux/macOS and has
       -p 7080:7080 \
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v ~/.coder:/var/run/coder \
-      -e DEVURL_HOST="*.mycompany.com" \
       codercom/coder:1.25.1
    ```
 
@@ -79,7 +78,7 @@ DEVURL_HOST="*.mycompany.com"
 For example:
 
 ```console
-docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder codercom/coder:1.25.0 -e DEVURL_HOST="*.mycompany.com"
+docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.25.1
 ```
 
 ## Scaling
