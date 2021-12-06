@@ -177,14 +177,14 @@
         },
         {
           "path": "./setup/docker.md"
-        }
-      ]
-    },
-    {
-      "path": "./upgrade/index.md",
-      "children": [
+        },
         {
-          "path": "./upgrade/considerations.md"
+          "path": "./upgrade/index.md",
+          "children": [
+            {
+              "path": "./upgrade/considerations.md"
+            }
+          ]
         }
       ]
     },
