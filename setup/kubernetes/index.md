@@ -26,9 +26,12 @@ deprecated features before they are removed from new versions of Kubernetes.
 
 <!-- markdownlint-disable -->
 
-| **Coder**                         | v1.25                        | v1.24                        | v1.23                        | v1.22                        |
-| --------------------------------- | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| **Supported Kubernetes versions** | `1.22.x`, `1.21.x`, `1.20.x` | `1.21.x`, `1.20.x`, `1.19.x` | `1.21.x`, `1.20.x`, `1.19.x` | `1.20.x`, `1.19.x`, `1.18.x` |
+|              | Kubernetes `1.22` | Kubernetes `1.21` | Kubernetes `1.20` | Kubernetes `1.19` | Kubernetes `1.18` |
+| ------------ | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- |
+| Coder `1.25` | ✅                | ✅                | ✅                |                   |                   |
+| Coder `1.24` |                   | ✅                | ✅                | ✅                |                   |
+| Coder `1.23` |                   | ✅                | ✅                | ✅                |                   |
+| Coder `1.22` |                   |                   | ✅                | ✅                | ✅                |
 
 [compatible kubernetes cluster]: ../requirements.md
 [kubernetes upstream version support policy]:
