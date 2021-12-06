@@ -36,7 +36,10 @@ actions included:
 - `auto_off`: Coder automatically turned off a workspace due to inactivity
 - `auto_start`: Coder automatically turned on a workspace at the time preset by
   its owner
-- `connect`: a user connected to an existing workspace with either local VS Code or JetBrains Gateway IDEs, a local Terminal `ssh` command, or a local Terminal Coder CLI `coder ssh` command.
+- `connect`: a user connected to an existing workspace via a local VS Code
+  instance, a JetBrains IDE via JetBrains Gateway, a local terminal `ssh`
+  connection, or a local terminal connection via the Coder CLI's `coder ssh`
+  command
 - `cordon`: a workspace provider became unavailable for new workspace creation
   requests.
 - `create`: the user created a Coder entity (e.g., dev URL, image/image tag,
@@ -46,7 +49,8 @@ actions included:
   deletion, workspace deletion)
 - `login`: a user logs in via basic authentication or OIDC, with Coder
   exchanging a token as a result
-- `open`: a user opened a workspace using the Code Web IDE through the browser.  JetBrains Projector IDEs do not show yet for this action.
+- `open`: a user opened a workspace using the Code Web IDE through the browser
+  (please note that this action is not yet logged for JetBrains IDEs)
 - `ssh`: a user opened a web terminal to access Coder
 - `stop`: a user manually stopped a workspace
 - `uncordon`: a workspace provider became available for new workspace creation
