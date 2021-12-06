@@ -25,10 +25,16 @@ stable version. We follow this policy to ensure that Coder stops using
 deprecated features before they are removed from new versions of Kubernetes.
 
 <!-- markdownlint-disable -->
+
+| **Coder**                         | v1.25                        | v1.24                        | v1.23                        | v1.22                        |
+| --------------------------------- | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| **Supported Kubernetes versions** | `1.22.x`, `1.21.x`, `1.20.x` | `1.21.x`, `1.20.x`, `1.19.x` | `1.21.x`, `1.20.x`, `1.19.x` | `1.20.x`, `1.19.x`, `1.18.x` |
+
 [compatible kubernetes cluster]: ../requirements.md
 [kubernetes upstream version support policy]:
   https://kubernetes.io/docs/setup/release/version-skew-policy/
 [installation guide]: ../installation.md
+
 <!-- markdownlint-restore -->
 
 <children></children>
