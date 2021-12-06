@@ -89,5 +89,5 @@ helps you [set up a VNC](../guides/customization/vnc.md). With a VNC available,
 you can add an icon to your **Browser applications** via setting the
 [config file](https://github.com/cdr/enterprise-images/blob/91ef8f521b2275783fed54b27052cc544153cd99/images/vnc/coder/apps/config.yaml).
 
-You can also see our blog post for further samples on adding tools like
-Portainer, Insomnia, and various versions of code-server.
+You can also see our [blog post](https://coder.com/blog/run-any-application-or-ide-in-coder) for
+further samples on adding tools like Portainer, Insomnia, and various versions of code-server.
