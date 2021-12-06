@@ -84,10 +84,9 @@ apps:
 
 ## Sample usage
 
-Coder offers an
-[image](https://github.com/cdr/enterprise-images/tree/91ef8f521b2275783fed54b27052cc544153cd99/images/vnc)
-that helps you [set up a VNC](../guides/customization/vnc.md). With a VNC
-available, you can add an icon to your **Browser applications** via setting the
+Coder offers an [image](https://hub.docker.com/r/codercom/enterprise-vnc) that
+helps you [set up a VNC](../guides/customization/vnc.md). With a VNC available,
+you can add an icon to your **Browser applications** via setting the
 [config file](https://github.com/cdr/enterprise-images/blob/91ef8f521b2275783fed54b27052cc544153cd99/images/vnc/coder/apps/config.yaml).
 
 You can also see our blog post for further samples on adding tools like
