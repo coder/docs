@@ -1,6 +1,6 @@
 ---
-title: "Updating"
-description: Learn how to update your Coder deployment.
+title: "Upgrade"
+description: Learn how to upgrade your Coder deployment.
 ---
 
 This guide will show you how to update your Coder deployment.
