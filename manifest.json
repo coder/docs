@@ -179,10 +179,10 @@
           "path": "./setup/docker.md"
         },
         {
-          "path": "./upgrade/index.md",
+          "path": "./setup/upgrade/index.md",
           "children": [
             {
-              "path": "./upgrade/considerations.md"
+              "path": "./setup/upgrade/considerations.md"
             }
           ]
         }
