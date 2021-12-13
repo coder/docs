@@ -13,8 +13,9 @@ image as you've configured it and automatically pull in the repository.
 ## Requirements
 
 - You must have Git and SSH installed on your image
+- Coder must be [integrated with a supported git provider](../../admin/git.md)
 - You must
-  [provide your Coder SSH key](../../workspaces/preferences.md#linked-accounts)
+  [link your Coder account](../../workspaces/preferences.md#linked-accounts)
   to the service of your choice. This step is required for anyone who wants to
   use the button to launch a project using the provided image and repo.
 
