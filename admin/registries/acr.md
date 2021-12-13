@@ -37,9 +37,9 @@ username and password and proceed to **step 2** of this guide.
 
 ### Option B: Use an Azure Active Directory (AAD) Pod Identity
 
-**Note:** This is currently an **alpha** feature. To use this feature, enable
-the feature flag under
-`Manage > Admin > Infrastructure > Azure Registry Authentication`.
+> This is currently an **alpha** feature. To use this feature, enable the
+> feature flag under
+> `Manage > Admin > Infrastructure > Azure Registry Authentication`.
 
 AAD Pod Identity allows you to assign an AAD identity to pods in your Azure
 Kubernetes (AKS) cluster. You can assign Coder an AAD identity with pull access
@@ -48,68 +48,68 @@ provide static credentials.
 
 1. [Create your Azure role assignments and install AAD Pod Identity on your clusters.](https://azure.github.io/aad-pod-identity/docs/getting-started/)
 
-Consult the
-[AAD Pod Identity Documentation](https://azure.github.io/aad-pod-identity/docs/)
-for additional support on configuring this feature.
+   Consult the
+   [AAD Pod Identity Documentation](https://azure.github.io/aad-pod-identity/docs/)
+   for additional support on configuring this feature.
 
 1. Once you have configured an Azure Identity Binding, ensure that you label the
    `coderd` deployment pods with the correct `aadpodidbinding` label.
 
-For example, if you name the Azure Identity `coder-identity`, then the pods in
-your `coderd` deployment should all have the label
-`aadpodidbinding: coder-identity`.
+   For example, if you name the Azure Identity `coder-identity`, then the pods
+   in your `coderd` deployment should all have the label
+   `aadpodidbinding: coder-identity`.
 
 1. Verify that the Azure Identity binding is set up correctly. First, run:
 
-```console
-kubectl run -it --rm --image=mcr.microsoft.com/azure-cli:latest --labels=aadpodidbinding=coder-identity aadpodidtest -- bash
-```
+   ```console
+   kubectl run -it --rm --image=mcr.microsoft.com/azure-cli:latest --labels=aadpodidbinding=coder-identity aadpodidtest -- bash
+   ```
 
-Then, run the following command, replacing the variables `$SUBSCRIPTION_ID`,
-`$RESOURCE_GROUP`, and `$IDENTITY_NAME` where appropriate:
+   Then, run the following command, replacing the variables `$SUBSCRIPTION_ID`,
+   `$RESOURCE_GROUP`, and `$IDENTITY_NAME` where appropriate:
 
-```console
-bash-5.1# az login --identity -u /subscriptions/$SUBSCRIPTION_ID/resourcegroups/$RESOURCE_GROUP/providers/Microsoft.ManagedIdentity/userAssignedIdentities/$IDENTITY_NAME
+   ```console
+   bash-5.1# az login --identity -u /subscriptions/$SUBSCRIPTION_ID/resourcegroups/$RESOURCE_GROUP/providers/Microsoft.ManagedIdentity/userAssignedIdentities/$IDENTITY_NAME
 
-# Expected output:
-[
-  {
-    "environmentName": "AzureCloud",
-    "homeTenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "isDefault": true,
-    "managedByTenants": [],
-    "name": "Microsoft Azure Sponsorship",
-    "state": "Enabled",
-    "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "user": {
-      "assignedIdentityInfo": "MSIResource-/subscriptions/$SUBSCRIPTION_ID/resourcegroups/$RESOURCE_GROUP/providers/Microsoft.ManagedIdentity/userAssignedIdentities/$IDENTITY_NAME",
-      "name": "userAssignedIdentity",
-      "type": "servicePrincipal"
-    }
-  }
-]
-```
+   # Expected output:
+   [
+   {
+      "environmentName": "AzureCloud",
+      "homeTenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "isDefault": true,
+      "managedByTenants": [],
+      "name": "Microsoft Azure Sponsorship",
+      "state": "Enabled",
+      "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "user": {
+         "assignedIdentityInfo": "MSIResource-/subscriptions/$SUBSCRIPTION_ID/resourcegroups/$RESOURCE_GROUP/providers/Microsoft.ManagedIdentity/userAssignedIdentities/$IDENTITY_NAME",
+         "name": "userAssignedIdentity",
+         "type": "servicePrincipal"
+      }
+   }
+   ]
+   ```
 
-If you see output similar to the above, then you have successfully configured
-AAD Pod Identity!
+   If you see output similar to the above, then you have successfully configured
+   AAD Pod Identity!
 
-> If you run into issues, please check the
-> [official troubleshooting documentation for AAD Pod Identity](https://azure.github.io/aad-pod-identity/docs/troubleshooting/).
+   > If you run into issues, please check the
+   > [official troubleshooting documentation for AAD Pod Identity](https://azure.github.io/aad-pod-identity/docs/troubleshooting/).
 
 1. Next, set the `aadpodidbinding` label in your
    [Helm `values.yaml`](../../guides/admin/helm-charts.md):
 
-```yaml
-extraLabels:
-  aadpodidbinding: coder-identity
-```
+   ```yaml
+   extraLabels:
+   aadpodidbinding: coder-identity
+   ```
 
 1. You will then need to upgrade the Helm deployment:
 
-```shell
-helm upgrade coder coder/coder --values values.yaml
-```
+   ```shell
+   helm upgrade coder coder/coder --values values.yaml
+   ```
 
 1. Finally, enable the feature flag under
    `Manage > Admin > Infrastructure > Azure Registry Authentication` if you
