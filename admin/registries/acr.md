@@ -17,7 +17,7 @@ for authenticating with ACR:
 
 ### Option A: Provision static credentials for Coder
 
-ACR includes a number of options for using static credentials, including:
+ACR provides a number of options for using static credentials, including:
 
 - Registry Administrator Account (not enabled by default)
 - AAD Service Principal (SP)
