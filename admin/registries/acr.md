@@ -1,23 +1,23 @@
 ---
-title: "Azure Container Registry (ACR)"
-description: Add a private Microsoft Azure Container Registry (ACR) to Coder.
+title: "Azure Container Registry"
+description: Add a Microsoft Azure Container Registry (ACR) to Coder.
 ---
 
-This article will show you how to add an Azure Container Registry (ACR) instance
-to Coder.
+This article will show you how to add a private Azure Container Registry (ACR)
+instance to Coder.
 
-## Step 1: Setting up authentication for Coder
+## Step 1: Set up authentication for Coder
 
 Coder supports the
 [following methods](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication)
 for authenticating with ACR:
 
-- Static credentials that can be consumed by the `docker login` command
+- Static credentials that the `docker login` command can consume
 - **Alpha:** Azure Active Directory (AAD) Pod Identity
 
 ### Option A: Provision static credentials for Coder
 
-ACR provides a number of options for using static credentials, including:
+ACR provides several options for using static credentials, including:
 
 - Registry Administrator Account (not enabled by default)
 - AAD Service Principal (SP)
@@ -32,7 +32,10 @@ Please consult the
 [Azure Container Registry Documentation](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication)
 for more details.
 
-### Option B: Azure Active Directory (AAD) Pod Identity
+Once you've chosen the option for using static credentials, make a note of your
+username and password and proceed to **step 2** of this guide.
+
+### Option B: Use an Azure Active Directory (AAD) Pod Identity
 
 **Note:** This is currently an **alpha** feature. To use this feature, enable
 the feature flag under
@@ -40,32 +43,34 @@ the feature flag under
 
 AAD Pod Identity allows you to assign an AAD identity to pods in your Azure
 Kubernetes (AKS) cluster. You can assign Coder an AAD identity with pull access
-to an ACR instance to allow Coder access to the registry without providing any
-static credentials.
+to an ACR instance so that Coder can access the registry without needing to
+provide static credentials.
 
-Please consult the
+1. [Create your Azure role assignments and install AAD Pod Identity on your clusters.](https://azure.github.io/aad-pod-identity/docs/getting-started/)
+
+Consult the
 [AAD Pod Identity Documentation](https://azure.github.io/aad-pod-identity/docs/)
-for support on configuring this feature.
+for additional support on configuring this feature.
 
-Once you have configured an Azure Identity Binding, ensure that you label the
-`coderd` deployment pods with the correct `aadpodidbinding` label.
+1. Once you have configured an Azure Identity Binding, ensure that you label the
+   `coderd` deployment pods with the correct `aadpodidbinding` label.
 
 For example, if you name the Azure Identity `coder-identity`, then the pods in
 your `coderd` deployment should all have the label
 `aadpodidbinding: coder-identity`.
 
-You can verify that the Azure Identity binding is set up correctly with the
-below command:
+1. Verify that the Azure Identity binding is set up correctly. First, run:
 
-```shell
+```console
 kubectl run -it --rm --image=mcr.microsoft.com/azure-cli:latest --labels=aadpodidbinding=coder-identity aadpodidtest -- bash
 ```
 
-Then run the following command, replacing the variables `$SUBSCRIPTION_ID`,
+Then, run the following command, replacing the variables `$SUBSCRIPTION_ID`,
 `$RESOURCE_GROUP`, and `$IDENTITY_NAME` where appropriate:
 
-```shell
+```console
 bash-5.1# az login --identity -u /subscriptions/$SUBSCRIPTION_ID/resourcegroups/$RESOURCE_GROUP/providers/Microsoft.ManagedIdentity/userAssignedIdentities/$IDENTITY_NAME
+
 # Expected output:
 [
   {
@@ -86,27 +91,29 @@ bash-5.1# az login --identity -u /subscriptions/$SUBSCRIPTION_ID/resourcegroups/
 ]
 ```
 
-If you see output similar to the above, then congratulations! You have
-configured AAD Pod Identity!
+If you see output similar to the above, then you have successfully configured
+AAD Pod Identity!
 
-If you run into issues, please check the
-[official troubleshooting documentation for AAD Pod Identity](https://azure.github.io/aad-pod-identity/docs/troubleshooting/).
+> If you run into issues, please check the
+> [official troubleshooting documentation for AAD Pod Identity](https://azure.github.io/aad-pod-identity/docs/troubleshooting/).
 
-You can now set the `aadpodidbinding` label in your Helm `values.yaml`, like so:
+1. Next, set the `aadpodidbinding` label in your
+   [Helm `values.yaml`](../../guides/admin/helm-charts.md):
 
 ```yaml
 extraLabels:
   aadpodidbinding: coder-identity
 ```
 
-You will then need to upgrade the Helm deployment:
+1. You will then need to upgrade the Helm deployment:
 
 ```shell
 helm upgrade coder coder/coder --values values.yaml
 ```
 
-Finally, enable the feature flag under
-`Manage > Admin > Infrastructure > Azure Registry Authentication`.
+1. Finally, enable the feature flag under
+   `Manage > Admin > Infrastructure > Azure Registry Authentication` if you
+   haven't already.
 
 ## Step 2: Add your Azure Container Registry to Coder
 
@@ -121,14 +128,15 @@ You can add your private ACR instance at the same time that you
 
 1. Provide a **registry name** and the **registry**.
 
-1. Depending how you are authenticating:
+1. Depending on how you are authenticating:
 
    1. If you are using **Static Credentials**, then set the **registry kind** to
-      "Generic Registry" and provide the username and password as normal.
+      **Generic Registry** and provide the **username** and **password** as
+      normal.
 
    1. If you are using AAD Pod Identity, set **Registry Kind** to **Microsoft
-      Azure Container Registry**. No username or password needs to be provided
-      if you are using AAD Pod Identity.
+      Azure Container Registry**. You do not have to provide a username or
+      password if you are using AAD Pod Identity.
 
 1. Continue with the process of [adding your image](../../images/index.md).
 
