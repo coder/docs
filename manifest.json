@@ -328,6 +328,9 @@
           "path": "./admin/stun.md"
         },
         {
+          "path": "./admin/shell.md"
+        },
+        {
           "path": "./admin/git.md"
         },
         {
