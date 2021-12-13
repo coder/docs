@@ -229,6 +229,9 @@
               "path": "./admin/registries/ecr.md"
             },
             {
+              "path": "./admin/registries/acr.md"
+            },
+            {
               "path": "./admin/registries/gcr.md"
             }
           ]
