@@ -21,11 +21,15 @@ To import an image:
    However, to _add_ a registry, click **Add a new registry**, which is the
    option located immediately below the registry selector.
 1. You'll be asked to provide a **registry name** and the **registry**.
-1. **Optional.** If your registry is a **private registry** or you want to avoid
-   hitting [rate limits](https://www.docker.com/increase-rate-limits), provide
-   the **username** and **password** combination required to access the
-   registry. If your registry is a private **Amazon ECR Registry**, follow the
-   steps specific to [AWS ECR](./ecr.md).
+1. **Optional:**
+   1. If your registry is a **private registry** or you want to avoid hitting
+      [rate limits](https://www.docker.com/increase-rate-limits), provide the
+      **username** and **password** combination required to access the registry.
+   1. If your registry is a private **Amazon ECR Registry**, follow the steps
+      specific to [AWS ECR](./ecr.md).
+   1. If your registry is hosted on **Microsoft Azure Container Registry (ACR)**
+      and you want to authenticate using **Azure Active Directory (AAD) Pod
+      Identity** , follow the steps specific to [ACR](./acr.md).
 1. Continue with the process of [adding your image](../../images/index.md).
 1. When done, click **Import**.
 
