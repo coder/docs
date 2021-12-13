@@ -226,6 +226,9 @@
               "path": "./admin/registries/ecr.md"
             },
             {
+              "path": "./admin/registries/azure.md"
+            },
+            {
               "path": "./admin/registries/gcr.md"
             }
           ]
