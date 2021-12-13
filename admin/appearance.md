@@ -9,6 +9,9 @@ Coder offers you appearance customization options for the following:
 - Service banner messages
 - The terms of service display
 
+All banners accept plain text and Markdown formatting. The terms of service
+display also accepts HTML.
+
 ## System banners
 
 To customize your system banner messages:
