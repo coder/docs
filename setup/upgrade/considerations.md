@@ -19,7 +19,9 @@ upgrading, such as architecture updates and breaking changes.
 
 - Coder supports the use of Markdown formatting in system and service banners.
   Coder now renders the Markdown content in existing banners, instead of
-  displaying the raw Markdown syntax.
+  displaying the raw Markdown syntax. Furthermore, users who have enabled the
+  beta version via feature flag will need to re-enable this; Coder won't
+  auto-apply the theme.
 
 ## Upgrading from v1.24 to v1.25
 
