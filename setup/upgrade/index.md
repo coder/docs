@@ -3,9 +3,9 @@ title: "Upgrade"
 description: Learn how to upgrade your Coder deployment.
 ---
 
-This guide will show you how to update your Coder deployment.
+This guide will show you how to upgrade your Coder deployment.
 
-> Before proceeding, review the [updating considerations](considerations.md)
+> Before proceeding, review the [upgrade considerations](considerations.md)
 > article for information breaking charges, architecture changes, and so on.
 
 ## Prerequisites
