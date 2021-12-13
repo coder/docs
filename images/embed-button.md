@@ -13,11 +13,11 @@ image as you've configured it and automatically pull in the repository.
 ## Requirements
 
 - You must have Git and SSH installed on your image
-- Coder must be [integrated with a supported git provider](../../admin/git.md)
+- Coder must be [integrated with a supported Git provider](../admin/git.md)
 - You must
-  [link your Coder account](../../workspaces/preferences.md#linked-accounts)
-  to the service of your choice. This step is required for anyone who wants to
-  use the button to launch a project using the provided image and repo.
+  [link your Coder account](../workspaces/preferences.md#linked-accounts) to the
+  service of your choice. This step is required for anyone who wants to use the
+  button to launch a project using the provided image and repo.
 
 ## Create the embedded button's code
 
