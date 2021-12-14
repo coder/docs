@@ -8,7 +8,8 @@ quickly.
 
 ## Prerequisites
 
-You must be using a machine that is running Linux/macOS and has
+You must be using a machine that is running Linux, macOS, or Windows with WSL.
+You also need to have 
 [Docker Desktop](https://www.docker.com/products/docker-desktop) installed.
 
 ## Installing Coder for Docker
