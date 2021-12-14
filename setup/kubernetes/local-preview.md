@@ -144,9 +144,9 @@ installed Coder.
    requirement is to use a service such as [nip.io][nip-url] to route domains to
    a local IP address.
 
-1. [Update Coder](../updating.md#update-coder) with the following Helm values
-   added for either your local (`127.0.0.1`) or private (e.g., `192.168.1.x`)
-   address:
+1. [Update Coder](../upgrade/index.md#update-coder) with the following Helm
+   values added for either your local (`127.0.0.1`) or private (e.g.,
+   `192.168.1.x`) address:
 
    ```yaml
    coderd:
@@ -203,8 +203,8 @@ protection. Here's how to do this:
    nameserver 127.0.0.1
    ```
 
-1. [Update Coder](../updating#update-coder) with these Helm values added to use
-   your new domains:
+1. [Update Coder](../upgrade/index.md#update-coder) with these Helm values added
+   to use your new domains:
 
    ```yaml
    coderd:

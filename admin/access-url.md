@@ -31,7 +31,7 @@ obtained in the previous step.
 
 When changing your access URL, you'll need to
 [update your Helm chart](../guides/admin/helm-charts.md) and
-[redeploy Coder](../setup/updating.md):
+[redeploy Coder](../setup/upgrade/index.md):
 
 helm upgrade coder coder/coder \
  --set devurlsHost="\*.example.com"
