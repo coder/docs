@@ -217,9 +217,9 @@ specified by the certificate(s) created in step 2. The secret name(s) are
 arbitrary, but ensure they do not conflict with any other secrets in the Coder
 namespace.
 
-Be sure to [redeploy Coder](../setup/updating) after changing your Helm values.
-Then, log in to Coder and change your access URL in `Manage > Admin` to use
-HTTPS.
+Be sure to [redeploy Coder](../../setup/upgrade/index.md) after changing your
+Helm values. Then, log in to Coder and change your access URL in
+`Manage > Admin` to use HTTPS.
 
 ## Troubleshooting
 
