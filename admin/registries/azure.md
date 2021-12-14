@@ -94,6 +94,18 @@ provide static credentials.
    If you see output similar to the above, then you have successfully configured
    AAD Pod Identity!
 
+   > **Troubleshooting:**
+   >
+   > You can manually check that Coder is able to acquire a token from the Azure
+   > Instance Metadata Service (IMDS) by running the following command:
+   >
+   > ```shell
+   > kubectl -n coder exec -it deployment/coderd -- curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=$CLIENTID&resource=https%3A%2F%2Fmanagement.azure.com' -H 'Metadata:true'
+   > ```
+   >
+   > Replace the variable `$CLIENTID` with the ID of the user-assigned entity
+   > you are using.
+   >
    > If you run into issues, please check the
    > [official troubleshooting documentation for AAD Pod Identity](https://azure.github.io/aad-pod-identity/docs/troubleshooting/).
 
