@@ -106,7 +106,14 @@ provide static credentials.
    > Replace the variable `$CLIENTID` with the ID of the user-assigned entity
    > you are using.
    >
-   > If you run into issues, please check the
+   > If you recieve an error similar to the following, try deleting and
+   > re-creating the `coderd` pod:
+   >
+   > ```shell
+   > {"error":"invalid_request","error_description":"Identity not found"}
+   > ```
+   >
+   > If you run into further issues, please check the
    > [official troubleshooting documentation for AAD Pod Identity](https://azure.github.io/aad-pod-identity/docs/troubleshooting/).
 
 1. Next, set the `aadpodidbinding` label in your
