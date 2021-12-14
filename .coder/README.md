@@ -10,7 +10,7 @@ Coder](https://cdn.coder.com/embed-button.svg)](https://sandbox.coder.com/wac/bu
 Your own deployment:
 
 ```text
-Add image: bencdr/coder:latest (DockerHub)
+Import image: bencdr/docs:latest (DockerHub)
 
 New workspace > New workspace from template
 
