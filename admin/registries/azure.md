@@ -106,7 +106,7 @@ provide static credentials.
    > Replace the variable `$CLIENTID` with the ID of the user-assigned entity
    > you are using.
    >
-   > If you recieve an error similar to the following, try deleting and
+   > If you receive an error similar to the following, try deleting and
    > re-creating the `coderd` pod:
    >
    > ```shell
