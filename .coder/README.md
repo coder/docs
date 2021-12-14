@@ -12,7 +12,7 @@ Your own deployment:
 ```text
 Add image: bencdr/coder:latest (DockerHub)
 
-New workspace > Create from template
+New workspace > New workspace from template
 
 Git repository URL: https://github.com/cdr/docs
 Branch: bpmct/add-coder
