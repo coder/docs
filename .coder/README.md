@@ -14,7 +14,7 @@ Add image: bencdr/coder:latest (DockerHub)
 
 New workspace > Create from template
 
-Repo url: https://github.com/cdr/docs
+Git repository URL: https://github.com/cdr/docs
 Branch: bpmct/add-coder
 ```
 
