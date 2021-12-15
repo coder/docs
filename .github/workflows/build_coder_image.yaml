@@ -10,9 +10,6 @@ jobs:
   build-image:
     runs-on: ubuntu-latest
     steps:
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v2.1
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Login to DockerHub
@@ -28,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/your-project:latest, ${{ secrets.DOCKERHUB_USERNAME }}/your-project:${{ steps.vars.outputs.sha_short }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docs:latest, ${{ secrets.DOCKERHUB_USERNAME }}/docs:${{ steps.vars.outputs.sha_short }}
           context: .coder/
           file: .coder/Dockerfile
       - name: Image digest
