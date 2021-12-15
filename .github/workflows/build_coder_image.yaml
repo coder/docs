@@ -5,6 +5,7 @@ on:
       - "main"
     paths:
       - ".coder/**" # only run the action when .coder/ folder has been modified
+      - ".github/workflows/**" # run when a GitHub workflow has been modified
   workflow_dispatch:
 jobs:
   build-image:
