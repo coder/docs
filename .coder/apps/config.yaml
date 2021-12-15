@@ -1,0 +1,15 @@
+apps:
+  - name: Docs - VS Code
+    scheme: http
+    port: 13338
+    host: "localhost"
+    working-directory: /home/coder
+    icon-path: /coder/apps/edit-docs.svg
+    command: code-server
+    args: ["--bind-addr=127.0.0.1:13338", "--auth=none"]
+    health-check:
+      http:
+        scheme: "http"
+        host: "localhost"
+        port: 13338
+        path: "/healthz"
