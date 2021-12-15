@@ -104,7 +104,8 @@ the variable `$CLIENTID` with the ID of the user-assigned entity you are using):
 kubectl -n coder exec -it deployment/coderd -- curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=$CLIENTID&resource=https%3A%2F%2Fmanagement.azure.com' -H 'Metadata:true'
 ```
 
-If you receive an error similar to the following, try deleting and re-creating
+If you receive an error similar to the following, try restarting coderd
+by running the command `kubectl rollout restart deployment coderd`:
 the `coderd` pod:
 
 ```shell
