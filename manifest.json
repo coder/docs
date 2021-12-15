@@ -1,5 +1,6 @@
 {
   "versions": [
+    "v1.26",
     "v1.25",
     "v1.24",
     "v1.23",
@@ -226,6 +227,9 @@
               "path": "./admin/registries/ecr.md"
             },
             {
+              "path": "./admin/registries/azure.md"
+            },
+            {
               "path": "./admin/registries/gcr.md"
             }
           ]
@@ -323,6 +327,9 @@
         },
         {
           "path": "./admin/stun.md"
+        },
+        {
+          "path": "./admin/shell.md"
         },
         {
           "path": "./admin/git.md"
@@ -483,6 +490,9 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        {
+          "path": "./changelog/1.26.0.md"
+        },
         {
           "path": "./changelog/1.25.0.md"
         },

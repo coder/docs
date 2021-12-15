@@ -52,6 +52,8 @@ At this point, you can:
   - Enable **end-to-end encryption** for this provider
   - Enable **external SSH connections** to the provider's workspaces via the
     Coder CLI
+  - Specify an **Access URL** that will be used only by workspaces deployed to
+    this provider instead of the site-wide access URL for the deployment
   - Specify a **Kubernetes storage class** to use when Coder provisions
     workspaces (this is useful for improving disk performance)
   - Specify the **Kubernetes service account** that Coder uses to provision
