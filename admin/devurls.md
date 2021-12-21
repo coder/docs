@@ -3,9 +3,13 @@ title: "Dev URLs"
 description: Learn how to configure dev URL support for a Coder deployment.
 ---
 
-Developer (dev) URLs allow users to access the ports of running applications they develop
-within their workspace. Coder listens for the running applications on the specified ports and surface a link to open the running application.  However, before individual developers can set up dev
-URLs, an administrator must configure and enable dev URL usage.
+Developer (dev) URLs allow users to access the ports of running applications
+they develop within their workspace. Coder listens for the applications running
+on the specified ports and provides a browser link that can be used to access
+the application.
+
+Before individual developers can set up dev URLs, an administrator must
+configure and enable dev URL usage.
 
 ## Before you proceed
 
@@ -41,7 +45,10 @@ the rule manually to the ingress.
           servicePort: 8080
 ```
 
-***Note:*** As of the 1.26.0 release, you can set a constant suffix for all dev URLs (e.g., `*-suffix.coder.io`).  This feature helps organizations that may encure expense and delay in creating multiple wildcard DNS records.
+> Beginning with Coder version `1.26.0`, you can set a constant suffix for all
+> dev URLs (e.g., `*-suffix.coder.io`). This feature helps organizations that
+> may incur expenses and delays due to the need for multiple wildcard DNS
+> records.
 
 ### Step 2: Modify the wildcard DNS record
 

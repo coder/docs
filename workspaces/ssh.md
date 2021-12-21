@@ -71,5 +71,5 @@ ssh -L [localport]:localhost:[remoteport] coder.[workspace]
 `localport` is the port you want to use on your local machine (e.g.,
 `localhost:3000`), and `remoteport` matches the `port` of your dev URL.
 
-After SSH port forwarding is configured, you can access the dev URL in a browser (e.g.,
-`http://localhost:3000`)
+After SSH port forwarding is configured, you can access the dev URL (e.g.,
+`http://localhost:3000`) in a browser.

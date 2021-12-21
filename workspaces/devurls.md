@@ -4,7 +4,9 @@ description: Learn how to access HTTP services running inside your workspace.
 ---
 
 Developer (dev) URLs allow you to access the web services you're developing in
-your workspace.  Once defined, Coder listens for an HTTP application running on the port specified in the dev URL and renders a link to view the application in a browser.
+your workspace. Once defined, Coder listens for an application running on the
+port specified in the dev URL and renders a browser link you can use to view the
+application.
 
 > You must have [dev URLs enabled](../admin/devurls.md) in your installation.
 
@@ -13,10 +15,11 @@ your workspace.  Once defined, Coder listens for an HTTP application running on 
 You can create a dev URL from the workspace overview page.
 
 In the **Dev URLs** section, click **Add Port**. First, provide the **port**
-number for your application and a friendly **name** for the dev URL (optional). Next,
-indicate who can **access** the dev URL and the **internal server scheme** (e.g.,
-whether Coder should use HTTP or HTTPS when proxying requests to the internal
-server).
+number for your application and a friendly **name** for the dev URL (optional).
+
+Next, indicate who should be able to **access** the dev URL and the **internal
+server scheme** (e.g., whether Coder should use HTTP or HTTPS when proxying
+requests to the internal server).
 
 ![Create a dev URL](../assets/workspaces/create-devurl.png)
 
@@ -25,17 +28,19 @@ server).
 You can set the access level for each dev URL:
 
 - **Private** - Only the owner of the workspace can access the dev URL
-- **Organization** - Anyone in the same Coder organization as the workspace can access
-  the dev URL
+- **Organization** - Anyone in the same Coder organization as the workspace can
+  access the dev URL
 - **Authorized Users** - Anyone logged in to your Coder instance can access the
   dev URL
-- **Public** - Anyone outside the Coder deployment's network can access the dev URL (organization-defined firewall rules and VPNs can restrict access)
+- **Public** - Anyone outside the Coder deployment's network can access the dev
+  URL (organization-defined firewall rules and VPNs can still restrict access)
 
-## Using Dev URLs
+## Using dev URLs
 
 To access and manage a dev URL, you can click:
 
-- The **Open in browser** icon to the left of the dev URL name to launch a new browser window
+- The **Open in browser** icon to the left of the dev URL name to launch a new
+  browser window
 - The **Copy URL** action to copy the dev URL for sharing
 - The **Edit URL** action to edit the dev URL
 - The **Delete URL** action to delete the dev URL
