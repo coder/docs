@@ -95,7 +95,7 @@ snippets with the name of the extension you want to install):
 SERVICE_URL=https://extensions.coder.com/api ITEM_URL=https://extensions.coder.com/item /var/tmp/coder/code-server/bin/code-server --install-extension ms-python.python
 ```
 
-Alternatively, you can install an extension from VSIX's public marketplace:
+Alternatively, you can install an extension from VSX's public marketplace:
 
 ```text
 SERVICE_URL=https://open-vsx.org/vscode/gallery ITEM_URL=https://open-vsx.org/vscode/item /var/tmp/coder/code-server/bin/code-server --install-extension ms-python.python
