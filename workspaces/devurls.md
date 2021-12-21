@@ -4,7 +4,7 @@ description: Learn how to access HTTP services running inside your workspace.
 ---
 
 Developer (dev) URLs allow you to access the web services you're developing in
-your workspace.
+your workspace.  Once defined, Coder listens for an HTTP application running on the port specified in the dev URL and renders a link to view the application in a browser.
 
 > You must have [dev URLs enabled](../admin/devurls.md) in your installation.
 
@@ -13,8 +13,8 @@ your workspace.
 You can create a dev URL from the workspace overview page.
 
 In the **Dev URLs** section, click **Add Port**. First, provide the **port**
-number you want to be used and a friendly **name** for the URL (optional). Next,
-indicate who can **access** the URL and the **internal server scheme** (e.g.,
+number for your application and a friendly **name** for the dev URL (optional). Next,
+indicate who can **access** the dev URL and the **internal server scheme** (e.g.,
 whether Coder should use HTTP or HTTPS when proxying requests to the internal
 server).
 
@@ -24,21 +24,23 @@ server).
 
 You can set the access level for each dev URL:
 
-- **Private** - Only the owner of the workspace can access the URL
-- **Organization** - Anyone in the same organization as the workspace can access
-  the URL
+- **Private** - Only the owner of the workspace can access the dev URL
+- **Organization** - Anyone in the same Coder organization as the workspace can access
+  the dev URL
 - **Authorized Users** - Anyone logged in to your Coder instance can access the
-  URL
-- **Public** - Anyone on the internet can access the URL
+  dev URL
+- **Public** - Anyone outside the Coder deployment's network can access the dev URL (organization-defined firewall rules and VPNs can restrict access)
 
-## Using dev URLs
+## Using Dev URLs
 
-To access a dev URL, you can click:
+To access and manage a dev URL, you can click:
 
-- The **Open in browser** icon to launch a new browser window
-- The **Copy** button to copy the URL for sharing
+- The **Open in browser** icon to the left of the dev URL name to launch a new browser window
+- The **Copy URL** action to copy the dev URL for sharing
+- The **Edit URL** action to edit the dev URL
+- The **Delete URL** action to delete the dev URL
 
-![Dev URLs List](../assets/workspaces/devurls.png)
+![Dev URLs List](../assets/workspaces/create-devurl.png)
 
 ### Direct access
 
@@ -47,13 +49,13 @@ There are two ways for you to construct dev URLs.
 If you provided a name for the dev URL when you created it:
 
 ```text
-<name>-<username>.domain
+<name>--<username>.domain
 ```
 
 If you didn't provide a name for the dev URL when you created it:
 
 ```text
-<port>-<workspace_name>-<username>.domain
+<port>--<workspace_name>-<username>.domain
 ```
 
 For example, let's say that you've created a dev URL for port `8080`. Also:
@@ -63,10 +65,10 @@ For example, let's say that you've created a dev URL for port `8080`. Also:
 - Workspace: `my-project`
 
 If you didn't name your dev URL, then your URL is
-`8080-my-project-user.acme.com`.
+`8080--my-project-user.acme.com`.
 
 If, however, you named the dev URL `reactproject`, then your URL is
-`reactproject-user.acme.com`.
+`reactproject--user.acme.com`.
 
 If you access a dev URL that hasn't been created, Coder automatically adds it to
 your dev URL list on the dashboard and sets the access level to **Private**.

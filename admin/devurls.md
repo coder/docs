@@ -3,8 +3,8 @@ title: "Dev URLs"
 description: Learn how to configure dev URL support for a Coder deployment.
 ---
 
-Developer (Dev) URLs allow users to access the ports of services they develop
-within their workspace. However, before individual developers can set up dev
+Developer (dev) URLs allow users to access the ports of running applications they develop
+within their workspace. Coder listens for the running applications on the specified ports and surface a link to open the running application.  However, before individual developers can set up dev
 URLs, an administrator must configure and enable dev URL usage.
 
 ## Before you proceed
