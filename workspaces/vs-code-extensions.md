@@ -1,5 +1,5 @@
 ---
-title: "Extensions"
+title: "VS Code Extensions"
 description: Learn how to add and use VS Code extensions with your workspace.
 ---
 
@@ -39,8 +39,7 @@ Web or using the workspace's terminal.
 
 1. Download the extension(s) from the Microsoft public marketplace.
 
-   ![Code Web
-Extensions](../assets/workspaces/microsoft-public-marketplace-download-vsix.png)
+   ![Code Web Extensions](../assets/workspaces/microsoft-public-marketplace-download-vsix.png)
 
 1. Add the `vsix` extension files to the same folder as your Dockerfile.
 
