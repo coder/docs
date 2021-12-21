@@ -16,6 +16,9 @@ ensure an optimal user experience.
 [security context constraint]:
   https://docs.openshift.com/container-platform/4.7/authentication/managing-security-context-constraints.html
 
+> Please note that OpenShift doesn't support the use of
+> [CVMs](../../admin/workspace-management/cvms/index.md)
+
 ## Prerequisites
 
 - An OpenShift cluster with a project (Kubernetes namespace) for Coder
