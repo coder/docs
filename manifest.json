@@ -81,6 +81,9 @@
               "path": "./workspaces/workspace-templates/code-completion.md"
             }
           ]
+        },
+        {
+          "path": "./workspaces/vs-code-extensions.md"
         }
       ]
     },
