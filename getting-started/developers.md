@@ -53,7 +53,8 @@ You will now create the workspace where you'll work on your development project.
 1. Provide a **Workspace Name**.
 
 1. In the **Image** section, click **Packaged** (this tab contains
-   Coder-provided images hosted in a Docker registry). Select **NodeJS**.
+   Coder-provided images hosted in a Docker registry). Select **NodeJS**. This
+   will populate the form in the **Import** tab.
 
 1. Under **Workspace providers**, leave the default option (which is
    **built-in**) selected.
