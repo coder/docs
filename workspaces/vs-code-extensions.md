@@ -1,5 +1,5 @@
 ---
-title: "VS Code Extensions"
+title: "VS Code extensions"
 description: Learn how to add and use VS Code extensions with your workspace.
 ---
 
