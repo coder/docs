@@ -27,8 +27,7 @@ one using the [Coder CLI](../cli/index.md):
 ## Documentation
 
 Please note that the API is under active development; expect breaking changes as
-we finalize the endpoints. We will place stable API routes under the `/api/v1`
-path.
+we finalize the endpoints.
 
 <a href="https://apidocs.coder.com">
     <button> Swagger Docs </button>
