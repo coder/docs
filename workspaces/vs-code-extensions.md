@@ -22,7 +22,7 @@ a Coder workspace:
 
 You can manually add an extension while you're working in the Code Web IDE. The
 extensions can be from Coder's public marketplace, Eclipse Open VSX's public
-marketplace, or the Eclipse open VSX _local_ marketplace.
+marketplace, or the Eclipse Open VSX _local_ marketplace.
 
 ![Code Web Extensions](../assets/workspaces/code-web-extensions.png)
 
@@ -95,7 +95,7 @@ snippets with the name of the extension you want to install):
 SERVICE_URL=https://extensions.coder.com/api ITEM_URL=https://extensions.coder.com/item /var/tmp/coder/code-server/bin/code-server --install-extension ms-python.python
 ```
 
-Alternatively, you can install an extension from VSX's public marketplace:
+Alternatively, you can install an extension from Open VSX's public marketplace:
 
 ```text
 SERVICE_URL=https://open-vsx.org/vscode/gallery ITEM_URL=https://open-vsx.org/vscode/item /var/tmp/coder/code-server/bin/code-server --install-extension ms-python.python
