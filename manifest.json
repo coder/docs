@@ -69,6 +69,9 @@
           "path": "./workspaces/ssh.md"
         },
         {
+          "path": "./workspaces/vs-code-extensions.md"
+        },
+        {
           "path": "./workspaces/workspace-params.md"
         },
         {
@@ -81,9 +84,6 @@
               "path": "./workspaces/workspace-templates/code-completion.md"
             }
           ]
-        },
-        {
-          "path": "./workspaces/vs-code-extensions.md"
         }
       ]
     },
