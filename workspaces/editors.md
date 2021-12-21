@@ -295,6 +295,9 @@ RStudio:
    RUN echo "server-data-dir=/tmp/rstudio" >> /etc/rstudio/rserver.conf
    RUN echo "www-frame-origin=same" >> /etc/rstudio/rserver.conf
 
+   # Remove the following line if you do not run Coder on https
+   RUN echo "server-add-header=X-Forwarded-Proto: https" >> /etc/rstudio/rserver.conf
+
    # Assign password "rstudio" to coder user.
    RUN echo 'coder:rstudio' | chpasswd
 
