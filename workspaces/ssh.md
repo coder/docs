@@ -62,7 +62,7 @@ To access your server via SSH port forwarding:
 1. [Create a dev URL](devurls.md)
 1. Run `coder config-ssh` using the Coder CLI
 
-Once done, you can access the dev URL port using:
+Once done, you can configure the dev URL port using:
 
 ```console
 ssh -L [localport]:localhost:[remoteport] coder.[workspace]
@@ -70,3 +70,6 @@ ssh -L [localport]:localhost:[remoteport] coder.[workspace]
 
 `localport` is the port you want to use on your local machine (e.g.,
 `localhost:3000`), and `remoteport` matches the `port` of your dev URL.
+
+After SSH port forwarding is configured, you can access the dev URL (e.g.,
+`http://localhost:3000`) in a browser.
