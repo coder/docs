@@ -41,6 +41,8 @@ the rule manually to the ingress.
           servicePort: 8080
 ```
 
+***Note:*** As of the 1.26.0 release, you can set a constant suffix for all dev URLs (e.g., `*-suffix.coder.io`).  This feature helps organizations that may encure expense and delay in creating multiple wildcard DNS records.
+
 ### Step 2: Modify the wildcard DNS record
 
 The final step to enabling dev URLs is to update your wildcard DNS record. Get
