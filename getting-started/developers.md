@@ -28,7 +28,7 @@ changes.
 
 1. Click on your avatar in the top-right, and select **Account**.
 
-   ![Set account preferences](../assets/getting-started/account-preferences.png)]
+   ![Set account preferences](../assets/getting-started/account-preferences.png)
 
 1. Provide Coder with your SSH key to connect and authenticate to GitHub.
 
