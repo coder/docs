@@ -130,3 +130,5 @@ specified and renders a browser link you can use to view your application.
 1. You can test preview by making changes to the `src/App.js` file; every time
    you save your changes to this file and refresh your browser window, your
    preview will update.
+
+   ![Preview changes](../assets/getting-started/hello-world.png)
