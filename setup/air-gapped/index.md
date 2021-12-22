@@ -117,15 +117,32 @@ platform images are hosted in Coder's Docker Hub repo.
    docker push my-registry.com/coderenvs/coder-service:<version>
    ```
 
+1. If necessary, create an `offline.values.yaml` file that includes the image
+   paths for each of the Coder containers and proxy configuration similar to the
+   following:
+
+   ```yaml
+   coderd:
+     image: my-registry.com/coderenvs/coder-service:<version>
+     # Coder will use this proxy for all outbound HTTP/HTTPS connections
+     # such as when checking for updated images in the image registry.
+     # However, note that images are pulled from the Kubernetes container runtime,
+     # and may require a different setting.
+     proxy:
+       http: http://proxy.internal:8888
+       exempt: cluster.local
+   postgres:
+     default:
+       image: my-registry.com/coderenvs/timescale:<version>
+   envbox:
+     image: my-registry.com/coderenvs/envbox:<version>
+   ```
+
 1. Once all of the resources are in your air-gapped network, run the following
    to deploy Coder to your Kubernetes cluster:
 
    ```console
-   kubectl create namespace coder
-   helm --namespace coder install coder /path/to/coder-X.Y.Z.tgz \
-   --set postgres.default.image=my-registry.com/coderenvs/coder-service:<version> \
-   --set timescale.image=my-registry.com/coderenvs/timescale:<version> \
-   --set envbox.image=my-registry.com/coderenvs/envbox:<version>
+   helm install coder . --create-namespace --namespace coder --values=offline.values.yaml
    ```
 
    If you'd like to run this command after navigating _into_ the `coder.tgz`
