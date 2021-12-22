@@ -176,7 +176,7 @@ options for obtaining these.
 
 At this point, you're ready to proceed to [configuring Coder](configuration.md).
 
-## EKS Troubleshooting
+## EKS troubleshooting
 
 If you're unable to access your Coder deployment via the external IP generated
 by EKS, this is likely due to `coderd` being scheduled onto the incorrect node
