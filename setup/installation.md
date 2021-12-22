@@ -195,7 +195,7 @@ address of your Coder users. For more information on this value, [see the
 Kubernetes
 documentation](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip).
 
-1. Set the `services.nodeSelector` Helm value to a label assigned to the
+2. Set the `services.nodeSelector` Helm value to a label assigned to the
    `standard-workers` node group created by AWS. Common labels include:
 
    ```console
