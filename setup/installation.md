@@ -186,15 +186,15 @@ resolve this:
 1. Set the `externalTrafficPolicy` Helm value to `Cluster` by running the
    following command:
 
-```console
-helm upgrade --install coder coder/coder --set coderd.serviceSpec.externalTrafficPolicy=Cluster
-```
+   ```console
+   helm upgrade --install coder coder/coder --set coderd.serviceSpec.externalTrafficPolicy=Cluster
+   ```
 
-Note that setting `externalTrafficPolicy` to `Cluster` masks the source IP
-address of your Coder users. For more information on this value,
-[see the Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip).
+   Note that setting `externalTrafficPolicy` to `Cluster` masks the source IP
+   address of your Coder users. For more information on this value,
+   [see the Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip).
 
-2. Set the `services.nodeSelector` Helm value to a label assigned to the
+1. Set the `services.nodeSelector` Helm value to a label assigned to the
    `standard-workers` node group created by AWS. Common labels include:
 
    ```console
@@ -203,6 +203,6 @@ address of your Coder users. For more information on this value,
    beta.kubernetes.io/instance-type=t3.small
    ```
 
-This option is recommended if you'd like to preserve the source IP. See the
-[Kubernetes documentation](https://kubernetes.io/docs/reference/labels-annotations-taints/)
-for a full list of the standard node labels.
+   This option is recommended if you'd like to preserve the source IP. See the
+   [Kubernetes documentation](https://kubernetes.io/docs/reference/labels-annotations-taints/)
+   for a full list of the standard node labels.
