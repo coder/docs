@@ -204,5 +204,6 @@ documentation](https://kubernetes.io/docs/tasks/access-application-cluster/creat
    beta.kubernetes.io/instance-type=t3.small
    ```
 
+This option is recommended if the source IP is to be preserved.
 See the [Kubernetes documentation](https://kubernetes.io/docs/reference/labels-annotations-taints/)
 for a full list of the standard node labels.
