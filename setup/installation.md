@@ -94,7 +94,7 @@ kubectl config set-context --current --namespace=coder
    ```yaml
    postgres:
      default:
-      enable: false
+       enable: false
      host: HOST_ADDRESS
      port: PORT_NUMBER
      user: YOUR_USER_NAME
@@ -176,20 +176,33 @@ options for obtaining these.
 
 At this point, you're ready to proceed to [configuring Coder](configuration.md).
 
-## EKS Troubleshooting
+## EKS troubleshooting
 
 If you're unable to access your Coder deployment via the external IP generated
-by EKS, this is likely due to Load Balancer health checks failing. See the
-related [GitHub
-issue](https://github.com/kubernetes/kubernetes/issues/80897#issuecomment-567911824)
-for more information.
-To resolve this, set the `externalTrafficPolicy` Helm value to `Cluster`
-by running the following command:
+by EKS, this is likely due to `coderd` being scheduled onto the incorrect node
+group, causing the load balancer health checks to fail. Below are two methods to
+resolve this:
 
-```console
-helm upgrade --install coder coder/coder --set coderd.serviceSpec.externalTrafficPolicy=Cluster
-```
+1. Set the `externalTrafficPolicy` Helm value to `Cluster` by running the
+   following command:
 
-Note that setting `externalTrafficPolicy` to `Cluster` masks the source IP
-address of your Coder users. For more information on this value, [see the
-Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip).
+   ```console
+   helm upgrade --install coder coder/coder --set coderd.serviceSpec.externalTrafficPolicy=Cluster
+   ```
+
+   Note that setting `externalTrafficPolicy` to `Cluster` masks the source IP
+   address of your Coder users. For more information on this value,
+   [see the Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip).
+
+1. Set the `services.nodeSelector` Helm value to a label assigned to the
+   `standard-workers` node group created by AWS. Common labels include:
+
+   ```console
+   eks.amazonaws.com/nodegroup=standard-workers
+   alpha.eksctl.io/nodegroup-name=standard-workers
+   beta.kubernetes.io/instance-type=t3.small
+   ```
+
+   This option is recommended if you'd like to preserve the source IP. See the
+   [Kubernetes documentation](https://kubernetes.io/docs/reference/labels-annotations-taints/)
+   for a full list of the standard node labels.
