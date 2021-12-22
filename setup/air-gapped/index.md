@@ -117,25 +117,25 @@ platform images are hosted in Coder's Docker Hub repo.
    docker push my-registry.com/coderenvs/coder-service:<version>
    ```
 
-1. Create an `offline.values.yaml` file which includes the image paths for each
-   the Coder containers and proxy configuration (if necessary). Below is an
-   example:
+1. If necessary, create an `offline.values.yaml` file that includes the image
+   paths for each of the Coder containers and proxy configuration similar to the
+   following:
 
    ```yaml
    coderd:
-      image: my-registry.com/coderenvs/coder-service:<version>
-   # Coder will use this proxy for all outbound HTTP/HTTPS connections
-   # such as when checking for updated images in the image registry.
-   # However, note that images are pulled from the Kubernetes container runtime,
-   # and may require a different setting.
-      proxy:
-         http: http://proxy.internal:8888
-         exempt: cluster.local
+     image: my-registry.com/coderenvs/coder-service:<version>
+     # Coder will use this proxy for all outbound HTTP/HTTPS connections
+     # such as when checking for updated images in the image registry.
+     # However, note that images are pulled from the Kubernetes container runtime,
+     # and may require a different setting.
+     proxy:
+       http: http://proxy.internal:8888
+       exempt: cluster.local
    postgres:
-      default:
-         image: my-registry.com/coderenvs/timescale:<version>
+     default:
+       image: my-registry.com/coderenvs/timescale:<version>
    envbox:
-      image: us-docker.pkg.dev/airgap-project/test/envbox:1.25.0
+     image: my-registry.com/coderenvs/envbox:<version>
    ```
 
 1. Once all of the resources are in your air-gapped network, run the following
