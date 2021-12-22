@@ -55,8 +55,8 @@ version controlling your files.
 Coder is deployed through [helm](https://helm.sh/docs/intro/install/), and the
 platform images are hosted in Coder's Docker Hub repo.
 
-1. Pull down the Coder helm charts by running the following in a non-air-gapped
-   environment:
+1. Download the Coder Helm charts by running the following command _outside_ of
+   the air-gapped environment:
 
    ```console
    helm repo add coder https://helm.coder.com
@@ -81,8 +81,8 @@ platform images are hosted in Coder's Docker Hub repo.
    [timescale](https://hub.docker.com/r/coderenvs/timescale) (**Note**: We
    recommend you only use timescale for evaluation purposes if you don't have an
    external PostgreSQL database available. For production environments, we
-   strong recommend that you use an external PostgreSQL database; the
-   installation section will cover more on updating your Helm chart with your
+   strongly recommend that you use an external PostgreSQL database; the
+   installation section will cover more on updating your Helm values with your
    database information.)
 
    You can pull each of these images from their `coderenvs/<img-name>:<version>`
