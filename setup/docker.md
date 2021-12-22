@@ -8,16 +8,16 @@ quickly.
 
 ## Prerequisites
 
-Coder for Docker is known to work with the following platforms:
+Coder for Docker works with the following platforms:
 
-- Windows 11 with [Docker Desktop
-  20.10]([Docker Desktop](https://www.docker.com/products/docker-desktop). Coder
-  for Docker requires Windows Subsystem for Linux at this time.
+- macOS 10.10+ with
+  [Docker Desktop 20.10](https://www.docker.com/products/docker-desktop)
 - Ubuntu Linux 20.04 (Focal Fossa) with Docker Community Edition 20.10
-- MacOS 10.10+ with [Docker Desktop
-  20.10]([Docker Desktop](https://www.docker.com/products/docker-desktop)
+- Windows 11 with
+  [Docker Desktop 20.10](https://www.docker.com/products/docker-desktop).
+  **Note**: Coder for Docker requires Windows Subsystem for Linux at this time.
 
-Coder requires x86-64 and does not support Arm-based processors at this time.
+Coder requires x86-64 and does not support ARM-based processors at this time.
 
 ## Installing Coder for Docker
 
