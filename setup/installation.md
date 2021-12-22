@@ -94,7 +94,7 @@ kubectl config set-context --current --namespace=coder
    ```yaml
    postgres:
      default:
-      enable: false
+       enable: false
      host: HOST_ADDRESS
      port: PORT_NUMBER
      user: YOUR_USER_NAME
@@ -179,21 +179,20 @@ At this point, you're ready to proceed to [configuring Coder](configuration.md).
 ## EKS Troubleshooting
 
 If you're unable to access your Coder deployment via the external IP generated
-by EKS, this is likely due `coderd` being scheduled onto the incorrect node
-group, causing to Load Balancer health checks to fail. Below are two
-methods to resolve this:
+by EKS, this is likely due to `coderd` being scheduled onto the incorrect node
+group, causing the load balancer health checks to fail. Below are two methods to
+resolve this:
 
-1. Set the `externalTrafficPolicy` Helm value to `Cluster`
-by running the following command:
+1. Set the `externalTrafficPolicy` Helm value to `Cluster` by running the
+   following command:
 
 ```console
 helm upgrade --install coder coder/coder --set coderd.serviceSpec.externalTrafficPolicy=Cluster
 ```
 
 Note that setting `externalTrafficPolicy` to `Cluster` masks the source IP
-address of your Coder users. For more information on this value, [see the
-Kubernetes
-documentation](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip).
+address of your Coder users. For more information on this value,
+[see the Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip).
 
 2. Set the `services.nodeSelector` Helm value to a label assigned to the
    `standard-workers` node group created by AWS. Common labels include:
@@ -204,6 +203,6 @@ documentation](https://kubernetes.io/docs/tasks/access-application-cluster/creat
    beta.kubernetes.io/instance-type=t3.small
    ```
 
-This option is recommended if the source IP is to be preserved.
-See the [Kubernetes documentation](https://kubernetes.io/docs/reference/labels-annotations-taints/)
+This option is recommended if you'd like to preserve the source IP. See the
+[Kubernetes documentation](https://kubernetes.io/docs/reference/labels-annotations-taints/)
 for a full list of the standard node labels.
