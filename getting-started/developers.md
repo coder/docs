@@ -3,8 +3,9 @@ title: Developers
 description: Get started with Coder as a developer.
 ---
 
-This article will walk you through the process of getting started with a
-development project. You'll learn how to:
+This article will walk you through the process of getting started with a Coder
+workspace and a web development project featuring Node.js and React.js. You'll
+learn how to:
 
 - Connect and authenticate to your Git provider;
 - Create a workspace and add the files for a sample project that's available via

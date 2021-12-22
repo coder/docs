@@ -3,7 +3,14 @@ title: Coder for Docker
 description: Get started with Coder for Docker as a developer.
 ---
 
-FORTHCOMING
+This tutorial shows you how to create a Coder development workspace and getting
+set up to work on a web development project requiring Node.js and React.js.
+You'll learn how to:
+
+- Connect and authenticate to your Git provider;
+- Create a workspace and add the files for a sample project that's available via
+  GitHub;
+- Create a dev URL and use it to preview changes to your project.
 
 ## Prerequisites
 
@@ -20,7 +27,7 @@ changes.
 
 1. Click on your avatar in the top-right, and select **Account**.
 
-   ![Set account preferences](../assets/getting-started/account-preferences.png)]
+   ![Set account preferences](../assets/getting-started/account-preferences.png)
 
 1. Provide Coder with your SSH key to connect and authenticate to GitHub.
 
@@ -49,8 +56,8 @@ You will now create the workspace where you'll work on your development project.
    Coder-provided images hosted in a Docker registry). Select **Ubuntu**. This
    will populate the form in the **Import** tab.
 
-1. Under **Workspace providers**, leave the default option (which is
-   **built-in**) selected.
+1. Under **Workspace providers**, leave the default option (which is **Docker**)
+   selected.
 
 1. Scroll to the bottom, and click **Create workspace**. The dialog will close,
    allowing you to see the main workspace page. You can track the workspace
@@ -121,4 +128,5 @@ specified and renders a browser link you can use to view your application.
    ![Launch dev URL](../assets/getting-started/launch-devurl.png)
 
 1. You can test preview by making changes to the `src/App.js` file; every time
-   you save your changes to this file, your preview will reload.
+   you save your changes to this file and refresh your browser window, your
+   preview will update.
