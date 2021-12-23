@@ -102,7 +102,8 @@ Please note that:
 
 ## JetBrains IDEs in the browser
 
-Coder uses an open-source project called Projector, created and managed by JetBrains, to render a JetBrains IDE in a browser.
+Coder uses an open-source project called Projector, created and managed by
+JetBrains, to render a JetBrains IDE in a browser.
 
 If your image
 [includes a JetBrains IDE](../admin/workspace-management/installing-jetbrains.md),
@@ -113,15 +114,21 @@ your IDE.
 ![IntelliJ logos](../assets/workspaces/intellij-app.png)
 ![PyCharm logos](../assets/workspaces/pycharm-app.png)
 
-> [Follow these steps to start a trial or activate your paid JetBrains license](./activate-jetbrains-licensing.md).
+> Follow these steps to
+> [start a trial or activate your paid JetBrains license](../guides/troubleshooting/activate-jetbrains-licensing.md).
 
 ### Installing JetBrains' IDEs
 
-You install JetBrains IDEs in a Dockerfile, add the required packages to run JetBrains in a browser, and create a symlink with one of the following names so Coder can auto-detect the IDE and display the icon in the workspace.
+You install JetBrains IDEs in a Dockerfile, add the required packages to run
+JetBrains in a browser, and create a symlink with one of the following names so
+Coder can auto-detect the IDE and display the icon in the workspace.
 
-Using Docker, you `docker build` the image from the Dockerfile.  You then push the image to your container registry and import the image into your Coder deployment.
+Using Docker, you `docker build` the image from the Dockerfile. You then push
+the image to your container registry and import the image into your Coder
+deployment.
 
-Your administrator can [follow these steps to build the JetBrains IDE image](../admin/workspace-management/installing-jetbrains.md).
+Your administrator can
+[follow these steps to build the JetBrains IDE image](../admin/workspace-management/installing-jetbrains.md).
 
 The symlink names supported by Coder are:
 
@@ -141,7 +148,9 @@ The symlink names supported by Coder are:
 
 ### System requirements
 
-We recommend running the JetBrains IDE in an workspace with the following minimum resources but the resources required depends on your workspace-specific requirements:
+We recommend running the JetBrains IDE in an workspace with the following
+minimum resources but the resources required depends on your workspace-specific
+requirements:
 
 - 8 GB RAM
 - 4 CPU cores
@@ -153,7 +162,8 @@ We recommend running the JetBrains IDE in an workspace with the following minimu
 - Popup windows are missing titles and window controls
 - Some theme-based plugins can cause the IDE to render incorrectly
 - Some minor rendering artifacts occur during regular usage
-- Keyboard shortcuts being overridden by the browser. Try [running JetBrains as a Progressive Web App](./pwa.md) to regain shortcuts.
+- Keyboard shortcuts being overridden by the browser. Try
+  [running JetBrains as a Progressive Web App](./pwa.md) to regain shortcuts.
 
 ## Code With Me
 
@@ -163,7 +173,8 @@ programming.
 
 > You must have a
 > [JetBrains IDE installed](../admin/workspace-management/installing-jetbrains.md)
-> in your [image](../images/index.md) to start a Code With Me session from your Coder workspace.  
+> in your [image](../images/index.md) to start a Code With Me session from your
+> Coder workspace.
 
 ### Getting started
 
@@ -182,8 +193,8 @@ To create and host a Code With Me session:
 
 1. Log in to Coder.
 
-1. Under **Browser Applications**, launch the JetBrains IDE (e.g., IntelliJ, PyCharm) of your
-   choice.
+1. Under **Browser Applications**, launch the JetBrains IDE (e.g., IntelliJ
+   PyCharm) of your choice.
 
    ![Launch IDE](../assets/workspaces/intellij-app.png)
    ![Launch IDE](../assets/workspaces/pycharm-app.png)
