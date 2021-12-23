@@ -11,7 +11,7 @@ running a JetBrains IDE in a browser, you need to perform the following steps.
    in your Coder workspace
 1. [Click the Log In to JetBrains Account button](activate-jetbrains-licensing.md#log-into-your-jetbrains-account)
 1. Since your IDE is in the web browser, click the ["Troubles" link](activate-jetbrains-licensing.md#click-the-troubles-link) to use an alternate login method 
-1. [Click the copy link](activate-jetbrains-licensing.md#click-the-copy-link),
+1. [Click the "copy" link](activate-jetbrains-licensing.md#click-the-copy-link),
    open a new browser window and paste the link
 1. [Log into JetBrains with your valid JetBrains credentials](activate-jetbrains-licensing.md#login-with-your-jetbrains-account)
    to get an IDE authentication token
