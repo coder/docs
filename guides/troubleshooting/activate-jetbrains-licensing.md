@@ -16,7 +16,7 @@ running a JetBrains IDE in a browser, you need to perform the following steps.
    open a new browser window and paste the link
 1. [Log into JetBrains with your valid JetBrains credentials](activate-jetbrains-licensing.md#login-with-your-jetbrains-account)
    to get an IDE authentication token
-1. [Click Copy token](activate-jetbrains-licensing.md#click-copy-token) to copy
+1. [Click "Copy token"](activate-jetbrains-licensing.md#click-copy-token) to copy
    your IDE authentication token
 1. [Paste the token](activate-jetbrains-licensing.md#paste-the-ide-authentication-token)
    back into your JetBrains IDE window
