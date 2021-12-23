@@ -17,7 +17,12 @@ The **Account** tab allows you to provide or change:
 - Email address
 - Username (this is the value that Coder uses throughout the platform, including
   dev URLs and the CLI's SSH configuration)
+- Shell (Coder runs this command when starting a terminal.)
 - Your dotfiles URI to personalize your workspaces
+
+## Appearance
+
+If you'd like to use Coder's Dark Theme, you can enable it by clicking Dark Theme.  By default, Coder is set to Light Theme.
 
 ## Security
 
@@ -32,7 +37,7 @@ combination).
 
 ## SSH keys
 
-The **SSH Keys** page is where you'll find the public key corresponding to the
+The **SSH Keys** page is where you'll find the public SSH key corresponding to the
 private key that Coder inserts automatically into your workspaces. The public
 key is useful for services, such as Git, Bitbucket, GitHub, and GitLab, that you
 need to access from your workspace.
@@ -51,8 +56,8 @@ to all of the services you use. Otherwise, they won't work.
 ## Linked accounts
 
 The **Linked Accounts** tab allows you to automatically provide your Coder SSH
-key to the Git service of your choice. You can then perform the Git actions in
-your Coder workspace and interact with the service (e.g., push changes).
+public key to the Git service of your choice. You can then perform the Git actions in
+your Coder workspace and interact with the service (e.g., push changes).  Your administrator must configure OAuth for this feature to work.
 
 ## Notifications
 
@@ -76,10 +81,4 @@ You can check whether notifications are enabled and working by click **Test**.
 Auto-start allows you to set the time when Coder automatically starts and builds
 your workspaces. See [auto-start](autostart.md) for more information.
 
-## Dark theme
 
-> Dark theme is currently a beta feature.
-
-If you'd like to use Coder's dark theme, you can enable it by clicking on your
-avatar and selecting **Feature Preview**. Then, click **Dark theme** and select
-**Enable**.
