@@ -469,6 +469,9 @@
           "path": "./guides/troubleshooting/index.md",
           "children": [
             {
+              "path": "./guides/troubleshooting/activate-jetbrains-licensing.md"
+            },
+            {
               "path": "./guides/troubleshooting/admin-pwd.md"
             },
             {
