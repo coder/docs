@@ -4,9 +4,9 @@ description: "Get an overview of our features."
 ---
 
 Coder offers both enterprise and open-source (code-server) solutions to meet the
-needs of the software community. Both solutions enable cloud-based software
+remote development needs of individual developers and enterprises. Both solutions enable cloud-based software
 development delivered through the browser. The key differences pertain to
-development operations and cloud resources.
+governance, development environment management, enterprise integrations like git and SSO, and multi-IDE support.
 
 <table>
     <tr>
@@ -20,8 +20,8 @@ development operations and cloud resources.
         <td>Individuals</td>
     </tr>
     <tr>
-        <th>Hosted on</th>
-        <td>Kubernetes</td>
+        <th>Self-hosted on</th>
+        <td>Kubernetes or Docker</td>
         <td>Any machine</td>
     </tr>
     <tr>
@@ -31,10 +31,14 @@ development operations and cloud resources.
         <td>None</td>
     </tr>
     <tr>
-        <th>Project management</th>
-        <td>Workspaces encapsulate a project's code,
-        configurations, dependencies and tooling</td>
+        <th>Environment management</th>
+        <td>Project's code, configurations, dependencies and tooling as a container</td>
         <td>Code-only</td>
+    </tr>
+    <tr>
+        <th>IDE support</th>
+        <td>VS Code, JetBrains (e.g., IntelliJ, PyCharm), Jupyter, RStudio</td>
+        <td>VS Code</td>
     </tr>
     <tr>
         <th>Administration & security</th>
@@ -42,8 +46,14 @@ development operations and cloud resources.
         <td>Self-administered</td>
     </tr>
     <tr>
+        <th>Enterprise integrations</th>
+        <td>Git (SSH key, OAuth), SSO with OIDC, public cloud identity</td>
+        <td>Self-administered</td>
+    </tr>    
+    <tr>
         <th>Delivery</th>
-        <td colspan="2">Browser, progressive web app</td>
+        <td>Browser, progressive web app, local IDE with SSH</td>
+        <td>Browser, progressive web app</td>
     </tr>
     <tr>
         <th>Maximum number of users</th>
@@ -52,7 +62,7 @@ development operations and cloud resources.
     </tr>
     <tr>
         <th>Usage term length</th>
-        <td>Variable</td>
+        <td>Variable - <a target="_blank" href="https://coder.com/pricing">see Pricing</a></td>
         <td>See <a href="https://github.com/cdr/code-server/blob/v3.5.0/LICENSE.txt">license</a></td>
     </tr>
     <tr>
@@ -65,5 +75,5 @@ development operations and cloud resources.
 > To get a free trial of Coder, please visit
 > [https://coder.com/trial](https://coder.com/trial).
 >
-> Note: Coder cannot be deployed to an air-gapped network during the free trial
-> period.
+> To evaluate Coder in an air-gapped network during the free trial
+> period, please <a target="_blank" href="https://coder.com/contact">contact Sales</a>.
