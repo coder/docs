@@ -4,9 +4,11 @@ description: "Get an overview of our features."
 ---
 
 Coder offers both enterprise and open-source (code-server) solutions to meet the
-remote development needs of individual developers and enterprises. Both solutions enable cloud-based software
-development delivered through the browser. The key differences pertain to
-governance, development environment management, enterprise integrations like git and SSO, and multi-IDE support.
+remote development needs of organizations and individual developers. Both
+solutions enable cloud-based software development delivered through the browser.
+The key differences pertain to governance, development environment management,
+availability of enterprise integrations (e.g., Git OAuth, SSO), and multi-IDE
+support.
 
 <table>
     <tr>
@@ -32,7 +34,7 @@ governance, development environment management, enterprise integrations like git
     </tr>
     <tr>
         <th>Environment management</th>
-        <td>Project's code, configurations, dependencies and tooling as a container</td>
+        <td>Project code, configuration, dependencies, and tooling as a container</td>
         <td>Code-only</td>
     </tr>
     <tr>
@@ -47,9 +49,9 @@ governance, development environment management, enterprise integrations like git
     </tr>
     <tr>
         <th>Enterprise integrations</th>
-        <td>Git (SSH key, OAuth), SSO with OIDC, public cloud identity</td>
+        <td>Git (SSH key, OAuth), SSO via OIDC, public cloud identity</td>
         <td>Self-administered</td>
-    </tr>    
+    </tr>
     <tr>
         <th>Delivery</th>
         <td>Browser, progressive web app, local IDE with SSH</td>
@@ -62,7 +64,7 @@ governance, development environment management, enterprise integrations like git
     </tr>
     <tr>
         <th>Usage term length</th>
-        <td>Variable - <a target="_blank" href="https://coder.com/pricing">see Pricing</a></td>
+        <td>Variable (<a target="_blank" href="https://coder.com/pricing">see Pricing</a>)</td>
         <td>See <a href="https://github.com/cdr/code-server/blob/v3.5.0/LICENSE.txt">license</a></td>
     </tr>
     <tr>
@@ -75,5 +77,5 @@ governance, development environment management, enterprise integrations like git
 > To get a free trial of Coder, please visit
 > [https://coder.com/trial](https://coder.com/trial).
 >
-> To evaluate Coder in an air-gapped network during the free trial
-> period, please <a target="_blank" href="https://coder.com/contact">contact Sales</a>.
+> To evaluate Coder in an air-gapped network during the free trial period,
+> please <a target="_blank" href="https://coder.com/contact">contact Sales</a>.
