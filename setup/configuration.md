@@ -58,3 +58,8 @@ dashboard, where you can create new users, images, and workspaces.
 
 Coder's default values during the setup/configuration process are acceptable
 only by a deployment used for evaluation purposes.
+
+## Next steps
+
+See our [getting started guide](../getting-started/developers.md) for detailed
+instructions on getting your first workspace up and running.
