@@ -60,7 +60,9 @@ Coder requires x86-64 and does not support ARM-based processors at this time.
    using one of the **Packaged** images by clicking on **New workspace** in the
    center of the UI.
 
-At this point, you're ready to use your workspace.
+At this point, you're ready to use your workspace. See our
+[getting started guide](../getting-started/docker.md) for detailed instructions
+on getting your first workspace up and running.
 
 ## Usage notes
 
