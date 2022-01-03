@@ -7,16 +7,16 @@ This tutorial shows you how to create a Coder development workspace and getting
 set up to work on a web development project requiring Node.js and React.js.
 You'll learn how to:
 
-- Connect and authenticate to your Git provider;
-- Create a workspace and add the files for a sample project that's available via
-  GitHub;
-- Create a dev URL and use it to preview changes to your project.
+- Connect Coder to your Git provider;
+- Create a workspace;
+- Add a sample project to your workspace;
+- Create a dev URL and preview changes to your project.
 
 ## Prerequisites
 
 Please [install Coder for Docker](../setup/docker.md) before proceeding.
 
-## Step 1: Log in and configure Coder
+## Step 1: Log in and connect Coder to your Git provider
 
 In this step, you'll log into Coder and connect and authenticate with your Git
 provider. This will allow you to do things like pull repositories and push
@@ -68,9 +68,10 @@ You will now create the workspace where you'll work on your development project.
 Once your workspace is ready for use, you'll see a chip that says **Running**
 next to the name of your workspace.
 
-## Step 3: Begin using Coder
+## Step 3: Add a sample project to your workspace
 
-Once you've created your workspace, you can start using Coder.
+Once you've created your workspace, you can start using Coder after adding a
+sample project to your workspace.
 
 1. Under **Browser applications**, click **Code Web** to open VS Code in your
    browser.
@@ -87,7 +88,7 @@ Once you've created your workspace, you can start using Coder.
 1. Clone the `create-react-app` repository:
 
    ```console
-   git clone https://github.com/facebook/create-react-app.git
+   git clone git@github.com:facebook/create-react-app.git
    ```
 
    Once you've cloned the repository, you can click the **Explorer** icon and
