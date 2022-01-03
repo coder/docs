@@ -75,7 +75,6 @@ support.
 </table>
 
 > To get a free trial of Coder, please visit
-> [https://coder.com/trial](https://coder.com/trial).
->
-> To evaluate Coder in an air-gapped network during the free trial period,
-> please <a target="_blank" href="https://coder.com/contact">contact Sales</a>.
+> [https://coder.com/trial](https://coder.com/trial). To evaluate Coder in an
+> air-gapped network during the free trial period, please <a target="_blank"
+> href="https://coder.com/contact">contact Sales</a>.
