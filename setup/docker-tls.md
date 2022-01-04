@@ -73,6 +73,9 @@ present on the host machine.
 1. Create an `nginx.conf` file inside of the `nginx` directory and include the
    following code. Replace each `<your-domain.com>` string with your domain.
 
+   > If you skipped Step 1, replace the `ssl_certificate` &
+   > `ssl_certificate_key` paths with the path to your certificate files.
+
   ```console
     worker_processes  1;
 
