@@ -38,6 +38,9 @@ Web_ icon.
 
 ![Launch a workspace](../assets/workspaces/code-web-app.png)
 
+> Note that Code Web is Coder's open-source project
+> [code-server](https://coder.com/docs/code-server/latest).
+
 ## JetBrains Gateway with SSH
 
 If your image
@@ -106,13 +109,13 @@ Coder uses an open-source project called Projector, created and managed by
 JetBrains, to render a JetBrains IDE in a browser.
 
 If your image
-[includes a JetBrains IDE](../admin/workspace-management/installing-jetbrains.md),
-you can launch it from the dashboard. Coder launches JetBrains IDEs in their own
-windows; be sure to set your browser to allow popup windows so that you can use
-your IDE.
+[includes a JetBrains IDE](../admin/workspace-management/installing-jetbrains.md)
+(such as IntelliJ, PyCharm, and PhpStorm), you can launch it from the dashboard.
 
 ![IntelliJ logos](../assets/workspaces/intellij-app.png)
-![PyCharm logos](../assets/workspaces/pycharm-app.png)
+
+Coder launches JetBrains IDEs in their own windows; be sure to set your browser
+to allow popup windows so that you can use your IDE.
 
 > Follow these steps to
 > [start a trial or activate your paid JetBrains license](../guides/troubleshooting/activate-jetbrains-licensing.md).
@@ -174,7 +177,8 @@ programming.
 > You must have a
 > [JetBrains IDE installed](../admin/workspace-management/installing-jetbrains.md)
 > in your [image](../images/index.md) to start a Code With Me session from your
-> Coder workspace.
+> Coder workspace. Only the workspace where the source code is being worked on
+> needs JetBrains; other collaborators do _not_ need a JetBrains IDE.
 
 ### Getting started
 
@@ -196,7 +200,6 @@ To create and host a Code With Me session:
 1. Under **Browser Applications**, launch the JetBrains IDE (e.g., IntelliJ
    PyCharm) of your choice.
 
-   ![Launch IDE](../assets/workspaces/intellij-app.png)
    ![Launch IDE](../assets/workspaces/pycharm-app.png)
 
 1. Click the **Code With Me** icon at the top of your IDE.
@@ -211,8 +214,6 @@ To create and host a Code With Me session:
 
 1. Set the permissions for new guests to **Full access** and uncheck the
    **Automatically start voice call** feature. Click **Enable Access**.
-
-   ![Set permissions](../assets/workspaces/code-with-me-4.png)
 
 1. Once you've enabled access, JetBrains copies the link you must share with
    participants to your clipboard. Send this link to those with whom you'd like
@@ -233,7 +234,7 @@ If you've received a link to join a Code With Me session as a participant:
 1. On the instructions page to which you were directed, copy the code snippet
    and run it in the terminal.
 
-   ![Run join command in terminal](../assets/workspaces/code-with-me-6.png)
+   ![Run join command](../assets/workspaces/code-with-me-4.png)
 
 1. Confirm and accept the User Agreement.
 
@@ -341,4 +342,5 @@ RStudio:
    > workspace is built.
    >
    > All RStudio data is stored in the home directory associated with the user
-   > you sign in as
+   > you sign in as, since this ensures that your data is saved if Coder shuts
+   > down or rebuilds your environment.
