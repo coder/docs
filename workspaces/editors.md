@@ -38,7 +38,7 @@ Web_ icon.
 
 ![Launch a workspace](../assets/workspaces/code-web-app.png)
 
-> Note that Code Web is Coder's open-source project
+> Code Web is Coder's open-source project
 > [code-server](https://coder.com/docs/code-server/latest).
 
 ## JetBrains Gateway with SSH
