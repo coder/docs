@@ -97,3 +97,14 @@ $ curl --cookie "devurl_session=<TOKEN>" <dev-url>
 
 You can also access your server via
 [SSH port forwarding](ssh.md#forwarding-dev-urls).
+
+## Troubleshooting
+
+If you're seeing issues with your dev URL, we recommend using something like
+Python's `http.server` module to gain additional information helpful for
+troubleshooting issues with DevURL configuration and external proxies:
+
+```console
+# update the following with the port you're troubleshooting
+python3 -m http.server 8080
+```
