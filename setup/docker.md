@@ -91,11 +91,6 @@ For example:
 docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.25.1
 ```
 
-## TLS certificates
-
-See [our guide](/../../guides/tls-certificates/docker-tls.md) for information on
-configuring TLS for Coder for Docker.
-
 ## Scaling
 
 Coder for Docker is limited by the resources of the machine on which it runs. We
@@ -111,4 +106,5 @@ Currently, Coder for Docker does not support:
 - External PostgreSQL databases
 - The use of your own TLS certificates. If you'd like to use TLS with Coder for
   Docker, you'll need to run Coder behind a reverse proxy (e.g., Caddy or NGINX)
-  and terminate TLS at that point. [See our related guide](../guides/tls-certificates/docker-tls.md).
+  and terminate TLS at that point. See
+  [our guide](../guides/tls-certificates/docker-tls.md) for information.
