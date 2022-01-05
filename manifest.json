@@ -461,6 +461,9 @@
             },
             {
               "path": "./guides/tls-certificates/route53.md"
+            },
+            {
+              "path": "./guides/tls-certificates/docker-tls.md"
             }
           ]
         },

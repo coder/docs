@@ -91,6 +91,11 @@ For example:
 docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.25.1
 ```
 
+## TLS certificates
+
+See [our guide](/../../guides/tls-certificates/docker-tls.md) for information on
+configuring TLS for Coder for Docker.
+
 ## Scaling
 
 Coder for Docker is limited by the resources of the machine on which it runs. We
