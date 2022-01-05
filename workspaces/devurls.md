@@ -105,5 +105,6 @@ Python's `http.server` module to gain additional information helpful for
 troubleshooting issues with DevURL configuration and external proxies:
 
 ```console
+# update the following with the port you're troubleshooting
 python3 -m http.server 8080
 ```
