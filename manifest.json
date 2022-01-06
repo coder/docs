@@ -30,6 +30,9 @@
       "path": "getting-started/index.md",
       "children": [
         {
+          "path": "getting-started/admin.md"
+        },
+        {
           "path": "getting-started/developers.md"
         },
         {
