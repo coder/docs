@@ -85,6 +85,8 @@ postgres:
   passwordSecret: "<your-postgres-secret-name>"
 ```
 
+> Ensure there are no trailing white spaces in your password secret.
+
 At this point, you can install/upgrade your Coder instance using the updated
 Helm chart.
 
