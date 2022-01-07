@@ -115,7 +115,7 @@ kubectl config set-context --current --namespace=coder
    > use `--from-file=password=/dev/stdin` instead of `--from-literal=...` to
    > enter your password and press `Ctrl+D` when you're done to submit it.
    >
-   > Ensure there are no trailing white spaces in your password secret.
+   > Ensure that there are no trailing white spaces in your password secret.
 
    You can find/define these values in your
    [PostgreSQL server configuration file](https://www.postgresql.org/docs/current/config-setting.html).
