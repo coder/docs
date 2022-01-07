@@ -213,9 +213,7 @@ RStudio:
    gdebi-core
 
    # Install RStudio
-   RUN wget
-   https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.4.1717-amd64.deb
-   && \
+   RUN wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.4.1717-amd64.deb && \
    gdebi --non-interactive rstudio-server-1.4.1717-amd64.deb
 
    # Create coder user
