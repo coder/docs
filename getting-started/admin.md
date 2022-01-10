@@ -21,28 +21,26 @@ for teams with 5-10 developers.
 
 ## Configure Coder
 
-Once you've deployed Coder, you'll need to log in and:
+Once you've deployed Coder, you'll need to log in and perform the following
+configuration steps:
 
 1. [Upload your license file](../setup/configuration.md) (you can get a trial
    license for free [here](https://coder.com/trial))
 
-1. Access the [administration management](../admin/index.md) menu to set up
-   things such as:
+1. Set up [access controls](../admin/access-control/index.md) with OpenID
+   Connect (OIDC) if you'd like to allow users to register themselves
 
-   - [Access controls](../admin/access-control/index.md) with OpenID Connect
-     (OIDC)
-   - [Create organizations](../admin/organizations/index.md)
-   - Create an OAuth app for your users to
-     [connect to your Git provider](../admin/git.md)
+1. [Create organizations](../admin/organizations/index.md) to manage your user
+   groups
 
-   At a minimum, you’ll want to ensure that you:
+1. Create an OAuth app for your users to
+   [connect to your Git provider](../admin/git.md)
 
-   - [Add a container registry](../admin/registries/index.md) for your
-     development environments to pull from
-   - [Import an image](../images/importing.md) with the tools your developers
-     need.
+1. [Add a container registry](../admin/registries/index.md) for your development
+   environments to pull from
 
-   You can [create custom images](../images/writing.md) for your developer
+1. [Import an image](../images/importing.md) with the tools your developers
+   need. You can [create custom images](../images/writing.md) for your developer
    workspaces as well.
 
 ## Provision users
@@ -91,6 +89,6 @@ executive if you’re interested in this option.
 
 ## Additional information
 
-Finally, we encourage you to look through the various
-[Guides](../guides/index.md) in our public documentation, as it contains more
-detailed information on specific
+We encourage you to look through the various [Guides](../guides/index.md) in our
+public documentation, as it contains more detailed information on specific use
+cases and topics.
