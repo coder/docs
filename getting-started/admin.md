@@ -11,7 +11,7 @@ begin working on their projects.
 
 To get started with Coder, you will need to:
 
-1. [Create a Kubernetes cluster](./setup/kubernetes/index.md)
+1. [Create a Kubernetes cluster](../setup/kubernetes/index.md)
 
 1. [Install Coder via Helm](../setup/installation.md)
 
