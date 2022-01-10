@@ -74,7 +74,7 @@ platform images are hosted in Coder's Docker Hub repo.
 
    [envbox](https://hub.docker.com/r/coderenvs/envbox)
 
-   (Optional)[timescale](https://hub.docker.com/r/coderenvs/timescale)
+   **Optional:** [timescale](https://hub.docker.com/r/coderenvs/timescale)
 
    > Timescale is an internal database meant for evaluation deployments. It is
    > not It is not recommended to run this service in production. Connect to an
