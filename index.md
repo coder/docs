@@ -20,7 +20,7 @@ enterprise security.
     Welcome to your new computer in the cloud.
   </p>
 
-  <a href="./workspaces/getting-started.md">
+  <a href="./getting-started/index.md">
     <button class="arrow">
       Get started
     </button>
