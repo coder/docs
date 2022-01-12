@@ -10,8 +10,8 @@ and **OpenID Connect**.
 ## Built-In Authentication
 
 Built-in authentication allows you (or any admin) to manually create users who
-log in with their email address and temporary password. Coder will ask them
-to change their password after they log in the first time.
+log in with their email address and temporary password. Coder will ask them to
+change their password after they log in the first time.
 
 ## OpenID Connect
 
@@ -36,6 +36,21 @@ the Authentication tab, provide the following parameters:
 
 If you do not have values for any of these parameters, you can obtain them from
 your OIDC provider.
+
+## Disabling built-in authentication
+
+Built-in authentication can be disabled as an option for accessing Coder if OIDC
+is configured.
+
+![Login page with built-in authentication disabled](../../assets/admin/disable-built-in-auth.png)
+
+[Site managers](/access-control/user-roles#site-manager-permissions) can still
+use built-in authentication and view it as an option on the login page by using
+the following query parameter:
+
+```text
+/login?showAllAuthenticationTypes=1
+```
 
 ## Change the authentication method
 
