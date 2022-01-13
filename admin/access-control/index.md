@@ -37,16 +37,17 @@ the Authentication tab, provide the following parameters:
 If you do not have values for any of these parameters, you can obtain them from
 your OIDC provider.
 
-## Disabling built-in authentication
+## Disable built-in authentication
 
-Built-in authentication can be disabled as an option for accessing Coder if OIDC
-is configured.
+You can disable built-in authentication as an option for accessing Coder if you
+have OIDC configured.
 
-![Login page with built-in authentication disabled](../../assets/admin/disable-built-in-auth.png)
+![Login page with built-in authentication
+disabled](../../assets/admin/disable-built-in-auth.png)
 
 [Site managers](/access-control/user-roles#site-manager-permissions) can still
-use built-in authentication and view it as an option on the login page by using
-the following query parameter:
+use built-in authentication. To view this option on the login page, add the
+following query parameter to the URL you use to access your Coder deployment:
 
 ```text
 /login?showAllAuthenticationTypes=1
