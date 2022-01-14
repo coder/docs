@@ -45,6 +45,9 @@ have OIDC configured.
 ![Login page with built-in authentication
 disabled](../../assets/admin/disable-built-in-auth.png)
 
+To do so, navigate to **Manage** > **Admin** > **Authentication**. Then, toggle
+**Disable built-in authentication** to **On** and click **Save preferences**.
+
 [Site managers](/access-control/user-roles#site-manager-permissions) can still
 use built-in authentication. To view this option on the login page, add the
 following query parameter to the URL you use to access your Coder deployment:
