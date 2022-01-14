@@ -263,6 +263,9 @@
           "path": "./admin/workspace-management/index.md",
           "children": [
             {
+              "path": "./admin/workspace-management/command-exec-recording.md"
+            },
+            {
               "path": "./admin/workspace-management/cvms/index.md",
               "children": [
                 {
