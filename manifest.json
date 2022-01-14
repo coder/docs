@@ -502,6 +502,9 @@
             },
             {
               "path": "./guides/troubleshooting/502error.md"
+            },
+            {
+              "path": "./guides/troubleshooting/vite-hmr.md"
             }
           ]
         }
