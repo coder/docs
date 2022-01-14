@@ -91,6 +91,13 @@ set your resource allocation.
         <td>Whether you want your workspace to turn on automatically at a
         specific time (you can set the auto-start time in User Preferences.</td>
     </tr>
+    <tr>
+        <td><b>Auto-off</b></td>
+        <td>The amount of time your workspace can be idle before Coder stops
+        the workspace. Available only if your site manager has allowed this
+        setting to be changed at the user level (otherwise the organization
+        default applies).</td>
+    </tr>
 </table>
 
 By default, Coder allocates resources (CPU cores, memory, and disk space) based
