@@ -35,6 +35,7 @@ enabling this setting if you are serving Coder over HTTPS.
 You can choose the SSH keygen algorithm Coder uses when generating SSH keys for
 users.
 
-Coder allows you to choose between **Ed25519** and **ECDSA**.
+Coder allows you to choose between **Ed25519**, **ECDSA**, and **RSA (4096
+bits)**.
 
 ![Choose SSH keygen algorithm](../assets/admin/ssh-keygen-algo.png)
