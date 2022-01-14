@@ -45,7 +45,8 @@ Once done, you can proceed with the Coder configuration process.
 
 Immediately after logging in to Coder's Web UI, you'll be walked through a
 configuration dashboard. You can specify the authentication method used for
-logins, provide your license information, and more.
+logins, provide your license information, set up a Git OAuth integration so that
+your users can clone their repositories, and more.
 
 When you complete this process, you'll be redirected to the main Coder
 dashboard, where you can create new users, images, and workspaces.
