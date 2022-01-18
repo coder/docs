@@ -1,7 +1,6 @@
 ---
 title: Vite and HMR
-description: Learn how to resolve issues with hot module reloading (HMR) when
-using Vite.
+description: Learn how to resolve issues with HMR when using Vite.
 ---
 
 When using Vite and accessing your app via
