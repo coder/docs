@@ -4,60 +4,49 @@ description:
   "Learn how to enable workspace process logging for your deployment."
 ---
 
-Coder allows administrators to enable workspace process logging for all
-workspaces on the platform. Enabling this feature will add a sidecar to all
-Kubernetes-based workspaces that will log all processes that are started in the
-workspaace, such as commands executed in a terminal or processes created by
-background services in CVMs.
+The workspace process logging feature allows you to log all system-level
+processes executing in the workspace.
 
-[eBPF][ebpf] is used to perform fast in-kernel logging and filtering of all
-`exec` syscalls to match events originating only from within the workspace. We
-chose eBPF over other solutions due to its higher speed than other solutions.
+Enabling workspace process logging adds a sidecar to your workspaces that will
+log all processes users start in the workspace (e.g., commands executed in the
+terminal or system processes created by background services in CVM workspaces).
+You can view the output from the sidecar or send it to a monitoring stack, such
+as CloudWatch, for further analysis.
 
-## Considerations
+Please note that these logs are not recorded or captured by the Coder
+organization in any way, shape, or form.
 
-- This feature is only supported on Kubernetes workspaces. All other workspace
-  types (such as [EC2][ec2-doc] or [Coder for Docker][c4d-doc] workspaces) will
-  still function correctly but will not include process logging capabilities.
-- Workspace process logging requires all nodes that workspaces can be scheduled
-  on across all workspace providers run a Linux kernel >= 5.8. If this
-  requirement is not met, workspaces scheduled on incompatible nodes will fail
-  to start correctly for security purposes.
-  - Google Kubernetes Engine (GKE) stable branch kernels are currently 5.4 which
-    means this feature currently does not work on GKE, but you may have luck on
-    the rapid branch.
-  - AWS Elastic Kubernetes Service (EKS) kernels on the Ubuntu 20.04 image
-    family have a supported kernel version. Other image families are untested.
-- The sidecar attached to each workspace is a [privileged][privileged] container
-  (similarly to the CVM container on CVM-enabled workspaces), so some
-  consideration may be needed based on your organization's security policies
-  before enabling this feature. Enabling this feature does not grant extra
-  privileges to the workspace container itself, however.
-- Processes from nested Docker containers (including deeply nested containers)
-  are logged correctly, but there is currently no distinction between processes
-  started in the workspace directly or in a child container in the outputted
-  logs.
-- On CVMs, this feature may log extra startup processes started in the "outer
-  container", which will include container initialization processes.
-- Since this logs all processes in the workspace, high amounts of process usage
-  (i.e. during a `make` run) will cause lots of output in the sidecar container.
-  Depending on how your Kubernetes cluster is configured, you may be charged
-  extra by your cloud provider to store these additional logs.
+## How this works
 
-## Usage
+Coder uses [eBPF][ebpf] (which we chose for its speed) to perform in-kernel
+logging and filtering of all `exec` system calls to match events originating
+from the workspace.
 
-You can toggle this feature on or off by going to **Manage** > **Admin** >
-**Infrastructure**, then scrolling down to **Workspace container runtime** and
-toggling **Enable workspace process logging**. Once changed, click **Save
-workspaces** to persist the new setting.
+## Requirements
 
-This setting will apply to all new workspaces and will only apply to existing
-workspaces after they have been rebuilt.
+Use of the workspace process logging functionality requires a host Linux
+kernel >= 5.8.
+
+## Enable workspace process logging
+
+To enable workspace process logging:
+
+1. Log into Coder as a site manager.
+1. Go to **Manage** > **Admin**.
+1. On the **Infrastructure** page, scroll down to the **Workspace container
+   runtime** section.
+1. Toggle on **Enable workspace command execution recording**.
+1. Click **Save workspaces**.
 
 ![Configuring workspace process logging](../../assets/admin/process-logging.png)
 
+This setting will apply to all new workspaces; it will apply to existing
+workspaces only after they have been rebuilt.
+
+## View logs
+
 To view the process logs from a specific user or workspace, you can use your
-cloud's log viewer or use `kubectl` directly like so:
+cloud provider's log viewer, or you can use `kubectl` to print the logs:
 
 ```bash
 kubectl logs \
@@ -65,6 +54,36 @@ kubectl logs \
   -l "com.coder.workspace.name=code" \ # Filter by the workspace "code"
   -c exectrace                         # Only show logs from the sidecar
 ```
+
+## Usage considerations
+
+- This feature is only supported on Kubernetes workspaces. None of the other
+  workspace types (such as those on [EC2][ec2-doc] or using [Coder for
+  Docker][c4d-doc]) currently include include process logging capabilities.
+- With this feature enabled, all of the nodes on which Coder schedules
+  workspaces run Linux kernel >= 5.8. If not, workspaces scheduled on
+  incompatible nodes will fail to start correctly for security reasons.
+- **Google Kubernetes Engine users**: At this time, GKE's stable branch runs
+  Linux kernel `5.4`; as such, this feature doesn't work on GKE (you may be able
+  to leverage this feature if you opt for the rapid branch instead).
+- **AWS Elastic Kubernetes Service users**: EKS kernels on the Ubuntu `20.04`
+  image family use the kernel version necessary for this feature (we have not
+  tested other image families)
+- The sidecar attached to each workspace is a [privileged][privileged] container
+  (this is similar to the CVM container on CVM-enabled workspaces), so you may
+  need to review your organization's security policies before enabling this
+  feature. Enabling workspace process logging does _not_ grant extra privileges
+  to the workspace container itself, however.
+- Coder logs processes from nested Docker containers (including deeply nested
+  containers) correctly, but Coder does not distinguish between processes
+  started in the workspace and processes started in a child container in the
+  logs.
+- With CVM-enabled workspaces, this feature may detect and log startup processes
+  begun in the outer container (including container initialization processes).
+- Because this feature logs **all** processes in the workspace, high levels of
+  usage (e.g., during a `make` run) will result in an abundance of output in the
+  sidecar container. Depending on how your Kubernetes cluster is configured, you
+  may incur extra charges from your cloud provider to store the additional logs.
 
 [ec2-doc]: ../workspace-providers/deployment/ec2.md
 [c4d-doc]: ../../setup/docker.md
