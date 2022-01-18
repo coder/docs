@@ -91,13 +91,13 @@ postgres:
 
 Coder supports mutual TLS (mTLS) connections to Postgres databases; if you'd
 like to enable this feature,
-[provide the necessary values in `postgres.ssl`](https://github.com/coder/enterprise-helm/blob/main/values.yaml#L297).
+[provide the necessary values in `postgres.ssl`](https://github.com/coder/enterprise-helm/blob/24a7a3efd3ccb8b8103e0ecaa888ba0de05de12e/values.yaml#L297).
 
 ### Using AWS IAM to authenticate with an RDS instance
 
 You can set the Postgres connector option in the Helm chart. If you'd like to
 use the environment's AWS IAM account to authenticate with an RDS instance,
-[set `postgres.connector` accordingly](https://github.com/coder/enterprise-helm/blob/main/values.yaml#L316).
+[set `postgres.connector` accordingly](https://github.com/coder/enterprise-helm/blob/24a7a3efd3ccb8b8103e0ecaa888ba0de05de12e/values.yaml#L316).
 
 ### Upgrade Coder
 
