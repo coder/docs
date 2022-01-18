@@ -87,6 +87,20 @@ postgres:
 
 > Ensure that there are no trailing white spaces in your password secret.
 
+### mTLS connections
+
+Coder supports mutual TLS (mTLS) connections to Postgres databases; if you'd
+like to enable this feature,
+[provide the necessary values in `postgres.ssl`](https://github.com/coder/enterprise-helm/blob/main/values.yaml#L297).
+
+### Using AWS IAM to authenticate with an RDS instance
+
+You can set the Postgres connector option in the Helm chart. If you'd like to
+use the environment's AWS IAM account to authenticate with an RDS instance,
+[set `postgres.connector` accordingly](https://github.com/coder/enterprise-helm/blob/main/values.yaml#L316).
+
+### Upgrade Coder
+
 At this point, you can install/upgrade your Coder instance using the updated
 Helm chart.
 
