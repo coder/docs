@@ -27,7 +27,7 @@ If you need to reset the password for a site admin, you can do so using coderd's
 > [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) dependency
 > installed from when you first set up Coder; if not, please sure to install it
 > before proceeding. If you are using Docker, follow
-> [these instructions](../../setup/docker#admin-password) instead
+> [these instructions](../../setup/docker#admin-password) instead.
 
 To reset the password, run the following in the terminal:
 

@@ -93,8 +93,8 @@ docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v
 
 ## Admin password
 
-If you want to set your admin password, perhaps if you forgot it, use the
-`-e SUPER_ADMIN_PASSWORD=<password>` flag with `docker run`.
+If you want to set (or reset) your admin password, use the
+`-e SUPER_ADMIN_PASSWORD=<password>` flag with the `docker run` command.
 
 ## Scaling
 
