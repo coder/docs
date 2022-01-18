@@ -4,12 +4,14 @@ description: Learn how enable command execution recording in workspaces.
 state: alpha
 ---
 
-The command execution recording feature allows you to record all commands run by
-users in a workspace. More specifically, enabling this feature adds a privileged
-sidecar to your workspaces that logs all `exec` system calls. This is helpful
-for increasing security, such as when using Docker in CVMs, as well as aiding
-troubleshooting (i.e., troubleshooting cloud-related issues by reviewing actions
-taken by the user).
+The command execution recording feature allows you to log all system-level
+processes executing in the workspace. Enabling this feature adds a privileged
+sidecar to your workspaces for this purpose -- you can view the output from the
+sidecar or send it to a monitoring stack, such as CloudWatch, for further
+analysis.
+
+Please note that these logs are not recorded or captured by the Coder
+organization in any way, shape, or form.
 
 ## Requirements
 
