@@ -446,6 +446,9 @@
               "path": "./guides/deployments/keycloak.md"
             },
             {
+              "path": "./guides/deployments/podman.md"
+            },
+            {
               "path": "./guides/deployments/teardown.md"
             },
             {
