@@ -22,6 +22,11 @@ Coder uses [eBPF][ebpf] (which we chose for its speed) to perform in-kernel
 logging and filtering of all `exec` system calls to match events originating
 from the workspace.
 
+The core of this feature is also open source and can be found in the
+[`exectrace` repo on GitHub] repo.
+
+[`exectrace` repo on github]: https://github.com/coder/exectrace
+
 ## Requirements
 
 Use of the workspace process logging functionality requires a host Linux
