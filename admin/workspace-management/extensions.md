@@ -14,22 +14,13 @@ configuration on your part. You can, however, choose between two types of
 extensions marketplaces by going to **Manage** > **Admin** > **Infrastructure**,
 then scrolling down to **Extensions**:
 
-- **Public**: a Coder-hosted marketplace of open-source VS Code extensions
+- **Public**: the
+  [Open VSX public extension marketplace](https://github.com/eclipse/openvsx/wiki/Using-Open-VSX-in-VS-Code),
+  which Coder uses by default
 - **Custom**: your organization's custom VS Code extension marketplace API,
   accessed via the URL you provide
 
 ![Configuring extensions marketplace](../../assets/admin/configure-extensions.png)
-
-## Open VSX public extension marketplace
-
-To use [open-vsx.org](https://open-vsx.org) extensions in your Coder
-environment:
-
-1. Set the **Extension Marketplace Type** to **Custom**
-1. Set the **Extension Marketplace API URL** to
-   `https://open-vsx.org/vscode/gallery` (this value comes from the `serviceUrl`
-   path described in
-   [open-vsx's documentation](https://github.com/eclipse/openvsx/wiki/Using-Open-VSX-in-VS-Code)).
 
 ## Air-gapped marketplaces
 
