@@ -191,7 +191,7 @@ Linux kernel doesn't support CVMs.
    haven't already done so. Under **template policy**, upload the configuration
    file you created in the previous step. Click **Save**.
 
-1. Disable SELinux and AppArmor.
+1. If you have SELinux and AppArmor enabled, please disable both.
 
 ## Testing
 
