@@ -185,6 +185,10 @@ Determines whether the workspace should be created as a
 
 **Required**. The number of cores to allocate to the workspace.
 
+#### workspace.specs.kubernetes.env
+
+The environment variables to set in the workspaces.
+
 #### workspace.specs.kubernetes.memory.value
 
 **Required**. The amount of memory (in GB) to allocate to the workspace.
@@ -192,6 +196,25 @@ Determines whether the workspace should be created as a
 #### workspace.specs.kubernetes.disk.value
 
 **Required**. The amount of disk space (in GB) to allocate to the workspace.
+
+#### workspace.specs.kubernetes.privileged
+
+Whether the workspace should be run as privileged (running as privileged
+disables most container security isolation).
+
+#### workspace.specs.kubernetes.resource-requests
+
+The custom resources that can be requested.
+
+#### workspace.specs.kubernetes.resource-limits
+
+The limits to apply to the custom resources requested.
+
+#### workspace.specs.kubernetes.runtime-class-name
+
+The name of a
+[Kubernetes RuntimeClass](https://kubernetes.io/docs/concepts/containers/runtime-class/)
+to associate with the workspaces.
 
 #### workspace.specs.kubernetes.tolerations.value
 
