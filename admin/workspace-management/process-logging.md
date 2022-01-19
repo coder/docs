@@ -85,12 +85,12 @@ fields @timestamp, log_processed.fields.cmdline
 - With this feature enabled, all of the nodes on which Coder schedules
   workspaces run Linux kernel >= 5.8. If not, workspaces scheduled on
   incompatible nodes will fail to start correctly for security reasons.
-- **Google Kubernetes Engine users**: At this time, GKE's stable branch runs
-  Linux kernel 5.4; as such, this feature doesn't work on GKE (you may be able
-  to leverage this feature if you opt for the rapid branch instead).
-- **AWS Elastic Kubernetes Service users**: EKS kernels on the Ubuntu 20.04
-  image family use the kernel version necessary for this feature (we have not
-  tested other image families)
+  - **Google Kubernetes Engine users**: At this time, GKE's stable branch runs
+    Linux kernel 5.4; as such, this feature doesn't work on GKE (you may be able
+    to leverage this feature if you opt for the rapid branch instead).
+  - **AWS Elastic Kubernetes Service users**: EKS kernels on the Ubuntu 20.04
+    image family use the kernel version necessary for this feature (we have not
+    tested other image families)
 - The sidecar attached to each workspace is a [privileged][privileged] container
   (this is similar to the CVM container on CVM-enabled workspaces), so you may
   need to review your organization's security policies before enabling this
