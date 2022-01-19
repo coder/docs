@@ -60,6 +60,21 @@ kubectl logs \
   -c exectrace                         # Only show logs from the sidecar
 ```
 
+On AWS Elastic Kubernetes Service, you can view the logs for a specific user or
+workspace using a query like the following from the CloudWatch dashboard on the
+**Log Insights** tab:
+
+```text
+fields @timestamp, log_processed.fields.cmdline
+| sort @timestamp asc
+| filter kubernetes.container_name="exectrace"
+| filter log_processed.fields.labels.username="zac"
+| filter log_processed.fields.labels.workspace_name="code"
+```
+
+Note that your EKS cluster must be [configured][eks-cloudwatch] to send logs to
+CloudWatch for this query to work.
+
 ## Usage considerations
 
 - This feature is only supported on Kubernetes workspaces. None of the other
@@ -90,8 +105,10 @@ kubectl logs \
   sidecar container. Depending on how your Kubernetes cluster is configured, you
   may incur extra charges from your cloud provider to store the additional logs.
 
-[ec2-doc]: ../workspace-providers/deployment/ec2.md
 [c4d-doc]: ../../setup/docker.md
 [ebpf]: https://ebpf.io
+[ec2-doc]: ../workspace-providers/deployment/ec2.md
+[eks-cloudwatch]:
+  https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-EKS-logs.html
 [privileged]:
   https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged
