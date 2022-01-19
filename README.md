@@ -3,7 +3,9 @@
 # Coder Docs
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-31-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository contains the documentation source files for
@@ -22,6 +24,12 @@ deploy previews. :rocket:
 
 Our documentation is published once a day. Expect any merged contributions to be
 live within 24 hours.
+
+## Archived documentation versions
+
+[Documentation for older versions of Coder](https://github.com/coder/docs/branches/all)
+is available in the corresponding version branch. For example, you can find docs
+for Coder v1.19 in the `v1.19` branch.
 
 ## Interested in using Coder?
 

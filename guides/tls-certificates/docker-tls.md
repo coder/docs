@@ -160,7 +160,7 @@ coder:
   ports:
     - 7080:7080
   environment:
-    - DEVURL_HOST="*.<your-domain.com>"
+    - DEVURL_HOST=*.<your-domain.com>
 ```
 
 > The `~/letsecnrypt:/letsencrypt/` volume definition is required only if you
