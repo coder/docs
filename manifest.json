@@ -560,6 +560,30 @@
           "navigable": false,
           "children": [
             {
+              "path": "./changelog/archive/1.23.1.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.23.0.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.22.3.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.22.2.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.22.1.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.22.0.md",
+              "navigable": false
+            },
+            {
               "path": "./changelog/archive/1.21.7.md",
               "navigable": false
             },
