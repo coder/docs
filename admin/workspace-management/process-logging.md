@@ -60,6 +60,23 @@ kubectl logs \
   -c exectrace                         # Only show logs from the sidecar
 ```
 
+### View logs in AWS EKS
+
+If you're using AWS' Elastic Kubernetes Service, you can [configure your
+cluster][eks-cloudwatch] to send logs to CloudWatch. This allows you to view the
+logs for a specific user or workspace.
+
+To view your logs, go to the CloudWatch dashboard (which is available on the
+**Log Insights** tab) and run a query similar to the following:
+
+```text
+fields @timestamp, log_processed.fields.cmdline
+| sort @timestamp asc
+| filter kubernetes.container_name="exectrace"
+| filter log_processed.fields.labels.username="zac"
+| filter log_processed.fields.labels.workspace_name="code"
+```
+
 ## Usage considerations
 
 - This feature is only supported on Kubernetes workspaces. None of the other
@@ -68,12 +85,12 @@ kubectl logs \
 - With this feature enabled, all of the nodes on which Coder schedules
   workspaces run Linux kernel >= 5.8. If not, workspaces scheduled on
   incompatible nodes will fail to start correctly for security reasons.
-- **Google Kubernetes Engine users**: At this time, GKE's stable branch runs
-  Linux kernel 5.4; as such, this feature doesn't work on GKE (you may be able
-  to leverage this feature if you opt for the rapid branch instead).
-- **AWS Elastic Kubernetes Service users**: EKS kernels on the Ubuntu 20.04
-  image family use the kernel version necessary for this feature (we have not
-  tested other image families)
+  - **Google Kubernetes Engine users**: At this time, GKE's stable branch runs
+    Linux kernel 5.4; as such, this feature doesn't work on GKE (you may be able
+    to leverage this feature if you opt for the rapid branch instead).
+  - **AWS Elastic Kubernetes Service users**: EKS kernels on the Ubuntu 20.04
+    image family use the kernel version necessary for this feature (we have not
+    tested other image families)
 - The sidecar attached to each workspace is a [privileged][privileged] container
   (this is similar to the CVM container on CVM-enabled workspaces), so you may
   need to review your organization's security policies before enabling this
@@ -90,8 +107,10 @@ kubectl logs \
   sidecar container. Depending on how your Kubernetes cluster is configured, you
   may incur extra charges from your cloud provider to store the additional logs.
 
-[ec2-doc]: ../workspace-providers/deployment/ec2.md
 [c4d-doc]: ../../setup/docker.md
 [ebpf]: https://ebpf.io
+[ec2-doc]: ../workspace-providers/deployment/ec2.md
+[eks-cloudwatch]:
+  https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-EKS-logs.html
 [privileged]:
   https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged
