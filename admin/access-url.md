@@ -36,7 +36,7 @@ When changing your access URL, you'll need to
 helm upgrade coder coder/coder \
  --set devurlsHost="\*.example.com"
 
-> See the [enterprise-helm repo](https://github.com/cdr/enterprise-helm) for
+> See the [enterprise-helm repo](https://github.com/coder/enterprise-helm) for
 > more information on Coder's Helm charts.
 
 ## Step 3: Provide the access URL in the Coder UI

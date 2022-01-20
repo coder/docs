@@ -8,7 +8,7 @@ similar to installing the IDE onto a local machine.
 
 To see examples demonstrating how to install the various IDEs and configure your
 image to work with Coder's multi editor feature, see the
-[sample images](https://github.com/cdr/enterprise-images) available on GitHub.
+[sample images](https://github.com/coder/enterprise-images) available on GitHub.
 
 ## Supported IDEs
 

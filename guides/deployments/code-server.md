@@ -4,7 +4,7 @@ description:
   Learn how Coder can improve your code-server deployment on Kubernetes.
 ---
 
-If you're deploying [code-server](https://github.com/cdr/code-server) on
+If you're deploying [code-server](https://github.com/coder/code-server) on
 Kubernetes, you may want to consider Coder, our solution for developers and
 development teams. Coder runs on Kubernetes and offers the following features in
 addition to the base code-server functionality.

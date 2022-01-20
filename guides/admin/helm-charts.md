@@ -6,9 +6,9 @@ description: Learn how to modify configuration values in Helm charts.
 This article will show you how to modify the default configuration values in
 Coder's Helm chart.
 
-> You can [see the contents of Coder's Helm
-> chart](https://github.com/cdr/enterprise-helm/blob/master/values.yaml) on
-> GitHub.
+> You can
+> [see the contents of Coder's Helm chart](https://github.com/coder/enterprise-helm/blob/master/values.yaml)
+> on GitHub.
 
 1. Get a copy of your existing Helm chart and save it as `current-values.yaml`
 

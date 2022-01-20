@@ -14,7 +14,8 @@ code-server --install-extension streetsidesoftware.code-spell-checker
 
 # Clone the docs repo, if it doesn't exist
 PROJECT_FOLDER=/home/coder/docs
-GIT_REMOTE=https://github.com/cdr/docs
+GIT_REMOTE=https://github.com/coder/docs
+
 if [ ! -d $PROJECT_FOLDER ]; then
     echo "$PROJECT_FOLDER is empty"
     git clone $GIT_REMOTE $PROJECT_FOLDER

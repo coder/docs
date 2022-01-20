@@ -14,7 +14,7 @@ support.
     <tr>
         <td></td>
         <th>Coder</th>
-        <th><a href="https://github.com/cdr/code-server">code-server</a></th>
+        <th><a href="https://github.com/coder/code-server">code-server</a></th>
     </tr>
     <tr>
         <th>Used by</th>
@@ -65,7 +65,7 @@ support.
     <tr>
         <th>Usage term length</th>
         <td>Variable (<a target="_blank" href="https://coder.com/pricing">see Pricing</a>)</td>
-        <td>See <a href="https://github.com/cdr/code-server/blob/v3.5.0/LICENSE.txt">license</a></td>
+        <td>See <a href="https://github.com/coder/code-server/blob/v3.5.0/LICENSE.txt">license</a></td>
     </tr>
     <tr>
         <th>Air-gapped deployment</th>

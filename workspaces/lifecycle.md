@@ -33,7 +33,7 @@ Coder exposes a few hooks during the build process. Once a workspace is
 available and running on an underlying host, the following steps are taken:
 
 1. **Injection of secrets into the workspace**: Coder injects authentication for
-   the [Coder CLI](https://github.com/cdr/coder-cli), allowing the CLI to
+   the [Coder CLI](https://github.com/coder/coder-cli), allowing the CLI to
    perform authenticated CLI commands. If your Coder instance is configured with
    a Git provider, your SSH key pair is injected during this step as well,
    allowing it to perform authenticated `git` operations.

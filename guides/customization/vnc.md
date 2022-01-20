@@ -26,7 +26,7 @@ PORT 1234
 **Note:** Set `PORT` to the appropriate port number for your VNC instance.
 
 > To help you get started, see this
-> [sample image](https://github.com/cdr/enterprise-images/tree/main/images/vnc)
+> [sample image](https://github.com/coder/enterprise-images/tree/main/images/vnc)
 > that uses [noVNC](https://github.com/novnc/noVNC) as the client and
 > [TigerVNC](https://tigervnc.org) as the server.
 
@@ -103,8 +103,8 @@ If your Coder deployment has
 [ssh](https://coder.com/docs/admin/workspace-management/ssh-access) enabled, you
 can also connect to Coder using a local client with SSH port forwarding.
 
-You will need to install [coder-cli](https://github.com/cdr/coder-cli) and a VNC
-client on your local machine.
+You will need to install [coder-cli](https://github.com/coder/coder-cli) and a
+VNC client on your local machine.
 
 Run the following commands on your local machine to connect to the VNC server.
 Replace `[vnc-port]` with the port on which the server is running and

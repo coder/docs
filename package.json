@@ -3,7 +3,7 @@
   "description": "Documentation for Coder",
   "homepage": "https://coder.com/docs",
   "bugs": {
-    "url": "https://github.com/cdr/docs/issues",
+    "url": "https://github.com/coder/docs/issues",
     "email": "support@coder.com"
   },
   "license": "UNLICENSED",

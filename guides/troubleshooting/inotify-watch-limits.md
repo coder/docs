@@ -9,7 +9,7 @@ may encounter an error similar to the following:
 > Watchpack Error (watcher): Error: ENOSPC: System limit for number of file
 > watchers reached, watch '/some/path'
 
-[code-server]: https://github.com/cdr/code-server
+[code-server]: https://github.com/coder/code-server
 
 This article will show you how to diagnose and troubleshoot this error, which
 relates to a high number of inotify watchers in use.

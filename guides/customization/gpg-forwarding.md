@@ -91,7 +91,7 @@ RUN echo  "StreamLocalBindUnlink yes" >> /etc/ssh/sshd_config && \
 
 Alternatively, you can create a new image from scratch. If so, we recommend
 starting with Coder's
-[Enterprise Base](https://github.com/cdr/enterprise-images/blob/main/images/base/Dockerfile.ubuntu)
+[Enterprise Base](https://github.com/coder/enterprise-images/blob/main/images/base/Dockerfile.ubuntu)
 image, which helps establish dependencies and conventions that improves the
 Coder user experience.
 

@@ -119,7 +119,7 @@ If you're using a custom ingress controller, the upgrade process from 1.20 to
 
 1. [Update your Helm chart](../guides/admin/helm-charts.md) via the steps below.
    Refer to the `1.21`
-   [helm chart](https://github.com/cdr/enterprise-helm/blob/main/values.yaml)
+   [helm chart](https://github.com/coder/enterprise-helm/blob/main/values.yaml)
    when making such changes:
 
    Rename all instances of `cemanager` to `coderd`.
