@@ -152,7 +152,7 @@ nginx:
     - "~/letsencrypt:/letsencrypt/"
 coder:
   hostname: coder
-  image: codercom/coder:1.25.1
+  image: codercom/coder:1.27.0
   container_name: coder
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock

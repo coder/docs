@@ -36,7 +36,7 @@ Coder requires x86-64 and does not support ARM-based processors at this time.
       -p 7080:7080 \
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v ~/.coder:/var/run/coder \
-      codercom/coder:1.25.1
+      codercom/coder:1.27.0
    ```
 
    When this process is complete, Coder will print the URL you can use to access
@@ -88,7 +88,7 @@ DEVURL_HOST="*.mycompany.com"
 For example:
 
 ```console
-docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.25.1
+docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.27.0
 ```
 
 ## Admin password
