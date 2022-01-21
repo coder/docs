@@ -30,7 +30,7 @@ The core of this feature is also open source and can be found in the
 ## Requirements
 
 Use of the workspace process logging functionality requires a host Linux
-kernel >= 5.8.
+kernel >= 5.8 with the environment variable `CONFIG_DEBUG_INFO_BTF=y` set.
 
 ## Enable workspace process logging
 
