@@ -9,7 +9,7 @@ file.
 
 You can use the configure script to:
 
-- Run [Coder CLI](https://github.com/cdr/coder-cli) commands
+- Run [Coder CLI](https://github.com/coder/coder-cli) commands
 - Check for and clone a GitHub repo if it isn't present
 - Run scripts using
   [CODER\_\* environment variables](../workspaces/variables.md)
@@ -49,8 +49,7 @@ We strongly recommend including this logic at all times to minimize overhead.
 
 > Any commands run with `sudo` will, by default, not include the environment
 > variables of your user. If you'd like to preserve your existing env variables,
-> [pass the `-E` flag to your `sudo`
-> invocation](https://man7.org/linux/man-pages/man8/sudo.8.html).
+> [pass the `-E` flag to your `sudo` invocation](https://man7.org/linux/man-pages/man8/sudo.8.html).
 
 ## Step 2: Add the config file to the image
 
@@ -111,8 +110,8 @@ file.
 
 ### Copying Coder's sample config file
 
-Coder's [base images](https://github.com/cdr/enterprise-images) include a basic
-configure script, which you can copy and modify:
+Coder's [base images](https://github.com/coder/enterprise-images) include a
+basic configure script, which you can copy and modify:
 
 ```Dockerfile
 # Dockerfile

@@ -17,13 +17,13 @@ This guide assumes that you're familiar with:
 
 For ideas on what you can include in your images, see:
 
-- [Sample Coder images](https://github.com/cdr/enterprise-images)
+- [Sample Coder images](https://github.com/coder/enterprise-images)
 - [Guide: Node.js image for Coder](../guides/customization/node)
 
 ## Creating a custom image
 
 Instead of starting from scratch, we recommend extending one of our
-[sample images](https://github.com/cdr/enterprise-images):
+[sample images](https://github.com/coder/enterprise-images):
 
 ```Dockerfile
 # Dockerfile
@@ -49,13 +49,13 @@ Please note:
   software in another directory.
 
 - If you're using a different base image, see our
-  [image minimum requirements](https://github.com/cdr/enterprise-images/#image-minimums)
+  [image minimum requirements](https://github.com/coder/enterprise-images/#image-minimums)
   to make sure that your image will work with all of Coder's features.
 
 - You can build images inside a
   [CVM](../admin/workspace-management/cvms.md)-enabled Coder workspace with
   Docker installed (see our
-  [base image](https://github.com/cdr/enterprise-images/tree/main/images/base)
+  [base image](https://github.com/coder/enterprise-images/tree/main/images/base)
   for an example of how you can do this).
 
 - If you're using CVM-only features during an image's build time (e.g., you're

@@ -3,7 +3,7 @@ title: Terraform
 description: Learn how to deploy Coder using Terraform.
 ---
 
-Coder offers [Terraform modules](https://github.com/cdr/enterprise-terraform)
+Coder offers [Terraform modules](https://github.com/coder/enterprise-terraform)
 that help you deploy Coder faster.
 
 Currently, we offer a single-command deployment of Coder to Google Cloud
@@ -16,7 +16,7 @@ Platform. We will add support for additional cloud providers in the future.
 > [Terragrunt](https://terragrunt.gruntwork.io/docs/getting-started/quick-start/)
 > installed.
 
-1. [Copy the GKE example](https://github.com/cdr/enterprise-terraform/tree/main/examples/gke/self-hosted)
+1. [Copy the GKE example](https://github.com/coder/enterprise-terraform/tree/main/examples/gke/self-hosted)
    to the location of your choice (we recommend version controlling the entire
    folder).
 

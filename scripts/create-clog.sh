@@ -102,7 +102,7 @@ function update_manifest () {
 function print_pr_info () {
   branch="$(git branch --show-current)"
   echo "tip: After committing this branch visit"
-  echo "https://github.com/cdr/docs/compare/master...${branch}?template=release-template.md&expand=1"
+  echo "https://github.com/coder/docs/compare/master...${branch}?template=release-template.md&expand=1"
   echo "to open a PR using the release PR template"
 }
 

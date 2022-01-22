@@ -11,7 +11,7 @@ icon:
   fill=\"white\" />\n</svg>"
 ---
 
-Coder provides an [open-source CLI](https://github.com/cdr/coder-cli) that
+Coder provides an [open-source CLI](https://github.com/coder/coder-cli) that
 allows you to interact with your workspaces using your local machine.
 
 <children></children>
@@ -19,4 +19,4 @@ allows you to interact with your workspaces using your local machine.
 ## Full CLI reference
 
 For a full list of the Coder CLI commands available, see the
-[reference pages](https://github.com/cdr/coder-cli/blob/master/docs/coder.md).
+[reference pages](https://github.com/coder/coder-cli/blob/master/docs/coder.md).

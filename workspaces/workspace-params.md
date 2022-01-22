@@ -28,7 +28,7 @@ When prompted, provide the following information:
         <td>The source of your image; leave as <b>Existing</b> in most cases.
         You can also <b>import</b> a new image if your site manager has imported
             a <a href="../admin/registries/index.md">registry</a> or select a <b><a
-            href="https://github.com/cdr/enterprise-images">packaged</
+            href="https://github.com/coder/enterprise-images">packaged</
             a></b> image provided by Coder if your site manager has
             enabled the automatic importing of the <a
             href="../admin/registries/default-registry.md">Default Registry</a>.

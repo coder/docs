@@ -20,7 +20,7 @@ data, including workspace information and session tokens.
 ## Doctor
 
 Before proceeding, we strongly recommend running
-[Doctor](https://github.com/cdr/coder-doctor), which is Coder-supplied
+[Doctor](https://github.com/coder/coder-doctor), which is Coder-supplied
 command-line tool that evaluates whether your environment is ready to install
 Coder. If there are issues with your cluster that may impact the installation
 process, Doctor will return information on what the issue is and suggestions on
@@ -70,7 +70,7 @@ kubectl config set-context --current --namespace=coder
    b. Edit the `values.yaml` file as needed.
 
    > View the
-   > [configuration options available in the `values.yaml` file.](https://github.com/cdr/enterprise-helm#values)
+   > [configuration options available in the `values.yaml` file.](https://github.com/coder/enterprise-helm#values)
 
    c. Upgrade/install your Coder deployment with the updated Helm chart (be sure
    to replace the placeholder value with your Coder version). **This must be

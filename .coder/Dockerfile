@@ -5,7 +5,7 @@ USER root
 # Install code-server v3.12.0 for modern extensions
 ARG VERSION=3.12.0
 ARG ARCH=amd64
-RUN curl -L "https://github.com/cdr/code-server/releases/download/v$VERSION/code-server_${VERSION}_$ARCH.deb" -o \
+RUN curl -L "https://github.com/coder/code-server/releases/download/v$VERSION/code-server_${VERSION}_$ARCH.deb" -o \
     "/tmp/code-server_${VERSION}_$ARCH.deb"
 RUN dpkg -i "/tmp/code-server_${VERSION}_$ARCH.deb"
 

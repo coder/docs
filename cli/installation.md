@@ -25,7 +25,7 @@ brew install cdr/coder/coder-cli
 
 ### Download (Windows, Linux, Mac)
 
-Download releases [from GitHub](https://github.com/cdr/coder-cli/releases):
+Download releases [from GitHub](https://github.com/coder/coder-cli/releases):
 
 1. Click a release and download the tar file for your operating system (ex:
    coder-cli-linux-amd64.tar.gz)
@@ -71,4 +71,5 @@ The `coder update` command accepts the following arguments:
 - `--version`: specify the version that the CLI should download and upgrade to
 - `--force`: omit prompts asking for change confirmations
 
-**Note:** Coder CLI will not update if it is located under `/var/tmp/coder` or `C:\Windows`.
+**Note:** Coder CLI will not update if it is located under `/var/tmp/coder` or
+`C:\Windows`.
