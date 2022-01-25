@@ -46,9 +46,9 @@ Linux kernel doesn't support CVMs.
      name: smarter-device-manager
      namespace: smarter-device-manager
    data:
-     conf.yaml: |
+     conf.yaml: |+
       - devicematch: ^fuse$
-      nummaxdevices: 50
+        nummaxdevices: 50
    
    ---
    apiVersion: apps/v1
