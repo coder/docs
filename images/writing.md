@@ -80,15 +80,17 @@ USER root
 RUN mkdir -p /opt/[IDE]
 RUN curl -L \
 "https://download.jetbrains.com/product?code=[CODE]&latest&distribution=linux" \
-| tar -C /opt/[IDE] --strip-components 1 -xzvf
-RUN ln -s /opt/[IDE]/bin/clion.sh /usr/bin/[IDE]
+| tar -C /opt/[IDE] --strip-components 1 -xzvf -
+
+# Add a binary to the PATH that points to the IDE startup script.
+RUN ln -s /opt/[IDE]/bin/idea.sh /usr/bin/[IDE]
 ```
 
 Make sure that you replace `[IDE]` with the name of the IDE in lowercase and
 provide its
 [corresponding `[CODE]`](https://plugins.jetbrains.com/docs/marketplace/product-codes.html).
 
-More specifically, here's how to install the CLion IDE onto your image:
+More specifically, here's how to install the IntelliJ IDE onto your image:
 
 ```Dockerfile
 # Dockerfile
@@ -96,10 +98,11 @@ FROM ...
 
 USER root
 
-# Install CLion
-RUN mkdir -p /opt/clion
-RUN curl -L \
-"https://download.jetbrains.com/product?code=CL&latest&distribution=linux" \
-| tar -C /opt/clion --strip-components 1 -xzvf
-RUN ln -s /opt/clion/bin/clion.sh /usr/bin/clion
+# Install intellij
+RUN mkdir -p /opt/idea
+RUN curl -L "https://download.jetbrains.com/product?code=IIC&latest&distribution=linux" \
+| tar -C /opt/idea --strip-components 1 -xzvf -
+
+# Add a binary to the PATH that points to the Intellij startup script.
+RUN ln -s /opt/idea/bin/idea.sh /usr/bin/intellij-idea-community
 ```
