@@ -17,103 +17,105 @@ Linux kernel doesn't support CVMs.
 
    ```yaml
    apiVersion: v1
-    kind: Namespace
-    metadata:
-    name: smarter-device-manager
-    labels:
-        name: smarter-device-manager
-    ---
-    apiVersion: v1
-    kind: ResourceQuota
-    metadata:
-    name: smarter-device-manager
-    namespace: smarter-device-manager
-    spec:
-    hard:
-        pods: 50
-    scopeSelector:
-        matchExpressions:
-        - operator: In
-        scopeName: PriorityClass
-        values:
-        - system-node-critical
-        - system-cluster-critical
-    ---
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-    name: smarter-device-manager
-    namespace: smarter-device-manager
-    data:
-    conf.yaml: |
-            - devicematch: ^fuse$
-            nummaxdevices: 50
-    ---
-    apiVersion: apps/v1
-    kind: DaemonSet
-    metadata:
-    name: smarter-device-manager
-    namespace: smarter-device-manager
-    labels:
-        name: smarter-device-manager
-        role: agent
-    spec:
-    selector:
-        matchLabels:
-        name: smarter-device-manager
-    updateStrategy:
-        type: RollingUpdate
-    template:
-        metadata:
-        labels:
-            name: smarter-device-manager
-        annotations:
-            node.kubernetes.io/bootstrap-checkpoint: "true"
-        spec:
-        nodeSelector:
-            smarter-device-manager: enabled
-        priorityClassName: "system-node-critical"
-        hostname: smarter-device-management
-        hostNetwork: true
-        dnsPolicy: ClusterFirstWithHostNet
-        containers:
-        - name: smarter-device-manager
-            image: registry.gitlab.com/arm-research/smarter/smarter-device-manager:v1.20.7
-            imagePullPolicy: IfNotPresent
-            securityContext:
-            allowPrivilegeEscalation: false
-            capabilities:
-                drop: ["ALL"]
-            resources:
-            limits:
-                cpu: 100m
-                memory: 15Mi
-            requests:
-                cpu: 10m
-                memory: 15Mi
-            volumeMounts:
-            - name: device-plugin
-                mountPath: /var/lib/kubelet/device-plugins
-            - name: dev-dir
-                mountPath: /dev
-            - name: sys-dir
-                mountPath: /sys
-            - name: config
-                mountPath: /root/config
-        volumes:
-            - name: device-plugin
-            hostPath:
-                path: /var/lib/kubelet/device-plugins
-            - name: dev-dir
-            hostPath:
-                path: /dev
-            - name: sys-dir
-            hostPath:
-                path: /sys
-            - name: config
-            configMap:
-                name: smarter-device-manager
-        terminationGracePeriodSeconds: 30
+   kind: Namespace
+   metadata:
+     name: smarter-device-manager
+     labels:
+       name: smarter-device-manager
+   
+   ---
+   apiVersion: v1
+   kind: ResourceQuota
+   metadata:
+     name: smarter-device-manager
+     namespace: smarter-device-manager
+   spec:
+     hard:
+       pods: 50
+     scopeSelector:
+       matchExpressions:
+       - operator: In
+         scopeName: PriorityClass
+         values:
+           - system-node-critical
+           - system-cluster-critical
+   ---
+   apiVersion: v1
+   kind: ConfigMap
+   metadata:
+     name: smarter-device-manager
+     namespace: smarter-device-manager
+   data:
+     conf.yaml: |+
+      - devicematch: ^fuse$
+        nummaxdevices: 50
+   
+   ---
+   apiVersion: apps/v1
+   kind: DaemonSet
+   metadata:
+     name: smarter-device-manager
+     namespace: smarter-device-manager
+     labels:
+       name: smarter-device-manager
+       role: agent
+   spec:
+     selector:
+       matchLabels:
+         name: smarter-device-manager
+     updateStrategy:
+       type: RollingUpdate
+     template:
+       metadata:
+         labels:
+           name: smarter-device-manager
+         annotations:
+           node.kubernetes.io/bootstrap-checkpoint: "true"
+       spec:
+         nodeSelector:
+           smarter-device-manager: enabled
+         priorityClassName: "system-node-critical"
+         hostname: smarter-device-management
+         hostNetwork: true
+         dnsPolicy: ClusterFirstWithHostNet
+         containers:
+         - name: smarter-device-manager
+           image: registry.gitlab.com/arm-research/smarter/smarter-device-manager:v1.20.7
+           imagePullPolicy: IfNotPresent
+           securityContext:
+             allowPrivilegeEscalation: false
+             capabilities:
+               drop: ["ALL"]
+           resources:
+             limits:
+               cpu: 100m
+               memory: 15Mi
+             requests:
+               cpu: 10m
+               memory: 15Mi
+           volumeMounts:
+           - name: device-plugin
+             mountPath: /var/lib/kubelet/device-plugins
+           - name: dev-dir
+             mountPath: /dev
+           - name: sys-dir
+             mountPath: /sys
+           - name: config
+             mountPath: /root/config
+         volumes:
+         - name: device-plugin
+           hostPath:
+             path: /var/lib/kubelet/device-plugins
+         - name: dev-dir
+           hostPath:
+             path: /dev
+         - name: sys-dir
+           hostPath:
+             path: /sys
+         - name: config
+           configMap:
+             name: smarter-device-manager
+         terminationGracePeriodSeconds: 30
    ```
 
    Next, apply the changes to your clusters by running:
