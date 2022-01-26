@@ -103,6 +103,6 @@ RUN mkdir -p /opt/idea
 RUN curl -L "https://download.jetbrains.com/product?code=IIC&latest&distribution=linux" \
 | tar -C /opt/idea --strip-components 1 -xzvf -
 
-# Add a binary to the PATH that points to the Intellij startup script.
+# Create a symbolic link in PATH that points to the Intellij startup script.
 RUN ln -s /opt/idea/bin/idea.sh /usr/bin/intellij-idea-community
 ```
