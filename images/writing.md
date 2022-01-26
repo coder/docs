@@ -90,7 +90,7 @@ Make sure that you replace `[IDE]` with the name of the IDE in lowercase and
 provide its
 [corresponding `[CODE]`](https://plugins.jetbrains.com/docs/marketplace/product-codes.html).
 
-More specifically, here's how to install IntelliJ IDEA Community Edition into your image:
+More specifically, here's how to install the IntelliJ IDE onto your image:
 
 ```Dockerfile
 # Dockerfile
