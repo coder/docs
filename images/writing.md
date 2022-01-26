@@ -65,9 +65,9 @@ Please note:
   and build your images locally. Note that this isn't usually necessary, even if
   your image installs and enables Docker.
 
-## Example: Installing an IntelliJ IDE
+## Example: Installing a JetBrains IDE
 
-This snippet shows you how to install an IntelliJ IDE onto your image so that
+This snippet shows you how to install a JetBrains IDE onto your image so that
 you can use it in your Coder workspace:
 
 ```Dockerfile
