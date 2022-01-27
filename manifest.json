@@ -37,6 +37,9 @@
         },
         {
           "path": "getting-started/docker.md"
+        },
+        {
+          "path": "getting-started/data-scientists.md"
         }
       ]
     },

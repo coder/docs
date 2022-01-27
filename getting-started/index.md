@@ -23,3 +23,6 @@ guides for both [Kubernetes deployments](developers.md) and
 deployment available to them, these end-to-end guides will walk them through
 logging in and getting set up with a sample project they can use to experience
 Coder.
+
+Additionally, we have a guide for those interested in leveraging Coder for data
+science, specifically using Python with Jupyter notebooks.
