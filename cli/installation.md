@@ -23,14 +23,24 @@ version number.
 brew install cdr/coder/coder-cli
 ```
 
-### Download (Windows, Linux, Mac)
+### Download (Linux, Mac)
 
 Download releases [from GitHub](https://github.com/coder/coder-cli/releases):
 
 1. Click a release and download the tar file for your operating system (ex:
-   coder-cli-linux-amd64.tar.gz)
+   `coder-cli-linux-amd64.tar.gz`)
 1. Extract the `coder` binary and copy it to a location you've added to your
    `PATH` environment variable
+
+### Download (Windows)
+
+1. Click a release (e.g., `coder-cli-windows.zip`) and download the file
+1. Unzip the file
+1. Copy the file to `%USERPROFILE%\bin`
+1. On the command-line interface, execute `coder.exe login`
+
+> Make sure that you have a user variable `PATH` that's set to
+> `%USERPROFILE%\bin`.
 
 ## Authenticate
 
