@@ -66,6 +66,8 @@ To import an image:
 
 1. Click **Import Image**.
 
+![Import data science image](../assets/getting-started/import-ds-image.png)
+
 ## Step 3: Create your workspace
 
 You will now create the workspace where you'll work on your development project.
@@ -110,3 +112,5 @@ At this point, you're ready to open up Jupyter to access your notebook.
 1. Click **Data Science Workflow.ipynb** to launch the notebook.
 
    You're now ready to proceed with work on the project.
+
+![Jupyter in the browser](../assets/getting-started/jupyter.png)
