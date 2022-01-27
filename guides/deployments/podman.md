@@ -11,6 +11,9 @@ containers specification. Podman is useful if you'd like an alternative to
 [CVM workspaces](../../admin/workspace-management/cvms/index.md) or if your
 Linux kernel doesn't support CVMs.
 
+> Please be aware that there are
+> [limitations related to running Podman in rootless mode](https://github.com/containers/podman/blob/main/rootless.md#shortcomings-of-rootless-podman).
+
 1. Install `smarter-device-manager` and expose the FUSE device through it. To do
    so, create a file called `smarter-device-manager.yaml` with the following
    contents:
@@ -22,7 +25,7 @@ Linux kernel doesn't support CVMs.
      name: smarter-device-manager
      labels:
        name: smarter-device-manager
-   
+
    ---
    apiVersion: v1
    kind: ResourceQuota
@@ -34,11 +37,11 @@ Linux kernel doesn't support CVMs.
        pods: 50
      scopeSelector:
        matchExpressions:
-       - operator: In
-         scopeName: PriorityClass
-         values:
-           - system-node-critical
-           - system-cluster-critical
+         - operator: In
+           scopeName: PriorityClass
+           values:
+             - system-node-critical
+             - system-cluster-critical
    ---
    apiVersion: v1
    kind: ConfigMap
@@ -47,9 +50,9 @@ Linux kernel doesn't support CVMs.
      namespace: smarter-device-manager
    data:
      conf.yaml: |+
-      - devicematch: ^fuse$
-        nummaxdevices: 50
-   
+       - devicematch: ^fuse$
+         nummaxdevices: 50
+
    ---
    apiVersion: apps/v1
    kind: DaemonSet
@@ -79,42 +82,42 @@ Linux kernel doesn't support CVMs.
          hostNetwork: true
          dnsPolicy: ClusterFirstWithHostNet
          containers:
-         - name: smarter-device-manager
-           image: registry.gitlab.com/arm-research/smarter/smarter-device-manager:v1.20.7
-           imagePullPolicy: IfNotPresent
-           securityContext:
-             allowPrivilegeEscalation: false
-             capabilities:
-               drop: ["ALL"]
-           resources:
-             limits:
-               cpu: 100m
-               memory: 15Mi
-             requests:
-               cpu: 10m
-               memory: 15Mi
-           volumeMounts:
-           - name: device-plugin
-             mountPath: /var/lib/kubelet/device-plugins
-           - name: dev-dir
-             mountPath: /dev
-           - name: sys-dir
-             mountPath: /sys
-           - name: config
-             mountPath: /root/config
+           - name: smarter-device-manager
+             image: registry.gitlab.com/arm-research/smarter/smarter-device-manager:v1.20.7
+             imagePullPolicy: IfNotPresent
+             securityContext:
+               allowPrivilegeEscalation: false
+               capabilities:
+                 drop: ["ALL"]
+             resources:
+               limits:
+                 cpu: 100m
+                 memory: 15Mi
+               requests:
+                 cpu: 10m
+                 memory: 15Mi
+             volumeMounts:
+               - name: device-plugin
+                 mountPath: /var/lib/kubelet/device-plugins
+               - name: dev-dir
+                 mountPath: /dev
+               - name: sys-dir
+                 mountPath: /sys
+               - name: config
+                 mountPath: /root/config
          volumes:
-         - name: device-plugin
-           hostPath:
-             path: /var/lib/kubelet/device-plugins
-         - name: dev-dir
-           hostPath:
-             path: /dev
-         - name: sys-dir
-           hostPath:
-             path: /sys
-         - name: config
-           configMap:
-             name: smarter-device-manager
+           - name: device-plugin
+             hostPath:
+               path: /var/lib/kubelet/device-plugins
+           - name: dev-dir
+             hostPath:
+               path: /dev
+           - name: sys-dir
+             hostPath:
+               path: /sys
+           - name: config
+             configMap:
+               name: smarter-device-manager
          terminationGracePeriodSeconds: 30
    ```
 
