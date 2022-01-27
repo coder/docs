@@ -36,10 +36,11 @@ Download releases [from GitHub](https://github.com/coder/coder-cli/releases):
 
 1. Click a release (e.g., `coder-cli-windows.zip`) and download the file
 1. Unzip the file
-1. Copy the file to `%USERPROFILE%\bin`
+1. Copy the file to a location of your choosing (for example, `%USERPROFILE%\bin`).
 1. On the command-line interface, execute `coder.exe login`
 
-> Make sure that you have a user variable `PATH` that's set to
+> Make sure that your user's `PATH` environment variable 
+> contains the location you chose.
 > `%USERPROFILE%\bin`.
 
 ## Authenticate
