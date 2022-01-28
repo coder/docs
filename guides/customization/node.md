@@ -268,9 +268,9 @@ docker push [username]/gatsby-blog
 ## Step 6: Import the image to Coder and create the workspace
 
 At this point, you can [import your image](../../images/importing.md) and use it
-to [create a new workspace](../../workspaces/getting-started.md). When you've
-completed these steps, you can launch your workspace, which contains all of the
-required tools and dependencies.
+to [create a new workspace](../../workspaces/create.md). When you've completed
+these steps, you can launch your workspace, which contains all of the required
+tools and dependencies.
 
 > See our [sample repo](https://github.com/bpmct/company-blog) for the example
 > project and image configured for Coder.

@@ -1,6 +1,6 @@
 ---
-title: "Getting started"
-description: "Learn how to develop in a workspace."
+title: "Create a workspace"
+description: "Learn how to create and develop in a workspace."
 ---
 
 This article walks you through creating a new workspace using a pre-defined

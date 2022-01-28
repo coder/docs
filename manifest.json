@@ -33,7 +33,7 @@
       "path": "./workspaces/index.md",
       "children": [
         {
-          "path": "./workspaces/getting-started.md"
+          "path": "./workspaces/create.md"
         },
         {
           "path": "./workspaces/lifecycle.md"
