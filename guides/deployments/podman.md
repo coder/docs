@@ -179,12 +179,12 @@ Linux kernel doesn't support CVMs.
                privileged:
                    policy: read
                resource-requests:
-               policy: write
-               value:
+                policy: write
+                value:
                    smarter-devices/fuse: "1"
                resource-limits:
-               policy: write
-               value:
+                policy: write
+                value:
                    smarter-devices/fuse: "1"
                runtime-class-name:
                    policy: read
