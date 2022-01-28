@@ -91,17 +91,21 @@ For example:
 docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.27.0
 ```
 
-## External PostgreSQL
+## External PostgreSQL database
 
-To use an external database, you must disable the embedded database with the environment variable `DB_EMBEDDED`. Then pass in the database connection information to the remote PostgreSQL.
+If you'd like to use an external database, you must:
+
+1. Disable the embedded database with the environment variable `DB_EMBEDDED`
+1. pass in the database connection information to the external PostgreSQL
+   database:
 
 ```bash
 docker run --rm -it -p 7080:7080 \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v ~/.coder:/var/run/coder \
-    # Disable using the embeded DB
+    # Disable using the embedded DB
     -e DB_EMBEDDED="" \
-    # Change these values to match your database
+    # Change these values to match those for your database
     -e DB_HOST=127.0.0.1 \
     -e DB_PORT=5432 \
     -e DB_USER=postgres \
@@ -111,12 +115,16 @@ docker run --rm -it -p 7080:7080 \
     codercom/coder:1.27.0
 ```
 
-Client TLS certificates can also be supported using `DB_SSL_MODE=verify-full`. Ensure you mount the certs into the container `-v <local_certs>:/certs`. Then specify the certificate path in the environment variables.
+Coder supports client TLS certificates using `DB_SSL_MODE=verify-full`. Ensure
+that you mount the certs into the container (add the flag
+`-v <local_certs>:/certs`). Then, specify the certificate path using environment
+variables:
 
- - `-e DB_CERT=/certs/client.crt` : The path to the client certificate signed by the CA.
- - `-e DB_KEY=/certs/client.key` : The path to the client secret.
- - `-e DB_ROOT_CERT=/certs/myCA.crt` : The path to the trusted CA cert.
-
+| **Flag/environment variable**     | **Description**                              |
+| --------------------------------- | -------------------------------------------- |
+| `-e DB_CERT=/certs/client.crt`    | The path to the client cert signed by the CA |
+| `-e DB_KEY=/certs/client.key`     | The path to the client secret                |
+| `-e DB_ROOT_CERT=/certs/myCA.crt` | The path to the trusted CA cert              |
 
 ## Admin password
 
