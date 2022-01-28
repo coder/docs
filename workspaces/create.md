@@ -86,7 +86,7 @@ You can also specify the resources Coder should allocate.
 > Coder displays a warning if you choose your resource settings and they're less
 > than the image-recommended default, but you can still create the workspace.
 
-## 3. Start Coding
+## 3. Start coding
 
 Once you've created a workspace, it's time to hop in. Read more about how to
 [connect your favorite editor or IDE](./editors.md) with your new workspace!
