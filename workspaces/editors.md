@@ -149,6 +149,11 @@ The symlink names supported by Coder are:
 - `studio` (Android Studio)
 - `webstorm`
 
+## System requirements
+
+The resources required depends on your workspace-specific requirements. We
+recommend reviewing the documentation for your IDE to obtain a starting point.
+
 ### Known issues
 
 - Window dragging behavior can misalign with mouse movements
