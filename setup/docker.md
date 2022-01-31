@@ -120,11 +120,15 @@ that you mount the certs into the container (add the flag
 `-v <local_certs>:/certs`). Then, specify the certificate path using environment
 variables:
 
+<!-- markdownlint-disable -->
+
 | **Flag/environment variable**     | **Description**                              |
 | --------------------------------- | -------------------------------------------- |
 | `-e DB_CERT=/certs/client.crt`    | The path to the client cert signed by the CA |
 | `-e DB_KEY=/certs/client.key`     | The path to the client secret                |
 | `-e DB_ROOT_CERT=/certs/myCA.crt` | The path to the trusted CA cert              |
+
+<!-- markdownlint-enable -->
 
 ## Admin password
 
