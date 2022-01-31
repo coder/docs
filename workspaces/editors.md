@@ -149,14 +149,10 @@ The symlink names supported by Coder are:
 - `studio` (Android Studio)
 - `webstorm`
 
-### System requirements
+## System requirements
 
-We recommend running the JetBrains IDE in an workspace with the following
-minimum resources but the resources required depends on your workspace-specific
-requirements:
-
-- 8 GB RAM
-- 4 CPU cores
+The resources required depends on your workspace-specific requirements. We
+recommend reviewing the documentation for your IDE to obtain a starting point.
 
 ### Known issues
 

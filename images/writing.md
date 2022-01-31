@@ -65,9 +65,9 @@ Please note:
   and build your images locally. Note that this isn't usually necessary, even if
   your image installs and enables Docker.
 
-## Example: Installing an IntelliJ IDE
+## Example: Installing a JetBrains IDE
 
-This snippet shows you how to install an IntelliJ IDE onto your image so that
+This snippet shows you how to install a JetBrains IDE onto your image so that
 you can use it in your Coder workspace:
 
 ```Dockerfile
@@ -103,6 +103,6 @@ RUN mkdir -p /opt/idea
 RUN curl -L "https://download.jetbrains.com/product?code=IIC&latest&distribution=linux" \
 | tar -C /opt/idea --strip-components 1 -xzvf -
 
-# Add a binary to the PATH that points to the Intellij startup script.
+# Create a symbolic link in PATH that points to the Intellij startup script.
 RUN ln -s /opt/idea/bin/idea.sh /usr/bin/intellij-idea-community
 ```
