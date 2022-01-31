@@ -6,10 +6,12 @@ description: Get started with Coder as a data scientist.
 This article will walk you through the process of getting started with a Coder
 workspace capable of supporting data science projects. You'll learn how to:
 
-- Connect Coder to your Git provider;
-- Create a workspace with Jupyter and other data science packages present;
+- Connect Coder to your Git provider (this example assumes that you're using
+  GitHub, but Coder supports GitLab and Bitbucket as well));
+- Create a workspace with Jupyter Notebook and other data science packages
+  present;
 - Add a sample project to your workspace, specifically
-  [one in Jupyter notebook form using IMDB movie data](https://github.com/khorne3/data-science-imdb-sample)
+  [one as a Jupyter Notebook using IMDB movie data](https://github.com/khorne3/data-science-imdb-sample);
 - Create a dev URL and preview changes to your project.
 
 ## Prerequisites
@@ -19,7 +21,7 @@ you have the credentials needed to access the deployment.
 
 ## Step 1: Log in and connect Coder to your Git provider
 
-In this step, you'll log into Coder and connect and authenticate with your Git
+In this step, you'll log into Coder, then link your Coder account with your Git
 provider. This will allow you to do things like pull repositories and push
 changes.
 
@@ -37,8 +39,9 @@ changes.
 
    ![Link GitHub account](../assets/getting-started/linked-accounts.png)
 
-   If your site manager has _not_ configured OAuth, go to **SSH keys**. Copy
-   your public SSH key and
+   If your site manager has _not_ configured OAuth or you are using a Git
+   provider that Coder does not support, go to **SSH keys**. Copy your public
+   SSH key and
    [provide it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
    ![Add SSH key](../assets/getting-started/ssh-keys.png)
@@ -48,8 +51,8 @@ changes.
 At this point, you'll import your image, which you can think of as a template
 for your workspace. This template contains the language version, tooling, and
 dependencies you need to work on the project. In this case, the image also
-contains a `configure` file that will clone the data science project from GitHub
-to your workspace.
+contains a `configure` script that will clone the data science project from
+GitHub to your workspace.
 
 To import an image:
 
@@ -92,8 +95,8 @@ You will now create the workspace where you'll work on your development project.
    allowing you to see the main workspace page. You can track the workspace
    build process using the **Build log** on the right-hand side.
 
-   Due to the number of data science packages that are present in the image,
-   this might take few minutes.
+   Due to the number of packages present in the image, this might take few
+   minutes.
 
 ![Create a workspace](../assets/getting-started/create-ds-workspace.png)
 
