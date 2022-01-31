@@ -229,7 +229,7 @@ tailscale status
 `tailscale` should maintain connectivity across workspace rebuilds, since we
 chose to store the state file in a persistent volume.
 
-[create a workspace]: ../../workspaces/getting-started.md
+[create a workspace]: ../../workspaces/create.md
 
 ## Step 3: (Optional) Test Tailscale services
 

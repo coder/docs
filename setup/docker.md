@@ -56,9 +56,9 @@ Coder requires x86-64 and does not support ARM-based processors at this time.
 1. Launch a web browser and navigate to the URL provided by Coder (e.g.,
    `http://localhost:7080`). Log in using the credentials Coder provided.
 
-1. At this point, you can [create a workspace](../workspaces/getting-started.md)
-   using one of the **Packaged** images by clicking on **New workspace** in the
-   center of the UI.
+1. At this point, you can [create a workspace](../workspaces/create.md) using
+   one of the **Packaged** images by clicking on **New workspace** in the center
+   of the UI.
 
 At this point, you're ready to use your workspace. See our
 [getting started guide](../getting-started/docker.md) for detailed instructions
@@ -113,3 +113,4 @@ Currently, Coder for Docker does not support:
   Docker, you'll need to run Coder behind a reverse proxy (e.g., Caddy or NGINX)
   and terminate TLS at that point. See
   [our guide](../guides/tls-certificates/docker-tls.md) for information.
+- Air-gapped deployments/offline installs

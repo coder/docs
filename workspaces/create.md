@@ -1,6 +1,6 @@
 ---
-title: "Getting started"
-description: "Learn how to develop in a workspace."
+title: "Create a workspace"
+description: "Learn how to create and develop in a workspace."
 ---
 
 This article walks you through creating a new workspace using a pre-defined
@@ -86,7 +86,7 @@ You can also specify the resources Coder should allocate.
 > Coder displays a warning if you choose your resource settings and they're less
 > than the image-recommended default, but you can still create the workspace.
 
-## 3. Start Coding
+## 3. Start coding
 
 Once you've created a workspace, it's time to hop in. Read more about how to
 [connect your favorite editor or IDE](./editors.md) with your new workspace!

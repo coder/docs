@@ -112,7 +112,7 @@ If you use the Enterprise Base image as your starting point:
 
 Once you've created your image, you can [import it](../../images/importing.md)
 for use. When creating a workspace using that image, be sure to
-[create a CVM-enabled workspace](../../workspaces/getting-started.md).
+[create a CVM-enabled workspace](../../workspaces/create.md).
 
 ## Step 5: Define the workspace-startup configurations using dotfiles
 

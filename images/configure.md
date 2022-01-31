@@ -95,7 +95,7 @@ docker push cdr/config
 You can test your setup by performing the following steps:
 
 1. [Importing your image](importing.md)
-1. [Creating your workspace using the newly imported image](../workspaces/getting-started.md)
+1. [Creating your workspace using the newly imported image](../workspaces/create.md)
 
 Coder will run the configure file during the build process, and you can verify
 this using the **Workspace Overview** page (Coder runs the configure file as the
