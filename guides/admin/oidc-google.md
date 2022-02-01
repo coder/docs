@@ -16,12 +16,6 @@ feature requires you to provide three pieces of information from Google:
 This guide will show you how to set up an app on Google and obtain the
 information you need to provide to Coder.
 
-## Prerequisites
-
-Before proceeding, please ensure that you've
-[enabled and configured the Identity Platform](https://cloud.google.com/identity-platform/docs/web/oidc)
-for your Google Cloud account.
-
 ## Step 1: Create the OAuth consent screen
 
 1. Navigate to your [GCP console](https://console.cloud.google.com).
@@ -64,7 +58,7 @@ Now that you've registered an app, you can provide the relevant **Client ID**,
 
 1. Provide the **Client ID** and **Client Secret** supplied by Google.
 
-1. For the **Issuer**, provide `accounts.google.com`.
+1. For the **Issuer**, provide `https://accounts.google.com`.
 
 1. Click **Save preferences**.
 
