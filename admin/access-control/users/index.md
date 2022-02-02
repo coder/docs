@@ -26,6 +26,18 @@ which they can use with their email to access their new account. For increased
 security, Coder prompts the new user to change their password immediately after
 they log in.
 
+## Changing a user's role
+
+Coder comes with built-in [user roles](user-roles.md) that define what actions a
+user can take in the deployment.
+
+By default, all new users are assigned the **Member** role. These users can be
+upgraded to **Auditor** or **Site Manager** by another user with administrative
+privileges.
+
+To change a user's role, go to **Manage** > **Users**. Find the user and use the
+**Site Role** drop-down to change the assigned role.
+
 ## Deleting a user
 
 To delete a user:

@@ -572,12 +572,3 @@ roles, but a summary of the roles are:
         </tr>
     </tbody>
 </table>
-
-## Changing a user's role
-
-By default, all new users are assigned the **Member** role. These users can be
-upgraded to **Auditor** or **Site Manager** by another user with administrative
-privileges.
-
-To change a user's role, go to **Manage** > **Users**. Find the user and use the
-**Site Role** drop-down to change the assigned role.

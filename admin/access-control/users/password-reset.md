@@ -3,9 +3,14 @@ title: Password reset
 description: Learn how to reset Coder user passwords.
 ---
 
-To reset a user's password:
+This article walks you through resetting a user password, as well as resetting a
+site admin's password.
 
-1. Go to **Manage** > **Users**.
+## Resetting a user password
+
+To reset a non-site admin's password:
+
+1. Log into Coder as a site manager, and go to **Manage** > **Users**.
 1. Find the user whose password you want to reset and click the vertical
    ellipsis to the right.
 1. Click **Reset password**. Coder will display a temporary password that you
@@ -16,20 +21,23 @@ To reset a user's password:
 When the user logs in using the temporary password, Coder will prompt them to
 change it.
 
-> You can only reset passwords for users using **built-in authentication**.
+> You can only reset passwords for users using **built-in authentication** using
+> the Coder UI.
 
 ## Resetting the site admin password
 
-If you need to reset the password for a site admin, you can do so using coderd's
-**reset-admin-password** command.
+If you need to reset the password for a site admin, you can do so using
+`coderd`'s **reset-admin-password** command.
 
-> You should have the
-> [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) dependency
-> installed from when you first set up Coder; if not, please sure to install it
-> before proceeding. If you are using Docker, follow
+> This process requires the
+> [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) dependency,
+> which should have been installed when you first set up Coder; if not, please
+> sure to install it before proceeding.
+>
+> If you are using Docker, follow
 > [these instructions](../../setup/docker#admin-password) instead.
 
-To reset the password, run the following in the terminal:
+To reset the site admin password, run the following in the terminal:
 
 ```console
 # point to the coder namespace
