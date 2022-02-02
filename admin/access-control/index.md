@@ -22,7 +22,7 @@ management to the OIDC provider of your choice (e.g., Google).
 ## Managing authentication to Coder
 
 To manage the ways that users can login to Coder, see
-[Managing authentication](./manage.md)
+[Managing authentication](manage.md)
 
 ## See also
 

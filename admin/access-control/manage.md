@@ -55,9 +55,9 @@ have OIDC configured.
 ![Login page with built-in authentication
 disabled](../../assets/admin/disable-built-in-auth.png)
 
-[Site managers](user-roles#site-manager-permissions) can still use built-in
-authentication. To view this option on the login page, add the following query
-parameter to the URL you use to access your Coder deployment:
+[Site managers](users/user-roles#site-manager-permissions) can still use
+built-in authentication. To view this option on the login page, add the
+following query parameter to the URL you use to access your Coder deployment:
 
 ```text
 /login?showAllAuthenticationTypes=1

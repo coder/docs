@@ -16,7 +16,7 @@ To reset a non-site admin's password:
 1. Click **Reset password**. Coder will display a temporary password that you
    can provide to the user. Click **Reset Password** to proceed with the reset.
 
-![Confirm password reset](../../assets/admin/reset-password.png)
+![Confirm password reset](../../../assets/admin/reset-password.png)
 
 When the user logs in using the temporary password, Coder will prompt them to
 change it.
@@ -35,7 +35,7 @@ If you need to reset the password for a site admin, you can do so using
 > sure to install it before proceeding.
 >
 > If you are using Docker, follow
-> [these instructions](../../setup/docker#admin-password) instead.
+> [these instructions](../../../setup/docker#admin-password) instead.
 
 To reset the site admin password, run the following in the terminal:
 
