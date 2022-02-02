@@ -4,7 +4,7 @@ description: Learn how to resolve issues with resetting your admin password.
 ---
 
 When
-[resetting your Coder admin password](../../admin/access-control/password-reset.md#resetting-the-site-admin-password)
+[resetting your Coder admin password](../../admin/access-control/users/password-reset.md#resetting-the-site-admin-password)
 in the terminal, you may encounter the following error:
 
 ```console
