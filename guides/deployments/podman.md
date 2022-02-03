@@ -14,18 +14,6 @@ Linux kernel doesn't support CVMs.
 > Please be aware that there are
 > [limitations related to running Podman in rootless mode](https://github.com/containers/podman/blob/main/rootless.md#shortcomings-of-rootless-podman).
 
-> **Note**: Running Podman in rootless mode requires a FUSE device to implement
-> the overlay filesystem (fuse-overlayfs) in unprivileged mode. The following
-> directions work by mounting the FUSE device from the host into workspace
-> containers, which conflicts with the isolation provided by SELinux and
-> AppArmor.
->
-> For systems running AppArmor (typically Debian- and Ubuntu-derived systems),
-> please disable AppArmor before proceeding.
->
-> For systems running SELinux (typically Fedora-, CentOS-, and Red Hat-based
-> systems), please disable SELinux or set it to `permissive` mode.
-
 1. Install `smarter-device-manager` and expose the FUSE device through it. To do
    so, create a file called `smarter-device-manager.yaml` with the following
    contents:
@@ -140,10 +128,10 @@ Linux kernel doesn't support CVMs.
    kubectl apply -f ./smarter-device-manager.yaml
    ```
 
-   The example `DaemonSet` includes a `nodeSelector` that constrains the
-   device plugin to nodes with the `smarter-device-manager` label set to
-   `enabled`. Label the nodes that will include the FUSE device by using the
-   following command, or remove the `nodeSelector` from the manifest:
+   The example `DaemonSet` includes a `nodeSelector` that constrains the device
+   plugin to nodes with the `smarter-device-manager` label set to `enabled`.
+   Label the nodes that will include the FUSE device by using the following
+   command, or remove the `nodeSelector` from the manifest:
 
    ```console
    kubectl get nodes
@@ -160,59 +148,59 @@ Linux kernel doesn't support CVMs.
    ```yaml
    version: "0.2"
    workspace:
-       configure:
-           start:
-               policy: write
-       dev-urls:
+     configure:
+       start:
+         policy: write
+     dev-urls:
+       policy: write
+     specs:
+       aws-ec2-docker:
+         container-image:
            policy: write
-       specs:
-           aws-ec2-docker:
-               container-image:
-                   policy: write
-               disk-size:
-                   policy: write
-               instance-type:
-                   policy: write
-           docker:
-               container-based-vm:
-                   policy: write
-               image:
-                   policy: write
-           kubernetes:
-               annotations:
-                   policy: read
-               container-based-vm:
-                   policy: write
-               cpu:
-                   policy: write
-               disk:
-                   policy: write
-               env:
-                   policy: write
-               gpu-count:
-                   policy: write
-               image:
-                   policy: write
-               labels:
-                   policy: read
-               memory:
-                   policy: write
-               node-selector:
-                   policy: read
-               privileged:
-                   policy: read
-               resource-requests:
-                   policy: write
-                   value:
-                       smarter-devices/fuse: "1"
-               resource-limits:
-                   policy: write
-                   value:
-                       smarter-devices/fuse: "1"
-               runtime-class-name:
-                   policy: read
-               tolerations:
-                   policy: read
+         disk-size:
+           policy: write
+         instance-type:
+           policy: write
+       docker:
+         container-based-vm:
+           policy: write
+         image:
+           policy: write
+       kubernetes:
+         annotations:
+           policy: read
+         container-based-vm:
+           policy: write
+         cpu:
+           policy: write
+         disk:
+           policy: write
+         env:
+           policy: write
+         gpu-count:
+           policy: write
+         image:
+           policy: write
+         labels:
+           policy: read
+         memory:
+           policy: write
+         node-selector:
+           policy: read
+         privileged:
+           policy: read
+         resource-requests:
+           policy: write
+           value:
+             smarter-devices/fuse: "1"
+         resource-limits:
+           policy: write
+           value:
+             smarter-devices/fuse: "1"
+         runtime-class-name:
+           policy: read
+         tolerations:
+           policy: read
    ```
 
 1. In the Coder UI, navigate to **Manage** > **Admin** > **Templates** if you
@@ -221,6 +209,19 @@ Linux kernel doesn't support CVMs.
 
    With the above template policy, all workspaces will acquire a FUSE device,
    which enables Podman to operate in rootless mode.
+
+## For systems running AppArmor and SELinux
+
+Running Podman in rootless mode requires a FUSE device to implement the overlay
+filesystem (fuse-overlayfs) in unprivileged mode. The following directions work
+by mounting the FUSE device from the host into workspace containers, which
+conflicts with the isolation provided by SELinux and AppArmor.
+
+For systems running AppArmor (typically Debian- and Ubuntu-derived systems),
+please disable AppArmor before proceeding.
+
+For systems running SELinux (typically Fedora-, CentOS-, and Red Hat-based
+systems), please disable SELinux or set it to `permissive` mode.
 
 ## Testing
 
