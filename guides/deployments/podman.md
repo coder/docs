@@ -14,6 +14,18 @@ Linux kernel doesn't support CVMs.
 > Please be aware that there are
 > [limitations related to running Podman in rootless mode](https://github.com/containers/podman/blob/main/rootless.md#shortcomings-of-rootless-podman).
 
+> **Note**: Running Podman in rootless mode requires a FUSE device to implement
+> the overlay filesystem (fuse-overlayfs) in unprivileged mode. The following
+> directions work by mounting the FUSE device from the host into workspace
+> containers, which conflicts with the isolation provided by SELinux and
+> AppArmor.
+>
+> For systems running AppArmor (typically Debian- and Ubuntu-derived systems),
+> please disable AppArmor before proceeding.
+>
+> For systems running SELinux (typically Fedora-, CentOS-, and Red Hat-based
+> systems), please disable SELinux or set it to `permissive` mode.
+
 1. Install `smarter-device-manager` and expose the FUSE device through it. To do
    so, create a file called `smarter-device-manager.yaml` with the following
    contents:
@@ -42,6 +54,7 @@ Linux kernel doesn't support CVMs.
            values:
              - system-node-critical
              - system-cluster-critical
+
    ---
    apiVersion: v1
    kind: ConfigMap
@@ -127,6 +140,16 @@ Linux kernel doesn't support CVMs.
    kubectl apply -f ./smarter-device-manager.yaml
    ```
 
+   The example `DaemonSet` includes a `nodeSelector` that constrains the
+   device plugin to nodes with the `smarter-device-manager` label set to
+   `enabled`. Label the nodes that will include the FUSE device by using the
+   following command, or remove the `nodeSelector` from the manifest:
+
+   ```console
+   kubectl get nodes
+   kubectl label node <node name> smarter-device-manager=enabled
+   ```
+
 1. If you haven't already done so for your Coder deployment, enable workspace
    templates. To do so, go to **Manage** > **Admin** > **Templates**, and set
    the **Enable workspace templates** to **On**. Click **Save**.
@@ -179,13 +202,13 @@ Linux kernel doesn't support CVMs.
                privileged:
                    policy: read
                resource-requests:
-                policy: write
-                value:
-                   smarter-devices/fuse: "1"
+                   policy: write
+                   value:
+                       smarter-devices/fuse: "1"
                resource-limits:
-                policy: write
-                value:
-                   smarter-devices/fuse: "1"
+                   policy: write
+                   value:
+                       smarter-devices/fuse: "1"
                runtime-class-name:
                    policy: read
                tolerations:
@@ -196,10 +219,13 @@ Linux kernel doesn't support CVMs.
    haven't already done so. Under **template policy**, upload the configuration
    file you created in the previous step. Click **Save**.
 
-1. If you have SELinux and AppArmor enabled, please disable both.
+   With the above template policy, all workspaces will acquire a FUSE device,
+   which enables Podman to operate in rootless mode.
 
 ## Testing
 
 At this point, you can create a workspace that leverages Podman. If you need a
 sample Podman image, you can obtain one
 [from RedHat](https://quay.io/repository/podman/stable?tag=latest&tab=tags).
+When using this image, switch to the unprivileged `podman` user before creating
+containers to ensure that `podman` runs in rootless mode.
