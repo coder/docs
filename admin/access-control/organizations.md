@@ -3,9 +3,9 @@ title: Organization roles
 description: Learn how to manage organization roles.
 ---
 
-Like [User roles](users/user-roles.md), members of an
-[organization](../organizations.md) can be assigned different roles. There are
-two roles available:
+Members of an [organization](../organizations.md) can be assigned different
+roles, which function like [user roles](users/user-roles.md). There are two
+roles available:
 
 <table>
     <thead>

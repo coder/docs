@@ -211,7 +211,7 @@
               "path": "./admin/access-control/users/index.md",
               "children": [
                 {
-                  "path": "./admin/access-control/users/user-rules.md"
+                  "path": "./admin/access-control/users/user-roles.md"
                 },
                 {
                   "path": "./admin/access-control/users/password-reset.md"
