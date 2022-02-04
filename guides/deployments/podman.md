@@ -142,8 +142,27 @@ Linux kernel doesn't support CVMs.
    templates. To do so, go to **Manage** > **Admin** > **Templates**, and set
    the **Enable workspace templates** to **On**. Click **Save**.
 
-1. Create a YAML file with the following contents (the instructions ask the
-   cluster to request the FUSE device for each workspace):
+1. Create a
+   [workspace configuration file](../../workspaces/workspace-templates/templates.md)
+   that includes instructions for resource requests and resource limits (the
+   instructions ask the cluster to request the FUSE device for each workspace):
+
+   ```yaml
+   version: "0.2"
+   workspace:
+     specs:
+       kubernetes:
+         resource-requests:
+           policy: write
+           value:
+             smarter-devices/fuse: "1"
+         resource-limits:
+           policy: write
+           value:
+             smarter-devices/fuse: "1"
+   ```
+
+   A complete workspace template might look something like
 
    ```yaml
    version: "0.2"
