@@ -106,6 +106,8 @@ to create single-page applications.
 
    ![View files](../assets/getting-started/view-files.png)
 
+   You're now ready to make changes to the application.
+
 ## Step 4: Preview your app and view changes live
 
 Dev URLs allow you to access the web services you're developing in your
