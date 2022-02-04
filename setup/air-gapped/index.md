@@ -138,8 +138,7 @@ platform images are hosted in Coder's Docker Hub repo.
    See [configuring forward and reverse proxies] for additional information
    about Coder's support for network proxies.
 
-   [configuring forward and reverse proxies]:
-     ../../guides/admin/deployments/proxy.md
+   [configuring forward and reverse proxies]: ../../guides/deployments/proxy.md
 
 1. Once all of the resources are in your air-gapped network, run the following
    to deploy Coder to your Kubernetes cluster:

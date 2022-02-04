@@ -77,7 +77,7 @@ the `coderd.reverseProxy` setting.
 By default, to prevent clients from spoofing their originating IP addresses
 using the `X-Forwarded-For` or similar headers, Coder will ignore all such
 headers and remove them from proxied connections to
-[Dev URL services](../../devurls.md).
+[Dev URL services](../../workspaces/devurls.md).
 
 Specify a list of trusted origin addresses (those of the reverse proxy) in CIDR
 format as follows:
