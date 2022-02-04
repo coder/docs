@@ -37,6 +37,11 @@ the Authentication tab, provide the following parameters:
 If you do not have values for any of these parameters, you can obtain them from
 your OIDC provider.
 
+Optionally, you can specify **Additional Scopes** that Coder should request from
+the authentication provider. By default, Coder requests the scopes `openid`,
+`email`, and `profile`. Consult the documentation for your authentication
+provider for information on which additional scopes are supported.
+
 ## Disable built-in authentication
 
 You can disable built-in authentication as an option for accessing Coder if you
@@ -48,9 +53,9 @@ disabled](../../assets/admin/disable-built-in-auth.png)
 To do so, navigate to **Manage** > **Admin** > **Authentication**. Then, toggle
 **Disable built-in authentication** to **On** and click **Save preferences**.
 
-[Site managers](user-roles#site-manager-permissions) can still
-use built-in authentication. To view this option on the login page, add the
-following query parameter to the URL you use to access your Coder deployment:
+[Site managers](user-roles#site-manager-permissions) can still use built-in
+authentication. To view this option on the login page, add the following query
+parameter to the URL you use to access your Coder deployment:
 
 ```text
 /login?showAllAuthenticationTypes=1
