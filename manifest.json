@@ -441,6 +441,9 @@
               "path": "./guides/deployments/podman.md"
             },
             {
+              "path": "./guides/deployments/proxy.md"
+            },
+            {
               "path": "./guides/deployments/teardown.md"
             },
             {

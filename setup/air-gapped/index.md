@@ -126,12 +126,20 @@ platform images are hosted in Coder's Docker Hub repo.
      proxy:
        http: http://proxy.internal:8888
        exempt: cluster.local
+
    postgres:
      default:
        image: my-registry.com/coderenvs/timescale:<version>
+
    envbox:
      image: my-registry.com/coderenvs/envbox:<version>
    ```
+
+   See [configuring forward and reverse proxies] for additional information
+   about Coder's support for network proxies.
+
+   [configuring forward and reverse proxies]:
+     ../../guides/admin/deployments/proxy.md
 
 1. Once all of the resources are in your air-gapped network, run the following
    to deploy Coder to your Kubernetes cluster:
