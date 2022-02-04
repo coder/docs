@@ -153,17 +153,17 @@ The follow steps show you how to push your app to a newly created GitHub repo.
 1. Provide a **repository name** and click **Create repository**.
 
 1. Return to your workspace, run the following in your terminal to add a remote
-   to your GitHub repo, change the primary branch namae to `main`, and push the
+   to your GitHub repo, change the primary branch name to `main`, and push the
    contents to your newly created repo:
 
    ```console
-   git remote add origin https://github.com/khorne3/testx3.git
+   git remote add origin https://github.com/<username>/<repoName>.git
    git branch -M main
-   git push -u origin main
+   git push origin main
    ```
 
 1. Within the IDE window (near the top), you'll be prompted to log in to GitHub
-   by providing your username and password.
+   by providing your username and password/personal access token.
 
 1. Next, Code Web will display an alert that says the GitHub extension wants to
    sign in; click **Allow** to proceed.
