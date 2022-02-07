@@ -40,7 +40,7 @@ your OIDC provider.
 Optionally, you can specify **Additional Scopes** that Coder should request from
 the authentication provider. By default, Coder requests the scopes `openid`,
 `email`, and `profile`. Consult the documentation for your authentication
-provider for information on which additional scopes are supported.
+provider for information on which additional scopes they support.
 
 ## Disable built-in authentication
 
