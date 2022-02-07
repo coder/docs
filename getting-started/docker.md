@@ -9,8 +9,10 @@ You'll learn how to:
 
 - Connect Coder to your Git provider;
 - Create a workspace;
-- Add a sample project to your workspace;
-- Create a dev URL and preview changes to your project.
+- Add [Create React App](https://create-react-app.dev/) to your workspace, which
+  will allow you to create a sample single-page application that you can modify;
+- Create a dev URL and preview changes to your project;
+- Push your changes to a GitHub repo.
 
 ## Prerequisites
 
@@ -31,13 +33,7 @@ changes.
 
 1. Provide Coder with your SSH key to connect and authenticate to GitHub.
 
-   If your site manager has configured OAuth, go to **Linked Accounts** and
-   follow the on-screen instructions to link your GitHub account.
-
-   ![Link GitHub account](../assets/getting-started/linked-accounts.png)
-
-   If your site manager has _not_ configured OAuth, go to **SSH keys**. Copy
-   your public SSH key and
+   Go to **SSH keys**. Copy your public SSH key and
    [provide it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
    ![Add SSH key](../assets/getting-started/ssh-keys.png)
@@ -53,7 +49,7 @@ You will now create the workspace where you'll work on your development project.
 1. Provide a **Workspace Name**.
 
 1. In the **Image** section, click **Packaged** (this tab contains
-   Coder-provided images hosted in a Docker registry). Select **Ubuntu**. This
+   Coder-provided images hosted in a Docker registry). Select **NodeJS**. This
    will populate the form in the **Import** tab.
 
 1. Under **Workspace providers**, leave the default option (which is **Docker**)
@@ -85,15 +81,15 @@ sample project to your workspace.
 1. Click the hamburger icon in the top right, and select **Terminal** > **New
    Terminal** to open a new terminal.
 
-1. Clone the `create-react-app` repository:
+1. You're now ready to create a demo app that you can modify:
 
    ```console
-   git clone git@github.com:facebook/create-react-app.git
+   npx create-react-app my-app
+   cd my-app
    ```
 
-   Once you've cloned the repository, you can click the **Explorer** icon and
-   expand the **create-react-app** folder in the left-have nav bar to see the
-   contents of the repo.
+   Once done, you can expand the `my-app` folder in the left-have nav bar to see
+   its contents:
 
    ![View files](../assets/getting-started/view-files.png)
 
@@ -118,8 +114,6 @@ specified and renders a browser link you can use to view your application.
    Web window and running the following in the terminal:
 
    ```console
-    npx create-react-app my-app
-    cd my-app
     npm start
    ```
 
@@ -133,3 +127,32 @@ specified and renders a browser link you can use to view your application.
    preview will update.
 
    ![Preview changes](../assets/getting-started/hello-world.png)
+
+## Step 5: Push your repo to GitHub
+
+The follow steps show you how to push your app to a newly created GitHub repo.
+
+1. Log in to GitHub and navigate to
+   [Create a new repository](https://github.com/new).
+
+1. Provide a **repository name** and click **Create repository**.
+
+1. Return to your workspace, run the following in your terminal to add a remote
+   to your GitHub repo, change the primary branch name to `main`, and push the
+   contents to your newly created repo:
+
+   ```console
+   git remote add origin https://github.com/<username>/<repoName>.git
+   git branch -M main
+   git push origin main
+   ```
+
+1. Next, Code Web will display an alert that says the GitHub extension wants to
+   sign in; click **Allow** to proceed.
+
+1. Within the IDE window (near the top), you'll be prompted to provide your
+   GitHub Personal Access token
+
+   ![GitHub Personal Access Token](../assets/getting-started/gh-access-token.png)]
+
+   At this point, the contents of your repo should be pushed to GitHub.
