@@ -33,7 +33,7 @@ Use of the workspace process logging functionality requires a host Linux
 kernel >= 5.8 with the kernel config `CONFIG_DEBUG_INFO_BTF=y` enabled.
 
 To validate this config is enabled, run either of the following commands on the
-nodes directly (*not* from the terminal within a workspace):
+nodes directly (_not_ from the terminal within a workspace):
 
 ```console
 cat /proc/config.gz | gunzip | grep CONFIG_DEBUG_INFO_BTF
