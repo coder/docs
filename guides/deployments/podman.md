@@ -135,7 +135,7 @@ Linux kernel doesn't support CVMs.
 
    ```console
    kubectl get nodes
-   kubectl label nodes --all smarter-device-plugin=enabled
+   kubectl label nodes --all smarter-device-manager=enabled 
    ```
 
 1. If you haven't already done so for your Coder deployment, enable workspace
