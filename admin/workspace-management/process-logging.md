@@ -105,7 +105,7 @@ fields @timestamp, log_processed.fields.cmdline
 - The sidecar attached to each workspace is a [privileged][privileged] container
   (this is similar to the CVM container on CVM-enabled workspaces), so you may
   need to review your organization's security policies before enabling this
-  feature. Enabling workspace process logging does _not_ grant extra privileges
+  feature. Enabling workspace process logging does *not* grant extra privileges
   to the workspace container itself, however.
 - Coder logs processes from nested Docker containers (including deeply nested
   containers) correctly, but Coder does not distinguish between processes
