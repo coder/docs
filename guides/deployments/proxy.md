@@ -47,10 +47,10 @@ coderd:
     http: socks5://10.10.10.10:1080
 ```
 
-If you specify a proxy for outbound HTTP connections, and you do not specify a proxy
-for outgoing HTTPS connections, then Coder will proxy requests to HTTPS
-endpoints using the HTTP proxy. The previous examples will proxy all requests through the defined proxy,
-regardless of protocol (HTTP or HTTPS).
+If you specify a proxy for outbound HTTP connections, and you do not specify a
+proxy for outgoing HTTPS connections, then Coder will proxy requests to HTTPS
+endpoints using the HTTP proxy. The previous examples will proxy all requests
+through the defined proxy, regardless of protocol (HTTP or HTTPS).
 
 To configure a different proxy for use with outbound HTTPS connections, you can
 specify the same proxy types (`http`, `https`, `socks5`) using the
@@ -70,8 +70,9 @@ coderd:
 ## Reverse proxies
 
 If you have a reverse proxy in front of Coder, which is the case if you're using
-an ingress controller, Coder receives connections originating from the proxy. For auditing, logging, and other features to correctly recognize the
-connecting user's IP address information, you will need to configure the
+an ingress controller, Coder receives connections originating from the proxy.
+For auditing, logging, and other features to correctly recognize the connecting
+user's IP address information, you will need to configure the
 `coderd.reverseProxy` setting.
 
 > By default, Coder will ignore `X-Forwarded-For` and similar headers and remove
