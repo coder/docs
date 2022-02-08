@@ -3,22 +3,23 @@ title: Proxies
 description: Learn how to configure forward and reverse proxies for Coder.
 ---
 
-If your Coder installation will access the Internet through a forward proxy, see
-the reference for configuring [Forward proxies](#forward-proxies).
+This article walks you through configuring proxies for Coder.
 
-If you have a reverse proxy in front of Coder, such as an Ingress Controller
-internal to the cluster, then see the reference for configuring
-[Reverse proxies](#reverse-proxies).
+If your Coder installation accesses the internet through a forward proxy,
+configure a [forward proxy](#forward-proxies).
+
+If you have a reverse proxy in front of Coder, such as an ingress controller
+internal to the cluster, then configure a [reverse proxy](#reverse-proxies).
 
 ## Forward proxies
 
-Coder supports proxies for outbound HTTP and HTTPS connections by configuring
-the `coderd.proxy.http` and `coderd.proxy.https` settings in the Helm chart,
-which correspond to the standard `http_proxy` and `https_proxy` environment
-variables, respectively.
+Coder supports proxies for outbound HTTP and HTTPS connections once you've
+configured the `coderd.proxy.http` and `coderd.proxy.https` settings in the
+[Helm chart](../admin/helm-charts.md). These settings correspond to the standard
+`http_proxy` and `https_proxy` environment variables, respectively.
 
-If the proxy URL does not include a scheme, Coder will default to treating it as
-an HTTP proxy. It is also possible to connect to the proxy using HTTPS or SOCKS5
+If the proxy URL does not include a scheme, Coder defaults to treating it as
+an HTTP proxy. It is also possible to connect to the proxy using HTTPS or SOCKS 5
 protocols.
 
 For an HTTP proxy with address `http://localhost:3128`, use the setting:
@@ -37,7 +38,7 @@ coderd:
     http: https://localhost
 ```
 
-For a [SOCKS 5 proxy](https://en.wikipedia.org/wiki/SOCKS) with on port 1080,
+For a [SOCKS 5 proxy](https://en.wikipedia.org/wiki/SOCKS) on port 1080,
 use the setting:
 
 ```yaml
@@ -46,12 +47,12 @@ coderd:
     http: socks5://10.10.10.10:1080
 ```
 
-If you specify a proxy for outbound HTTP connections and do not specify a proxy
+If you specify a proxy for outbound HTTP connections, and you do not specify a proxy
 for outgoing HTTPS connections, then Coder will proxy requests to HTTPS
-endpoints using the HTTP proxy. The previous examples will proxy all requests,
-regardless of protocol (HTTP or HTTPS), through the defined proxy.
+endpoints using the HTTP proxy. The previous examples will proxy all requests through the defined proxy,
+regardless of protocol (HTTP or HTTPS).
 
-To configure a different proxy to use for outbound HTTPS connections, you may
+To configure a different proxy for use with outbound HTTPS connections, you can
 specify the same proxy types (`http`, `https`, `socks5`) using the
 `coderd.proxy.https` key.
 
@@ -62,22 +63,21 @@ For hosts that must connect directly, rather than using the proxy, define the
 coderd:
   proxy:
     # Coder will establish connections to cluster.local or example.com, or
-    # their subdomains, directly, rather than using the proxy settings.
+    # their subdomains directly, rather than using the proxy settings.
     exempt: "cluster.local,example.com"
 ```
 
 ## Reverse proxies
 
-If you have a reverse proxy in front of Coder, as will be the case when you are
-using an Ingress Controller, Coder will receive connections originating from the
-proxy. In order for auditing, logging, and other features to associate the
-connecting user's IP address information correctly, you will need to configure
-the `coderd.reverseProxy` setting.
+If you have a reverse proxy in front of Coder, which is the case if you're using
+an ingress controller, Coder receives connections originating from the proxy. For auditing, logging, and other features to correctly recognize the
+connecting user's IP address information, you will need to configure the
+`coderd.reverseProxy` setting.
 
-By default, to prevent clients from spoofing their originating IP addresses
-using the `X-Forwarded-For` or similar headers, Coder will ignore all such
-headers and remove them from proxied connections to
-[Dev URL services](../../workspaces/devurls.md).
+> By default, Coder will ignore `X-Forwarded-For` and similar headers and remove
+> them from proxied connections to [Dev URL
+> services](../../workspaces/devurls.md). This prevents clients from spoofing
+> their originating IP addresses.
 
 Specify a list of trusted origin addresses (those of the reverse proxy) in CIDR
 format as follows:
