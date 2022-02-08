@@ -19,8 +19,7 @@ configured the `coderd.proxy.http` and `coderd.proxy.https` settings in the
 `http_proxy` and `https_proxy` environment variables, respectively.
 
 If the proxy URL does not include a scheme, Coder defaults to treating it as
-an HTTP proxy. It is also possible to connect to the proxy using HTTPS or SOCKS 5
-protocols.
+an HTTP proxy. Coder also supports proxies using HTTPS or SOCKS 5 protocols.
 
 For an HTTP proxy with address `http://localhost:3128`, use the setting:
 
@@ -35,10 +34,10 @@ For an HTTPS proxy with address `https://localhost:3128`, include the scheme:
 ```yaml
 coderd:
   proxy:
-    http: https://localhost
+    http: https://localhost:3128
 ```
 
-For a [SOCKS 5 proxy](https://en.wikipedia.org/wiki/SOCKS) on port 1080,
+For a [SOCKS 5 proxy](https://en.wikipedia.org/wiki/SOCKS) on listening on port 1080,
 use the setting:
 
 ```yaml
@@ -57,7 +56,7 @@ specify the same proxy types (`http`, `https`, `socks5`) using the
 `coderd.proxy.https` key.
 
 For hosts that must connect directly, rather than using the proxy, define the
-`exempt` setting with a comma-separated list of hosts and subdomains:
+`coderd.proxy.exempt` setting with a comma-separated list of hosts and subdomains:
 
 ```yaml
 coderd:
