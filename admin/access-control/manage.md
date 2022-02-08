@@ -22,8 +22,8 @@ domain name for the OIDC token callback; use
 `https://coder.my-company.com/oidc/callback`.
 
 Once you've registered a Coder application with your OIDC provider, you'll need
-to return to Coder and complete the setup process. Under Admin > Manage >
-Authentication, make sure that you've selected **OpenID Connect** as the
+to return to Coder and complete the setup process. Under **Admin** > **Manage** >
+**Authentication**, make sure that you've selected **OpenID Connect** as the
 authentication type. Then, provide the following parameters:
 
 - **Client ID**: The client ID for the Coder application you registered with the
