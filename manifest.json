@@ -202,16 +202,21 @@
           "path": "./admin/access-control/index.md",
           "children": [
             {
-              "path": "./admin/access-control/user-roles.md"
+              "path": "./admin/access-control/manage.md"
             },
             {
               "path": "./admin/access-control/organizations.md"
             },
             {
-              "path": "./admin/access-control/password-reset.md"
-            },
-            {
-              "path": "./admin/access-control/user-management.md"
+              "path": "./admin/access-control/users/index.md",
+              "children": [
+                {
+                  "path": "./admin/access-control/users/user-roles.md"
+                },
+                {
+                  "path": "./admin/access-control/users/password-reset.md"
+                }
+              ]
             }
           ]
         },

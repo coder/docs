@@ -3,9 +3,8 @@ title: "User management"
 description: Learn how to add, delete and manage Coder users.
 ---
 
-[Site managers](/access-control/user-roles#site-manager-permissions) can create
-and manage users from the **Users** page, which is accessible at **Manage** >
-**Users**.
+[Site managers](user-roles#site-manager-permissions) can create and manage users
+from the **Users** page, which is accessible at **Manage** > **Users**.
 
 ## Creating a new user
 
@@ -25,6 +24,18 @@ Coder will display a temporary password. Provide this password to the user,
 which they can use with their email to access their new account. For increased
 security, Coder prompts the new user to change their password immediately after
 they log in.
+
+## Changing a user's role
+
+Coder comes with built-in [user roles](user-roles.md) that define what actions a
+user can take in the deployment.
+
+By default, all new users are assigned the **Member** role. These users can be
+upgraded to **Auditor** or **Site Manager** by another user with administrative
+privileges.
+
+To change a user's role, go to **Manage** > **Users**. Find the user and use the
+**Site Role** drop-down to change the assigned role.
 
 ## Deleting a user
 

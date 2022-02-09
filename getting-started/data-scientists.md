@@ -11,8 +11,7 @@ workspace capable of supporting data science projects. You'll learn how to:
 - Create a workspace with Jupyter Notebook and other data science packages
   present;
 - Add a sample project to your workspace, specifically
-  [one as a Jupyter Notebook using IMDB movie data](https://github.com/khorne3/data-science-imdb-sample);
-- Create a dev URL and preview changes to your project.
+  [one as a Jupyter Notebook using IMDB movie data](https://github.com/khorne3/data-science-imdb-sample).
 
 ## Prerequisites
 
