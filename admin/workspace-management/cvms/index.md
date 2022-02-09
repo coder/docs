@@ -33,7 +33,7 @@ deployment option.
 ### HostPath mounts
 
 The host paths required for CVM functionality depend on whether you've enabled
-**Caching** and **Auto loading of the `shiftfs` kernel module`**. You can find
+**Caching** and **Auto loading of the `shiftfs` kernel module**. You can find
 these settings under **Manage > Admin > Infrastructure**.
 
 The following table documents the host paths that are mounted:
