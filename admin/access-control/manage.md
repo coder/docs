@@ -23,7 +23,7 @@ domain name for the OIDC token callback; use
 
 Once you've registered a Coder application with your OIDC provider, you'll need
 to return to Coder and complete the setup process. Under **Admin** > **Manage** >
-**Authentication**, make sure that you've selected **OpenID Connect** as the
+**Authentication**, ensure that you've selected **OpenID Connect** as the
 authentication type. Then, provide the following parameters:
 
 - **Client ID**: The client ID for the Coder application you registered with the
@@ -42,7 +42,10 @@ you:
 - **Enable Access Tokens:** Toggle **On** if you'd like to allow users to fetch
   tokens from `https://<yourDomain>/api/v0/users/me/oidc-access-token`
 - **Additional Scopes:** Specify any scopes (beyond the default) that you would
-  like Coder to request during the login process
+  like Coder to request from the authentication provider. By default, Coder
+requests the scopes `openid`, `email`, and `profile`. Consult your
+authentication provider's documentation for information on which scopes they
+support.
 - **Disable built-in authentication:** Choose whether Coder removes the ability
   to log in with an email/password option when you've enabled OIDC
   authentication
@@ -54,6 +57,9 @@ have OIDC configured.
 
 ![Login page with built-in authentication
 disabled](../../assets/admin/disable-built-in-auth.png)
+
+To do so, navigate to **Manage** > **Admin** > **Authentication**. Then, toggle
+**Disable built-in authentication** to **On** and click **Save preferences**.
 
 [Site managers](users/user-roles#site-manager-permissions) can still use
 built-in authentication. To view this option on the login page, add the

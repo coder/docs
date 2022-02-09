@@ -7,7 +7,7 @@ The **Authentication** tab allows you to choose how your users log in and gain
 access to Coder. Currently, you can choose between **Built-In Authentication**
 and **OpenID Connect**.
 
-## Built-In authentication
+## Built-in authentication
 
 Built-in authentication, which is the default method, allows you (or any admin)
 to manually create users who log in with their email address and temporary
