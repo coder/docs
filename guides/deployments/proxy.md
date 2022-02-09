@@ -18,8 +18,8 @@ configured the `coderd.proxy.http` and `coderd.proxy.https` settings in the
 [Helm chart](../admin/helm-charts.md). These settings correspond to the standard
 `http_proxy` and `https_proxy` environment variables, respectively.
 
-If the proxy URL does not include a scheme, Coder defaults to treating it as an
-HTTP proxy. Coder also supports proxies using HTTPS or SOCKS 5 protocols. As a
+If the proxy URL does not include a scheme, Coder treats it as an HTTP proxy by
+default. Coder also supports proxies using the HTTPS and SOCKS 5 protocols. As a
 special case, Coder will always establish connections to `localhost` directly,
 regardless of the `coderd.proxy.exempt` setting. For additional proxy setting
 information, see the [documentation for ProxyFromEnvironment].
