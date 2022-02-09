@@ -437,13 +437,16 @@
               "path": "./guides/deployments/code-server.md"
             },
             {
+              "path": "./guides/deployments/podman.md"
+            },
+            {
               "path": "./guides/deployments/postgres.md"
             },
             {
-              "path": "./guides/deployments/keycloak.md"
+              "path": "./guides/deployments/proxy.md"
             },
             {
-              "path": "./guides/deployments/podman.md"
+              "path": "./guides/deployments/keycloak.md"
             },
             {
               "path": "./guides/deployments/teardown.md"
