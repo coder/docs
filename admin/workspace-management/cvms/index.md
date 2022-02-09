@@ -17,6 +17,8 @@ deployment option.
   Kubernetes Node must run a supported Linux distro with the minimum kernel
   version. See
   [Sysbox distro compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
+  and
+  [Sysbox User Guide: Design Notes](https://github.com/nestybox/sysbox/blob/master/docs/user-guide/design.md)
   for more information.
 
 - The cluster must allow privileged containers and `hostPath` mounts. See
