@@ -36,11 +36,15 @@ enabled. These settings can be found under **Manage > Admin > Infrastructure**.
 
 The below table documents the host paths that are mounted:
 
-| Caching | Off | On | On | | Auto load `shiftfs` | N/A | Off | On |
-|--------------------:|-----------|------------|------------| | `/usr/src` |
-Read-only | Read-only | Read-write | | `/lib/modules` | Read-only | Read-only |
-Read-write | | `/var/run` | N/A | Read-only | Read-only | | `/var/lib` | N/A |
-Read-write | Read-write |
+<!-- markdownlint-disable -->
+
+| Caching | Auto Load `shiftfs` | `/usr/src` | `/lib/modules` | `/var/run` | `/var/lib` |
+| ------- | ------------------- | ---------- | -------------- | ---------- | ---------- |
+| Off     | N/A                 | Read-only  | Read-only      |            |            |
+| On      | Off                 | Read-only  | Read-only      | Read-only  | Read-write |
+| On      | On                  | Read-write | Read-write     | Read-only  | Read-write |
+
+<!-- markdownlint-restore -->
 
 ## Security
 
