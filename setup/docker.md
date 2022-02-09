@@ -91,32 +91,32 @@ For example:
 docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.27.0
 ```
 
-## External PostgreSQL database
+## Use an external PostgreSQL database
 
 If you'd like to use an external database, you must:
 
-1. Disable the embedded database with the environment variable `DB_EMBEDDED`
-1. pass in the database connection information to the external PostgreSQL
-   database:
+1. Disable the embedded database by setting the `DB_EMBEDDED` environment
+   variable (see the next code snippet for an example)
+1. Provide the connection information to the external PostgreSQL database:
 
-```bash
-docker run --rm -it -p 7080:7080 \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v ~/.coder:/var/run/coder \
-    # Disable using the embedded DB
-    -e DB_EMBEDDED="" \
-    # Change these values to match those for your database
-    -e DB_HOST=127.0.0.1 \
-    -e DB_PORT=5432 \
-    -e DB_USER=postgres \
-    -e DB_PASSWORD="" \
-    -e DB_NAME=postgres \
-    -e DB_SSL_MODE=disable \
-    codercom/coder:1.27.0
-```
+   ```console
+   docker run --rm -it -p 7080:7080 \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      -v ~/.coder:/var/run/coder \
+      # Disable using the embedded DB
+      -e DB_EMBEDDED="" \
+      # Change these values to match those for your database
+      -e DB_HOST=127.0.0.1 \
+      -e DB_PORT=5432 \
+      -e DB_USER=postgres \
+      -e DB_PASSWORD="" \
+      -e DB_NAME=postgres \
+      -e DB_SSL_MODE=disable \
+      codercom/coder:1.27.0
+   ```
 
 Coder supports client TLS certificates using `DB_SSL_MODE=verify-full`. Ensure
-that you mount the certs into the container (add the flag
+that you mount the certs into the container (and add the flag
 `-v <local_certs>:/certs`). Then, specify the certificate path using environment
 variables:
 
