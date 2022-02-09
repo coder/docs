@@ -28,6 +28,20 @@ deployment option.
 > [Google](../../../setup/kubernetes/google.md). Azure-hosted clusters will meet
 > these requirements as long as you use Kubernetes version 1.18+.
 
+### HostPath mounts
+
+The host paths required for CVM functionality depend on whether **Caching** is
+enabled and on whether **Auto loading of the `shiftfs` kernel module`** is
+enabled. These settings can be found under **Manage > Admin > Infrastructure**.
+
+The below table documents the host paths that are mounted:
+
+| Caching | Off | On | On | | Auto load `shiftfs` | N/A | Off | On |
+|--------------------:|-----------|------------|------------| | `/usr/src` |
+Read-only | Read-only | Read-write | | `/lib/modules` | Read-only | Read-only |
+Read-write | | `/var/run` | N/A | Read-only | Read-only | | `/var/lib` | N/A |
+Read-write | Read-write |
+
 ## Security
 
 The container-based virtual machine deployment option leverages the Sysbox
