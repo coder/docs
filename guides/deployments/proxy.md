@@ -18,27 +18,36 @@ configured the `coderd.proxy.http` and `coderd.proxy.https` settings in the
 [Helm chart](../admin/helm-charts.md). These settings correspond to the standard
 `http_proxy` and `https_proxy` environment variables, respectively.
 
-If the proxy URL does not include a scheme, Coder defaults to treating it as
-an HTTP proxy. Coder also supports proxies using HTTPS or SOCKS 5 protocols.
+If the proxy URL does not include a scheme, Coder defaults to treating it as an
+HTTP proxy. Coder also supports proxies using HTTPS or SOCKS 5 protocols. As a
+special case, Coder will always establish connections to `localhost` directly,
+regardless of the `coderd.proxy.exempt` setting. For additional proxy setting
+information, see the [documentation for ProxyFromEnvironment].
+
+[documentation for proxyfromenvironment]:
+  https://pkg.go.dev/net/http#ProxyFromEnvironment
 
 For an HTTP proxy with address `http://localhost:3128`, use the setting:
 
 ```yaml
 coderd:
   proxy:
+    # If the scheme is omitted, Coder will default to `http`
     http: localhost:3128
 ```
 
-For an HTTPS proxy with address `https://localhost:3128`, include the scheme:
+For an HTTPS proxy with address `https://localhost`, include the scheme:
 
 ```yaml
 coderd:
   proxy:
-    http: https://localhost:3128
+    # If the port is omitted, Coder will use the default port corresponding to
+    # the selected scheme (443 for https)
+    http: https://localhost
 ```
 
-For a [SOCKS 5 proxy](https://en.wikipedia.org/wiki/SOCKS) on listening on port 1080,
-use the setting:
+For a [SOCKS 5 proxy](https://en.wikipedia.org/wiki/SOCKS) on listening on port
+1080, use the setting:
 
 ```yaml
 coderd:
@@ -53,10 +62,20 @@ through the defined proxy, regardless of protocol (HTTP or HTTPS).
 
 To configure a different proxy for use with outbound HTTPS connections, you can
 specify the same proxy types (`http`, `https`, `socks5`) using the
-`coderd.proxy.https` key.
+`coderd.proxy.https` key:
+
+```yaml
+coderd:
+  proxy:
+    # Use an HTTP proxy on port 3128 for outbound HTTP connections, and an
+    # HTTP proxy on port 8080 for outbound HTTPS connections.
+    http: http://localhost:3128
+    https: http://localhost:8080
+```
 
 For hosts that must connect directly, rather than using the proxy, define the
-`coderd.proxy.exempt` setting with a comma-separated list of hosts and subdomains:
+`coderd.proxy.exempt` setting with a comma-separated list of hosts and
+subdomains:
 
 ```yaml
 coderd:
@@ -75,9 +94,10 @@ user's IP address information, you will need to configure the
 `coderd.reverseProxy` setting.
 
 > By default, Coder will ignore `X-Forwarded-For` and similar headers and remove
-> them from proxied connections to [Dev URL
-> services](../../workspaces/devurls.md). This prevents clients from spoofing
-> their originating IP addresses.
+> them from proxied connections to [Dev URL services]. This prevents clients
+> from spoofing their originating IP addresses.
+
+[dev url services]: ../../workspaces/devurls.md
 
 Specify a list of trusted origin addresses (those of the reverse proxy) in CIDR
 format as follows:
