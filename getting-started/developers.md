@@ -9,8 +9,10 @@ learn how to:
 
 - Connect Coder to your Git provider;
 - Create a workspace;
-- Add a sample project to your workspace;
-- Create a dev URL and preview changes to your project.
+- Add [Create React App](https://create-react-app.dev/) to your workspace, which
+  will allow you to create a sample single-page application that you can modify;
+- Create a dev URL and preview changes to your project;
+- Push your changes to a GitHub repo.
 
 ## Prerequisites
 
@@ -75,30 +77,32 @@ next to the name of your workspace.
 
 ## Step 3: Add a sample project to your workspace
 
-Once you've created your workspace, you can start using Coder after adding a
-sample project to your workspace.
+Once you've created your workspace, you can start working in Coder. For this
+tutorial, we'll be leveraging the
+[Create React App](https://create-react-app.dev/) to get you set up with a way
+to create single-page applications.
 
 1. Under **Browser applications**, click **Code Web** to open VS Code in your
    browser.
 
 1. When VS Code launches in your browser, click **Open folder...**. In the
-   prompt, you'll see `/home/coder`. This directory is where you'll clone a
-   sample React app project Git repository. Click **OK** to proceed.
+   prompt, you'll see `/home/coder`. This directory is where you'll store your
+   sample React app project. Click **OK** to proceed.
 
    ![Open folder](../assets/getting-started/open-folder.png)
 
 1. Click the hamburger icon in the top right, and select **Terminal** > **New
    Terminal** to open a new terminal.
 
-1. Clone the `create-react-app` repository:
+1. You're now ready to create a demo app that you can modify:
 
    ```console
-   git clone git@github.com:facebook/create-react-app.git
+   npx create-react-app my-app
+   cd my-app
    ```
 
-   Once you've cloned the repository, you can click the **Explorer** icon and
-   expand the **create-react-app** folder in the left-have nav bar to see the
-   contents of the repo.
+   Once done, you can expand the `my-app` folder in the left-have nav bar to see
+   its contents:
 
    ![View files](../assets/getting-started/view-files.png)
 
@@ -126,9 +130,7 @@ specified and renders a browser link you can use to view your application.
    Web window and running the following in the terminal:
 
    ```console
-    npx create-react-app my-app
-    cd my-app
-    npm start
+   npm start
    ```
 
 1. From the workspace overview, launch your dev URL by clicking its name; Coder
@@ -140,3 +142,33 @@ specified and renders a browser link you can use to view your application.
    you save your changes to this file, your preview will reload.
 
    ![Preview changes](../assets/getting-started/hello-world.png)
+
+## Step 5: Push your repo to GitHub
+
+The follow steps show you how to push your app to a newly created GitHub repo.
+
+1. Log in to GitHub and navigate to
+   [Create a new repository](https://github.com/new).
+
+1. Provide a **repository name** and click **Create repository**.
+
+1. Return to your workspace, run the following in your terminal to add a remote
+   to your GitHub repo, change the primary branch name to `main`, and push the
+   contents to your newly created repo:
+
+   ```console
+   git remote add origin https://github.com/<username>/<repoName>.git
+   git branch -M main
+   git push origin main
+   ```
+
+1. Within the IDE window (near the top), you'll be prompted to log in to GitHub
+   by providing your username and password/personal access token.
+
+1. Next, Code Web will display an alert that says the GitHub extension wants to
+   sign in; click **Allow** to proceed.
+
+1. In the subsequent window, click **Continue** to authorize Visual Studio Code
+   to access GitHub.
+
+   At this point, the contents of your repo should be pushed to GitHub.
