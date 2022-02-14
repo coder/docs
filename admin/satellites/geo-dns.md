@@ -11,10 +11,10 @@ access URLs. The use of two access URLs can confuse engineering
 teams when it comes time to determine which access URL they should use to access
 Coder.
 
-To fix this, Coder supports a GeoDNS configuration where the primary deployment
-and all satellite deployments share a hostname. All users who access Coder use the
-same URL while still accessing a deployment that offers low latency when
-connecting to their workspaces.
+To fix this issue, Coder supports a GeoDNS configuration where the primary
+deployment and all satellite deployments share a hostname. All users who access
+Coder use the same URL while still accessing a deployment is near to them
+geographically, offering low latency when connecting to their workspaces.
 
 > We recommend maintaining separate access URLs for each primary and satellite
 > deployment alongside the new uniform GeoDNS access URL. This allows you to
