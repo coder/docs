@@ -1,24 +1,26 @@
 ---
 title: GeoDNS
 description: |
-    Learn how to configure your primary and satellite deployments to share a
-    single hostname.
+    Learn how to configure your primary and satellite deployments so that they share a
+    hostname.
 state: alpha
 ---
 
-Out of the box, satellites deployments have a different access URL to the
-primary deployment. This may cause confusion for engineering teams located
-globally. This may cause confusion amongst users wondering which access URL they
-should access Coder from.
+By default, the primary deployment and satellite deployments have different
+access URLs. The use of two access URLs can confuse engineering
+teams when it comes time to determine which access URL they should use to access
+Coder.
 
-Coder supports a GeoDNS configuration where all satellites and the primary
-deployment share the same hostname, so all users access Coder using a consistent
-URL but maintain low latency to their workspaces.
+To fix this, Coder supports a GeoDNS configuration where the primary deployment
+and all satellite deployments share a hostname. All users who access Coder use the
+same URL while still accessing a deployment that offers low latency when
+connecting to their workspaces.
 
-> We recommend maintaining separate access URLs for each satellite and primary
-> deployment alongside the new GeoDNS access URL so you can access specific
-> deployments while avoiding GeoDNS in the future. This guide will walk you
-> through this configuration process.
+> We recommend maintaining separate access URLs for each primary and satellite
+> deployment alongside the new uniform GeoDNS access URL. This allows you to
+> access specific deployments while avoiding GeoDNS if necessary in the future.
+> This guide will walk you through the process of preserving both URLs for your
+> deployments.
 
 ## Requirements
 
@@ -27,26 +29,25 @@ You will need the following:
 - A primary access URL (e.g. `https://primary.example.com`).
 - One or more satellite access URLs (e.g. `https://sydney.example.com`,
   `https://london.example.com`).
-- A GeoDNS load balancer access URL (e.g. `https://coder.example.com`). The
-  default backend should be set to the primary access URL or IP address. The
-  backend for each region with a satellite should be set to the satellite access
-  URL or IP address.
-- The TLS certificate used by the primary must have both the primary hostname
-  and the GeoDNS hostname
-- The TLS certificate used by each satellite must have the satellite's hostname
-  and the GeoDNS hostname
+- A GeoDNS load balancer and its access URL (e.g. `https://coder.example.com`).
+You should set the default backend to the primary access URL or IP address. Set
+the backend for each region with a satellite to the corresponding satellite
+access URL or IP address.
+- A TLS certificate for the primary deployment that has both the primary
+  hostname and the corresponding GeoDNS hostname
+- A TLS certificate for *each* satellite with the satellite's hostname and the
+  corresponding GeoDNS hostname
 
-> If you are using cert-manager, you can easily add more hostnames to your
-> certificate by adding them to the `spec.dnsNames` section.
+### Notes
 
-To create a GeoDNS load balancer on Cloudflare, you can refer to our simple
-instructions [below](#create-a-geodns-load-balancer-on-cloudflare).
+- We have provided instructions on [how to create a GeoDNS load balancer on
+  Cloudflare](#create-a-geodns-load-balancer-on-cloudflare) below.
+- If you are using cert-manager, you can add hostnames to a certificate by
+  including them in the `spec.dnsNames` section.
 
 ## Configure GeoDNS on Coder
 
-To configure GeoDNS on Coder:
-
-1. In the primary helm values file, set `coderd.alternateHostnames` to your
+1. In the primary Helm values file, set `coderd.alternateHostnames` to your
    primary hostname and your GeoDNS hostname:
 
    ```yaml
@@ -56,9 +57,12 @@ To configure GeoDNS on Coder:
        - "coder.example.com"
    ```
 
-1. In each satellite helm values file:
-    1. Set `coderd.satellite.accessURL` to your primary access URL, which is the name of the global load balancer in front of Coder deployments (this value is used
-       as the default URL)
+1. In *each* of your satellite deployments' Helm values file:
+
+    1. Set `coderd.satellite.accessURL` to your primary access URL, which is the
+       name of the global load balancer in front of Coder deployments (this
+       value will be used as the default URL)
+
     1. Set `coderd.alternateHostnames` to your satellite's specific hostname and
        your GeoDNS hostname:
 
@@ -69,52 +73,80 @@ To configure GeoDNS on Coder:
            - "coder.example.com"
        ```
 
-1. Deploy your primary and satellites with your new Helm values.
-1. Once fully deployed and rolled out, log into Coder.
-1. Go to Manage > Admin.
-1. Set the **Access URL** field to your GeoDNS access URL (e.g.
-   `https://coder.example.com`).
-1. If using OIDC, log into your OIDC identity provider's admin page and update
-   Coder's redirect URI to the new access URL (e.g.
-   `https://coder.example.com/oidc/callback`)
+1. Deploy your primary and satellite deployments with your new Helm values.
 
-All users should be able to access Coder and be routed to their nearest
-geographical satellite using your GeoDNS access URL. OIDC login should work as
-expected across all domain names, including the primary
+1. Once you've fully deployed your primary and satellite deployments, log into
+   Coder, and go to **Manage** > **Admin**.
+
+1. On the **Infrastructure** tab, set the **Access URL** field to your GeoDNS
+   access URL (e.g. `https://coder.example.com`).
+
+1. If you've enabled logins via OIDC, log into your OIDC identity provider's
+   admin page and update Coder's redirect URI to reflect your new access URL
+   (e.g. `https://coder.example.com/oidc/callback`)
+
+At this point, all users should be able to access Coder. Coder will
+automatically route users to their nearest geographical satellite via your GeoDNS
+access URL. OIDC logins should work as expected across all domain names,
+including the primary access URL.
 
 ## Create a GeoDNS load balancer on Cloudflare
 
 To create a GeoDNS load balancer on Cloudflare:
 
-1. Login to the Cloudflare dashboard and select the domain you want your GeoDNS
-   hostname to exist on.
+1. Log in to Cloudflare, and select the domain on which you want your GeoDNS
+   hostname to exist.
+
 1. Expand the **Traffic** app on the sidebar and select **Load Balancing**.
-1. Enable **Load Balancing** if it has not already been enabled on your account
-1. Ensure your Cloudflare plan has enough origin servers for your deployments,
-   you will need one origin server for the primary and each satellite.
+
+1. Enable **Load Balancing** if you haven't already
+
+1. Ensure that your Cloudflare plan has enough origin servers for your
+   deployments; you will need one origin server for the primary deployment and
+   one for each satellite deployment.
+
 1. Click **Create Load Balancer**.
+
 1. Enter the GeoDNS hostname you wish to use (e.g.
    `https://coder.example.com`).
+
    ![Enter hostname](../../assets/admin/cloudflare-geodns/hostname.png)
-1. *Optional:* disable Cloudflare proxying by unchecking the orange cloud.
-    - We recommend disabling Cloudflare proxying when using satellites as it
-      adds extra hops which will increase latency, since the satellite is
-      usually nearby the user anyways
-1. Click **Next**.
-1. For the primary and each satellite do the following:
-    1. Click the **+ Create an Origin Pool** link
-    1. Set the **Pool Name** and **Pool Description**
+
+1. **Optional:** Disable Cloudflare proxying by unchecking the orange cloud. We
+      recommend disabling Cloudflare proxying when using satellites, since
+      proxying adds additional hops that will increase latency.
+
+1. Click **Next** to proceed.
+
+1. For the primary deployment and *each* satellite deployment, do the
+   follow steps:
+
+    1. Click **+ Create an Origin Pool**.
+
+    1. Set the **Pool Name** and **Pool Description**.
+
     1. Specify a single origin with **Origin Address** set to the hostname or IP
-       of the deployment and set the **Weight** to `1`
+       address of the deployment. Then, set the **Weight** to **1**.
+
     1. Click **Configure co-ordinates for Proximity Steering** and drag the
-       marker to roughly where the deployment is located geographically
-    1. Click **Save**
-   ![Create pool](../../assets/admin/cloudflare-geodns/create-pool.png)
-1. Once you have completed the above step for the primary and each satellite,
-   ensure that all of the origin pools have been assigned to the load balancer.
+       marker to roughly where the deployment is located geographically.
+
+    1. Click **Save**.
+
+      ![Create pool](../../assets/admin/cloudflare-geodns/create-pool.png)
+
+1. Once you have completed the above steps for the primary and each
+   satellite deployment,
+   ensure that all origin pools have been assigned to the load balancer.
+
 1. Set the **Fallback Pool** to your primary deployment's origin pool.
+
    ![Pools](../../assets/admin/cloudflare-geodns/pools.png)
+
 1. Click **Next** until you reach the **Traffic Steering** step.
+
 1. Set the traffic steering policy to **Proximity steering**.
+
 1. Click **Next** until you reach the **Review** step.
-1. Review your changes, and then click **Save and Deploy**.
+
+1. Review your changes; then, click **Save and Deploy**.
