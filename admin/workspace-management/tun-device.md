@@ -28,7 +28,7 @@ To enable TUN devices for Kubernetes [CVM-enabled workspaces](cvms/index.md):
 
 ![Enabling TUN devices](../../assets/admin/tun.png)
 
-> The new setting will apply to workspaces **after** you rebuild them.
+The new setting will apply to workspaces **after** you rebuild them.
 
 Users running workspaces with TUN devices should be able to run VPN clients
 within their workspace as long as they have root (or `sudo`) access within their
