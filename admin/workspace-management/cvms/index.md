@@ -17,6 +17,8 @@ deployment option.
   Kubernetes Node must run a supported Linux distro with the minimum kernel
   version. See
   [Sysbox distro compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
+  and
+  [Sysbox User Guide: Design Notes](https://github.com/nestybox/sysbox/blob/master/docs/user-guide/design.md)
   for more information.
 
 - The cluster must allow privileged containers and `hostPath` mounts. See
@@ -27,6 +29,24 @@ deployment option.
 > [AWS](../../../setup/kubernetes/aws.md) and
 > [Google](../../../setup/kubernetes/google.md). Azure-hosted clusters will meet
 > these requirements as long as you use Kubernetes version 1.18+.
+
+### HostPath mounts
+
+The host paths required for CVM functionality depend on whether you've enabled
+**Caching** and **Auto loading of the `shiftfs` kernel module**. You can find
+these settings under **Manage > Admin > Infrastructure**.
+
+The following table documents the host paths that are mounted:
+
+<!-- markdownlint-disable -->
+
+| Caching | Auto Load `shiftfs` | `/usr/src` | `/lib/modules` | `/var/run` | `/var/lib` |
+| ------- | ------------------- | ---------- | -------------- | ---------- | ---------- |
+| Off     | N/A                 | Read-only  | Read-only      |            |            |
+| On      | Off                 | Read-only  | Read-only      | Read-only  | Read-write |
+| On      | On                  | Read-write | Read-write     | Read-only  | Read-write |
+
+<!-- markdownlint-restore -->
 
 ## Security
 

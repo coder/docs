@@ -94,8 +94,9 @@ set your resource allocation.
     <tr>
         <td><b>Auto-off</b></td>
         <td>The amount of time your workspace can be idle before Coder stops
-        the workspace. Available only if your site manager has allowed this
-        setting to be changed at the user level (otherwise the organization
+        the workspace. Available only <a href="../admin/workspace-management/shutdown.md#configuring-workspace-shutdown-behavior">if
+        your site manager has allowed this
+        setting to be changed at the user level</a> (otherwise the organization
         default applies).</td>
     </tr>
 </table>
