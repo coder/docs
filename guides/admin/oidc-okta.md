@@ -5,9 +5,9 @@ description: Learn how to use Okta SSO with Coder.
 
 This article walks you through setting up single sign-on to Coder using Okta.
 
-Configuring [Coder's OpenID
-Connect](../../admin/access-control/index.md#openid-connect) feature requires
-you to provide three pieces of information from Okta:
+Configuring
+[Coder's OpenID Connect](../../admin/access-control/index.md#openid-connect)
+feature requires you to provide three pieces of information from Okta:
 
 - Client ID
 - Client Secret
@@ -33,14 +33,14 @@ you need to provide to Coder.
 1. Select **OpenID Connect** and click **Create**
 
    ![Okta Create Application
-   Modal](../../assets/guides/admin/okta-custom-app-creation.jpg)
+Modal](../../assets/guides/admin/okta-custom-app-creation.jpg)
 
 1. Provide an **Application name** (i.e., `Coder`), (optionally) add a logo, and
    add the **Login redirect URIs** for Coder (it will be formatted similarly to
    `https://coder.my-company.com/oidc/callback`).
 
    ![Okta Create OpenID
-   Application](../../assets/guides/admin/okta-create-openid-integration.jpg)
+Application](../../assets/guides/admin/okta-create-openid-integration.jpg)
 
 1. Click **Save** to proceed.
 
@@ -85,7 +85,7 @@ the Coder UI.
 1. Log in to Coder, and go to **Manage** > **Admin** > **Authentication**.
 1. In the top-most drop-down box, select **OpenID Connect**.
 1. Provide the requested values for **Client ID**, **Client Secret**, and
-   **Issuer**.
+   **Issuer**. Optionally, you can specify **Additional Scopes**.
 
 When done, click **Save Preferences**.
 

@@ -103,7 +103,7 @@ the Coder UI.
 1. Log in to Coder, and go to **Manage** > **Admin** > **Authentication**.
 1. In the top-most drop-down box, select **OpenID Connect**.
 1. Provide the requested values for **Client ID**, **Client Secret**, and
-   **Issuer**.
+   **Issuer**. Optionally, you can specify **Additional Scopes**.
 
 When done, click **Save Preferences**.
 
