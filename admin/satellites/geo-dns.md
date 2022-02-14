@@ -1,5 +1,5 @@
 ---
-title: GeoDNS
+title: GeoDNS configuration
 description: |
     Learn how to configure your primary and satellite deployments so that they share a
     hostname.

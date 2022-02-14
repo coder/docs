@@ -252,10 +252,10 @@
               "path": "./admin/satellites/management.md"
             },
             {
-              "path": "./admin/satellites/geo-dns.md"
+              "path": "./admin/satellites/migration.md"
             },
             {
-              "path": "./admin/satellites/migration.md"
+              "path": "./admin/satellites/geo-dns.md"
             }
           ]
         },
