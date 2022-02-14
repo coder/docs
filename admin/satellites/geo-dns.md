@@ -44,9 +44,9 @@ instructions [below](#create-a-geodns-load-balancer-on-cloudflare).
 
 ## Configure GeoDNS on Coder
 
-To configure GeoDNS onn Coder:
+To configure GeoDNS on Coder:
 
-1. In the primary helm values file set `coderd.alternateHostnames` to your
+1. In the primary helm values file, set `coderd.alternateHostnames` to your
    primary hostname and your GeoDNS hostname:
 
    ```yaml
@@ -57,7 +57,7 @@ To configure GeoDNS onn Coder:
    ```
 
 1. In each satellite helm values file:
-    1. Set `coderd.satellite.accessURL` to your GeoDNS URL (this value is used
+    1. Set `coderd.satellite.accessURL` to your primary access URL, which is the name of the global load balancer in front of Coder deployments (this value is used
        as the default URL)
     1. Set `coderd.alternateHostnames` to your satellite's specific hostname and
        your GeoDNS hostname:
@@ -69,7 +69,7 @@ To configure GeoDNS onn Coder:
            - "coder.example.com"
        ```
 
-1. Deploy your primary and satellites with your new helm values.
+1. Deploy your primary and satellites with your new Helm values.
 1. Once fully deployed and rolled out, log into Coder.
 1. Go to Manage > Admin.
 1. Set the **Access URL** field to your GeoDNS access URL (e.g.
