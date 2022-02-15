@@ -529,6 +529,9 @@
           "path": "./changelog/1.27.0.md",
           "children": [
             {
+              "path": "./changelog/1.27.2.md"
+            },
+            {
               "path": "./changelog/1.27.1.md"
             }
           ]

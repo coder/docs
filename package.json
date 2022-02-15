@@ -16,11 +16,11 @@
   },
   "devDependencies": {
     "@types/minimist": "^1.2.2",
-    "@types/node": "14.18.9",
+    "@types/node": "14.18.12",
     "@types/semver-compare": "^1.0.1",
     "all-contributors-cli": "^6.20.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.2.1",
+    "lint-staged": "^12.3.4",
     "markdownlint-cli": "^0.31.1",
     "minimist": "^1.2.5",
     "prettier": "2.5.1",
