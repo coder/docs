@@ -1,8 +1,8 @@
 ---
-title: GeoDNS configuration
+title: Proximity based configuration
 description: |
   Learn how to configure your primary and satellite deployments so that they
-  share a hostname.
+  share a hostname using geo DNS or anycast.
 state: alpha
 ---
 
@@ -10,17 +10,17 @@ By default, the primary deployment and satellite deployments have different
 access URLs. The use of two access URLs can confuse engineering teams when it
 comes time to determine which access URL they should use for Coder.
 
-To prevent confusion, Coder supports an optional GeoDNS configuration where the
-primary deployment and all satellite deployments share a hostname. All users who
-access Coder use the same URL; meanwhile, Coder ensures that users are still
-accessing a deployment that is near to them geographically, offering low latency
-when connecting to their workspaces.
+To prevent confusion, Coder supports an optional unified hostname configuration
+where the primary deployment and all satellite deployments share a hostname. All
+users who access Coder use the same URL; meanwhile, your DNS server or anycast
+configuration ensures that users are still accessing a deployment that is near
+to them geographically, offering low latency when connecting to their
+workspaces.
 
-GeoDNS (also known as _geographical split horizon DNS_) is a DNS load balancing
+Geo DNS (also known as _geographical split horizon DNS_) is a DNS load balancing
 technique that causes users to connect to their geographically nearest servers
-without relying on anycast IP routing. This guide will still work with anycast
-routing, but we recommend maintaining a separate "regional" IP address for each
-primary or satellite so you can access them explicitly.
+without relying on anycast IP routing. This guide will focus on geo DNS setup,
+but will still work with anycast routing.
 
 ## Requirements
 
@@ -29,31 +29,30 @@ You will need the following:
 - A primary access URL (e.g. `https://primary.example.com`).
 - One or more satellite access URLs (e.g. `https://sydney.example.com`,
   `https://london.example.com`).
-- A GeoDNS load balancer access URL (e.g. `https://coder.example.com`). You
-  should set the default backend to the primary access URL or IP address. Set
-  the backend for each region with a satellite to the corresponding satellite
-  access URL or IP address.
+- A "unified" access URL (e.g. `https://coder.example.com`). If you are using
+  geo DNS you should set the default backend to the primary access URL. Set the
+  backend for each region with a satellite to the corresponding satellite access
+  URL or IP address.
 - A TLS certificate for the primary deployment that has both the primary
-  hostname and the corresponding GeoDNS hostname.
+  hostname and the corresponding unified hostname.
 - A TLS certificate for _each_ satellite with the satellite's hostname and the
-  corresponding GeoDNS hostname.
+  corresponding unified hostname.
 
 > Please note that:
 >
 > - We have provided instructions on
->   [how to create a GeoDNS load balancer on Cloudflare](#create-a-geodns-load-balancer-on-cloudflare)
+>   [how to create a geo DNS load balancer on Cloudflare](#create-a-geodns-load-balancer-on-cloudflare)
 >   below.
 > - If you are using cert-manager, you can add hostnames to a certificate by
 >   including them in the `spec.dnsNames` section.
-> - We recommend maintaining separate access URLs for each primary and satellite
->   deployment alongside the new uniform GeoDNS access URL. This allows you to
->   access specific deployments while avoiding GeoDNS if necessary in the
->   future. This guide will walk you through the process of preserving both URLs
->   for your deployments.
+> - We recommend maintaining a separate "regional" hostname or IP address for
+>   each primary or satellite so you can access them explicitly to aid in
+>   debugging. This guide iwll walk you through the process of preserving the
+>   existing regional access URL.
 
-## Configure GeoDNS on Coder
+## Configure a unified access URL on Coder
 
-1. Configure your GeoDNS or anycast routing so the primary Coder deployment and
+1. Configure your geo DNS or anycast routing so the primary Coder deployment and
    all satellites share a single hostname, as well as their individual
    hostnames.
 
@@ -62,7 +61,7 @@ You will need the following:
      below.
 
 1. In the primary Helm values file, set `coderd.alternateHostnames` to your
-   primary hostname and your GeoDNS hostname:
+   primary hostname and your unified hostname:
 
    ```yaml
    coderd:
@@ -73,11 +72,11 @@ You will need the following:
 
 1. In _each_ of your satellite deployments' Helm values file:
 
-   1. Set `coderd.satellite.accessURL` to your GeoDNS access URL (this value
+   1. Set `coderd.satellite.accessURL` to your unified access URL (this value
       will be used as the default URL).
 
    1. Set `coderd.alternateHostnames` to your satellite's specific hostname and
-      your GeoDNS hostname:
+      your unified hostname:
 
       ```yaml
       coderd:
@@ -91,7 +90,7 @@ You will need the following:
 1. Once you've fully deployed your primary and satellite deployments, log into
    Coder on your original primary access URL and go to **Manage** > **Admin**.
 
-1. On the **Infrastructure** tab, set the **Access URL** field to your GeoDNS
+1. On the **Infrastructure** tab, set the **Access URL** field to your unified
    access URL (e.g. `https://coder.example.com`).
 
 1. If you've enabled logins via OIDC, log into your OIDC identity provider's
@@ -101,16 +100,16 @@ You will need the following:
 1. If you've enabled Git account linking, log into each Git provider and update
    Coder's redirect URI to reflect your new access URL.
 
-At this point, all users should be able to access Coder via the GeoDNS access
+At this point, all users should be able to access Coder via the unified access
 URL. Your DNS server will automatically route users to their nearest
 geographical primary or satellite deployment for low latency. OIDC logins should
 work as expected across all domain names, including the primary access URL.
 
-## Create a GeoDNS load balancer on Cloudflare
+## Create a geo DNS load balancer on Cloudflare
 
-To create a GeoDNS load balancer on Cloudflare:
+To create a geo DNS load balancer on Cloudflare:
 
-1. Log in to Cloudflare, and select the domain on which you want your GeoDNS
+1. Log in to Cloudflare, and select the domain on which you want your geo DNS
    hostname to exist.
 
 1. Expand the **Traffic** app on the sidebar and select **Load Balancing**.
@@ -123,7 +122,7 @@ To create a GeoDNS load balancer on Cloudflare:
 
 1. Click **Create Load Balancer**.
 
-1. Enter the GeoDNS hostname you wish to use (e.g. `https://coder.example.com`).
+1. Enter the unified hostname you wish to use (e.g. `coder.example.com`).
 
    ![Enter hostname](../../assets/admin/cloudflare-geodns/hostname.png)
 
