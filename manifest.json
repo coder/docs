@@ -264,7 +264,7 @@
               "path": "./admin/satellites/migration.md"
             },
             {
-              "path": "./admin/satellites/geo-dns.md"
+              "path": "./admin/satellites/geodns.md"
             }
           ]
         },
