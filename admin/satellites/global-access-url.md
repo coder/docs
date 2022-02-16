@@ -1,8 +1,8 @@
 ---
-title: Proximity-based configuration
+title: Global access URL configuration
 description: |
   Learn how to configure your primary and satellite deployments so that they
-  share a hostname using geo DNS or anycast.
+  share an access URL.
 state: alpha
 ---
 
