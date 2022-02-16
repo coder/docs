@@ -1,5 +1,5 @@
 ---
-title: Proximity based configuration
+title: Proximity-based configuration
 description: |
   Learn how to configure your primary and satellite deployments so that they
   share a hostname using geo DNS or anycast.
@@ -7,8 +7,8 @@ state: alpha
 ---
 
 By default, the primary deployment and satellite deployments have different
-access URLs. The use of two access URLs can confuse engineering teams when it
-comes time to determine which access URL they should use for Coder.
+access URLs. Using two access URLs can confuse engineering teams when it comes
+time to determine which one they should use for Coder.
 
 To prevent confusion, Coder supports an optional unified hostname configuration
 where the primary deployment and all satellite deployments share a hostname. All
@@ -17,51 +17,46 @@ configuration ensures that users are still accessing a deployment that is near
 to them geographically, offering low latency when connecting to their
 workspaces.
 
-Geo DNS (also known as _geographical split horizon DNS_) is a DNS load balancing
-technique that causes users to connect to their geographically nearest servers
-without relying on anycast IP routing. This guide will focus on geo DNS setup,
-but will still work with anycast routing.
+GeoDNS (also known as _geographical split-horizon DNS_) is a DNS load balancing
+technique that helps users connect to their geographically nearest servers
+without relying on anycast IP routing. This guide will focus on GeoDNS setup,
+though it will still work with anycast routing.
 
 ## Requirements
 
 You will need the following:
 
-- A primary access URL (e.g. `https://primary.example.com`).
+- A primary access URL (e.g. `https://primary.example.com`)
 - One or more satellite access URLs (e.g. `https://sydney.example.com`,
-  `https://london.example.com`).
+  `https://london.example.com`)
 - A "unified" access URL (e.g. `https://coder.example.com`). If you are using
-  geo DNS you should set the default backend to the primary access URL. Set the
+  GeoDNS, you should set the default backend to the primary access URL. Set the
   backend for each region with a satellite to the corresponding satellite access
-  URL or IP address.
+  URL or IP address
 - A TLS certificate for the primary deployment that has both the primary
-  hostname and the corresponding unified hostname.
+  hostname and the corresponding unified hostname
 - A TLS certificate for _each_ satellite with the satellite's hostname and the
-  corresponding unified hostname.
+  corresponding unified hostname
 
 > Please note that:
 >
-> - We have provided instructions on
->   [how to create a geo DNS load balancer on Cloudflare](#create-a-geodns-load-balancer-on-cloudflare)
->   below.
 > - If you are using cert-manager, you can add hostnames to a certificate by
 >   including them in the `spec.dnsNames` section.
 > - We recommend maintaining a separate "regional" hostname or IP address for
 >   each primary or satellite so you can access them explicitly to aid in
->   debugging. This guide iwll walk you through the process of preserving the
->   existing regional access URL.
+>   debugging. This guide will walk you through preserving the existing regional
+>   access URL.
 
 ## Configure a unified access URL on Coder
 
 1. Configure your geo DNS or anycast routing so the primary Coder deployment and
    all satellites share a single hostname, as well as their individual
-   hostnames.
-
-   - We have provided instructions on
-     [how to create a GeoDNS load balancer on Cloudflare](#create-a-geodns-load-balancer-on-cloudflare)
-     below.
+   hostnames. (We have provided instructions on
+   [how to create a GeoDNS load balancer on Cloudflare](#create-a-geodns-load-balancer-on-cloudflare)
+   below.)
 
 1. In the primary Helm values file, set `coderd.alternateHostnames` to your
-   primary hostname and your unified hostname:
+   primary hostname and unified hostname:
 
    ```yaml
    coderd:
@@ -126,13 +121,13 @@ To create a geo DNS load balancer on Cloudflare:
 
    ![Enter hostname](../../assets/admin/cloudflare-geodns/hostname.png)
 
-1. **Optional:** Disable Cloudflare proxying by unchecking the orange cloud. We
-   recommend disabling Cloudflare proxying when using satellites, since proxying
-   adds additional hops that will increase latency.
+1. **Optional:** Disable Cloudflare proxying by **unchecking** the orange cloud.
+   We recommend disabling Cloudflare proxying when using satellites, since
+   proxying adds additional hops that will increase latency.
 
 1. Click **Next** to proceed.
 
-1. For the primary deployment and _each_ satellite deployment, do the follow
+1. For the primary deployment and _each_ satellite deployment, do the following
    steps:
 
    1. Click **+ Create an Origin Pool**.
