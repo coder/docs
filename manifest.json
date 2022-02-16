@@ -1,5 +1,14 @@
 {
-  "versions": ["v1.27", "v1.26", "v1.25", "v1.24", "v1.23", "v1.22", "v1.21"],
+  "versions": [
+    "v1.28",
+    "v1.27",
+    "v1.26",
+    "v1.25",
+    "v1.24",
+    "v1.23",
+    "v1.22",
+    "v1.21"
+  ],
   "routes": [
     {
       "path": "./index.md",
@@ -253,6 +262,9 @@
             },
             {
               "path": "./admin/satellites/migration.md"
+            },
+            {
+              "path": "./admin/satellites/global-access-url.md"
             }
           ]
         },
@@ -296,6 +308,9 @@
             },
             {
               "path": "./admin/workspace-management/ssh-access.md"
+            },
+            {
+              "path": "./admin/workspace-management/tun-device.md"
             },
             {
               "path": "./admin/workspace-management/process-logging.md"
@@ -520,6 +535,9 @@
       "path": "./changelog/index.md",
       "children": [
         {
+          "path": "./changelog/1.28.0.md"
+        },
+        {
           "path": "./changelog/1.27.0.md",
           "children": [
             {
@@ -542,15 +560,15 @@
           ]
         },
         {
-          "path": "./changelog/1.25.0.md"
-        },
-        {
-          "path": "./changelog/1.24.0.md"
-        },
-        {
           "path": "./changelog/archive/index.md",
           "navigable": false,
           "children": [
+            {
+              "path": "./changelog/archive/1.25.0.md"
+            },
+            {
+              "path": "./changelog/archive/1.24.0.md"
+            },
             {
               "path": "./changelog/archive/1.23.1.md",
               "navigable": false

@@ -66,6 +66,8 @@ Now that you've registered an app, you can provide the relevant **Client ID**,
 
 1. For the **Issuer**, provide `accounts.google.com`.
 
+1. For **Additional Scopes**, you can leave this value blank.
+
 1. Click **Save preferences**.
 
 You can now use Google as an SSO provider with Coder.
