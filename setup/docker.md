@@ -17,7 +17,19 @@ Coder for Docker works with the following platforms:
   [Docker Desktop 20.10](https://www.docker.com/products/docker-desktop).
   **Note**: Coder for Docker requires Windows Subsystem for Linux at this time.
 
-Coder requires x86-64 and does not support ARM-based processors at this time.
+At this time, Coder publishes builds for the x86-64 architecture only, and does
+not support support Arm-based processors, such as those present in Apple Silicon
+(M1) laptops or Amazon Graviton instances.
+
+On Apple Silicon laptops, we have had some success using [Rosetta 2] to emulate
+the x86-64 instruction set. To install Rosetta 2 on your macOS computer, run the
+following command in a terminal window:
+
+```console
+softwareupdate --install-rosetta
+```
+
+[rosetta 2]: https://support.apple.com/en-us/HT211861
 
 ## Installing Coder for Docker
 
