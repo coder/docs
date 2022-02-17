@@ -23,11 +23,6 @@ env | grep CODER_
         <th>Description</th>
     </tr>
     <tr>
-        <td><code>CODER_AGENT_TOKEN</code></td>
-        <td>The token used by the <a href="../setup/architecture.md">Coder Agent</a>
-            to authenticate with <code>coderd</code></td>
-    </tr>
-    <tr>
         <td><code>CODER_ASSETS_ROOT</code></td>
         <td>The directory where coder adds Coder-specific assets during
             workspace creation, such as the <code>coder-cli</code> binary</td>
@@ -87,3 +82,47 @@ env | grep CODER_
         <td>The name of the workspace provider hosting the workspace</td>
     </tr>
 </table>
+
+<!-- markdownlint-restore -->
+
+## Other variables
+
+Coder uses the following environment variables for its internal operation:
+
+> **Important**: These may be modified or removed in future releases without
+> prior notice, and are not covered by Coder's backward compatibility policy.
+> These are documented here for your information only.
+
+<!-- markdownlint-disable MD044 -->
+<table>
+    <tr>
+        <th>Environment variable</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>CODER_AGENT_TOKEN</code></td>
+        <td>The token used by the <a href="../setup/architecture.md">Coder Agent</a>
+            to authenticate with <code>coderd</code>. The Coder Agent handles
+            tunnelled connections, collection of workspace statistics (such as
+            processor and memory utilization), and manages programs, such as
+            editors.</td>
+    </tr>
+    <tr>
+        <td><code>CODER_AGENT_URL</code></td>
+        <td>This is the URL that the <code>coder agent</code> process will use
+            to connect to <code>coderd</code>. If this is not set, the agent
+            will connect to <code>CODER_URL</code> instead. This enables the
+            <code>coder agent</code> and <code>coder</code> command-line tool
+            to connect to different installations.</td>
+    </tr>
+    <tr>
+        <td><code>CODER_BOOTSTRAP_SCRIPT</code></td>
+        <td>When the
+            <a href="../admin/workspace-management/self-contained-builds.md">
+            self-contained workspace builds</a> feature is active, this variable
+            will contain a small script used to initiate the workspace startup
+            sequence, beginning by downloading the "bootstrap agent" from the
+            <code>coderd</code> process.</td>
+    </tr>
+</table>
+<!-- markdownlint-restore -->
