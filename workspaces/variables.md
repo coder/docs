@@ -25,7 +25,7 @@ env | grep CODER_
     <tr>
         <td><code>CODER_AGENT_TOKEN</code></td>
         <td>The token used by the <a href="../setup/architecture.md">Coder Agent</a>
-            to authenticate with `coderd`</td>
+            to authenticate with <code>coderd</code></td>
     </tr>
     <tr>
         <td><code>CODER_ASSETS_ROOT</code></td>
