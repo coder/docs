@@ -109,7 +109,7 @@ Coder uses the following environment variables for its internal operation:
     </tr>
     <tr>
         <td><code>CODER_AGENT_URL</code></td>
-        <td>Th URL that the <code>coder agent</code> process uses
+        <td>The URL that the <code>coder agent</code> process uses
             to connect to <code>coderd</code>. If this is not set, the agent
             will connect to <code>CODER_URL</code> instead, enabling the
             <code>coder agent</code> and <code>coder</code> command-line tool
