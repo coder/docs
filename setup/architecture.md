@@ -8,6 +8,9 @@ Coder is deployed on Kubernetes and includes the following components:
 - **coderd**: the central authority; provides authentication and supports the
   Dashboard and an API which you can use to create and interact with Workspaces
 - **PostgreSQL**: data storage for session tokens, workspace information, etc.
+- **coder agent**: a program running in each workspace that connects to `coderd`
+  and handles tunnelled connections, collection of workspace statistics (such as
+  processor and memory utilization), and manages programs, such as editors.
 
 Each component runs in its own Kubernetes pod.
 
