@@ -50,15 +50,13 @@ Coder inserts static assets into each workspace, including:
 
 - code-server
 - JetBrains Projector
-- Coder CLI
+- Coder CLI, which includes the [Coder Agent](../setup/architecture.md)
 
 These assets are installed into the `/var/tmp/coder` directory of each
-workspace. You do not need to include these static assets in your custom
-images. However, the following software are **required** when you build custom
-images:
+workspace. You do not need to include these static assets in your custom images.
+However, the following software are **required** when you build custom images:
 
-- [POSIX
-  Utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)
+- [POSIX Utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)
 - [GNU libc](https://www.gnu.org/software/libc/libc.html)
   - The minimum GNU libc version supported for the Coder-inserted assets is
     `2.1`
