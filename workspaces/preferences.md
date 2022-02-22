@@ -40,19 +40,11 @@ combination).
 
 The **SSH Keys** page is where you'll find the public SSH key corresponding to
 the private key that Coder inserts automatically into your workspaces. The
-public key is useful for services, such as Git, Bitbucket, GitHub, and GitLab,
-that you need to access from your workspace.
+public key is useful for services, such as Git, Azure Repos, Bitbucket, GitHub,
+and GitLab, that you need to access from your workspace.
 
 If necessary, you can regenerate your key. Be sure to provide your updated key
 to all of the services you use. Otherwise, they won't work.
-
-> The SSH public keys use the
-> [Ed25519 key algorithm](https://datatracker.ietf.org/doc/html/rfc8709) instead
-> of the more commonly used RSA algorithm. Recent publications
-> ([example](https://leanpub.com/gocrypto/read#leanpub-auto-chapter-5-digital-signatures))
-> suggest that Ed25519 is preferable to RSA. OpenSSH has supported Ed25519 SSH
-> keys since [version 6.5](https://www.openssh.com/txt/release-6.5), released
-> in 2014.
 
 ## Linked accounts
 
