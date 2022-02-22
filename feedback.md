@@ -7,15 +7,10 @@ something not working as expected? **We want to hear from you!**
 
 ## Making a suggestion
 
-Check our [roadmap](https://roadmap.coder.com/) to see if the suggested feature
-exists. You can vote for features and provide more detailed suggestions.
-
-If you can't find the feature, select **Submit Idea** then fill out the form
-with the details of your suggestion.
+If Coder is missing a feature that you would like, select **Submit Idea** and
+fill out the form with the details of your suggestion.
 
 We collect your email so that you will be notified when the feature is updated.
-
-![Coder roadmap](assets/roadmap.png)
 
 ## Reporting a problem
 
