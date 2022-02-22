@@ -26,4 +26,7 @@ Click **Edit** in the top-right. In the dialog that opens, use the slider
 underneath **Workspace Shutdown Behavior** to select the maximum allowed
 duration.
 
+Select **User-controlled workspace shutdown behavior** if you'd like to allow
+users to set their desired shutdown behavior. This will override the org-level setting.
+
 ![Configure shutdown behavior](../../assets/admin/workspace-shutdown.png)

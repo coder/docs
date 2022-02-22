@@ -163,7 +163,7 @@ support immediate volume binding.
 To create clusters allowing you to
 [enable container-based virtual machines (CVMs)](../../admin/workspace-management/cvms.md)
 as a workspace deployment option, you'll need to
-[create a nodegroup](https://eksctl.io/usage/managing-nodegroups/#creating-a-nodegroup-from-a-config-file).
+[create a nodegroup](https://eksctl.io/usage/eks-managed-nodes/#creating-managed-nodegroups).
 
 1. Define your config file (we've named the file `coder-node.yaml`, but you can
    call it whatever you'd like):
@@ -177,10 +177,19 @@ as a workspace deployment option, you'll need to
      name: <YOUR_CLUSTER_NAME>
      region: <YOUR_AWS_REGION>
 
-   nodeGroups:
+   managedNodeGroups:
      - name: coder-node-group
        amiFamily: Ubuntu2004
-       ami: <your Ubuntu 20.04 AMI ID>
+       # Custom EKS-compatible AMIs can be used instead of amiFamily
+       # ami: <your Ubuntu 20.04 AMI ID>
+       instanceType: <instance-type>
+       minSize: 1
+       mazSize: 2
+       desiredCapacity: 1
+       # Uncomment "overrideBootstrapCommand" if you are using a custom AMI
+       # overrideBootstrapCommand: |
+       #  #!/bin/bash -xe
+       #  sudo /etc/eks/bootstrap.sh <YOUR_CLUSTER_NAME>
    ```
 
 > [See here for a list of EKS-compatible Ubuntu AMIs](https://cloud-images.ubuntu.com/docs/aws/eks/)
