@@ -28,7 +28,7 @@ PORT 1234
 > To help you get started, see this
 > [sample image](https://github.com/coder/enterprise-images/tree/main/images/vnc)
 > that uses [noVNC](https://github.com/novnc/noVNC) as the client and
-> [TigerVNC](https://tigervnc.org) as the server.
+> [TurboVNC](https://turbovnc.org/) as the server.
 
 ## Step 2: Build and push the image to Docker Hub
 
