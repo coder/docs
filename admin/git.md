@@ -19,6 +19,11 @@ Coder integrates with the following service providers for authentication and
   rel="noreferrer noopener">doesn't support</a> managing SSH keys for users via
   OAuth)
 
+> Coder supports integration with
+> [Azure Repos (Azure DevOps) via SSH](https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops#step-2--add-the-public-key-to-azure-devops-servicestfs),
+> though we do not currently support OAuth capabilities. Developers can find
+> their public SSH keys under [preferences](../workspaces/preferences.md).
+
 Linking your Coder account with a git service provider is _not_ required.
 Instead, you can use Visual Studio Code with git, the command-line tool, and we
 expect that this combination will work with most hosting software or services.
