@@ -73,7 +73,7 @@ kubectl logs \
 
 The raw logs will look something like this:
 
-```json
+```console
 {"ts":"2022-02-23T19:00:27.996247873Z","level":"INFO","msg":"log","logger_name":"sysbox-fs","fields":{"content":"time=\"2022-02-23 19:00:27\" level=info msg=\"Container registration completed: id = workspace_cv, initPid = 1662, uid:gid = 100000:100000\""}}
 {"id":"","environment_id":"","build_id":"","time":"0001-01-01T00:00:00Z","type":"substage","msg":"validating container state...","metadata":null}
 {"ts":"2022-02-23T19:00:28.020513073Z","level":"DEBUG","msg":"getting state container","fields":{"command":"/usr/local/sbin/sysbox-runc state workspace_cvm","working_dir":"/tmp/coder"}}
@@ -83,7 +83,7 @@ The raw logs will look something like this:
 {"ts":"2022-02-23T19:00:28.070861371Z","level":"DEBUG","msg":"no istio detected","fields":{"error":"Get \"http://127.0.0.1:15020\": dial tcp 127.0.0.1:15020: connect: connection refused"}}
 {"ts":"2022-02-23T19:00:28.070977879Z","level":"DEBUG","msg":"patched istio networking"}
 {"ts":"2022-02-23T19:00:28.07101747Z","level":"DEBUG","msg":"successfully spawned cvm!"}
-{"id":"","environment_id":"","build_id":"","time":"00
+{"id":"","environment_id":"","build_id":"","time":"0001-01-01T00:00:00Z","type":"yield","msg":"","metadata":null}
 ```
 
 ### View logs in AWS EKS
