@@ -72,3 +72,6 @@ specifically, users must change the following values:
   https://github.com/coder/enterprise-helm/blob/1.27.0/values.yaml
 
 <!-- markdownlint-enable MD044 -->
+
+> The Helm charts shipped with versions 1.21 through 1.26 are
+> backward-compatible, while charts shipping with v1.27 and later are not.
