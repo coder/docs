@@ -33,7 +33,7 @@ Use of the workspace process logging functionality requires a host Linux
 kernel >= 5.8 with the kernel config `CONFIG_DEBUG_INFO_BTF=y` enabled.
 
 To validate this config is enabled, run either of the following commands on the
-nodes directly (*not* from the terminal within a workspace):
+nodes directly (_not_ from the terminal within a workspace):
 
 ```console
 cat /proc/config.gz | gunzip | grep CONFIG_DEBUG_INFO_BTF
@@ -66,9 +66,24 @@ cloud provider's log viewer, or you can use `kubectl` to print the logs:
 
 ```bash
 kubectl logs \
-  -l "com.coder.username=zac" \        # Filter by the user "zac"
-  -l "com.coder.workspace.name=code" \ # Filter by the workspace "code"
-  -c exectrace                         # Only show logs from the sidecar
+  -l "com.coder.username=admin" \        # Filter by the user "admin"
+  -l "com.coder.workspace.name=main" \ # Filter by the workspace "main"
+  -c workspace                         # Only show logs from the workspace
+```
+
+The raw logs will look something like this:
+
+```json
+{"ts":"2022-02-23T19:00:27.996247873Z","level":"INFO","msg":"log","logger_name":"sysbox-fs","fields":{"content":"time=\"2022-02-23 19:00:27\" level=info msg=\"Container registration completed: id = workspace_cv, initPid = 1662, uid:gid = 100000:100000\""}}
+{"id":"","environment_id":"","build_id":"","time":"0001-01-01T00:00:00Z","type":"substage","msg":"validating container state...","metadata":null}
+{"ts":"2022-02-23T19:00:28.020513073Z","level":"DEBUG","msg":"getting state container","fields":{"command":"/usr/local/sbin/sysbox-runc state workspace_cvm","working_dir":"/tmp/coder"}}
+{"id":"","environment_id":"","build_id":"","time":"0001-01-01T00:00:00Z","type":"substage","msg":"starting container...","metadata":null}
+{"ts":"2022-02-23T19:00:28.043324478Z","level":"DEBUG","msg":"starting container","fields":{"command":"/usr/local/sbin/sysbox-runc start workspace_cvm","working_dir":"/tmp/coder"}}
+{"ts":"2022-02-23T19:00:28.070215803Z","level":"DEBUG","msg":"pinging istio sidecar","fields":{"request_url":"http://127.0.0.1:15020"}}
+{"ts":"2022-02-23T19:00:28.070861371Z","level":"DEBUG","msg":"no istio detected","fields":{"error":"Get \"http://127.0.0.1:15020\": dial tcp 127.0.0.1:15020: connect: connection refused"}}
+{"ts":"2022-02-23T19:00:28.070977879Z","level":"DEBUG","msg":"patched istio networking"}
+{"ts":"2022-02-23T19:00:28.07101747Z","level":"DEBUG","msg":"successfully spawned cvm!"}
+{"id":"","environment_id":"","build_id":"","time":"00
 ```
 
 ### View logs in AWS EKS
@@ -105,7 +120,7 @@ fields @timestamp, log_processed.fields.cmdline
 - The sidecar attached to each workspace is a [privileged][privileged] container
   (this is similar to the CVM container on CVM-enabled workspaces), so you may
   need to review your organization's security policies before enabling this
-  feature. Enabling workspace process logging does *not* grant extra privileges
+  feature. Enabling workspace process logging does _not_ grant extra privileges
   to the workspace container itself, however.
 - Coder logs processes from nested Docker containers (including deeply nested
   containers) correctly, but Coder does not distinguish between processes
