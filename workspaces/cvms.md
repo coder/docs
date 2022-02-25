@@ -8,14 +8,15 @@ limitations as to what applications you can run inside your workspace. Most
 notably, it's not possible to run Docker securely within regular Docker
 containers.
 
-Coder offers an alternative workspace deployment option that allows you to run
-Docker, Docker Compose, systemd, and other system-level applications securely
-within your development containers. We call this workspace variant a
-_Container-based Virtual Machine (CVM)_.
+Coder offers an alternative workspace deployment option, called container-based
+virtual machines (CVMs), that leverages the
+[Sysbox container runtime](https://github.com/nestybox/sysbox). CVMs allow you
+to run Docker, Docker Compose, systemd, and other system-level applications
+securely within your development containers.
 
-> Are you a platform admin? Learn how to
-> [enable Docker in workspaces](../admin/workspace-management/cvms.md) for your
-> deployment.
+> Coder site managers should review
+> [our admin docs](../admin/workspace-management/cvms/index.md) for information
+> on enabling Docker in workspaces for your deployment.
 
 ## Container-based Virtual Machine (CVM)
 

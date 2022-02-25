@@ -1,6 +1,6 @@
 ---
 title: Docker in workspaces
-description: Learn about supproting Docker inside workspaces.
+description: Learn about supporting Docker inside workspaces.
 ---
 
 [Container-based virtual machines (CVMs)](../../../workspaces/cvms.md) allow
@@ -12,14 +12,18 @@ deployment option.
 
 ## Infrastructure requirements
 
-- CVMs leverage the
-  [Sysbox container runtime](https://github.com/nestybox/sysbox), so the
-  Kubernetes Node must run a supported Linux distro with the minimum kernel
-  version. See
-  [Sysbox distro compatibility](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
-  and
-  [Sysbox User Guide: Design Notes](https://github.com/nestybox/sysbox/blob/master/docs/user-guide/design.md)
-  for more information.
+- Coder implements container-based virtual machines (CVMs) using the
+  [Sysbox container runtime](https://github.com/nestybox/sysbox), which allows
+  unprivileged users to run system-level applications, such as Docker and
+  systemd, securely from their workspace containers. Sysbox requires a
+  [compatible Linux distribution](https://github.com/nestybox/sysbox/blob/master/docs/distro-compat.md)
+  to implement these security features; for additional information, see the
+  [Sysbox User Guide: Design Notes](https://github.com/nestybox/sysbox/blob/master/docs/user-guide/design.md).
+
+  [Nestybox](https://www.nestybox.com/) maintains the Sysbox runtime and
+  provides an
+  [enterprise offering called Sysbox EE](https://www.nestybox.com/sysbox-ee)
+  that includes additional security features and capabilities.
 
 - The cluster must allow privileged containers and `hostPath` mounts. See
   [Security](#security) for more information on why this is still secure.
