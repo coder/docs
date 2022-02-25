@@ -1,6 +1,6 @@
 ---
 title: Docker in workspaces
-description: Learn about supproting Docker inside workspaces.
+description: Learn about supporting Docker inside workspaces.
 ---
 
 [Container-based virtual machines (CVMs)](../../../workspaces/cvms.md) allow
