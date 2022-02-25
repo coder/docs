@@ -15,8 +15,8 @@ to run Docker, Docker Compose, systemd, and other system-level applications
 securely within your development containers.
 
 > Coder site managers should review
-> [our admin docs](../admin/workspace-management/cvms.md) for information on
-> enabling Docker in workspaces for your deployment.
+> [our admin docs](../admin/workspace-management/cvms/index.md) for information
+> on enabling Docker in workspaces for your deployment.
 
 ## Container-based Virtual Machine (CVM)
 
