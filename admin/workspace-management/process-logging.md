@@ -68,7 +68,7 @@ cloud provider's log viewer, or you can use `kubectl` to print the logs:
 kubectl logs \
   --selector="com.coder.username=admin" \         # Filter by the user "admin"
   --selector="com.coder.workspace.name=main" \    # Filter by the workspace "main"
-  -c exectrace                                    # Only show logs from the sidecar
+  --container exectrace                           # Only show logs from the sidecar
 ```
 
 The raw logs will look something like this:
