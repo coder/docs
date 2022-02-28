@@ -65,7 +65,7 @@ To view the process logs from a specific user or workspace, you can use your
 cloud provider's log viewer, or you can use `kubectl` to print the logs:
 
 ```bash
-kubectl logs /
+kubectl logs \
   --selector="com.coder.username=admin" \         # Filter by the user "admin"
   --selector="com.coder.workspace.name=main" \    # Filter by the workspace "main"
   -c exectrace                                    # Only show logs from the sidecar
@@ -74,16 +74,33 @@ kubectl logs /
 The raw logs will look something like this:
 
 ```json
-{"ts":"2022-02-23T19:00:27.996247873Z","level":"INFO","msg":"log","logger_name":"sysbox-fs","fields":{"content":"time=\"2022-02-23 19:00:27\" level=info msg=\"Container registration completed: id = workspace_cv, initPid = 1662, uid:gid = 100000:100000\""}}
-{"id":"","environment_id":"","build_id":"","time":"0001-01-01T00:00:00Z","type":"substage","msg":"validating container state...","metadata":null}
-{"ts":"2022-02-23T19:00:28.020513073Z","level":"DEBUG","msg":"getting state container","fields":{"command":"/usr/local/sbin/sysbox-runc state workspace_cvm","working_dir":"/tmp/coder"}}
-{"id":"","environment_id":"","build_id":"","time":"0001-01-01T00:00:00Z","type":"substage","msg":"starting container...","metadata":null}
-{"ts":"2022-02-23T19:00:28.043324478Z","level":"DEBUG","msg":"starting container","fields":{"command":"/usr/local/sbin/sysbox-runc start workspace_cvm","working_dir":"/tmp/coder"}}
-{"ts":"2022-02-23T19:00:28.070215803Z","level":"DEBUG","msg":"pinging istio sidecar","fields":{"request_url":"http://127.0.0.1:15020"}}
-{"ts":"2022-02-23T19:00:28.070861371Z","level":"DEBUG","msg":"no istio detected","fields":{"error":"Get \"http://127.0.0.1:15020\": dial tcp 127.0.0.1:15020: connect: connection refused"}}
-{"ts":"2022-02-23T19:00:28.070977879Z","level":"DEBUG","msg":"patched istio networking"}
-{"ts":"2022-02-23T19:00:28.07101747Z","level":"DEBUG","msg":"successfully spawned cvm!"}
-{"id":"","environment_id":"","build_id":"","time":"0001-01-01T00:00:00Z","type":"yield","msg":"","metadata":null}
+{
+  "ts": "2022-02-28T20:29:38.038452202Z",
+  "level": "INFO",
+  "msg": "exec",
+  "caller": "/go/src/coder.com/m/product/coder/cmd/envbox/exectrace.go:176",
+  "func": "main.runExectrace",
+  "fields": {
+    "labels": {
+      "organization_id": "default",
+      "user_email": "admin",
+      "user_id": "admin",
+      "username": "admin",
+      "workspace_id": "621d2e52-a6987ef6c56210058ee2593c",
+      "workspace_name": "main"
+    },
+    "cmdline": "uname -a",
+    "event": {
+      "filename": "/usr/bin/uname",
+      "argv": ["uname", "-a"],
+      "truncated": false,
+      "pid": 920684,
+      "uid": 101000,
+      "gid": 101000,
+      "comm": "bash"
+    }
+  }
+}
 ```
 
 ### View logs in AWS EKS
