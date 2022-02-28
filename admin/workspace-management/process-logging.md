@@ -66,7 +66,7 @@ cloud provider's log viewer, or you can use `kubectl` to print the logs:
 
 ```bash
 kubectl logs \
-  --selector="com.coder.username=admin" \         # Filter by the user "admin"
+  --selector="com.coder.username=jessie" \        # Filter by the user "jessie"
   --selector="com.coder.workspace.name=main" \    # Filter by the workspace "main"
   --container exectrace                           # Only show logs from the sidecar
 ```
@@ -83,9 +83,9 @@ The raw logs will look something like this:
   "fields": {
     "labels": {
       "organization_id": "default",
-      "user_email": "admin",
-      "user_id": "admin",
-      "username": "admin",
+      "user_email": "jessie@coder.com",
+      "user_id": "5e876e9a-121663f01ebd1522060d5270",
+      "username": "jessie",
       "workspace_id": "621d2e52-a6987ef6c56210058ee2593c",
       "workspace_name": "main"
     },
