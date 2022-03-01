@@ -528,6 +528,9 @@
               "path": "./guides/troubleshooting/vite-hmr.md"
             }
           ]
+        },
+        {
+          "path": "./guides/workspaces.md"
         }
       ]
     },

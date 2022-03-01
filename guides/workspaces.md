@@ -3,8 +3,8 @@ title: "Workspace organization"
 description: Learn how to organize your Coder workspaces.
 ---
 
-This article walks you through considerations you should take when deciding how
-to set up your Coder workspaces.
+This article describes considerations for deciding how to set up your Coder
+workspaces.
 
 In general, the fewer workspaces per developer, the easier it is for the
 individual developer to manage. However, the complexity of the underlying images
@@ -18,12 +18,12 @@ you would a laptop: the workspace is where you have all of your languages,
 dependencies, and tooling installed, and it is the one place you'd go to work on
 your projects.
 
-Upsides:
+Benefits:
 
-- Ease of management due to the smaller number of workspaces
+- Fewer workspaces to manage
 - No need to switch between workspaces for different projects
 
-Downsides:
+Limitations:
 
 - The size of the workspace can grow quite large
 - The image supporting such a workspace can become complex
@@ -33,15 +33,13 @@ Downsides:
 In this situation, you would create one workspace for your JavaScript projects,
 one workspace for your Python projects, and so on.
 
-Upsides:
+Benefits:
 
-- Streamlined images due to them only containing only one language and its
-  accompanying dependencies
+- Smaller images, since they only contain one language and its dependencies
 
-Downsides:
+Limitations:
 
-- Developers potentially have multiple workspaces, each of which are are the
-  larger side.
+- Developers may have multiple workspaces, consuming more storage space overall
 
 ## One workspace per project per developer
 
@@ -49,12 +47,12 @@ Each developer has multiple workspaces, with each workspace devoted to one
 project. If a developer is currently working on three projects, they'd have
 three workspaces.
 
-Upsides:
+Benefits:
 
 - Streamlined images with only the languages and dependencies included
 - Smaller, lighter workspaces
 
-Downsides:
+Limitations:
 
 - As the number of workspaces per developer grows, the importance of
   well-defined dotfiles grow to ensure that developers do not spend too much
@@ -67,7 +65,7 @@ A subset of this category is one workspace per **major** version of a project
 you to change the underlying image, so you can update the image (changing out
 the language and any dependencies) if needed.
 
-The upsides and downsides of this option are similar to those involved with
+The benefits and limitations of this option are similar to those involved with
 setting up one workspace per project per developer.
 
 ## One workspace per feature/branch
