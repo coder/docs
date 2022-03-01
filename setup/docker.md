@@ -103,7 +103,7 @@ DEVURL_HOST="*.mycompany.com"
 For example:
 
 ```console
-docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.28.0
+docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.28.2
 ```
 
 ## Use an external PostgreSQL database
