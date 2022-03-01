@@ -51,7 +51,7 @@ Coder for Docker works with the following platforms:
       -p 7080:7080 \
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v ~/.coder:/var/run/coder \
-      codercom/coder:1.28.0
+      codercom/coder:1.28.2
    ```
 
    When this process is complete, Coder will print the URL you can use to access
@@ -127,7 +127,7 @@ If you'd like to use an external database, you must:
       -e DB_PASSWORD="" \
       -e DB_NAME=postgres \
       -e DB_SSL_MODE=disable \
-      codercom/coder:1.28.0
+      codercom/coder:1.28.2
    ```
 
 Coder supports client TLS certificates using `DB_SSL_MODE=verify-full`. Ensure
