@@ -11,6 +11,10 @@ individual developer to manage. However, the complexity of the underlying images
 increases as the images need to support multiple projects, each potentially with
 its own language, set of tooling, and dependencies.
 
+Nevertheless, for teams that do not have a complex development workflow, we
+recommend starting with one workspace per developer, since it is the fastest,
+most straightforward model to adopt.
+
 ## One workspace per developer
 
 With one workspace per developer, you can think of the Coder workspace the way
@@ -23,7 +27,7 @@ Benefits:
 - Fewer workspaces to manage
 - No need to switch between workspaces for different projects
 
-Limitations:
+Potential caveats:
 
 - The size of the workspace can grow quite large
 - The image supporting such a workspace can become complex
@@ -37,7 +41,7 @@ Benefits:
 
 - Smaller images, since they only contain one language and its dependencies
 
-Limitations:
+Potential caveats:
 
 - Developers may have multiple workspaces, consuming more storage space overall
 
@@ -52,7 +56,7 @@ Benefits:
 - Streamlined images with only the languages and dependencies included
 - Smaller, lighter workspaces
 
-Limitations:
+Potential caveats:
 
 - As the number of workspaces per developer grows, the importance of
   well-defined dotfiles grow to ensure that developers do not spend too much
@@ -65,8 +69,8 @@ A subset of this category is one workspace per **major** version of a project
 you to change the underlying image, so you can update the image (changing out
 the language and any dependencies) if needed.
 
-The benefits and limitations of this option are similar to those involved with
-setting up one workspace per project per developer.
+The benefits and potential caveats of this option are similar to those involved
+with setting up one workspace per project per developer.
 
 ## One workspace per feature/branch
 
