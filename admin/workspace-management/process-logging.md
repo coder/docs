@@ -33,7 +33,7 @@ Use of the workspace process logging functionality requires a host Linux
 kernel >= 5.8 with the kernel config `CONFIG_DEBUG_INFO_BTF=y` enabled.
 
 To validate this config is enabled, run either of the following commands on the
-nodes directly (*not* from the terminal within a workspace):
+nodes directly (_not_ from the terminal within a workspace):
 
 ```console
 cat /proc/config.gz | gunzip | grep CONFIG_DEBUG_INFO_BTF
@@ -66,9 +66,41 @@ cloud provider's log viewer, or you can use `kubectl` to print the logs:
 
 ```bash
 kubectl logs \
-  -l "com.coder.username=zac" \        # Filter by the user "zac"
-  -l "com.coder.workspace.name=code" \ # Filter by the workspace "code"
-  -c exectrace                         # Only show logs from the sidecar
+  --selector="com.coder.username=jessie" \        # Filter by the user "jessie"
+  --selector="com.coder.workspace.name=main" \    # Filter by the workspace "main"
+  --container exectrace                           # Only show logs from the sidecar
+```
+
+The raw logs will look something like this:
+
+```json
+{
+  "ts": "2022-02-28T20:29:38.038452202Z",
+  "level": "INFO",
+  "msg": "exec",
+  "caller": "/go/src/coder.com/m/product/coder/cmd/envbox/exectrace.go:176",
+  "func": "main.runExectrace",
+  "fields": {
+    "labels": {
+      "organization_id": "default",
+      "user_email": "jessie@coder.com",
+      "user_id": "5e876e9a-121663f01ebd1522060d5270",
+      "username": "jessie",
+      "workspace_id": "621d2e52-a6987ef6c56210058ee2593c",
+      "workspace_name": "main"
+    },
+    "cmdline": "uname -a",
+    "event": {
+      "filename": "/usr/bin/uname",
+      "argv": ["uname", "-a"],
+      "truncated": false,
+      "pid": 920684,
+      "uid": 101000,
+      "gid": 101000,
+      "comm": "bash"
+    }
+  }
+}
 ```
 
 ### View logs in AWS EKS
@@ -105,7 +137,7 @@ fields @timestamp, log_processed.fields.cmdline
 - The sidecar attached to each workspace is a [privileged][privileged] container
   (this is similar to the CVM container on CVM-enabled workspaces), so you may
   need to review your organization's security policies before enabling this
-  feature. Enabling workspace process logging does *not* grant extra privileges
+  feature. Enabling workspace process logging does _not_ grant extra privileges
   to the workspace container itself, however.
 - Coder logs processes from nested Docker containers (including deeply nested
   containers) correctly, but Coder does not distinguish between processes
