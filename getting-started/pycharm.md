@@ -44,7 +44,7 @@ changes.
 
 ## Step 2: Create your workspace
 
-You will now create the workspace where you'll work on your development project.
+You will now create the workspace to work on your development project.
 
 1. Return to **Workspaces** using the top navigation bar.
 
@@ -63,9 +63,9 @@ You will now create the workspace where you'll work on your development project.
    machine** option is selected, _unselect_ the box. Leave the **CPU**,
    **Memory**, **Disk**, and **GPU** allocations as-is.
 
-1. Scroll to the bottom, and click **Create workspace**. The dialog will close,
-   allowing you to see the main workspace page. You can track the workspace
-   build process using the **Build log** on the right-hand side.
+1. Scroll to the bottom and click **Create workspace**. The dialog will close,
+   allowing you to see the main workspace page. On the right-hand side, you can
+   track the workspace build process using the **Build log**.
 
 ![Create a workspace](../assets/getting-started/create-workspace-pycharm.png)
 
@@ -79,23 +79,28 @@ purposes of this article, we'll leverage JetBrains' tutorial on how to
 [Create and run your first Python project](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html).
 
 1. Under **Browser applications**, click **PyCharm Community** to open the IDE
-   in your browser.
+   in your browser. Follow the prompts to accept the license agreement and
+   determine data sharing permissions.
 
-1. On the Welcome screen, click **New Project**.
+1. On the **Welcome to PyCharm** screen, click **New Project**.
 
 1. In the window that pops up:
 
-   1. Provide the **Location** where PyCharm should save your files.
+   1. Provide the **Location** where PyCharm should save your files (for this
+      example, we changed the highlighted portion to `task`, but you can name
+      the folder whatever you'd like))
    1. Ensure that **New environment using Virtualenv** is selected.
    1. Make sure to **uncheck** the option to **Create a main.py welcome
       script**.
    1. Click **Create** to proceed.
 
 1. In the left-hand navigation bar, right-click on the **root** of your folder
-   and select **New** > **File**. When prompted, provide a name for your file.
+   (for example, if you named the folder `task`, you would click where it says
+   **task** in the navbar) and select **New** > **File**. When prompted, provide
+   a name for your file (e.g., `car.py`).
 
-1. The IDE automatically opens your file, allowing you to edit. Copy and paste
-   the following
+1. The IDE automatically opens your new, empty file, allowing you to edit. Copy
+   and paste the following
    [sample app from JetBrains](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html#edit-file):
 
    ```python
@@ -156,19 +161,33 @@ purposes of this article, we'll leverage JetBrains' tutorial on how to
 
 ## Step 5: Push your repo to GitHub
 
-The follow steps show you how to push your app to a newly created GitHub repo.
+The following steps show you how to push your app to a newly created GitHub
+repo.
 
 1. Log in to GitHub and navigate to
    [Create a new repository](https://github.com/new).
 
 1. Provide a **repository name** and click **Create repository**.
 
-1. Return to your workspace, run the following in your terminal to add a remote
-   to your GitHub repo, change the primary branch name to `main`, and push the
-   contents to your newly created repo:
+1. Return to your workspace, and click **Terminal** at the bottom.
+
+1. Run the following to turn your directory into a Git repository and commit
+   your initial changes:
 
    ```console
-   git remote add origin https://github.com/<username>/<repoName>.git
+   cd ..
+   git init <nameOfDirectory>
+   cd <nameOfDirectory>
+   git add -A
+   git commit -am "Initial commit"
+   ```
+
+1. Run the following in your terminal to add a remote to your GitHub repo,
+   change the primary branch name to `main`, and push the contents to your newly
+   created repo:
+
+   ```console
+   git remote add origin git@github.com:<username>/<repoName>.git
    git branch -M main
    git push origin main
    ```
