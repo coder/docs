@@ -90,7 +90,7 @@ platform images are hosted in Coder's Docker Hub repo.
    The following images are optional, though you're welcome to take advantage of
    Coder's versions instead of building your own:
 
-   [OpenVSX](https://github.com/orgs/eclipse/packages/container/package/openvsx-server)
+   [Open VSX](https://github.com/orgs/eclipse/packages/container/package/openvsx-server)
 
    [enterprise-node](https://hub.docker.com/r/codercom/enterprise-node)
 
@@ -166,11 +166,25 @@ platform images are hosted in Coder's Docker Hub repo.
 
 Coder users in an air-gapped environment cannot access the public VS Code
 marketplace. However, you can point Coder to an air-gapped instance of
-[OpenVSX](https://github.com/eclipse/openvsx) to serve assets to users. For
-instructions on implementing this, see
+[Open VSX](https://github.com/eclipse/openvsx) to serve assets to users. For
+instructions on how to do this, see
 [Extensions](../../admin/workspace-management/extensions.md).
 
-You can also review the [OpenVSX deployment wiki] for more information.
+Please review the [Open VSX deployment wiki] for more information on setting up
+your Open VSX deployment. Note that there are several components involved,
+including:
 
-[openvsx deployment wiki]:
+- The server application, available as the
+  [openvsx-server Docker image](https://github.com/eclipse/openvsx/pkgs/container/openvsx-server)
+- A PostgreSQL instance to hold the metadata of the published extensions
+  - If you use just a database for storage, Open VSX stores everything as binary
+    data, which can increase the storage and network throughput of the database
+    considerable. As such, Open VSX recommends leveraging external storage
+    (e.g., Azure Blob Storage or Google Cloud Storage)
+- Elasticsearch, which Open VSX uses as the default search engine for search
+  queries that originate from the web UI; this is optional, since you can either
+  turn off searches or use database queries
+- GitHub OAuth for user authentication
+
+[open vsx deployment wiki]:
   https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX
