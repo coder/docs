@@ -95,3 +95,7 @@ Once you've created a workspace, it's time to hop in. Read more about how to
 
 > [Integrate with Git](./personalization#git-integration) to have your SSH key
 > injected automatically into Workspaces.
+
+## Workspace limits
+
+Coder allows each user to create up to 50 workspaces.
