@@ -1,6 +1,6 @@
 ---
 title: "Direct workspace connections"
-description: Learn how to enable P2P connections to workspaces.
+description: Learn how to enable direct connections to workspaces.
 ---
 
 Coder supports the use of [WebRTC STUN](https://en.wikipedia.org/wiki/STUN),
