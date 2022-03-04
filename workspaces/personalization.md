@@ -112,7 +112,7 @@ of your choice under [User preferences](preferences.md):
 
 ![Dotfiles preferences](../assets/workspaces/dotfiles-preferences.png)
 
-### Set environment variables
+### Setting environment variables
 
 If you'd like to set environment variables in your workspace so that they're
 available to Code Web (VS Code) running in your workspace and persist across
