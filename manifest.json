@@ -38,6 +38,9 @@
         },
         {
           "path": "getting-started/developers.md"
+        },
+        {
+          "path": "getting-started/pycharm.md"
         }
       ]
     },

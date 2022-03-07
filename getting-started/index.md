@@ -24,5 +24,6 @@ deployment available to them, these end-to-end guides will walk them through
 logging in and getting set up with a sample project they can use to experience
 Coder.
 
-Additionally, we have a guide for those interested in leveraging Coder for data
-science, specifically using Python with Jupyter notebooks.
+Additionally, we have a guide for those interested in leveraging Coder for
+[data science](data-scientists.md), specifically using Python with Jupyter
+notebooks. We also have a tutorial on getting started with [PyCharm](pycharm.md)
