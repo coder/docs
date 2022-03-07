@@ -158,6 +158,43 @@ multi-machine scaling.
 
 For organizations, we recommend one Docker host per team of 5-10 developers.
 
+## Docker Compose
+
+You can also use [Docker Compose](https://docs.docker.com/compose/) to run Coder
+in Docker.
+
+To do so:
+
+1. Create a new directory (we recommend something like `c4d`, but you can name
+   it whatever you'd like)
+1. Within the newly created directory, create a file named `docker-compose.yml`
+   that includes the following:
+
+   ```yaml
+   version: "3.5"
+   services:
+   coder:
+     image: docker.io/codercom/coder:1.28.2
+     container_name: coderd
+     restart: unless-stopped
+     ports:
+       - 7080:7080/tcp
+     volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+       - ${HOME}/.coder:/var/run/coder
+   ```
+
+1. In the terminal, navigate into the folder you created and run:
+
+```console
+docker-compose up -d
+```
+
+Coder will now run in the background.
+
+For more detailed information on the Docker Compose file, please see
+[Docker's docs](https://docs.docker.com/compose/compose-file/compose-file-v3/).
+
 ## Known issues
 
 Currently, Coder for Docker does not support:
