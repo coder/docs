@@ -98,7 +98,7 @@ workspace or turn it on.
 
 At startup, Coder clones your dotfiles repository into `~/dotfiles`. If there's
 an executable `~/dotfiles/install.sh` present, Coder executes it. If not, all
-dot-prefixed files are symlinked to your home directory.  
+dot-prefixed files are symlinked to your home directory.
 
 > You **must** mark `install.sh` as executable before committing it to your
 > dotfiles repo.
@@ -111,3 +111,14 @@ You can provide a link to your dotfiles repo that's hosted with the Git provider
 of your choice under [User preferences](preferences.md):
 
 ![Dotfiles preferences](../assets/workspaces/dotfiles-preferences.png)
+
+### Setting environment variables
+
+If you'd like to set environment variables in your workspace so that they're
+available to Code Web (VS Code) running in your workspace and persist across
+workspace builds, you can do so by:
+
+1. Setting the environment variables in `.profile`;
+1. Including `.profile` in the dotfiles repo you're using with Coder.
+
+Code Web will access the environment variables you set when you launch the IDE.
