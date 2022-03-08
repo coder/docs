@@ -11,18 +11,13 @@ jobs:
     name: Preview
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: deployment
         with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          
-      - name: Update Deployment
-        run: ./ci/scripts/github_deployment.sh update
-        env:
-          GITHUB_DEPLOYMENT: ${{ steps.deployment.outputs.id }}
-          GITHUB_TOKEN: ${{ github.token }}
-          DEPLOY_STATUS: success
-          DEPLOY_URL: https://coder.com/docs/coder/${{ github.event.pull_request.head.sha }}
+          token: "${{ github.token }}"
+          target_url:  https://coder.com/docs/coder/${{ github.event.pull_request.head.sha }}
+          environment: preview
 
       - name: Comment Credentials
         uses: marocchino/sticky-pull-request-comment@v2
