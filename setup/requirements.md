@@ -27,12 +27,12 @@ resources:
 ```
 
 By default, Coder is a single-replica deployment. For production systems,
-consider using at least 3 replicas to provide failover and load balancing
+consider using at least three replicas to provide failover and load balancing
 capabilities.
 
-If you expect roughly 10 or more concurrent users, we recommend increasing these
-figures to improve platform performance (we also recommend regular performance
-testing in a staging environment).
+If you expect roughly ten or more concurrent users, we recommend increasing
+these figures to improve platform performance (we also recommend regular
+performance testing in a staging environment).
 
 For **each** active developer using Coder, allocate additional resources. The
 specific amount required per developer varies, though we recommend starting with
