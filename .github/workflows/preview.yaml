@@ -12,14 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - uses: chrnorm/deployment-action@releases/v1
-        name: Create GitHub deployment
-        id: deployment
-        with:
-          token: "${{ github.token }}"
-          target_url:  https://coder.com/docs/coder/${{ github.event.pull_request.head.sha }}
-          environment: preview
 
       - name: Comment Credentials
         uses: marocchino/sticky-pull-request-comment@v2
