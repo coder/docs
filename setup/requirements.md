@@ -3,11 +3,33 @@ title: "Requirements"
 description: Learn about the prerequisite infrastructure requirements.
 ---
 
+### Compute
+
 Coder is deployed onto Kubernetes clusters, and we recommend the following
 resource allocation minimums to ensure quality performance.
 
-For **basic control services**, allocate at least 2 CPU cores, 4 GB of RAM, and
+For the Coder control plane (which consists of the `coderd` pod and any
+additional replicas) allocate at least 2 CPU cores, 4 GB of RAM, and
 20 GB of storage.
+
+In addition to sizing the control plane node(s), you can configure the `coderd`
+pod's resource requests/limits and number of replicas in the Helm chart. The current
+defaults for both CPU and memory are the following:
+
+```yaml
+resources:
+    requests:
+      cpu: "250m"
+      memory: "512Mi"
+    limits:
+      cpu: "250m"
+      memory: "512Mi"
+```
+
+The default number of `coderd` replicas is 1.
+
+If you expect roughly 10 or more concurrent users, we recommend increasing these
+figures to improve platform performance.
 
 For **each** active developer using Coder, allocate additional resources. The
 specific amount required per developer varies, though we recommend
