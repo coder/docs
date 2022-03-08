@@ -161,10 +161,12 @@
           "path": "./setup/kubernetes/index.md",
           "children": [
             {
-              "path": "./setup/kubernetes/local-preview.md"
+              "path": "./setup/kubernetes/local-preview.md",
+              "navigable": false
             },
             {
-              "path": "./setup/kubernetes/k3s.md"
+              "path": "./setup/kubernetes/k3s.md",
+              "navigable": false
             },
             {
               "path": "./setup/kubernetes/aws.md"
@@ -195,7 +197,18 @@
           ]
         },
         {
-          "path": "./setup/docker.md"
+          "path": "./setup/docker/index.md",
+          "children": [
+            {
+              "path": "./setup/docker/local.md"
+            },
+            {
+              "path": "./setup/docker/cloud.md"
+            },
+            {
+              "path": "./setup/docker/postgres.md"
+            }
+          ]
         },
         {
           "path": "./setup/upgrade/index.md",
@@ -326,6 +339,9 @@
             {
               "path": "./admin/workspace-providers/deployment/index.md",
               "children": [
+                {
+                  "path": "./admin/workspace-providers/deployment/docker.md"
+                },
                 {
                   "path": "./admin/workspace-providers/deployment/ec2.md"
                 },
