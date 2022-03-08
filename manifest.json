@@ -165,8 +165,7 @@
               "navigable": false
             },
             {
-              "path": "./setup/kubernetes/k3s.md",
-              "navigable": false
+              "path": "./setup/kubernetes/k3s.md"
             },
             {
               "path": "./setup/kubernetes/aws.md"
