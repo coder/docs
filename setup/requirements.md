@@ -3,38 +3,41 @@ title: "Requirements"
 description: Learn about the prerequisite infrastructure requirements.
 ---
 
-### Compute
-
 Coder is deployed onto Kubernetes clusters, and we recommend the following
 resource allocation minimums to ensure quality performance.
 
+## Compute
+
 For the Coder control plane (which consists of the `coderd` pod and any
-additional replicas) allocate at least 2 CPU cores, 4 GB of RAM, and
-20 GB of storage.
+additional replicas) allocate at least 2 CPU cores, 4 GB of RAM, and 20 GB of
+storage.
 
 In addition to sizing the control plane node(s), you can configure the `coderd`
-pod's resource requests/limits and number of replicas in the Helm chart. The current
-defaults for both CPU and memory are the following:
+pod's resource requests/limits and number of replicas in the Helm chart. The
+current defaults for both CPU and memory are the following:
 
 ```yaml
 resources:
-    requests:
-      cpu: "250m"
-      memory: "512Mi"
-    limits:
-      cpu: "250m"
-      memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "512Mi"
+  limits:
+    cpu: "250m"
+    memory: "512Mi"
 ```
 
-By default, Coder is a single-replica deployment. For production systems, consider using at least 3 replicas to provide failover and load balancing capabilities.
+By default, Coder is a single-replica deployment. For production systems,
+consider using at least 3 replicas to provide failover and load balancing
+capabilities.
 
 If you expect roughly 10 or more concurrent users, we recommend increasing these
-figures to improve platform performance.
+figures to improve platform performance (we also recommend regular performance
+testing in a staging environment).
 
 For **each** active developer using Coder, allocate additional resources. The
-specific amount required per developer varies, though we recommend
-starting with 4 CPUs and 16 GB of RAM, then iterating as needed. Developers are
-free to request the resource allocation that fits their usage:
+specific amount required per developer varies, though we recommend starting with
+4 CPUs and 16 GB of RAM, then iterating as needed. Developers are free to
+request the resource allocation that fits their usage:
 
 ![Workspace resource request](../assets/setup/resource-request.png)
 
@@ -43,7 +46,7 @@ to determine whether you should change your resource allocation. Accepting a
 utilization of RAM of around 50% and CPU of around 70% is a good way to balance
 performance with cost.
 
-### Throughput
+## Throughput
 
 We recommend the following throughput:
 
