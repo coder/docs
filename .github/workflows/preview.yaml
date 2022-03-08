@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update Deployment
+        run: ./ci/scripts/github_deployment.sh update
         env:
           GITHUB_DEPLOYMENT: ${{ steps.deployment.outputs.id }}
           GITHUB_TOKEN: ${{ github.token }}
