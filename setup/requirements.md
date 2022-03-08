@@ -26,7 +26,7 @@ resources:
       memory: "512Mi"
 ```
 
-The default number of `coderd` replicas is 1.
+By default, Coder is a single-replica deployment. For production systems, consider using at least 3 replicas to provide failover and load balancing capabilities.
 
 If you expect roughly 10 or more concurrent users, we recommend increasing these
 figures to improve platform performance.
