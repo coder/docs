@@ -22,9 +22,9 @@ domain name for the OIDC token callback; use
 `https://coder.my-company.com/oidc/callback`.
 
 Once you've registered a Coder application with your OIDC provider, you'll need
-to return to Coder and complete the setup process. Under **Admin** > **Manage** >
-**Authentication**, ensure that you've selected **OpenID Connect** as the
-authentication type. Then, provide the following parameters:
+to return to Coder and complete the setup process. Under **Admin** >
+**Manage** > **Authentication**, ensure that you've selected **OpenID Connect**
+as the authentication type. Then, provide the following parameters:
 
 - **Client ID**: The client ID for the Coder application you registered with the
   OIDC provider
@@ -43,9 +43,9 @@ you:
   tokens from `https://<yourDomain>/api/v0/users/me/oidc-access-token`
 - **Additional Scopes:** Specify any scopes (beyond the default) that you would
   like Coder to request from the authentication provider. By default, Coder
-requests the scopes `openid`, `email`, and `profile`. Consult your
-authentication provider's documentation for information on which scopes they
-support.
+  requests the scopes `openid`, `email`, and `profile`. Consult your
+  authentication provider's documentation for information on which scopes they
+  support.
 - **Disable built-in authentication:** Choose whether Coder removes the ability
   to log in with an email/password option when you've enabled OIDC
   authentication
@@ -62,9 +62,5 @@ To do so, navigate to **Manage** > **Admin** > **Authentication**. Then, toggle
 **Disable built-in authentication** to **On** and click **Save preferences**.
 
 [Site managers](users/user-roles#site-manager-permissions) can still use
-built-in authentication. To view this option on the login page, add the
-following query parameter to the URL you use to access your Coder deployment:
-
-```text
-/login?showAllAuthenticationTypes=1
-```
+built-in authentication. The **Admin Login** option will be visible on the login
+page if built-in authentication is disabled.
