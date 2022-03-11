@@ -512,6 +512,9 @@
             },
             {
               "path": "./changelog/1.26.2.md"
+            },
+            {
+              "path": "./changelog/1.26.3.md"
             }
           ]
         },
