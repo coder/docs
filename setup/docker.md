@@ -195,6 +195,27 @@ Coder will now run in the background.
 For more detailed information on the Docker Compose file, please see
 [Docker's docs](https://docs.docker.com/compose/compose-file/compose-file-v3/).
 
+## Using Coder templates
+
+[Templates](https://coder.com/docs/coder/latest/workspaces/workspace-templates/templates#workspace-template-sample) can be used with Coder for Docker to version-control how Coder workspaces are defined and built.  
+1. Change the workspace.type and workspace.specs to docker
+1. Remove any kubernetes-specific workspace.specs.kubernetes values e.g., cpu, memory, gpu
+
+```yaml  
+version: 0.2
+workspace:
+  type: docker
+  specs:
+    docker:
+      image:
+        value: index.docker.io/codercom/enterprise-intellij:ubuntu
+      container-based-vm:
+        value: false
+  configure:
+    start:
+    ...
+```
+
 ## Known issues
 
 Currently, Coder for Docker does not support:
