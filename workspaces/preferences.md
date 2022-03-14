@@ -55,9 +55,6 @@ changes). Your administrator must configure OAuth for this feature to work.
 
 ## Notifications
 
-You can choose to allow Coder to display native **notifications** so that you
-can receive necessary alerts even when focused on a different view or page.
-
 Coder issues desktop notifications when you create a new workspace or rebuild an
 workspace.
 
@@ -67,8 +64,6 @@ Please note that:
   browsing mode
 - You must enable native notifications for each browser on which you run Coder
   Enterprise
-
-You can check whether notifications are enabled and working by click **Test**.
 
 ## Auto-start
 
