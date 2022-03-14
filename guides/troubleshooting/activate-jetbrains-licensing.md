@@ -68,7 +68,7 @@ clipboard.
 ## Paste the IDE authentication token
 
 Paste the IDE authentication token back into your already opened JetBrains IDE
-window. Type **CMD + v** (macOS) or **Control + v** (Linux/Windows) for the
+window. Type **Command + v** (macOS) or **Control + v** (Linux/Windows) for the
 paste operation to work correctly. 
 
 ![Paste the token](../../assets/workspaces/7-cmd-v-ctrl-v-auth-token.png)
