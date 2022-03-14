@@ -1,10 +1,10 @@
 ---
-title: "Workspace Applications"
+title: "Workspace applications"
 description: Learn how to access web apps running in your workspace.
 state: beta
 ---
 
-You can connect to web applications installed on your workspace using a
+You can connect to web applications installed on your workspace using an
 applications specification file located at `/coder/apps/config.yaml` of the
 workspace filesystem.
 
@@ -12,8 +12,8 @@ workspace filesystem.
 
 ## Enabling workspace applications
 
-If you'd like to use workspace applications in Coder, you can enable this feature in the
-UI:
+If you'd like to use workspace applications in Coder, you can enable this
+feature in the UI:
 
 1. In the top-right, click on your avatar and select **Feature Preview**.
 1. Click **Workspace applications** and select **Enable**.
@@ -21,15 +21,12 @@ UI:
 ## Application specification file
 
 To define workspace applications, add a configuration file at
-`/coder/apps/config.yaml` to your image. When making the image, create a coder/apps folder in the same folder as your Dockerfile.  Add a Dockerfile step to copy the coder folder into the image. Also add the icon that you would like to render for your app - into the coder/apps folder along with the config.yaml so it is copied into the image as well.
+`/coder/apps/config.yaml` to your image.
 
-```text
-# copy custom apps info (config.yaml)
-COPY ["./coder", "/coder"]
-```
-
-The config file specifies the parameters Coder requires in order to launch the
-application. Here is an example config.yaml for adding a Python http server as a workspace application to a workspace. The python3 binary is included in Coder's base images.
+The config file specifies the parameters Coder requires to launch the
+application. Here is a sample `config.yaml` for adding a Python HTTP server as a
+workspace application. Note that this requires the `python3` binary, which is
+included in Coder's base images.
 
 ```yaml
 # /coder/apps/config.yaml
@@ -86,6 +83,21 @@ apps:
 - A health check _must_ report healthy for you to access the application.
 - If you specify both the HTTP and Exec health checks, Coder prioritizes HTTP.
 
+### Image creation
+
+When creating your image, be sure to:
+
+1. In the folder where your Dockerfile is, add a `coder/apps` folder
+1. Add the `config.yaml` you created to `coder/apps`.
+1. Add the icon that you would like Coder to render for your app to the
+   `coder/apps` folder
+1. Add a step to your Dockerfile to copy the `coder` folder into the image:
+
+```text
+# copy custom apps info (config.yaml)
+COPY ["./coder", "/coder"]
+```
+
 ## Sample usage
 
 Coder offers an [image](https://hub.docker.com/r/codercom/enterprise-vnc) that
@@ -93,7 +105,10 @@ helps you [set up a VNC](../guides/customization/vnc.md). With a VNC available,
 you can add an icon to your **Browser applications** via setting the
 [config file](https://github.com/coder/enterprise-images/blob/91ef8f521b2275783fed54b27052cc544153cd99/images/vnc/coder/apps/config.yaml).
 
-You are welcome to try the [public Dockerfile repo for the example above](https://github.com/mtm20176/dockerfiles/tree/main/python/workspace-apps). The repo includes Python and Node http servers, and related icons.
+You are welcome to try the
+[public Dockerfile repo that contains the example above](https://github.com/mtm20176/dockerfiles/tree/main/python/workspace-apps).
+The repo includes config files that set up Python and Node.js HTTP servers and
+the accompanying icons.
 
 You can also see our
 [blog post](https://coder.com/blog/run-any-application-or-ide-in-coder) for
