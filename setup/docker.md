@@ -195,13 +195,21 @@ Coder will now run in the background.
 For more detailed information on the Docker Compose file, please see
 [Docker's docs](https://docs.docker.com/compose/compose-file/compose-file-v3/).
 
-## Using Coder templates
+## Coder templates
 
-[Templates](https://coder.com/docs/coder/latest/workspaces/workspace-templates/templates#workspace-template-sample) can be used with Coder for Docker to version-control how Coder workspaces are defined and built.  
-1. Change the workspace.type and workspace.specs to docker
-1. Remove any kubernetes-specific workspace.specs.kubernetes values e.g., cpu, memory, gpu
+You can use
+[templates](https://coder.com/docs/coder/latest/workspaces/workspace-templates/templates#workspace-template-sample)
+with Coder for Docker to define how Coder builds your workspaces.
 
-```yaml  
+To use a standard Coder workspace template for Docker:
+
+1. Change the `workspace.type` and`workspace.specs` to `docker`
+1. Remove any Kubernetes-specific `workspace.specs.kubernetes values` (e.g.,
+   `cpu`, `memory`, `gpu`)
+
+Your configuration file will look something like the following:
+
+```yaml
 version: 0.2
 workspace:
   type: docker
