@@ -54,9 +54,6 @@
           "path": "./workspaces/lifecycle.md"
         },
         {
-          "path": "./workspaces/applications.md"
-        },
-        {
           "path": "./workspaces/autostart.md"
         },
         {
@@ -85,6 +82,9 @@
         },
         {
           "path": "./workspaces/vs-code-extensions.md"
+        },
+        {
+          "path": "./workspaces/applications.md"
         },
         {
           "path": "./workspaces/workspace-params.md"
