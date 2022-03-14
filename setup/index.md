@@ -29,9 +29,6 @@ deployment steps.
    [Kubernetes cluster](kubernetes/index.md) and
    [installing Coder](installation.md).
 
-   > If you're participating in our hosted beta, please see
-   > [our guide for how to get started](../guides/hosted-beta/index.md).
-
 ## In this section
 
 <children></children>

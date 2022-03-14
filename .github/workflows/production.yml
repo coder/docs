@@ -19,40 +19,12 @@ permissions:
   security-events: none
   statuses: none
 
-# Cancel in-progress runs for pull requests when developers push
-# additional changes, and serialize builds in branches.
-# https://docs.github.com/en/actions/using-jobs/using-concurrency#example-using-concurrency-to-cancel-any-in-progress-job-or-run
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
-
 jobs:
   production:
     name: Production
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout m
-        uses: actions/checkout@v3
-        with:
-          repository: cdr/m
-          ref: refs/heads/master
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          submodules: true
-          fetch-depth: 0
+      - uses: actions/checkout@v3
 
       - name: Deploy to Vercel (Production)
-        env:
-          VERCEL_ORG_ID: team_tGkWfhEGGelkkqUUm9nXq17r
-          VERCEL_PROJECT_ID: QmZRucMRh3GFk1817ZgXjRVuw5fhTspHPHKct3JNQDEPGd
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROD: true
-        run: ./ci/scripts/deploy_vercel.sh
-
-      - name: Slack alert on CI failure
-        uses: 8398a7/action-slack@v3
-        if: failure() && github.ref == 'refs/heads/master'
-        with:
-          status: ${{ job.status }}
-          fields: repo,message,author,workflow,action,eventName
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_vLDYhOxLmchIKn4wYKStFlglaji2/IohYnGbnwu
