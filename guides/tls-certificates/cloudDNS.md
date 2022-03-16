@@ -38,7 +38,7 @@ You must have:
 
 There are two ways to add cert-manager to your Kubernetes cluster.
 
-## Option 1
+## Option 1: `kubectl apply`
 
 Add cert-manager to your cluster
 [using `kubectl apply`](https://cert-manager.io/docs/installation/kubectl/) by
@@ -48,10 +48,10 @@ running:
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
 ```
 
-## Option 2
+## Option 2: Helm
 
 Add cert-manager to your cluster
-[with Helm](https://cert-manager.io/docs/installation/helm/).
+[using Helm](https://cert-manager.io/docs/installation/helm/).
 
 First, add the Helm repo:
 
