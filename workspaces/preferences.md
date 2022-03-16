@@ -53,12 +53,14 @@ public key to the Git service of your choice. You can then perform the Git
 actions in your Coder workspace and interact with the service (e.g., push
 changes). Your administrator must configure OAuth for this feature to work.
 
-> The Linked Account process sends the request directly from your local machine's 
-> web browser to your Git Provider, if your orgization requires additional 
-> authentication like VPN, that will have to be started before running this process.
-> Note that this is a one-time user configuration e.g., like at onboarding, and 
-> future git actions within Coder will operate within the Coder deployment's 
-> network and not the local machine.
+> During the linked account process, Coder sends requests directly from your
+> local machine's web browser to your Git provider. If your organization
+> requires additional authentication (e.g., VPN), you must start this process
+> before linking your accounts.
+>
+> Note that linking your accounts is a one-time process, typically during
+> onboarding. Future Git actions within Coder will operate within the Coder
+> deployment's network, _not_ the local machine.
 
 ## Notifications
 
