@@ -39,7 +39,7 @@ You must have:
 To add cert-manager to your cluster, run:
 
 ```console
-kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
 ```
 
 More specifics can be found in the
