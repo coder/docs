@@ -36,25 +36,44 @@ You must have:
 
 ## Step 1: Add cert-manager to your Kubernetes cluster
 
-To add cert-manager to your cluster, add the cert-manager helm chart repo
+There are two ways to add cert-manager to your Kubernetes cluster.
+
+## Option 1
+
+Add cert-manager to your cluster
+[using `kubectl apply`](https://cert-manager.io/docs/installation/kubectl/) by
+running:
+
+```console
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
+```
+
+## Option 2
+
+Add cert-manager to your cluster
+[with Helm](https://cert-manager.io/docs/installation/helm/).
+
+First, add the Helm repo:
 
 ```console
 helm repo add jetstack https://charts.jetstack.io
 ```
 
-Install cert-manager and create the namespace too (check for the latest cert-manager version, they change frequently)
+Then, install cert-manager and create its namespace (check for the
+[latest cert-manager version](https://cert-manager.io/docs/installation/supported-releases/#installing-with-regular-manifests),
+since they may change)
 
 ```console
 helm install \
   cert-manager jetstack/cert-manager \
   --namespace cert-manager \
-  --version v1.7.0 \
+  --version v1.7.0 \ # update version if necessary
   --create-namespace \
   --set installCRDs=true
 ```
 
-More specifics can be found in the
-[cert-manager install documentation](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
+You can find additional information in
+[cert-manager's installation docs](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
 
 Once you've started the installation process, verify that all the pods are
 running:

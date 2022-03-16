@@ -20,10 +20,10 @@
     "@types/semver-compare": "^1.0.1",
     "all-contributors-cli": "^6.20.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.5",
+    "lint-staged": "^12.3.6",
     "markdownlint-cli": "^0.31.1",
     "minimist": "^1.2.5",
-    "prettier": "2.5.1",
+    "prettier": "2.6.0",
     "semver-compare": "^1.0.0",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
