@@ -36,10 +36,21 @@ You must have:
 
 ## Step 1: Add cert-manager to your Kubernetes cluster
 
-To add cert-manager to your cluster, run:
+To add cert-manager to your cluster, add the cert-manager helm chart repo
 
 ```console
-kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
+helm repo add jetstack https://charts.jetstack.io
+```
+
+Install cert-manager and create the namespace too (check for the latest cert-manager version, they change frequently)
+
+```console
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --version v1.7.0 \
+  --create-namespace \
+  --set installCRDs=true
 ```
 
 More specifics can be found in the
