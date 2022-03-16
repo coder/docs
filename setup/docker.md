@@ -52,7 +52,7 @@ Coder for Docker works with the following platforms:
       -p 7080:7080 \
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v ~/.coder:/var/run/coder \
-      codercom/coder:1.28.2
+      codercom/coder:1.29.0
    ```
 
    When this process is complete, Coder will print the URL you can use to access
@@ -104,7 +104,7 @@ DEVURL_HOST="*.mycompany.com"
 For example:
 
 ```console
-docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.28.2
+docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.29.0
 ```
 
 ## Use an external PostgreSQL database
@@ -128,7 +128,7 @@ If you'd like to use an external database, you must:
       -e DB_PASSWORD="" \
       -e DB_NAME=postgres \
       -e DB_SSL_MODE=disable \
-      codercom/coder:1.28.2
+      codercom/coder:1.29.0
    ```
 
 Coder supports client TLS certificates using `DB_SSL_MODE=verify-full`. Ensure
@@ -175,7 +175,7 @@ To do so:
    version: "3.5"
    services:
    coder:
-     image: docker.io/codercom/coder:1.28.2
+     image: docker.io/codercom/coder:1.29.0
      container_name: coderd
      restart: unless-stopped
      ports:
