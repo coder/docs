@@ -14,10 +14,10 @@ authority.
 > differently from earlier versions of Coder. Ensure that you're reading the
 > docs applicable to your Coder version.
 
-This guide will show you how to install cert-manager v1.4.0 and set up your
-cluster to issue Let's Encrypt certificates for your Coder installation so that
-you can enable HTTPS on your Coder deployment. It will also show you how to
-configure your Coder hostname and dev URLs.
+This guide will show you how to install cert-manager and set up your cluster to
+issue Let's Encrypt certificates for your Coder installation so that you can
+enable HTTPS on your Coder deployment. It will also show you how to configure
+your Coder hostname and dev URLs.
 
 > We recommend reviewing the official cert-manager
 > [documentation](https://cert-manager.io/docs/) if you encounter any issues or

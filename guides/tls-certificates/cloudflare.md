@@ -14,9 +14,9 @@ authority.
 > differently from earlier versions of Coder. Ensure that you're reading the
 > docs applicable to your Coder version.
 
-This guide will show you how to install cert-manager v1.4.0 and set up your
-cluster to issue Let's Encrypt certificates for your Coder installation so that
-you can enable HTTPS on your Coder deployment.
+This guide will show you how to install cert-manager and set up your cluster to
+issue Let's Encrypt certificates for your Coder installation so that you can
+enable HTTPS on your Coder deployment.
 
 > We recommend reviewing the official cert-manager
 > [documentation](https://cert-manager.io/docs/) if you encounter any issues or
@@ -34,7 +34,7 @@ You must have:
 ## Step 1: Add cert-manager to your Kubernetes cluster
 
 ```console
-kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
 ```
 
 More specifics can be found in the
@@ -201,14 +201,16 @@ kubectl apply -f certificate.yaml
 ## Step 4: Configure Coder to issue and use the certificates
 
 If you're using the default LoadBalancer to access Coder, you can use the
-following helm values to use the certificate.
+following Helm values to use the certificate.
 
 ```yaml
+# be sure to update the `stringValue` placeholder with the
+# proper value for your devurlsHostSecretName and hostSecretName
 coderd:
   devurlsHost: "*.coder.example.com"
   tls:
-    devurlsHostSecretName: "coder-certs"
-    hostSecretName: "coder-certs"
+    devurlsHostSecretName: "coder-certs-stringValue"
+    hostSecretName: "coder-certs-stringValue"
 ```
 
 Be sure to change `coder.example.com` to the domain for your Coder deployment.
