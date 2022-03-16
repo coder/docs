@@ -63,7 +63,6 @@ Please note that:
 - You may not receive native notifications when using your browser's private
   browsing mode
 - You must enable native notifications for each browser on which you run Coder
-  Enterprise
 
 ## Auto-start
 
