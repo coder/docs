@@ -207,11 +207,14 @@ However, to use all of the functionality you set up in this tutorial, use the
 following command instead:
 
 ```console
+# be sure to update the `stringValue` placeholder with the
+# proper value for your devurlsHostSecretName and hostSecretName
+
 helm upgrade --install coder coder/coder --namespace coder \
   --version=<CODER_VERSION> \
   --set coderd.devurlsHost="*.coder.example.com" \
-  --set coderd.tls.devurlsHostSecretName="coder-certs" \
-  --set coderd.tls.hostSecretName="coder-certs" \
+  --set coderd.tls.devurlsHostSecretName="coder-certs-stringValue" \
+  --set coderd.tls.hostSecretName="coder-certs-stringValue" \
   --wait
 ```
 
