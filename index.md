@@ -9,9 +9,8 @@ icon:
 ---
 
 Coder is a self-hosted platform for DevOps, platform, and engineering teams.
-With Coder, organizations can securely
-provision remote IDEs and related resources
-on their infrastructure. We call this logical group of resources a developer workspace.
+With Coder, organizations can securely provision remote IDEs and related resources
+on their infrastructure. We call this logical group of resources a [developer workspace](workspaces/index.md).
 
 <div class="get-started">
   <div>
