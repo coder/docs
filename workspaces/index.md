@@ -20,11 +20,12 @@ icon:
 description: "Learn about development workspaces in Coder."
 ---
 
-A workspace is your remote development environment.
+Workspaces contain the dependencies, IDEs, and
+configuration for projects, just as a developer machine would.
 
-![Workspaces](../assets/workspaces/workspaces.svg)
-
-Coder creates workspaces using a [shared container image](../images/index.md),
+Unlike developing on a local machine, workspaces are
+reproducible. Coder creates workspaces
+using a [shared container image](../images/index.md),
 which improves their reproducibility.
 
 ![The anatomy of a workspace](../assets/workspaces/workspace-anatomy.png)

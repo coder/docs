@@ -27,6 +27,9 @@ After a workspace hasn't been accessed for the specified threshold, it is shut
 down. A stopped workspace requires a [rebuild](#Rebuilds) before you can access
 it again.
 
+Organizations can optionally allow users to modify or disable auto-off criteria
+for specific workspaces.
+
 ## Hooks
 
 Coder exposes a few hooks during the build process. Once a workspace is
