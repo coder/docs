@@ -14,6 +14,8 @@ well:
 
 ![CVM Settings](../../../assets/admin/cvm-settings.png)
 
+These settings will apply to workspaces **after** they have been rebuilt.
+
 ## Caching
 
 > Cached CVMs are currently an **alpha** feature.
@@ -57,10 +59,13 @@ workspace container.
 
 > TUN devices currently an **alpha** feature.
 
-Coder allows the creation of custom network interfaces using the kernel TUN
+Coder allows the creation of custom network interfaces using the Linux TUN
 device. When using the **Enable TUN device** setting, Coder workspaces will have
-a `/dev/net/tun` device mounted into the workspace at build time. These devices
-are often required for VPN clients, such as OpenVPN and Tailscale.
+a `/dev/net/tun` device mounted into the workspace at build time. A TUN device
+is often required for VPN usage.
+
+Users may need root (or `sudo`) access within their workspace to be able to use
+the TUN device and start a VPN client.
 
 > At this time, Coder does not support TUN devices for other workspace types
 > (such as EC2 or Docker).
@@ -69,15 +74,23 @@ are often required for VPN clients, such as OpenVPN and Tailscale.
 > in the workspace provider settings, which will allow users to create their own
 > TUN device.
 
+We've tested this feature using the [Tailscale](https://tailscale.com/) VPN
+within Coder. Keep in mind that you may have to change your VPN settings to keep
+any persistent files (such as configuration/identity) files in your home volume,
+as any data outside the home volume is cleared when the workspace is rebuilt.
+
 ## FUSE device
 
 > FUSE devices currently an **alpha** feature.
 
-Coder allows the creation of custom filesystems using the kernel TUN device.
-When using the **Enable FUSE device** setting, Coder workspaces will have a
-`/dev/fuse` device mounted into the workspace at build time. These devices are
-frequently used to mount specialized filesystems, such as Google Cloud Storage
-buckets, as a filesystem volume.
+Coder allows the creation of custom filesystems using the Linux FUSE userspace
+filesystem device. When using the **Enable FUSE device** setting, Coder
+workspaces will have a `/dev/fuse` device mounted into the workspace at build
+time. These devices are often used to mount specialized filesystems, such as
+Google Cloud Storage buckets, to your workspace.
+
+Users may need root (or `sudo`) access within their workspace to be able to use
+the FUSE device and start a FUSE filesystem.
 
 > At this time, Coder does not support FUSE devices for other workspace types
 > (such as EC2 or Docker).
@@ -85,3 +98,14 @@ buckets, as a filesystem volume.
 > If you're working with EC2 workspaces, we recommend enabling privileged mode
 > in the workspace provider settings, which will allow users to create their own
 > FUSE device.
+
+For example, you can mount a directory from a remote SSH server using `sshfs`:
+
+```console
+mkdir /tmp/mnt
+sshfs user@host:/ /tmp/mnt
+```
+
+Then in a second terminal run `ls /tmp/mnt` to list the files from the remote
+host. You should also be able to see a `fuse.sshfs` entry in the output from the
+`mount` command.
