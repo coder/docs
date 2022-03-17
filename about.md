@@ -3,9 +3,11 @@ title: "About"
 description: "Learn about Coder, our mission, and why to choose us."
 ---
 
-Coder moves software development to the cloud, centralizing your organizations'
-development initiatives and offering improvements in development velocity and
-enterprise security.
+Coder is a self-hosted platform for DevOps, platform, and engineering teams.
+
+With Coder, developers can securely provision remote IDEs and related resources
+on their organization's infrastructure. We call this logical group of resources
+a [developer workspace](workspaces/index.md).
 
 Coder's pre-configured workspaces allow project organization members to define
 what language version and tooling are required to provide consistency across the
