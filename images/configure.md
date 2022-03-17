@@ -9,14 +9,20 @@ file.
 
 You can use the configure script to:
 
+- Run scripts to install or configure any other dependencies into your workspace
+- Add and install VS Code extensions if in an air-gapped network
 - Run [Coder CLI](https://github.com/coder/coder-cli) commands
 - Check for and clone a GitHub repo if it isn't present
 - Run scripts using
   [CODER\_\* environment variables](../workspaces/variables.md)
 
+> It is a best practice to change the `USER` to coder as the final step of the Dockerfile
+> so the configure script is run as the coder `USER` and therefore unless `sudo` prefaces
+> a command, the installations and configurations are stored in the `/home/coder` folder.
+
 Coder will check the image for the presence of a **/coder/configure** file
 during the build process; if Coder finds one, it will execute the instructions
-contained.
+contained. You copy the configure file into the image as part of the Dockerfile creation.
 
 The following steps will show you how to create and use a config file.
 
@@ -43,7 +49,7 @@ echo "Project has already been cloned."
 fi
 ```
 
-Note that the instructions provided include logic on whether the instructions
+Note that the instructions provided include `if else` logic on whether the instructions
 should be re-run (and when) or if Coder should run the instructions only once.
 We strongly recommend including this logic at all times to minimize overhead.
 
@@ -51,7 +57,7 @@ We strongly recommend including this logic at all times to minimize overhead.
 > variables of your user. If you'd like to preserve your existing env variables,
 > [pass the `-E` flag to your `sudo` invocation](https://man7.org/linux/man-pages/man8/sudo.8.html).
 
-## Step 2: Add the config file to the image
+## Step 2: Add the configure file to the image
 
 Once you have a config file, update your image to use it by including the
 following in your Dockerfile:
@@ -60,7 +66,7 @@ following in your Dockerfile:
 COPY [ "configure", "/coder/configure" ]
 ```
 
-As an example, take a look at the sample Docker file that follows; the final
+As an example, take a look at the sample Dockerfile that follows; the final
 line includes instructions to Coder on copying the settings from the configure
 file:
 
@@ -68,26 +74,27 @@ file:
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y curl
 COPY [ "configure", "/coder/configure" ]
+USER coder
 ```
 
 ## Step 3: Build and push the image and config file
 
 To make your image accessible to Coder, build the development image and push it
-to the Docker registry.
+to your container registry.
 
 To build your image, run the following command in the directory where your
-Dockerfile is located (be sure to replace the cdr/config placeholder value with
-your tag and repository name so that the image is pushed to the appropriate
-location):
+Dockerfile is located (be sure to replace the user/repo:latest placeholder value with
+your user, repository and tag names so that the image is pushed to the appropriate
+location.):
 
 ```console
-docker build cdr/config .
+docker build user/repo:latest .
 ```
 
 Once you've built the image, push the image to the Docker registry:
 
 ```console
-docker push cdr/config
+docker push user/repo:latest
 ```
 
 ## Step 4: Test the config file
@@ -98,8 +105,8 @@ You can test your setup by performing the following steps:
 1. [Creating your workspace using the newly imported image](../workspaces/create.md)
 
 Coder will run the configure file during the build process, and you can verify
-this using the **Workspace Overview** page (Coder runs the configure file as the
-penultimate step of the build process):
+this by reviewing the build log on the **Workspace Overview** page (Coder runs the configure file as the
+penultimate (next to last) step of the build process) or by open a terminal and `cat configure.log` in the `/home/coder` folder:
 
 ![Workspace Overview Page](../assets/images/configure.png)
 
@@ -119,6 +126,8 @@ basic configure script, which you can copy and modify:
 FROM ...
 
 COPY configure /coder/configure
+
+USER coder
 ```
 
 #### Extending a configure script in a base image
@@ -149,6 +158,8 @@ script.
 
    # Add the new configure script
    COPY configure /coder/configure
+
+   USER coder
    ```
 
 1. Create your new script; in addition to any instructions that you add, this
@@ -166,19 +177,19 @@ script.
 
 ### Running Coder CLI commands
 
-The following shows how to run a Coder CLI command in your configure script by
+The following shows how to run a [Coder CLI command](https://coder.com/docs/coder/latest/cli) in your configure script by
 demonstrating how you can create a Dev URL:
 
 ```sh
 # configure
-
-coder ...
 
 # Create a Dev URL (or update if it already exists)
 coder urls create $CODER_WORKSPACE_NAME 3000 --name webapp
 ```
 
 ### Modifying VS Code settings
+
+> VS Code settings can also be done using [dotfiles repos](https://coder.com/docs/coder/latest/workspaces/personalization#dotfiles-repo) which are cloned and executed as the final workspace build step in the `personalize` script.
 
 1. Create a `settings.json` file:
 

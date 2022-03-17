@@ -21,17 +21,16 @@ icon:
 description: Learn about reproducibility in Coder.
 ---
 
-Coder creates [workspaces](../workspaces/index.md) using templates called
-images. Images facilitate and encourage the reproducibility of development
-workspaces.
+Coder creates development environments called [workspaces](../workspaces/index.md) using blueprints called
+container images. Once imported into Coder, container images are referred to as images. Container images are immutable, meaning they cannot be changed, and can be deployed consistently across Coder workspaces as containers. [The Open Container Initiative (OCI) standard](https://opencontainers.org/) is an open standard for images and containers.
 
-Each image contains the language version, tooling, and dependencies users need
-to work on a project. Users create workspaces from the image and can begin to
-contribute immediately to the project for which it's defined.
+Containers within Coder are called workspaces and are runnable instances of container images. Images are the foundation for organizations achieving consistency and productivity across developers while eliminating configuration drift, downstream bugs, and risk related to out-dated development environments.
 
-Coder hooks into Docker Registries, which store images that you can import. You
-can source control the Dockerfile in your project's repository to provide your
-organization with up-to-date information.
+Container images contain the IDEs, CLIs, language versions, and dependencies users need
+to work on software development projects. Users create workspaces from the container images and can begin to
+contribute immediately to projects for which they are defined.
+
+Coder integrates into one of more Container Registries (e.g., Artifactory, Docker.io, ECR, ACR, etc.), which store container images that you can import into Coder as images. Container images are built from Dockerfiles. Dockerfiles are text files that contains all the commands a user could call on the command line to assemble an container image. e.g., add a JetBrains IDE, JDK, Python, Ruby, public cloud CLI, etc. You can nest container images to re-use workspace configurations across all development teams.
 
 ## In this section
 

@@ -52,11 +52,11 @@ Please note:
   [image minimum requirements](https://github.com/coder/enterprise-images/#image-minimums)
   to make sure that your image will work with all of Coder's features.
 
-- You can build images inside a
+- You can leverage your Coder deployment and its compute resources to build images inside a
   [CVM](../admin/workspace-management/cvms.md)-enabled Coder workspace with
   Docker installed (see our
   [base image](https://github.com/coder/enterprise-images/tree/main/images/base)
-  for an example of how you can do this).
+  for an example of how you can do this). This is a great way to free up your local machine from the compute-heavy image building process.
 
 - If you're using CVM-only features during an image's build time (e.g., you're
   [pre-loading images](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/images.md#building-a-system-container-that-includes-inner-container-images--v012-)
@@ -64,6 +64,8 @@ Please note:
   [sysbox runtime](https://github.com/nestybox/sysbox) onto your local machine
   and build your images locally. Note that this isn't usually necessary, even if
   your image installs and enables Docker.
+
+- If you're installing additional IDEs like JetBrains, you may need to also install the language interpreter, development kit, build tool, or compiler as part of the image. Check with your IDE for what components they install.
 
 ## Example: Installing a JetBrains IDE
 
@@ -84,13 +86,16 @@ RUN curl -L \
 
 # Add a binary to the PATH that points to the IDE startup script.
 RUN ln -s /opt/[IDE]/bin/idea.sh /usr/bin/[IDE]
+
+# Set back to coder user
+USER coder
 ```
 
 Make sure that you replace `[IDE]` with the name of the IDE in lowercase and
 provide its
 [corresponding `[CODE]`](https://plugins.jetbrains.com/docs/marketplace/product-codes.html).
 
-More specifically, here's how to install the IntelliJ IDE onto your image:
+Here's how to install the IntelliJ IDEA Ultimate IDE onto your image:
 
 ```Dockerfile
 # Dockerfile
@@ -98,11 +103,33 @@ FROM ...
 
 USER root
 
-# Install intellij
+# Install intellij idea ultimate
 RUN mkdir -p /opt/idea
-RUN curl -L "https://download.jetbrains.com/product?code=IIC&latest&distribution=linux" \
+RUN curl -L "https://download.jetbrains.com/product?code=IU&latest&distribution=linux" \
 | tar -C /opt/idea --strip-components 1 -xzvf -
 
 # Create a symbolic link in PATH that points to the Intellij startup script.
-RUN ln -s /opt/idea/bin/idea.sh /usr/bin/intellij-idea-community
+RUN ln -s /opt/idea/bin/idea.sh /usr/bin/intellij-idea-ultimate
+
+# Set back to coder user
+USER coder
+```
+
+Here's how to install the IntelliJ PyCharm Professional IDE onto your image:
+
+```Dockerfile
+# Dockerfile
+FROM ...
+
+USER root
+
+# Install pycharm professional 
+RUN mkdir -p /opt/pycharm
+RUN curl -L "https://download.jetbrains.com/product?code=PCP&latest&distribution=linux" | tar -C /opt/pycharm --strip-components 1 -xzvf -
+
+# Add a binary to the PATH that points to the pycharm startup script.
+RUN ln -s /opt/pycharm/bin/pycharm.sh /usr/bin/pycharm
+
+# Set back to coder user
+USER coder
 ```
