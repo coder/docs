@@ -59,7 +59,7 @@ If you run the command in Web Terminal, a Code Web session must already be open.
 
 ```text
 code personalize.log
-code-server personalize.log
+code-server -r personalize.log
 ```
 
 ## JetBrains Gateway with SSH
