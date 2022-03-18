@@ -55,4 +55,6 @@ embeddable Markdown button for use in your repo. See the
 
 ## Using templates with Coder for Docker
 
-[Coder for Docker](https://coder.com/docs/coder/latest/setup/docker) also supports templates but the configuration has [some differences like workspace type and specs that are outlined here](https://coder.com/docs/coder/latest/setup/docker#coder-templates).
+[Coder for Docker](https://coder.com/docs/coder/latest/setup/docker) supports
+the use of workspace templates. However, the configuration has
+[some differences that are outlined in our setup doc](https://coder.com/docs/coder/latest/setup/docker#coder-templates).
