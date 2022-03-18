@@ -106,28 +106,28 @@
       "path": "./images/index.md",
       "children": [
         {
-          "path": "./images/importing.md"
-        },
-        {
-          "path": "./images/tags.md"
-        },
-        {
-          "path": "./images/writing.md"
-        },
-        {
           "path": "./images/configure.md"
         },
         {
-          "path": "./images/structure.md"
-        },
-        {
-          "path": "./images/tls-certificates.md"
+          "path": "./images/writing.md"
         },
         {
           "path": "./images/deprecating.md"
         },
         {
           "path": "./images/embed-button.md"
+        },
+        {
+          "path": "./images/importing.md"
+        },
+        {
+          "path": "./images/structure.md"
+        },
+        {
+          "path": "./images/tags.md"
+        },
+        {
+          "path": "./images/tls-certificates.md"
         }
       ]
     },
