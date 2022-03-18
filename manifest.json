@@ -507,6 +507,9 @@
           "children": [
             {
               "path": "./changelog/1.26.1.md"
+            },
+            {
+              "path": "./changelog/1.26.4.md"
             }
           ]
         },
