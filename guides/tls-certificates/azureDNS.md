@@ -14,10 +14,10 @@ authority.
 > differently from earlier versions of Coder. Ensure that you're reading the
 > docs applicable to your Coder version.
 
-This guide will show you how to install cert-manager v1.4.0 and set up your
-cluster to issue Let's Encrypt certificates for your Coder installation so that
-you can enable HTTPS on your Coder deployment. It will also show you how to
-configure your Coder hostname and dev URLs.
+This guide will show you how to install cert-manager and set up your cluster to
+issue Let's Encrypt certificates for your Coder installation so that you can
+enable HTTPS on your Coder deployment. It will also show you how to configure
+your Coder hostname and dev URLs.
 
 There are three available methods to configuring the Azure DNS DNS01 Challenge
 via cert-manager:
@@ -84,7 +84,7 @@ the domain you're using for your Coder deployment.
    cert-manager:
 
    ```console
-   kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
+   kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
    ```
 
 1. Check that cert-manager installs correctly by running
@@ -300,11 +300,14 @@ However, to use all of the functionality you set up in this tutorial, use the
 following command instead:
 
 ```console
+# be sure to update the `stringValue` placeholder with the
+# proper value for your devurlsHostSecretName and hostSecretName
+
 helm upgrade --install coder coder/coder --namespace coder \
   --version=<CODER_VERSION> \
-  --set coderd.devurlsHost="coder.example.com" \
-  --set coderd.tls.devurlsHostSecretName="coder-certs" \
-  --set coderd.tls.hostSecretName="coder-certs" \
+  --set coderd.devurlsHost="*.coder.example.com" \
+  --set coderd.tls.devurlsHostSecretName="coder-certs-stringValue" \
+  --set coderd.tls.hostSecretName="coder-certs-stringValue" \
   --wait
 ```
 
