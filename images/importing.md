@@ -5,10 +5,6 @@ description: "Learn how to import images to use in Coder."
 
 Coder imports images from [container registries](../admin/registries/index.md).
 
-> Images are associated with Coder Organizations which Users are Members of. Any
-> Organization Member can import an image but only the Organization Manager can
-> link container registries to an Organization.
-
 Images are associated with the same organization as the user who imported it.
 For example, if Jessie Lorem is a member of the ExampleCo organization, any
 images that they import will also be associated with the ExampleCo organization.
