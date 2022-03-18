@@ -65,7 +65,7 @@ export PATH=$PATH:/var/tmp/coder/code-server/bin
 
 Then to open a file (e.g., `personalize.log`):
 
-```console
+```text
 code-server -r personalize.log
 ```
 
