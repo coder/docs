@@ -41,6 +41,39 @@ Web_ icon.
 > Code Web is Coder's open-source project
 > [code-server](https://coder.com/docs/code-server/latest).
 
+### Opening files via the terminal
+
+You can open files from your Coder workspace in VS Code via the terminal. We
+recommend creating an alias to the underlying code-server executable so that you
+can use the command `code` for this process:
+
+```console
+alias code="/var/tmp/coder/code-server/bin/code-server -r"
+```
+
+Then, to open a file (e.g., `personalize.log`):
+
+```console
+code personalize.log
+```
+
+Alternatively, if you would like to use just the code-server executable, add it
+to your `PATH`:
+
+```console
+export PATH=$PATH:/var/tmp/coder/code-server/bin
+```
+
+Then, to open a file (e.g., `personalize.log`):
+
+```text
+code-server -r personalize.log
+```
+
+> If you're using Coder's web terminal, make sure that you've opened a Code Web
+> session. If, however, you're using the web IDE's terminal, the file contents
+> will appear in the IDE.
+
 ## JetBrains Gateway with SSH
 
 If your image
