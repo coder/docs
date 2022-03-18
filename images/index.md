@@ -21,16 +21,30 @@ icon:
 description: Learn about reproducibility in Coder.
 ---
 
-Coder creates development environments called [workspaces](../workspaces/index.md) using blueprints called
-container images. Once imported into Coder, container images are referred to as images. Container images are immutable, meaning they cannot be changed, and can be deployed consistently across Coder workspaces as containers. [The Open Container Initiative (OCI) standard](https://opencontainers.org/) is an open standard for images and containers.
+Coder creates development environments called
+[workspaces](../workspaces/index.md) using container images as the blueprints.
 
-Containers within Coder are called workspaces and are runnable instances of container images. Images are the foundation for organizations achieving consistency and productivity across developers while eliminating configuration drift, downstream bugs, and risk related to out-dated development environments.
+Container images (sometimes referred to as images) cannot be modified during
+use. As such, they can be used to deploy consistent Coder workspaces.
 
-Container images contain the IDEs, CLIs, language versions, and dependencies users need
-to work on software development projects. Users create workspaces from the container images and can begin to
-contribute immediately to projects for which they are defined.
+> [The Open Container Initiative (OCI) standard](https://opencontainers.org/)
+> sets the standard for containers and images.
 
-Coder integrates into one of more Container Registries (e.g., Artifactory, Docker.io, ECR, ACR, etc.), which store container images that you can import into Coder as images. Container images are built from Dockerfiles. Dockerfiles are text files that contains all the commands a user could call on the command line to assemble an container image. e.g., add a JetBrains IDE, JDK, Python, Ruby, public cloud CLI, etc. You can nest container images to re-use workspace configurations across all development teams.
+For organizations, images are the foundation for achieving consistency and
+productivity across developers while eliminating configuration drift, downstream
+bugs, and risks related to outdated development environments.
+
+Images contain the IDEs, CLIs, language versions, and dependencies users need to
+work on software development projects. Users can create workspaces with the
+image as the blueprint, then begin contributing immediately to the projects for
+which the image was defined.
+
+Coder integrates with many common container registries (including Artifactory,
+Docker, AWS Elastic Container Registry, and Azure Container Registry). Container
+registries store the images that you can then import into Coder. Images are
+built using Dockerfiles.
+
+You can nest images to reuse workspace configuration across development teams.
 
 ## In this section
 
