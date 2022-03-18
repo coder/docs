@@ -9,20 +9,23 @@ file.
 
 You can use the configure script to:
 
-- Run scripts to install or configure any other dependencies into your workspace
-- Add and install VS Code extensions if in an air-gapped network
+- Run scripts to install and configure dependencies for your workspace
+- Install VS Code extensions
 - Run [Coder CLI](https://github.com/coder/coder-cli) commands
 - Check for and clone a GitHub repo if it isn't present
 - Run scripts using
   [CODER\_\* environment variables](../workspaces/variables.md)
 
-> It is a best practice to change the `USER` to coder as the final step of the Dockerfile
-> so the configure script is run as the coder `USER` and therefore unless `sudo` prefaces
-> a command, the installations and configurations are stored in the `/home/coder` folder.
+> We strongly recommend changing the `USER` to `coder` as the final step of your
+> Dockerfile so that the configure script runs as the `coder` user. This change
+> ensures that Coder stores all installation and configuration information in
+> the persisted `/home/coder` folder (the only time this is _not_ the case is if
+> a command is prefaced by `sudo`).
 
 Coder will check the image for the presence of a **/coder/configure** file
 during the build process; if Coder finds one, it will execute the instructions
-contained. You copy the configure file into the image as part of the Dockerfile creation.
+contained. You copy the configure file into the image when creating the
+Dockerfile.
 
 The following steps will show you how to create and use a config file.
 
@@ -49,9 +52,10 @@ echo "Project has already been cloned."
 fi
 ```
 
-Note that the instructions provided include `if else` logic on whether the instructions
-should be re-run (and when) or if Coder should run the instructions only once.
-We strongly recommend including this logic at all times to minimize overhead.
+Note that the instructions provided include `if-else` logic on whether the
+instructions should be re-run (and when) or if Coder should run the instructions
+only once. We strongly recommend including this logic at all times to minimize
+overhead.
 
 > Any commands run with `sudo` will, by default, not include the environment
 > variables of your user. If you'd like to preserve your existing env variables,
@@ -66,9 +70,8 @@ following in your Dockerfile:
 COPY [ "configure", "/coder/configure" ]
 ```
 
-As an example, take a look at the sample Dockerfile that follows; the final
-line includes instructions to Coder on copying the settings from the configure
-file:
+As an example, take a look at the sample Dockerfile that follows; the final line
+includes instructions to Coder on copying the settings from the configure file:
 
 ```dockerfile
 FROM ubuntu:latest
@@ -82,10 +85,10 @@ USER coder
 To make your image accessible to Coder, build the development image and push it
 to your container registry.
 
-To build your image, run the following command in the directory where your
-Dockerfile is located (be sure to replace the user/repo:latest placeholder value with
-your user, repository and tag names so that the image is pushed to the appropriate
-location.):
+You can build your image by running the following command in the directory where
+your Dockerfile is located (be sure to replace the `user/repo:latest`
+placeholder value with your user, repository and tag names so that the image is
+pushed to the appropriate location):
 
 ```console
 docker build user/repo:latest .
@@ -104,9 +107,13 @@ You can test your setup by performing the following steps:
 1. [Importing your image](importing.md)
 1. [Creating your workspace using the newly imported image](../workspaces/create.md)
 
-Coder will run the configure file during the build process, and you can verify
-this by reviewing the build log on the **Workspace Overview** page (Coder runs the configure file as the
-penultimate (next to last) step of the build process) or by open a terminal and `cat configure.log` in the `/home/coder` folder:
+Coder will run the configure file during the build process. You can verify this
+by:
+
+- Reviewing the build log on the **Workspace Overview** page (Coder runs the
+  configure file as the second-to-last step of the build process)
+- Opening the terminal, ensuring that you're in the `/home/coder` folder, and
+  running `cat configure.log`.
 
 ![Workspace Overview Page](../assets/images/configure.png)
 
@@ -177,8 +184,8 @@ script.
 
 ### Running Coder CLI commands
 
-The following shows how to run a [Coder CLI command](https://coder.com/docs/coder/latest/cli) in your configure script by
-demonstrating how you can create a Dev URL:
+The following shows how to run a [Coder CLI command](../cli/index.md) in your
+configure script by demonstrating how you can create a Dev URL:
 
 ```sh
 # configure
@@ -188,8 +195,6 @@ coder urls create $CODER_WORKSPACE_NAME 3000 --name webapp
 ```
 
 ### Modifying VS Code settings
-
-> VS Code settings can also be done using [dotfiles repos](https://coder.com/docs/coder/latest/workspaces/personalization#dotfiles-repo) which are cloned and executed as the final workspace build step in the `personalize` script.
 
 1. Create a `settings.json` file:
 
@@ -225,3 +230,7 @@ coder urls create $CODER_WORKSPACE_NAME 3000 --name webapp
        /var/tmp/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
    fi
    ```
+
+> You can also modify VS Code settings using
+> [dotfiles repos](../workspaces/personalization.md#dotfiles-repo) which are
+> cloned and executed as the final workspace build step.

@@ -43,20 +43,22 @@ USER coder
 Please note:
 
 - Coder workspaces mount a
-  [home volume](../workspaces/personalization#persistent-home). Any files in the
-  image's home directory will be replaced by this persistent volume. If you have
-  install scripts (e.g., those for Rust), you must configure them to install
-  software in another directory.
+  [home volume](../workspaces/personalization#persistent-home), which is a
+  persistent volume that will replace any files in the image's home directory.
+  If you have installation scripts (e.g., those for Rust), you must configure
+  them to install software in another directory.
 
 - If you're using a different base image, see our
   [image minimum requirements](https://github.com/coder/enterprise-images/#image-minimums)
-  to make sure that your image will work with all of Coder's features.
+  to ensure that your image will work with all of Coder's features.
 
-- You can leverage your Coder deployment and its compute resources to build images inside a
-  [CVM](../admin/workspace-management/cvms.md)-enabled Coder workspace with
-  Docker installed (see our
+- You can leverage your Coder deployment and its compute resources to build
+  images inside a
+  [CVM-enabled workspace](../admin/workspace-management/cvms.md)with Docker
+  installed (see our
   [base image](https://github.com/coder/enterprise-images/tree/main/images/base)
-  for an example of how you can do this). This is a great way to free up your local machine from the compute-heavy image building process.
+  for an example of how you can do this). This is a way to free up your local
+  machine from the compute-heavy image building process.
 
 - If you're using CVM-only features during an image's build time (e.g., you're
   [pre-loading images](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/images.md#building-a-system-container-that-includes-inner-container-images--v012-)
@@ -65,7 +67,10 @@ Please note:
   and build your images locally. Note that this isn't usually necessary, even if
   your image installs and enables Docker.
 
-- If you're installing additional IDEs like JetBrains, you may need to also install the language interpreter, development kit, build tool, or compiler as part of the image. Check with your IDE for what components they install.
+- If you're installing additional IDEs (like JetBrains), you may need to include
+  installation instructions for the language interpreter, development kit, build
+  tool, and compiler in the image. Check the docs for your IDE to see what
+  components it requires.
 
 ## Example: Installing a JetBrains IDE
 
@@ -95,7 +100,7 @@ Make sure that you replace `[IDE]` with the name of the IDE in lowercase and
 provide its
 [corresponding `[CODE]`](https://plugins.jetbrains.com/docs/marketplace/product-codes.html).
 
-Here's how to install the IntelliJ IDEA Ultimate IDE onto your image:
+Here's how to install IntelliJ IDEA Ultimate onto your image:
 
 ```Dockerfile
 # Dockerfile
@@ -103,7 +108,7 @@ FROM ...
 
 USER root
 
-# Install intellij idea ultimate
+# Install IntelliJ IDEA Ultimate
 RUN mkdir -p /opt/idea
 RUN curl -L "https://download.jetbrains.com/product?code=IU&latest&distribution=linux" \
 | tar -C /opt/idea --strip-components 1 -xzvf -
@@ -115,7 +120,7 @@ RUN ln -s /opt/idea/bin/idea.sh /usr/bin/intellij-idea-ultimate
 USER coder
 ```
 
-Here's how to install the IntelliJ PyCharm Professional IDE onto your image:
+Here's how to install PyCharm Professional onto your image:
 
 ```Dockerfile
 # Dockerfile
@@ -123,7 +128,7 @@ FROM ...
 
 USER root
 
-# Install pycharm professional 
+# Install pycharm professional
 RUN mkdir -p /opt/pycharm
 RUN curl -L "https://download.jetbrains.com/product?code=PCP&latest&distribution=linux" | tar -C /opt/pycharm --strip-components 1 -xzvf -
 
