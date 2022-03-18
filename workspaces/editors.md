@@ -51,19 +51,20 @@ can use the command `code` for this process:
 alias code="/var/tmp/coder/code-server/bin/code-server -r"
 ```
 
-Then to open a file (e.g., `personalize.log`):
+Then, to open a file (e.g., `personalize.log`):
 
 ```console
 code personalize.log
 ```
 
-If you would like to use just the code-server executable, add it to your `PATH`:
+Alternatively, if you would like to use just the code-server executable, add it
+to your `PATH`:
 
 ```console
 export PATH=$PATH:/var/tmp/coder/code-server/bin
 ```
 
-Then to open a file (e.g., `personalize.log`):
+Then, to open a file (e.g., `personalize.log`):
 
 ```text
 code-server -r personalize.log
