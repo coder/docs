@@ -89,8 +89,8 @@ workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
     fi    
     ```
 
-1. This the `config.yaml` file used by Workspace Applications to surface icons
-   for each additional JetBrains IDE in the workspace dashboard. The
+1. This is the `config.yaml` file used by Workspace Applications to surface
+   icons for each additional JetBrains IDE in the workspace dashboard. The
    configuration uses the JetBrains icon used with the initial JetBrains IDE
     installed. In this example, config.yaml is located in a coder/apps directory
     within the directory that has the image Dockerfile.
