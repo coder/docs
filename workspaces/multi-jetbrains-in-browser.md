@@ -1,3 +1,9 @@
+---
+title: "Multiple JetBrains Instances"
+description:
+  Learn how to configure multiple instances of JetBrains IDEs in a browser.
+---
+
 These are the steps to build a custom image, configure script, and config.yaml
 (using Workspace Applications) to surface additional JetBrains IDE instances in
 a browser. This example uses IntelliJ IDEA Ultimate but other JetBrains IDEs can
@@ -186,3 +192,8 @@ be used.
             # Port to use when dialing the application. If not specified it
             # inherits the application port. Optional.
             port: 8999
+
+> Here are links to Projector CLI documentation for
+> [installation](https://github.com/JetBrains/projector-installer#Installation)
+> and [CLI
+> commands](https://github.com/JetBrains/projector-installer/blob/master/COMMANDS.md). 
