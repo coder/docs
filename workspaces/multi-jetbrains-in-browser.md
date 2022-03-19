@@ -12,7 +12,8 @@ be used.
 > Using additional JetBrains IDEs consume additional workspace compute resources
 > so ensure the workspace compute resources settings are large enough.
 
-![Multiple IntelliJ icons in a workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
+![Multiple IntelliJ icons in a
+workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
 
 1. Build a custom image that installs the primary JetBrains IDE, copies the
    configure script, .profile script, and the config.yaml file into the image.
@@ -24,7 +25,8 @@ be used.
 
     # Install IntelliJ IDEA Ultimate
     RUN mkdir -p /opt/idea
-    RUN curl -L "https://download.jetbrains.com/product?code=IU&latest&distribution=linux" \
+    RUN curl -L \
+    "https://download.jetbrains.com/product?code=IU&latest&distribution=linux" \
     | tar -C /opt/idea --strip-components 1 -xzvf -
 
     # Create a symbolic link in PATH that points to the Intellij startup script.
@@ -52,10 +54,10 @@ be used.
     export PATH=$PATH:$HOME/.local/bin
     ```
 
-1. The configure script installs the Projector CLI into `/home/coder` and uses the CLI to
-   install additional JetBrains IDEs. Each IDE configuration has a different
-   directory in `/home/coder/.projector/configs`. In this example, the configure
-   script in the directory that has the image Dockerfile.
+1. The configure script installs the Projector CLI into `/home/coder` and uses
+   the CLI to install additional JetBrains IDEs. Each IDE configuration has a
+   different directory in `/home/coder/.projector/configs`. In this example, the
+   configure script in the directory that has the image Dockerfile.
 
     > Note that each additional IDE needs a different port number
 
@@ -73,11 +75,17 @@ be used.
     PROJECTOR_CONFIG_PATH=$HOME/.projector/configs/IntelliJ_2
 
     if [ -d $PROJECTOR_CONFIG_PATH ]; then
-        echo 'projector has already been configured and IntelliJ IDE downloaded - skip step'
+        echo 'projector has already been configured - skip step'
     else
-        $HOME/.local/bin/projector ide autoinstall --config-name IntelliJ_2 --ide-name "IntelliJ IDEA Ultimate 2021.3.2" --port 8997 --use-separate-config
-        $HOME/.local/bin/projector ide autoinstall --config-name IntelliJ_3 --ide-name "IntelliJ IDEA Ultimate 2021.3.2" --port 8998 --use-separate-config
-        $HOME/.local/bin/projector ide autoinstall --config-name IntelliJ_4 --ide-name "IntelliJ IDEA Ultimate 2021.3.2" --port 8999 --use-separate-config  
+        $HOME/.local/bin/projector ide autoinstall --config-name IntelliJ_2 \ 
+        --ide-name "IntelliJ IDEA Ultimate 2021.3.2" --port 8997 \
+        --use-separate-config
+        $HOME/.local/bin/projector ide autoinstall --config-name IntelliJ_3 \
+        --ide-name "IntelliJ IDEA Ultimate 2021.3.2" --port 8998 \
+        --use-separate-config
+        $HOME/.local/bin/projector ide autoinstall --config-name IntelliJ_4 \
+        --ide-name "IntelliJ IDEA Ultimate 2021.3.2" --port 8999 \
+         --use-separate-config  
     fi    
     ```
 
