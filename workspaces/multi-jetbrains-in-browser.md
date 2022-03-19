@@ -18,7 +18,7 @@ workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
 1. Build a custom image that installs the primary JetBrains IDE, copies the
    configure script, .profile script, and the config.yaml file into the image.
 
-    ```
+    ```Dockerfile
     FROM codercom/enterprise-java:ubuntu
 
     USER root
@@ -44,13 +44,13 @@ workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
 
     # Set back to coder user
     USER coder
-    ``` 
+    ```
 
     This is the .profile script to add the Projector CLI to the workspace's
     path. In this example, .profile is located in a coder directory within the
     directory that has the image Dockerfile.
 
-    ```
+    ```console
     export PATH=$PATH:$HOME/.local/bin
     ```
 
@@ -61,7 +61,7 @@ workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
 
     > Note that each additional IDE needs a different port number
 
-    ```
+    ```console
     # install projector into /home/coder/ pvc
     pip3 install projector-installer --user
 
@@ -98,7 +98,7 @@ workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
    > Note that each workspace application name must be unique so that Projector
    > knows which config directory to point to
 
-   ```
+   ```yaml
    # /coder/apps/config.yaml
     apps:
       # Name of application in launcher. Name may consist of alphanumeric
@@ -204,4 +204,4 @@ workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
 > Here are links to Projector CLI documentation for
 > [installation](https://github.com/JetBrains/projector-installer#Installation)
 > and [CLI
-> commands](https://github.com/JetBrains/projector-installer/blob/master/COMMANDS.md). 
+> commands](https://github.com/JetBrains/projector-installer/blob/master/COMMANDS.md)
