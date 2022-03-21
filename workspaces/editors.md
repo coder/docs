@@ -291,6 +291,28 @@ participants. If they do, click **Accept** to proceed.
 At this point, you'll be able to share your project and work with your partner
 in real-time.
 
+## Muliple Instances of the same JetBrains IDE
+
+Some JetBrains users like to have multiple projects open when coding which
+requires multiple JetBrains IDEs open at the same time. When using JetBrains in
+a browser, this requires additional configuration steps.
+
+### Multiple JetBrains in a browser
+
+To the user, they will use the default JetBrains IDE that Coder detects in the
+custom image, and one or more additional JetBrains IDEs will also appear in the
+workspace dashboard.
+
+![Multiple IntelliJ icons in a workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
+
+The configuration requires installing the JetBrains Projector CLI with a
+configure script and a custom image. The configure script installs the Projector
+CLI then uses it to install as many additional IDE instances you require.
+Coder's [Workspace Applications](./applications.md) feature then surfaces the
+additional IDE icons in the workspace.
+
+[Steps to configure additional JetBrains IDEs in a browser](./multi-jetbrains-in-browser.md)
+
 ## RStudio
 
 Coder supports [RStudio](rstudio.com). To create a workspace that lets you use
