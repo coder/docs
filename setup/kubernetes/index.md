@@ -15,14 +15,17 @@ You can deploy Coder to any [compatible Kubernetes cluster]. Coder follows the
 version of Coder supports the previous two minor releases as well as the current
 release of Kubernetes at time of publication.
 
-> During installation, Helm will check to ensure that Coder is compatible with
-> your cluster version; if not, the installation process will fail, and you will
-> receive an error message indicating the minimum cluster version required.
+During installation, Helm will check to ensure that Coder is compatible with
+your cluster version; if not, the installation process will fail, and you will
+receive an error message indicating the minimum cluster version required.
 
 Coder continuously removes usage of deprecated Kubernetes API versions once the
 minimum baseline version of Kubernetes supports the necessary features in a
 stable version. We follow this policy to ensure that Coder stops using
 deprecated features before they are removed from new versions of Kubernetes.
+
+> You can opt to use v1.19 or v1.20, you'll see warning messages during the
+> installation process. Coder does not allow the use of v1.18 or earlier.
 
 <!-- markdownlint-disable -->
 
