@@ -313,9 +313,6 @@
               "path": "./admin/workspace-management/ssh-access.md"
             },
             {
-              "path": "./admin/workspace-management/tun-device.md"
-            },
-            {
               "path": "./admin/workspace-management/process-logging.md"
             }
           ]

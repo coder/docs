@@ -184,7 +184,7 @@ as a workspace deployment option, you'll need to
        # ami: <your Ubuntu 20.04 AMI ID>
        instanceType: <instance-type>
        minSize: 1
-       mazSize: 2
+       maxSize: 2
        desiredCapacity: 1
        # Uncomment "overrideBootstrapCommand" if you are using a custom AMI
        # overrideBootstrapCommand: |
