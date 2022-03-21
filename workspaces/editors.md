@@ -291,27 +291,26 @@ participants. If they do, click **Accept** to proceed.
 At this point, you'll be able to share your project and work with your partner
 in real-time.
 
-## Muliple Instances of the same JetBrains IDE
+## Multiple instances of a JetBrains IDE
 
-Some JetBrains users like to have multiple projects open when coding which
-requires multiple JetBrains IDEs open at the same time. When using JetBrains in
-a browser, this requires additional configuration steps.
-
-### Multiple JetBrains in a browser
-
-To the user, they will use the default JetBrains IDE that Coder detects in the
-custom image, and one or more additional JetBrains IDEs will also appear in the
-workspace dashboard.
+If you'd like to have multiple projects open, you'll need to have multiple
+JetBrains IDEs open in Coder simultaneously. The following steps show you how to
+configure Coder to enable this behavior.
 
 ![Multiple IntelliJ icons in a workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
 
-The configuration requires installing the JetBrains Projector CLI with a
-configure script and a custom image. The configure script installs the Projector
-CLI then uses it to install as many additional IDE instances you require.
-Coder's [Workspace Applications](./applications.md) feature then surfaces the
-additional IDE icons in the workspace.
+Running multiple instances of the same JetBrains IDE requires you to create a
+custom image and configure script to install the JetBrains Projector CLI using a
+custom image and [configure](../images/configure.md) script.
 
-[Steps to configure additional JetBrains IDEs in a browser](./multi-jetbrains-in-browser.md)
+The configure script will install JetBrains Projector, then use the Projector
+CLI to install as many additional IDE instances as you need. Coder's
+[workspace applications](./applications.md) feature surfaces the additional IDE
+icons in the workspace.
+
+We have provided
+[detailed configuration steps](../guides/customization/multiple-jetbrains-ides.md)
+for setting up your custom image and configure script.
 
 ## RStudio
 

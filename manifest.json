@@ -435,6 +435,9 @@
               "path": "./guides/customization/macos-keybinding.md"
             },
             {
+              "path": "./guides/customization/multiple-jetbrains-ides.md"
+            },
+            {
               "path": "./guides/customization/node.md"
             },
             {
