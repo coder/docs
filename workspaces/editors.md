@@ -291,7 +291,7 @@ participants. If they do, click **Accept** to proceed.
 At this point, you'll be able to share your project and work with your partner
 in real-time.
 
-## Run multiple instances of the same JetBrains IDE
+## Multiple instances of a JetBrains IDE
 
 If you'd like to have multiple projects open, you'll need to have multiple
 JetBrains IDEs open in Coder simultaneously. The following steps show you how to
