@@ -46,15 +46,15 @@ file shows how you can clone a repo at build time:
 #!/bin/bash
 if [ ! -d "/home/coder/workspace/project" ]
 then
-ssh-keyscan -t rsa <your git provider endpoint> >> ~/.ssh/known_hosts
+ssh-keyscan -t rsa <yourGitProviderEndpoint> >> ~/.ssh/known_hosts
 git clone git://company.com/project.git /home/coder/workspace/project
 else
 echo "Project has already been cloned."
 fi
 ```
 
-> Change the git provider endpoint in the ```ssh-keyscan``` command. e.g.,
-> ```github.com``` ```bitbucket.org```  ```gitlab.com```
+> Ensure that you change the `<yourGitProviderEndpoint>` placeholder in the
+> `ssh-keyscan` command (e.g., `github.com`, `bitbucket.org`, `gitlab.com`).
 
 Note that the instructions provided include `if-else` logic on whether the
 instructions should be re-run (and when) or if Coder should run the instructions
