@@ -51,9 +51,9 @@ to the JetBrains website to log in.
 
 ![Click the copy link](../../assets/workspaces/4-troubles-activate-jetbrains.png)
 
-## Login with your JetBrains account
+## Log in with your JetBrains account
 
-At the JetBrains website, login with your valid JetBrains account to get the IDE
+At the JetBrains website, log in with your valid JetBrains account to get the IDE
 authentication token.
 
 ![Login with your NetBrains account](../../assets/workspaces/5-jetbrains-login.png)
