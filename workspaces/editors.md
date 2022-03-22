@@ -12,7 +12,7 @@ There are several primary ways you can connect an IDE to your Coder workspace:
 1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with
    JetBrains Projector
 1. [JetBrains' Code With Me](editors.md#code-with-me)
-1. [Multiple JetBrains IDEs](editors.md#multiple-instances-of-a-jetbrains-ide)
+1. [Multiple JetBrains IDEs](editors.md##multiple-jetbrains-ides)
 1. [RStudio](editors.md#rstudio)
 1. _Any_ local editor with
    [1-way file synchronization](../cli/file-sync.md#one-way-file-sync) or
