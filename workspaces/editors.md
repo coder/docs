@@ -12,6 +12,7 @@ There are several primary ways you can connect an IDE to your Coder workspace:
 1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with
    JetBrains Projector
 1. [JetBrains' Code With Me](editors.md#code-with-me)
+1. [Multiple JetBrains IDEs](editors.md#multiple-jetbrains-ides)
 1. [RStudio](editors.md#rstudio)
 1. _Any_ local editor with
    [1-way file synchronization](../cli/file-sync.md#one-way-file-sync) or
@@ -291,7 +292,7 @@ participants. If they do, click **Accept** to proceed.
 At this point, you'll be able to share your project and work with your partner
 in real-time.
 
-## Multiple instances of a JetBrains IDE
+## Multiple JetBrains IDEs
 
 If you'd like to have multiple projects open, you'll need to have multiple
 JetBrains IDEs open in Coder simultaneously. The following steps show you how to
