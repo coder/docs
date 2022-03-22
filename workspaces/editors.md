@@ -393,3 +393,10 @@ RStudio:
    > All RStudio data is stored in the home directory associated with the user
    > you sign in as, since this ensures that your data is saved if Coder shuts
    > down or rebuilds your environment.
+
+## Logging
+
+You can find your IDE logs in the following places:
+
+- Code-server: `~/.local/share/code-server/logs/`
+- JetBrains IDEs: `.cache/JetBrains/<JetBrains-IDE>/log/<IDE>.log`
