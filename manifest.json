@@ -416,6 +416,9 @@
             },
             {
               "path": "./guides/admin/usage-monitoring.md"
+            },
+            {
+              "path": "./guides/admin/wp-cli.md"
             }
           ]
         },
