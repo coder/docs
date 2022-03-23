@@ -131,9 +131,10 @@ If you're using a custom ingress controller, the upgrade process from 1.20 to
    [TLS certificates](../guides/tls-certificates/index.md) for more information
    on how to configure Coder to issue and use certificates.)
 
-   > To manage SSH, go to **Manage** > **Workspace providers**. Select the provider you
-   > want to modify, click the **vertical ellipses** to its right, and click
-   > **Edit**. Under **Features**, you can toggle **External Connect** on/off.
+   > To manage SSH, go to **Manage** > **Workspace providers**. Select the
+   > provider you want to modify, click the **vertical ellipses** to its right,
+   > and click **Edit**. Under **Features**, you can toggle **External Connect**
+   > on/off.
    >
    > To manage the Access URL, go to **Manage** > **Admin** >
    > **Infrastructure**.

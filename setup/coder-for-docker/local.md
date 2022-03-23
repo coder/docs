@@ -230,7 +230,8 @@ workspace:
 If you would like users' IP addresses to show up in the audit logs (i.e.,
 identify the originating client IP address, regardless of whether they're
 connecting through a proxy, load balancer, or other such service), use the
-`-e "PROXY_TRUSTED_HEADERS=X-Forwarded-For"` and `-e PROXY_TRUSTED_ORIGINS=172.17.0.0/16` flag with the `docker run` command.
+`-e "PROXY_TRUSTED_HEADERS=X-Forwarded-For"` and
+`-e PROXY_TRUSTED_ORIGINS=172.17.0.0/16` flag with the `docker run` command.
 
 ## Known issues
 
