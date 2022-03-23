@@ -1,5 +1,6 @@
 {
   "versions": [
+    "v1.29",
     "v1.28",
     "v1.27",
     "v1.26",
@@ -322,9 +323,6 @@
               "path": "./admin/workspace-management/ssh-access.md"
             },
             {
-              "path": "./admin/workspace-management/tun-device.md"
-            },
-            {
               "path": "./admin/workspace-management/process-logging.md"
             }
           ]
@@ -431,6 +429,9 @@
             },
             {
               "path": "./guides/admin/usage-monitoring.md"
+            },
+            {
+              "path": "./guides/admin/wp-cli.md"
             }
           ]
         },
@@ -552,6 +553,9 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        {
+          "path": "./changelog/1.29.0.md"
+        },
         {
           "path": "./changelog/1.28.0.md",
           "children": [
