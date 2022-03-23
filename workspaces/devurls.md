@@ -45,7 +45,7 @@ To access and manage a dev URL, you can click:
 - The **Edit URL** action to edit the dev URL
 - The **Delete URL** action to delete the dev URL
 
-> Coder's default dev URL upload limit is 1MB
+> Coder's dev URL upload limit is **1 MB**.
 
 ![Dev URLs List](../assets/workspaces/create-devurl.png)
 

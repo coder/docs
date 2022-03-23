@@ -398,5 +398,5 @@ RStudio:
 
 You can find your IDE logs in the following places:
 
-- Code-server: `~/.local/share/code-server/logs/`
-- JetBrains IDEs: `.cache/JetBrains/<JetBrains-IDE>/log/<IDE>.log`
+- For code-server: `~/.local/share/code-server/logs/`
+- For JetBrains IDEs: `.cache/JetBrains/<JetBrains-IDE>/log/<IDE>.log`
