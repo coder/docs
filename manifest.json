@@ -196,13 +196,13 @@
           ]
         },
         {
-          "path": "./setup/docker/index.md",
+          "path": "./setup/coder-for-docker/index.md",
           "children": [
             {
-              "path": "./setup/docker/local.md"
+              "path": "./setup/coder-for-docker/local.md"
             },
             {
-              "path": "./setup/docker/postgres.md"
+              "path": "./setup/coder-for-docker/postgres.md"
             }
           ]
         },

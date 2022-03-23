@@ -35,7 +35,8 @@ If you need to reset the password for a site admin, you can do so using
 > sure to install it before proceeding.
 >
 > If you are using Docker, follow
-> [these instructions](../../../setup/docker#admin-password) instead.
+> [these instructions](../../../setup/coder-for-docker/local.md#admin-password)
+> instead.
 
 To reset the site admin password, run the following in the terminal:
 

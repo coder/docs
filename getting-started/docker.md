@@ -16,7 +16,8 @@ You'll learn how to:
 
 ## Prerequisites
 
-Please [install Coder for Docker](../setup/docker.md) before proceeding.
+Please [install Coder for Docker](../setup/coder-for-docker/index.md) before
+proceeding.
 
 ## Step 1: Log in and connect Coder to your Git provider
 
