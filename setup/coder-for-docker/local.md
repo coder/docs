@@ -203,6 +203,11 @@ following flags with the `docker run` command:
 -e PROXY_TRUSTED_ORIGINS=172.17.0.0/16
 ```
 
+## Workspace providers
+
+If you're interested in using Docker as a workspace provider, please see our
+[deployment instructions](../../admin/workspace-providers/deployment/docker.md).
+
 ## Known issues
 
 Currently, Coder for Docker does not support:
