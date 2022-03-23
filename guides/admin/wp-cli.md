@@ -5,8 +5,8 @@ description: Learn how to provision a workspace provider using the Coder CLI.
 
 1. Install and authenticate the Coder CLI.
 
-1. Run the following to provision a new workspace provider (be sure to replace
-   the placeholders as necessary):
+1. Run the following to provision a new **Kubernetes** workspace provider (be
+   sure to replace the placeholders as necessary):
 
    ```console
    coder providers create kubernetes [name] --namespace=[namespace] --cluster-address=[clusterAddress]
@@ -14,11 +14,11 @@ description: Learn how to provision a workspace provider using the Coder CLI.
 
     <!-- markdownlint-disable -->
 
-   | **Parameter**   | **Description**                                                                |
-   | --------------- | ------------------------------------------------------------------------------ |
-   | Name            | The name for the workspace provider you'd like provisioned                     |
-   | Namespace       | Namespace in which to provision workspaces. |
-   | Cluster address | The address of the Kubernetes control plane. Find using `kubectl cluster-info` |
+   | **Parameter**     | **Description**                                                                |
+   | ----------------- | ------------------------------------------------------------------------------ |
+   | `name`            | The name for the workspace provider you'd like provisioned                     |
+   | `namespace`       | The namespace in which to provision workspaces.                                |
+   | `cluster-address` | The address of the Kubernetes control plane; find using `kubectl cluster-info` |
 
     <!-- markdownlint-restore -->
 
@@ -28,8 +28,29 @@ description: Learn how to provision a workspace provider using the Coder CLI.
    coder providers create kubernetes my-provider --namespace=my-namespace --cluster-address=https://255.255.255.255`
    ```
 
-1. Once you've provisioned the workspace provider,
-   [deploy it to the cluster](#coder-cli-and-workspace-providers).
+   To create a new **EC2** workspace provider:
+
+   ```console
+   coder providers create ec2 [name] --access-key-id=[access-key-id] --secret-access-key=[secret-access-key]
+   ```
+
+   <!-- markdownlint-disable -->
+
+   | **Parameter**       | **Description**                                            |
+   | ------------------- | ---------------------------------------------------------- |
+   | `name`              | The name for the workspace provider you'd like provisioned |
+   | `access-key-id`     | The AWS access key associated with your account.           |
+   | `secret-access-key` | The AWS region where the EC2 instances should be created.  |
+
+    <!-- markdownlint-restore -->
+
+   ```console
+   coder providers create ec2 my-provider --access-key-id=AKIAIOSFODNN7EXAMPLE --secret-access-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+   ```
+
+1. Once you've provisioned the workspace provider, deploy it to your
+   [Kubernetes](../../admin/workspace-providers/deployment/kubernetes.md) or
+   [EC2](../../admin/workspace-providers/deployment/ec2.md) cluster.
 
    Ensure that you're connected to the cluster you're deploying to, and run the
    provided `helm upgrade` command; it should look something like the following,
