@@ -16,7 +16,7 @@ Install the following dependencies if you haven't already:
 
 ## Creating the new workspace provider
 
-1. Log in to Coder, and go to **Manage** > **Providers**.
+1. Log in to Coder, and go to **Manage** > **Workspace providers**.
 
 1. Click **Create New** in the top-right corner to launch the **Create a
    Kubernetes Provider** page.
