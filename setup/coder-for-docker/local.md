@@ -85,12 +85,12 @@ on getting your first workspace up and running.
 When running, Docker Desktop displays both your Coder deployment and your
 workspace.
 
-![Docker Desktop view](../assets/setup/docker-desktop.png)
+![Docker Desktop view](../../assets/setup/docker-desktop.png)
 
 You can also view runtime information (i.e., API calls) in the console where you
 started your deployment:
 
-![Console realtime info](../assets/setup/coder-for-docker-console.png)
+![Console realtime info](../../assets/setup/coder-for-docker-console.png)
 
 ## Dev URLs
 
