@@ -150,7 +150,7 @@ fields @timestamp, log_processed.fields.cmdline
   sidecar container. Depending on how your Kubernetes cluster is configured, you
   may incur extra charges from your cloud provider to store the additional logs.
 
-[c4d-doc]: ../../setup/docker.md
+[c4d-doc]: ../../setup/coder-for-docker/index.md
 [ebpf]: https://ebpf.io
 [ec2-doc]: ../workspace-providers/deployment/ec2.md
 [eks-cloudwatch]:

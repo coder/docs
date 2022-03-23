@@ -107,28 +107,28 @@
       "path": "./images/index.md",
       "children": [
         {
-          "path": "./images/importing.md"
-        },
-        {
-          "path": "./images/tags.md"
-        },
-        {
-          "path": "./images/writing.md"
-        },
-        {
           "path": "./images/configure.md"
         },
         {
-          "path": "./images/structure.md"
-        },
-        {
-          "path": "./images/tls-certificates.md"
+          "path": "./images/writing.md"
         },
         {
           "path": "./images/deprecating.md"
         },
         {
           "path": "./images/embed-button.md"
+        },
+        {
+          "path": "./images/importing.md"
+        },
+        {
+          "path": "./images/structure.md"
+        },
+        {
+          "path": "./images/tags.md"
+        },
+        {
+          "path": "./images/tls-certificates.md"
         }
       ]
     },
@@ -162,7 +162,8 @@
           "path": "./setup/kubernetes/index.md",
           "children": [
             {
-              "path": "./setup/kubernetes/local-preview.md"
+              "path": "./setup/kubernetes/local-preview.md",
+              "navigable": false
             },
             {
               "path": "./setup/kubernetes/k3s.md"
@@ -196,7 +197,15 @@
           ]
         },
         {
-          "path": "./setup/docker.md"
+          "path": "./setup/coder-for-docker/index.md",
+          "children": [
+            {
+              "path": "./setup/coder-for-docker/local.md"
+            },
+            {
+              "path": "./setup/coder-for-docker/postgres.md"
+            }
+          ]
         },
         {
           "path": "./setup/upgrade/index.md",
@@ -325,6 +334,9 @@
               "path": "./admin/workspace-providers/deployment/index.md",
               "children": [
                 {
+                  "path": "./admin/workspace-providers/deployment/docker.md"
+                },
+                {
                   "path": "./admin/workspace-providers/deployment/ec2.md"
                 },
                 {
@@ -436,6 +448,9 @@
               "path": "./guides/customization/macos-keybinding.md"
             },
             {
+              "path": "./guides/customization/multiple-jetbrains-ides.md"
+            },
+            {
               "path": "./guides/customization/node.md"
             },
             {
@@ -545,6 +560,9 @@
           "path": "./changelog/1.28.0.md",
           "children": [
             {
+              "path": "./changelog/1.28.4.md"
+            },
+            {
               "path": "./changelog/1.28.3.md"
             },
             {
@@ -572,6 +590,9 @@
         {
           "path": "./changelog/1.26.0.md",
           "children": [
+            {
+              "path": "./changelog/1.26.4.md"
+            },
             {
               "path": "./changelog/1.26.3.md"
             },

@@ -52,3 +52,9 @@ When prompted, provide:
 To make it easy for your developers to use your template, you can generate an
 embeddable Markdown button for use in your repo. See the
 [admin guide](../../admin/templates.md) for details.
+
+## Using templates with Coder for Docker
+
+[Coder for Docker](https://coder.com/docs/coder/latest/setup/coder-for-docker/index.md)
+supports the use of workspace templates. However, the configuration has
+[some differences that are outlined in our setup doc](https://coder.com/docs/coder/latest/setup/coder-for-docker/local.md#coder-templates).

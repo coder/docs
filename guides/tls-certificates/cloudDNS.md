@@ -14,10 +14,10 @@ authority.
 > differently from earlier versions of Coder. Ensure that you're reading the
 > docs applicable to your Coder version.
 
-This guide will show you how to install cert-manager v1.4.0 and set up your
-cluster to issue Let's Encrypt certificates for your Coder installation so that
-you can enable HTTPS on your Coder deployment. It will also show you how to
-configure your Coder hostname and dev URLs.
+This guide will show you how to install cert-manager and set up your cluster to
+issue Let's Encrypt certificates for your Coder installation so that you can
+enable HTTPS on your Coder deployment. It will also show you how to configure
+your Coder hostname and dev URLs.
 
 > We recommend reviewing the official cert-manager
 > [documentation](https://cert-manager.io/docs/) if you encounter any issues or
@@ -36,14 +36,44 @@ You must have:
 
 ## Step 1: Add cert-manager to your Kubernetes cluster
 
-To add cert-manager to your cluster, run:
+There are two ways to add cert-manager to your Kubernetes cluster.
+
+## Option 1: `kubectl apply`
+
+Add cert-manager to your cluster
+[using `kubectl apply`](https://cert-manager.io/docs/installation/kubectl/) by
+running:
 
 ```console
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
 ```
 
-More specifics can be found in the
-[cert-manager install documentation](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
+## Option 2: Helm
+
+Add cert-manager to your cluster
+[using Helm](https://cert-manager.io/docs/installation/helm/).
+
+First, add the Helm repo:
+
+```console
+helm repo add jetstack https://charts.jetstack.io
+```
+
+Then, install cert-manager and create its namespace (check for the
+[latest cert-manager version](https://cert-manager.io/docs/installation/supported-releases/#installing-with-regular-manifests),
+since they may change)
+
+```console
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --version v1.7.0 \ # update version if necessary
+  --create-namespace \
+  --set installCRDs=true
+```
+
+You can find additional information in
+[cert-manager's installation docs](https://cert-manager.io/docs/installation/kubernetes/#installing-with-regular-manifests).
 
 Once you've started the installation process, verify that all the pods are
 running:
@@ -177,11 +207,14 @@ However, to use all of the functionality you set up in this tutorial, use the
 following command instead:
 
 ```console
+# be sure to update the `stringValue` placeholder with the
+# proper value for your devurlsHostSecretName and hostSecretName
+
 helm upgrade --install coder coder/coder --namespace coder \
   --version=<CODER_VERSION> \
   --set coderd.devurlsHost="*.coder.example.com" \
-  --set coderd.tls.devurlsHostSecretName="coder-certs" \
-  --set coderd.tls.hostSecretName="coder-certs" \
+  --set coderd.tls.devurlsHostSecretName="coder-certs-stringValue" \
+  --set coderd.tls.hostSecretName="coder-certs-stringValue" \
   --wait
 ```
 

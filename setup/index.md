@@ -18,7 +18,7 @@ of charge for 60 days. You'll provide this license _after_ you've completed the
 deployment steps.
 
 > If you're interested in a lightweight preview of Coder, check out our
-> [local preview](kubernetes/local-preview) option.
+> [Coder for Docker](coder-for-docker/index.md) option.
 
 ## Deploying Coder
 
