@@ -39,7 +39,8 @@ Coder for Docker works with the following platforms:
 1. Launch Docker Desktop.
 
 1. If you've previously installed Coder, run `sudo rm -rf ~/.coder` in the
-   terminal.
+   terminal. **Note:** This command erases your Coder database and settings, so
+   only run this if you'd like a clean install.
 
 1. In the terminal, run the following to download the resources you need,
    include the images, and set up your Coder deployment (if you're using the
@@ -194,6 +195,42 @@ Coder will now run in the background.
 
 For more detailed information on the Docker Compose file, please see
 [Docker's docs](https://docs.docker.com/compose/compose-file/compose-file-v3/).
+
+## Coder templates
+
+You can use
+[templates](https://coder.com/docs/coder/latest/workspaces/workspace-templates/templates#workspace-template-sample)
+with Coder for Docker to define how Coder builds your workspaces.
+
+To use a standard Coder workspace template for Docker:
+
+1. Change the `workspace.type` and`workspace.specs` to `docker`
+1. Remove any Kubernetes-specific `workspace.specs.kubernetes values` (e.g.,
+   `cpu`, `memory`, `gpu`)
+
+Your configuration file will look something like the following:
+
+```yaml
+version: 0.2
+workspace:
+  type: docker
+  specs:
+    docker:
+      image:
+        value: index.docker.io/codercom/enterprise-intellij:ubuntu
+      container-based-vm:
+        value: false
+  configure:
+    start:
+    ...
+```
+
+## Ensure that user IPs show up in the audit logs
+
+If you would like users' IP addresses to show up in the audit logs (i.e.,
+identify the originating client IP address, regardless of whether they're
+connecting through a proxy, load balancer, or other such service), use the
+`-e "PROXY_TRUSTED_HEADERS=X-Forwarded-For"` flag with the `docker run` command.
 
 ## Known issues
 

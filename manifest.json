@@ -54,9 +54,6 @@
           "path": "./workspaces/lifecycle.md"
         },
         {
-          "path": "./workspaces/applications.md"
-        },
-        {
           "path": "./workspaces/autostart.md"
         },
         {
@@ -87,6 +84,9 @@
           "path": "./workspaces/vs-code-extensions.md"
         },
         {
+          "path": "./workspaces/applications.md"
+        },
+        {
           "path": "./workspaces/workspace-params.md"
         },
         {
@@ -106,28 +106,28 @@
       "path": "./images/index.md",
       "children": [
         {
-          "path": "./images/importing.md"
-        },
-        {
-          "path": "./images/tags.md"
-        },
-        {
-          "path": "./images/writing.md"
-        },
-        {
           "path": "./images/configure.md"
         },
         {
-          "path": "./images/structure.md"
-        },
-        {
-          "path": "./images/tls-certificates.md"
+          "path": "./images/writing.md"
         },
         {
           "path": "./images/deprecating.md"
         },
         {
           "path": "./images/embed-button.md"
+        },
+        {
+          "path": "./images/importing.md"
+        },
+        {
+          "path": "./images/structure.md"
+        },
+        {
+          "path": "./images/tags.md"
+        },
+        {
+          "path": "./images/tls-certificates.md"
         }
       ]
     },
@@ -450,6 +450,9 @@
               "path": "./guides/customization/macos-keybinding.md"
             },
             {
+              "path": "./guides/customization/multiple-jetbrains-ides.md"
+            },
+            {
               "path": "./guides/customization/node.md"
             },
             {
@@ -510,9 +513,6 @@
           ]
         },
         {
-          "path": "./guides/hosted-beta/index.md"
-        },
-        {
           "path": "./guides/mobile-development/index.md"
         },
         {
@@ -559,6 +559,12 @@
           "path": "./changelog/1.28.0.md",
           "children": [
             {
+              "path": "./changelog/1.28.4.md"
+            },
+            {
+              "path": "./changelog/1.28.3.md"
+            },
+            {
               "path": "./changelog/1.28.2.md"
             },
             {
@@ -570,6 +576,9 @@
           "path": "./changelog/1.27.0.md",
           "children": [
             {
+              "path": "./changelog/1.27.3.md"
+            },
+            {
               "path": "./changelog/1.27.2.md"
             },
             {
@@ -580,6 +589,12 @@
         {
           "path": "./changelog/1.26.0.md",
           "children": [
+            {
+              "path": "./changelog/1.26.4.md"
+            },
+            {
+              "path": "./changelog/1.26.3.md"
+            },
             {
               "path": "./changelog/1.26.2.md"
             },

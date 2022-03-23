@@ -3,9 +3,16 @@ title: "Lifecycle"
 description: "Learn about the workspace lifecycle."
 ---
 
-Workspaces are designed to sustain scheduled shutdowns and rebuilds. An
-workspace lifecycle resilient to stops and starts means you can save dollars on
-cloud compute and justify more powerful dev machines :).
+A Coder workspace is designed to shutdown (triggered by either scheduled
+workspace inactivity or manually by users and administrators) and be rebuilt.
+
+The persistent volume claim (or `/home/<username>`) mounted to the workspace
+ensures that the workspaces retain cloned code repositories and other
+personalization settings.
+
+You can manage a Coder workspace's lifecycle at the organization-level to auto
+shutdown after a defined period of inactivity or when administrators want to
+force workspace rebuilds.
 
 ## Rebuilds
 
@@ -18,6 +25,13 @@ even if the underlying [image](../images/index.md) or its dependencies change.
 
 **Note:** `username` is defined in the image. See
 [Docker's image documentation](https://docs.docker.com/engine/reference/builder/#user)
+
+## Auto-start
+
+Users can configure a workspace
+[auto-start](https://coder.com/docs/coder/latest/workspaces/autostart) time,
+which sets the time when Coder will rebuild and start their workspaces. Users
+typically set this time to coincide with the start of their working day.
 
 ## Auto-off
 
@@ -38,11 +52,19 @@ available and running on an underlying host, the following steps are taken:
    a Git provider, your SSH key pair is injected during this step as well,
    allowing it to perform authenticated `git` operations.
 
-1. **Execution of `/coder/configure`**: Execution of this script allows
-   [images](../images/index.md) to perform startup operations consistent across
-   all of the workspaces that use the image. If you need your image to include
-   modifications to `/home`, include the instructions in this script.
+1. **Execution of `/coder/configure`**: Execution of this script, which is
+   included in the workspace image, allows [images](../images/index.md) to
+   perform startup operations that are consistent across all of the workspaces
+   that use the image. If you need your image to include modifications to
+   `/home/<user>`, include the instructions in this script.
 
-1. **Execution of ~/personalize`**: Execution of this script allows you to
-   customize your personal development workspace on each rebuild. Read more on
-   personalization [here](./personalization.md).
+   In other words, the configure script is _not_ run as the root user but as the
+   `/home/<user>`, so configurations are stored in `/home/<user>`. You may also
+   run commands with `sudo`, but these changes will not persist in
+   `/home/<user>`.
+
+1. **Execution of `~/personalize`**: Execution of this script allows you to
+   customize your personal development workspace on each rebuild. Coder injects
+   the personalize script into the workspace and includes cloning logic if a
+   user has specified a dotfiles repo. Read more on personalization
+   [here](./personalization.md).

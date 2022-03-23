@@ -12,6 +12,7 @@ There are several primary ways you can connect an IDE to your Coder workspace:
 1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with
    JetBrains Projector
 1. [JetBrains' Code With Me](editors.md#code-with-me)
+1. [Multiple JetBrains IDEs](editors.md#multiple-jetbrains-ides)
 1. [RStudio](editors.md#rstudio)
 1. _Any_ local editor with
    [1-way file synchronization](../cli/file-sync.md#one-way-file-sync) or
@@ -40,6 +41,39 @@ Web_ icon.
 
 > Code Web is Coder's open-source project
 > [code-server](https://coder.com/docs/code-server/latest).
+
+### Opening files via the terminal
+
+You can open files from your Coder workspace in VS Code via the terminal. We
+recommend creating an alias to the underlying code-server executable so that you
+can use the command `code` for this process:
+
+```console
+alias code="/var/tmp/coder/code-server/bin/code-server -r"
+```
+
+Then, to open a file (e.g., `personalize.log`):
+
+```console
+code personalize.log
+```
+
+Alternatively, if you would like to use just the code-server executable, add it
+to your `PATH`:
+
+```console
+export PATH=$PATH:/var/tmp/coder/code-server/bin
+```
+
+Then, to open a file (e.g., `personalize.log`):
+
+```text
+code-server -r personalize.log
+```
+
+> If you're using Coder's web terminal, make sure that you've opened a Code Web
+> session. If, however, you're using the web IDE's terminal, the file contents
+> will appear in the IDE.
 
 ## JetBrains Gateway with SSH
 
@@ -258,6 +292,27 @@ participants. If they do, click **Accept** to proceed.
 At this point, you'll be able to share your project and work with your partner
 in real-time.
 
+## Multiple JetBrains IDEs
+
+If you'd like to have multiple projects open, you'll need to have multiple
+JetBrains IDEs open in Coder simultaneously. The following steps show you how to
+configure Coder to enable this behavior.
+
+![Multiple IntelliJ icons in a workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
+
+Running multiple instances of the same JetBrains IDE requires you to create a
+custom image and configure script to install the JetBrains Projector CLI using a
+custom image and [configure](../images/configure.md) script.
+
+The configure script will install JetBrains Projector, then use the Projector
+CLI to install as many additional IDE instances as you need. Coder's
+[workspace applications](./applications.md) feature surfaces the additional IDE
+icons in the workspace.
+
+We have provided
+[detailed configuration steps](../guides/customization/multiple-jetbrains-ides.md)
+for setting up your custom image and configure script.
+
 ## RStudio
 
 Coder supports [RStudio](rstudio.com). To create a workspace that lets you use
@@ -338,3 +393,10 @@ RStudio:
    > All RStudio data is stored in the home directory associated with the user
    > you sign in as, since this ensures that your data is saved if Coder shuts
    > down or rebuilds your environment.
+
+## Logging
+
+You can find your IDE logs in the following places:
+
+- For code-server: `~/.local/share/code-server/logs/`
+- For JetBrains IDEs: `.cache/JetBrains/<JetBrains-IDE>/log/<IDE>.log`

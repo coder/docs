@@ -51,9 +51,9 @@ to the JetBrains website to log in.
 
 ![Click the copy link](../../assets/workspaces/4-troubles-activate-jetbrains.png)
 
-## Login with your JetBrains account
+## Log in with your JetBrains account
 
-At the JetBrains website, login with your valid JetBrains account to get the IDE
+At the JetBrains website, log in with your valid JetBrains account to get the IDE
 authentication token.
 
 ![Login with your NetBrains account](../../assets/workspaces/5-jetbrains-login.png)
@@ -68,8 +68,8 @@ clipboard.
 ## Paste the IDE authentication token
 
 Paste the IDE authentication token back into your already opened JetBrains IDE
-window. If on a Mac, you must type CMD + v followed by Control + v for the paste
-operation to work correctly.
+window. Type **Command + v** (macOS) or **Control + v** (Linux/Windows) for the
+paste operation to work correctly.
 
 ![Paste the token](../../assets/workspaces/7-cmd-v-ctrl-v-auth-token.png)
 
