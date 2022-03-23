@@ -9,7 +9,7 @@ description: Learn how to provision a workspace provider using the Coder CLI.
    the placeholders as necessary):
 
    ```console
-   coder providers create [name] --hostname=[hostname] --cluster-address=[clusterAddress]
+   coder providers create kubernetes [name] --namespace=[namespace] --cluster-address=[clusterAddress]
    ```
 
     <!-- markdownlint-disable -->
@@ -17,7 +17,7 @@ description: Learn how to provision a workspace provider using the Coder CLI.
    | **Parameter**   | **Description**                                                                |
    | --------------- | ------------------------------------------------------------------------------ |
    | Name            | The name for the workspace provider you'd like provisioned                     |
-   | Hostname        | The hostname of your Coder deployment                                          |
+   | Namespace       | Namespace in which to provision workspaces. |
    | Cluster address | The address of the Kubernetes control plane. Find using `kubectl cluster-info` |
 
     <!-- markdownlint-restore -->
@@ -25,7 +25,7 @@ description: Learn how to provision a workspace provider using the Coder CLI.
    Example usage:
 
    ```console
-   coder providers create my-provider --hostname=https://provider.example.com --cluster-address=https://255.255.255.255`
+   coder providers create kubernetes my-provider --namespace=my-namespace --cluster-address=https://255.255.255.255`
    ```
 
 1. Once you've provisioned the workspace provider,
@@ -40,8 +40,9 @@ description: Learn how to provision a workspace provider using the Coder CLI.
     --atomic \
     --install \
     --force \
-    --set envproxy.token=<token> --set envproxy.accessURL=<envproxyAccessURL>
-   --set ingress.host=<ingressHostName> \
+    --set envproxy.token=<token> \
+    --set envproxy.accessURL=<envproxyAccessURL> \
+    --set ingress.host=<ingressHostName> \
     --set envproxy.clusterAddress=<clusterAddress> \
     --set cemanager.accessURL=<cemanagerAccessUrl>
 
