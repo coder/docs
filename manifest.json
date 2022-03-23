@@ -202,9 +202,6 @@
               "path": "./setup/docker/local.md"
             },
             {
-              "path": "./setup/docker/cloud.md"
-            },
-            {
               "path": "./setup/docker/postgres.md"
             }
           ]

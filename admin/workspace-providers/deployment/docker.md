@@ -5,84 +5,99 @@ state: alpha
 ---
 
 This article walks you through the process of deploying a workspace provider to
-a remote VM instance using docker.
+a remote VM instance using Docker.
 
 ## Prerequisites
 
-You must have a provisioned VM with the docker engine installed and running. The
-docker engine must be at least version [20.10][docker-engine-version].
+- You must have a provisioned VM with the Docker Engine installed and running.
+  The Docker Engine must be at least version [20.10][docker-engine-version].
 
-The VM must be accessible over `ssh`.
+- Coder must be able to access the VM over an SSH connection.
 
-The coder deployment must be accessible from containers deployed inside the VM.
+- The Coder deployment must be accessible from the containers deployed inside
+  the VM.
 
-## 1. Create a new ssh key
+## 1. Create a new SSH key
 
-Coder will use ssh to connect to the remote VM and communicate with the docker
-engine. It is advised to create a new ssh key for this purpose, and do not reuse
-this key. Save this key somewhere secure, as it will be needed if you need to
-edit the workspace provider in the future.
+Coder uses SSH to connect to the remote VM and communicate with the Docker
+Engine.
 
-> &#10071; Password protected ssh keys are not currently supported. The ssh key
-> must be unencrypted.
+We recommend that you create a new SSH key for this purpose and do _not_ reuse
+this key. Furthermore, ensure that you save this key, since you'll need it to
+edit your workspace provider in the future.
 
-```bash
+> &#10071; Coder does not currently support password-protected SSH keys; the SSH
+> key must be unencrypted.
+
+To generate your SSH key, run:
+
+```console
 ssh-keygen -t ed25519 -C remote-c4d -f $HOME/.ssh/remote_c4d -N ""
 ```
 
-## 2. Add ssh key to remote VM
+## 2. Add the SSH key to the remote VM
 
-Add the ssh key to the remote VM's `authorized_keys` file. This will allow us to
-ssh using the new `remote_c4d` key.
+Add your SSH key to the remote VM's `authorized_keys` file; this will allow
+Coder to connect via SSH using the new `remote_c4d` key:
 
-```bash
+```console
 # Replace 'remote-user@192.0.2.10' with your VM's user and host/ip.
 ssh-copy-id -f -i $HOME/.ssh/remote_c4d.pub remote-user@192.0.2.10
 ```
 
-## 3. Verify the key
+## 3. Verify the SSH key
 
-Verify the key can ssh into your remote VM.
+Verify that you can use the key to connect via SSH to your remote VM:
 
-```bash
+```console
 # Replace 'remote-user@192.0.2.10' with your VM's user and host/ip.
 ssh remote-user@192.0.2.10 -o IdentitiesOnly=yes -i $HOME/.ssh/remote_c4d 'echo All good!'
 ```
 
-## 4. Create the provider
+## 4. Enable the Docker providers feature flag
 
-On your docker deployment, make sure to enable the Remote Docker Providers
-feature flag in your user settings.
+In your Coder for Docker deployment, ensure that you've enabled the **Remote
+Docker Providers** feature flag.
 
-1.  Log in to Coder, and go to **Account** > **Feature Preview**
+1. Log in to Coder, and go to **Account** > **Feature Preview**
 
-    ![See feature flags](../../../assets/deployment/docker/feature-flag-setting.png)
+   ![See feature flags](../../../assets/deployment/docker/feature-flag-setting.png)
 
-1.  Enable **Remote Docker Providers**
+1. Click to enable **Remote Docker Providers**
 
-    ![Enable feature flag](../../../assets/deployment/docker/docker-feature.png)
+   ![Enable feature flag](../../../assets/deployment/docker/docker-feature.png)
 
-1.  Go to **Manage** > **Workspace providers**
-1.  Click the dropdown in the top right corner to launch **Create Docker
-    Provider**
+## 5. Create the workspace provider
 
-        ![Create docker provider](../../../assets/deployment/docker/create-docker-provider.png)
+To create your workspace provider, go to **Manage** > **Workspace providers**.
+Click the dropdown in the top-right corner to launch **Create Docker Provider**
 
-1.  Fill out the provider form
+![Create docker provider](../../../assets/deployment/docker/create-docker-provider.png)
 
-    1. Name the docker provider
-    1. For the **Docker Daemon URL**, use `unix:///var/run./docker.sock`
-    1. SSH configuration section
-       1. Use the ssh URL for the remote vm, and **include the port**. Eg:
-          `remote-user@192.0.2.10:22`
-       1. Copy the private key that we created earlier,
-          `cat $HOME/.ssh/remote_c4d`
-       1. Run the keyscan in the form to copy over the known host verification.
-          Copy the output. Eg: `ssh-keyscan -p 22 -H 192.0.2.10`
-       1. Optionally set the access URL to an ip or URL that workspaces can use
-          to access coderd. If the site wide access URL is accessible from the
-          workspace container, this override is not needed.
+You can now fill out the provider form.
 
-    ![Docker ssh config](../../../assets/deployment/docker/docker-ssh-config.png)
+1. Provide a **name** for your new provider.
+
+1. For the **Docker Daemon URL**, use `unix:///var/run./docker.sock`
+
+1. Under the **SSH configuration** section:
+
+   1. Under **SSH Host URL**, provide the SSH URL for the remote VM, **including
+      the port** (e.g., `remote-user@192.0.2.10:22`)
+   1. Copy over the private key that you created earlier (you can retrieve it
+      with `cat $HOME/.ssh/remote_c4d`)
+   1. Run the keyscan provided for known host verification, and copy over the
+      output:
+
+      ```console
+      # Example:
+      ssh-keyscan -p 22 -H 192.0.2.10
+      ```
+
+   1. Optionally, set the access URL to an IP address or URL that workspaces can
+      use to access `coderd`. You do not need this override if the site-wide
+      access URL is accessible from the workspace container.
+
+   ![Docker ssh config](../../../assets/deployment/docker/docker-ssh-config.png)
 
 [docker-engine-version]: https://docs.docker.com/engine/release-notes/#20100
