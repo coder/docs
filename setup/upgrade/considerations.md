@@ -7,6 +7,24 @@ The upgrade page provides instructions on how to upgrade your Coder deployment.
 This article, however, includes information you should be aware of prior to
 upgrading, such as architecture updates and breaking changes.
 
+## Upgrading to v1.29
+
+Previously, Coder applied a `UNIQUE` constraint to usernames, but only the
+case-sensitive form (not the lowercase username). This release changes the
+constraint so that it also applies to the lowercase form of the username and
+ensures that all users have unique, lowercase usernames.
+
+If there are multiple usernames where the only differences are the casing, the
+duplicates will be renamed as follows:
+
+- Sort each group of usernames (e.g., username, Username, UserName) by its
+  case-sensitive form
+- The first username remains untouched; Coder appends a number to subsequent
+  usernames (e.g., Username2, UserName3)
+
+This means that any usernames that are already lowercase remain unchanged, since
+they will be first in the sort group.
+
 ## Upgrading from v1.25 to v1.26
 
 - Beginning with `1.26`, Coder requires the use of Kubernetes `1.20` or later.
