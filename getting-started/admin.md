@@ -15,9 +15,9 @@ To get started with Coder, you will need to:
 
 1. [Install Coder via Helm](../setup/installation.md)
 
-Alternatively, [Coder for Docker](../setup/docker.md) allows you to deploy Coder
-quickly to machines where you have Docker installed. We recommend this option
-for teams with 5-10 developers.
+Alternatively, [Coder for Docker](../setup/coder-for-docker/index.md) allows you
+to deploy Coder quickly to machines where you have Docker installed. We
+recommend this option for teams with 5-10 developers.
 
 ## Configure Coder
 

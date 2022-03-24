@@ -151,7 +151,7 @@ Once you've made your changes, click **Update Provider** to save and continue.
 
 ## Delete a workspace provider
 
-1. Log in to Coder, and go to **Manage** > **Providers**.
+1. Log in to Coder, and go to **Manage** > **Workspace providers**.
 
 1. In the **Providers** list, find the workspace provider you want to delete.
    Click the vertical ellipsis to its right. Select **Delete**.

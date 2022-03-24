@@ -63,9 +63,10 @@ satellite to any cluster and any namespace.
 
 ### Step 2: Enable Networking v2
 
-Log into Coder as a site manager, and go to **Manage** > **Providers**. Select
-the workspace provider, click the **vertical ellipsis** to its right, and select
-**Edit**. Enable the **NetworkingV2 toggle** and click **Update Provider**.
+Log into Coder as a site manager, and go to **Manage** > **Workspace
+providers**. Select the workspace provider, click the **vertical ellipsis** to
+its right, and select **Edit**. Enable the **NetworkingV2 toggle** and click
+**Update Provider**.
 
 At this point, rebuild a workspace to ensure connectivity between the workspace
 provider and the workspace. Note that latency to the workspace may be negatively

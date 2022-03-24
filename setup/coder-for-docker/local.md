@@ -1,6 +1,6 @@
 ---
-title: "Coder for Docker"
-description: Learn how to run Coder with Docker.
+title: "Local deployment"
+description: Learn how to run Coder with Docker locally.
 ---
 
 Coder for Docker allows you to deploy Coder to any machine on which Docker runs
@@ -52,7 +52,7 @@ Coder for Docker works with the following platforms:
       -p 7080:7080 \
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v ~/.coder:/var/run/coder \
-      codercom/coder:1.28.2
+      codercom/coder:1.29.0
    ```
 
    When this process is complete, Coder will print the URL you can use to access
@@ -85,12 +85,12 @@ on getting your first workspace up and running.
 When running, Docker Desktop displays both your Coder deployment and your
 workspace.
 
-![Docker Desktop view](../assets/setup/docker-desktop.png)
+![Docker Desktop view](../../assets/setup/docker-desktop.png)
 
 You can also view runtime information (i.e., API calls) in the console where you
 started your deployment:
 
-![Console realtime info](../assets/setup/coder-for-docker-console.png)
+![Console realtime info](../../assets/setup/coder-for-docker-console.png)
 
 ## Dev URLs
 
@@ -104,47 +104,13 @@ DEVURL_HOST="*.mycompany.com"
 For example:
 
 ```console
-docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.28.2
+docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.29.0
 ```
 
 ## Use an external PostgreSQL database
 
-If you'd like to use an external database, you must:
-
-1. Disable the embedded database by setting the `DB_EMBEDDED` environment
-   variable (see the next code snippet for an example)
-1. Provide the connection information to the external PostgreSQL database:
-
-   ```console
-   docker run --rm -it -p 7080:7080 \
-      -v /var/run/docker.sock:/var/run/docker.sock \
-      -v ~/.coder:/var/run/coder \
-      # Disable using the embedded DB
-      -e DB_EMBEDDED="" \
-      # Change these values to match those for your database
-      -e DB_HOST=127.0.0.1 \
-      -e DB_PORT=5432 \
-      -e DB_USER=postgres \
-      -e DB_PASSWORD="" \
-      -e DB_NAME=postgres \
-      -e DB_SSL_MODE=disable \
-      codercom/coder:1.28.2
-   ```
-
-Coder supports client TLS certificates using `DB_SSL_MODE=verify-full`. Ensure
-that you mount the certs into the container (and add the flag
-`-v <local_certs>:/certs`). Then, specify the certificate path using environment
-variables:
-
-<!-- markdownlint-disable -->
-
-| **Flag/environment variable**     | **Description**                              |
-| --------------------------------- | -------------------------------------------- |
-| `-e DB_CERT=/certs/client.crt`    | The path to the client cert signed by the CA |
-| `-e DB_KEY=/certs/client.key`     | The path to the client secret                |
-| `-e DB_ROOT_CERT=/certs/myCA.crt` | The path to the trusted CA cert              |
-
-<!-- markdownlint-enable -->
+Coder for Docker comes with an embedded database, but you can
+[opt for an external database](postgres.md) instead.
 
 ## Admin password
 
@@ -175,7 +141,7 @@ To do so:
    version: "3.5"
    services:
    coder:
-     image: docker.io/codercom/coder:1.28.2
+     image: docker.io/codercom/coder:1.29.0
      container_name: coderd
      restart: unless-stopped
      ports:
@@ -230,7 +196,17 @@ workspace:
 If you would like users' IP addresses to show up in the audit logs (i.e.,
 identify the originating client IP address, regardless of whether they're
 connecting through a proxy, load balancer, or other such service), use the
-`-e "PROXY_TRUSTED_HEADERS=X-Forwarded-For"` flag with the `docker run` command.
+following flags with the `docker run` command:
+
+```console
+-e "PROXY_TRUSTED_HEADERS=X-Forwarded-For"
+-e PROXY_TRUSTED_ORIGINS=172.17.0.0/16
+```
+
+## Workspace providers
+
+If you're interested in using Docker as a workspace provider, please see our
+[deployment instructions](../../admin/workspace-providers/deployment/docker.md).
 
 ## Known issues
 

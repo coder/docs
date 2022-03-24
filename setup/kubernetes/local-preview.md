@@ -3,6 +3,9 @@ title: "Local preview"
 description: Set up a Coder deployment locally for testing.
 ---
 
+> :warning: This article is archived. For a local preview of Coder, we recommend
+> [Coder for Docker](../coder-for-docker/index.md).
+
 <!-- markdownlint-disable -->
 
 Coder is typically deployed to a remote data center, but you can use
