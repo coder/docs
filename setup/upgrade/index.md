@@ -38,8 +38,6 @@ This guide will show you how to upgrade your Coder deployment.
   helm repo add coder https://helm.coder.com
   ```
 
-- Ensure that you have superuser privileges to your PostgreSQL database.
-
 ## Upgrade Coder
 
 1. Retrieve the latest repository information:

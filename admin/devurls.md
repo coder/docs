@@ -39,19 +39,6 @@ Run the `helm upgrade` command:
 helm upgrade coder coder/coder -n coder --version=<VERSION> --values values.yaml"
 ```
 
-**Note:** If you are providing an ingress controller, then you will need to add
-the rule manually to the ingress.
-
-```yaml
- - host: "*.my-custom-domain.io"
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: coderd
-          servicePort: 8080
-```
-
 > Beginning with Coder version `1.26.0`, you can set a constant suffix for all
 > dev URLs (e.g., `*-suffix.coder.io`). This feature helps organizations that
 > may incur expenses and delays due to the need for multiple wildcard DNS
