@@ -54,13 +54,13 @@ kubectl config set-context --current --namespace=coder
    [changelog](../changelog/index.md) for a list of Coder versions or run
    `helm search repo coder -l`)
 
-> This step will install Coder with the default configuration. This does not set
-> up dev URLs, TLS, ingress controllers, or an external database. To configure
-> these recommended features, please go to step 4.
+   > This step will install Coder with the default configuration. This does not set
+   > up dev URLs, TLS, ingress controllers, or an external database. To configure
+   > these recommended features, please go to step 4.
 
-```console
-helm install coder coder/coder --namespace coder --version=<VERSION>
-```
+   ```console
+   helm install coder coder/coder --namespace coder --version=<VERSION>
+   ```
 
 1. Once `coderd` is running, tail the logs to find the randomly generated
    password for the admin user:
@@ -81,9 +81,9 @@ helm install coder coder/coder --namespace coder --version=<VERSION>
 
    You will need these credentials to continue setup using Coder's web UI.
 
-> If you lose your admin credentials, you can use the
-> [admin password reset](../admin/access-control/users/password-reset.md#resetting-the-site-admin-password)
-> process to regain access.
+   > If you lose your admin credentials, you can use the
+   > [admin password reset](../admin/access-control/users/password-reset.md#resetting-the-site-admin-password)
+   > process to regain access.
 
 1. Create a `values.yaml` file to configure Coder:
 
@@ -129,24 +129,24 @@ helm install coder coder/coder --namespace coder --version=<VERSION>
      sslMode: require
    ```
 
-a. To create the `passwordSecret`, run:
+   a. To create the `passwordSecret`, run:
 
-```console
-kubectl create secret generic <NAME> --from-literal="password=UserDefinedPassword"
-```
+   ```console
+   kubectl create secret generic <NAME> --from-literal="password=UserDefinedPassword"
+   ```
 
-> Put a space before the command to prevent it from being saved in your shell
-> history.
->
-> Running this command could potentially expose your database password to other
-> users on your system through `/proc`. If this is a concern, you can use
-> `--from-file=password=/dev/stdin` instead of `--from-literal=...` to enter
-> your password and press `Ctrl+D` when you're done to submit it.
->
-> Ensure that there are no trailing white spaces in your password secret.
+   > Put a space before the command to prevent it from being saved in your shell
+   > history.
+   >
+   > Running this command could potentially expose your database password to other
+   > users on your system through `/proc`. If this is a concern, you can use
+   > `--from-file=password=/dev/stdin` instead of `--from-literal=...` to enter
+   > your password and press `Ctrl+D` when you're done to submit it.
+   >
+   > Ensure that there are no trailing white spaces in your password secret.
 
-For more detailed configuration instructions,
-[see our PostgreSQL setup guide](../guides/deployments/postgres.md).
+   For more detailed configuration instructions,
+   [see our PostgreSQL setup guide](../guides/deployments/postgres.md).
 
 1. **Optional**: Enable dev URL usage.
    [You must provide a wildcard domain in the Helm chart](../admin/devurls.md).
