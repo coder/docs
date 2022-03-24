@@ -11,12 +11,11 @@ This guide will show you how to upgrade your Coder deployment.
 ## Recommendations
 
 - As with any significant maintenance operation, we **strongly recommend**
-  taking a snapshot of the database before proceeding with the upgrade. In the
-  event that there are upgrade issues, it is simpler and safer to roll back
-  directly at the database level, since it guarantees restoration of the system
-  to a known working condition.
+  taking a snapshot of the database before upgrading. If there are upgrade
+  issues, it is simpler and safer to roll back at the database level since it
+  guarantees restoration of the system to a known working condition.
 
-- We recommend updating no more than one major version at a time (i.e., we
+- We recommend updating no more than one major version at a time (e.g., we
   recommend moving from 1.28 to 1.29 only).
 
 ## Prerequisites

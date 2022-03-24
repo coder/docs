@@ -20,11 +20,11 @@ data, including workspace information and session tokens.
 ## Doctor
 
 Before proceeding, we strongly recommend running
-[Doctor](https://github.com/coder/coder-doctor), which is Coder-supplied
+[Doctor](https://github.com/coder/coder-doctor), which is a Coder-supplied
 command-line tool that evaluates whether your environment is ready to install
 Coder. If there are issues with your cluster that may impact the installation
-process, Doctor will return information on what the issue is and suggestions on
-how you can fix it.
+process, Doctor will return information on what the problem is and suggestions
+on how you can fix it.
 
 ## Create the Coder namespace (optional)
 
@@ -54,16 +54,16 @@ kubectl config set-context --current --namespace=coder
    [changelog](../changelog/index.md) for a list of Coder versions or run
    `helm search repo coder -l`)
 
-> This step will install Coder with the default configuration. This does not
-> set up dev URLs, TLS, ingress, and an external database. To configure these
-> features (recommended), skip to step 4.
+> This step will install Coder with the default configuration. This does not set
+> up dev URLs, TLS, ingress controllers, or an external database. To configure
+> these recommended features, please go to step 4.
 
-   ```console
-   helm install coder coder/coder --namespace coder --version=<VERSION>
-   ```
+```console
+helm install coder coder/coder --namespace coder --version=<VERSION>
+```
 
 1. Once `coderd` is running, tail the logs to find the randomly generated
-   password for the admin user
+   password for the admin user:
 
    ```console
    kubectl logs -n coder -l coder.deployment=coderd -c coderd \
@@ -79,7 +79,7 @@ kubectl config set-context --current --namespace=coder
    ----------------------
    ```
 
-   These are the credentials you need to continue setup using Coder's web UI.
+   You will need these credentials to continue setup using Coder's web UI.
 
 > If you lose your admin credentials, you can use the
 > [admin password reset](../admin/access-control/users/password-reset.md#resetting-the-site-admin-password)
@@ -94,25 +94,26 @@ kubectl config set-context --current --namespace=coder
    > View the
    > [configuration options available in the `values.yaml` file.](https://github.com/coder/enterprise-helm#values)
 
-1. (Optional) Set the admin user password with the following values:
+1. **Optional**: change the admin user password by updating `values.yaml` as
+   follows:
 
    ```yaml
-      superAdmin:
-    # Options for configuring the secret used to specify the password for the
-    # built-in super admin account.
-         passwordSecret:
-   # coderd.superAdmin.passwordSecret.name -- Name of a secret that should
-   # be used to determine the password for the super admin account. The
-   # password should be contained in the field `password`, or the manually
-   # specified one.
-            name: ""
-   # coderd.superAdmin.passwordSecret.key -- The key of the secret that
-   # contains the super admin password.
-            key: "password"
+   superAdmin:
+     # Options for configuring the secret used to specify the password for the
+     # built-in super admin account.
+     passwordSecret:
+       # coderd.superAdmin.passwordSecret.name -- Name of a secret that should
+       # be used to determine the password for the super admin account. The
+       # password should be contained in the field `password`, or the manually
+       # specified one.
+       name: ""
+       # coderd.superAdmin.passwordSecret.key -- The key of the secret that
+       # contains the super admin password.
+       key: "password"
    ```
 
-1. (Optional) To configure an externally hosted database, set the following
-   values:
+1. **Optional**: To configure an externally hosted database, set the following
+   in `values.yaml`:
 
    > Ensure that you have superuser privileges to your PostgreSQL database.
 
@@ -128,90 +129,93 @@ kubectl config set-context --current --namespace=coder
      sslMode: require
    ```
 
-  a. To create the `passwordSecret`, run:
+a. To create the `passwordSecret`, run:
 
-   ```console
-   kubectl create secret generic <NAME> --from-literal="password=UserDefinedPassword"
-   ```
+```console
+kubectl create secret generic <NAME> --from-literal="password=UserDefinedPassword"
+```
 
-   > Put a space before the command to prevent it from being saved in your shell
-   > history.
-   >
-   > Running this command could potentially expose your database password to
-   > other users on your system through `/proc`. If this is a concern, you can
-   > use `--from-file=password=/dev/stdin` instead of `--from-literal=...` to
-   > enter your password and press `Ctrl+D` when you're done to submit it.
-   >
-   > Ensure that there are no trailing white spaces in your password secret.
+> Put a space before the command to prevent it from being saved in your shell
+> history.
+>
+> Running this command could potentially expose your database password to other
+> users on your system through `/proc`. If this is a concern, you can use
+> `--from-file=password=/dev/stdin` instead of `--from-literal=...` to enter
+> your password and press `Ctrl+D` when you're done to submit it.
+>
+> Ensure that there are no trailing white spaces in your password secret.
 
-   For a more detailed configuration, [see our PostgreSQL setup guide](../guides/deployments/postgres.md).
+For more detailed configuration instructions,
+[see our PostgreSQL setup guide](../guides/deployments/postgres.md).
 
-1. (Optional) Enable dev URL usage. You must provide a wildcard
-   domain in the Helm chart. [See here for more information on dev URLs](../admin/devurls.md).
+1. **Optional**: Enable dev URL usage.
+   [You must provide a wildcard domain in the Helm chart](../admin/devurls.md).
 
    ```yaml
-      coderd:
-         devurlsHost: "*.my-custom-domain.io"
+   coderd:
+     devurlsHost: "*.my-custom-domain.io"
    ```
 
-1. (Optional) To set up TLS, see the steps below:
+1. **Optional:** To set up TLS:
 
    a. You will need to create a TLS secret. To do so, run the following with the
    `.pem` files provided by your certificate:
 
    ```console
-      kubectl create secret tls tls-secret --key key.pem --cert cert.pem
+   kubectl create secret tls tls-secret --key key.pem --cert cert.pem
    ```
 
-> If your certificate provider does not provide `.pem` files, then
-> you may need to manually attach the certificate to the LoadBalancer.
+   > If your certificate provider does not provide `.pem` files, then you may
+   > need to attach the certificate to the LoadBalancer manually.
 
-   b. Next, attach the secret to the `coderd` service by setting the following values:
-
-   ```yaml
-      coderd:
-         tls:
-            hostSecretName: <tls-secret>
-            devurlsHostSecretName: <tls-secret>
-   ```
-
-1. (Optional) If you cannot use a LoadBalancer, an Ingress may be necessary. To
-   configure one with Coder, set the following values:
-
-   > This assumes you already have an ingress controller installed in your cluster.
+   b. Attach the secret to the `coderd` service by setting the following values:
 
    ```yaml
    coderd:
-      devurlsHost: '*.devurls.coderhost.com'
-      serviceSpec:
-   # The Ingress will route traffic to the internal ClusterIP.
-         type: ClusterIP
-         externalTrafficPolicy: ""
-      tls:
-         hostSecretName: <tls-secret>
-         devurlsHostSecretName: <tls-secret>
-   ingress:
-      enable: true
-   # Hostname to use for routing decisions
-      host: 'coder.coderhost.com'
-   # Custom annotations to apply to the resulting Ingress object
-   # This is useful for configuring other controllers in the cluster
-   # such as cert-manager or the ingress controller
-      annotations: {}
+     tls:
+       hostSecretName: <tls-secret>
+       devurlsHostSecretName: <tls-secret>
    ```
 
-1. Once you've set the above values, install Coder with the following command:
+1. **Optional:** If you cannot use a load balancer, you may need an ingress
+   controller. To configure one with Coder, set the following in `values.yaml`:
+
+   > We assume that you already have an ingress controller installed in your
+   > cluster.
+
+   ```yaml
+   coderd:
+     devurlsHost: "*.devurls.coderhost.com"
+     serviceSpec:
+       # The Ingress will route traffic to the internal ClusterIP.
+       type: ClusterIP
+       externalTrafficPolicy: ""
+     tls:
+       hostSecretName: <tls-secret>
+       devurlsHostSecretName: <tls-secret>
+   ingress:
+     enable: true
+     # Hostname to use for routing decisions
+     host: "coder.coderhost.com"
+     # Custom annotations to apply to the resulting Ingress object
+     # This is useful for configuring other controllers in the cluster
+     # such as cert-manager or the ingress controller
+     annotations: {}
+   ```
+
+1. Once you've implemented all of the changes in `values.yaml`, install Coder
+   with the following command:
 
    ```console
-      helm install coder coder/coder --namespace coder --version=<VERSION> -f values.yaml
+   helm install coder coder/coder --namespace coder --version=<VERSION> -f values.yaml
    ```
 
 ## Logging
 
 At this time, we recommend reviewing Coder's default
-[logging](../guides/admin/logging.md) settings. Logs are helpful for monitoring
-the health of your cluster and troubleshooting, and Coder offers you several
-options for obtaining these.
+[logging](../guides/admin/logging.md) settings. Logs help monitor the health of
+your cluster and troubleshooting, and Coder offers you several options for
+obtaining these.
 
 ## Accessing Coder
 
