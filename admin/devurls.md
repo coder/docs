@@ -26,10 +26,17 @@ your cluster, you'll need to modify your:
 
 ### Step 1: Modify the Helm chart
 
-Set `devurls.host` to a wildcard domain:
+Set `coderd.devurlsHost` to a wildcard domain in your `values.yaml` file:
 
-```shell
-helm upgrade coder coder/coder --set coderd.devurlsHost="*.my-custom-domain.io"
+```yaml
+coderd:
+  devurlsHost: "*.my-custom-domain.io"
+```
+
+Run the `helm upgrade` command:
+
+```console
+helm upgrade coder coder/coder -n coder --version=<VERSION> --values values.yaml"
 ```
 
 **Note:** If you are providing an ingress controller, then you will need to add
