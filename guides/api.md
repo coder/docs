@@ -39,10 +39,11 @@ These are example Coder API calls for common tasks. Note that the site-manager
 role is required to be perform specific actions and without it, API results will
 be limited to a user's member role.
 
-> Assign your Access Url, Session-Token and other resources like images and
+> Assign your Access URL, Session-Token and other resources like images and
 > workspaces to variables for easier substitution in the curl commands.
 >
 > For example:
+
 ```sh
 export ACCESS_URL "https://coder.acme.com"
 export API_KEY="MUdzI3UMvF-Qlwovt-----0CL0kTbADQl"
@@ -51,7 +52,9 @@ export IMAGE_ID="622b3f6e-dd6fd08-----ba38c73c9639"
 ```
 
 ### Example: get active users in 1 month increments from Jan to March 2022
+
 > other intervals include 1 week, 1 year, 90 day
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/metrics/usage/active-users?\
@@ -61,6 +64,7 @@ start=2022-01-01T00:00:00.000000Z&end=2022-03-31T00:00:00.000000Z\
 ```
 
 ### Example: get audit logs for a workspace and resource type
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/audit?\
@@ -71,6 +75,7 @@ limit=10\
 ```
 
 ### Example: get audit logs for workspace created in a Unix seconds period
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/audit?\
@@ -82,6 +87,7 @@ range_start=1646092800\
 ```
 
 ### Example: generate a session token for a user
+
 ```sh
 curl --request POST \
   --url $ACCESS_URL/$API_ROUTE/api-keys/613e75c4-faef2f87-----376e1f229b6 \
@@ -93,6 +99,7 @@ curl --request POST \
 ```
 
 ### Example: get the workspaces created by a user
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/workspaces?users=$USER_ID" \
@@ -100,6 +107,7 @@ curl --request GET \
 ```
 
 ### Example: get the workspaces built with a specific image
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/images/$IMAGE_ID" \
@@ -107,7 +115,9 @@ curl --request GET \
 ```
 
 ### Example: get info about an image tag and workspaces built with it
+
 > Change ```latest``` to your tag name
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/images/$IMAGE_ID/tags/latest" \
@@ -115,6 +125,7 @@ curl --request GET \
 ```
 
 ### Example: get the workspaces in a specific organization
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/workspaces?orgs=$ORG_ID" \
@@ -122,6 +133,7 @@ curl --request GET \
 ```
 
 ### Example: get the images authorized in a specific organization
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/images/?org=$ORG_ID&workspaces=false" \
@@ -129,6 +141,7 @@ curl --request GET \
 ```
 
 ### Example: update image tags from a registry
+
 ```sh
 curl --request POST \
   --url "$ACCESS_URL/$API_ROUTE/images/$IMAGE_ID" \
@@ -137,6 +150,7 @@ curl --request POST \
 ```
 
 ### Example: update the compute resources baseline for an image
+
 ```sh
 curl --request PATCH \
   --url "$ACCESS_URL/$API_ROUTE/images/$IMAGE_ID" \
@@ -148,6 +162,7 @@ curl --request PATCH \
 ```
 
 ### Example: import a container image
+
 ```sh
 curl --request POST \
   --url "$ACCESS_URL/$API_ROUTE/images" \
@@ -166,6 +181,7 @@ curl --request POST \
 ```
 
 ### Example: deprecate an image (and its tags)
+
 ```sh
 curl --request PATCH \
   --url "$ACCESS_URL/$API_ROUTE/images/$IMAGE_ID" \
@@ -176,6 +192,7 @@ curl --request PATCH \
 ```
 
 ### Example: Restart/rebuild a workspace
+
 ```sh
 curl --request PATCH \
   --url $ACCESS_URL/$API_ROUTE/workspaces/$WS_ID \
@@ -185,6 +202,7 @@ curl --request PATCH \
 ```
 
 ### Example: How to create a user
+
 ```sh
 curl --request POST \
   --url "$ACCESS_URL/$API_ROUTE/users" \
@@ -202,6 +220,7 @@ curl --request POST \
 ```
 
 ### Example: Get a user's public SSH key
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/users/$USER_ID/sshkey" \
@@ -209,6 +228,7 @@ curl --request GET \
 ```
 
 ### Example: Create a dev URL
+
 ```sh
 curl --request POST \
   --url "$ACCESS_URL/$API_ROUTE/workspaces/$WS_ID_PHP/devurls" \
@@ -223,6 +243,7 @@ curl --request POST \
 ```
 
 ### Example: Update a dev URL including access control level
+
 ```sh
 curl --request PUT \
   --url "$ACCESS_URL/$API_ROUTE/workspaces/$WS_ID_PHP/devurls/$DU_ID_PHP" \
@@ -237,6 +258,7 @@ curl --request PUT \
 ```
 
 ### Example: List dev URLs
+
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/workspaces/$WS_ID_PHP/devurls" \
@@ -244,6 +266,7 @@ curl --request GET \
 ```
 
 ### Example: Delete a dev URL
+
 ```sh
 curl --request DELETE \
   --url "$ACCESS_URL/$API_ROUTE/workspaces/$WS_ID_PHP/devurls/$DU_ID_PHP \
