@@ -7,6 +7,15 @@ state: alpha
 To help you integrate Coder into your automated workflows, we've documented our
 API.
 
+## Documentation
+
+Please note that the API is under active development; expect breaking changes as
+we finalize the endpoints.
+
+<a href="https://apidocs.coder.com">
+    <button> Swagger Docs </button>
+</a>
+
 ## Authentication
 
 Use of the API requires authentication with a session token. You can generate
@@ -24,15 +33,6 @@ one using the [Coder CLI](../cli/index.md):
    -H "Session-Token: Bk...nt"
    ```
 
-## Documentation
-
-Please note that the API is under active development; expect breaking changes as
-we finalize the endpoints.
-
-<a href="https://apidocs.coder.com">
-    <button> Swagger Docs </button>
-</a>
-
 ## Examples
 
 These are example Coder API calls for common tasks. Note that the site-manager
@@ -41,8 +41,6 @@ be limited to a user's member role.
 
 > Assign your Access URL, Session-Token and other resources like images and
 > workspaces to variables for easier substitution in the curl commands.
->
-> For example:
 
 ```sh
 export ACCESS_URL "https://coder.acme.com"
@@ -53,7 +51,7 @@ export IMAGE_ID="622b3f6e-dd6fd08-----ba38c73c9639"
 
 ### Example: get active users in 1 month increments from Jan to March 2022
 
-> other intervals include 1 week, 1 year, 90 day
+> Other intervals include 1 week, 1 year, 90 day
 
 ```sh
 curl --request GET \
