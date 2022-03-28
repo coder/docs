@@ -215,5 +215,5 @@ Currently, Coder for Docker does not support:
 - The use of your own TLS certificates. If you'd like to use TLS with Coder for
   Docker, you'll need to run Coder behind a reverse proxy (e.g., Caddy or NGINX)
   and terminate TLS at that point. See
-  [our guide](../guides/tls-certificates/docker-tls.md) for information.
+  [our guide](../../guides/tls-certificates/docker-tls.md) for information.
 - Air-gapped deployments/offline installs
