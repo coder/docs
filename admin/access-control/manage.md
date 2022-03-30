@@ -14,6 +14,20 @@ If you opt for **OpenID Connect**, you'll need to provide additional
 configuration steps, which are detailed in the subsequent sections of this
 article.
 
+## Requirements
+
+Coder expects the following [OIDC claims](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1#whats-a-claim)
+from your OIDC provider:
+
+- `email`
+
+- `name` (full name/display name)
+
+- `preferred_username` (username for dev URLs)
+
+You may need to map these to your existing claims within your OIDC provider's
+admin console.
+
 ## Set up OIDC authentication
 
 To set up OIDC authentication, you'll first need to register a Coder application
