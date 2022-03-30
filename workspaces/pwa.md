@@ -9,7 +9,8 @@ experience akin to a native application and improved performance.
 
 ## Requirements
 
-To use Coder as a PWA, you must be using Google Chrome or Microsoft Edge.
+To use Coder as a PWA, you must connect to Coder over HTTPS and use either
+Google Chrome or Microsoft Edge.
 
 ## Installing the PWA
 
