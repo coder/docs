@@ -208,6 +208,23 @@ following flags with the `docker run` command:
 If you're interested in using Docker as a workspace provider, please see our
 [deployment instructions](../../admin/workspace-providers/deployment/docker.md).
 
+## Accessing the local PostgreSQL database
+
+If you would like to type in SQL queries interactively with the local PostgreSQL
+database using the `psql` [terminal-based
+front-end](https://www.postgresql.org/docs/13/app-psql.html), follow these
+steps.
+
+Run `docker ps` to get the name of the Coder container.
+
+```sh
+docker exec -it <name of your Coder container> /bin/bash
+```
+
+```sh
+psql --username=coder --host=0.0.0.0 --port=5433 --dbname=postgres
+```
+
 ## Known issues
 
 Currently, Coder for Docker does not support:
