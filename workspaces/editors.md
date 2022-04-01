@@ -326,7 +326,7 @@ RStudio:
    `rstudio`.
 
    > This Dockerfile approach works now with latest versions of RStudio
-   > including 2022-2-1.    
+   > including 2022-2-1.
 
    ```Dockerfile
    FROM codercom/enterprise-base:ubuntu
