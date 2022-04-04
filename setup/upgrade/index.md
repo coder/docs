@@ -40,32 +40,6 @@ This guide will show you how to upgrade your Coder deployment.
 
 ## Upgrade Coder
 
-### Docker Compose
-
-If you use Docker Compose to run your Coder instance, you need to adjust the version in your `docker-compose-yml`, e.g.:
-
-```yml
-# ...
-services:
-  coder:
-    image: docker.io/codercom/coder:1.29.0
-    # ...
-```
-
-Now you can recreate your image by running: 
-
-1. Recreate the image
-   ```console
-   docker-compose up --force-recreate --build -d
-   ```
-
-2. Start the container
-   ```console
-   docker-compose up
-   ``` 
-
-### Helm
-
 1. Retrieve the latest repository information:
 
    ```console

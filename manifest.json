@@ -204,6 +204,9 @@
             },
             {
               "path": "./setup/coder-for-docker/postgres.md"
+            },
+            {
+              "path": "./setup/coder-for-docker/upgrade.md"
             }
           ]
         },
