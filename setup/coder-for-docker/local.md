@@ -43,7 +43,7 @@ Coder for Docker works with the following platforms:
    only run this if you'd like a clean install.
 
 1. In the terminal, run the following to download the resources you need,
-   include the images, and set up your Coder deployment (if you're using the
+   including the images, and set up your Coder deployment (if you're using the
    terminal in Docker Desktop, omit the slashes and run as a single-line
    command):
 
@@ -72,9 +72,8 @@ Coder for Docker works with the following platforms:
 1. Launch a web browser and navigate to the URL provided by Coder (e.g.,
    `http://localhost:7080`). Log in using the credentials Coder provided.
 
-1. At this point, you can [create a workspace](../workspaces/create.md) using
-   one of the **Packaged** images by clicking on **New workspace** in the center
-   of the UI.
+1. [Create a workspace](../workspaces/create.md) using one of the **Packaged**
+   images by clicking on **New workspace** in the center of the UI.
 
 At this point, you're ready to use your workspace. See our
 [getting started guide](../getting-started/docker.md) for detailed instructions
@@ -210,17 +209,17 @@ If you're interested in using Docker as a workspace provider, please see our
 
 ## Accessing the local PostgreSQL database
 
-To query the local PostgreSQL database using the `psql` [terminal-based
-front-end](https://www.postgresql.org/docs/13/app-psql.html), follow these
-steps.
+To query the local PostgreSQL database using the `psql`
+[terminal-based front-end](https://www.postgresql.org/docs/13/app-psql.html),
+follow these steps.
 
 1. Run `docker ps` to get the name of the Coder container.
 
 1. Exec into the Coder container and connect to the database.
 
-  ```console
-  docker exec -it <CODER_CONTAINER> psql --username=coder --host=0.0.0.0 --port=5433 --dbname=postgres
-  ```
+```console
+docker exec -it <CODER_CONTAINER> psql --username=coder --host=0.0.0.0 --port=5433 --dbname=postgres
+```
 
 ## Known issues
 
