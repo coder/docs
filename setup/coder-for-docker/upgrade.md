@@ -7,14 +7,14 @@ This guide will show you how to upgrade your Coder for Docker deployment.
 
 To upgrade, run the following command to download the resources you need,
 including the latest images (ensure that you're providing the correct version
-number in the command):
+number in the command, e.g., `1.29.0`):
 
 ```console
 docker run --rm -it \
     -p 7080:7080 \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v ~/.coder:/var/run/coder \
-    codercom/coder:1.29.0
+    codercom/coder:<version>
 ```
 
 ## Docker Compose
