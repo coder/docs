@@ -5,8 +5,9 @@ description: Learn how to upgrade your Coder for Docker deployment.
 
 This guide will show you how to upgrade your Coder for Docker deployment.
 
-To upgrade, rerun the following command to download the resources you need,
-including the latest images:
+To upgrade, run the following command to download the resources you need,
+including the latest images (ensure that you're providing the correct version
+number in the command):
 
 ```console
 docker run --rm -it \
