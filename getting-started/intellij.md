@@ -78,47 +78,46 @@ Once you've created your workspace, you can start working in Coder. For the
 purposes of this article, we'll leverage JetBrains' tutorial on how to
 [Create and run your first Java project](https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html).
 
-1.  Under **Browser applications**, click **IntelliJ IDEA Community** to open
-    the IDE in your browser. Follow the prompts to accept the license agreement
-    and determine data sharing permissions.
+1. Under **Browser applications**, click **IntelliJ IDEA Community** to open the
+   IDE in your browser. Follow the prompts to accept the license agreement and
+   determine data sharing permissions.
 
-1.  If the welcome screen opens, click **New Project**. Otherwise, open the main
-    menu, and select **File** > **New Project**.
-1.  Under Project SDK, select Download SDK, leave the pre-filled fields as-is,
-    and click **Download**.
-1.  Click **Next**.
-1.  Click **Next** again since you will not be creating a project from a
-    template
-1.  Name your project `HelloWorld`, and click **Finish**.
-1.  In the Project tool window, right-click the **src** folder, then select
-    **New** > **Java Class**.
-1.  In the **Name** field, enter `com.example.helloworld.HelloWorld` and click
-    **OK**.
+1. If the welcome screen opens, click **New Project**. Otherwise, open the main
+   menu, and select **File** > **New Project**.
+1. Under Project SDK, select Download SDK, leave the pre-filled fields as-is,
+   and click **Download**.
+1. Click **Next**.
+1. Click **Next** again since you will not be creating a project from a template
+1. Name your project `HelloWorld`, and click **Finish**.
+1. In the Project tool window, right-click the **src** folder, then select
+   **New** > **Java Class**.
+1. In the **Name** field, enter `com.example.helloworld.HelloWorld` and click
+   **OK**.
 
-    The IDE will create the `com.example.helloworld` package and the
-    `HelloWorld` class.
+   The IDE will create the `com.example.helloworld` package and the `HelloWorld`
+   class.
 
-1.  Update your code so that it looks like the following:
+1. Update your code so that it looks like the following:
 
-    ```java
-    package com.example.helloworld;
+   ```java
+   package com.example.helloworld;
 
-    public class HelloWorld {
-        public static void main(String[] args) {
-            System.out.println("Hello, world!");
-        }
-    }
-    ```
+   public class HelloWorld {
+       public static void main(String[] args) {
+           System.out.println("Hello, world!");
+       }
+   }
+   ```
 
-1.  Click the **green triangle** to the left of your code. In the pop-up that
-    appears, select **Run 'HelloWorld.main()'**. IntelliJ will begin compiling
-    your code.
+1. Click the **green triangle** to the left of your code. In the pop-up that
+   appears, select **Run 'HelloWorld.main()'**. IntelliJ will begin compiling
+   your code.
 
-        When IntelliJ is done compiling your code, it opens a new pane at the bottom
-        that displays the result of running your code. The first line shows
-        IntelliJ's command for compilation, while the second line shows your printed
-        output (in this case, "Hello, world!"). The final line shows an exit code of
-        `0`, which indicates that IntelliJ exited successfully.
+   When IntelliJ is done compiling your code, it opens a new pane at the bottom
+   that displays the result of running your code. The first line shows
+   IntelliJ's command for compilation, while the second line shows your printed
+   output (in this case, "Hello, world!"). The final line shows an exit code of
+   `0`, which indicates that IntelliJ exited successfully.
 
 ## Step 5: Push your repo to GitHub
 
