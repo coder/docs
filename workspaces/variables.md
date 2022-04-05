@@ -44,6 +44,10 @@ env | grep CODER_
         <td>The URI of the image used to build the workspace</td>
     </tr>
     <tr>
+        <td><code>CODER_MAX_WORKSPACES_PER_USER</code></td>
+        <td>The maximum number fo workspaces allowed per user</td>
+    </tr>
+    <tr>
         <td><code>CODER_MEMORY_LIMIT</code></td>
         <td>The memory limit given to your workspace in GB</td>
     </tr>
