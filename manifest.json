@@ -41,10 +41,10 @@
           "path": "getting-started/developers.md"
         },
         {
-          "path": "getting-started/pycharm.md"
+          "path": "getting-started/intellij.md"
         },
         {
-          "path": "getting-started/intellij.md"
+          "path": "getting-started/pycharm.md"
         }
       ]
     },

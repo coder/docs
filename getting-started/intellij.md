@@ -8,7 +8,7 @@ project that leverages IntelliJ. You'll learn how to:
 
 - Connect Coder to your Git provider;
 - Create a workspace;
-- Create your first IntelliJ project;
+- Create an IntelliJ project;
 - Push your changes to GitHub.
 
 ## Prerequisites
@@ -84,18 +84,22 @@ purposes of this article, we'll leverage JetBrains' tutorial on how to
 
 1. If the welcome screen opens, click **New Project**. Otherwise, open the main
    menu, and select **File** > **New Project**.
+
 1. Under Project SDK, select Download SDK, leave the pre-filled fields as-is,
    and click **Download**.
+
 1. Click **Next**.
+
 1. Click **Next** again since you will not be creating a project from a template
+
 1. Name your project `HelloWorld`, and click **Finish**.
+
 1. In the Project tool window, right-click the **src** folder, then select
    **New** > **Java Class**.
-1. In the **Name** field, enter `com.example.helloworld.HelloWorld` and click
-   **OK**.
 
-   The IDE will create the `com.example.helloworld` package and the `HelloWorld`
-   class.
+1. In the **Name** field, enter `com.example.helloworld.HelloWorld` and click
+   **OK**. The IDE will create the `com.example.helloworld` package and the
+   `HelloWorld` class.
 
 1. Update your code so that it looks like the following:
 
@@ -113,11 +117,8 @@ purposes of this article, we'll leverage JetBrains' tutorial on how to
    appears, select **Run 'HelloWorld.main()'**. IntelliJ will begin compiling
    your code.
 
-   When IntelliJ is done compiling your code, it opens a new pane at the bottom
-   that displays the result of running your code. The first line shows
-   IntelliJ's command for compilation, while the second line shows your printed
-   output (in this case, "Hello, world!"). The final line shows an exit code of
-   `0`, which indicates that IntelliJ exited successfully.
+When IntelliJ is done compiling your code, it opens a new pane at the bottom
+that displays the result of running your code.
 
 ## Step 5: Push your repo to GitHub
 
