@@ -27,3 +27,4 @@ Coder.
 Additionally, we have a guide for those interested in leveraging Coder for
 [data science](data-scientists.md), specifically using Python with Jupyter
 notebooks. We also have a tutorial on getting started with [PyCharm](pycharm.md)
+and [IntelliJ](intellij.md).

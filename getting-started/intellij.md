@@ -3,8 +3,8 @@ title: IntelliJ
 description: Get started with Coder as an IntelliJ user.
 ---
 
-This article will walk you through the process of getting started with a Coder
-workspace and a project that leverages IntelliJ. You'll learn how to:
+This article will walk you through getting started with a Coder workspace and a
+project that leverages IntelliJ. You'll learn how to:
 
 - Connect Coder to your Git provider;
 - Create a workspace;
@@ -18,7 +18,7 @@ you have the credentials needed to access the deployment.
 
 ## Step 1: Log in and connect Coder to your Git provider
 
-In this step, you'll log into Coder and connect and authenticate with your Git
+You'll log into Coder in this step and connect and authenticate with your Git
 provider. This will allow you to do things like pull repositories and push
 changes.
 
@@ -64,8 +64,8 @@ You will now create the workspace to work on your development project.
    **Memory**, **Disk**, and **GPU** allocations as-is.
 
 1. Scroll to the bottom and click **Create workspace**. The dialog will close,
-   allowing you to see the main workspace page. On the right-hand side, you can
-   track the workspace build process using the **Build log**.
+   allowing you to see the main workspace page. You can track the workspace
+   build process using the **Build log**on the right-hand side.
 
 ![Create a workspace](../assets/getting-started/create-workspace-intellij.png)
 
@@ -78,86 +78,47 @@ Once you've created your workspace, you can start working in Coder. For the
 purposes of this article, we'll leverage JetBrains' tutorial on how to
 [Create and run your first Java project](https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html).
 
-1. Under **Browser applications**, click **IntelliJ IDEA Community** to open the
-   IDE in your browser. Follow the prompts to accept the license agreement and
-   determine data sharing permissions.
+1.  Under **Browser applications**, click **IntelliJ IDEA Community** to open
+    the IDE in your browser. Follow the prompts to accept the license agreement
+    and determine data sharing permissions.
 
-1. On the **Welcome to PyCharm** screen, click **New Project**.
+1.  If the welcome screen opens, click **New Project**. Otherwise, open the main
+    menu, and select **File** > **New Project**.
+1.  Under Project SDK, select Download SDK, leave the pre-filled fields as-is,
+    and click **Download**.
+1.  Click **Next**.
+1.  Click **Next** again since you will not be creating a project from a
+    template
+1.  Name your project `HelloWorld`, and click **Finish**.
+1.  In the Project tool window, right-click the **src** folder, then select
+    **New** > **Java Class**.
+1.  In the **Name** field, enter `com.example.helloworld.HelloWorld` and click
+    **OK**.
 
-1. In the window that pops up:
+    The IDE will create the `com.example.helloworld` package and the
+    `HelloWorld` class.
 
-   1. Provide the **Location** where PyCharm should save your files (for this
-      example, we changed the highlighted portion to `task`, but you can name
-      the folder whatever you'd like))
-   1. Ensure that **New environment using Virtualenv** is selected.
-   1. Make sure to **uncheck** the option to **Create a main.py welcome
-      script**.
-   1. Click **Create** to proceed.
+1.  Update your code so that it looks like the following:
 
-1. In the left-hand navigation bar, right-click on the **root** of your folder
-   (for example, if you named the folder `task`, you would click where it says
-   **task** in the navbar) and select **New** > **File**. When prompted, provide
-   a name for your file (e.g., `car.py`).
+    ```java
+    package com.example.helloworld;
 
-1. The IDE automatically opens your new, empty file, allowing you to edit. Copy
-   and paste the following
-   [sample app from JetBrains](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html#edit-file):
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, world!");
+        }
+    }
+    ```
 
-   ```python
-    class Car:
+1.  Click the **green triangle** to the left of your code. In the pop-up that
+    appears, select **Run 'HelloWorld.main()'**. IntelliJ will begin compiling
+    your code.
 
-        def __init__(self, speed=0):
-            self.speed = speed
-            self.odometer = 0
-            self.time = 0
-
-        def say_state(self):
-            print("I'm going {} kph!".format(self.speed))
-
-        def accelerate(self):
-            self.speed += 5
-
-        def brake(self):
-            if self.speed < 5:
-                self.speed = 0
-            else:
-                self.speed -= 5
-
-        def step(self):
-            self.odometer += self.speed
-            self.time += 1
-
-        def average_speed(self):
-            if self.time != 0:
-                return self.odometer / self.time
-            else:
-                pass
-
-    if __name__ == '__main__':
-
-        my_car = Car()
-        print("I'm a car!")
-        while True:
-            action = input("What should I do? [A]ccelerate, [B]rake, "
-                    "show [O]dometer, or show average [S]peed? ").upper()
-            if action not in "ABOS" or len(action) != 1:
-                print("I don't know how to do that")
-                continue
-            if action == 'A':
-                my_car.accelerate()
-            elif action == 'B':
-                my_car.brake()
-            elif action == 'O':
-                print("The car has driven {} kilometers".format(my_car.odometer))
-            elif action == 'S':
-                print("The car's average speed was {} kph".format(my_car.average_speed()))
-            my_car.step()
-            my_car.say_state()
-   ```
-
-1. At this point, you can run your application by right-clicking on the IDE
-   editor window and selecting **Run <fileName>**. Once the app starts, you can
-   interact with it using the terminal at the bottom.
+        When IntelliJ is done compiling your code, it opens a new pane at the bottom
+        that displays the result of running your code. The first line shows
+        IntelliJ's command for compilation, while the second line shows your printed
+        output (in this case, "Hello, world!"). The final line shows an exit code of
+        `0`, which indicates that IntelliJ exited successfully.
 
 ## Step 5: Push your repo to GitHub
 

@@ -42,6 +42,9 @@
         },
         {
           "path": "getting-started/pycharm.md"
+        },
+        {
+          "path": "getting-started/intellij.md"
         }
       ]
     },
