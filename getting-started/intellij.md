@@ -65,7 +65,7 @@ You will now create the workspace to work on your development project.
 
 1. Scroll to the bottom and click **Create workspace**. The dialog will close,
    allowing you to see the main workspace page. You can track the workspace
-   build process using the **Build log**on the right-hand side.
+   build process using the **Build log** on the right-hand side.
 
 ![Create a workspace](../assets/getting-started/create-workspace-intellij.png)
 
