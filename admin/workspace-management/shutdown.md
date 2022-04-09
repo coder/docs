@@ -8,6 +8,9 @@ automatically shuts down. This helps you optimize your resource allocation since
 automatically shutting down idle workspaces can save resource availability and
 reduce costs.
 
+If Code Web (VS Code in a browser), the Web Terminal, or an SSH connection are
+open, the workspace is considered active and will not be auto shut down.
+
 > A workspace that's stopped must be rebuilt before it can be used again. All
 > data outside of **/home** is lost during rebuild. Please store any changes you
 > would like persisted across rebuilds with the
