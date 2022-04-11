@@ -4,8 +4,7 @@ description: "Learn about Coder, our mission, and why to choose us."
 ---
 
 Coder is a self-hosted platform that allows organizations to securely provision
-developer workspaces (featuring remote IDEs and all related resources) for
-DevOps, platform, and software engineering teams.
+developer workspaces for DevOps, infrastructure, and software engineering teams.
 
 Coder's pre-configured workspaces allow project organization members to define
 what language version and tooling are required to provide consistency across the
@@ -22,10 +21,10 @@ the power of cloud and automation.
 
 ## Our mission
 
-Developers should spend their time writing code, not on getting their
-development workspace ready. Coder's goal is to empower organizations to harness
-the cloud's power to provide consistent, secure, and performant workspaces for
-their development teams.
+Developers should spend their time writing code, not getting their development
+workspace ready. Coder aims to empower organizations to harness the cloud's
+power to provide consistent, secure, and performant workspaces for their
+development teams.
 
 Our software has been pulled over 19 million times from Docker, received over
 45,000 stars on GitHub, and is used by some of the world's largest enterprises.
@@ -37,12 +36,12 @@ development through Coder.
 Coder's _dev workspaces as code_ paradigm is new for software development. Its
 key benefits include:
 
-- **Automated setup and instant onboarding**: Because your workspaces are
-  created via pre-configured images, there's little setup time involved for your
-  developers. New developers can begin contributing right away instead of
-  spending time setting up their workspace.
+**Automated setup and instant onboarding**: Your workspaces are created via
+pre-configured images, so there's little setup time for your developers. New
+developers can begin contributing right away instead of spending time setting up
+their workspace.
 
-  ![Onboarding](assets/onboard.png)
+![Onboarding](assets/onboard.png)
 
 - **Workspace consistency**: Every component of your workspaces is predefined
   and preapproved, reducing configuration drift caused by variations in
@@ -78,5 +77,5 @@ key benefits include:
 
 - **Improved security**: Development actions are centralized on your internal
   infrastructure, allowing insight into potential threats. Furthermore,
-  deploying Coder into an air-gapped workspace will provide additional security
-  around your organization's intellectual property.
+  deploying Coder into an air-gapped workspace will provide additional
+  protection around your organization's intellectual property.
