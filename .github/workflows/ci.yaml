@@ -70,7 +70,7 @@ jobs:
           dirs: '["."]'
 
       - name: Save file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: old-docs
           path: ${{ steps.old_files.outputs.files }}
