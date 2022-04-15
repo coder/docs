@@ -563,9 +563,6 @@
           "path": "./changelog/1.29.0.md",
           "children": [
             {
-              "path": "./changelog/1.29.2.md"
-            },
-            {
               "path": "./changelog/1.29.1.md"
             }
           ]
