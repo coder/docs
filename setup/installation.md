@@ -17,15 +17,6 @@ Install the following dependencies if you haven't already:
 [PostgreSQL](https://www.postgresql.org/docs/12/admin.html) instance to store
 data, including workspace information and session tokens.
 
-## Doctor
-
-Before proceeding, we strongly recommend running
-[Doctor](https://github.com/coder/coder-doctor), which is a Coder-supplied
-command-line tool that evaluates whether your environment is ready to install
-Coder. If there are issues with your cluster that may impact the installation
-process, Doctor will return information on what the problem is and suggestions
-on how you can fix it.
-
 ## Create the Coder namespace (optional)
 
 We recommend running Coder in a separate
@@ -54,9 +45,9 @@ kubectl config set-context --current --namespace=coder
    [changelog](../changelog/index.md) for a list of Coder versions or run
    `helm search repo coder -l`)
 
-   > This step will install Coder with the default configuration. This does not set
-   > up dev URLs, TLS, ingress controllers, or an external database. To configure
-   > these recommended features, please go to step 4.
+   > This step will install Coder with the default configuration. This does not
+   > set up dev URLs, TLS, ingress controllers, or an external database. To
+   > configure these recommended features, please go to step 4.
 
    ```console
    helm install coder coder/coder --namespace coder --version=<VERSION>
@@ -138,10 +129,10 @@ kubectl config set-context --current --namespace=coder
    > Put a space before the command to prevent it from being saved in your shell
    > history.
    >
-   > Running this command could potentially expose your database password to other
-   > users on your system through `/proc`. If this is a concern, you can use
-   > `--from-file=password=/dev/stdin` instead of `--from-literal=...` to enter
-   > your password and press `Ctrl+D` when you're done to submit it.
+   > Running this command could potentially expose your database password to
+   > other users on your system through `/proc`. If this is a concern, you can
+   > use `--from-file=password=/dev/stdin` instead of `--from-literal=...` to
+   > enter your password and press `Ctrl+D` when you're done to submit it.
    >
    > Ensure that there are no trailing white spaces in your password secret.
 
