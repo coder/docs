@@ -41,7 +41,7 @@ experience, use [systemd](#systemd) and register the `docker` service so
 `dockerd` runs automatically during initialization.
 
 The following snippet shows how your image can register the `docker` services in
-its Dockerfile.
+its Dockerfile. For a full example, [see our `enterprise-base` image for a full example](https://github.com/coder/enterprise-images/blob/main/images/base/Dockerfile.ubuntu).
 
 ```Dockerfile
 FROM ubuntu:20.04
@@ -60,6 +60,10 @@ RUN systemctl enable docker
 # use systemd as the init
 RUN ln -s /lib/systemd/systemd /sbin/init
 
+# Add docker-compose
+RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
+
 # Add a user `coder` so that you're not developing as the `root` user
 RUN useradd coder \
       --create-home \
@@ -72,8 +76,6 @@ RUN useradd coder \
 
 USER coder
 ```
-
-> [See our `enterprise-base` image for a full example](https://github.com/coder/enterprise-images/blob/main/images/base/Dockerfile.ubuntu).
 
 ## Private registries
 
