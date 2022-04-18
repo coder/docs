@@ -14,7 +14,7 @@ to manually create users who log in with their email address and temporary
 password. Coder will ask them to change their password after they log in the
 first time.
 
-The default user session expiry time is 1 week for users logging in via built-in
+The default user session expiry time is one week for users logging in via built-in
 authentication. This is non-configurable.
 
 ## OIDC authentication
