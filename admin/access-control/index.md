@@ -14,10 +14,16 @@ to manually create users who log in with their email address and temporary
 password. Coder will ask them to change their password after they log in the
 first time.
 
+The default user session expiry time is 1 week for users logging in via built-in
+authentication. This is non-configurable.
+
 ## OIDC authentication
 
 The OpenID Connect (OIDC) authentication option allows you to defer identity
 management to the OIDC provider of your choice (e.g., Google).
+
+The default user session expiry time for OIDC logins is determined by the
+upstream identity provider.
 
 ## Managing authentication to Coder
 
