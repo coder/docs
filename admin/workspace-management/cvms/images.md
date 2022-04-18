@@ -61,14 +61,13 @@ RUN systemctl enable docker
 RUN ln -s /lib/systemd/systemd /sbin/init
 
 # Add docker-compose
-RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-RUN chmod +x /usr/local/bin/docker-compose
+RUN curl -L "https://github.com/docker/compose/releases/download/2.4.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+&& chmod +x /usr/local/bin/docker-compose
 
 # Add a user `coder` so that you're not developing as the `root` user
 RUN useradd coder \
       --create-home \
       --shell=/bin/bash \
-# Add user `coder` to the `docker` group
       --groups=docker \
       --uid=1000 \
       --user-group && \
