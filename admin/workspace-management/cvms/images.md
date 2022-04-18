@@ -59,7 +59,21 @@ RUN systemctl enable docker
 
 # use systemd as the init
 RUN ln -s /lib/systemd/systemd /sbin/init
+
+# Add a user `coder` so that you're not developing as the `root` user
+RUN useradd coder \
+      --create-home \
+      --shell=/bin/bash \
+# Add user `coder` to the `docker` group
+      --groups=docker \
+      --uid=1000 \
+      --user-group && \
+    echo "coder ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers.d/nopasswd
+
+USER coder
 ```
+
+> [See our `enterprise-base` image for a full example](https://github.com/coder/enterprise-images/blob/main/images/base/Dockerfile.ubuntu).
 
 ## Private registries
 
