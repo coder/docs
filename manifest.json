@@ -560,6 +560,9 @@
       "path": "./changelog/index.md",
       "children": [
         {
+          "path": "./changelog/1.30.0.md"
+        },
+        {
           "path": "./changelog/1.29.0.md",
           "children": [
             {
