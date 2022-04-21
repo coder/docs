@@ -38,6 +38,17 @@ This guide will show you how to upgrade your Coder deployment.
   helm repo add coder https://helm.coder.com
   ```
 
+## For public sector deployments
+
+Users with public sector deployments may need to obtain Coder's installation
+resources from
+[Big Bang](https://repo1.dso.mil/platform-one/big-bang/apps/developer-tools/coder)
+and
+[Ironbank](https://repo1.dso.mil/dsop/coder-enterprise/coder-enterprise/coder-service).
+
+Note that both the Big Bang and Ironbank repositories are one release behind the
+latest version of Coder.
+
 ## Upgrade Coder
 
 1. Retrieve the latest repository information:
