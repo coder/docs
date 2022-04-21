@@ -17,6 +17,18 @@ Install the following dependencies if you haven't already:
 [PostgreSQL](https://www.postgresql.org/docs/12/admin.html) instance to store
 data, including workspace information and session tokens.
 
+## For public sector deployments
+
+Users with public sector deployments may need to obtain Coder's installation
+resources from
+[Big Bang](https://repo1.dso.mil/platform-one/big-bang/apps/developer-tools/coder)
+(Helm charts) and
+[Ironbank](https://repo1.dso.mil/dsop/coder-enterprise/coder-enterprise/coder-service)
+(installation images).
+
+> Both the Big Bang and Ironbank repositories are one release behind the latest
+> version of Coder.
+
 ## Create the Coder namespace (optional)
 
 We recommend running Coder in a separate
