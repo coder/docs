@@ -419,6 +419,9 @@
               "path": "./guides/admin/logging.md"
             },
             {
+              "path": "./guides/admin/nfs.md"
+            },
+            {
               "path": "./guides/admin/oidc-azuread.md"
             },
             {
