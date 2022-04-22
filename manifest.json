@@ -416,10 +416,10 @@
               "path": "./guides/admin/image-tag-names.md"
             },
             {
-              "path": "./guides/admin/nfs.md"
+              "path": "./guides/admin/logging.md"
             },
             {
-              "path": "./guides/admin/logging.md"
+              "path": "./guides/admin/nfs.md"
             },
             {
               "path": "./guides/admin/oidc-azuread.md"
