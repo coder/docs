@@ -62,17 +62,6 @@ changes). Your administrator must configure OAuth for this feature to work.
 > onboarding. Future Git actions within Coder will operate within the Coder
 > deployment's network, _not_ the local machine.
 
-## Notifications
-
-Coder issues desktop notifications when you create a new workspace or rebuild an
-workspace.
-
-Please note that:
-
-- You may not receive native notifications when using your browser's private
-  browsing mode
-- You must enable native notifications for each browser on which you run Coder
-
 ## Auto-start
 
 Auto-start allows you to set the time when Coder automatically starts and builds
