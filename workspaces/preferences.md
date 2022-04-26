@@ -62,6 +62,15 @@ changes). Your administrator must configure OAuth for this feature to work.
 > onboarding. Future Git actions within Coder will operate within the Coder
 > deployment's network, _not_ the local machine.
 
+## Networking
+
+You can choose the WebRTC protocol used when connecting to your workspace from
+the Coder CLI:
+
+- Auto (this is the default option)
+- TURN
+- STUN
+
 ## Auto-start
 
 Auto-start allows you to set the time when Coder automatically starts and builds
