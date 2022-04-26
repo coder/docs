@@ -67,9 +67,10 @@ changes). Your administrator must configure OAuth for this feature to work.
 You can choose the WebRTC protocol used when connecting to your workspace from
 the Coder CLI:
 
-- Auto (this is the default option)
-- TURN
-- STUN
+- **Auto** (default): uses STUN and falls back to TURN if it's unable to
+  establish a peer-to-peer connection
+- **TURN**: establishes a peer-to-peer connection
+- **STUN**: establishes a connection using an intermediary relay server
 
 ## Auto-start
 
