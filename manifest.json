@@ -413,6 +413,9 @@
               "path": "./guides/admin/timescale-migration.md"
             },
             {
+              "path": "./guides/admin/disable-downloads.md"
+            },
+            {
               "path": "./guides/admin/helm-charts.md"
             },
             {
