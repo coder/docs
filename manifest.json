@@ -329,6 +329,9 @@
               "path": "./admin/workspace-management/ssh-access.md"
             },
             {
+              "path": "./admin/workspace-management/limits.md"
+            },
+            {
               "path": "./admin/workspace-management/process-logging.md"
             }
           ]
