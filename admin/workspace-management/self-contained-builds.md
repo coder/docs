@@ -8,7 +8,7 @@ Currently, there are two ways in which the workspace boot sequence can occur:
 1. Remotely: Coder uploads assets (including the Coder agent, code-server, and
    JetBrains Projector) from `coderd` to a workspace.
 1. Self-contained: workspaces control the boot sequence internally; the
-   workspace downloads assets from `coderd`. This requires `curl` to be 
+   workspace downloads assets from `coderd`. This requires `curl` to be
    available in the image.
 
 Beginning with v1.30.0, the default is **self-contained workspace builds**,
