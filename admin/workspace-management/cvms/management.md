@@ -20,14 +20,14 @@ These settings will apply to workspaces **after** they have been rebuilt.
 
 ## Default workspaces to CVMs
 
-Once you've enabled CVMs, you can set whether all new workspaces should have
-CVMs enabled or not.
+Once you've enabled CVMs, you can control whether all new workspaces should be
+built as a CVM or not.
 
 If you would like all newly created workspaces to be CVMs, toggle **Default to
 container-based virtual machines** to **On**.
 
-> While this toggle changes the default workspace creation setting, users can
-> still modify this setting. For example, if you enable CVMS and set them as the
+> While this toggle changes the default workspace creation setting, users can still
+> override this setting. For example, if you enable CVMS and set them as the
 > default, a user can still create non-CVM workspaces (and vice versa).
 
 ## Caching

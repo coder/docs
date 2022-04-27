@@ -77,7 +77,8 @@ the `OIDC_DEBUG` environment variable to `true`:
 ```yaml
 coderd:
   extraEnvs:
-    - "OIDC_DEBUG=true"
+    - name: "OIDC_DEBUG"
+      value: "true"
 ```
 
 ### Disable built-in authentication
