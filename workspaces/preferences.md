@@ -62,16 +62,15 @@ changes). Your administrator must configure OAuth for this feature to work.
 > onboarding. Future Git actions within Coder will operate within the Coder
 > deployment's network, _not_ the local machine.
 
-## Notifications
+## Networking
 
-Coder issues desktop notifications when you create a new workspace or rebuild an
-workspace.
+You can choose the WebRTC protocol used when connecting to your workspace from
+the Coder CLI:
 
-Please note that:
-
-- You may not receive native notifications when using your browser's private
-  browsing mode
-- You must enable native notifications for each browser on which you run Coder
+- **Auto** (default): uses STUN and falls back to TURN if it's unable to
+  establish a peer-to-peer connection
+- **TURN**: establishes a peer-to-peer connection
+- **STUN**: establishes a connection using an intermediary relay server
 
 ## Auto-start
 

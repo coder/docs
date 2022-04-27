@@ -1,5 +1,6 @@
 {
   "versions": [
+    "v1.30",
     "v1.29",
     "v1.28",
     "v1.27",
@@ -329,6 +330,9 @@
               "path": "./admin/workspace-management/ssh-access.md"
             },
             {
+              "path": "./admin/workspace-management/limits.md"
+            },
+            {
               "path": "./admin/workspace-management/process-logging.md"
             }
           ]
@@ -408,6 +412,9 @@
             },
             {
               "path": "./guides/admin/timescale-migration.md"
+            },
+            {
+              "path": "./guides/admin/disable-downloads.md"
             },
             {
               "path": "./guides/admin/helm-charts.md"
@@ -563,6 +570,9 @@
       "path": "./changelog/index.md",
       "children": [
         {
+          "path": "./changelog/1.30.0.md"
+        },
+        {
           "path": "./changelog/1.29.0.md",
           "children": [
             {
@@ -605,31 +615,36 @@
           ]
         },
         {
-          "path": "./changelog/1.26.0.md",
-          "children": [
-            {
-              "path": "./changelog/1.26.4.md"
-            },
-            {
-              "path": "./changelog/1.26.3.md"
-            },
-            {
-              "path": "./changelog/1.26.2.md"
-            },
-            {
-              "path": "./changelog/1.26.1.md"
-            }
-          ]
-        },
-        {
           "path": "./changelog/archive/index.md",
           "navigable": false,
           "children": [
             {
-              "path": "./changelog/archive/1.25.0.md"
+              "path": "./changelog/archive/1.26.4.md",
+              "navigable": false
             },
             {
-              "path": "./changelog/archive/1.24.0.md"
+              "path": "./changelog/archive/1.26.3.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.26.2.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.26.1.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.26.0.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.25.0.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/archive/1.24.0.md",
+              "navigable": false
             },
             {
               "path": "./changelog/archive/1.23.1.md",

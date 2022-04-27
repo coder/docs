@@ -9,12 +9,26 @@ a site manager must enable CVMs. To do so:
 1. Go to **Manage > Admin > Infrastructure**.
 1. Toggle the **Enable Container-Based Virtual Machines** option to **Enable**.
 
-This section also describes the customization features that Coder offers for
-CVMs:
+## Customization
+
+Once you've enabled CVMs, you can customize the behavior of your deployment and
+workspaces.
 
 ![CVM Settings](../../../assets/admin/cvm-settings.png)
 
 These settings will apply to workspaces **after** they have been rebuilt.
+
+## Default workspaces to CVMs
+
+Once you've enabled CVMs, you can control whether all new workspaces should be
+built as a CVM or not.
+
+If you would like all newly created workspaces to be CVMs, toggle **Default to
+container-based virtual machines** to **On**.
+
+> While this toggle changes the default workspace creation setting, users can still
+> override this setting. For example, if you enable CVMS and set them as the
+> default, a user can still create non-CVM workspaces (and vice versa).
 
 ## Caching
 

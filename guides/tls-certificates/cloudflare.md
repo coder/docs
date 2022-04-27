@@ -34,7 +34,7 @@ You must have:
 ## Step 1: Add cert-manager to your Kubernetes cluster
 
 ```console
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.0/cert-manager.yaml
 ```
 
 More specifics can be found in the

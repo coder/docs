@@ -42,7 +42,7 @@ You should also:
    cert-manager:
 
    ```console
-   kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
+   kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.0/cert-manager.yaml
    ```
 
 1. Check that cert-manager installs correctly by running

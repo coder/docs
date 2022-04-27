@@ -16,7 +16,8 @@ article.
 
 ## Coder's OIDC claims
 
-Coder expects the following [OIDC claims](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1#whats-a-claim)
+Coder expects the following
+[OIDC claims](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1#whats-a-claim)
 from your OIDC provider:
 
 - `email` (required)
@@ -64,6 +65,21 @@ you:
 - **Disable built-in authentication:** Choose whether Coder removes the ability
   to log in with an email/password option when you've enabled OIDC
   authentication
+
+### Logging
+
+If you're having issues with your OIDC configuration, you can enable additional
+logging of OIDC tokens to aid in troubleshooting.
+
+To do so, [update your Helm chart](../../guides/admin/helm-charts.md) and set
+the `OIDC_DEBUG` environment variable to `true`:
+
+```yaml
+coderd:
+  extraEnvs:
+    - name: "OIDC_DEBUG"
+      value: "true"
+```
 
 ### Disable built-in authentication
 
