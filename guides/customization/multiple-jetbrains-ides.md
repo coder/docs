@@ -4,7 +4,8 @@ description: Learn how to run multiple instances of JetBrains IDEs in Coder.
 ---
 
 This article walks you through the process of configuring Coder to support the
-use of multiple instances of the same JetBrains IDE.
+use of multiple instances of the same JetBrains IDE using the JetBrains
+Projector CLI.
 
 ![Multiple IntelliJ icons in a
 workspace](../../assets/workspaces/multi-intellij-icons-smaller.png)
@@ -20,7 +21,7 @@ You will:
 This article shows you how to configure multiple instances of IntelliJ IDEA
 Ultimate, but you can use this process for any JetBrains IDEs.
 
-> Using additional JetBrains IDEs consume extra workspace compute resources, so
+> Using additional JetBrains IDEs consumes extra workspace compute resources, so
 > ensure that you've allocated enough resources to your workspace to support all
 > of your IDE instances.
 
@@ -41,6 +42,15 @@ Ultimate, but you can use this process for any JetBrains IDEs.
    # Create a symbolic link in PATH that points to the Intellij startup script.
    RUN ln -s /opt/idea/bin/idea.sh /usr/bin/intellij-idea-ultimate
 
+   # Packages required for JetBrains-in-a-browser support
+   RUN apt-get update && \
+       DEBIAN_FRONTEND="noninteractive" apt-get install -y \
+       libxtst6 \
+       libxrender1 \
+       libfontconfig1 \
+       libxi6 \
+       libgtk-3-0
+
    # bash .profile so projector can be added to the path
    COPY [".profile", "/coder/.profile"]
 
@@ -55,17 +65,11 @@ Ultimate, but you can use this process for any JetBrains IDEs.
    USER coder
    ```
 
-1. Add the JetBrains Projector CLI to the workspace's PATH (in this example,
-   `.profile` is located in the Coder directory within the directory that
-   contains the image's Dockerfile:
-
-   ```console
-   export PATH=$PATH:$HOME/.local/bin
-   ```
-
 1. Create the configure script that installs the Projector CLI into
-   `/home/coder` and uses the CLI to install additional JetBrains IDEs. Each IDE
-   configuration has a different directory in `/home/coder/.projector/configs`.
+   `/home/coder` and uses the CLI to create additional JetBrains IDE config
+   folders. Each IDE configuration has a different directory in
+   `/home/coder/.projector/configs`.
+
    In this example, the configure script is in the directory that contains the
    image's Dockerfile:
 
@@ -74,10 +78,6 @@ Ultimate, but you can use this process for any JetBrains IDEs.
    ```console
    # install projector into /home/coder/ pvc
    pip3 install projector-installer --user
-
-   # put projector CLI into path
-   cp /coder/.profile $HOME
-   source $HOME/.profile
 
    # autoinstall intellij version specifying config name and port
    $HOME/.local/bin/projector --accept-license
@@ -213,6 +213,38 @@ Ultimate, but you can use this process for any JetBrains IDEs.
            # inherits the application port. Optional.
            port: 8999
    ```
+
+The configure script example above auto-installs the JetBrains IDE into the
+`/home/coder` folder. If you have an air-gapped deployment or want to use the
+existing Coder-installed JetBrains IDE, replace the auto-install command with
+Projector's configure command:
+
+```sh
+INTELLIJ_PATH=$HOME/.projector/apps/idea
+
+if [ -d $INTELLIJ_PATH ]; then
+    echo 'intellij IDE has already been copied - skip step'
+else
+    echo 'copying Coder-installed JetBrains IntelliJ IDE into /home/coder'
+    cp -R /opt/idea $HOME/.projector/apps
+fi
+
+PROJECTOR_CONFIG_PATH=$HOME/.projector/configs/IntelliJ_2
+
+if [ -d $PROJECTOR_CONFIG_PATH ]; then
+    echo 'projector has already been configured - skip step'
+else
+    echo 'creating projector config folders to support running multiple IntelliJ IDEs'
+    $HOME/.local/bin/projector config add IntelliJ_2 $HOME/.projector/apps/idea --port 8997 --hostname=localhost --use-separate-config
+    $HOME/.local/bin/projector config add IntelliJ_3 $HOME/.projector/apps/idea --port 8998 --hostname=localhost --use-separate-config
+    $HOME/.local/bin/projector config add IntelliJ_4 $HOME/.projector/apps/idea --port 8999 --hostname=localhost --use-separate-config
+fi
+```
+
+If you do not want to use workspace applications (i.e., the icons and
+`config.yaml` file), you can create dev URLs for each additional IntelliJ IDE
+and launch the `run.sh` script in `.projector/configs/<your config name>` on the
+appropriate port.
 
 > See Projector's CLI documentation for additional information on
 > [installation](https://github.com/JetBrains/projector-installer#Installation)
