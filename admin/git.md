@@ -26,8 +26,8 @@ Coder integrates with the following service providers for authentication and
 
 Linking your Coder account with a git service provider is _not_ required.
 Instead, you can use Visual Studio Code with git, the command-line tool, and we
-expect that this combination will work with most hosting software or services.
-However, Coder doesn't test these and cannot provide recommendations or support.
+expect this combination to work with most hosting software or services. However,
+Coder doesn't test these and cannot provide recommendations or support.
 
 > Ensure that your Git provider supports the keygen algorithm that Coder uses;
 > you can choose the algorithm in **Manage** > **Admin** > **Security** >
@@ -38,8 +38,16 @@ However, Coder doesn't test these and cannot provide recommendations or support.
 ## Configuring OAuth
 
 Before developers can link their accounts, you (or another site manager) must
-create an OAuth application with the appropriate providers. When registering,
-you'll be asked for the following details related to your Coder deployment.
+create an OAuth application with the appropriate providers. You can create as
+many OAuth applications as necessary.
+
+1. Log into Coder as a site manager, and go to **Manage** > **Admin** > **Git
+   OAuth**.
+1. Click **Add provider**.
+1. Select your **Provider** (e.g., GitHub, GitLab, or Bitbucket Server).
+1. Create an OAuth application with your Git provider and provide Coder with the
+   requested details (the parameters required vary based on your Git provider).
+   See the following sections for additional guidance.
 
 ### GitHub
 
@@ -54,7 +62,9 @@ ask you for the following Coder parameters:
   `[your-coder-domain]/oauth/callback` (e.g.
   `https://coder.domain.com/oauth/callback`)
 
-Then, provide your **Client ID** and **Client Secret** to Coder.
+Then, in Coder, provide a **Name** for your app, your **URL**, **Client ID**,
+and **Client Secret** to Coder. You can also provide an optional
+**Description**.
 
 When done, click **Save**.
 
@@ -73,7 +83,9 @@ enabled the following:
 - **Confidential**: Check this option
 - **API** (scope): Check this option
 
-Then, provide your **Client ID** and **Client Secret** to Coder.
+Then, in Coder, provide a **Name** for your app, your **URL**, **Application
+ID**, and **Client Secret** to Coder. You can also provide an optional
+**Description**.
 
 When done, click **Save**.
 
@@ -92,5 +104,8 @@ For your newly created Application Link, provide the following values as your
 - **Consumer Name**: `Coder`
 - **Public Key**: Your public key (available from the Coder Admin Configuration
   page)
+
+Then, in Coder, provide a **Name** for your app, your **URL**, and, optionally,
+a **Description**.
 
 When done, click **Save**.
