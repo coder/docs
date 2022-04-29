@@ -20,3 +20,5 @@ kubernetes:
         - key: "CS_DISABLE_FILE_DOWNLOADS"
             value: "1"
 ```
+
+This change will take effect _after_ the user rebuilds their workspaces.
