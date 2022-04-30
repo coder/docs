@@ -544,6 +544,9 @@
           "path": "./changelog/1.28.0.md",
           "children": [
             {
+              "path": "./changelog/1.28.7.md"
+            },
+            {
               "path": "./changelog/1.28.6.md"
             },
             {
