@@ -69,8 +69,8 @@ the Coder CLI:
 
 - **Auto** (default): uses STUN and falls back to TURN if it's unable to
   establish a peer-to-peer connection
-- **TURN**: establishes a peer-to-peer connection
-- **STUN**: establishes a connection using an intermediary relay server
+- **TURN**: establishes a connection using an intermediary relay server
+- **STUN**: establishes a peer-to-peer connection
 
 ## Auto-start
 
