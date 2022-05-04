@@ -153,13 +153,4 @@ repo.
    git push origin main
    ```
 
-1. Within the IDE window (near the top), you'll be prompted to log in to GitHub
-   by providing your username and password/personal access token.
-
-1. Next, Code Web will display an alert that says the GitHub extension wants to
-   sign in; click **Allow** to proceed.
-
-1. In the subsequent window, click **Continue** to authorize Visual Studio Code
-   to access GitHub.
-
-   At this point, the contents of your repo should be pushed to GitHub.
+At this point, the contents of your repo should be pushed to GitHub.
