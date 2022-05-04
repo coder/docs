@@ -84,6 +84,10 @@ The **Embeddable Button** section features a form you can use for generating an
 embeddable button. This button makes it easy for developers to use your
 [workspace template](../workspaces/workspace-templates/index.md).
 
+> Due to changes made to Coder v1.30.0+ to support the use of multiple Git
+> providers, you must regenerate any embeddable buttons created using v1.29.x or
+> earlier. Otherwise, the buttons will not work correctly.
+
 To create your button:
 
 1. Go to **Manage** > **Admin** > **Templates**.
