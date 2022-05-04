@@ -1,6 +1,8 @@
 ---
 title: "Progressive web apps"
-description: Learn how to install the editor PWAs for a native IDE-like browser editing experience.
+description:
+  Learn how to install the editor PWAs for a native IDE-like browser editing
+  experience.
 ---
 
 In addition to running Coder in a web browser, you can also run each application
@@ -17,6 +19,9 @@ Google Chrome or Microsoft Edge.
 1. Log into Coder and select your workspace.
 1. Under **Applications**, click on an application to launch it as a new window
    or tab.
-1. Follow your browser's instructions for installing the application as a PWA.
+1. Follow your browser's instructions for installing the application as a
+   [Google Chrome](https://support.google.com/chrome/answer/9658361) or a
+   [Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/ux#installing-a-pwa)
+   PWA.
 
 Please note that applications are currently installed on a per-workspace basis.
