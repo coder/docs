@@ -56,13 +56,17 @@ There are two ways for you to construct dev URLs.
 If you provided a name for the dev URL when you created it:
 
 ```text
-<name>--<username>.domain
+devUrlName--username.domain
+
+# ex: main--jessieLorem.exampleCo.com
 ```
 
 If you didn't provide a name for the dev URL when you created it:
 
 ```text
-<port>--<workspace_name>-<username>.domain
+portNumber--workspaceName-username.domain
+
+# ex: 8080--mainDev-jessieLorem.exampleCo.com
 ```
 
 For example, let's say that you've created a dev URL for port `8080`. Also:
