@@ -18,7 +18,8 @@ kubernetes:
         policy: append
         value:
         - key: "CS_DISABLE_FILE_DOWNLOADS"
-            value: "1"
+            # To enable, set to "true" or "1"
+            value: "true"
 ```
 
 This change will take effect _after_ the user rebuilds their workspaces.
