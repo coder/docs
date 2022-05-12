@@ -43,22 +43,28 @@ Services and obtain the information you need to provide to Coder.
    `https://coder.your-domain.com/oidc/callback`) and click **Add**. Then, click
    **Next** to proceed.
 
+   ![Configure Web API](../../assets/guides/admin/adfs-3.png)
+
 1. In the next screen, titled **Configure Application Credentials**, click the
    **Generate a shared secret** checkbox. Note the **Secret** value that
    appears, since you'll need to provide this to Coder at a later step. Click
    **Next** to proceed.
-   ![Configure Application Credentials](../../assets/guides/admin/adfs-3.png)
+
+   ![Configure Application  Credentials](../../assets/guides/admin/adfs-4.png)
 
 1. In the next step, **Configure Web API**, enter the **Client identifier** that
    you saved in step 4 in the field called **Identified** and click **Add**.
    Click **Next** to proceed.
 
-   ![Configure Web API](../../assets/guides/admin/adfs-4.png)
+   ![Configure Web API](../../assets/guides/admin/adfs-5.png)
 
 1. On the **Choose Access Control Policy** screen, choose your preferred access
    control policy, and click **Next** to proceed.
 
-   ![Choose Access Control Policy](../../assets/guides/admin/adfs-5.png)
+   In the example below, we permit members of a specific group `coder-users` to
+   access Coder.
+
+   ![Choose Access Control Policy](../../assets/guides/admin/adfs-6.png)
 
 1. For the step **Configure Application Permissions**, select the following
    **Permitted scopes**:
@@ -70,12 +76,10 @@ Services and obtain the information you need to provide to Coder.
 
    Click **Next** to proceed.
 
-   ![Configure Application Permissions](../../assets/guides/admin/adfs-6.png)
+   ![Configure Application Permissions](../../assets/guides/admin/adfs-7.png)
 
 1. Finally, in the **Summary** window, review the information you've provided.
    Click **Next** when you're ready to proceed and close the setup wizard.
-
-   ![Review summary](../../assets/guides/admin/adfs-7.png)
 
 ## Step 2: Modify the claim rules
 
@@ -101,7 +105,11 @@ following
 
 1. Enter a name for the claim rule.
 
-1. In the **Custom Rule** field, enter the following:
+1. In the **Custom Rule** field, enter a claim rule written in the
+   [ADFS Claim Rule Language](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/technical-reference/the-role-of-the-claim-rule-language).
+
+   The following example claim rule maps the Active Directory attributes
+   `userPrincipalName` and `displayName` as `email` and `name`, respectively:
 
    ```text
    c:[Type ==
