@@ -74,5 +74,5 @@ example, the following shows how you can transfer your home directory to your
 workspace:
 
 ```console
-rsync -e "coder ssh" -a --progress ~/. my-env:~
+rsync -e "coder ssh" -a --progress ~/project user@coder.<workspace-name>:~/project
 ```
