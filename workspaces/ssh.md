@@ -20,7 +20,22 @@ To access your servers via SSH, run the following using the Coder CLI:
 coder config-ssh
 ```
 
-Then, start the SSH port forwarding session using:
+You should see the following returned:
+
+```console
+An auto-generated ssh config was written to "/Users/yourName/.ssh/config"
+Your private ssh key was written to "/Users/yourName/.ssh/coder_enterprise"
+You should now be able to ssh into your workspace
+For example, try running
+    $ ssh coder.backend
+```
+
+Your workspace is now accessible via `ssh coder.<workspace_name>` (e.g.,
+`ssh coder.myEnv` if your workspace is named `myEnv`).
+
+### SSH port forwarding
+
+To start an SSH port forwarding session:
 
 ```console
 ssh -L [localport]:localhost:[remoteport] coder.[workspace]
