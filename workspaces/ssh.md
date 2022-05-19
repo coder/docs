@@ -14,12 +14,15 @@ Before accessing your workspace via SSH:
 
 ## Configuration
 
-You can access your workspaces via SSH by configuring your local machine as
-follows:
+To access your servers via SSH, run the following using the Coder CLI:
 
 ```console
-$ coder config-ssh
+coder config-ssh
+```
 
+You should see the following returned:
+
+```console
 An auto-generated ssh config was written to "/Users/yourName/.ssh/config"
 Your private ssh key was written to "/Users/yourName/.ssh/coder_enterprise"
 You should now be able to ssh into your workspace
@@ -29,6 +32,25 @@ For example, try running
 
 Your workspace is now accessible via `ssh coder.<workspace_name>` (e.g.,
 `ssh coder.myEnv` if your workspace is named `myEnv`).
+
+### SSH port forwarding
+
+To start an SSH port forwarding session:
+
+```console
+ssh -L [localport]:localhost:[remoteport] coder.[workspace]
+```
+
+| Parameter    | Description                                                    |
+| ------------ | -------------------------------------------------------------- |
+| `localport`  | The port to use on your local machine (e.g., `localhost:3000`) |
+| `remoteport` | The port of the server you want to access in the workspace     |
+
+> You can use either HTTP or HTTPS, though the latter may result in
+> certificate-related errors.
+
+At this point, you can access the server in the browser using the `localport`
+value.
 
 ## Reconfiguration
 
@@ -54,22 +76,3 @@ workspace:
 ```console
 rsync -e "coder ssh" -a --progress ~/. my-env:~
 ```
-
-## Forwarding dev URLs
-
-To access your server via SSH port forwarding:
-
-1. [Create a dev URL](devurls.md)
-1. Run `coder config-ssh` using the Coder CLI
-
-Once done, you can configure the dev URL port using:
-
-```console
-ssh -L [localport]:localhost:[remoteport] coder.[workspace]
-```
-
-`localport` is the port you want to use on your local machine (e.g.,
-`localhost:3000`), and `remoteport` matches the `port` of your dev URL.
-
-After SSH port forwarding is configured, you can access the dev URL (e.g.,
-`http://localhost:3000`) in a browser.
