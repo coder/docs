@@ -26,13 +26,11 @@ built as a CVM or not.
 If you would like all newly created workspaces to be CVMs, toggle **Default to
 container-based virtual machines** to **On**.
 
-> While this toggle changes the default workspace creation setting, users can still
-> override this setting. For example, if you enable CVMS and set them as the
-> default, a user can still create non-CVM workspaces (and vice versa).
+> While this toggle changes the default workspace creation setting, users can
+> still override this setting. For example, if you enable CVMS and set them as
+> the default, a user can still create non-CVM workspaces (and vice versa).
 
 ## Caching
-
-> Cached CVMs are currently an **alpha** feature.
 
 To improve the startup time for CVM-based workspaces, you can enable caching.
 
@@ -50,8 +48,6 @@ install `shiftfs` on your behalf.**
 
 ## Self-contained workspace builds
 
-> Self-contained workspace builds are currently an **alpha** feature.
-
 By default, Coder initializes workspaces by running commands inside the
 container. Workspaces, however, control the initialization sequence instead when
 you enable [self-contained workspace builds]. This enables cluster operations
@@ -62,16 +58,12 @@ as the `kubectl exec` command.
 
 ## Workspace process logging
 
-> Workspace process logging is currently an **alpha** feature.
-
 [Workspace process logging] enables auditing of commands executed inside the
 workspace container.
 
 [workspace process logging]: ../process-logging.md
 
 ## TUN device
-
-> TUN devices currently an **alpha** feature.
 
 Coder allows the creation of custom network interfaces using the Linux TUN
 device. When using the **Enable TUN device** setting, Coder workspaces will have
@@ -94,8 +86,6 @@ persistent files (such as configuration/identity) files in your home volume, as
 any data outside the home volume is cleared when the workspace is rebuilt.
 
 ## FUSE device
-
-> FUSE devices are currently an **alpha** feature.
 
 Coder allows the creation of custom filesystems using the Linux FUSE userspace
 filesystem device. By enabling the **Enable FUSE device** setting, Coder
