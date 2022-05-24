@@ -100,8 +100,8 @@ so that Coder can mount the PVC to the workspace (if you're using a custom
 `StorageClass`, be sure that it supports DVP. Otherwise, Coder cannot provision
 workspaces).
 
-> If you are running a multi-zone deployment, ensure you have at least one node
-> in each zone, to prevent volume node affinity conflicts.
+> If you are running a multi-zone deployment, ensure that you have at least
+> one node in each zone to prevent volume node affinity conflicts.
 
 ## Database
 
