@@ -39,7 +39,7 @@ username and password and proceed to **step 2** of this guide.
 
 > This is currently an **alpha** feature. To use this feature, enable the
 > feature flag under
-> `Manage > Admin > Infrastructure > Azure Registry Authentication`.
+> `Manage > Admin > Infrastructure > Azure Container Registry authentication`.
 
 AAD Pod Identity allows you to assign an AAD identity to pods in your Azure
 Kubernetes (AKS) cluster. You can assign Coder an AAD identity with pull access
