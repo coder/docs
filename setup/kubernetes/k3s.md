@@ -8,7 +8,7 @@ machine for use with Coder.
 
 [K3s](https://k3s.io/) is a lightweight Kubernetes distribution that works well
 for single-node or multi-node clusters. For single-user trial purposes, you may
-want to consider the options in [local preview](./local-preview.md).
+want to consider the options in [Coder for Docker](../coder-for-docker/index.md).
 
 > This installation method is not officially supported or tested by Coder. If
 > you have questions or run into issues, feel free to reach out using our

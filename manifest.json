@@ -1,5 +1,12 @@
 {
-  "versions": ["v1.31", "v1.30", "v1.29", "v1.28", "v1.27", "v1.26"],
+  "versions": [
+    "v1.31",
+    "v1.30",
+    "v1.29",
+    "v1.28",
+    "v1.27",
+    "v1.26"
+  ],
   "routes": [
     {
       "path": "./index.md",
@@ -154,10 +161,6 @@
         {
           "path": "./setup/kubernetes/index.md",
           "children": [
-            {
-              "path": "./setup/kubernetes/local-preview.md",
-              "navigable": false
-            },
             {
               "path": "./setup/kubernetes/k3s.md"
             },
