@@ -155,10 +155,6 @@
           "path": "./setup/kubernetes/index.md",
           "children": [
             {
-              "path": "./setup/kubernetes/local-preview.md",
-              "navigable": false
-            },
-            {
               "path": "./setup/kubernetes/k3s.md"
             },
             {
