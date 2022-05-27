@@ -47,12 +47,6 @@ parameters to reflect the needs of your workspace: `PROJECT_ID`,
 [choose the zone and region](https://cloud.google.com/compute/docs/regions-zones#choosing_a_region_and_zone)
 that makes the most sense for your location.
 
-> Both options include the use of the `enable-network-policy` flag, which
-> [creates a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
-> See
-> [Network Policies](https://codercom-lt03v3kjy-codercom.vercel.app/docs/setup/requirements#network-policies)
-> for more information.
-
 ### Option 1: Cluster with full support of Coder features
 
 This option uses an Ubuntu node image to enable support of
@@ -88,7 +82,6 @@ gcloud beta container --project "$PROJECT_ID" \
     --addons HorizontalPodAutoscaling,HttpLoadBalancing \
     --enable-autoupgrade \
     --enable-autorepair \
-    --enable-network-policy \
     --enable-autoscaling \
     --min-nodes "1" \
     --max-nodes "8"
@@ -128,7 +121,6 @@ clusters create "$NEW_CLUSTER_NAME" \
    --addons HorizontalPodAutoscaling,HttpLoadBalancing \
    --enable-autoupgrade \
    --enable-autorepair \
-   --enable-network-policy \
    --enable-autoscaling \
    --min-nodes "1" \
    --max-nodes "8"

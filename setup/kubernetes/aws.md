@@ -200,33 +200,6 @@ as a workspace deployment option, you'll need to
    eksctl create nodegroup --config-file=coder-node.yaml
    ```
 
-## Step 3: Install Calico onto your cluster
-
-AWS uses
-[Calico](https://docs.amazonaws.cn/en_us/eks/latest/userguide/calico.html) to
-implement network segmentation and tenant isolation.
-
-1. Apply the Calico manifest to your cluster:
-
-   ```console
-   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/master/config/master/calico-operator.yaml
-   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/master/config/master/calico-crs.yaml
-   ```
-
-1. Watch the `calico-system` DaemonSets:
-
-   ```console
-   kubectl get daemonset calico-node --namespace calico-system
-   ```
-
-   Wait for the `calico-node` DaemonSet to have the number of pods **desired**
-   in the **ready** state; this indicates that Calico is working:
-
-   ```console
-   NAME          DESIRED   CURRENT   READY     UP-TO-DATE   ...
-   calico-node   3         3         3         3            ...
-   ```
-
 ## Access control
 
 EKS allows you to create and manage user permissions using IAM identity
