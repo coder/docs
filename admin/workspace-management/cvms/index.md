@@ -78,12 +78,11 @@ container is what provides
   Support for NVIDIA [GPUs](../gpu-acceleration.md) is in **beta**. We do not
   support AMD GPUs at this time.
 
-- Coder doesn't support legacy versions of cluster-wide proxy services such as
-  Istio, and CVMs do not currently support NFS as a file system.
-
 ## Next Steps
 
 - [Set up a Kubernetes cluster](cluster-setup.md) for Coder that's capable of
   hosting CVMs
 - Learn [how to work with images](images.md) for use with CVMs
 - Learn [how to enable CVMs for users](management.md)
+- Learn
+  [how to mount NFS file shares onto Coder workspaces](../../../guides/admin/nfs.md)
