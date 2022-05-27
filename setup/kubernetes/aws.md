@@ -200,7 +200,7 @@ as a workspace deployment option, you'll need to
    eksctl create nodegroup --config-file=coder-node.yaml
    ```
 
-## Step 3: Install Calico onto your cluster
+## Step 3: (Optional) Install Calico onto your cluster
 
 AWS uses
 [Calico](https://docs.amazonaws.cn/en_us/eks/latest/userguide/calico.html) to
