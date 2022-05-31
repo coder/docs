@@ -155,6 +155,7 @@ You can increase the kernel tunable option to increase the maximum number of
 users sharing the same system/Kubernetes node. To do this, modify the `sysctl`
 configuration file, or apply a DaemonSet to the Kubernetes cluster to apply that
 change to all nodes automatically.
+Rebuilding the workspaces is required after the modification.
 
 For example, you can create a file called `/etc/sysctl.d/watches.conf` and
 include the following contents:
