@@ -156,6 +156,8 @@ users sharing the same system/Kubernetes node. To do this, modify the `sysctl`
 configuration file, or apply a DaemonSet to the Kubernetes cluster to apply that
 change to all nodes automatically.
 
+> You must rebuild workspaces before your changes take effect.
+
 For example, you can create a file called `/etc/sysctl.d/watches.conf` and
 include the following contents:
 
