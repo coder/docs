@@ -76,5 +76,5 @@ resources from
 ## Downgrading
 
 When attempting to troubleshoot Coder, you may want to roll back to an older
-version of Coder. This is not supported nor recommended, as the database schema
-is updated with every Coder upgrade.
+version of Coder. This is not supported without using a database snapshot, as
+the database schema will be out of date.
