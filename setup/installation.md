@@ -29,25 +29,16 @@ resources from
 > Both the Big Bang and Ironbank repositories are one release behind the latest
 > version of Coder.
 
-## Create the Coder namespace (optional)
+## Install Coder
 
-We recommend running Coder in a separate
-[namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/);
-to do so, run
+1. Create the Coder namespace
+[namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/):
 
 ```console
 kubectl create namespace coder
 ```
 
-Next, change the kubectl context to point to your newly created namespace:
-
-```console
-kubectl config set-context --current --namespace=coder
-```
-
-## Install Coder
-
-1. Add the Coder Helm repo
+1. Add the Coder Helm repo:
 
    ```console
    helm repo add coder https://helm.coder.com
@@ -59,7 +50,7 @@ kubectl config set-context --current --namespace=coder
 
    > This step will install Coder with the default configuration. This does not
    > set up dev URLs, TLS, ingress controllers, or an external database. To
-   > configure these recommended features, please go to step 4.
+   > configure these recommended features, please see the following sections.
 
    ```console
    helm install coder coder/coder --namespace coder --version=<VERSION>
@@ -91,13 +82,15 @@ kubectl config set-context --current --namespace=coder
 1. Create a `values.yaml` file to configure Coder:
 
    ```console
-   helm show values coder/coder --version=<VERSION> > values.yaml
+   helm show values coder/coder --namespace coder --version=<VERSION> > values.yaml
    ```
 
    > View the
    > [configuration options available in the `values.yaml` file.](https://github.com/coder/enterprise-helm#values)
 
-1. **Optional**: change the admin user password by updating `values.yaml` as
+## Set the super admin password
+
+**Optional**: change the admin user password by updating `values.yaml` as
    follows:
 
    ```yaml
@@ -115,7 +108,9 @@ kubectl config set-context --current --namespace=coder
        key: "password"
    ```
 
-1. **Optional**: To configure an externally hosted database, set the following
+## Connect an external database
+
+**Optional**: To configure an externally hosted database, set the following
    in `values.yaml`:
 
    > Ensure that you have superuser privileges to your PostgreSQL database.
@@ -159,7 +154,9 @@ kubectl config set-context --current --namespace=coder
      devurlsHost: "*.my-custom-domain.io"
    ```
 
-1. **Optional:** To set up TLS:
+## Enable TLS
+
+**Optional:** To set up TLS:
 
    a. You will need to create a TLS secret. To do so, run the following with the
    `.pem` files provided by your certificate:
@@ -180,7 +177,9 @@ kubectl config set-context --current --namespace=coder
        devurlsHostSecretName: <tls-secret>
    ```
 
-1. **Optional:** If you cannot use a load balancer, you may need an ingress
+## Set up an ingress controller
+
+**Optional:** If you cannot use a load balancer, you may need an ingress
    controller. To configure one with Coder, set the following in `values.yaml`:
 
    > We assume that you already have an ingress controller installed in your
@@ -205,6 +204,18 @@ kubectl config set-context --current --namespace=coder
      # such as cert-manager or the ingress controller
      annotations: {}
    ```
+
+## Proxy Configuration
+
+**Optional:** To have Coder initiate outbound connections via a proxy, set
+   the following (applicable) values:
+
+   ```yaml
+   coderd:
+      proxy:
+         http: ""
+         https: ""
+         exempt: "cluster.local"
 
 1. Once you've implemented all of the changes in `values.yaml`, install Coder
    with the following command:
