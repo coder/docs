@@ -72,3 +72,9 @@ resources from
    ```console
    helm upgrade coder coder/coder -n coder --version=<VERSION> --values current-values.yaml
    ```
+
+## Downgrading
+
+When attempting to troubleshoot Coder, you may want to roll back to an older
+version of Coder. Doing so requires you to make and use a database snapshot
+since the database schema will be out of date.
