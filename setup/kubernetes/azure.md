@@ -31,6 +31,28 @@ for more information.
 > [container-based virtual machines (CVMs)](../../workspaces/cvms.md) unless
 > you're running Coder in a bare-metal Kubernetes environment.
 
+## Azure Environment Considerations
+
+> This section is only applicable if either of the below apply to you:
+>
+> - You are using Azure GovCloud
+> - You have a custom Azure Resource Manager (ARM) endpoint
+
+If so, ensure that you have the following environment variable set in your Coder
+Helm chart:
+
+```yaml
+coderd:
+  [...]
+  extraEnvs:
+    [...]
+    - "AZURE_ARM_ENDPOINT=https://your.azure.resource.manager/endpoint"
+
+```
+
+> For Azure GovCloud, this value is
+> `https://management.core.usgovcloudapi.net/`.
+
 ## Step 1: Create the resource group
 
 To make subsequent steps easier, start by creating environment variables for the
