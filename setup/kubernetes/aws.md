@@ -204,7 +204,9 @@ as a workspace deployment option, you'll need to
 
 AWS uses
 [Calico](https://docs.amazonaws.cn/en_us/eks/latest/userguide/calico.html) to
-implement network segmentation and tenant isolation.
+implement network segmentation and tenant isolation. We strongly recommend
+executing the following steps; please see
+[Network Policies](../requirements.md#network-policies) for more information.
 
 1. Apply the Calico manifest to your cluster:
 
