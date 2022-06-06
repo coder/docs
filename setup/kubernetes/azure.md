@@ -99,6 +99,13 @@ az aks create \
   --network-policy "azure"
 ```
 
+> Both options include the
+> [use of the `--network-policy "azure"` flag](https://docs.microsoft.com/en-us/azure/aks/use-network-policies),
+> which
+> [creates a Calico cluster](https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/).
+> See [Network Policies](../requirements.md#network-policies) for more
+> information.
+
 This process might take some time (~5-20 minutes), but if you're successful,
 Azure returns a JSON object with your cluster information.
 
