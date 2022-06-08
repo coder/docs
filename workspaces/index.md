@@ -27,6 +27,14 @@ reproducibility.
 
 ![The anatomy of a workspace](../assets/workspaces/workspace-anatomy.png)
 
-## In this section
+## Next steps
 
-<children></children>
+Learn how to [create your first workspace](create.md) (see our
+[parameter descriptions](workspace-params.md) for additional assistance). Then,
+customize your workspace by:
+
+- [Connecting your favorite editors and IDEs](editors.md)
+- [Creating dev URLs](devurls.md), which let you access services running in your
+  workspace from external machines
+- [Configuring auto-start](autostart.md) so that your workspace is ready when
+  you are
