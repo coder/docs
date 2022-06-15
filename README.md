@@ -16,6 +16,9 @@ This repository contains the documentation source files for
 Is something confusing or unclear? Do you want to contribute something new?
 [Open an issue or pull request](https://github.com/coder/docs/issues/new)!
 
+Please refer to the [style guide](https://github.com/coder/styleguide) for
+general writing guidelines.
+
 You can preview contributions in the context of the site using pull request
 deploy previews. :rocket:
 
