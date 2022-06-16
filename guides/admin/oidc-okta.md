@@ -32,15 +32,13 @@ you need to provide to Coder.
 
 1. Select **OpenID Connect** and click **Create**
 
-   ![Okta Create Application
-Modal](../../assets/guides/admin/okta-custom-app-creation.jpg)
+   ![Okta Create Application Modal](../../assets/guides/admin/okta-custom-app-creation.jpg)
 
 1. Provide an **Application name** (i.e., `Coder`), (optionally) add a logo, and
    add the **Login redirect URIs** for Coder (it will be formatted similarly to
    `https://coder.my-company.com/oidc/callback`).
 
-   ![Okta Create OpenID
-Application](../../assets/guides/admin/okta-create-openid-integration.jpg)
+   ![Okta Create OpenID Application](../../assets/guides/admin/okta-create-openid-integration.jpg)
 
 1. Click **Save** to proceed.
 
