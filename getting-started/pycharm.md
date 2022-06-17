@@ -156,7 +156,7 @@ purposes of this article, we'll leverage JetBrains' tutorial on how to
    ```
 
 1. At this point, you can run your application by right-clicking on the IDE
-   editor window and selecting **Run <fileName>**. Once the app starts, you can
+   editor window and selecting **Run \<fileName\>**. Once the app starts, you can
    interact with it using the terminal at the bottom.
 
 ## Step 5: Push your repo to GitHub
