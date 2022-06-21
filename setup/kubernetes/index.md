@@ -31,6 +31,7 @@ deprecated features before they are removed from new versions of Kubernetes.
 
 |              | Kubernetes `1.24` | Kubernetes `1.23` | Kubernetes `1.22` | Kubernetes `1.21` | Kubernetes `1.20` | Kubernetes `1.19` | Kubernetes `1.18` |
 | ------------ | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- |
+| Coder `1.32` | ✅                | ✅                | ✅                |                   |                   |                   |                   |
 | Coder `1.31` | ✅                | ✅                | ✅                |                   |                   |                   |                   |
 | Coder `1.30` |                   | ✅                | ✅                | ✅                |                   |                   |                   |
 | Coder `1.29` |                   | ✅                | ✅                | ✅                |                   |                   |                   |
