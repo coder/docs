@@ -1,5 +1,5 @@
 {
-  "versions": ["v1.31", "v1.30", "v1.29", "v1.28", "v1.27", "v1.26"],
+  "versions": ["v1.31", "v1.30", "v1.29", "v1.28"],
   "routes": [
     {
       "path": "./index.md",
@@ -583,75 +583,89 @@
           ]
         },
         {
-          "path": "./changelog/1.29.0.md",
-          "children": [
-            {
-              "path": "./changelog/1.29.6.md"
-            },
-            {
-              "path": "./changelog/1.29.5.md"
-            },
-            {
-              "path": "./changelog/1.29.4.md"
-            },
-            {
-              "path": "./changelog/1.29.3.md"
-            },
-            {
-              "path": "./changelog/1.29.2.md"
-            },
-            {
-              "path": "./changelog/1.29.1.md"
-            }
-          ]
-        },
-        {
-          "path": "./changelog/1.28.0.md",
-          "children": [
-            {
-              "path": "./changelog/1.28.7.md"
-            },
-            {
-              "path": "./changelog/1.28.6.md"
-            },
-            {
-              "path": "./changelog/1.28.5.md"
-            },
-            {
-              "path": "./changelog/1.28.4.md"
-            },
-            {
-              "path": "./changelog/1.28.3.md"
-            },
-            {
-              "path": "./changelog/1.28.2.md"
-            },
-            {
-              "path": "./changelog/1.28.1.md"
-            }
-          ]
-        },
-        {
-          "path": "./changelog/1.27.0.md",
-          "children": [
-            {
-              "path": "./changelog/1.27.4.md"
-            },
-            {
-              "path": "./changelog/1.27.3.md"
-            },
-            {
-              "path": "./changelog/1.27.2.md"
-            },
-            {
-              "path": "./changelog/1.27.1.md"
-            }
-          ]
-        },
-        {
           "path": "./changelog/archive/index.md",
           "navigable": false,
           "children": [
+            {
+              "path": "./changelog/1.29.6.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.29.5.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.29.4.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.29.3.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.29.2.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.29.1.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.29.0.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.28.7.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.28.6.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.28.5.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.28.4.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.28.3.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.28.2.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.28.1.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.28.0.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.27.4.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.27.3.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.27.2.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.27.1.md",
+              "navigable": false
+            },
+            {
+              "path": "./changelog/1.27.0.md",
+              "navigable": false
+            },
             {
               "path": "./changelog/archive/1.26.4.md",
               "navigable": false
