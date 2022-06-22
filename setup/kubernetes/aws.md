@@ -179,7 +179,7 @@ as a workspace deployment option, you'll need to
 
    managedNodeGroups:
      - name: coder-node-group
-       amiFamily: Ubuntu2004
+       amiFamily: Ubuntu2004 # AmazonLinux2 is also an option
        # Custom EKS-compatible AMIs can be used instead of amiFamily
        # ami: <your Ubuntu 20.04 AMI ID>
        instanceType: <instance-type>
@@ -192,7 +192,10 @@ as a workspace deployment option, you'll need to
        #  sudo /etc/eks/bootstrap.sh <YOUR_CLUSTER_NAME>
    ```
 
-> [See here for a list of EKS-compatible Ubuntu AMIs](https://cloud-images.ubuntu.com/docs/aws/eks/)
+> See
+> [the list of EKS-compatible Ubuntu AMIs](https://cloud-images.ubuntu.com/docs/aws/eks/)
+> and info on
+> [Latest & Custom AMI support](https://eksctl.io/usage/custom-ami-support/).
 
 1. Create your nodegroup (be sure to provide the correct file name):
 
