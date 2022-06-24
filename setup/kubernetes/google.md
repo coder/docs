@@ -72,7 +72,7 @@ gcloud beta container --project "$PROJECT_ID" \
     --node-version "latest" \
     --cluster-version "latest" \
     --machine-type "n1-highmem-4" \
-    --image-type "UBUNTU" \
+    --image-type "UBUNTU_CONTAINERD" \
     --disk-type "pd-standard" \
     --disk-size "50" \
     --metadata disable-legacy-endpoints=true \
@@ -112,7 +112,7 @@ clusters create "$NEW_CLUSTER_NAME" \
    --no-enable-basic-auth \
    --cluster-version "latest" \
    --machine-type "n1-highmem-4" \
-   --image-type "COS" \
+   --image-type "COS_CONTAINERD" \
    --disk-type "pd-standard" \
    --disk-size "50" \
    --metadata disable-legacy-endpoints=true \
