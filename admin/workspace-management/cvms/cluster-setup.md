@@ -53,7 +53,7 @@ and updating your `eksctl` config spec.
 
    nodeGroups:
      - name: coder-node-group
-       amiFamily: Ubuntu2004
+       amiFamily: Ubuntu2004 # AmazonLinux2 is also a supported option
        ami: <your Ubuntu 20.04 AMI ID>
    ```
 
