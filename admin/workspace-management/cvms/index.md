@@ -69,6 +69,8 @@ isolation between the user's workspace container and its outer, supervising
 container is what provides
 [strong isolation](https://github.com/nestybox/sysbox/blob/master/docs/user-guide/security.md).
 
+> Sysbox is not yet supported on systems with SELinux enabled.
+
 ## Known issues
 
 - NVIDIA GPUs can be added to CVMs on bare metal clusters only. This feature is

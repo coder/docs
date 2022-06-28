@@ -179,7 +179,7 @@ as a workspace deployment option, you'll need to
 
    managedNodeGroups:
      - name: coder-node-group
-       amiFamily: Ubuntu2004 # AmazonLinux2 is also an option
+       amiFamily: Ubuntu2004 # AmazonLinux2 is also a supported option
        # Custom EKS-compatible AMIs can be used instead of amiFamily
        # ami: <your Ubuntu 20.04 AMI ID>
        instanceType: <instance-type>
