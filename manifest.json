@@ -372,6 +372,9 @@
           "path": "./admin/git.md"
         },
         {
+          "path": "./admin/prometheus.md"
+        },
+        {
           "path": "./admin/licensing.md"
         },
         {
