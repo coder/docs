@@ -56,18 +56,20 @@ that makes the most sense for your location.
 > See See [Network Policies](../requirements.md#network-policies) for more
 > information.
 
+The sample scripts below create an `e2-standard-4` instance with 2 nodes for
+evaluation purposes, with a configuration to auto-scale to 8 nodes as more
+developer workspace pods are created. Depending on your needs, you can choose
+other sizes. See [machine type
+comparisons](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
+in particular [general-purpose machine types like n1 and
+e2](https://cloud.google.com/compute/docs/general-purpose-machines). See
+[requirements](../requirements.md) for help estimating your cluster size.
+
 ### Option 1: Cluster with full support of Coder features
 
 This option uses an Ubuntu node image to enable support of
 [Container-based Virtual Machines (CVMs)](../../admin/workspace-management/cvms.md),
 allowing system-level functionalities such as Docker in Docker.
-
-> Please note that the sample script creates a `e2-standard-4` instance with 2
-> nodes for evaluation purposes; depending on your needs, you can choose other
-> sizes. See 
-> [machine type comparisons](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
-> in particular [general-purpose machine types like n1 and e2](https://cloud.google.com/compute/docs/general-purpose-machines). See [requirements](../requirements.md) for help estimating your
-> cluster size.
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
@@ -103,12 +105,6 @@ gcloud beta container --project "$PROJECT_ID" \
 This option uses a Container-Optimized OS (COS) and meets Coder's minimum
 requirements. It does _not_ enable the use of
 [CVMs](../../admin/workspace-management/cvms.md).
-
-> Please note that the sample script creates a `n1-highmem-4` instance;
-> depending on your needs, you can choose a
-> [larger size](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
-> instead. See [requirements](../requirements.md) for help estimating your
-> cluster size.
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
