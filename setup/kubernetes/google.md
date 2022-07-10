@@ -24,6 +24,11 @@ be sure to account for the number of developers you expect to use Coder, as well
 as the resources they need to run their workspaces. See our guide on on
 [compute resources](../../guides/admin/resources.md) for additional information.
 
+> In GKE version 1.24 and later, Docker-based [node image types](https://cloud.google.com/kubernetes-engine/docs/concepts/node-images)
+> are not supported. The examples below use `ubuntu_containerd` and
+> `cos_containerd` to meet this requirement. Docker-based node images will
+> prevent GKE cluster creation.
+
 If you expect to provision GPUs to your Coder workspaces, you **must** use a
 general-purpose
 [N1 machine type](https://cloud.google.com/compute/docs/machine-types#gpus) in
@@ -52,17 +57,20 @@ that makes the most sense for your location.
 > See See [Network Policies](../requirements.md#network-policies) for more
 > information.
 
+The sample scripts below create an `e2-standard-4` instance with 2 nodes for
+evaluation purposes, with a configuration to auto-scale to 8 nodes as more
+developer workspace pods are created. Depending on your needs, you can choose
+other sizes. See [machine type
+comparisons](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
+in particular [general-purpose machine types like n1 and
+e2](https://cloud.google.com/compute/docs/general-purpose-machines). See
+[requirements](../requirements.md) for help estimating your cluster size.
+
 ### Option 1: Cluster with full support of Coder features
 
 This option uses an Ubuntu node image to enable support of
 [Container-based Virtual Machines (CVMs)](../../admin/workspace-management/cvms.md),
 allowing system-level functionalities such as Docker in Docker.
-
-> Please note that the sample script creates a `n1-highmem-4` instance;
-> depending on your needs, you can choose a
-> [larger size](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
-> instead. See [requirements](../requirements.md) for help estimating your
-> cluster size.
 
 ```console
 gcloud beta container --project "$PROJECT_ID" \
@@ -71,8 +79,8 @@ gcloud beta container --project "$PROJECT_ID" \
     --no-enable-basic-auth \
     --node-version "latest" \
     --cluster-version "latest" \
-    --machine-type "n1-highmem-4" \
-    --image-type "UBUNTU" \
+    --machine-type "e2-standard-4" \
+    --image-type "ubuntu_containerd" \
     --disk-type "pd-standard" \
     --disk-size "50" \
     --metadata disable-legacy-endpoints=true \
@@ -99,20 +107,14 @@ This option uses a Container-Optimized OS (COS) and meets Coder's minimum
 requirements. It does _not_ enable the use of
 [CVMs](../../admin/workspace-management/cvms.md).
 
-> Please note that the sample script creates a `n1-highmem-4` instance;
-> depending on your needs, you can choose a
-> [larger size](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
-> instead. See [requirements](../requirements.md) for help estimating your
-> cluster size.
-
 ```console
 gcloud beta container --project "$PROJECT_ID" \
 clusters create "$NEW_CLUSTER_NAME" \
    --zone "$ZONE" \
    --no-enable-basic-auth \
    --cluster-version "latest" \
-   --machine-type "n1-highmem-4" \
-   --image-type "COS" \
+   --machine-type "e2-standard-4" \
+   --image-type "cos_containerd" \
    --disk-type "pd-standard" \
    --disk-size "50" \
    --metadata disable-legacy-endpoints=true \
