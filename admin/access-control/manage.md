@@ -81,6 +81,17 @@ coderd:
       value: "true"
 ```
 
+### Troubleshooting OIDC failures
+
+If OIDC fails to configure, only an admin using the built-in authentication can
+go into the settings and resolve the issue. All users using OIDC to authenticate
+will be unable to login until it is fixed.
+
+![OIDC authenticaton failure](../../assets/admin/oidc_failure.png)
+
+The admin must follow the
+[Set up OIDC authentication](#set-up-oidc-authentication) steps again.
+
 ### Disable built-in authentication
 
 You can disable built-in authentication as an option for accessing Coder if you
