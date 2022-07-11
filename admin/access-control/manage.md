@@ -90,7 +90,9 @@ will be unable to login until it is fixed.
 ![OIDC authenticaton failure](../../assets/admin/oidc_failure.png)
 
 The admin must follow the
-[Set up OIDC authentication](#set-up-oidc-authentication) steps again.
+[Set up OIDC authentication](#set-up-oidc-authentication) steps again. Once the
+OIDC authentication is fixed, it is recommended to restart the coderd
+deployment.
 
 ### Disable built-in authentication
 
