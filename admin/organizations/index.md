@@ -17,7 +17,7 @@ are.
 Coder automatically creates a default organization for you during the deployment
 process. You can then assign users and their workspaces to that organization.
 
-If you have multiple organizations, you can set one or more as the default; you
+If you have multiple organizations, you can set one or more as the default. You
 can also change which organizations are defaults at any time.
 
 ## Namespaces
