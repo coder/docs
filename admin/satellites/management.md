@@ -32,7 +32,7 @@ Install the following dependencies if you haven't already:
 
 First, make sure that you're connected to the cluster to which you want to
 deploy the satellite. Ideally, this deployment should be in the same
-geographical region as the developers' and their workspaces.
+geographical region as the developers and their workspaces.
 
 To see your current context, run:
 
@@ -40,8 +40,8 @@ To see your current context, run:
 kubectl config current-context
 ```
 
-Confirm that your current kubectl context is correct before continuing;
-otherwise, connect to the right context.
+Confirm that your current kubectl context is correct before continuing. 
+Otherwise, connect to the right context.
 
 ## Step 2: Creating the new deployment
 
