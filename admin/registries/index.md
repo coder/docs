@@ -29,7 +29,7 @@ To import an image:
       specific to [AWS ECR](./ecr.md).
    1. If your registry is hosted on **Microsoft Azure Container Registry (ACR)**
       and you want to authenticate using **Azure Active Directory (AAD) Pod
-      Identity** , follow the steps specific to [ACR](./acr.md).
+      Identity**, follow the steps specific to [ACR](./acr.md).
 1. Continue with the process of [adding your image](../../images/index.md).
 1. When done, click **Import**.
 
