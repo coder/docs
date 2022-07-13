@@ -73,9 +73,9 @@ container is what provides
 
 ## Known issues
 
-- Do not add configuration files like bash scripts to `/tmp` in CVMs since they will not
-  be available once the CVM workspace is built. Consider `/coder` which already
-  holds the `'configure` script.
+- Do not add configuration files like bash scripts to `/tmp` in CVMs since they
+  will not be available once the CVM workspace is built. Consider `/coder` which
+  already holds the `'configure` script.
 
 - NVIDIA GPUs can be added to CVMs on bare metal clusters only. This feature is
   not supported on Google Kubernetes Engine or other cloud providers at this
