@@ -137,9 +137,8 @@ For more information, see:
 
 ## Next steps
 
-If you have already installed Coder or are using our hosted beta, you can add
-this cluster as a
-[workspace provider](../../admin/workspace-providers/deployment/index.md).
+If you have already installed Coder, you can add this cluster as a [workspace
+provider](../../admin/workspace-providers/deployment/index.md).
 
 To access Coder through a secure domain, review our guides on configuring and
 using [TLS certificates](../../guides/tls-certificates/index.md).
