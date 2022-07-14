@@ -144,6 +144,7 @@ kubectl create namespace coder
 
    For more detailed configuration instructions,
    [see our PostgreSQL setup guide](../guides/deployments/postgres.md).
+   Alternatively, see our [guide on connecting to AWS RDS via IAM credentials](/guides/admin/awsrds.md).
 
 ## Enable dev URLs
 
