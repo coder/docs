@@ -90,7 +90,7 @@ logging:
 ```
 
 Optionally, you can
-[specify the Splunk channel](https://docs.splunk.com/Documentation/Splunk/8.1.3/Data/AboutHECIDXAck#About_channels_and_sending_data).
+[specify the Splunk channel](https://docs.splunk.com/Documentation/Splunk/8.1.3/Data/AboutHECIDXAck#About_channels_and_sending_data)
 that you'd like associated with your messages. Channels allow logs to be
 segmented by client, preventing Coder application logs from affecting other
 client logs in your Splunk deployment.
