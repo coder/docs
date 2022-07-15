@@ -41,7 +41,7 @@ actions included:
   connection, or a local terminal connection via the Coder CLI's `coder ssh`
   command
 - `cordon`: a workspace provider became unavailable for new workspace creation
-  requests.
+  requests
 - `create`: the user created a Coder entity (e.g., dev URL, image/image tag,
   workspace, etc.)
 - `delete`: a user deleted a Coder entity (e.g., workspace or image)
@@ -54,7 +54,7 @@ actions included:
 - `ssh`: a user opened a web terminal to access Coder
 - `stop`: a user manually stopped a workspace
 - `uncordon`: a workspace provider became available for new workspace creation
-  requests.
+  requests
 - `view`: the Coder CLI used a secret
 - `write`: the user made a change to a Coder entity (e.g., workspace, user,
   resource pool, etc.)
