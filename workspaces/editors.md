@@ -338,10 +338,6 @@ RUN pip3 install jupyter notebook
 USER coder
 ```
 
-Coder will detect `/usr/local/bin/jupyter` when creating a workspace with this
-image, and show a Jupyter icon in the workspace dashboard to launch Jupyter
-Notebook.
-
 
 ## JupyterLab
 
@@ -377,7 +373,7 @@ COPY jupyter /usr/local/bin/jupyter
 USER coder
 ```
 
-The new `jupyter` script with the lab arguments. This file must be located in
+This is an example new `jupyter` script with the lab arguments. This file must be located in
 the same folder as the Dockerfile to be copied during `docker build`
 
 ```sh
@@ -392,8 +388,8 @@ jupyter.py ${args}
 
 The second, alternative way to run JupyterLab is with a dev URL and launching
 JupyterLab with `supervisord` in the `configure` script. The benefit of this
-approach is you are completely independent of Coder's IDE launching mechanism
-and rely only on a generic dev URL. You can also accessing JupyterLab locally
+approach is it is completely independent of Coder's IDE launching mechanism
+and relies only on a generic dev URL. You can also access JupyterLab locally
 with SSH port forward `ssh -L 8888:localhost:8888 coder.jupyterlab` or use the
 Coder CLI with `coder tunnel jupyterlab 8888 8888` 
 
