@@ -349,7 +349,7 @@ over Jupyter Notebook.
 
 ![JupyterLab](../assets/workspaces/jupyterlab-opened.png)
 
-There are two ways to install and access JupyterLab in Coder.
+There are three ways to install and access JupyterLab in Coder.
 
 For starters, JupyterLab via `pip3 install jupyterlab` must be installed in the
 Dockerfile.
@@ -390,9 +390,7 @@ jupyter.py ${args}
 The second, alternative way to run JupyterLab is with a dev URL and launching
 JupyterLab with `supervisord` in the `configure` script. The benefit of this
 approach is it is completely independent of Coder's IDE launching mechanism
-and relies only on a generic dev URL. You can also access JupyterLab locally
-with SSH port forward `ssh -L 8888:localhost:8888 coder.jupyterlab` or use the
-Coder CLI with `coder tunnel jupyterlab 8888 8888` 
+and relies only on a generic dev URL. 
 
 ![JupyterLab as a dev URL](../assets/workspaces/jupyterlab-as-devurl.png)
 
@@ -443,6 +441,11 @@ user=coder
 directory=/home/coder
 ```
 
+The third way to access JupyterLab is locally with SSH port forward `ssh -L
+8888:localhost:8888 coder.jupyterlab` or use the Coder CLI with `coder tunnel
+jupyterlab 8888 8888` Like the other two ways, make sure JupyterLab is installed
+in the image with `pip3 install jupyterlab` Then open a locally-installed
+browser and go to `https://localhost:8888`
 
 
 
