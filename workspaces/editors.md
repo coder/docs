@@ -351,8 +351,8 @@ over Jupyter Notebook.
 
 There are two ways to install and access JupyterLab in Coder.
 
-For starters, Jupyter Notebook (or JupyterLab via `pip3 install jupyterlab`)
-must be installed in the Dockerfile.
+For starters, JupyterLab via `pip3 install jupyterlab` must be installed in the
+Dockerfile.
 
 The first way renames the `jupyter` binary and copies a new `jupyter` that
 adjusts the arguments passed to the `jupyter` binary to tell Coder to launch
@@ -364,6 +364,7 @@ FROM codercom/enterprise-base:ubuntu
 
 USER root
 
+RUN pip3 install jupyterlab
 RUN pip3 install jupyter notebook
 
 RUN mv /usr/local/bin/jupyter /usr/local/bin/jupyter.py
@@ -400,6 +401,7 @@ FROM codercom/enterprise-base:ubuntu
 
 USER root
 
+RUN pip3 install jupyterlab
 RUN pip3 install jupyter notebook
 
 # configure script to create a dev URL and launch JupyterLab
