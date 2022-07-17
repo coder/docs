@@ -319,13 +319,13 @@ for setting up your custom image and configure script.
 
 Jupyter Notebook is the original web IDE for creating Notebooks used in data
 science, machine learning and analytics projects. By default, any Coder
-workspace where Coder detects the Jupyter project is installed
-(`/usr/local/bin/jupyter` is in the workspace), the Code workspace will show the
-icon to launch Jupyter Notebook.
+workspace with the Jupyter project installed (in `/usr/local/bin/jupyter`)
+will render the icon to launch Jupyter Notebook.
 
 ![Jupyter Notework](../assets/workspaces/jupyter-notebook-icon.png)
 
-Add the Jupyter project to your Dockerfile to build the image
+To use Jupyter Notebook in a Coder workspace, build a Dockerfile with Jupyter
+project installed as shown below:
 
 ```Dockerfile
 # Dockerfile to install Jupyter Notebook
@@ -338,26 +338,19 @@ RUN pip3 install jupyter notebook
 USER coder
 ```
 
-
 ## JupyterLab
 
 JupyterLab is the next-generation web-based IDE for data science and Python
-using documents called Notebooks. 
-
-Some data scientists and developers prefer the newer JupyterLab IDE interface
-over Jupyter Notebook.
+using documents called Notebooks.
 
 ![JupyterLab](../assets/workspaces/jupyterlab-opened.png)
 
-There are three ways to install and access JupyterLab in Coder.
+There are three methods to install and access JupyterLab in Coder. All require
+JupyterLab to be installed in the Dockerfile via `pip3 install jupyterlab`.
 
-For starters, JupyterLab via `pip3 install jupyterlab` must be installed in the
-Dockerfile.
-
-The first way renames the `jupyter` binary and copies a new `jupyter` that
+The first method renames the `jupyter` binary and copies a new `jupyter` that
 adjusts the arguments passed to the `jupyter` binary to tell Coder to launch
-JupyterLab and not Notebook. 
-
+JupyterLab instead of Notebook.
 
 ```Dockerfile
 FROM codercom/enterprise-base:ubuntu
@@ -374,8 +367,8 @@ COPY jupyter /usr/local/bin/jupyter
 USER coder
 ```
 
-This is an example new `jupyter` script with the lab arguments. This file must be located in
-the same folder as the Dockerfile to be copied during `docker build`
+Below is an example `jupyter` script with the lab arguments. This file must
+be located in the same directory as the Dockerfile to be copied during `docker build`
 
 ```sh
 #!/bin/bash
@@ -387,10 +380,10 @@ args=${args/notebook/"lab"}
 jupyter.py ${args}
 ```
 
-The second, alternative way to run JupyterLab is with a dev URL and launching
-JupyterLab with `supervisord` in the `configure` script. The benefit of this
+The second method to run JupyterLab is with a dev URL and launching
+JupyterLab via `supervisord` in the `configure` script. The benefit of this
 approach is it is completely independent of Coder's IDE launching mechanism
-and relies only on a generic dev URL. 
+and relies only on a generic dev URL.
 
 ![JupyterLab as a dev URL](../assets/workspaces/jupyterlab-as-devurl.png)
 
@@ -428,7 +421,7 @@ sudo /usr/bin/supervisord
 ```
 
 The `supervisord.conf` launches JupyterLab. This file must be located in the
-same folder as the Dockerfile to be copied during `docker build` 
+same directory as the Dockerfile to be copied during `docker build`
 
 ```sh
 [supervisord]
@@ -441,13 +434,10 @@ user=coder
 directory=/home/coder
 ```
 
-The third way to access JupyterLab is locally with SSH port forward `ssh -L
-8888:localhost:8888 coder.jupyterlab` or use the Coder CLI with `coder tunnel
-jupyterlab 8888 8888` Like the other two ways, make sure JupyterLab is installed
-in the image with `pip3 install jupyterlab` Then open a locally-installed
-browser and go to `https://localhost:8888`
-
-
+The third method to access JupyterLab is locally using the SSH port forward
+command: `ssh -L 8888:localhost:8888 coder.jupyterlab`. Alternatively, you can
+use the Coder CLI to port forward using: `coder tunnel jupyterlab 8888 8888`.
+Now, open a local  browser and navigate to `https://localhost:8888`.
 
 ## RStudio
 
