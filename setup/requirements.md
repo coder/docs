@@ -13,22 +13,25 @@ additional replicas) allocate at least 2 CPU cores, 4 GB of RAM, and 20 GB of
 storage.
 
 In addition to sizing the control plane node(s), you can configure the `coderd`
-pod's resource requests/limits and number of replicas in the Helm chart. The
+pod's resource requests/limits and number of replicas in the [Helm
+chart](https://github.com/coder/enterprise-helm/blob/main/values.yaml). The
 current defaults for both CPU and memory are the following:
 
 ```yaml
-resources:
-  requests:
-    cpu: "250m"
-    memory: "512Mi"
-  limits:
-    cpu: "500m"
-    memory: "512Mi"
+coderd:
+  resources:
+    requests:
+      cpu: "250m"
+      memory: "512Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
 ```
 
 By default, Coder is a single-replica deployment. For larger evaluations and
 production systems, consider increasing the number of nodes and using at least
-two to three replicas to provide failover and load balancing capabilities.
+two to three coderd replicas to provide failover and load balancing
+capabilities.
 
 If you expect roughly ten or more concurrent users, we recommend increasing
 these figures to improve platform performance (we also recommend regular
