@@ -23,7 +23,7 @@ using Workspace Templates** to **On**.
 > Template policies are currently an **alpha** feature.
 
 If you enable the use of workspace templates, a **template policy** allows you
-to control which fields users can set and which values can they can use when
+to control which fields users can set and which values they can use when
 defining their workspaces.
 
 Users can apply the following policies to fields:
