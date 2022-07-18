@@ -402,6 +402,9 @@
               "path": "./guides/admin/timescale-migration.md"
             },
             {
+              "path": "./guides/admin/awsrds.md"
+            }
+            {
               "path": "./guides/admin/disable-downloads.md"
             },
             {
