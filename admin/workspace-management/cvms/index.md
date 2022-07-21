@@ -74,8 +74,15 @@ container is what provides
 ## Known issues
 
 - Do not add configuration files like bash scripts to `/tmp` in CVMs since they
-  will not be available once the CVM workspace is built. Consider `/coder` which
-  already holds the `'configure` script.
+  will not be available once the CVM workspace is built. Consider creating
+  another directory like `/mycompanyname`
+
+- Coder requires an older version of `containerd.io` because it contains a
+  version of `runc` that works with Sysbox correctly. See our [enterprise-base
+  Dockerfile](https://github.com/coder/enterprise-images/blob/main/images/base/Dockerfile.ubuntu)
+  for an example or install the following in your Dockerfile
+  `containerd.io=1.5.11-1`. In a future release, Coder will update to the latest
+  Sysbox version that supports the latest `runc`.
 
 - NVIDIA GPUs can be added to CVMs on bare metal clusters only. This feature is
   not supported on Google Kubernetes Engine or other cloud providers at this
