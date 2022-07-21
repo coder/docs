@@ -16,7 +16,7 @@ and [personalization](../../workspaces/personalization.md). This means that you
 can use both files to override the default `.gitconfig` created by Coder.
 
 > If there's already a `.gitconfig` file, Coder will not recreate a default
-version when you rebuild a workspace.
+> version when you rebuild a workspace.
 
 We recommend that each Coder user set and modify their personal `.gitconfig`
 file using the [~/personalize script](../../workspaces/personalization.md).
