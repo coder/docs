@@ -257,7 +257,7 @@ flagged as verified.
 The Yubikey configurations required to make GPG work with the local machine are
 all that is necessary to use it as a smart card.
 
-Once you've configured Yibikey, you can follow the steps detailed in this
+Once you've configured Yubikey, you can follow the steps detailed in this
 article to set up GPG forwarding; the only difference is that you should provide
 `pinentry` with your Yubikey PIN, not the private key passphrase.
 
