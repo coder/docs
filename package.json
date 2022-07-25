@@ -42,6 +42,6 @@
     ]
   },
   "dependencies": {
-    "markdownlint": "^0.26.0"
+    "markdownlint": "^0.26.1"
   }
 }
