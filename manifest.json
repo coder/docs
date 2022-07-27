@@ -1,5 +1,5 @@
 {
-  "versions": ["v1.32", "v1.31", "v1.30", "v1.29", "v1.28"],
+  "versions": ["v1.33", "v1.32", "v1.31", "v1.30", "v1.29"],
   "routes": [
     {
       "path": "./index.md",
@@ -563,6 +563,9 @@
     {
       "path": "./changelog/index.md",
       "children": [
+        {
+          "path": "./changelog/1.33.0.md"
+        },
         {
           "path": "./changelog/1.32.0.md",
           "children": [
