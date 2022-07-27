@@ -17,7 +17,7 @@ image and be using for your project includes:
 
 ## Requirements
 
-- A Code deployment (you can request a [trial license](https://coder.com/trial);
+- A Coder deployment (you can request a [trial license](https://coder.com/trial);
   afterward, see our [installation guide](../../setup/installation.md))
 - Docker (you can have this installed locally or on an existing Coder workspace)
 - A Docker Hub account or access to another Docker registry
