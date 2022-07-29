@@ -168,6 +168,9 @@
             },
             {
               "path": "./setup/kubernetes/openshift.md"
+            },
+            {
+              "path": "./setup/kubernetes/rke.md"
             }
           ]
         },
