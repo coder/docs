@@ -65,7 +65,7 @@ rke up --config cluster.yml
 Rancher-generated configuration:
 
 ```console
-mkdir -p $HOME/.kube/ && cp kube_config_cluster.yml $HOME/.test/config
+mkdir -p $HOME/.kube/ && cp kube_config_cluster.yml $HOME/.kube/config
 ```
 
 Once complete, you can now [install Coder](../installation.md) on to your
