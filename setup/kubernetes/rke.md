@@ -8,8 +8,8 @@ Engine (RKE) cluster on which Coder can deploy.
 
 ## Prerequisites
 
-You must have at least one Linux host (node) with the following utilities
-installed:
+See here for the full list of [Rancher requirements](https://rancher.com/docs/rke/latest/en/os/).
+You must have at least one Linux host (node) with the following utilities installed:
 
 ### Binaries
 
