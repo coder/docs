@@ -21,16 +21,14 @@ installed:
 ### Storage
 
 Since Coder requires dynamic storage provisioning, you'll need to
-install a [Rancher-supported storage provisioner](https://rancher.com/docs/rancher/v2.5/en/cluster-admin/volumes-and-storage/provisioning-new-storage/#prerequisites).
+install a [Rancher-supported storage provisioner](https://rancher.com/docs/rancher/v2.6/en/cluster-admin/volumes-and-storage/provisioning-new-storage/#prerequisites).
 We recommend using [Longhorn](https://longhorn.io/), since it is tightly
 integrated with Rancher.
 
 ### Networking
 
-Since the Coder default service is of `type: LoadBalancer`, we recommend
-[installing MetalLB into your Rancher cluster](https://metallb.universe.tf/installation/).
-You must install MetalLB prior to installing Coder for MetalLB to identify the
-Coder service and [expose it externally](https://metallb.universe.tf/usage/).
+To configure pod networking, you'll need to install a Container Network
+Interface (CNI) into the Rancher cluster. Here are [Rancher's recommended CNI providers](https://rancher.com/docs/rancher/v2.6/en/faq/networking/cni-providers/)
 
 ## Setup
 
