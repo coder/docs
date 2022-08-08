@@ -33,9 +33,9 @@ resources from
 
 1. Create the Coder [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/):
 
-```console
-kubectl create namespace coder
-```
+   ```console
+   kubectl create namespace coder
+   ```
 
 1. Add the Coder Helm repo:
 
