@@ -68,9 +68,12 @@ changes.
    Name     ImageTag    CPUCores    MemoryGB    DiskGB    GPUs    Updating    Status
    yourName latest      4           4           30        0       false       ON
    test     latest      1           1           10        0       false       OFF
-   $ mutagen sync create ~/project coder.env-name:~/project
+   $ mutagen sync create ~/project coder.env-name:/target-dir
    Created session sync_dLg9zfqynqVa9aj2V36Fr4OCMz1AHzTKzNGFYYkqfAI
    ```
+
+> Do not include ~/ or /home in your target directory definition. Mutagen will
+> look in the home directory by default.
 
 1. Test your connection by running `mutagen sync monitor`. If you're successful,
    your project files should sync on all future changes.
