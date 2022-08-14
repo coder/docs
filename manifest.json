@@ -560,6 +560,9 @@
         },
         {
           "path": "./guides/workspaces.md"
+        },
+        {
+          "path": "./guides/moving-to-v2.md"
         }
       ]
     },
