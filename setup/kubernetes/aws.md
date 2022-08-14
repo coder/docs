@@ -56,6 +56,10 @@ managedNodeGroups:
       publicKeyPath: ~/.ssh/id_rsa.pub
 ```
 
+```console
+eksctl create cluster -f cluster.yaml
+```
+
 > If your developers require Docker commands like `docker build`, `docker run`, and `docker-compose` as
 > part of their development flow, then [container-based virtual machines
 > (CVMs)](../../workspaces/cvms.md) are required. `instantType` of `Ubuntu2004`
