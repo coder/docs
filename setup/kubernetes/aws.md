@@ -44,7 +44,6 @@ metadata:
 
 managedNodeGroups:
   - name: managed-ng-1
-    spot: true
     instanceType: t2.medium
     amiFamily: Ubuntu2004
     desiredCapacity: 1
