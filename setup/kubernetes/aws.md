@@ -58,6 +58,13 @@ trial deployment. Depending on your needs, you can choose a
 documentation on [resources](../../guides/admin/resources.md) and
 [requirements](../requirements.md) for help estimating your cluster size.
 
+ > If your developers require Docker commands like `docker build`, `docker run`,
+ > and `docker-compose` as part of their development flow, then
+ > [container-based virtual machines (CVMs)](../../workspaces/cvms.md) are
+ > required. In this case, we recommend using the `Ubuntu2004` AMI family, as
+ > the `AmazonLinux2` AMI family does not meet the requirements
+ > for [cached CVMs](../../workspace-management/cvms/management#caching).
+
 Once the file is ready, run the following command to create the cluster:
 
 ```console
