@@ -11,7 +11,7 @@ Coder OSS.
 ![Coder OSS Dashboard](https://raw.githubusercontent.com/coder/coder/main/docs/images/hero-image.png)
 
 > If you are current Coder v1 customer and to try Coder OSS, [we'd like to hear from
-> you](https://calendly.com/bpmct/30min) to help inform our roadmap and
+> you](https://coder.com/contact) to help inform our roadmap and
 > migration strategy.
 
 ## High-level concepts
@@ -21,7 +21,7 @@ Coder OSS introduces a number of new paradigms. We recommend reading the compari
 | | Coder v1 | Coder OSS |
 | - | - | - |
 | **Workspace** | Each user creates and develops on remote workspaces | Same as Coder v1 |
-| **Supported IDEs** | Web IDEs (code-server, Jupyter) + SSH-powered desktop IDEs (e.g. VS Code, Jetbrains) | Same as Coder v1 |
+| **Supported IDEs** | Web IDEs (code-server, Jupyter) + SSH-powered desktop IDEs (e.g. VS Code, JetBrains) | Same as Coder v1 |
 | **Provisioner** | Provisions workspaces on Kubernetes with hardcoded spec (pod + home volume) | Provisions workspaces via [Terraform](https://terraform.io). Supports any resource (e.g. Windows VM, Kubernetes pod) | 
 | **Template** | Optional YAML [configuration syntax](https://coder.com/docs/coder/latest/admin/templates) for workspaces. Managed by Coder admins or git/CI | [Terraform code](https://coder.com/docs/coder-oss/latest/templates) that defines workspace specs. Managed by Coder admins or git/CI | 
 | **Image** | Container image for workspace, contains dev tools and dependencies | Often included in [the template](https://coder.com/docs/coder-oss/latest/templates) |
@@ -94,7 +94,7 @@ codeross list
 Like Coder v1, you can [enable SSO via OpenID Connect](https://coder.com/docs/coder-oss/latest/install/auth#step-2-configure-coder-with-the-openid-connect-credentials) so that any user in your federation can log in. Coder OSS optionally supports [GitHub (Enterprise)](https://coder.com/docs/coder-oss/latest/install/auth#step-1-configure-the-oauth-application-in-github) and [username/password](https://coder.com/docs/coder-oss/latest/users) authentication.
 
 > If you are interested in a bulk user and/or workspace migration utility, [we'd like to
-> hear from you](https://calendly.com/bpmct/30min).
+> hear from you](https://coder.com/contact).
 
 | | Coder v1 | Coder OSS |
 | - | - | - |
@@ -115,7 +115,7 @@ To migrate Coder v1 workspaces, you'll need at least one [template](https://code
 in your Coder OSS deployment, specifically with the image(s) you support in Coder v1.
 
 > If you are interested in a bulk user and/or workspace migration utility, [we'd like to
-> hear from you](https://calendly.com/bpmct/30min).
+> hear from you](https://coder.com/contact).
 
 From there, we recommend manually creating a workspace in Coder OSS and using a utility such as `scp` or `rsync` to copy the home directory from your v1 workspace.
 
@@ -170,7 +170,7 @@ rsync \
 | **Code via web terminal** | ✅ | ✅ | 
 | **Code via code-server (Code Web)** | ✅ Hardcoded version | ✅ Any version [via the template](https://coder.com/docs/coder-oss/latest/ides/web-ides#code-server) | 
 | **Code via JetBrains Projector (web)** | ✅ Hardcoded version | ✅ Any version [via the template](https://coder.com/docs/coder-oss/latest/ides/web-ides#jetbrains-projector) | 
-| **Code via SSH (VS Code Remote, Jetbrains Gateway)** | ✅ With [coder-cli](https://github.com/coder/coder-cli) installed | ✅ With [coder](https://coder.com/docs/coder-oss/latest/install) installed | 
+| **Code via SSH (VS Code Remote, JetBrains Gateway)** | ✅ With [coder-cli](https://github.com/coder/coder-cli) installed | ✅ With [coder](https://coder.com/docs/coder-oss/latest/install) installed | 
 | **Custom workspace applications** | ✅ | ✅ Defined in [templates](https://coder.com/docs/coder-oss/latest/templates#coder-apps) |
 | **Access ports (SSH/tunnel)** | ✅ | ✅ |
 | **Access ports (web UI)** | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#1624)](https://github.com/coder/coder/issues/1624) |
