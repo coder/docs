@@ -8,11 +8,13 @@ is Coder's open core remote development platform first launched in June 2022.
 This document shares best practices for moving your workflows from Coder v1 to
 Coder v2.
 
+![Coder v2 Dashboard](https://raw.githubusercontent.com/coder/coder/main/docs/images/hero-image.png)
+
 > If you are current Coder v1 customer and to try Coder v2, [we'd like to hear from
 > you](https://calendly.com/bpmct/30min) to help inform our roadmap and
 > migration strategy.
 
-## Key concepts
+## High-level concepts
 
 Coder v2 introduces a number of new paradigms. We recommend reading the comparison table before you proceed.
 
@@ -27,21 +29,20 @@ Coder v2 introduces a number of new paradigms. We recommend reading the comparis
 | **Deployment methods** | Kubernetes, Docker  | Kubernetes, Docker, VM, or bare metal |
 | **Architecture** | Control plane + PostgreSQL database + workspaces | Same as Coder v1 |
 
-<small>For an in-depth comparison of features, keep reading. Also see the [Coder v2 documentation](https://coder.com/docs/coder-oss/)</small>
+<small>Keep reading for an in-depth feature comparison. Also see the [Coder v2 documentation](https://coder.com/docs/coder-oss/)</small>
 
-## Migration
+## Migration Strategy
 
 A seperate deployment is necessary to run Coder v2. A direct upgrade via Helm is not possible since Coder v2 introduces new concepts (e.g. templates, provisioners) and other features are still being developed (e.g. audit log, organization support).
 
-Short term, we recommend keeping your Coder v1 deployment and inviting users to a Coder v2 "proof of concept" deployment that leverages new features (e.g. Windows support, dynamic secrets, faster builds). 
+Short term, we recommend keeping your Coder v1 deployment and inviting a pilot group to your Coder v2 deployment to reproduce their workflows and try new features (e.g. Windows support, dynamic secrets, faster builds). 
 
-### Users
+### Infrastructure
 
-Like Coder v1, you can [enable SSO via OpenID Connect](https://coder.com/docs/coder-oss/latest/install/auth#step-2-configure-coder-with-the-openid-connect-credentials) so that any user in your federation can log in.
+For small "proof-of-concept" deployments, you can use Coder's [built-in database and tunnel](https://github.com/coder/coder#getting-started) on a VM to avoid setting up a 
+database, reverse proxy, and TLS.
 
-3Coder v2 optionally supports [GitHub (Enterprise)](https://coder.com/docs/coder-oss/latest/install/auth#step-1-configure-the-oauth-application-in-github) and [username/password](https://coder.com/docs/coder-oss/latest/users) authentication.
-
-User-wide settings (e.g. avatar, shell, autostart times, dotfiles URL) are not currently supported in Coder v2 (#) but this behavior can often be replicated via workspace-level parameters. See the [feature comparion](#feature-comparison) below for more details.
+For production use, we recommend running Coder with an external PostgresSQL database and a reverse proxy for TLS. These configuration options and other deployment-wide settings are set via [environment variables](https://coder.com/docs/coder-oss/latest/install/configure). See the [feature comparison](./#feature-comparison) for in-depth details and installation methods (e.g. Helm). 
 
 ### CLI
 
@@ -57,19 +58,21 @@ coder workspaces list
 coder2 list
 ```
 
-
 ### Users
 
-If you 
+Like Coder v1, you can [enable SSO via OpenID Connect](https://coder.com/docs/coder-oss/latest/install/auth#step-2-configure-coder-with-the-openid-connect-credentials) so that any user in your federation can log in. Coder v2 optionally supports [GitHub (Enterprise)](https://coder.com/docs/coder-oss/latest/install/auth#step-1-configure-the-oauth-application-in-github) and [username/password](https://coder.com/docs/coder-oss/latest/users) authentication.
 
+> If you are interested in a bulk user and/or workspace migration utility, [we'd like to
+> hear from you](https://calendly.com/bpmct/30min).
+
+User-wide settings (e.g. avatar, shell, autostart times, dotfiles URL) are not currently supported in Coder v2 [(#3506)](https://github.com/coder/coder/issues/3506) but this behavior can often be replicated via workspace-level parameters. See the [feature comparion](#feature-comparison) below for more details.
 
 ### Workspaces
 
 To migrate Coder v1 workspaces, you'll need at least one [template](https://coder.com/docs/coder-oss/latest/templates)
 in your Coder v2 deployment, specifically with the image(s) you support in Coder v1.
 
-
-> If you are interested in a bulk workspace migration utility, [we'd like to
+> If you are interested in a bulk user and/or workspace migration utility, [we'd like to
 > hear from you](https://calendly.com/bpmct/30min).
 
 From there, we recommend manually creating a workspace in Coder v2 and using a utility such as `scp` or `rsync` to copy the home directory from your v1 workspace.
@@ -87,9 +90,9 @@ coder2 login https://coder-v2.example.com
 coder2 create <workspace-name>
 
 # Gain SSH access to v2 workspaces
-coder2 config-ssh
+coder2 config-ssh -y
 
-# Use rsync to copy your home directory into the new workspace
+# Copy your home directory into the new Coder v2 workspace
 rsync \
     --recursive \
     --itemize-changes \
@@ -99,5 +102,5 @@ rsync \
     $HOME/. coder.$CODER_WORKSPACE_NAME:/home/coder/.
 ```
 
-### Infrastructure
+## Feature Comparison
 
