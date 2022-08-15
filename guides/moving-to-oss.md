@@ -1,6 +1,6 @@
 ---
-title: "Moving to Coder v2 Beta"
-description: What you need to know about Coder v2 
+title: "Moving to Coder OSS Beta"
+description: What you need to know about Coder OSS 
 ---
 
 Coder v2 (also referred to as [Coder OSS](https://github.com/coder/coder))
@@ -42,7 +42,26 @@ Short term, we recommend keeping your Coder v1 deployment and inviting a pilot g
 For small "proof-of-concept" deployments, you can use Coder's [built-in database and tunnel](https://github.com/coder/coder#getting-started) on a VM to avoid setting up a 
 database, reverse proxy, and TLS.
 
-For production use, we recommend running Coder with an external PostgresSQL database and a reverse proxy for TLS. These configuration options and other deployment-wide settings are set via [environment variables](https://coder.com/docs/coder-oss/latest/install/configure). See the [feature comparison](./#feature-comparison) for in-depth details and installation methods (e.g. Helm). 
+For production use, we recommend running Coder with an external PostgresSQL database and a reverse proxy for TLS.
+
+| | Coder v1 | Coder v2 |
+| - | - | - |
+| Kubernetes | ✅ Helm chart | ⌛ Helm chart [(needs docs)](https://github.com/coder/coder/issues/3224) |
+| Kubernetes (HA/multiple replicas) | ✅ | ⌛ [#3502](https://github.com/coder/coder/issues/3502) |
+| Kubernetes (built-in database) | ✅ | ❌ |
+| Docker deployment | ✅ | ✅ |
+| VM deployment | ❌ | ✅ [system packages](https://coder.com/docs/coder-oss/latest/install#system-packages) and [prebuilt binaries](https://coder.com/docs/coder-oss/latest/install#manual) |
+| Built-in PostgreSQL | ✅ | ✅ |
+| Built-in TLS tunnel | ❌ | ✅ |
+| External PostgreSQL support | ✅ | ✅ ([configuration flag](https://coder.com/docs/coder-oss/latest/install/configure)) |
+| External TLS documentation | ✅ (via [cert-manager](https://coder.com/docs/coder/latest/guides/tls-certificates)) | ⌛ [#3518](https://github.com/coder/coder/issues/3518) |
+| **Multi region/cloud (workspaces)** | ✅ [Workspace providers](https://coder.com/docs/coder/latest/admin/workspace-providers) support additional clusters. | ✅ [Templates](https://coder.com/docs/coder/latest/admin/templates) can provision resources in any clouds, clusters, or region |
+| **Multi region/cloud (provisioning)** | ❌ | ⌛ [#44](https://github.com/coder/coder/issues/44) |
+| **Multi region/cloud (authentication)** | ✅ Authenticates to clusters via secrets stored in the database | ✅ Authenticates via Terraform provider and [provisioner](https://coder.com/docs/coder-oss/latest/architecture) environment | 
+| **Multi region/cloud (dashboard)** | ✅ Multi-region [satellites](https://coder.com/docs/coder/latest/admin/satellites) for faster IDE connections. | ⌛ [#3227](https://github.com/coder/coder/issues/3227) | 
+| **Multi region/cloud (tunnel/SSH)** | ✅ [Direct connections via STUN](https://coder.com/docs/coder/latest/admin/stun) | ✅ Direct connections via STUN ([configuration flag](https://coder.com/docs/coder-oss/latest/install/configure)) | 
+
+<small>See the Coder OSS [installation docs](https://coder.com/docs/coder-oss/latest/install) for more details. Missing something or have feedback? [Let us know](https://coder.com/contact)</small>
 
 ### CLI
 
@@ -64,6 +83,18 @@ Like Coder v1, you can [enable SSO via OpenID Connect](https://coder.com/docs/co
 
 > If you are interested in a bulk user and/or workspace migration utility, [we'd like to
 > hear from you](https://calendly.com/bpmct/30min).
+
+
+| | Coder v1 | Coder v2 |
+| - | - | - |
+| Avatar | ✅ | ❌ | 
+| Dotfiles | ✅ | Per-workspace [(dotfiles docs)](https://coder.com/docs/coder-oss/latest/dotfiles) | 
+| Generated SSH key | ✅ | ✅ | 
+| Default shell | ✅ | Per-workspace [(with parameters)](https://coder.com/docs/coder-oss/latest/templates#parameters) | 
+| Auto-start times | ✅ | Per-workspace | 
+| Git OAuth | ✅ | SSH-key only | 
+
+<small>Missing something or have feedback? [Let us know](https://coder.com/contact)</small>
 
 User-wide settings (e.g. avatar, shell, autostart times, dotfiles URL) are not currently supported in Coder v2 [(#3506)](https://github.com/coder/coder/issues/3506) but this behavior can often be replicated via workspace-level parameters. See the [feature comparion](#feature-comparison) below for more details.
 
@@ -102,5 +133,23 @@ rsync \
     $HOME/. coder.$CODER_WORKSPACE_NAME:/home/coder/.
 ```
 
-## Feature Comparison
+| | Coder v1 | Coder v2 |
+| - | - | - |
+| **Kubernetes workspaces** | ✅ Hardcoded spec | ✅ Any spec via the [template](https://github.com/coder/coder/tree/main/examples/templates/kubernetes-multi-service) | 
+| **Docker workspaces** | ✅ Hardcoded spec | ✅ Any spec via the Terraform [template](https://coder.com/docs/coder-oss/latest/templates) | 
+| **VM workspaces** | [EC2 containers only](https://coder.com/docs/coder/latest/admin/workspace-providers/deployment/ec2#prerequisites) | ✅ Any spec via the Terraform [template](https://coder.com/docs/coder-oss/latest/templates) | 
+| **Linux workspaces** | ✅ | ✅ | 
+| **Windows workspaces** | ✅ | ✅ | 
+| **macOS workspaces** | ❌ | ✅ | 
+| **ARM workspaces** | ❌ | ✅ | 
+| **Additional resources in workspace (volume mounts, API keys, etc)** | ❌ | ✅ Any [Terraform resource](https:///registry.terraform.io) | 
+| **Workspace options** | ✅ Hardcoded options | ✅ Any options via [template parameters](https://coder.com/docs/coder-oss/latest/templates#parameters) |
+| **Edit workspace** | ✅ | ⌛ [#802](https://github.com/coder/coder/issues/802) |
+| **Resource provisoning rates** | ✅ Organization wide | ✅ Template wide [(needs docs)](https://github.com/coder/coder/issues/3519) |
+| **Delete workspace** | ✅ | ✅ |
 
+### Other features
+
+| | Coder v1 | Coder v2 |
+| - | - | - |
+| **Organizations** | ✅ | ❌ |
