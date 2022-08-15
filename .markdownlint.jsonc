@@ -11,7 +11,8 @@
   },
 
   "MD013": {
-      "code_blocks": false
+      "code_blocks": false,
+      "tables": false
   },
 
   // Enforces that the only punctuation that may appear at the end of a heading
