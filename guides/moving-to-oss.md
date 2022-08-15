@@ -3,22 +3,22 @@ title: "Moving to Coder OSS Beta"
 description: What you need to know about Coder OSS 
 ---
 
-Coder v2 (also referred to as [Coder OSS](https://github.com/coder/coder))
+Coder OSS (also referred to as [Coder OSS](https://github.com/coder/coder))
 is Coder's open core remote development platform first launched in June 2022.
 This document shares best practices for moving your workflows from Coder v1 to
-Coder v2.
+Coder OSS.
 
-![Coder v2 Dashboard](https://raw.githubusercontent.com/coder/coder/main/docs/images/hero-image.png)
+![Coder OSS Dashboard](https://raw.githubusercontent.com/coder/coder/main/docs/images/hero-image.png)
 
-> If you are current Coder v1 customer and to try Coder v2, [we'd like to hear from
+> If you are current Coder v1 customer and to try Coder OSS, [we'd like to hear from
 > you](https://calendly.com/bpmct/30min) to help inform our roadmap and
 > migration strategy.
 
 ## High-level concepts
 
-Coder v2 introduces a number of new paradigms. We recommend reading the comparison table before you proceed.
+Coder OSS introduces a number of new paradigms. We recommend reading the comparison table before you proceed.
 
-| | Coder v1 | Coder v2 |
+| | Coder v1 | Coder OSS |
 | - | - | - |
 | **Workspace** | Each user creates and develops on remote workspaces | Same as Coder v1 |
 | **Supported IDEs** | Web IDEs (code-server, Jupyter) + SSH-powered desktop IDEs (e.g. VS Code, Jetbrains) | Same as Coder v1 |
@@ -29,13 +29,25 @@ Coder v2 introduces a number of new paradigms. We recommend reading the comparis
 | **Deployment methods** | Kubernetes, Docker  | Kubernetes, Docker, VM, or bare metal |
 | **Architecture** | Control plane + PostgreSQL database + workspaces | Same as Coder v1 |
 
-<small>Keep reading for an in-depth feature comparison. Also see the [Coder v2 documentation](https://coder.com/docs/coder-oss/)</small>
+<small>Keep reading for an in-depth feature comparison. Also see the [Coder OSS documentation](https://coder.com/docs/coder-oss/)</small>
 
 ## Migration Strategy
 
-A seperate deployment is necessary to run Coder v2. A direct upgrade via Helm is not possible since Coder v2 introduces new concepts (e.g. templates, provisioners) and other features are still being developed (e.g. audit log, organization support).
+A seperate deployment is necessary to run Coder OSS. A direct upgrade via Helm is not possible since Coder OSS introduces new concepts (e.g. templates, provisioners) and other features are still being developed (e.g. audit log, organization support).
 
-Short term, we recommend keeping your Coder v1 deployment and inviting a pilot group to your Coder v2 deployment to reproduce their workflows and try new features (e.g. Windows support, dynamic secrets, faster builds). 
+Short term, we recommend keeping your Coder v1 deployment and inviting a pilot group to your Coder OSS deployment to reproduce their workflows and try new features (e.g. Windows support, dynamic secrets, faster builds). 
+
+### Feature list key
+
+Please comment on any issues in the [coder/coder](https://github.com/coder/coder) repo or [contact us](https://coder.com/contact) if they are important to you.
+
+✅ = Complete
+
+⌛ = WIP/planned [on a roadmap](https://github.com/coder/coder/discussions/categories/roadmap)
+
+🤔 = Still considering
+
+❌ = No current plans for feature
 
 ### Infrastructure
 
@@ -44,7 +56,7 @@ database, reverse proxy, and TLS.
 
 For production use, we recommend running Coder with an external PostgresSQL database and a reverse proxy for TLS.
 
-| | Coder v1 | Coder v2 |
+| | Coder v1 | Coder OSS |
 | - | - | - |
 | Kubernetes | ✅ Helm chart | ⌛ Helm chart [(needs docs)](https://github.com/coder/coder/issues/3224) |
 | Kubernetes (HA/multiple replicas) | ✅ | ⌛ [#3502](https://github.com/coder/coder/issues/3502) |
@@ -61,69 +73,68 @@ For production use, we recommend running Coder with an external PostgresSQL data
 | **Multi region/cloud (dashboard)** | ✅ Multi-region [satellites](https://coder.com/docs/coder/latest/admin/satellites) for faster IDE connections. | ⌛ [#3227](https://github.com/coder/coder/issues/3227) | 
 | **Multi region/cloud (tunnel/SSH)** | ✅ [Direct connections via STUN](https://coder.com/docs/coder/latest/admin/stun) | ✅ Direct connections via STUN ([configuration flag](https://coder.com/docs/coder-oss/latest/install/configure)) | 
 
-<small>See the Coder OSS [installation docs](https://coder.com/docs/coder-oss/latest/install) for more details. Missing something or have feedback? [Let us know](https://coder.com/contact)</small>
+<small>See the Coder OSS [installation docs](https://coder.com/docs/coder-oss/latest/install) for more details. Something missing, or have feedback? [Let us know](https://coder.com/contact)</small>
 
 ### CLI
 
-Coder v2 uses a seperate [command line utility](https://coder.com/docs/coder-oss/latest/install). To use both CLIs on the same machine, you can install the Coder v2 CLI under a different name (e.g. `coder2`):
+Coder OSS uses a seperate [command line utility](https://coder.com/docs/coder-oss/latest/install). To use both CLIs on the same machine, you can install the Coder OSS CLI under a different name (e.g. `codeross`):
 
 ```sh
-curl -sL https://coder.com/install.sh | sh -s -- --method=standalone --binary-name=coder2 > /dev/null
+curl -sL https://coder.com/install.sh | sh -s -- --method=standalone --binary-name=codeross > /dev/null
 
 # Coder v1 CLI
 coder workspaces list
 
-# Coder v2 CLI
-coder2 list
+# Coder OSS CLI
+codeross list
 ```
 
 ### Users
 
-Like Coder v1, you can [enable SSO via OpenID Connect](https://coder.com/docs/coder-oss/latest/install/auth#step-2-configure-coder-with-the-openid-connect-credentials) so that any user in your federation can log in. Coder v2 optionally supports [GitHub (Enterprise)](https://coder.com/docs/coder-oss/latest/install/auth#step-1-configure-the-oauth-application-in-github) and [username/password](https://coder.com/docs/coder-oss/latest/users) authentication.
+Like Coder v1, you can [enable SSO via OpenID Connect](https://coder.com/docs/coder-oss/latest/install/auth#step-2-configure-coder-with-the-openid-connect-credentials) so that any user in your federation can log in. Coder OSS optionally supports [GitHub (Enterprise)](https://coder.com/docs/coder-oss/latest/install/auth#step-1-configure-the-oauth-application-in-github) and [username/password](https://coder.com/docs/coder-oss/latest/users) authentication.
 
 > If you are interested in a bulk user and/or workspace migration utility, [we'd like to
 > hear from you](https://calendly.com/bpmct/30min).
 
-
-| | Coder v1 | Coder v2 |
+| | Coder v1 | Coder OSS |
 | - | - | - |
 | Avatar | ✅ | ❌ | 
 | Dotfiles | ✅ | Per-workspace [(dotfiles docs)](https://coder.com/docs/coder-oss/latest/dotfiles) | 
 | Generated SSH key | ✅ | ✅ | 
 | Default shell | ✅ | Per-workspace [(with parameters)](https://coder.com/docs/coder-oss/latest/templates#parameters) | 
 | Auto-start times | ✅ | Per-workspace | 
-| Git OAuth | ✅ | SSH-key only | 
+| Git OAuth | ✅ | SSH key only | 
 
-<small>Missing something or have feedback? [Let us know](https://coder.com/contact)</small>
+<small>Something missing, or have feedback? [Let us know](https://coder.com/contact)</small>
 
-User-wide settings (e.g. avatar, shell, autostart times, dotfiles URL) are not currently supported in Coder v2 [(#3506)](https://github.com/coder/coder/issues/3506) but this behavior can often be replicated via workspace-level parameters. See the [feature comparion](#feature-comparison) below for more details.
+User-wide settings (e.g. avatar, shell, autostart times, dotfiles URL) are not currently supported in Coder OSS [(#3506)](https://github.com/coder/coder/issues/3506).
 
 ### Workspaces
 
 To migrate Coder v1 workspaces, you'll need at least one [template](https://coder.com/docs/coder-oss/latest/templates)
-in your Coder v2 deployment, specifically with the image(s) you support in Coder v1.
+in your Coder OSS deployment, specifically with the image(s) you support in Coder v1.
 
 > If you are interested in a bulk user and/or workspace migration utility, [we'd like to
 > hear from you](https://calendly.com/bpmct/30min).
 
-From there, we recommend manually creating a workspace in Coder v2 and using a utility such as `scp` or `rsync` to copy the home directory from your v1 workspace.
+From there, we recommend manually creating a workspace in Coder OSS and using a utility such as `scp` or `rsync` to copy the home directory from your v1 workspace.
 
 ```sh
 # Inside a Coder v1 workspace terminal (e.g. coder-v1.example.com)
 
-# Download the Coder v2 CLI (alias "coder2")
-curl -sL https://coder.com/install.sh | sh -s -- --method=standalone --binary-name=coder2 > /dev/null
+# Download the Coder OSS CLI (alias "codeross")
+curl -sL https://coder.com/install.sh | sh -s -- --method=standalone --binary-name=codeross > /dev/null
 
-# Log in to the Coder v2 deployment (e.g. coder-v2.example.com)
-coder2 login https://coder-v2.example.com
+# Log in to the Coder OSS deployment (e.g. coder-v2.example.com)
+codeross login https://coder-v2.example.com
 
 # Create a workspace
-coder2 create <workspace-name>
+codeross create <workspace-name>
 
 # Gain SSH access to v2 workspaces
-coder2 config-ssh -y
+codeross config-ssh -y
 
-# Copy your home directory into the new Coder v2 workspace
+# Copy your home directory into the new Coder OSS workspace
 rsync \
     --recursive \
     --itemize-changes \
@@ -133,7 +144,7 @@ rsync \
     $HOME/. coder.$CODER_WORKSPACE_NAME:/home/coder/.
 ```
 
-| | Coder v1 | Coder v2 |
+| | Coder v1 | Coder OSS |
 | - | - | - |
 | **Kubernetes workspaces** | ✅ Hardcoded spec | ✅ Any spec via the [template](https://github.com/coder/coder/tree/main/examples/templates/kubernetes-multi-service) | 
 | **Docker workspaces** | ✅ Hardcoded spec | ✅ Any spec via the Terraform [template](https://coder.com/docs/coder-oss/latest/templates) | 
@@ -148,8 +159,36 @@ rsync \
 | **Resource provisoning rates** | ✅ Organization wide | ✅ Template wide [(needs docs)](https://github.com/coder/coder/issues/3519) |
 | **Delete workspace** | ✅ | ✅ |
 
-### Other features
+<small>Something missing, or have feedback? [Let us know](https://coder.com/contact)</small>
 
-| | Coder v1 | Coder v2 |
+### Developer experience
+
+| | Coder v1 | Coder OSS |
 | - | - | - |
-| **Organizations** | ✅ | ❌ |
+| **Auto-start workspace (schedule)** | ✅ | ✅ |
+| **Auto-start workspace (SSH or visit app)** | ❌ | 🤔 [#2909](https://github.com/coder/coder/issues/2909) |
+| **Code via web terminal** | ✅ | ✅ | 
+| **Code via code-server (Code Web)** | ✅ Hardcoded version | ✅ Any version [via the template](https://coder.com/docs/coder-oss/latest/ides/web-ides#code-server) | 
+| **Code via JetBrains Projector (web)** | ✅ Hardcoded version | ✅ Any version [via the template](https://coder.com/docs/coder-oss/latest/ides/web-ides#jetbrains-projector) | 
+| **Code via SSH (VS Code Remote, Jetbrains Gateway)** | ✅ With [coder-cli](https://github.com/coder/coder-cli) installed | ✅ With [coder](https://coder.com/docs/coder-oss/latest/install) installed | 
+| **Custom workspace applications** | ✅ | ✅ Defined in [templates](https://coder.com/docs/coder-oss/latest/templates#coder-apps) |
+| **Access ports (SSH/tunnel)** | ✅ | ✅ |
+| **Access ports (web UI)** | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#1624)](https://github.com/coder/coder/issues/1624) |
+| **Share ports (web UI)** | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#3515)](https://github.com/coder/coder/issues/3515) |
+
+<small>Something missing, or have feedback? [Let us know](https://coder.com/contact)</small>
+
+
+### Enterprise/management 
+
+| | Coder v1 | Coder OSS |
+| - | - | - |
+| **Auto-stop workspace** | ✅ Activity-based | ✅ Schedule-based ⌛ Activity-based [(#2995)](https://github.com/coder/coder/issues/2995) |
+| **Audit logging** | ✅ | ⌛ [#3251](https://github.com/coder/coder/issues/3251) |
+| **Organizations** | ✅ | ❌  |
+| **User metrics** | ✅ | Some via Prometheus export [(needs docs)](https://github.com/coder/coder/issues/3520) |
+| **Resource limits/quotas** | ✅ | ⌛ [#2988](https://github.com/coder/coder/issues/2988) |
+| **SDK** | ✅ | ✅ [codersdk](https://github.com/coder/coder/tree/main/codersdk) |
+| **REST API** | ✅ | 🤔 [(needs docs)](https://github.com/coder/coder/issues/3522) |
+
+<small>Something missing, or have feedback? [Let us know](https://coder.com/contact)</small>
