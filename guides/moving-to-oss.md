@@ -206,6 +206,7 @@ rsync \
 | **Access ports (SSH/tunnel)**                        | ✅                                                                    | ✅                                                                                                           |
 | **Access ports (web UI)**                            | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#1624)](https://github.com/coder/coder/issues/1624)                                                     |
 | **Share ports (web UI)**                             | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#3515)](https://github.com/coder/coder/issues/3515)                                                     |
+| **Docker in workspaces (Kubernetes)**                | ✅ [CVMs](https://coder.com/docs/coder/latest/workspaces/cvms)        | ⌛ [(needs docs)](https://github.com/coder/coder/issues/3376)                                                |
 
 <small>Something missing, or have feedback?
 [Let us know](https://coder.com/contact)</small>
