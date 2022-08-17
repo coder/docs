@@ -40,7 +40,7 @@ To resolve this, you will need to copy the `coderd` TLS certificate into
 your Docker image's certificate trust store. Below are examples for doing so,
 for the major distributions:
 
-### Debian and Ubuntu derived distributions
+### Debian and Ubuntu distributions
 
 ```Dockerfile
 RUN apt-get install -y ca-certificates
