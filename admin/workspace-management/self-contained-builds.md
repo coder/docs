@@ -36,11 +36,11 @@ This will result in the error below:
 stream logs from workspace: Failed to create Container-based Virtual Machine
 ```
 
-To resolve this error, you will need to copy the `coderd` TLS certificate into
+To resolve this, you will need to copy the `coderd` TLS certificate into
 your Docker image's certificate trust store. Below are examples for doing so,
 for the major distributions:
 
-### Ubuntu and Debian
+### Debian and Ubuntu derived distributions
 
 ```Dockerfile
 RUN apt-get install -y ca-certificates
@@ -48,7 +48,7 @@ COPY my-cert.pem /usr/local/share/ca-certificates/my-cert.pem
 RUN update-ca-certificates
 ```
 
-### CentOS
+### CentOS, Fedora, RedHat distributions
 
 ```Dockerfile
 RUN yum install ca-certificates && update-ca-trust force-enable
