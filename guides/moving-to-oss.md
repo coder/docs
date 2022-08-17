@@ -3,15 +3,14 @@ title: "Moving to Coder OSS Beta"
 description: What you need to know about Coder OSS
 ---
 
-Coder OSS (also referred to as [Coder OSS](https://github.com/coder/coder)) is
-Coder's open core remote development platform first launched in June 2022. This
-document shares best practices for moving your workflows from Coder v1 to Coder
-OSS.
+[Coder OSS](https://github.com/coder/coder)) is Coder's open core remote
+development platform first launched in June 2022. This document shares best
+practices for moving your workflows from Coder v1 to Coder OSS.
 
 ![Coder OSS
 Dashboard](https://raw.githubusercontent.com/coder/coder/main/docs/images/hero-image.png)
 
-> If you are current Coder v1 customer and to try Coder OSS,
+> If you are current a Coder v1 customer and would like to try Coder OSS,
 > [we'd like to hear from you](https://coder.com/contact) to help inform our
 > roadmap and migration strategy.
 
@@ -47,9 +46,8 @@ features (e.g. Windows support, dynamic secrets, faster builds).
 
 ### Feature list key
 
-Please comment on any issues in the
-[coder/coder](https://github.com/coder/coder) repo or
-[contact us](https://coder.com/contact) if they are important to you.
+Each of the following features have open issues on coder/coder - if they're a
+priority for your team, please chime in on the GitHub issue.
 
 ✅ = Complete
 
@@ -69,6 +67,8 @@ on a VM to avoid setting up a database, reverse proxy, and TLS.
 For production use, we recommend running Coder with an external PostgresSQL
 database and a reverse proxy for TLS.
 
+- [Installing Coder OSS](https://coder.com/docs/coder-oss/latest/install)
+
 |                                         | Coder v1                                                                                                             | Coder OSS                                                                                                                                                             |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Kubernetes                              | ✅ Helm chart                                                                                                        | ⌛ Helm chart [(needs docs)](https://github.com/coder/coder/issues/3224)                                                                                              |
@@ -86,9 +86,7 @@ database and a reverse proxy for TLS.
 | **Multi region/cloud (dashboard)**      | ✅ Multi-region [satellites](https://coder.com/docs/coder/latest/admin/satellites) for faster IDE connections.       | ⌛ [#3227](https://github.com/coder/coder/issues/3227)                                                                                                                |
 | **Multi region/cloud (tunnel/SSH)**     | ✅ [Direct connections via STUN](https://coder.com/docs/coder/latest/admin/stun)                                     | ✅ Direct connections via STUN ([configuration flag](https://coder.com/docs/coder-oss/latest/install/configure))                                                      |
 
-<small>See the Coder OSS
-[installation docs](https://coder.com/docs/coder-oss/latest/install) for more
-details. Something missing, or have feedback?
+<small>Something missing, or have feedback?
 [Let us know](https://coder.com/contact)</small>
 
 ### CLI
@@ -138,20 +136,21 @@ currently supported in Coder OSS
 
 ### Workspaces
 
-To migrate Coder v1 workspaces, you'll need at least one
-[template](https://coder.com/docs/coder-oss/latest/templates) in your Coder OSS
-deployment, specifically with the image(s) you support in Coder v1.
-
 > If you are interested in a bulk user and/or workspace migration utility,
 > [we'd like to hear from you](https://coder.com/contact).
 
-From there, we recommend manually creating a workspace in Coder OSS and using a
-utility such as `scp` or `rsync` to copy the home directory from your v1
-workspace.
+To migrate Coder v1 workspaces, you'll need at least one template in your Coder
+OSS deployment, specifically with the image(s) you support in Coder v1.
+
+- Docs: [Adding templates](https://coder.com/docs/coder-oss/latest/templates)
+
+We recommend manually creating a new workspace in Coder OSS and using a utility
+such as `scp` or `rsync` to copy the home directory from your v1 workspace.
+
+You can run the following commands inside a Coder v1 workspace to create a Coder
+OSS workspace and migrate your files:
 
 ```sh
-# Inside a Coder v1 workspace terminal (e.g. coder-v1.example.com)
-
 # Download the Coder OSS CLI (alias "codeross")
 curl -sL https://coder.com/install.sh | sh -s -- --method=standalone --binary-name=codeross > /dev/null
 
@@ -174,6 +173,9 @@ rsync \
     $HOME/. coder.$CODER_WORKSPACE_NAME:/home/coder/.
 ```
 
+Some workspace-level features are different in Coder OSS. Refer to this
+comparison:
+
 |                                                                      | Coder v1                                                                                                          | Coder OSS                                                                                                            |
 | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | **Kubernetes workspaces**                                            | ✅ Hardcoded spec                                                                                                 | ✅ Any spec via the [template](https://github.com/coder/coder/tree/main/examples/templates/kubernetes-multi-service) |
@@ -194,6 +196,9 @@ rsync \
 
 ### Developer experience
 
+Some developer experience features are different, or still being worked on in
+Coder OSS. Refer to this table:
+
 |                                                      | Coder v1                                                              | Coder OSS                                                                                                    |
 | ---------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | **Auto-start workspace (schedule)**                  | ✅                                                                    | ✅                                                                                                           |
@@ -212,6 +217,9 @@ rsync \
 [Let us know](https://coder.com/contact)</small>
 
 ### Enterprise/management
+
+Some enterprise features are different, or still being worked on in Coder OSS.
+Refer to this table:
 
 |                            | Coder v1          | Coder OSS                                                                                 |
 | -------------------------- | ----------------- | ----------------------------------------------------------------------------------------- |
