@@ -83,15 +83,3 @@ add, and remove, additional `coderd` pods when the existing pods exceed
 sustained CPU and memory thresholds. Consult [Kubernetes HPA
 documention](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
 for the various API version implementations of HPA.
-
-
-
-## Database
-
-Coder requires a [PostgreSQL](https://www.postgresql.org) database to store
-metadata related to your deployment.
-
-There is a `timescale` pod meant for evaluations with a CPU and memory resources
-section of the Helm chart that can be configured. However, we recommend
-deploying an external PostgreSQL database on an appropriate machine type to
-handle loads.
