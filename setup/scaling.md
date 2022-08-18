@@ -3,9 +3,9 @@ title: "Scaling Coder"
 description: Learn about best practices to properly scale Coder to meet developer and workspace needs.
 ---
 
-Coder's control plane `coderd` and workspaces are deployed into a Kubernetes
-namespace. This document outlines vertical and horizontal scaling techiques to
-ensure the `coderd` pods can accomodate user and workspace load on a Coder
+Coder's control plane (`coderd`) and workspaces are deployed in a Kubernetes
+namespace. This document outlines vertical and horizontal scaling techniques to
+ensure the `coderd` pods can accommodate user and workspace load on a Coder
 deployment. 
 
 As a scaling principle, vertical scaling configuration is more important than horizontal scaling in a Coder deployment especially in prevent Out of Memory or OOM Kill events that terminate user and workspace connections and impact developer flow.
