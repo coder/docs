@@ -3,8 +3,8 @@ title: "System Requirements"
 description: Learn about the prerequisite infrastructure requirements.
 ---
 
-Coder is deployed into a Kubernetes cluster namespace, and we recommend the
-following resource allocation minimums to ensure quality performance.
+Coder is deployed into a Kubernetes cluster namespace. We recommend the
+following resource minimums to ensure quality performance.
 
 ## Compute
 
