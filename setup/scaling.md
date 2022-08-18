@@ -28,7 +28,7 @@ workspaces in your Coder deployment increase. Pay particular attention to
 whether users have their workspaces configured to auto-start at the same time
 each day, which produces spike loads on the `coderd` pods. To best prevent Out
 of Memory conditions aka OOM Kills, configure the memory requests and limits to
-be the same megabytes (Mi) values. e.g., 8000Mi
+be the same Gi values. e.g., 8Gi
 
 > Increasing `coderd` CPU and memory resources requires sufficient Kubernetes
 > node machine types to accomodate `coderd`, Coder workspaces and additional
@@ -78,8 +78,8 @@ Coder load balances user and workspace requests across the `coderd` replicas ens
 
 ### Horizontal Pod Autoscaling
 
-Horizontal Pod Autoscaling (HPA) is another Kubernetes techique to automatically
-add, and remove, additional `coderd` pods when the existing pods exceed
-sustained CPU and memory thresholds. Consult [Kubernetes HPA
-documention](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+Horizontal Pod Autoscaling (HPA) is another Kubernetes technique to
+automatically add, and remove, additional `coderd` pods when the existing pods
+exceed sustained CPU and memory thresholds. Consult [Kubernetes HPA
+documentation](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
 for the various API version implementations of HPA.
