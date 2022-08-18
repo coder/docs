@@ -13,7 +13,7 @@ See [Scaling](./scaling.md) for more information.
 For **each** active developer using Coder, allocate additional resources. The
 specific amount required per developer varies, though we recommend starting with
 4 CPUs and 4 GB of RAM, especially when JetBrains IDEs are used and which are
-CPU and memory intensive. Developers are free to request the resource allocation
+resource intensive. Developers are free to request the resource allocation
 that fits their usage:
 
 ![Workspace resource request](../assets/setup/resource-request.png)
