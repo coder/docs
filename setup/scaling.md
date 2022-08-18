@@ -28,7 +28,7 @@ workspaces in your Coder deployment increase. Pay particular attention to
 whether users have their workspaces configured to auto-start at the same time
 each day, which produces spike loads on the `coderd` pods. To best prevent Out
 of Memory conditions aka OOM Kills, configure the memory requests and limits to
-be the same medibytes (Mi) values. e.g., 8000Mi
+be the same megabytes (Mi) values. e.g., 8000Mi
 
 > Increasing `coderd` CPU and memory resources requires sufficient Kubernetes
 > node machine types to accomodate `coderd`, Coder workspaces and additional
