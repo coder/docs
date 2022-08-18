@@ -8,7 +8,7 @@ namespace. This document outlines vertical and horizontal scaling techniques to
 ensure the `coderd` pods can accommodate user and workspace load on a Coder
 deployment. 
 
-As a scaling principle, vertical scaling configuration is more important than horizontal scaling in a Coder deployment especially in prevent Out of Memory or OOM Kill events that terminate user and workspace connections and impact developer flow.
+> Vertical scaling is preferred over horizontal scaling!
 
 ## Vertical Scaling
 
