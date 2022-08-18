@@ -112,10 +112,11 @@ When done, click **Save**.
 
 > 💡 By default, Coder sets the Bitbucket Consumer Key to `Coder`. This can
 > cause issues when attempting to link multiple Coder instances to a single
-> Bitbucket server. In this case, you can override the Bitbucket Consumer Key
-> by setting the environment variable `CODERD_BITBUCKET_CONSUMER_KEY` to a
-> unique value for each Coder deployment. Here's an example of how to set this
-> in your Helm values:
+> Bitbucket server. In this case, you can override the Bitbucket Consumer Key by
+> setting the environment variable `CODERD_BITBUCKET_CONSUMER_KEY` to a unique
+> value for each Coder deployment. Here's an example of how to set this in your
+> Helm values:
+>
 > ```yaml
 > coderd:
 >   [...]
