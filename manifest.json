@@ -182,7 +182,7 @@
         },
         {
           "path": "./setup/scaling.md"
-        },        
+        },
         {
           "path": "./setup/air-gapped/index.md",
           "children": [
@@ -573,6 +573,9 @@
           "path": "./changelog/1.33.0.md",
           "children": [
             {
+              "path": "./changelog/1.33.3.md"
+            },
+            {
               "path": "./changelog/1.33.2.md"
             },
             {
@@ -583,6 +586,9 @@
         {
           "path": "./changelog/1.32.0.md",
           "children": [
+            {
+              "path": "./changelog/1.32.4.md"
+            },
             {
               "path": "./changelog/1.32.3.md"
             },
