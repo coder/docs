@@ -1,12 +1,14 @@
 ---
 title: "Scaling Coder"
-description: Learn about best practices to properly scale Coder to meet developer and workspace needs.
+description:
+  Learn about best practices to properly scale Coder to meet developer and
+  workspace needs.
 ---
 
 Coder's control plane (`coderd`) and workspaces are deployed in a Kubernetes
 namespace. This document outlines vertical and horizontal scaling techniques to
 ensure the `coderd` pods can accommodate user and workspace load on a Coder
-deployment. 
+deployment.
 
 > Vertical scaling is preferred over horizontal scaling!
 
@@ -65,21 +67,25 @@ kubectl get pods -n coder | grep coderd
 
 ## Horizontal Scaling
 
-Another way to distribute user and workspace load on a Coder deployment is to add additional `coderd` pods.
+Another way to distribute user and workspace load on a Coder deployment is to
+add additional `coderd` pods.
 
 ```yaml
 coderd:
   replicas: 3
 ```
 
-Coder load balances user and workspace requests across the `coderd` replicas ensuring sufficient resources and response time.
+Coder load balances user and workspace requests across the `coderd` replicas
+ensuring sufficient resources and response time.
 
-> There is not a linear relationship between nodes and `coderd` replicas so experiment with incrementing replicas as you increase nodes. e.g., 8 nodes and 3 `coderd` replicas.
+> There is not a linear relationship between nodes and `coderd` replicas so
+> experiment with incrementing replicas as you increase nodes. e.g., 8 nodes and
+> 3 `coderd` replicas.
 
 ### Horizontal Pod Autoscaling
 
 Horizontal Pod Autoscaling (HPA) is another Kubernetes technique to
 automatically add, and remove, additional `coderd` pods when the existing pods
-exceed sustained CPU and memory thresholds. Consult [Kubernetes HPA
-documentation](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+exceed sustained CPU and memory thresholds. Consult
+[Kubernetes HPA documentation](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
 for the various API version implementations of HPA.
