@@ -182,7 +182,7 @@
         },
         {
           "path": "./setup/scaling.md"
-        },        
+        },
         {
           "path": "./setup/air-gapped/index.md",
           "children": [
