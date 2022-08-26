@@ -127,7 +127,7 @@ For organizations, we recommend one Docker host per team of 5-10 developers.
 ## Docker Compose
 
 You can also use [Docker Compose](https://docs.docker.com/compose/) to run Coder
-in Docker. Our example below includes a postgres database run as a separate container.
+in Docker.
 
 To do so:
 
@@ -135,6 +135,23 @@ To do so:
    it whatever you'd like)
 1. Within the newly created directory, create a file named `docker-compose.yml`
    that includes the following:
+
+  ```yaml
+  version: "3.5"
+  services:
+    coder:
+      image: docker.io/codercom/coder:1.33.3
+      container_name: coderd
+      restart: unless-stopped
+      ports:
+        - 7080:7080/tcp
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ${HOME}/.coder:/var/run/coder
+  ```
+
+By default, Coder will create a postgres database. If you'd like to use postgres
+in a separate container, use the example below:
 
   ```yaml
   version: "3.5"
