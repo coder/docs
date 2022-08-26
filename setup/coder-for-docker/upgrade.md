@@ -7,7 +7,7 @@ This guide will show you how to upgrade your Coder for Docker deployment.
 
 To upgrade, run the following command to download the resources you need,
 including the latest images (ensure that you're providing the correct version
-number in the command, e.g., `1.32.0`):
+number in the command, e.g., `1.33.3`):
 
 ```console
 docker run --rm -it \
@@ -27,7 +27,7 @@ If you use Docker Compose to run Coder, here's how to upgrade your deployment:
    # ...
    services:
    coder:
-     image: docker.io/codercom/coder:1.32.0
+     image: docker.io/codercom/coder:1.33.3
      # ...
    ```
 
