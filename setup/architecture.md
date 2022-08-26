@@ -27,7 +27,6 @@ There are two ways to deploy Coder:
    by first pulling in all of the required resources, or you can choose to
    whitelist the URLs/IP addresses needed to access Coder resources
 
-> Coder cannot be deployed in an air-gapped workspace when using the free
-> license tier. If you need to deploy an air-gapped Coder instance, please
-> [contact our sales department](mailto:sales@coder.com) to see about purchasing
-> licenses.
+> Coder's trial license does not work in an air-gapped environment. If your
+> organization is interested in evaluating Coder air-gapped, please contact
+> [sales@coder.com](mailto:sales@coder.com) to discuss license requirements.

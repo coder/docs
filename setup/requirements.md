@@ -132,5 +132,6 @@ Deployments using the free trial of Coder:
 - Cannot be deployed in an air-gapped network
 - Must use Coder v1.10.0 or later
 
-The above requirements do not apply to potential customers engaged in our
-evaluation program.
+> Coder's trial license does not work in an air-gapped environment. If your
+> organization is interested in evaluating Coder air-gapped, please contact
+> [sales@coder.com](mailto:sales@coder.com) to discuss license requirements.
