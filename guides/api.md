@@ -58,7 +58,22 @@ curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/metrics/usage/active-users?\
 start=2022-01-01T00:00:00.000000Z&end=2022-03-31T00:00:00.000000Z\
 &interval=1 month" \
---header "Session-Token: $API_KEY" 
+--header "Session-Token: $API_KEY"
+```
+
+### Example: get active SSH users in 1 week incriments in August
+
+> For a full list of categories and filters, see
+> [Usage metrics](../admin/metrics.md).
+
+```sh
+# Currently in the private API
+API_ROUTE=api/private curl --request GET \
+  --url "$ACCESS_URL/$API_ROUTE/metrics/activity?\
+start=2022-08-01T00:00:00.000000Z&end=2022-08-31T00:00:00.000000Z\
+&category=tunnel\
+&interval=1 week" \
+--header "Session-Token: $API_KEY"
 ```
 
 ### Example: get audit logs for a workspace and resource type
@@ -69,7 +84,7 @@ curl --request GET \
 limit=10\
 &resource_id=$WS_ID_PHP\
 &resource_type=environment" \
-  --header "Session-Token: $API_KEY" 
+  --header "Session-Token: $API_KEY"
 ```
 
 ### Example: get audit logs for workspace created in a Unix seconds period
@@ -81,7 +96,7 @@ range_start=1646092800\
 &range_end=1646697600\
 &resource_type=environment\
 &action=create" \
---header "Session-Token: $API_KEY" 
+--header "Session-Token: $API_KEY"
 ```
 
 ### Example: generate a session token for a user
@@ -101,7 +116,7 @@ curl --request POST \
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/workspaces?users=$USER_ID" \
-  --header "Session-Token: $API_KEY" 
+  --header "Session-Token: $API_KEY"
 ```
 
 ### Example: get the workspaces built with a specific image
@@ -109,17 +124,17 @@ curl --request GET \
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/images/$IMAGE_ID" \
-  --header "Session-Token: $API_KEY"  
+  --header "Session-Token: $API_KEY"
 ```
 
 ### Example: get info about an image tag and workspaces built with it
 
-> Change ```latest``` to your tag name
+> Change `latest` to your tag name
 
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/images/$IMAGE_ID/tags/latest" \
-  --header "Session-Token: $API_KEY" 
+  --header "Session-Token: $API_KEY"
 ```
 
 ### Example: get the workspaces in a specific organization
@@ -127,7 +142,7 @@ curl --request GET \
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/workspaces?orgs=$ORG_ID" \
-  --header "Session-Token: $API_KEY" 
+  --header "Session-Token: $API_KEY"
 ```
 
 ### Example: get the images authorized in a specific organization
@@ -135,7 +150,7 @@ curl --request GET \
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/images/?org=$ORG_ID&workspaces=false" \
-  --header "Session-Token: $API_KEY" 
+  --header "Session-Token: $API_KEY"
 ```
 
 ### Example: update image tags from a registry
@@ -156,7 +171,7 @@ curl --request PATCH \
   --data "{
       \"default_memory_gb\": 8,
       \"description\": \"3/26/22 increased RAM from 4 to 8 GB\"
-  }"  
+  }"
 ```
 
 ### Example: import a container image
@@ -175,7 +190,7 @@ curl --request POST \
   \"registry_id\": \"$REG_ID\",
   \"repository\": \"marktmilligan/intellij-ultimate\",
   \"tag\": \"2020.3.4\"
-}"  
+}"
 ```
 
 ### Example: deprecate an image (and its tags)
@@ -213,8 +228,8 @@ curl --request POST \
   \"password\": \"password\",
   \"temporary_password\": true,
   \"username\": \"bbarker\",
-  \"organizations\": [\"default\",\"$ORG_ID\"]    
-}" 
+  \"organizations\": [\"default\",\"$ORG_ID\"]
+}"
 ```
 
 ### Example: Get a user's public SSH key
@@ -222,7 +237,7 @@ curl --request POST \
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/users/$USER_ID/sshkey" \
-  --header "Session-Token: $API_KEY" 
+  --header "Session-Token: $API_KEY"
 ```
 
 ### Example: Create a dev URL
@@ -236,8 +251,8 @@ curl --request POST \
   \"access\": \"PRIVATE\",
   \"name\": \"phpapp4\",
   \"port\": 1029,
-  \"scheme\": \"http\"    
-}" 
+  \"scheme\": \"http\"
+}"
 ```
 
 ### Example: Update a dev URL including access control level
@@ -251,8 +266,8 @@ curl --request PUT \
   \"access\": \"AUTHED\",
   \"name\": \"phpapp4\",
   \"port\": 1029,
-  \"scheme\": \"http\"    
-}" 
+  \"scheme\": \"http\"
+}"
 ```
 
 ### Example: List dev URLs
@@ -260,7 +275,7 @@ curl --request PUT \
 ```sh
 curl --request GET \
   --url "$ACCESS_URL/$API_ROUTE/workspaces/$WS_ID_PHP/devurls" \
-  --header "Session-Token: $API_KEY" 
+  --header "Session-Token: $API_KEY"
 ```
 
 ### Example: Delete a dev URL
@@ -270,6 +285,6 @@ curl --request DELETE \
   --url "$ACCESS_URL/$API_ROUTE/workspaces/$WS_ID_PHP/devurls/$DU_ID_PHP \
   --header "Session-Token: $API_KEY" \
   --header "Content-Type: application/json" \
-  --data "{   
+  --data "{
 }"
 ```
