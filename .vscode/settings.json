@@ -5,8 +5,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.markdownlint": true
   },
-  "rewrap.autoWrap.enabled": true,
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  "rewrap.autoWrap.enabled": true
 }
