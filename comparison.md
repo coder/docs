@@ -77,6 +77,6 @@ support.
 > To get a free trial of Coder, please visit
 > [https://coder.com/trial](https://coder.com/trial).
 
-> Coder's trial license does not work in an air-gapped environment. If your
-> organization is interested in evaluating Coder air-gapped, please contact
-> [sales@coder.com](mailto:sales@coder.com) to discuss license requirements.
+Coder's trial license does not work in an air-gapped environment. If your
+organization is interested in evaluating Coder air-gapped, please contact
+[sales@coder.com](mailto:sales@coder.com) to discuss license requirements.
