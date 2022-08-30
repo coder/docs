@@ -49,19 +49,7 @@ export API_ROUTE="api/v0"
 export IMAGE_ID="622b3f6e-dd6fd08-----ba38c73c9639"
 ```
 
-### Example: get active users in 1 month increments from Jan to March 2022
-
-> Other intervals include 1 week, 1 year, 90 day
-
-```sh
-curl --request GET \
-  --url "$ACCESS_URL/$API_ROUTE/metrics/usage/active-users?\
-start=2022-01-01T00:00:00.000000Z&end=2022-03-31T00:00:00.000000Z\
-&interval=1 month" \
---header "Session-Token: $API_KEY"
-```
-
-### Example: get active SSH users in 1 week incriments in August
+### Example: get active SSH users in 1 week increments in August
 
 > For a full list of categories and filters, see
 > [Usage metrics](../admin/metrics.md).

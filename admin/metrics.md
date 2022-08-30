@@ -27,6 +27,7 @@ You can filter the report by the following properties:
 
   - **App**: Used a custom
     [workspace application](../workspaces/applications.md) in a workspace
+    (measures long-lived requests e.g. WebSockets)
 
   - **Tunnel**: Connected to a workspace over SSH (VS Code Remote, JetBrains
     Gateway) or directly used `coder tunnel`
@@ -88,8 +89,8 @@ much time each user spent with the activity (in milliseconds)
     "users": {
         "6004ad77-a7a69a24d779dd9f44357014": {
             "id": "6004ad77-a7a69a24d779dd9f44357014",
-            "name": "Steven Masley",
-            "username": "stevenmasley",
+            "name": "Joe",
+            "username": "joe2",
             "roles": [
                 "site-member",
                 "site-manager"
@@ -100,8 +101,8 @@ much time each user spent with the activity (in milliseconds)
         },
         "needs-id": {
             "id": "627935e2-838713a0437b43f006b26244",
-            "name": "Kira Pilor",
-            "username": "kira",
+            "name": "Bob",
+            "username": "bob12",
             "roles": [
                 "site-member"
             ],
@@ -111,8 +112,8 @@ much time each user spent with the activity (in milliseconds)
         }
         "5f905429-ba6e4ac480eb4c0ead160b47": {
             "id": "5f905429-ba6e4ac480eb4c0ead160b47",
-            "name": "Mark Milligan",
-            "username": "mark",
+            "name": "Alice",
+            "username": "alice92",
             "roles": [
                 "site-member"
             ],
