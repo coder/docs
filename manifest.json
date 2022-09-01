@@ -569,7 +569,7 @@
     {
       "path": "./changelog/index.md",
       "children": [
-				{
+        {
           "path": "./changelog/1.34.0.md"
         },
         {
