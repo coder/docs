@@ -123,5 +123,5 @@ When done, click **Save**.
 >   extraEnvs:
 >     [...]
 >     - name: CODERD_BITBUCKET_CONSUMER_KEY
->       value: XXX
+>       value: ""
 > ```
