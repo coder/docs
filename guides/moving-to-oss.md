@@ -120,7 +120,7 @@ authentication.
 | Generated SSH key | ✅       | ✅                                                                                              |
 | Default shell     | ✅       | Per-workspace [(with parameters)](https://coder.com/docs/coder-oss/latest/templates#parameters) |
 | Auto-start times  | ✅       | Per-workspace                                                                                   |
-| Git OAuth         | ✅       | SSH key only                                                                                    |
+| Git OAuth         | ✅       | SSH key only [(#3078)](https://github.com/coder/coder/issues/3078)                              |
 
 <small>Something missing, or have feedback?
 [Let us know](https://coder.com/contact)</small>
@@ -186,7 +186,6 @@ comparison:
 | **Workspace options**                                                | Limited options      | ✅ Any options via [template parameters](https://coder.com/docs/coder-oss/latest/templates#parameters)               |
 | **Edit workspace**                                                   | ✅                   | ⌛ [#802](https://github.com/coder/coder/issues/802)                                                                 |
 | **Resource provisoning rates**                                       | ✅ Organization wide | ✅ Template wide [(needs docs)](https://github.com/coder/coder/issues/3519)                                          |
-| **Delete workspace**                                                 | ✅                   | ✅                                                                                                                   |
 | **Manage workspaces through UI and CLI**                             | ✅                   | ✅                                                                                                                   |
 
 <small>Something missing, or have feedback?
