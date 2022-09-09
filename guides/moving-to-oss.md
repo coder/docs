@@ -35,14 +35,14 @@ comparison table before you proceed.
 
 ## Migration Strategy
 
-A seperate deployment is necessary to run Coder OSS. A direct upgrade via Helm
-is not possible since Coder OSS redefines some concepts (e.g. templates,
+A separate control plane is necessary to run Coder OSS. A direct upgrade via
+Helm is not possible since Coder OSS redefines some concepts (e.g. templates,
 provisioners) and other features are still being developed (e.g. audit log,
 organization support).
 
-Short term, we recommend keeping your Coder v1 deployment and inviting a pilot
-group to your Coder OSS deployment to reproduce their workflows and try new
-features (e.g. Windows support, dynamic secrets, faster builds).
+Short term, we recommend keeping your Coder v1 control plane and inviting a
+pilot group to your Coder OSS control plane to reproduce their workflows and try
+new features (e.g. Windows support, dynamic secrets, faster builds).
 
 ### Feature list key
 
@@ -69,27 +69,25 @@ database and a reverse proxy for TLS.
 
 - [Installing Coder OSS](https://coder.com/docs/coder-oss/latest/install)
 
-|                                         | Coder v1                                                                                                             | Coder OSS                                                                                                                                                             |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Kubernetes                              | ✅ Helm chart                                                                                                        | ⌛ Helm chart [(needs docs)](https://github.com/coder/coder/issues/3224)                                                                                              |
-| Kubernetes (HA/multiple replicas)       | ✅                                                                                                                   | ⌛ [#3502](https://github.com/coder/coder/issues/3502)                                                                                                                |
-| Kubernetes (built-in database)          | ✅                                                                                                                   | ❌                                                                                                                                                                    |
-| Docker deployment                       | ✅                                                                                                                   | ✅                                                                                                                                                                    |
-| VM deployment                           | ❌                                                                                                                   | ✅ [system packages](https://coder.com/docs/coder-oss/latest/install#system-packages) and [prebuilt binaries](https://coder.com/docs/coder-oss/latest/install#manual) |
-| Built-in PostgreSQL                     | ✅                                                                                                                   | ✅                                                                                                                                                                    |
-| External PostgreSQL support             | ✅                                                                                                                   | ✅ ([configuration flag](https://coder.com/docs/coder-oss/latest/install/configure))                                                                                  |
-| External TLS documentation              | ✅ (via [cert-manager](https://coder.com/docs/coder/latest/guides/tls-certificates))                                 | ⌛ [#3518](https://github.com/coder/coder/issues/3518)                                                                                                                |
-| **Multi region/cloud (workspaces)**     | ✅ [Workspace providers](https://coder.com/docs/coder/latest/admin/workspace-providers) support additional clusters. | ✅ [Templates](https://coder.com/docs/coder/latest/admin/templates) can provision resources in any clouds, clusters, or region                                        |
-| **Multi region/cloud (authentication)** | ✅ Authenticates to clusters via secrets stored in the database                                                      | ✅ Authenticates via Terraform provider and [provisioner](https://coder.com/docs/coder-oss/latest/architecture) environment                                           |
-| **Multi region/cloud (dashboard)**      | ✅ Multi-region [satellites](https://coder.com/docs/coder/latest/admin/satellites) for faster IDE connections.       | ⌛ [#3227](https://github.com/coder/coder/issues/3227)                                                                                                                |
-| **Multi region/cloud (tunnel/SSH)**     | ✅ [Direct connections via STUN](https://coder.com/docs/coder/latest/admin/stun)                                     | ✅ Direct connections via STUN ([configuration flag](https://coder.com/docs/coder-oss/latest/install/configure))                                                      |
+|                                        | Coder v1                                                                                                             | Coder OSS                                                                                                                      |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Kubernetes                             | ✅ Helm chart                                                                                                        | ⌛ Helm chart [(needs docs)](https://github.com/coder/coder/issues/3224)                                                       |
+| Kubernetes (HA/multiple replicas)      | ✅                                                                                                                   | ⌛ [#3502](https://github.com/coder/coder/issues/3502)                                                                         |
+| Docker control plane                   | ✅                                                                                                                   | ✅                                                                                                                             |
+| VM control plane                       | ❌                                                                                                                   | ✅                                                                                                                             |
+| Built-in PostgreSQL                    | ✅                                                                                                                   | ✅                                                                                                                             |
+| External PostgreSQL support            | ✅                                                                                                                   | ✅                                                                                                                             |
+| External TLS documentation             | ✅                                                                                                                   | ⌛ [#3518](https://github.com/coder/coder/issues/3518)                                                                         |
+| **Multi region/cloud (control plane)** | ✅ Multi-region [satellites](https://coder.com/docs/coder/latest/admin/satellites) for faster IDE connections.       | ⌛ [#3227](https://github.com/coder/coder/issues/3227)                                                                         |
+| **Multi region/cloud (workspaces)**    | ✅ [Workspace providers](https://coder.com/docs/coder/latest/admin/workspace-providers) support additional clusters. | ✅ [Templates](https://coder.com/docs/coder/latest/admin/templates) can provision resources in any clouds, clusters, or region |
+| **Multi region/cloud (tunnel/SSH)**    | ✅                                                                                                                   | ✅                                                                                                                             |
 
 <small>Something missing, or have feedback?
 [Let us know](https://coder.com/contact)</small>
 
 ### CLI
 
-Coder OSS uses a seperate
+Coder OSS uses a separate
 [command line utility](https://coder.com/docs/coder-oss/latest/install). To use
 both CLIs on the same machine, you can install the Coder OSS CLI under a
 different name (e.g. `codeross`):
@@ -118,7 +116,6 @@ authentication.
 
 |                   | Coder v1 | Coder OSS                                                                                       |
 | ----------------- | -------- | ----------------------------------------------------------------------------------------------- |
-| Avatar            | ✅       | ❌                                                                                              |
 | Dotfiles          | ✅       | Per-workspace [(dotfiles docs)](https://coder.com/docs/coder-oss/latest/dotfiles)               |
 | Generated SSH key | ✅       | ✅                                                                                              |
 | Default shell     | ✅       | Per-workspace [(with parameters)](https://coder.com/docs/coder-oss/latest/templates#parameters) |
