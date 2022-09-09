@@ -3,7 +3,7 @@ title: "Moving to Coder OSS Beta"
 description: What you need to know about Coder OSS
 ---
 
-[Coder OSS](https://github.com/coder/coder)) is Coder's open core remote
+[Coder OSS](https://github.com/coder/coder) is Coder's open core remote
 development platform first launched in June 2022. This document shares best
 practices for moving your workflows from Coder v1 to Coder OSS.
 
@@ -36,7 +36,7 @@ comparison table before you proceed.
 ## Migration Strategy
 
 A seperate deployment is necessary to run Coder OSS. A direct upgrade via Helm
-is not possible since Coder OSS introduces new concepts (e.g. templates,
+is not possible since Coder OSS redefines some concepts (e.g. templates,
 provisioners) and other features are still being developed (e.g. audit log,
 organization support).
 
@@ -77,7 +77,6 @@ database and a reverse proxy for TLS.
 | Docker deployment                       | ✅                                                                                                                   | ✅                                                                                                                                                                    |
 | VM deployment                           | ❌                                                                                                                   | ✅ [system packages](https://coder.com/docs/coder-oss/latest/install#system-packages) and [prebuilt binaries](https://coder.com/docs/coder-oss/latest/install#manual) |
 | Built-in PostgreSQL                     | ✅                                                                                                                   | ✅                                                                                                                                                                    |
-| Built-in TLS tunnel                     | ❌                                                                                                                   | ✅                                                                                                                                                                    |
 | External PostgreSQL support             | ✅                                                                                                                   | ✅ ([configuration flag](https://coder.com/docs/coder-oss/latest/install/configure))                                                                                  |
 | External TLS documentation              | ✅ (via [cert-manager](https://coder.com/docs/coder/latest/guides/tls-certificates))                                 | ⌛ [#3518](https://github.com/coder/coder/issues/3518)                                                                                                                |
 | **Multi region/cloud (workspaces)**     | ✅ [Workspace providers](https://coder.com/docs/coder/latest/admin/workspace-providers) support additional clusters. | ✅ [Templates](https://coder.com/docs/coder/latest/admin/templates) can provision resources in any clouds, clusters, or region                                        |
