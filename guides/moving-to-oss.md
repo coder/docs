@@ -141,8 +141,11 @@ OSS deployment, specifically with the image(s) you support in Coder v1.
 We recommend manually creating a new workspace in Coder OSS and using a utility
 such as `scp` or `rsync` to copy the home directory from your v1 workspace.
 
-You can run the following commands inside a Coder v1 workspace to create a Coder
-OSS workspace and migrate your files:
+Inside a v1 workspace, run the following commands to:
+
+1. Download the Coder OSS CLI
+1. Create a Coder OSS workspace
+1. rsync your files to the new workspace
 
 ```sh
 # Download the Coder OSS CLI (alias "codeross")
@@ -170,20 +173,20 @@ rsync \
 Some workspace-level features are different in Coder OSS. Refer to this
 comparison:
 
-|                                                                      | Coder v1                                                                                                          | Coder OSS                                                                                                            |
-| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Kubernetes workspaces**                                            | ✅ Hardcoded spec                                                                                                 | ✅ Any spec via the [template](https://github.com/coder/coder/tree/main/examples/templates/kubernetes-multi-service) |
-| **Docker workspaces**                                                | ✅ Hardcoded spec                                                                                                 | ✅ Any spec via the Terraform [template](https://coder.com/docs/coder-oss/latest/templates)                          |
-| **VM workspaces**                                                    | [EC2 containers only](https://coder.com/docs/coder/latest/admin/workspace-providers/deployment/ec2#prerequisites) | ✅ Any spec via the Terraform [template](https://coder.com/docs/coder-oss/latest/templates)                          |
-| **Linux workspaces**                                                 | ✅                                                                                                                | ✅                                                                                                                   |
-| **Windows workspaces**                                               | ✅                                                                                                                | ✅                                                                                                                   |
-| **macOS workspaces**                                                 | ❌                                                                                                                | ✅                                                                                                                   |
-| **ARM workspaces**                                                   | ❌                                                                                                                | ✅                                                                                                                   |
-| **Additional resources in workspace (volume mounts, API keys, etc)** | ❌                                                                                                                | ✅ Any [Terraform resource](https:///registry.terraform.io)                                                          |
-| **Workspace options**                                                | ✅ Hardcoded options                                                                                              | ✅ Any options via [template parameters](https://coder.com/docs/coder-oss/latest/templates#parameters)               |
-| **Edit workspace**                                                   | ✅                                                                                                                | ⌛ [#802](https://github.com/coder/coder/issues/802)                                                                 |
-| **Resource provisoning rates**                                       | ✅ Organization wide                                                                                              | ✅ Template wide [(needs docs)](https://github.com/coder/coder/issues/3519)                                          |
-| **Delete workspace**                                                 | ✅                                                                                                                | ✅                                                                                                                   |
+|                                                                      | Coder v1             | Coder OSS                                                                                                            |
+| -------------------------------------------------------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Kubernetes workspaces**                                            | ✅ Hardcoded spec    | ✅ Any spec via the [template](https://github.com/coder/coder/tree/main/examples/templates/kubernetes-multi-service) |
+| **Docker workspaces**                                                | ✅ Hardcoded spec    | ✅ Any spec via the Terraform [template](https://coder.com/docs/coder-oss/latest/templates)                          |
+| **VM workspaces**                                                    | ❌                   | ✅ Any spec via the Terraform [template](https://coder.com/docs/coder-oss/latest/templates)                          |
+| **Linux workspaces**                                                 | ✅                   | ✅                                                                                                                   |
+| **Windows workspaces**                                               | ✅                   | ✅                                                                                                                   |
+| **macOS workspaces**                                                 | ❌                   | ✅                                                                                                                   |
+| **ARM workspaces**                                                   | ❌                   | ✅                                                                                                                   |
+| **Additional resources in workspace (volume mounts, API keys, etc)** | ❌                   | ✅ Any [Terraform resource](https:///registry.terraform.io)                                                          |
+| **Workspace options**                                                | ✅ Hardcoded options | ✅ Any options via [template parameters](https://coder.com/docs/coder-oss/latest/templates#parameters)               |
+| **Edit workspace**                                                   | ✅                   | ⌛ [#802](https://github.com/coder/coder/issues/802)                                                                 |
+| **Resource provisoning rates**                                       | ✅ Organization wide | ✅ Template wide [(needs docs)](https://github.com/coder/coder/issues/3519)                                          |
+| **Delete workspace**                                                 | ✅                   | ✅                                                                                                                   |
 
 <small>Something missing, or have feedback?
 [Let us know](https://coder.com/contact)</small>
