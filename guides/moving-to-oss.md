@@ -1,5 +1,5 @@
 ---
-title: "Moving to Coder OSS Beta"
+title: "Moving to Coder OSS"
 description: What you need to know about Coder OSS
 ---
 
