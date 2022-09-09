@@ -3,7 +3,7 @@ title: "Moving to Coder OSS Beta"
 description: What you need to know about Coder OSS
 ---
 
-[Coder OSS](https://github.com/coder/coder)) is Coder's open core remote
+[Coder OSS](https://github.com/coder/coder) is Coder's open core remote
 development platform first launched in June 2022. This document shares best
 practices for moving your workflows from Coder v1 to Coder OSS.
 
