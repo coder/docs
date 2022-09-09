@@ -364,6 +364,8 @@ RUN mv /usr/local/bin/jupyter /usr/local/bin/jupyter.py
 
 COPY jupyter /usr/local/bin/jupyter
 
+RUN chmod +x jupyter
+
 USER coder
 ```
 
