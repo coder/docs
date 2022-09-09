@@ -125,9 +125,8 @@ authentication.
 <small>Something missing, or have feedback?
 [Let us know](https://coder.com/contact)</small>
 
-User-wide settings (e.g. avatar, shell, autostart times, dotfiles URL) are not
-currently supported in Coder OSS
-[(#3506)](https://github.com/coder/coder/issues/3506).
+User-wide settings (e.g. shell, autostart times, dotfiles URL) are not currently
+supported in Coder OSS [(#3506)](https://github.com/coder/coder/issues/3506).
 
 ### Workspaces
 
