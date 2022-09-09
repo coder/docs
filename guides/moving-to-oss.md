@@ -183,10 +183,11 @@ comparison:
 | **macOS workspaces**                                                 | ❌                   | ✅                                                                                                                   |
 | **ARM workspaces**                                                   | ❌                   | ✅                                                                                                                   |
 | **Additional resources in workspace (volume mounts, API keys, etc)** | ❌                   | ✅ Any [Terraform resource](https:///registry.terraform.io)                                                          |
-| **Workspace options**                                                | ✅ Hardcoded options | ✅ Any options via [template parameters](https://coder.com/docs/coder-oss/latest/templates#parameters)               |
+| **Workspace options**                                                | Limited options      | ✅ Any options via [template parameters](https://coder.com/docs/coder-oss/latest/templates#parameters)               |
 | **Edit workspace**                                                   | ✅                   | ⌛ [#802](https://github.com/coder/coder/issues/802)                                                                 |
 | **Resource provisoning rates**                                       | ✅ Organization wide | ✅ Template wide [(needs docs)](https://github.com/coder/coder/issues/3519)                                          |
 | **Delete workspace**                                                 | ✅                   | ✅                                                                                                                   |
+| **Manage workspaces through UI and CLI**                             | ✅                   | ✅                                                                                                                   |
 
 <small>Something missing, or have feedback?
 [Let us know](https://coder.com/contact)</small>
@@ -196,19 +197,21 @@ comparison:
 Some developer experience features are different, or still being worked on in
 Coder OSS. Refer to this table:
 
-|                                                      | Coder v1                                                              | Coder OSS                                                                                                    |
-| ---------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **Auto-start workspace (schedule)**                  | ✅                                                                    | ✅                                                                                                           |
-| **Auto-start workspace (SSH or visit app)**          | ❌                                                                    | 🤔 [#2909](https://github.com/coder/coder/issues/2909)                                                       |
-| **Code via web terminal**                            | ✅                                                                    | ✅                                                                                                           |
-| **Code via code-server (Code Web)**                  | ✅ Hardcoded version                                                  | ✅ Any version [via the template](https://coder.com/docs/coder-oss/latest/ides/web-ides#code-server)         |
-| **Code via JetBrains Projector (web)**               | ✅ Hardcoded version                                                  | ✅ Any version [via the template](https://coder.com/docs/coder-oss/latest/ides/web-ides#jetbrains-projector) |
-| **Code via SSH (VS Code Remote, JetBrains Gateway)** | ✅ With [coder-cli](https://github.com/coder/coder-cli) installed     | ✅ With [coder](https://coder.com/docs/coder-oss/latest/install) installed                                   |
-| **Custom workspace applications**                    | ✅                                                                    | ✅ Defined in [templates](https://coder.com/docs/coder-oss/latest/templates#coder-apps)                      |
-| **Access ports (SSH/tunnel)**                        | ✅                                                                    | ✅                                                                                                           |
-| **Access ports (web UI)**                            | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#1624)](https://github.com/coder/coder/issues/1624)                                                     |
-| **Share ports (web UI)**                             | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#3515)](https://github.com/coder/coder/issues/3515)                                                     |
-| **Docker in workspaces (Kubernetes)**                | ✅ [CVMs](https://coder.com/docs/coder/latest/workspaces/cvms)        | ⌛ [(needs docs)](https://github.com/coder/coder/issues/3376)                                                |
+|                                                                     | Coder v1                                                              | Coder OSS                                                                                                    |
+| ------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Auto-start workspace (schedule)**                                 | ✅                                                                    | ✅                                                                                                           |
+| **Auto-start workspace (SSH or visit app)**                         | ❌                                                                    | 🤔 [#2909](https://github.com/coder/coder/issues/2909)                                                       |
+| **Code via web terminal**                                           | ✅                                                                    | ✅                                                                                                           |
+| **Code via code-server (Code Web)**                                 | ✅ Hardcoded version                                                  | ✅ Any version [via the template](https://coder.com/docs/coder-oss/latest/ides/web-ides#code-server)         |
+| **Code via JetBrains Projector (web)**                              | ✅ Hardcoded version                                                  | ✅ Any version [via the template](https://coder.com/docs/coder-oss/latest/ides/web-ides#jetbrains-projector) |
+| **Code with local IDE via SSH (VS Code Remote, JetBrains Gateway)** | ✅ With [coder-cli](https://github.com/coder/coder-cli) installed     | ✅ With [coder](https://coder.com/docs/coder-oss/latest/install) installed                                   |
+| **Custom workspace applications**                                   | ✅                                                                    | ✅ Defined in [templates](https://coder.com/docs/coder-oss/latest/templates#coder-apps)                      |
+| **Access ports (SSH/tunnel)**                                       | ✅                                                                    | ✅                                                                                                           |
+| **Access ports (web UI)**                                           | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#1624)](https://github.com/coder/coder/issues/1624)                                                     |
+| **Share ports (web UI)**                                            | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#3515)](https://github.com/coder/coder/issues/3515)                                                     |
+| **Docker in workspaces (Kubernetes)**                               | ✅ [CVMs](https://coder.com/docs/coder/latest/workspaces/cvms)        | ⌛ [(needs docs)](https://github.com/coder/coder/issues/3376)                                                |
+| **Manage workspaces through UI and CLI**                            | ✅                                                                    | ✅                                                                                                           |
+| **Open in Coder button**                                            | ✅                                                                    | 🤔 [(needs docs)](https://github.com/coder/coder/issues/3981)                                                |
 
 <small>Something missing, or have feedback?
 [Let us know](https://coder.com/contact)</small>
@@ -218,15 +221,15 @@ Coder OSS. Refer to this table:
 Some enterprise features are different, or still being worked on in Coder OSS.
 Refer to this table:
 
-|                            | Coder v1          | Coder OSS                                                                                 |
-| -------------------------- | ----------------- | ----------------------------------------------------------------------------------------- |
-| **Auto-stop workspace**    | ✅ Activity-based | ✅ Schedule-based ⌛ Activity-based [(#2995)](https://github.com/coder/coder/issues/2995) |
-| **Audit logging**          | ✅                | ⌛ [#3251](https://github.com/coder/coder/issues/3251)                                    |
-| **Organizations**          | ✅                | ❌                                                                                        |
-| **User metrics**           | ✅                | Some via Prometheus export [(needs docs)](https://github.com/coder/coder/issues/3520)     |
-| **Resource limits/quotas** | ✅                | ⌛ [#2988](https://github.com/coder/coder/issues/2988)                                    |
-| **SDK**                    | ✅                | ✅ [codersdk](https://github.com/coder/coder/tree/main/codersdk)                          |
-| **REST API**               | ✅                | 🤔 [(needs docs)](https://github.com/coder/coder/issues/3522)                             |
+|                         | Coder v1          | Coder OSS                                                                                   |
+| ----------------------- | ----------------- | ------------------------------------------------------------------------------------------- |
+| **Auto-stop workspace** | ✅ Activity-based | ✅ Schedule-based & ⌛ Activity-based [(#2995)](https://github.com/coder/coder/issues/2995) |
+| **Audit logging**       | ✅                | ⌛ [#3251](https://github.com/coder/coder/issues/3251)                                      |
+| **Organizations**       | ✅                | ❌ [#3039](https://github.com/coder/coder/issues/3039)                                      |
+| **User metrics**        | ✅                | Template-wide metrics [(needs docs)](https://github.com/coder/coder/issues/3980)            |
+| **Resource quotas**     | ✅                | ⌛ [#2988](https://github.com/coder/coder/issues/2988)                                      |
+| **SDK**                 | ❌                | ✅ [codersdk](https://github.com/coder/coder/tree/main/codersdk)                            |
+| **REST API**            | ✅                | 🤔 [(needs docs)](https://github.com/coder/coder/issues/3522)                               |
 
 <small>Something missing, or have feedback?
 [Let us know](https://coder.com/contact)</small>
