@@ -208,7 +208,7 @@ Coder OSS. Refer to this table:
 | **Access ports (SSH/tunnel)**                                       | ✅                                                                    | ✅                                                                                                           |
 | **Access ports (web UI)**                                           | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#1624)](https://github.com/coder/coder/issues/1624)                                                     |
 | **Share ports (web UI)**                                            | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#3515)](https://github.com/coder/coder/issues/3515)                                                     |
-| **Docker in workspaces (Kubernetes)**                               | ✅ [CVMs](https://coder.com/docs/coder/latest/workspaces/cvms)        | ⌛ [(needs docs)](https://github.com/coder/coder/issues/3376)                                                |
+| **Docker in workspaces (Kubernetes)**                               | ✅ [CVMs](https://coder.com/docs/coder/latest/workspaces/cvms)        | ✅                                                                                                           |
 | **Manage workspaces through UI and CLI**                            | ✅                                                                    | ✅                                                                                                           |
 | **Open in Coder button**                                            | ✅                                                                    | 🤔 [(needs docs)](https://github.com/coder/coder/issues/3981)                                                |
 
@@ -223,7 +223,7 @@ Refer to this table:
 |                         | Coder v1          | Coder OSS                                                                                   |
 | ----------------------- | ----------------- | ------------------------------------------------------------------------------------------- |
 | **Auto-stop workspace** | ✅ Activity-based | ✅ Schedule-based & ⌛ Activity-based [(#2995)](https://github.com/coder/coder/issues/2995) |
-| **Audit logging**       | ✅                | ⌛ [#3251](https://github.com/coder/coder/issues/3251)                                      |
+| **Audit logging**       | ✅                | ✅                                                                                          |
 | **Organizations**       | ✅                | ❌ [#3039](https://github.com/coder/coder/issues/3039)                                      |
 | **User metrics**        | ✅                | Template-wide metrics [(needs docs)](https://github.com/coder/coder/issues/3980)            |
 | **Resource quotas**     | ✅                | ⌛ [#2988](https://github.com/coder/coder/issues/2988)                                      |
