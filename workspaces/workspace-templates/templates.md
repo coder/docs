@@ -275,6 +275,9 @@ seccomp-profile-type:
   value: Unconfined
 ```
 
+`seccomp-profile-type` is disabled by default and must be enabled by a site
+admin.
+
 #### workspace.specs.kubernetes.seccomp-profile-localhost-profile.value
 
 Applies a custom [seccomp profile](https://kubernetes.io/docs/tutorials/security/seccomp/)
@@ -293,6 +296,9 @@ seccomp-profile-type:
 seccomp-profile-localhost-profile:
   value: profiles/my-custom-profile.json
 ```
+
+`seccomp-profile-localhost-profile` is disabled by default and must be enabled
+by a site admin.
 
 #### workspace.configure
 
