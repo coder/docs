@@ -1,5 +1,5 @@
 {
-  "versions": ["v1.34", "v1.33", "v1.32", "v1.31", "v1.30"],
+  "versions": ["v1.35", "v1.34", "v1.33", "v1.32", "v1.31", "v1.30"],
   "routes": [
     {
       "path": "./index.md",
@@ -584,6 +584,9 @@
       "path": "./changelog/index.md",
       "icon_path": "./assets/images/icons/paper.svg",
       "children": [
+        {
+          "path": "./changelog/1.35.0.md"
+        },
         {
           "path": "./changelog/1.34.0.md"
         },
