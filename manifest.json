@@ -3,6 +3,7 @@
   "routes": [
     {
       "path": "./index.md",
+      "icon_path": "./assets/images/icons/home.svg",
       "children": [
         {
           "path": "about.md"
@@ -17,6 +18,7 @@
     },
     {
       "path": "getting-started/index.md",
+      "icon_path": "./assets/images/icons/get-started.svg",
       "children": [
         {
           "path": "getting-started/docker.md"
@@ -40,6 +42,7 @@
     },
     {
       "path": "./workspaces/index.md",
+      "icon_path": "./assets/images/icons/workspaces.svg",
       "children": [
         {
           "path": "./workspaces/create.md"
@@ -98,6 +101,7 @@
     },
     {
       "path": "./images/index.md",
+      "icon_path": "./assets/images/icons/images.svg",
       "children": [
         {
           "path": "./images/configure.md"
@@ -127,6 +131,7 @@
     },
     {
       "path": "./cli/index.md",
+      "icon_path": "./assets/images/icons/terminal.svg",
       "children": [
         {
           "path": "./cli/installation.md"
@@ -144,6 +149,7 @@
     },
     {
       "path": "./setup/index.md",
+      "icon_path": "./assets/images/icons/wrench.svg",
       "children": [
         {
           "path": "./setup/architecture.md"
@@ -220,6 +226,7 @@
     },
     {
       "path": "./admin/index.md",
+      "icon_path": "./assets/images/icons/gear.svg",
       "children": [
         {
           "path": "./admin/access-control/index.md",
@@ -399,6 +406,7 @@
     },
     {
       "path": "./guides/index.md",
+      "icon_path": "./assets/images/icons/guides.svg",
       "navigable": true,
       "children": [
         {
@@ -574,6 +582,7 @@
     },
     {
       "path": "./changelog/index.md",
+      "icon_path": "./assets/images/icons/paper.svg",
       "children": [
         {
           "path": "./changelog/1.34.0.md"
