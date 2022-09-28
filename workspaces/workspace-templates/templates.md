@@ -262,6 +262,38 @@ node-selector:
 
 `node-selector` is disabled by default and must be enabled by a site admin.
 
+#### workspace.specs.kubernetes.seccomp-profile-type.value
+
+Applies a [seccomp profile](https://kubernetes.io/docs/tutorials/security/seccomp/)
+to the workspace pod. The value is a string, corresponding to the `type` subfield
+of the PodSecurityContext `seccompProfile` attribute.
+
+For example, the following snippet would explicitly disable seccomp protection:
+
+```yaml
+seccomp-profile-type:
+  value: Unconfined
+```
+
+#### workspace.specs.kubernetes.seccomp-profile-localhost-profile.value
+
+Applies a custom [seccomp profile](https://kubernetes.io/docs/tutorials/security/seccomp/)
+to the workspace pod. The value is a string, corresponding to the `localhostProfile`
+subfield of the PodSecurityContext `seccompProfile` attribute.
+
+Per the Kubernetes documentation, this attribute is only valid if used in combination
+with the `Localhost` seccomp profile type. Its value must correspond to the path of a
+valid JSON profile that is already configured on the Kubernetes worker nodes.
+
+The following snippet demonstrates setting a custom profile:
+
+```yaml
+seccomp-profile-type:
+  value: Localhost
+seccomp-profile-localhost-profile:
+  value: profiles/my-custom-profile.json
+```
+
 #### workspace.configure
 
 This section lists the commands that run within the workspace after Coder builds
