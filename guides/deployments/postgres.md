@@ -44,6 +44,14 @@ or cluster.
    the console, to avoid inadvertently storing credentials in shell history
    files.
 
+   > Normally, we set the PostgreSQL password as an environment variable in the
+   > `coderd` deployment with a reference to the Kubernetes secret. If this is
+   > not desirable, you can instead mount the secret as a file which Coder will
+   > read at startup. To do this, set the Helm value `postgres.noPasswordEnv` to
+   > `true`. This will mount the secret under
+   > `/run/secrets/<.Values.postgres.passwordSecret>/password` and set the
+   > environment variable `DB_PASSWORD_PATH` for `coderd` to that value.
+
 1. Get the port number for your PostgreSQL instance:
 
    ```sql
