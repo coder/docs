@@ -50,7 +50,7 @@ or cluster.
    > read at startup. To do this, set the Helm value `postgres.noPasswordEnv` to
    > `true`. This will mount the secret under
    > `/run/secrets/<.Values.postgres.passwordSecret>/password` and set the
-   > environment variable `DB_PASSWORD_PATH` for `coderd`. to that value.
+   > environment variable `DB_PASSWORD_PATH` for `coderd` to that value.
 
 1. Get the port number for your PostgreSQL instance:
 
