@@ -51,7 +51,7 @@ to use for database authentication.
             "Action": "sts:AssumeRoleWithWebIdentity",
             "Condition": {
                 "StringEquals": {
-                    "arn:aws:iam::111122223333:oidc-provider/oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE:sub":"system:serviceaccount:<cluster>:<namespace>"
+                    "oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE:sub":"system:serviceaccount:<cluster>:<namespace>"
                 }
             }
         }
@@ -65,6 +65,7 @@ to use for database authentication.
 ```sql
 CREATE USER dbuser WITH LOGIN; 
 GRANT rds_iam TO dbuser;
+GRANT CREATE ON DATABASE database TO dbuser;
 ```
 
 1. Set the following values in your Helm chart and re-deploy Coder.
