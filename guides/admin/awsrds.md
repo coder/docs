@@ -65,7 +65,7 @@ to use for database authentication.
 ```sql
 CREATE USER dbuser WITH LOGIN; 
 GRANT rds_iam TO dbuser;
-GRANT CREATE ON DATABASE database TO dbuser;
+GRANT CREATE ON DATABASE coder TO dbuser;
 ```
 
 1. Set the following values in your Helm chart and re-deploy Coder.
