@@ -52,8 +52,12 @@ Coder for Docker works with the following platforms:
       -p 7080:7080 \
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v ~/.coder:/var/run/coder \
-      codercom/coder:1.32.0
+      codercom/coder:1.35.0
    ```
+
+   > Please check the [changelog for the latest Coder v1
+   > release](https://coder.com/docs/coder/latest/changelog) to add to the
+   > `docker run` command.
 
    When this process is complete, Coder will print the URL you can use to access
    your deployment, as well as the admin credentials you'll need to log in:
