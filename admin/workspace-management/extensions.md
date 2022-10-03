@@ -26,10 +26,11 @@ then scrolling down to **Extensions**:
 
 If you run Coder in an air-gapped workspace, the public VS Code marketplace is
 inaccessible to end-users. Using the **Custom** configuration option, you can
-point Coder to an air-gapped instance of
-[OpenVSX](https://github.com/eclipse/openvsx) to serve assets to users.
+point Coder to an air-gapped instance of a marketplace.
 
-View the [OpenVSX deployment wiki] for more information.
+Coder offers an open-source project
+[code-marketplace](https://github.com/coder/code-marketplace) to serve
+air-gapped VS Code extensions.
 
-[openvsx deployment wiki]:
-  https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX
+[OpenVSX](https://github.com/eclipse/openvsx) is another open-source project to
+serve VS Code extensions.
