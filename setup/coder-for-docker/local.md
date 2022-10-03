@@ -57,7 +57,7 @@ Coder for Docker works with the following platforms:
 
    > Please check the [changelog for the latest Coder v1
    > release](https://coder.com/docs/coder/latest/changelog) to add to the
-   > `docker run` command. 
+   > `docker run` command.
 
    When this process is complete, Coder will print the URL you can use to access
    your deployment, as well as the admin credentials you'll need to log in:
