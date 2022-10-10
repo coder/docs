@@ -63,7 +63,9 @@ actions included:
 
 With the exception of a few, logged events made by Admin panel changes will output
 the changed field(s) and the new, corresponding value. Below is the expected
-(example) output for each Admin panel change:
+(example) output for each Admin panel change.
+
+> The Admin fields not documented below currently do not output a field/diff.
 
 ### Infrastructure
 
