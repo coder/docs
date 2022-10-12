@@ -71,7 +71,7 @@ database and a reverse proxy for TLS.
 
 |                                        | Coder v1                                                                                                             | Coder OSS                                                                                                                      |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Kubernetes                             | ✅ Helm chart                                                                                                        | ⌛ Helm chart [(needs docs)](https://github.com/coder/coder/issues/3224)                                                       |
+| Kubernetes                             | ✅ Helm chart                                                                                                        | ✅                                                                                                                             |
 | Kubernetes (HA/multiple replicas)      | ✅                                                                                                                   | ⌛ [#3502](https://github.com/coder/coder/issues/3502)                                                                         |
 | Docker control plane                   | ✅                                                                                                                   | ✅                                                                                                                             |
 | VM control plane                       | ❌                                                                                                                   | ✅                                                                                                                             |
@@ -184,7 +184,7 @@ comparison:
 | **ARM workspaces**                                                   | ❌                   | ✅                                                                                                                   |
 | **Additional resources in workspace (volume mounts, API keys, etc)** | ❌                   | ✅ Any [Terraform resource](https:///registry.terraform.io)                                                          |
 | **Workspace options**                                                | Limited options      | ✅ Any options via [template parameters](https://coder.com/docs/coder-oss/latest/templates#parameters)               |
-| **Edit workspace**                                                   | ✅                   | ⌛ [#802](https://github.com/coder/coder/issues/802)                                                                 |
+| **Edit workspace**                                                   | ✅                   | ⌛ [#4311](https://github.com/coder/coder/pull/4311)                                                                 |
 | **Resource provisoning rates**                                       | ✅ Organization wide | ✅ Template wide [(needs docs)](https://github.com/coder/coder/issues/3519)                                          |
 | **Manage workspaces through UI and CLI**                             | ✅                   | ✅                                                                                                                   |
 
@@ -206,7 +206,7 @@ Coder OSS. Refer to this table:
 | **Code with local IDE via SSH (VS Code Remote, JetBrains Gateway)** | ✅ With [coder-cli](https://github.com/coder/coder-cli) installed     | ✅ With [coder](https://coder.com/docs/coder-oss/latest/install) installed                                   |
 | **Custom workspace applications**                                   | ✅                                                                    | ✅ Defined in [templates](https://coder.com/docs/coder-oss/latest/templates#coder-apps)                      |
 | **Access ports (SSH/tunnel)**                                       | ✅                                                                    | ✅                                                                                                           |
-| **Access ports (web UI)**                                           | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#1624)](https://github.com/coder/coder/issues/1624)                                                     |
+| **Access ports (web UI)**                                           | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ✅                                                                                                           |
 | **Share ports (web UI)**                                            | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ⌛ [(#3515)](https://github.com/coder/coder/issues/3515)                                                     |
 | **Docker in workspaces (Kubernetes)**                               | ✅ [CVMs](https://coder.com/docs/coder/latest/workspaces/cvms)        | ✅                                                                                                           |
 | **Manage workspaces through UI and CLI**                            | ✅                                                                    | ✅                                                                                                           |
@@ -224,9 +224,9 @@ Refer to this table:
 | ----------------------- | ----------------- | ------------------------------------------------------------------------------------------- |
 | **Auto-stop workspace** | ✅ Activity-based | ✅ Schedule-based & ⌛ Activity-based [(#2995)](https://github.com/coder/coder/issues/2995) |
 | **Audit logging**       | ✅                | ✅                                                                                          |
-| **Organizations**       | ✅                | ❌ [#3039](https://github.com/coder/coder/issues/3039)                                      |
+| **Organizations**       | ✅                | ✅ Groups & template permissions                                                            |
 | **User metrics**        | ✅                | Template-wide metrics [(needs docs)](https://github.com/coder/coder/issues/3980)            |
-| **Resource quotas**     | ✅                | ⌛ [#2988](https://github.com/coder/coder/issues/2988)                                      |
+| **Resource quotas**     | ✅                | ✅ Max workspace limit                                                                      |
 | **SDK**                 | ❌                | ✅ [codersdk](https://github.com/coder/coder/tree/main/codersdk)                            |
 | **REST API**            | ✅                | 🤔 [(needs docs)](https://github.com/coder/coder/issues/3522)                               |
 
