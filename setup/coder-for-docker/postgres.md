@@ -23,7 +23,7 @@ you must:
       -e DB_PASSWORD="" \
       -e DB_NAME=postgres \
       -e DB_SSL_MODE=disable \
-      codercom/coder:1.28.2
+      codercom/coder:1.33.3
    ```
 
 Coder supports client TLS certificates using `DB_SSL_MODE=verify-full`. Ensure

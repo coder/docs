@@ -17,6 +17,11 @@ Install the following dependencies if you haven't already:
 [PostgreSQL](https://www.postgresql.org/docs/12/admin.html) instance to store
 data, including workspace information and session tokens.
 
+> ⚠️ Coder requires a database in order to function. If Coder's database becomes
+> unavailable, Coder will become unavailable. Ensure that your Coder database is
+> monitored for common issues such as available connections, disk usage, and so
+> on.
+
 ## For public sector deployments
 
 Users with public sector deployments may need to obtain Coder's installation
@@ -31,11 +36,12 @@ resources from
 
 ## Install Coder
 
-1. Create the Coder [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/):
+1. Create the Coder
+   [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/):
 
-```console
-kubectl create namespace coder
-```
+   ```console
+   kubectl create namespace coder
+   ```
 
 1. Add the Coder Helm repo:
 
@@ -90,142 +96,143 @@ kubectl create namespace coder
 ## Set the super admin password
 
 **Optional**: change the admin user password by updating `values.yaml` as
-   follows:
+follows:
 
-   ```yaml
-   superAdmin:
-     # Options for configuring the secret used to specify the password for the
-     # built-in super admin account.
-     passwordSecret:
-       # coderd.superAdmin.passwordSecret.name -- Name of a secret that should
-       # be used to determine the password for the super admin account. The
-       # password should be contained in the field `password`, or the manually
-       # specified one.
-       name: ""
-       # coderd.superAdmin.passwordSecret.key -- The key of the secret that
-       # contains the super admin password.
-       key: "password"
-   ```
+```yaml
+superAdmin:
+  # Options for configuring the secret used to specify the password for the
+  # built-in super admin account.
+  passwordSecret:
+    # coderd.superAdmin.passwordSecret.name -- Name of a secret that should
+    # be used to determine the password for the super admin account. The
+    # password should be contained in the field `password`, or the manually
+    # specified one.
+    name: ""
+    # coderd.superAdmin.passwordSecret.key -- The key of the secret that
+    # contains the super admin password.
+    key: "password"
+```
 
 ## Connect an external database
 
-**Optional**: To configure an externally hosted database, set the following
-   in `values.yaml`:
+**Optional**: To configure an externally hosted database, set the following in
+`values.yaml`:
 
-   > Ensure that you have superuser privileges to your PostgreSQL database.
+> Ensure that you have superuser privileges to your PostgreSQL database.
 
-   ```yaml
-   postgres:
-     default:
-       enable: false
-     host: HOST_ADDRESS
-     port: PORT_NUMBER
-     user: YOUR_USER_NAME
-     database: YOUR_DATABASE
-     passwordSecret: secret-name
-     sslMode: require
-   ```
+```yaml
+postgres:
+  default:
+    enable: false
+  host: HOST_ADDRESS
+  port: PORT_NUMBER
+  user: YOUR_USER_NAME
+  database: YOUR_DATABASE
+  passwordSecret: secret-name
+  sslMode: require
+```
 
-   a. To create the `passwordSecret`, run:
+a. To create the `passwordSecret`, run:
 
-   ```console
-   kubectl create secret generic <NAME> --from-literal="password=UserDefinedPassword"
-   ```
+```console
+kubectl create secret generic <NAME> --from-literal="password=UserDefinedPassword"
+```
 
-   > Put a space before the command to prevent it from being saved in your shell
-   > history.
-   >
-   > Running this command could potentially expose your database password to
-   > other users on your system through `/proc`. If this is a concern, you can
-   > use `--from-file=password=/dev/stdin` instead of `--from-literal=...` to
-   > enter your password and press `Ctrl+D` when you're done to submit it.
-   >
-   > Ensure that there are no trailing white spaces in your password secret.
+> Put a space before the command to prevent it from being saved in your shell
+> history.
+>
+> Running this command could potentially expose your database password to other
+> users on your system through `/proc`. If this is a concern, you can use
+> `--from-file=password=/dev/stdin` instead of `--from-literal=...` to enter
+> your password and press `Ctrl+D` when you're done to submit it.
+>
+> Ensure that there are no trailing white spaces in your password secret.
 
-   For more detailed configuration instructions,
-   [see our PostgreSQL setup guide](../guides/deployments/postgres.md).
-   Alternatively, see our [guide on connecting to AWS RDS via IAM credentials](/guides/admin/awsrds.md).
+For more detailed configuration instructions,
+[see our PostgreSQL setup guide](../guides/deployments/postgres.md).
+Alternatively, see our
+[guide on connecting to AWS RDS via IAM credentials](/guides/admin/awsrds.md).
 
 ## Enable dev URLs
 
 **Optional**: Enable dev URL usage.
-   [You must provide a wildcard domain in the Helm chart](../admin/devurls.md).
+[You must provide a wildcard domain in the Helm chart](../admin/devurls.md).
 
-   ```yaml
-   coderd:
-     devurlsHost: "*.my-custom-domain.io"
-   ```
+```yaml
+coderd:
+  devurlsHost: "*.my-custom-domain.io"
+```
 
 ## Enable TLS
 
 **Optional:** To set up TLS:
 
-   a. You will need to create a TLS secret. To do so, run the following with the
-   `.pem` files provided by your certificate:
+a. You will need to create a TLS secret. To do so, run the following with the
+`.pem` files provided by your certificate:
 
-   ```console
-   kubectl create secret tls tls-secret --key key.pem --cert cert.pem
-   ```
+```console
+kubectl create secret tls tls-secret --key key.pem --cert cert.pem
+```
 
-   > If your certificate provider does not provide `.pem` files, then you may
-   > need to attach the certificate to the LoadBalancer manually.
+> If your certificate provider does not provide `.pem` files, then you may need
+> to attach the certificate to the LoadBalancer manually.
 
-   b. Attach the secret to the `coderd` service by setting the following values:
+b. Attach the secret to the `coderd` service by setting the following values:
 
-   ```yaml
-   coderd:
-     tls:
-       hostSecretName: <tls-secret>
-       devurlsHostSecretName: <tls-secret>
-   ```
+```yaml
+coderd:
+  tls:
+    hostSecretName: <tls-secret>
+    devurlsHostSecretName: <tls-secret>
+```
 
 ## Set up an ingress controller
 
 **Optional:** If you cannot use a load balancer, you may need an ingress
-   controller. To configure one with Coder, set the following in `values.yaml`:
+controller. To configure one with Coder, set the following in `values.yaml`:
 
-   > We assume that you already have an ingress controller installed in your
-   > cluster.
+> We assume that you already have an ingress controller installed in your
+> cluster.
 
-   ```yaml
-   coderd:
-     devurlsHost: "*.devurls.coderhost.com"
-     serviceSpec:
-       # The Ingress will route traffic to the internal ClusterIP.
-       type: ClusterIP
-       externalTrafficPolicy: ""
-     tls:
-       hostSecretName: <tls-secret>
-       devurlsHostSecretName: <tls-secret>
-   ingress:
-     enable: true
-     # Hostname to use for routing decisions
-     host: "coder.coderhost.com"
-     # Custom annotations to apply to the resulting Ingress object
-     # This is useful for configuring other controllers in the cluster
-     # such as cert-manager or the ingress controller
-     annotations: {}
-   ```
+```yaml
+coderd:
+  devurlsHost: "*.devurls.coderhost.com"
+  serviceSpec:
+    # The Ingress will route traffic to the internal ClusterIP.
+    type: ClusterIP
+    externalTrafficPolicy: ""
+  tls:
+    hostSecretName: <tls-secret>
+    devurlsHostSecretName: <tls-secret>
+ingress:
+  enable: true
+  # Hostname to use for routing decisions
+  host: "coder.coderhost.com"
+  # Custom annotations to apply to the resulting Ingress object
+  # This is useful for configuring other controllers in the cluster
+  # such as cert-manager or the ingress controller
+  annotations: {}
+```
 
 ## Configure a proxy
 
-**Optional:** To have Coder initiate outbound connections via a proxy, set
-   the following (applicable) values:
+**Optional:** To have Coder initiate outbound connections via a proxy, set the
+following (applicable) values:
 
-   ```yaml
-   coderd:
-      proxy:
-         http: ""
-         https: ""
-         exempt: "cluster.local"
-   ```
+```yaml
+coderd:
+  proxy:
+    http: ""
+    https: ""
+    exempt: "cluster.local"
+```
 
-Once you've implemented all of the changes in `values.yaml`, upgrade Coder
-with the following command:
+Once you've implemented all of the changes in `values.yaml`, upgrade Coder with
+the following command:
 
-   ```console
-   helm upgrade coder coder/coder --namespace coder --version=<VERSION> -f values.yaml
-   ```
+```console
+helm upgrade coder coder/coder --namespace coder --version=<VERSION> -f values.yaml
+```
 
 ## Logging
 

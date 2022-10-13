@@ -12,8 +12,9 @@ To do so, you must:
 - Push the images to your Docker registry,
 - Deploy Coder from within your air-gapped environment
 
-> Coder licenses issued as part of the trial program do not support air-gapped
-> deployments.
+> Coder's trial license does not work in an air-gapped environment. If your
+> organization is interested in evaluating Coder air-gapped, please contact
+> [sales@coder.com](mailto:sales@coder.com) to discuss license requirements.
 
 ## Dependencies
 

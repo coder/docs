@@ -108,9 +108,9 @@ az aks create \
   --location "$LOCATION" \
   --max-count 10 \
   --min-count 2 \
+  --node-count 2 \
   --node-vm-size Standard_B8ms \
-  --network-plugin "kubenet" \
-  --network-policy "azure"
+  --network-plugin "kubenet"
 ```
 
 > Both options include the

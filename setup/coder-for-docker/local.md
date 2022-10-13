@@ -52,8 +52,12 @@ Coder for Docker works with the following platforms:
       -p 7080:7080 \
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v ~/.coder:/var/run/coder \
-      codercom/coder:1.32.0
+      codercom/coder:1.35.0
    ```
+
+   > Please check the [changelog for the latest Coder v1
+   > release](https://coder.com/docs/coder/latest/changelog) to add to the
+   > `docker run` command.
 
    When this process is complete, Coder will print the URL you can use to access
    your deployment, as well as the admin credentials you'll need to log in:
@@ -103,7 +107,7 @@ DEVURL_HOST="*.mycompany.com"
 For example:
 
 ```console
-docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.32.0
+docker run --rm -it -p 7080:7080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.coder:/var/run/coder -e DEVURL_HOST="*.mycompany.com" codercom/coder:1.33.3
 ```
 
 ## Use an external PostgreSQL database
@@ -136,19 +140,61 @@ To do so:
 1. Within the newly created directory, create a file named `docker-compose.yml`
    that includes the following:
 
-   ```yaml
-   version: "3.5"
-   services:
-   coder:
-     image: docker.io/codercom/coder:1.32.0
-     container_name: coderd
-     restart: unless-stopped
-     ports:
-       - 7080:7080/tcp
-     volumes:
-       - /var/run/docker.sock:/var/run/docker.sock
-       - ${HOME}/.coder:/var/run/coder
-   ```
+  ```yaml
+  version: "3.5"
+  services:
+    coder:
+      image: docker.io/codercom/coder:1.33.3
+      container_name: coderd
+      restart: unless-stopped
+      ports:
+        - 7080:7080/tcp
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ${HOME}/.coder:/var/run/coder
+  ```
+
+By default, Coder will create a postgres database. If you'd like to use postgres
+in a separate container, use the example below:
+
+  ```yaml
+  version: "3.5"
+  services:
+    coder:
+      image: docker.io/codercom/coder:1.33.3
+      container_name: coderd
+      restart: unless-stopped
+      ports:
+        - 7080:7080/tcp
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ${HOME}/.coder:/var/run/coder
+      environment:
+        DB_EMBEDDED: ""
+        DB_HOST: "db"
+        DB_PORT: 5432
+        DB_USER: postgres
+        DB_PASSWORD: "password"
+        DB_NAME: postgres
+        DB_SSL_MODE: disable
+    db:
+      container_name: postgres
+      image: postgres
+      restart: unless-stopped
+      ports:
+        - 5432:5432/tcp
+      networks:
+       - coder
+      environment:
+        POSTGRES_PASSWORD: password
+      volumes: 
+      - db-data:/var/lib/postgresql/data
+  networks:
+    coder:
+      name: coder_network
+  volumes:
+    db-data: {}
+  ```
 
 1. In the terminal, navigate into the folder you created and run:
 

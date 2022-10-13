@@ -12,5 +12,5 @@ so, [update your Helm chart](../../guides/admin/helm-charts.md) and set the
 coderd:
   extraEnvs:
     - name: CODER_MAX_WORKSPACES_PER_USER
-      value: 100
+      value: "100"
 ```
