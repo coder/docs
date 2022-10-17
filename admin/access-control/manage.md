@@ -16,6 +16,9 @@ article.
 
 ## Coder's OIDC claims
 
+Coder will request the scopes `openid`, `email`, and `profile` from your OIDC
+provider.
+
 Coder expects the following
 [OIDC claims](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1#whats-a-claim)
 from your OIDC provider:
@@ -25,6 +28,11 @@ from your OIDC provider:
 - `name` (full name/display name)
 
 - `preferred_username` (username for dev URLs)
+
+If the `name` or `email` claims are not present in the identity token returned
+from your OIDC provider, Coder will request these from the `user-info` endpoint
+of your OIDC provider. If hitting this endpoint is problematic, ensure that your
+OIDC provider returns these claims in the tokens it provides.
 
 You may need to map these to your existing claims within your OIDC provider's
 admin console. If `name` and `preferred_username` are not provided, Coder will
