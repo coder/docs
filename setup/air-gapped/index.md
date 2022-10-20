@@ -166,26 +166,8 @@ platform images are hosted in Coder's Docker Hub repo.
 ## Extensions marketplace
 
 Coder users in an air-gapped environment cannot access the public VS Code
-marketplace. However, you can point Coder to an air-gapped instance of
-[Open VSX](https://github.com/eclipse/openvsx) to serve assets to users. For
-instructions on how to do this, see
+marketplace. However, you can point Coder to an air-gapped instance of either
+[Coder's code-marketplace OSS](https://github.com/coder/code-marketplace) or
+[Open VSX](https://github.com/eclipse/openvsx) to serve VS Code extensions to
+users. For instructions on how to do either approach, see
 [Extensions](../../admin/workspace-management/extensions.md).
-
-Please review the [Open VSX deployment wiki] for more information on setting up
-your Open VSX deployment. Note that there are several components involved,
-including:
-
-- The server application, available as the
-  [openvsx-server Docker image](https://github.com/eclipse/openvsx/pkgs/container/openvsx-server)
-- A PostgreSQL instance to hold the metadata of the published extensions
-  - If you use just a database for storage, Open VSX stores everything as binary
-    data, which can increase the storage and network throughput of the database
-    considerable. As such, Open VSX recommends leveraging external storage
-    (e.g., Azure Blob Storage or Google Cloud Storage)
-- Elasticsearch, which Open VSX uses as the default search engine for search
-  queries that originate from the web UI; this is optional, since you can either
-  turn off searches or use database queries
-- GitHub OAuth for user authentication
-
-[open vsx deployment wiki]:
-  https://github.com/eclipse/openvsx/wiki/Deploying-Open-VSX
