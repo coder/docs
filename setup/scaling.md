@@ -84,8 +84,5 @@ ensuring sufficient resources and response time.
 
 ### Horizontal Pod Autoscaling
 
-Horizontal Pod Autoscaling (HPA) is another Kubernetes technique to
-automatically add, and remove, additional `coderd` pods when the existing pods
-exceed sustained CPU and memory thresholds. Consult
-[Kubernetes HPA documentation](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
-for the various API version implementations of HPA.
+We do not recommend using [Horizontal Pod Autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+with Coder. In some environments, this will lead to errors with workspace builds.

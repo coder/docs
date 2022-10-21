@@ -125,3 +125,17 @@ When done, click **Save**.
 >     - name: CODERD_BITBUCKET_CONSUMER_KEY
 >       value: ""
 > ```
+
+### Built-in GitHub Integration (VS Code)
+
+Alternatively, users can VS Code's
+[built-in GitHub integration](https://code.visualstudio.com/docs/sourcecontrol/github)
+in order to clone repositories within VS Code Remote and code-server. This uses
+a GitHub token to authenticate instead of SSH keys.
+
+To cache the token within the workspace, users can run the following command.
+This can also be added to a [configure script](../images/configure.md):
+
+```sh
+git config --global credential.helper store
+```
