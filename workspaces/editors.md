@@ -32,6 +32,15 @@ from your local VS Code, connected to your Coder workspace for compute, etc.
 1. In VS Code's left-hand nav bar, click **Remote Explorer** and right-click on
    a workspace to connect
 
+> If Coder is deployed air-gapped (no Internet), you need to configure your VS
+> Code's [setting](https://code.visualstudio.com/docs/getstarted/settings) with
+> `remote.SSH.allowLocalServerDownload` enabled so the extension will install
+> the VS Code Server on the client first and then copy it over to the Coder
+> workspace via SCP.
+> 
+> For further troubleshooting steps, see [Troubleshooting hanging or failing
+> connections](https://code.visualstudio.com/docs/remote/troubleshooting#_troubleshooting-hanging-or-failing-connections)
+
 ![VS Code Remote Explorer](../assets/workspaces/vscode-remote-ssh-panel.png)
 
 ## VS Code in the browser
