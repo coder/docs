@@ -129,7 +129,7 @@ When done, click **Save**.
 ### Built-in GitHub Integration (VS Code)
 
 Alternatively, users can VS Code's
-[built-in GitHub integration](https://code.visualstudio.com/docs/sourcecontrol/github) 
+[built-in GitHub integration](https://code.visualstudio.com/docs/sourcecontrol/github)
 in order to clone repositories within VS Code Remote and code-server. This uses
 a GitHub token to authenticate instead of SSH keys.
 

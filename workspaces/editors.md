@@ -37,9 +37,9 @@ from your local VS Code, connected to your Coder workspace for compute, etc.
 > `remote.SSH.allowLocalServerDownload` enabled so the extension will install
 > the VS Code Server on the client first and then copy it over to the Coder
 > workspace via SCP.
-> 
-> For further troubleshooting steps, see [Troubleshooting hanging or failing
-> connections](https://code.visualstudio.com/docs/remote/troubleshooting#_troubleshooting-hanging-or-failing-connections)
+>
+> For further troubleshooting steps, see
+> [Troubleshooting hanging or failing connections](https://code.visualstudio.com/docs/remote/troubleshooting#_troubleshooting-hanging-or-failing-connections)
 
 ![VS Code Remote Explorer](../assets/workspaces/vscode-remote-ssh-panel.png)
 
@@ -328,8 +328,8 @@ for setting up your custom image and configure script.
 
 Jupyter Notebook is the original web IDE for creating Notebooks used in data
 science, machine learning and analytics projects. By default, any Coder
-workspace with the Jupyter project installed (in `/usr/local/bin/jupyter`)
-will render the icon to launch Jupyter Notebook.
+workspace with the Jupyter project installed (in `/usr/local/bin/jupyter`) will
+render the icon to launch Jupyter Notebook.
 
 ![Jupyter Notework](../assets/workspaces/jupyter-notebook-icon.png)
 
@@ -378,8 +378,9 @@ RUN chmod +x jupyter
 USER coder
 ```
 
-Below is an example `jupyter` script with the lab arguments. This file must
-be located in the same directory as the Dockerfile to be copied during `docker build`
+Below is an example `jupyter` script with the lab arguments. This file must be
+located in the same directory as the Dockerfile to be copied during
+`docker build`
 
 ```sh
 #!/bin/bash
@@ -391,10 +392,10 @@ args=${args/notebook/"lab"}
 jupyter.py ${args}
 ```
 
-The second method to run JupyterLab is with a dev URL and launching
-JupyterLab via `supervisord` in the `configure` script. The benefit of this
-approach is it is completely independent of Coder's IDE launching mechanism
-and relies only on a generic dev URL.
+The second method to run JupyterLab is with a dev URL and launching JupyterLab
+via `supervisord` in the `configure` script. The benefit of this approach is it
+is completely independent of Coder's IDE launching mechanism and relies only on
+a generic dev URL.
 
 ![JupyterLab as a dev URL](../assets/workspaces/jupyterlab-as-devurl.png)
 
@@ -448,7 +449,7 @@ directory=/home/coder
 The third method to access JupyterLab is locally using the SSH port forward
 command: `ssh -L 8888:localhost:8888 coder.jupyterlab`. Alternatively, you can
 use the Coder CLI to port forward using: `coder tunnel jupyterlab 8888 8888`.
-Now, open a local  browser and navigate to `https://localhost:8888`.
+Now, open a local browser and navigate to `https://localhost:8888`.
 
 ## RStudio
 
