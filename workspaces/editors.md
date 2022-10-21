@@ -36,7 +36,9 @@ from your local VS Code, connected to your Coder workspace for compute, etc.
 > Code's [setting](https://code.visualstudio.com/docs/getstarted/settings) with
 > `remote.SSH.allowLocalServerDownload` enabled so the extension will install
 > the VS Code Server on the client first and then copy it over to the Coder
-> workspace via SCP. [Troubleshooting hanging or failing
+> workspace via SCP.
+> 
+> For further troubleshooting steps, see [Troubleshooting hanging or failing
 > connections](https://code.visualstudio.com/docs/remote/troubleshooting#_troubleshooting-hanging-or-failing-connections)
 
 ![VS Code Remote Explorer](../assets/workspaces/vscode-remote-ssh-panel.png)
