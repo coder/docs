@@ -604,6 +604,9 @@
           "path": "./changelog/1.33.0.md",
           "children": [
             {
+              "path": "./changelog/1.33.6.md"
+            },
+            {
               "path": "./changelog/1.33.5.md"
             },
             {
