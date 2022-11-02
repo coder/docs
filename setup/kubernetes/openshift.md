@@ -112,8 +112,12 @@ Verb:      use
 Resource:  securitycontextconstraints.security.openshift.io
 
 Users:  system:admin
-        system:serviceaccount:coder:environment
+        system:serviceaccount:coder:environments
 ```
+
+> Note: Do not set any `service_account_annotations` values in Workspace
+> Providers, as it will cause Coder to create a workspace-specific service
+> account in place of the default `environments` service account.
 
 ## Option 2: Build images compatible with OpenShift
 
