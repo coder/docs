@@ -180,7 +180,7 @@ in your local `~/.ssh` directory with `ssh-keygen -y -f`:
 ~/.ssh/coder_enterprise | tee ~/.ssh/coder_enterprise.pub
 ```
 
-### Links to JetBrains support
+### Support & troubleshooting
 
 [This article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup)
 outlines troubleshooting steps with Gateway. JetBrains product support including
