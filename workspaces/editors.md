@@ -168,6 +168,10 @@ cd /opt/idea
 ./remote-dev-server.sh registerBackendLocationForGateway
 ```
 
+[Here is the JetBrains
+article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup:~:text=Can%20I%20point%20Remote%20Development%20to%20an%20existing%20IDE%20on%20my%20remote%20server%3F%20Is%20it%20possible%20to%20install%20IDE%20manually%3F)
+explaining this IDE specification.
+
 ### Alternative SSH key algorithms and Gateway
 If your Coder deployment is configured with ECDSA ssh key algorithm, change
 the Gateway authentication type to **Key pair** and create the Coder public
@@ -176,6 +180,12 @@ ssh key in your local `~/.ssh` directory with `ssh-keygen -y -f`:
 ```sh
 ~/.ssh/coder_enterprise | tee ~/.ssh/coder_enterprise.pub
 ```
+
+### Links to JetBrain support
+[This
+article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup)
+outlines troubleshooting steps with Gateway. JetBrains product support including
+their Issue Trackers [are here.](https://www.jetbrains.com/support/)
 
 ## JetBrains IDEs in the browser
 
