@@ -148,7 +148,7 @@ Requirements:
    setup, JetBrains will detect your already installed IDE in the drop-down.
 
    ![Select JetBrains IDE and working
-   directory](../assets/workspaces/gateway-ide-already-installed-and-project.png)   
+   directory](../assets/workspaces/gateway-ide-already-installed-and-project.png)
 
 1. Gateway will open the JetBrains client connected to the remotely installed IDE.
 
@@ -173,6 +173,7 @@ article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.
 explaining this IDE specification.
 
 ### Alternative SSH key algorithms and Gateway
+
 If your Coder deployment is configured with ECDSA ssh key algorithm, change
 the Gateway authentication type to **Key pair** and create the Coder public
 ssh key in your local `~/.ssh` directory with `ssh-keygen -y -f`:
@@ -182,6 +183,7 @@ ssh key in your local `~/.ssh` directory with `ssh-keygen -y -f`:
 ```
 
 ### Links to JetBrain support
+
 [This
 article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup)
 outlines troubleshooting steps with Gateway. JetBrains product support including
