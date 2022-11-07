@@ -106,9 +106,8 @@ Requirements:
 - If you use a premium JetBrains IDE (e.g., GoLand, IntelliJ IDEA Ultimate), you
   will still need a license to use it remotely with Coder.
 
-1. [Download and install JetBrains
-   Toolbox](https://www.jetbrains.com/toolbox-app/). Locate JetBrains Gateway in
-   the Toolbox list and click **Install**.
+1. [Download and install JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/).
+   Locate JetBrains Gateway in the Toolbox list and click **Install**.
 
    ![JetBrains Toolbox](../assets/workspaces/jetbrains-toolbox.png)
 
@@ -129,7 +128,7 @@ Requirements:
    local port field blank. Click **Test Connection**.
 
    ![Gateway SSH
-   Configurations](../assets/workspaces/gateway-ssh-configurations.png)
+Configurations](../assets/workspaces/gateway-ssh-configurations.png)
 
 1. Choose your new connection from the drop-down and click Check Connection and
    Continue
@@ -142,50 +141,48 @@ Requirements:
    directory in your Coder workspace.
 
    ![Select JetBrains IDE and working
-   directory](../assets/workspaces/gateway-ide-and-project.png)
+directory](../assets/workspaces/gateway-ide-and-project.png)
 
    If you ran `remote-dev-server.sh` (see note below) before starting the config
    setup, JetBrains will detect your already installed IDE in the drop-down.
 
    ![Select JetBrains IDE and working
-   directory](../assets/workspaces/gateway-ide-already-installed-and-project.png)
+directory](../assets/workspaces/gateway-ide-already-installed-and-project.png)
 
-1. Gateway will open the JetBrains client connected to the remotely installed IDE.
+1. Gateway will open the JetBrains client connected to the remotely installed
+   IDE.
 
    ![A running JetBrains IDE in
-   Gateway](../assets/workspaces/gateway-ide-running.png)
+Gateway](../assets/workspaces/gateway-ide-running.png)
 
 ### Using an existing JetBrains installation in the workspace
 
-If you would like to use an existing JetBrains IDE in a Coder workspace (you are
-air-gapped and cannot connect to jetbrains.com or want to use a specific version
-of an IDE already installed in the workspace), run the following script in the
+If you would like to use an existing JetBrains IDE in a Coder workspace (or you
+are air-gapped, and cannot reach jetbrains.com), run the following script in the
 JetBrains IDE directory to point the default Gateway directory to the IDE
-directory. This step must be done before configuring Gateway. (IntelliJ example)
+directory. This step must be done before configuring Gateway.
 
 ```sh
 cd /opt/idea
 ./remote-dev-server.sh registerBackendLocationForGateway
 ```
 
-[Here is the JetBrains
-article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup:~:text=Can%20I%20point%20Remote%20Development%20to%20an%20existing%20IDE%20on%20my%20remote%20server%3F%20Is%20it%20possible%20to%20install%20IDE%20manually%3F)
+[Here is the JetBrains article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup:~:text=Can%20I%20point%20Remote%20Development%20to%20an%20existing%20IDE%20on%20my%20remote%20server%3F%20Is%20it%20possible%20to%20install%20IDE%20manually%3F)
 explaining this IDE specification.
 
 ### Alternative SSH key algorithms and Gateway
 
-If your Coder deployment is configured with ECDSA ssh key algorithm, change
-the Gateway authentication type to **Key pair** and create the Coder public
-ssh key in your local `~/.ssh` directory with `ssh-keygen -y -f`:
+If your Coder deployment is configured with ECDSA ssh key algorithm, change the
+Gateway authentication type to **Key pair** and create the Coder public ssh key
+in your local `~/.ssh` directory with `ssh-keygen -y -f`:
 
 ```sh
 ~/.ssh/coder_enterprise | tee ~/.ssh/coder_enterprise.pub
 ```
 
-### Links to JetBrain support
+### Links to JetBrains support
 
-[This
-article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup)
+[This article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup)
 outlines troubleshooting steps with Gateway. JetBrains product support including
 their Issue Trackers [are here.](https://www.jetbrains.com/support/)
 
