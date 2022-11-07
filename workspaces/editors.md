@@ -127,8 +127,7 @@ Requirements:
    agent**. You can find the workspace host names in `~/.ssh/config`. Leave the
    local port field blank. Click **Test Connection**.
 
-   ![Gateway SSH
-Configurations](../assets/workspaces/gateway-ssh-configurations.png)
+   ![Gateway SSH Configurations](../assets/workspaces/gateway-ssh-configurations.png)
 
 1. Choose your new connection from the drop-down and click Check Connection and
    Continue
@@ -140,20 +139,17 @@ Configurations](../assets/workspaces/gateway-ssh-configurations.png)
    Coder workspace, and click the folder icon and select your `/home/coder`
    directory in your Coder workspace.
 
-   ![Select JetBrains IDE and working
-directory](../assets/workspaces/gateway-ide-and-project.png)
+   ![Select JetBrains IDE and working directory](../assets/workspaces/gateway-ide-and-project.png)
 
    If you ran `remote-dev-server.sh` (see note below) before starting the config
    setup, JetBrains will detect your already installed IDE in the drop-down.
 
-   ![Select JetBrains IDE and working
-directory](../assets/workspaces/gateway-ide-already-installed-and-project.png)
+   ![Select JetBrains IDE and working directory](../assets/workspaces/gateway-ide-already-installed-and-project.png)
 
 1. Gateway will open the JetBrains client connected to the remotely installed
    IDE.
 
-   ![A running JetBrains IDE in
-Gateway](../assets/workspaces/gateway-ide-running.png)
+   ![A running JetBrains IDE in Gateway](../assets/workspaces/gateway-ide-running.png)
 
 ### Using an existing JetBrains installation in the workspace
 
