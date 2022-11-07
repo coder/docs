@@ -88,20 +88,27 @@ code-server -r personalize.log
 
 ## JetBrains Gateway with SSH
 
-If your image
-[includes a JetBrains IDE](../admin/workspace-management/installing-jetbrains.md)
-and you've [set up SSH access to Coder](./ssh.md), you can use JetBrains Gateway
-to run a local JetBrains IDE connected to your Coder workspace.
+[Gateway](https://www.jetbrains.com/remote-development/gateway/) is JetBrains'
+preferred remote development solution. Projector (the browser-based option) is
+[no longer recommended](https://lp.jetbrains.com/projector/) by JetBrains.
 
-Please note that:
+> Gateway by default automatically downloads the IDE from jetbrains.com into the
+> Coder workspace during the setup. If you are air-gapped or want to leverage a
+> JetBrains IDE in your workspace for faster setup, you can point to an
+> already-installed JetBrains IDE. See the configuration at the end of this
+> Gateway section.
 
+Requirements:
+
+- SSH access to Coder must [already be configured](./ssh.md)
 - Your Coder workspace must be running. Gateway needs compute resources, so
   monitor your resource usage on the Coder dashboard and adjust accordingly.
 - If you use a premium JetBrains IDE (e.g., GoLand, IntelliJ IDEA Ultimate), you
   will still need a license to use it remotely with Coder.
 
-1. [Download and install JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/).
-   Locate JetBrains Gateway in the Toolbox list and click **Install**.
+1. [Download and install JetBrains
+   Toolbox](https://www.jetbrains.com/toolbox-app/). Locate JetBrains Gateway in
+   the Toolbox list and click **Install**.
 
    ![JetBrains Toolbox](../assets/workspaces/jetbrains-toolbox.png)
 
@@ -115,38 +122,60 @@ Please note that:
 
    ![Connect Gateway to SSH](../assets/workspaces/gateway-connect-to-ssh.png)
 
-1. Enter your Coder workspace alias target in **Host** (e.g.,
-   `coder.mark-python`), `22` in **Port**, `coder` in **User name**, and change
-   **Authentication Type** to **OpenSSH config and authentication agent**. Leave
-   the local port field blank. Click **Test Connection**.
+1. Enter your Coder workspace host name in **Host** (e.g.,
+   `coder.mark-intellij`), `22` in **Port**, `coder` in **User name**, and
+   change **Authentication Type** to **OpenSSH config and authentication
+   agent**. You can find the workspace host names in `~/.ssh/config`. Leave the
+   local port field blank. Click **Test Connection**.
 
-   ![Gateway SSH Configurations](../assets/workspaces/gateway-ssh-configurations.png)
+   ![Gateway SSH
+   Configurations](../assets/workspaces/gateway-ssh-configurations.png)
 
-1. With your created configuration in the **Connection** chosen in the drop-down
-   field, click **Test Connection**, then **OK**.
+1. Choose your new connection from the drop-down and click Check Connection and
+   Continue
 
-   ![Test Gateway Connection](../assets/workspaces/gateway-test-connection.png)
+   ![Connect to SSH](../assets/workspaces/connect-to-ssh.png)
 
-1. Select a JetBrains IDE from the IDE version drop-down. Choose the IDE
-   installed in your Coder workspace, and click the folder icon and select your
-   `/home/coder` directory in your Coder workspace.
+1. The default behavior is to select a JetBrains IDE from the IDE version
+   drop-down and download it from jetbrain.com. Choose the IDE installed in your
+   Coder workspace, and click the folder icon and select your `/home/coder`
+   directory in your Coder workspace.
 
-   ![Select JetBrains IDE and working directory](../assets/workspaces/gateway-ide-and-project.png)
+   ![Select JetBrains IDE and working
+   directory](../assets/workspaces/gateway-ide-and-project.png)
 
-1. During this installation step, Gateway downloads the IDE and a JetBrains
-   client. This may take a couple minutes.
+   If you ran `remote-dev-server.sh` (see note below) before starting the config
+   setup, JetBrains will detect your already installed IDE in the drop-down.
 
-   ![Gateway downloading IDE and client](../assets/workspaces/gateway-download-client.png)
+   ![Select JetBrains IDE and working
+   directory](../assets/workspaces/gateway-ide-already-installed-and-project.png)   
 
-   ![Code with Me starting up](../assets/workspaces/gateway-code-with-me-loading.png)
+1. Gateway will open the JetBrains client connected to the remotely installed IDE.
 
-   ![A running JetBrains IDE in Gateway](../assets/workspaces/gateway-ide-running.png)
+   ![A running JetBrains IDE in
+   Gateway](../assets/workspaces/gateway-ide-running.png)
 
-> If your Coder deployment is configured with ECDSA ssh key algorithm, change
-> the Gateway authentication type to **Key pair** and create the Coder public
-> ssh key in your local `~/.ssh` directory with `ssh-keygen -y -f`:
->
-> `~/.ssh/coder_enterprise | tee ~/.ssh/coder_enterprise.pub`
+### Using an existing JetBrains installation in the workspace
+
+If you would like to use an existing JetBrains IDE in a Coder workspace (you are
+air-gapped and cannot connect to jetbrains.com or want to use a specific version
+of an IDE already installed in the workspace), run the following script in the
+JetBrains IDE directory to point the default Gateway directory to the IDE
+directory. This step must be done before configuring Gateway. (IntelliJ example)
+
+```sh
+cd /opt/idea
+./remote-dev-server.sh registerBackendLocationForGateway
+```
+
+### Alternative SSH key algorithms and Gateway
+If your Coder deployment is configured with ECDSA ssh key algorithm, change
+the Gateway authentication type to **Key pair** and create the Coder public
+ssh key in your local `~/.ssh` directory with `ssh-keygen -y -f`:
+
+```sh
+~/.ssh/coder_enterprise | tee ~/.ssh/coder_enterprise.pub
+```
 
 ## JetBrains IDEs in the browser
 
