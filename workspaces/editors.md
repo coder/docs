@@ -159,7 +159,7 @@ JetBrains IDE directory to point the default Gateway directory to the IDE
 directory. This step must be done before configuring Gateway.
 
 ```sh
-cd /opt/idea
+cd /opt/idea/bin
 ./remote-dev-server.sh registerBackendLocationForGateway
 ```
 
