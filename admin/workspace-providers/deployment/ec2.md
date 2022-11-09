@@ -5,8 +5,8 @@ state: alpha
 ---
 
 > This Workspace Provider type is no longer supported in Coder v1. Please use
-> our [open-source project Coder v2](https://coder.com/docs/coder-oss/latest) to
-> provision EC2 instances as workspaces.
+> [Coder v2](https://coder.com/docs/coder-oss/latest) to provision EC2 instances
+> as workspaces.
 
 This article walks you through the process of deploying a workspace provider to
 an EC2 instance.
