@@ -14,11 +14,6 @@ This article will walk you through the process of doing so.
 
 - You must be a cluster admin for your Kubernetes cluster.
 
-- **Azure database users**: if you're using Azure Database for PostgreSQL, note
-  that Coder only works with Single Server; the Flexible Server (Preview) and
-  Hyperscale (Citus) options do _not_ support the TimescaleDB extension
-  required.
-
 ## Migration Steps
 
 1. Access the database pod and dump the database into a file:
