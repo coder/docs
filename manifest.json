@@ -588,7 +588,12 @@
       "icon_path": "./assets/images/icons/paper.svg",
       "children": [
         {
-          "path": "./changelog/1.36.0.md"
+          "path": "./changelog/1.36.0.md",
+          "children": [
+            {
+              "path": "./changelog/1.35.1.md"
+            }
+          ]
         },
         {
           "path": "./changelog/1.35.0.md",
