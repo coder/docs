@@ -63,7 +63,8 @@ For each workspace config block, add the line
 
 For example:
 
-```SSH Config
+```
+SSH Config
 Host coder.workspace
     HostName coder.workspace
     ProxyCommand "/opt/homebrew/bin/coder" tunnel --retry 0 workspace 12213 stdio
