@@ -52,7 +52,7 @@ An auto-generated ssh config was written to "/Users/user/.ssh/config"
 You should now be able to ssh into your workspace
 For example, try running
 
-	$ ssh coder.workspace
+    $ ssh coder.workspace
 ```
 
 Open your ssh configuration file in a text editor (this is usually at
