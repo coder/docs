@@ -572,6 +572,9 @@
             },
             {
               "path": "./guides/troubleshooting/vite-hmr.md"
+            },
+            {
+              "path": "./guides/troubleshooting/ssh-no-mutual-signature-supported.md"
             }
           ]
         },
