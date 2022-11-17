@@ -23,7 +23,7 @@ the deprecated `ssh-rsa` algorithm is supported by the server.
 
 ### Option 1: Use elliptic curve SSH keys
 
-Elliptic curve key authentication does not appear to suffer the negotiation 
+Elliptic curve key authentication does not appear to suffer the negotiation
 failure.  A Coder administrator should configure either `Ed25519` or `ECDSA` SSH
 keys under **Manage** > **Admin** > **Security**.
 
@@ -35,7 +35,7 @@ Lastly, rebuild your workspace(s) to pick up the new keys.
 
 ### Option 2: Configure your SSH client
 
-If you cannot switch to elliptic curve SSH keys, as a workaround, you can 
+If you cannot switch to elliptic curve SSH keys, as a workaround, you can
 configure your SSH client to use the `ssh-rsa` authentication algorithm.
 
 **NOTE**: Although this algorithm is considered cryptographically insecure,
@@ -47,6 +47,12 @@ Generate SSH configuration entries for your workspaces:
 
 ```console
 $ coder config-ssh
+Your private ssh key was written to "/Users/user/.ssh/coder_enterprise"
+An auto-generated ssh config was written to "/Users/user/.ssh/config"
+You should now be able to ssh into your workspace
+For example, try running
+
+	$ ssh coder.workspace
 ```
 
 Open your ssh configuration file in a text editor (this is usually at
@@ -57,18 +63,18 @@ For each workspace config block, add the line
 
 For example:
 
-```
+```SSH Config
 Host coder.workspace
-	HostName coder.workspace
-	ProxyCommand "/opt/homebrew/bin/coder" tunnel --retry 0 workspace 12213 stdio
-	StrictHostKeyChecking no
-	ConnectTimeout=0
-	IdentitiesOnly yes
-	IdentityFile="/Users/spike/.ssh/coder_enterprise"
-	ControlMaster auto
-	ControlPath ~/.ssh/.connection-coder.f6fd39b24f3a813ecc60e43f5063bbcf
-	ControlPersist 600
-	PubkeyAcceptedAlgorithms +ssh-rsa
+    HostName coder.workspace
+    ProxyCommand "/opt/homebrew/bin/coder" tunnel --retry 0 workspace 12213 stdio
+    StrictHostKeyChecking no
+    ConnectTimeout=0
+    IdentitiesOnly yes
+    IdentityFile="/Users/spike/.ssh/coder_enterprise"
+    ControlMaster auto
+    ControlPath ~/.ssh/.connection-coder.f6fd39b24f3a813ecc60e43f5063bbcf
+    ControlPersist 600
+    PubkeyAcceptedAlgorithms +ssh-rsa
 ```
 
 You will need to repeat this process if you create new workspaces and re-run
