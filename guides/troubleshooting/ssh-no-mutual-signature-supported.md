@@ -63,7 +63,7 @@ For each workspace config block, add the line
 
 For example:
 
-```
+```console
 SSH Config
 Host coder.workspace
     HostName coder.workspace
