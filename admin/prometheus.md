@@ -58,7 +58,7 @@ deleted.
 ### Drop workspace metrics config
 
 [Prometheus Documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#metric_relabel_configs)
-about relabling metrics. In this case we will drop all metrics that contain the
+about relabelling metrics. In this case we will drop all metrics that contain the
 `workspace_id` label.
 
 ```yaml
