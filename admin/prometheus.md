@@ -32,7 +32,63 @@ spec:
     - port: prom-coderd
 ```
 
-## Metrics
+## Workspace Metrics
+
+Each coder workspace has an agent that connects to a single `coderd` instance.
+Each coderd instance will include all metrics from the workspaces it manages.
+The workspace metrics will all look like this:
+
+```prometheus
+coderd_workspace_<workspace_metric_name>{user_id="<user_id>",workspace_id="<workspace_id>"}
+```
+
+Due to the nature of workspace ids, this produces a
+[high cardinality of metric labels](https://prometheus.io/docs/practices/naming/#labels).
+This could be problematic for some configurations. If specific workspace metrics
+are not of interest, or are causing issues, you can configure your metric
+scraping service to drop these metrics.
+
+Note that if a workspace connects to a new `coderd` (rebuild, network issue,
+coder update, etc), the metrics for that workspace will be moved to the new
+`coderd` metrics endpoint. The labels on the new metrics will likely have the
+new `coderd` pod name. So when tracking a singular workspace, you should track
+**only** by `workspace_id` throughout the lifetime of the workspace until it is
+deleted.
+
+### Drop workspace metrics config
+
+[Prometheus Documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#metric_relabel_configs)
+about relabelling metrics. In this case we will drop all metrics that contain the
+`workspace_id` label.
+
+```yaml
+metric_relabel_configs:
+  - source_labels: ["workspace_id"]
+    action: drop
+```
+
+In Prometheus Operator we can pass this config addition to our `coderd`
+PodMonitor spec.
+
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: master-monitor
+  namespace: coder
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: coderd
+  podMetricsEndpoints:
+    - port: prom-coderd
+      relabelings:
+        - action: drop
+          sourceLabels:
+            - workspace_id
+```
+
+## Coderd Metrics
 
 Below is a list of the various metrics emitted by Coder's Prometheus endpoint:
 
