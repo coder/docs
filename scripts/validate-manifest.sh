@@ -2,18 +2,23 @@
 #
 # validate-manifest.sh [path/to/manifest.json]
 #
-# Dependencies: jq tr sort uniq
+# Dependencies: bash>=4.x jq tr sort uniq
 #
 # Description: Ensures consistency of versions specified in manifest.json.
 
-set -eou pipefail
+set -euo pipefail
+
+if [[ "${BASH_VERSINFO:-0}" -lt 4 ]]; then
+    echo "This script requires at least bash version 4."
+    exit 1
+fi
 
 if ! command -v jq > /dev/null; then
     echo "This script requires jq to be available."
     exit 1
 fi
 
-GIT_ROOT=$(git rev-parse --show-toplevel)
+GIT_ROOT=$(cd "$(dirname "$0")" && git rev-parse --show-toplevel)
 MANIFEST_JSON_PATH=${1:-"${GIT_ROOT}/manifest.json"}
 
 declare -a MANIFEST_VERSIONS
