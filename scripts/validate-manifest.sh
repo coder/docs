@@ -5,7 +5,6 @@
 # Dependencies: jq tr sort uniq
 #
 # Description: Ensures consistency of versions specified in manifest.json.
-# This script takes no arguments. Returns 0 if no issues found.
 
 set -eou pipefail
 
