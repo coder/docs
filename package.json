@@ -39,6 +39,9 @@
     "*.md": [
       "markdownlint --config .markdownlint.jsonc --rules .markdownlint-rules --fix",
       "prettier --write"
+    ],
+    "manifest.json": [
+      "./scripts/validate-manifest.sh"
     ]
   },
   "dependencies": {
