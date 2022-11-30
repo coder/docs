@@ -157,5 +157,5 @@ for superusers). Consult
 [Postgres documentation](https://www.postgresql.org/docs/12/runtime-config-connection.html),
 or your database administrator for information on how to change this value.
 
-Consider monitoring the [`go_sql_open_connections`](../admin/prometheus.md)
+Consider monitoring the [`go_sql_open_connections`](../../admin/prometheus.md)
 metric to see how many connections Coder uses in different load scenarios.
