@@ -144,7 +144,7 @@ To reconfigure this value, set the environment variable
 section of the Helm chart.
 
 > **Important**: You must ensure that Coder's maximum connections per replica
-> times the number of Coder replica is less than the maximum number of
+> times the number of Coder replicas is less than the maximum number of
 > connections your Postgres instance allows, assuming Coder is the only
 > application using the Postgres instance (less if other applications will also
 > consume connections). For example, with 3 Coder replicas and the default max
