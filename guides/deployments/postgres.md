@@ -131,3 +131,31 @@ If the upgrade fails for any reason, please run the `helm rollback` command and
 
 Once you complete this process, you'll be able to access Coder using the
 external IP address of the ingress controller in your cluster.
+
+### Scaling Coder & PostgreSQL
+
+Each Coder replica maintains a pool of connections to Postgres, capped at a
+maximum of 30 connections by default. This value strikes a balance between
+allowing multiple concurrent requests and using up connections on the Postgres
+database.
+
+To reconfigure this value, set the environment variable
+`CODER_MAX_DB_CONNECTIONS` to your desired value in the `coderd.extraEnvs`
+section of the Helm chart.
+
+> **Important**: You must ensure that Coder's maximum connections per replica
+> times the number of Coder replicas is less than the maximum number of
+> connections your Postgres instance allows, assuming Coder is the only
+> application using the Postgres instance (less if other applications will also
+> consume connections). For example, with 3 Coder replicas and the default max
+> connections of 30, you must ensure Postgres is configured to allow 90
+> connections. If Postgres runs out of connections Coder may fail API requests
+> or builds.
+
+By default, Postgres allows a maximum of 100 open connections (less 3 reserved
+for superusers). Consult
+[Postgres documentation](https://www.postgresql.org/docs/12/runtime-config-connection.html),
+or your database administrator for information on how to change this value.
+
+Consider monitoring the [`go_sql_open_connections`](../../admin/prometheus.md)
+metric to see how many connections Coder uses in different load scenarios.
