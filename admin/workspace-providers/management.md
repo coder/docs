@@ -64,7 +64,7 @@ At this point, you can:
 
 - Specify the **CVM internal network**. CVMs use an internal bridge network to
   communicate with the outside world. The default network range used is
-  `172.19.0.1/30`. If this overlaps with existing resources in your network, you
+  `172.19.0.0/30`. If this overlaps with existing resources in your network, you
   can specify an alternative network range here in CIDR format. This setting
   applies to both cached and non-cached CVMs, but does not affect non-CVM
   workspaces.
