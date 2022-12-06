@@ -600,11 +600,19 @@
       "icon_path": "./assets/images/icons/paper.svg",
       "children": [
         {
-          "path": "./changelog/1.37.0.md"
+          "path": "./changelog/1.37.0.md",
+          "children": [
+            {
+              "path": "./changelog/1.37.1.md"
+            }
+          ]
         },
         {
           "path": "./changelog/1.36.0.md",
           "children": [
+            {
+              "path": "./changelog/1.36.2.md"
+            },
             {
               "path": "./changelog/1.36.1.md"
             }
@@ -613,6 +621,9 @@
         {
           "path": "./changelog/1.35.0.md",
           "children": [
+            {
+              "path": "./changelog/1.35.4.md"
+            },
             {
               "path": "./changelog/1.35.3.md"
             },
