@@ -11,8 +11,17 @@ containers specification. Podman is useful if you'd like an alternative to
 [CVM workspaces](../../admin/workspace-management/cvms/index.md) or if your
 Linux kernel doesn't support CVMs.
 
-> Please be aware that there are
-> [limitations related to running Podman in rootless mode](https://github.com/containers/podman/blob/main/rootless.md#shortcomings-of-rootless-podman).
+Prior to completing the steps below, please review the following Podman
+documentation:
+
+- [Basic setup and use of Podman in a rootless environment](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md)
+
+- [Shortcomings of Rootless Podman](https://github.com/containers/podman/blob/main/rootless.md#shortcomings-of-rootless-podman)
+
+If you are receiving `permission denied` errors when running Podman, please see
+the below article:
+
+- [Container permission denied](https://www.redhat.com/sysadmin/container-permission-denied-errors)
 
 1. Install `smarter-device-manager` and expose the FUSE device through it. To do
    so, create a file called `smarter-device-manager.yaml` with the following
