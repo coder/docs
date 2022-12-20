@@ -59,7 +59,7 @@ wildcard domain.
 - See our
   [guide for creating a TLS certificate using LetsEncrypt](../guides/tls-certificates)
 - To add a custom certificate, refer to our
-  [Helm chart](https://github.com/cdr/enterprise-helm)
+  [Helm chart](https://github.com/coder/enterprise-helm)
 
 ## Setting dev URL access permissions
 
