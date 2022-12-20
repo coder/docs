@@ -126,6 +126,17 @@ roles, but a summary of the roles are:
             <td></td>
         </tr>
         <tr>
+            <td>Extensions</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
             <td>Images</td>
             <td>X</td>
             <td>X</td>
