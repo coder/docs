@@ -210,14 +210,15 @@ Coder v2. Refer to this table:
 Some enterprise features are different, or still being worked on in Coder v2.
 Refer to this table:
 
-|                         | Coder v1          | Coder v2                                                                                    |
-| ----------------------- | ----------------- | ------------------------------------------------------------------------------------------- |
-| **Auto-stop workspace** | ✅ Activity-based | ✅ Schedule-based & ✅ Activity-based )                                                     |
-| **Audit logging**       | ✅                | ✅                                                                                          |
-| **Organizations**       | ✅                | ✅ Groups & template permissions                                                            |
-| **User metrics**        | ✅                | Template-wide metrics [(needs docs)](https://github.com/coder/coder/issues/3980)            |
-| **Resource quotas**     | ✅                | ✅ Max workspace limit                                                                      |
-| **SDK**                 | ❌                | ✅ [codersdk](https://github.com/coder/coder/tree/main/codersdk)                            |
-| **REST API**            | ✅                | ✅                                                                                          |
+|                                      | Coder v1          | Coder v2                                                                                    |
+| ------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------- |
+| **Auto-stop workspace**              | ✅ Activity-based | ✅ Schedule-based & ✅ Activity-based )                                                     |
+| **Audit logging**                    | ✅                | ✅                                                                                          |
+| **Organizations**                    | ✅                | ✅ Groups & template permissions                                                            |
+| **Workspace Proccess Logging**       | ✅                | ⌛ [#5314](https://github.com/coder/coder/issues/5314)                                                            |
+| **User metrics**                     | ✅                | Template-wide metrics [(needs docs)](https://github.com/coder/coder/issues/3980)            |
+| **Resource quotas**                  | ✅                | ✅ Max workspace limit                                                                      |
+| **SDK**                              | ❌                | ✅ [codersdk](https://github.com/coder/coder/tree/main/codersdk)                            |
+| **REST API**                         | ✅                | ✅                                                                                          |
 
 > See the [v1 sunset frequently asked questions](./v2-faq.md) for more information.
