@@ -592,7 +592,10 @@
         },
         {
           "path": "./guides/moving-to-oss.md"
-        }
+        },
+        {
+          "path": "./guides/v2-faq.md"
+        }        
       ]
     },
     {
