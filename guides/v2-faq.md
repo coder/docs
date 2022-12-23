@@ -25,7 +25,7 @@ Coder v1 will have 3 sunset or end-of-life dates.
 <details>
 <summary>How will we continue to get v1 support?</summary>
 
-Yes. Continue to either work with your account executive at Coder or leverage
+Continue to either coordinate with your Coder account executive or leverage
 the [Slack](https://cdr.co/join-community) channel.
 
 </details>
@@ -39,16 +39,16 @@ make workspace compute a Kubernetes pod, a VM, or a Docker container, and an
 open-source platform for the community to get the developer-centric benefits of
 remote development without a license fee. See the blog post [Lessons learned
 from
-v1](https://coder.com/blog/lessons-learned-from-v1-and-oss-to-enterprise-editions)
+v1](https://coder.com/blog/lessons-learned-from-v1-and-oss-to-enterprise-editions).
 
 </details>
 
 <details>
 <summary>What Coder v2 features are open-source and paid?</summary>
 
-Functionality for a developer to be productive are in the open-source, while
+Functionality for a developer to be productive are in the v2 OSS, while
 scalability, governance and control features for DevOps teams are in the
-Enterprise paid version. [See this page for feature
+v2 Enterprise paid version. [See this page for feature
 comparisons.](https://coder.com/pricing)
 
 </details>
@@ -75,23 +75,23 @@ platform into a new code base. v2 also has a different Postgres database schema.
 
 In v1, workspaces are Kubernetes pods with an inner container based on [container
 images](../images/index.md) with an optional configure script in the image that runs additional
-configurations as the non-root user after the workspace is built. v1 has an
+configurations as the non-root user after the workspace is built. Coder v1 has an
 optional workspace template yaml spec to define compute and additional bash
 scripting steps.
 
-In v2, workspaces are defined as [Terraform
+In Coder v2, workspaces are defined as [Terraform
 templates](https://coder.com/docs/coder-oss/latest/templates) with Terraform
-resources to define the compute type. e.g., Kubernetes pod, Docker container, or
-VM. Docker or alternatively VM images are specified in the template. The
-template includes a `startup_script` configuration that can run the configure
-script in the image or additional steps like in v1 workspace templates. v1
-workspace applications are configured as `coder_app` resources in the Terraform
-template.
+resources to specify the infrastructure provider and compute type. e.g.,
+Kubernetes pod, Docker container, or VM. Docker or alternatively VM images are
+specified in the template. The template includes an agent resource and
+`startup_script` configuration that can run the configure script in the image or
+additional steps like in v1 workspace templates. Coder v1 workspace applications
+are configured as `coder_app` resources in the Terraform template.
 
 v1 [organizations](../admin/organizations/index.md) are
 [groups](https://coder.com/docs/coder-oss/latest/admin/groups) in v2.
 
-Integration points remain like
+Integration points remain the same like
 [OIDC](https://coder.com/docs/coder-oss/latest/admin/auth) for single-sign-on
 and specifying image registries in v2 templates.
 
@@ -108,7 +108,7 @@ is preferred.
 <summary>Are there migration scripts from v1 to v2?</summary>
 
 No. The database schema and architectural concepts are so different in v2, it is
-not reasonable to build migration scripts that meet customer deployment
+not reasonable to build migration scripts that meet all customer deployment
 scenarios. See [the migration strategy](./moving-to-oss.md#migration-strategy)
 and [recommendations on moving workspace
 contents](./moving-to-oss.md#workspaces).
@@ -128,6 +128,6 @@ community.
 
 </br>
 
-> For more information on v2 concepts, please review the [Moving to Coder
+> For more information on Coder v2 concepts, please review the [Moving to Coder
 > v2](./moving-to-oss.md) guide.
 
