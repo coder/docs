@@ -17,7 +17,7 @@ Coder v1 will have 3 sunset or end-of-life dates.
 | Date            | Support Sunset Parameters                                    |  Example                                       |
 | --------------- | ------------------------------------------------------------ | ---------------------------------------------- |
 | 06/30/2023      | End of feature requests and enhancements                     | image tag decommissioning coming in `1.38.0`   |
-| 12/31/2023      | End of feature-related bug fixes                             | [organization sort order](../changelog/1.37.0.md) in in `1.37.0`             |
+| 12/31/2023      | End of feature-related bug fixes                             | [organization sort order](../changelog/1.37.0.md) in `1.37.0`             |
 | 03/31/2024      | End of security vulnerability fixes                          | malicious [DevURL redirect link fix](../changelog/1.37.1.md) in `1.37.1` |
 
 </details>
