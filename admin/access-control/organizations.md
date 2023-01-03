@@ -35,7 +35,7 @@ Please note that roles are defined per organization. Therefore, assigning
 someone as an organization manager does not change their role in another
 organization.
 
-### Organization manager permissions
+### Organization super manager permissions
 
 <table>
     <thead>
@@ -155,6 +155,396 @@ organization.
             <td>Users</td>
             <td></td>
             <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+### Organization manager permissions
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Create</th>
+            <th>Read (all)</th>
+            <th>Read (own)</th>
+            <th>List</th>
+            <th>Delete (all)</th>
+            <th>Delete (own)</th>
+            <th>Update (all)</th>
+            <th>Update (own)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Dev URLs</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Workspaces</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>Images</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Image tags</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Metrics</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Org members</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Orgs</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Registries</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>System banners</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Users</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+### Organization image manager permissions
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Create</th>
+            <th>Read (all)</th>
+            <th>Read (own)</th>
+            <th>List</th>
+            <th>Delete (all)</th>
+            <th>Delete (own)</th>
+            <th>Update (all)</th>
+            <th>Update (own)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Dev URLs</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Workspaces</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>Images</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Image tags</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Metrics</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Org members</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Orgs</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Registries</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>System banners</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Users</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+### Organization importer permissions
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Create</th>
+            <th>Read (all)</th>
+            <th>Read (own)</th>
+            <th>List</th>
+            <th>Delete (all)</th>
+            <th>Delete (own)</th>
+            <th>Update (all)</th>
+            <th>Update (own)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Dev URLs</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Workspaces</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>Images</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Image tags</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Metrics</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Org members</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Orgs</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Registries</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>System banners</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Users</td>
+            <td></td>
+            <td></td>
             <td>X</td>
             <td></td>
             <td></td>
