@@ -81,7 +81,7 @@ organization.
             <td>Workspaces</td>
             <td>X</td>
             <td>X</td>
-            <td></td>
+            <td>X</td>
             <td></td>
             <td>X</td>
             <td>X</td>
@@ -211,7 +211,7 @@ organization.
             <td>Workspaces</td>
             <td>X</td>
             <td>X</td>
-            <td></td>
+            <td>X</td>
             <td></td>
             <td></td>
             <td>X</td>
@@ -340,8 +340,8 @@ organization.
         <tr>
             <td>Workspaces</td>
             <td>X</td>
-            <td>X</td>
             <td></td>
+            <td>X</td>
             <td></td>
             <td></td>
             <td>X</td>
@@ -470,8 +470,8 @@ organization.
         <tr>
             <td>Workspaces</td>
             <td>X</td>
-            <td>X</td>
             <td></td>
+            <td>X</td>
             <td></td>
             <td></td>
             <td>X</td>
@@ -600,8 +600,8 @@ organization.
         <tr>
             <td>Workspaces</td>
             <td>X</td>
-            <td>X</td>
             <td></td>
+            <td>X</td>
             <td></td>
             <td></td>
             <td>X</td>
