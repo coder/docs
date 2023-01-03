@@ -33,7 +33,7 @@ function like [user roles](users/user-roles.md). There are five roles available:
         </tr>
         <tr>
             <td><b>Organization importer</b></td>
-            <td>In addition to basic organization access, Can create new
+            <td>In addition to basic organization access, can create new
             <b>images</b> assigned to the organization.</td>
         </tr>
         <tr>
