@@ -4,7 +4,7 @@ description: Learn how to manage organization roles.
 ---
 
 You can assign members of an [organization](../organizations.md) roles, which
-function like [user roles](users/user-roles.md). There are two roles available:
+function like [user roles](users/user-roles.md). There are five roles available:
 
 <table>
     <thead>
@@ -15,17 +15,31 @@ function like [user roles](users/user-roles.md). There are two roles available:
     </thead>
     <tbody>
         <tr>
-            <td><b>Organization manager</b></td>
+            <td><b>Organization super manager</b></td>
             <td>Grants full administrative access to the organization and the
             ability to manage its <b>images</b> and
             <b>members</b>. Can view, modify, and delete <b>workspaces</b>
             belonging to members of the organization.</td>
         </tr>
         <tr>
+            <td><b>Organization manager</b></td>
+            <td>Grants create, view, modify, and delete to the organization's
+            <b>images</b>, <b>image tags</b>, and <b>registries</b>.</td>
+        </tr>
+        <tr>
+            <td><b>Organization image manager</b></td>
+              <td>Grants create, view, modify, and delete to the organization's
+            <b>images</b>, and <b>image tags</b>.</td>
+        </tr>
+        <tr>
+            <td><b>Organization importer</b></td>
+            <td>In addition to basic organization access, Can create new
+            <b>images</b> assigned to the organization.</td>
+        </tr>
+        <tr>
             <td><b>Organization member</b></td>
             <td>Grants basic organization access. Can use and view <b>images</b>
-            belonging to the organization. Can create new
-            <b>images</b> assigned to the organization. Can only access
+            belonging to the organization. Can only access
             <b>workspaces</b> within their organization.</td>
         </tr>
     </tbody>
