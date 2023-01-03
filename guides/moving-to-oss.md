@@ -3,8 +3,9 @@ title: "Moving to Coder v2"
 description: What you need to know about Coder v2
 ---
 
-Coder v2 is Coder's open core remote development platform first launched in June
-2022. Coder v2 has an [open-source](https://github.com/coder/coder) "OSS" and an
+Coder v2 is Coder's open core remote development platform first launched in
+June 2022. Coder v2 has an [open-source](https://github.com/coder/coder) "OSS"
+and an
 [Enterprise paid edition](https://coder.com/docs/coder-oss/latest/enterprise).
 This document shares best practices for moving your workflows from Coder v1 to
 Coder v2.
@@ -36,8 +37,8 @@ comparison table before you proceed.
 
 ## Migration Strategy
 
-A separate control plane is necessary to run Coder v2. A direct upgrade via
-Helm is not possible since Coder v2 redefines some concepts (e.g. templates,
+A separate control plane is necessary to run Coder v2. A direct upgrade via Helm
+is not possible since Coder v2 redefines some concepts (e.g. templates,
 provisioners) and other features are still being developed (e.g. audit log,
 organization support).
 
@@ -83,7 +84,6 @@ database and a reverse proxy for TLS.
 | **Multi region/cloud (workspaces)**    | ✅ [Workspace providers](https://coder.com/docs/coder/latest/admin/workspace-providers) support additional clusters. | ✅ [Templates](https://coder.com/docs/coder/latest/admin/templates) can provision resources in any clouds, clusters, or region |
 | **Multi region/cloud (tunnel/SSH)**    | ✅                                                                                                                   | ✅                                                                                                                             |
 
-
 ### CLI
 
 Coder v2 uses a separate
@@ -119,8 +119,7 @@ authentication.
 | Generated SSH key | ✅       | ✅                                                                                              |
 | Default shell     | ✅       | Per-workspace [(with parameters)](https://coder.com/docs/coder-oss/latest/templates#parameters) |
 | Auto-start times  | ✅       | Per-workspace                                                                                   |
-| Git OAuth         | ✅       | ✅                            |
-
+| Git OAuth         | ✅       | ✅                                                                                              |
 
 User-wide settings (e.g. shell, autostart times, dotfiles URL) are not currently
 supported in Coder v2 [(#3506)](https://github.com/coder/coder/issues/3506).
@@ -182,7 +181,6 @@ comparison:
 | **Resource provisoning rates**                                       | ✅ Organization wide | ✅ Template wide [(needs docs)](https://github.com/coder/coder/issues/3519)                                          |
 | **Manage workspaces through UI and CLI**                             | ✅                   | ✅                                                                                                                   |
 
-
 ### Developer experience
 
 Some developer experience features are different, or still being worked on in
@@ -204,21 +202,21 @@ Coder v2. Refer to this table:
 | **Manage workspaces through UI and CLI**                            | ✅                                                                    | ✅                                                                                                           |
 | **Open in Coder button**                                            | ✅                                                                    | 🤔 [(needs docs)](https://github.com/coder/coder/issues/3981)                                                |
 
-
 ### Enterprise/management
 
 Some enterprise features are different, or still being worked on in Coder v2.
 Refer to this table:
 
-|                                      | Coder v1          | Coder v2                                                                                    |
-| ------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------- |
-| **Auto-stop workspace**              | ✅ Activity-based | ✅ Schedule-based & ✅ Activity-based )                                                     |
-| **Audit logging**                    | ✅                | ✅                                                                                          |
-| **Organizations**                    | ✅                | ✅ Groups & template permissions                                                            |
-| **Workspace Proccess Logging**       | ✅                | ⌛ [#5314](https://github.com/coder/coder/issues/5314)                                                            |
-| **User metrics**                     | ✅                | Template-wide metrics [(needs docs)](https://github.com/coder/coder/issues/3980)            |
-| **Resource quotas**                  | ✅                | ✅ Max workspace limit                                                                      |
-| **SDK**                              | ❌                | ✅ [codersdk](https://github.com/coder/coder/tree/main/codersdk)                            |
-| **REST API**                         | ✅                | ✅                                                                                          |
+|                                | Coder v1          | Coder v2                                                                         |
+| ------------------------------ | ----------------- | -------------------------------------------------------------------------------- |
+| **Auto-stop workspace**        | ✅ Activity-based | ✅ Schedule-based & ✅ Activity-based )                                          |
+| **Audit logging**              | ✅                | ✅                                                                               |
+| **Organizations**              | ✅                | ✅ Groups & template permissions                                                 |
+| **Workspace Proccess Logging** | ✅                | ⌛ [#5314](https://github.com/coder/coder/issues/5314)                           |
+| **User metrics**               | ✅                | Template-wide metrics [(needs docs)](https://github.com/coder/coder/issues/3980) |
+| **Resource quotas**            | ✅                | ✅ Max workspace limit                                                           |
+| **SDK**                        | ❌                | ✅ [codersdk](https://github.com/coder/coder/tree/main/codersdk)                 |
+| **REST API**                   | ✅                | ✅                                                                               |
 
-> See the [v1 sunset frequently asked questions](./v2-faq.md) for more information.
+> See the [v1 sunset frequently asked questions](./v2-faq.md) for more
+> information.
