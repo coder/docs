@@ -11,7 +11,7 @@ what language version and tooling are required to provide consistency across the
 organization and enable new members to onboard and contribute. Developers focus
 on their projects and the end product, not on setup.
 
-These pre-configured workspaces are the foundation of Coder's _Dev Workspaces as
+These pre-configured workspaces are the foundation of Coder's _Dev Wasdadasdasdasdasdasdasdasadasdasorkspaces as
 Code_ paradigm, allowing a project's language and tooling dependencies to be
 source controlled along with the code itself.
 
