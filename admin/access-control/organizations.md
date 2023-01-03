@@ -610,7 +610,7 @@ organization.
         </tr>
         <tr>
             <td>Images</td>
-            <td>X</td>
+            <td></td>
             <td>X</td>
             <td></td>
             <td></td>
@@ -621,7 +621,7 @@ organization.
         </tr>
         <tr>
             <td>Image tags</td>
-            <td>X</td>
+            <td></td>
             <td>X</td>
             <td></td>
             <td></td>
