@@ -605,7 +605,11 @@
       "children": [
         {
           "path": "./changelog/1.38.0.md",
-          "children": []
+          "children": [
+            {
+              "path": "./changelog/1.38.1.md"
+            }
+					]
         },
         {
           "path": "./changelog/1.37.0.md",
