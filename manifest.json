@@ -607,6 +607,9 @@
           "path": "./changelog/1.38.0.md",
           "children": [
             {
+              "path": "./changelog/1.38.2.md"
+            },
+            {
               "path": "./changelog/1.38.1.md"
             }
           ]
