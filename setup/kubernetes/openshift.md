@@ -164,8 +164,15 @@ spec:
       # Switch to root
       USER root 
 
-      # As root, change the coder user id
-      RUN userdel coder && useradd -l -u 1000670000 coder && chown coder:coder /home/coder
+      # As root:
+      # 1) Remove the original coder user with UID 1000
+      # 2) Add a coder group with an allowed UID
+      # 3) Add a coder user as a member of the above group
+      # 4) Fix ownership on the user's home directory
+      RUN userdel coder && \
+          groupadd coder -g 1000670000 && \
+          useradd -l -u 1000670000 coder -g 1000670000 && \
+          chown -R coder:coder /home/coder
 
       # Go back to the user 'coder'
       USER coder
