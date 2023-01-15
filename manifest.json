@@ -1,15 +1,5 @@
 {
-  "versions": [
-    "v1.38",
-    "v1.37",
-    "v1.36",
-    "v1.35",
-    "v1.34",
-    "v1.33",
-    "v1.32",
-    "v1.31",
-    "v1.30"
-  ],
+  "versions": ["v1.38", "v1.37", "v1.36", "v1.35", "v1.34", "v1.33"],
   "routes": [
     {
       "path": "./index.md",
@@ -1091,95 +1081,87 @@
           "description": "Released on 07/27/2022"
         },
         {
-          "path": "./changelog/1.32.0.md",
+          "path": "./changelog/archive/index.md",
+          "navigable": false,
           "children": [
             {
               "path": "./changelog/1.32.5.md",
+              "navigable": false,
               "title": "1.32.5",
               "description": "Released on 09/09/2022"
             },
             {
               "path": "./changelog/1.32.4.md",
+              "navigable": false,
               "title": "1.32.4",
               "description": "Released on 08/22/2022"
             },
             {
               "path": "./changelog/1.32.3.md",
+              "navigable": false,
               "title": "1.32.3",
               "description": "Released on 08/04/2022"
             },
             {
               "path": "./changelog/1.32.2.md",
+              "navigable": false,
               "title": "1.32.2",
               "description": "Released on 07/20/2022"
             },
             {
               "path": "./changelog/1.32.1.md",
+              "navigable": false,
               "title": "1.32.1",
               "description": "Released on 07/14/2022"
-            }
-          ],
-          "title": "1.32.0",
-          "description": "Released on 06/22/2022"
-        },
-        {
-          "path": "./changelog/1.31.0.md",
-          "children": [
+            },
             {
               "path": "./changelog/1.31.3.md",
+              "navigable": false,
               "title": "1.31.3",
               "description": "Released on 08/15/2022"
             },
             {
               "path": "./changelog/1.31.2.md",
+              "navigable": false,
               "title": "1.31.2",
               "description": "Released on 07/20/2022"
             },
             {
               "path": "./changelog/1.31.1.md",
+              "navigable": false,
               "title": "1.31.1",
               "description": "Released on 06/01/2022"
-            }
-          ],
-          "title": "1.31.0",
-          "description": "Released on 05/26/2022"
-        },
-        {
-          "path": "./changelog/1.30.0.md",
-          "children": [
+            },
             {
               "path": "./changelog/1.30.5.md",
+              "navigable": false,
               "title": "1.30.5",
               "description": "Released on 09/01/2022"
             },
             {
               "path": "./changelog/1.30.4.md",
+              "navigable": false,
               "title": "1.30.4",
               "description": "Released on 07/20/2022"
             },
             {
               "path": "./changelog/1.30.3.md",
+              "navigable": false,
               "title": "1.30.3",
               "description": "Released on 06/01/2022"
             },
             {
               "path": "./changelog/1.30.2.md",
+              "navigable": false,
               "title": "1.30.2",
               "description": "Released on 04/30/2022"
             },
             {
               "path": "./changelog/1.30.1.md",
+              "navigable": false,
               "title": "1.30.1",
               "description": "Released on 04/29/2022"
-            }
-          ],
-          "title": "1.30.0",
-          "description": "Released on 04/27/2022"
-        },
-        {
-          "path": "./changelog/archive/index.md",
-          "navigable": false,
-          "children": [
+            },
             {
               "path": "./changelog/1.29.6.md",
               "navigable": false,
