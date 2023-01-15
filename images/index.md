@@ -1,7 +1,4 @@
----
-title: "Images"
-description: Learn about reproducibility in Coder.
----
+# Images
 
 Coder creates development environments called
 [workspaces](../workspaces/index.md) using container images as the blueprints.

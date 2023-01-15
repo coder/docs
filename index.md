@@ -1,7 +1,4 @@
----
-title: "Home"
-description: "Explore our guides and examples to get started with Coder."
----
+# Home
 
 Coder v1 is a self-hosted platform that allows organizations to securely
 provision developer workspaces (featuring remote IDEs and all related resources)

@@ -1,6 +1,3 @@
----
-title: "Troubleshooting"
-description: Learn how to troubleshoot Coder-related errors.
----
+# Troubleshooting
 
 <children></children>
