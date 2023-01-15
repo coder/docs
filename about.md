@@ -1,7 +1,4 @@
----
-title: "About"
-description: "Learn about Coder, our mission, and why to choose us."
----
+# About
 
 Coder is a self-hosted platform that allows organizations to securely provision
 developer workspaces for DevOps, infrastructure, and software engineering teams.

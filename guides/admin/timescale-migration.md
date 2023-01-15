@@ -1,7 +1,4 @@
----
-title: Database migration
-description: Learn how to migrate data from Coder's built-in database.
----
+# Database migration
 
 By default, Coder deploys a built-in database in the installation's Kubernetes
 namespace. We recommend using this database _only_ for evaluation purposes.

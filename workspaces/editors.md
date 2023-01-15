@@ -1,8 +1,4 @@
----
-title: "Editors and IDEs"
-description:
-  Learn how to connect your favorite editors and IDEs to your remote workspace.
----
+# Editors and IDEs
 
 There are several primary ways you can connect an IDE to your Coder workspace:
 
@@ -92,8 +88,8 @@ code-server -r personalize.log
 preferred remote development solution. Projector (the browser-based option) is
 [no longer recommended](https://lp.jetbrains.com/projector/) by JetBrains.
 
-> By default, Gateway will download the IDE from jetbrains.com into the
-> Coder workspace during the setup. If you are air-gapped or want to leverage a
+> By default, Gateway will download the IDE from jetbrains.com into the Coder
+> workspace during the setup. If you are air-gapped or want to leverage a
 > JetBrains IDE in your workspace for faster setup, you can point to an
 > already-installed JetBrains IDE. See the configuration at the end of this
 > Gateway section.

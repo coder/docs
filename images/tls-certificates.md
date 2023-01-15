@@ -1,7 +1,4 @@
----
-title: "TLS certificates"
-description: Learn how to add TLS certificates to Coder images
----
+# TLS certificates
 
 This article will show you how to correct issues regarding TLS certificates in
 Coder.
@@ -63,9 +60,9 @@ Certificates may specify both fields for interoperability with existing software
 that requires the `commonName` field.
 
 If you see this error when building a workspace or performing other operations
-with Coder workspaces, you may be running into the aforementioned issue. To verify
-that this is the case, you can inspect the certificate of your Coder deployment
-with the following command:
+with Coder workspaces, you may be running into the aforementioned issue. To
+verify that this is the case, you can inspect the certificate of your Coder
+deployment with the following command:
 
 ```shell
 openssl s_client -connect coder.domain.tld:443 < /dev/null 2>/dev/null \|
@@ -74,8 +71,8 @@ openssl x509 -text -noout \|
 grep -A1 'Subject Alternative Name'
 ```
 
-If your certificate has SANs specified, the expected output for the above command
-would be similar to the following:
+If your certificate has SANs specified, the expected output for the above
+command would be similar to the following:
 
 ```shell
            X509v3 Subject Alternative Name:

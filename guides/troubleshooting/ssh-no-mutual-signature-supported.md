@@ -1,7 +1,4 @@
----
-title: SSH no mutual signature supported
-description: Learn how to fix SSH error "no mutual signature supported"
----
+# SSH no mutual signature supported
 
 When using `coder ssh` to reach your workspace, you may encounter the following
 error:
@@ -16,7 +13,7 @@ user@coder.workspace: Permission denied (publickey).
 
 Some versions of ssh, including the version that is included in macOS Ventura
 (Version 13) fail to select a supported authentication algorithm when connecting
-to Coder with an RSA SSH key.  The ssh client incorrectly determines that only
+to Coder with an RSA SSH key. The ssh client incorrectly determines that only
 the deprecated `ssh-rsa` algorithm is supported by the server.
 
 ## Resolution
@@ -24,7 +21,7 @@ the deprecated `ssh-rsa` algorithm is supported by the server.
 ### Option 1: Use elliptic curve SSH keys
 
 Elliptic curve key authentication does not appear to suffer the negotiation
-failure.  A Coder administrator should configure either `Ed25519` or `ECDSA` SSH
+failure. A Coder administrator should configure either `Ed25519` or `ECDSA` SSH
 keys under **Manage** > **Admin** > **Security**.
 
 After this configuration change, regenerate your SSH key by clicking your avatar

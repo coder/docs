@@ -1,7 +1,4 @@
----
-title: Git configuration
-description: Learn how to configure Git in Coder.
----
+# Git configuration
 
 This guide will show you how to manage your Git configuration in Coder.
 
@@ -39,5 +36,5 @@ present, `git` applies the settings defined to each repository. However, any
 Coder user can override system-level settings using global or worktree git
 configurations.
 
-For more information on Git configuration, refer to the [official
-documentation](https://git-scm.com/docs/git-config).
+For more information on Git configuration, refer to the
+[official documentation](https://git-scm.com/docs/git-config).

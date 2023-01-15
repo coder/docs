@@ -1,7 +1,4 @@
----
-title: "Image tag names"
-description: Learn about image tag naming conventions and recommendations for use.
----
+# Image tag names
 
 Coder uses image tags to determine the image variant to use when creating an
 workspace.

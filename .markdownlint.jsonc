@@ -2,60 +2,62 @@
   // Default state for all rules is true
   "default": true,
 
+  "MD001": false,
+
   // Enforces headings use leftward hashtags
   "MD003": "atx",
 
   // Enforces consistent delimiter used for list items
   "MD004": {
-      "style": "dash"
+    "style": "dash"
   },
 
   "MD013": {
-      "code_blocks": false,
-      "tables": false
+    "code_blocks": false,
+    "tables": false
   },
 
   // Enforces that the only punctuation that may appear at the end of a heading
   // is a question mark (?)
   "MD026": {
-      "punctuation": ".,;:!"
+    "punctuation": ".,;:!"
   },
-  
+
   "MD029": {
-      "style": "one"
+    "style": "one"
   },
 
   // Disables enforcement of HTML usage
   "MD033": false,
-   
+
   // Enforces horizontal rules must be indicated with "---"
   "MD035": "---",
 
   // Enforces that after Jekyll front-matter, an h2 is used
   "MD041": {
-      "level": 2
+    "level": 1
   },
 
   // Enforces correct spelling and capitalization of the names array
   "MD044": {
-      "names": [
-          "Bitbucket",
-          "GitHub",
-          "GitLab",
-          "Google",
-          "Kubernetes",
-          "JavaScript",
-          "JSON",
-          "PostgreSQL",
-          "URL",
-          "URLs"
-      ],
-      "code_blocks": false
+    "names": [
+      "Bitbucket",
+      "GitHub",
+      "GitLab",
+      "Google",
+      "Kubernetes",
+      "JavaScript",
+      "JSON",
+      "PostgreSQL",
+      "URL",
+      "URLs"
+    ],
+    "code_blocks": false
   },
 
   // Enforces all code blocks appear within code fences
   "MD046": "fenced",
-  
+
   // Enforces backticks are used to create code fences
   "MD048": "backtick"
 }

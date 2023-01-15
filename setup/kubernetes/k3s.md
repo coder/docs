@@ -1,14 +1,12 @@
----
-title: "K3s"
-description: Set up K3s on an Ubuntu machine to deploy Coder.
----
+# K3s
 
 This article will show you how to install K3s onto a new Ubuntu 20.04 LTS
 machine for use with Coder.
 
 [K3s](https://k3s.io/) is a lightweight Kubernetes distribution that works well
 for single-node or multi-node clusters. For single-user trial purposes, you may
-want to consider the options in [Coder for Docker](../coder-for-docker/index.md).
+want to consider the options in
+[Coder for Docker](../coder-for-docker/index.md).
 
 > This installation method is not officially supported or tested by Coder. If
 > you have questions or run into issues, feel free to reach out using our
@@ -116,8 +114,8 @@ cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 
 ## Next steps
 
-If you have already installed Coder, you can add this cluster as a [workspace
-provider](../../admin/workspace-providers/deployment/index.md).
+If you have already installed Coder, you can add this cluster as a
+[workspace provider](../../admin/workspace-providers/deployment/index.md).
 
 To access Coder through a secure domain, review our guides on configuring and
 using [TLS certificates](../../guides/tls-certificates/index.md).

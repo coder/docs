@@ -1,7 +1,4 @@
----
-title: "Deprecate and Decommission"
-description: Learn how to deprecate an image and decommission a tag.
----
+# Deprecate and Decommission
 
 At a certain point, you may wish to deprecate a specific workspace image in
 favor of a newer one. Coder provides two mechanisms to control workspace image

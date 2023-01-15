@@ -1,39 +1,36 @@
----
-title: AWS RDS with IAM credentials
-description: Learn how to connect Coder to an RDS database using IAM.
----
+# AWS RDS with IAM credentials
 
 In addition to using
 [user/password](../../setup/installation.md#connect-an-external-database) for
-database authentication, Coder supports connecting to Amazon RDS databases
-using IAM credentials.
+database authentication, Coder supports connecting to Amazon RDS databases using
+IAM credentials.
 
 ## Requirements
 
-- An EKS cluster with an [IAM OIDC provider enabled](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html)
-- An RDS instance with [IAM authentication enabled](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.Enabling.html)
+- An EKS cluster with an
+  [IAM OIDC provider enabled](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html)
+- An RDS instance with
+  [IAM authentication enabled](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.Enabling.html)
 
 ## Setup
 
 1. [Create an IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html)
-to use for database authentication.
+   to use for database authentication.
 
 1. Create an IAM policy for the role created in Step 1.
 
 ```json
 {
-   "Version": "2012-10-17",
-   "Statement": [
-      {
-         "Effect": "Allow",
-         "Action": [
-             "rds-db:connect"
-         ],
-         "Resource": [
-             "arn:aws:rds-db:us-east-2:1234567890:dbuser:db-ABCDEFGHIJKL01234/db_user"
-         ]
-      }
-   ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["rds-db:connect"],
+      "Resource": [
+        "arn:aws:rds-db:us-east-2:1234567890:dbuser:db-ABCDEFGHIJKL01234/db_user"
+      ]
+    }
+  ]
 }
 ```
 
@@ -41,21 +38,21 @@ to use for database authentication.
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-            "Federated": "arn:aws:iam::111122223333:oidc-provider/oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE"
-            },
-            "Action": "sts:AssumeRoleWithWebIdentity",
-            "Condition": {
-                "StringEquals": {
-                    "oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE:sub":"system:serviceaccount:<cluster>:<namespace>"
-                }
-            }
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::111122223333:oidc-provider/oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE:sub": "system:serviceaccount:<cluster>:<namespace>"
         }
-    ]
+      }
+    }
+  ]
 }
 ```
 
@@ -63,7 +60,7 @@ to use for database authentication.
    grant them the `rds_iam` role.
 
 ```sql
-CREATE USER dbuser WITH LOGIN; 
+CREATE USER dbuser WITH LOGIN;
 GRANT rds_iam TO dbuser;
 GRANT CREATE ON DATABASE coder TO dbuser;
 ```

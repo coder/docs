@@ -1,7 +1,4 @@
----
-title: Security
-description: Learn about Coder's security options.
----
+# Security
 
 Coder offers security features that you can configure. These are available under
 **Manage** > **Admin** > **Security**.
