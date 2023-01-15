@@ -1,8 +1,4 @@
----
-title: Environment variables
-description:
-  Learn how to work with CODER_* environment variables inside workspaces.
----
+# Environment variables
 
 Coder injects a standard set of environment variables that allow you to access
 contextual information about your workspace.

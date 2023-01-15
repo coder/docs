@@ -1,5 +1,3 @@
----
-title: "Admin"
----
+# Admin
 
 <children></children>

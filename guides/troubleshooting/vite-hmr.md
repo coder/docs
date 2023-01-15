@@ -1,7 +1,4 @@
----
-title: Vite and HMR
-description: Learn how to resolve issues with HMR when using Vite.
----
+# Vite and HMR
 
 When using Vite and accessing your app via
 [dev URLs](../../workspaces/devurls.md), you may encounter issues with hot

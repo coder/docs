@@ -1,7 +1,4 @@
----
-title: "K3s"
-description: Set up K3s on an Ubuntu machine to deploy Coder.
----
+# K3s
 
 This article will show you how to install K3s onto a new Ubuntu 20.04 LTS
 machine for use with Coder.

@@ -1,7 +1,4 @@
----
-title: "Import"
-description: "Learn how to import images to use in Coder."
----
+# Import
 
 Coder imports images from [container registries](../admin/registries/index.md).
 

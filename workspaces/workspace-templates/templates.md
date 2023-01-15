@@ -1,8 +1,4 @@
----
-title: "Workspace templates"
-description: "Learn how to write a template for creating workspaces."
-state: alpha
----
+# Workspace templates
 
 <!-- markdownlint-disable MD044 -->
 

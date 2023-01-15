@@ -1,7 +1,4 @@
----
-title: "Configure TLS on Coder for Docker"
-description: Learn how to configure TLS on Coder for Docker
----
+# Configure TLS on Coder for Docker
 
 This guide walks you through configuring TLS on your Coder for Docker deployment
 using a reverse proxy.

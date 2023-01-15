@@ -1,7 +1,4 @@
----
-title: Mobile development
-description: Learn how to develop mobile apps with Coder.
----
+# Mobile development
 
 Compiling mobile applications are resource-intensive, but Coder allows you to
 leverage cloud resources to save time compiling while still keeping your native

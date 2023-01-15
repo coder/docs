@@ -1,8 +1,4 @@
----
-title: "Workspace applications"
-description: Learn how to access web apps running in your workspace.
-state: beta
----
+# Workspace applications
 
 You can connect to web applications installed on your workspace using an
 applications specification file located at `/coder/apps/config.yaml` of the

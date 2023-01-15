@@ -1,7 +1,4 @@
----
-title: "Audit"
-description: Learn how Coder audits user and admin actions.
----
+# Audit
 
 Coder maintains records of all user actions on system resources for auditing
 purposes.

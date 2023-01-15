@@ -1,7 +1,4 @@
----
-title: Cluster setup
-description: Learn how to set up K8s clusters capable of supporting CVMs.
----
+# Cluster setup
 
 The following sections show how you can set up your Kubernetes clusters hosted
 by Google, Azure, and Amazon to support CVMs.

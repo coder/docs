@@ -1,7 +1,4 @@
----
-title: "Direct workspace connections"
-description: Learn how to enable direct connections to workspaces.
----
+# Direct workspace connections
 
 Coder supports the use of [WebRTC STUN](https://en.wikipedia.org/wiki/STUN),
 enabling point-to-point, direct connections to workspaces. Direct connections to

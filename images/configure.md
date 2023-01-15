@@ -1,7 +1,4 @@
----
-title: "Configure script"
-description: Learn how to configure Coder's workspace startup behavior.
----
+# Configure script
 
 If you have configuration instructions that apply to everyone who uses a given
 image to create workspaces, you can define them using the **/coder/configure**

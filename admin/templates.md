@@ -1,7 +1,4 @@
----
-title: Templates
-description: Learn how to manage your workspace templates.
----
+# Templates
 
 The **Templates** tab features options that control the behavior of
 [workspace templates](../workspaces/workspace-templates/index.md).

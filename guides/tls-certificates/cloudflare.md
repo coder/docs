@@ -1,9 +1,4 @@
----
-title: Cloudflare
-description:
-  Learn how to use cert-manager to set up TLS certificates using Cloudflare for
-  DNS01 challenges.
----
+# Cloudflare
 
 [cert-manager](https://cert-manager.io/) allows you to enable HTTPS on your
 Coder installation, regardless of whether you're using
