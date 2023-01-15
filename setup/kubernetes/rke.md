@@ -1,7 +1,4 @@
----
-title: Rancher Kubernetes Engine
-description: Learn how to setup a Rancher cluster for your Coder deployment
----
+# Rancher Kubernetes Engine
 
 This deployment guide shows you how to set up a bare-metal Rancher Kubernetes
 Engine (RKE) cluster on which Coder can deploy.

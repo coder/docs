@@ -1,7 +1,4 @@
----
-title: Data scientists
-description: Get started with Coder as a data scientist.
----
+# Data scientists
 
 This article will walk you through the process of getting started with a Coder
 workspace capable of supporting data science projects. You'll learn how to:

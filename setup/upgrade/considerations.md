@@ -1,7 +1,4 @@
----
-title: "Update considerations"
-description: Learn how to update your Coder deployment.
----
+# Update considerations
 
 The upgrade page provides instructions on how to upgrade your Coder deployment.
 This article, however, includes information you should be aware of prior to

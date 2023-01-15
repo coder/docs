@@ -1,7 +1,4 @@
----
-title: Azure Kubernetes Service
-description: Learn how to set up an AKS cluster for your Coder deployment.
----
+# Azure Kubernetes Service
 
 This deployment guide shows you how to set up an Azure Kubernetes Service (AKS)
 cluster on which Coder can deploy.

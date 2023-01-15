@@ -1,7 +1,4 @@
----
-title: OpenID Connect with Azure AD
-description: Learn how to use Azure's Active Directory SSO with Coder.
----
+# OpenID Connect with Azure AD
 
 This article walks you through setting up single sign-on to Coder using Azure's
 Active directory.

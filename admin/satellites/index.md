@@ -1,7 +1,4 @@
----
-title: Satellites
-description: Learn about satellite deployments to reduce global latency.
----
+# Satellites
 
 Workspace providers allow a single Coder deployment to provision and manage
 workspaces across multiple Kubernetes clusters and namespaces, including those

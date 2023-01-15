@@ -1,7 +1,4 @@
----
-title: Account dormancy
-description: Learn how to manage the lifecycle of dormant user accounts.
----
+# Account dormancy
 
 Coder's account dormancy feature allows you to free up license seats if you have
 users that aren't active on the platform for 90 days or more.

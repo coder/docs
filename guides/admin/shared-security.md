@@ -1,8 +1,4 @@
----
-title: Shared security responsibility
-description:
-  Learn how Coder and its users carry security-related responsibilities.
----
+# Shared security responsibility
 
 To guarantee the security of the Coder workspace, which includes the entire
 ecosystem of components needed to support the developer's user experience,

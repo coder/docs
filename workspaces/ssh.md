@@ -1,7 +1,4 @@
----
-title: "SSH access"
-description: Learn how to configure SSH access to your workspaces.
----
+# SSH access
 
 Before accessing your workspace via SSH:
 

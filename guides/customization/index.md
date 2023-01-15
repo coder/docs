@@ -1,6 +1,3 @@
----
-title: "Customization"
-description: Learn about tasks related to customizing Coder.
----
+# Customization
 
 <children></children>

@@ -1,7 +1,4 @@
----
-title: JFrog Artifactory
-description: Learn how to use Artifactory to host container images in Coder.
----
+# JFrog Artifactory
 
 This article will walk you through setting up
 [Artifactory](https://jfrog.com/artifactory/) as a Docker registry in Coder.
