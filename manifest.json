@@ -16,13 +16,18 @@
       "icon_path": "./assets/images/icons/home.svg",
       "children": [
         {
-          "path": "about.md"
+          "path": "about.md",
+          "title": "About",
+          "description": "Learn about Coder, our mission, and why to choose us."
         },
         {
-          "path": "comparison.md"
+          "path": "comparison.md",
+          "title": "Comparison",
+          "description": "Get an overview of our features."
         },
         {
-          "path": "feedback.md"
+          "path": "feedback.md",
+          "title": "Feedback"
         }
       ]
     },
@@ -31,22 +36,34 @@
       "icon_path": "./assets/images/icons/get-started.svg",
       "children": [
         {
-          "path": "getting-started/docker.md"
+          "path": "getting-started/docker.md",
+          "title": "Coder for Docker",
+          "description": "Get started with Coder for Docker as a developer."
         },
         {
-          "path": "getting-started/admin.md"
+          "path": "getting-started/admin.md",
+          "title": "Administrators",
+          "description": "Getting started with Coder as an administrator."
         },
         {
-          "path": "getting-started/data-scientists.md"
+          "path": "getting-started/data-scientists.md",
+          "title": "Data scientists",
+          "description": "Get started with Coder as a data scientist."
         },
         {
-          "path": "getting-started/developers.md"
+          "path": "getting-started/developers.md",
+          "title": "Developers",
+          "description": "Get started with Coder as a developer."
         },
         {
-          "path": "getting-started/intellij.md"
+          "path": "getting-started/intellij.md",
+          "title": "IntelliJ",
+          "description": "Get started with Coder as an IntelliJ user."
         },
         {
-          "path": "getting-started/pycharm.md"
+          "path": "getting-started/pycharm.md",
+          "title": "PyCharm",
+          "description": "Get started with Coder as a PyCharm user."
         }
       ]
     },
@@ -55,55 +72,90 @@
       "icon_path": "./assets/images/icons/workspaces.svg",
       "children": [
         {
-          "path": "./workspaces/create.md"
+          "path": "./workspaces/create.md",
+          "title": "Create a workspace",
+          "description": "Learn how to create and develop in a workspace."
         },
         {
-          "path": "./workspaces/lifecycle.md"
+          "path": "./workspaces/lifecycle.md",
+          "title": "Lifecycle",
+          "description": "Learn about the workspace lifecycle."
         },
         {
-          "path": "./workspaces/autostart.md"
+          "path": "./workspaces/autostart.md",
+          "title": "Auto-start",
+          "description": "Learn how to configure automated workspace rebuilds."
         },
         {
-          "path": "./workspaces/devurls.md"
+          "path": "./workspaces/devurls.md",
+          "title": "Dev URLs",
+          "description": "Learn how to access HTTP services running inside your workspace."
         },
         {
-          "path": "./workspaces/cvms.md"
+          "path": "./workspaces/cvms.md",
+          "title": "Docker in workspaces",
+          "description": "Learn how to run Docker securely inside your workspace."
         },
         {
-          "path": "./workspaces/editors.md"
+          "path": "./workspaces/editors.md",
+          "title": "Editors and IDEs",
+          "description": "Learn how to connect your favorite editors and IDEs to your remote workspace."
         },
         {
-          "path": "./workspaces/variables.md"
+          "path": "./workspaces/variables.md",
+          "title": "Environment variables",
+          "description": "Learn how to work with CODER_* environment variables inside workspaces."
         },
         {
-          "path": "./workspaces/personalization.md"
+          "path": "./workspaces/personalization.md",
+          "title": "Personalization",
+          "description": "Learn how to personalize your workspace to augment its base image."
         },
         {
-          "path": "./workspaces/preferences.md"
+          "path": "./workspaces/preferences.md",
+          "title": "Preferences",
+          "description": "Learn how to manage your Coder account preferences."
         },
         {
-          "path": "./workspaces/pwa.md"
+          "path": "./workspaces/pwa.md",
+          "title": "Progressive web apps",
+          "description": "Learn how to install the editor PWAs for a native IDE-like browser editing experience."
         },
         {
-          "path": "./workspaces/ssh.md"
+          "path": "./workspaces/ssh.md",
+          "title": "SSH access",
+          "description": "Learn how to configure SSH access to your workspaces."
         },
         {
-          "path": "./workspaces/vs-code-extensions.md"
+          "path": "./workspaces/vs-code-extensions.md",
+          "title": "VS Code extensions",
+          "description": "Learn how to add and use VS Code extensions with your workspace."
         },
         {
-          "path": "./workspaces/applications.md"
+          "path": "./workspaces/applications.md",
+          "title": "Workspace applications",
+          "description": "Learn how to access web apps running in your workspace.",
+          "state": "beta"
         },
         {
-          "path": "./workspaces/workspace-params.md"
+          "path": "./workspaces/workspace-params.md",
+          "title": "Workspace parameters",
+          "description": "Learn about each parameter available during workspace creation."
         },
         {
           "path": "./workspaces/workspace-templates/index.md",
           "children": [
             {
-              "path": "./workspaces/workspace-templates/templates.md"
+              "path": "./workspaces/workspace-templates/templates.md",
+              "title": "Workspace templates",
+              "description": "Learn how to write a template for creating workspaces.",
+              "state": "alpha"
             },
             {
-              "path": "./workspaces/workspace-templates/code-completion.md"
+              "path": "./workspaces/workspace-templates/code-completion.md",
+              "title": "Workspace template code completion",
+              "description": "Learn how to use code completion when creating workspace templates.",
+              "state": "alpha"
             }
           ]
         }
@@ -114,28 +166,44 @@
       "icon_path": "./assets/images/icons/images.svg",
       "children": [
         {
-          "path": "./images/configure.md"
+          "path": "./images/configure.md",
+          "title": "Configure script",
+          "description": "Learn how to configure Coder's workspace startup behavior."
         },
         {
-          "path": "./images/writing.md"
+          "path": "./images/writing.md",
+          "title": "Custom image creation",
+          "description": "Learn how to write custom images for use with Coder."
         },
         {
-          "path": "./images/deprecating.md"
+          "path": "./images/deprecating.md",
+          "title": "Deprecate and Decommission",
+          "description": "Learn how to deprecate an image and decommission a tag."
         },
         {
-          "path": "./images/embed-button.md"
+          "path": "./images/embed-button.md",
+          "title": "Embeddable button",
+          "description": "Learn how to embed an \"Open in Coder\" Button in Your Repo"
         },
         {
-          "path": "./images/importing.md"
+          "path": "./images/importing.md",
+          "title": "Import",
+          "description": "Learn how to import images to use in Coder."
         },
         {
-          "path": "./images/structure.md"
+          "path": "./images/structure.md",
+          "title": "Structure",
+          "description": "Learn how to best structure image specifications for use inside your organization."
         },
         {
-          "path": "./images/tags.md"
+          "path": "./images/tags.md",
+          "title": "Tags",
+          "description": "Learn how to manage image versions inside Coder."
         },
         {
-          "path": "./images/tls-certificates.md"
+          "path": "./images/tls-certificates.md",
+          "title": "TLS certificates",
+          "description": "Learn how to add TLS certificates to Coder images"
         }
       ]
     },
@@ -144,16 +212,24 @@
       "icon_path": "./assets/images/icons/terminal.svg",
       "children": [
         {
-          "path": "./cli/installation.md"
+          "path": "./cli/installation.md",
+          "title": "Installation and setup",
+          "description": "Learn how to install and configure the Coder CLI."
         },
         {
-          "path": "./cli/remote-terminal.md"
+          "path": "./cli/remote-terminal.md",
+          "title": "Remote terminal",
+          "description": "Learn how to use the Coder CLI to access your workspace."
         },
         {
-          "path": "./cli/file-sync.md"
+          "path": "./cli/file-sync.md",
+          "title": "File sync",
+          "description": "Learn how to sync files between Coder and your local IDE."
         },
         {
-          "path": "./cli/managing-workspaces.md"
+          "path": "./cli/managing-workspaces.md",
+          "title": "Workspace management",
+          "description": "See example usages of the CLI for personal workspace management."
         }
       ]
     },
@@ -162,51 +238,77 @@
       "icon_path": "./assets/images/icons/wrench.svg",
       "children": [
         {
-          "path": "./setup/architecture.md"
+          "path": "./setup/architecture.md",
+          "title": "Architecture",
+          "description": "Learn about the technical architecture of the Coder platform."
         },
         {
-          "path": "./setup/requirements.md"
+          "path": "./setup/requirements.md",
+          "title": "System Requirements",
+          "description": "Learn about the prerequisite infrastructure requirements."
         },
         {
           "path": "./setup/kubernetes/index.md",
           "children": [
             {
-              "path": "./setup/kubernetes/k3s.md"
+              "path": "./setup/kubernetes/k3s.md",
+              "title": "K3s",
+              "description": "Set up K3s on an Ubuntu machine to deploy Coder."
             },
             {
-              "path": "./setup/kubernetes/aws.md"
+              "path": "./setup/kubernetes/aws.md",
+              "title": "Amazon Elastic Kubernetes Service",
+              "description": "Learn how to set up an Amazon EKS cluster for your Coder deployment."
             },
             {
-              "path": "./setup/kubernetes/azure.md"
+              "path": "./setup/kubernetes/azure.md",
+              "title": "Azure Kubernetes Service",
+              "description": "Learn how to set up an AKS cluster for your Coder deployment."
             },
             {
-              "path": "./setup/kubernetes/google.md"
+              "path": "./setup/kubernetes/google.md",
+              "title": "Google Kubernetes Engine",
+              "description": "Learn how to set up a GKE cluster for your Coder deployment."
             },
             {
-              "path": "./setup/kubernetes/openshift.md"
+              "path": "./setup/kubernetes/openshift.md",
+              "title": "Red Hat OpenShift",
+              "description": "Learn about deploying Coder in OpenShift Container Platform"
             },
             {
-              "path": "./setup/kubernetes/rke.md"
+              "path": "./setup/kubernetes/rke.md",
+              "title": "Rancher Kubernetes Engine",
+              "description": "Learn how to setup a Rancher cluster for your Coder deployment"
             }
           ]
         },
         {
-          "path": "./setup/installation.md"
+          "path": "./setup/installation.md",
+          "title": "Installation",
+          "description": "Learn how to install Coder onto your infrastructure."
         },
         {
-          "path": "./setup/configuration.md"
+          "path": "./setup/configuration.md",
+          "title": "Configuration",
+          "description": "Learn how to configure a fresh Coder installation."
         },
         {
-          "path": "./setup/scaling.md"
+          "path": "./setup/scaling.md",
+          "title": "Scaling Coder",
+          "description": "Learn about best practices to properly scale Coder to meet developer and workspace needs."
         },
         {
           "path": "./setup/air-gapped/index.md",
           "children": [
             {
-              "path": "./setup/air-gapped/infrastructure.md"
+              "path": "./setup/air-gapped/infrastructure.md",
+              "title": "Network setup",
+              "description": "Learn how to set up a network for air-gapped Coder deployment."
             },
             {
-              "path": "./setup/air-gapped/offline-docs.md"
+              "path": "./setup/air-gapped/offline-docs.md",
+              "title": "Offline documentation",
+              "description": "Learn how to use Coder's embedded documentation."
             }
           ]
         },
@@ -214,13 +316,19 @@
           "path": "./setup/coder-for-docker/index.md",
           "children": [
             {
-              "path": "./setup/coder-for-docker/local.md"
+              "path": "./setup/coder-for-docker/local.md",
+              "title": "Local deployment",
+              "description": "Learn how to run Coder with Docker locally."
             },
             {
-              "path": "./setup/coder-for-docker/postgres.md"
+              "path": "./setup/coder-for-docker/postgres.md",
+              "title": "External database setup",
+              "description": "Learn how to set up an external Postgres database for use with C4D."
             },
             {
-              "path": "./setup/coder-for-docker/upgrade.md"
+              "path": "./setup/coder-for-docker/upgrade.md",
+              "title": "Upgrade",
+              "description": "Learn how to upgrade your Coder for Docker deployment."
             }
           ]
         },
@@ -228,7 +336,9 @@
           "path": "./setup/upgrade/index.md",
           "children": [
             {
-              "path": "./setup/upgrade/considerations.md"
+              "path": "./setup/upgrade/considerations.md",
+              "title": "Update considerations",
+              "description": "Learn how to update your Coder deployment."
             }
           ]
         }
@@ -242,19 +352,27 @@
           "path": "./admin/access-control/index.md",
           "children": [
             {
-              "path": "./admin/access-control/manage.md"
+              "path": "./admin/access-control/manage.md",
+              "title": "Authentication management",
+              "description": "Learn how to manage Coder authentication."
             },
             {
-              "path": "./admin/access-control/organizations.md"
+              "path": "./admin/access-control/organizations.md",
+              "title": "Organization roles",
+              "description": "Learn how to manage organization roles."
             },
             {
               "path": "./admin/access-control/users/index.md",
               "children": [
                 {
-                  "path": "./admin/access-control/users/user-roles.md"
+                  "path": "./admin/access-control/users/user-roles.md",
+                  "title": "User roles",
+                  "description": "Learn about Coder's user roles and the privileges they offer."
                 },
                 {
-                  "path": "./admin/access-control/users/password-reset.md"
+                  "path": "./admin/access-control/users/password-reset.md",
+                  "title": "Password reset",
+                  "description": "Learn how to reset Coder user passwords."
                 }
               ]
             }
@@ -264,7 +382,9 @@
           "path": "./admin/organizations/index.md",
           "children": [
             {
-              "path": "./admin/organizations/manage.md"
+              "path": "./admin/organizations/manage.md",
+              "title": "Org management",
+              "description": "Learn about managing organizations."
             }
           ]
         },
@@ -272,16 +392,24 @@
           "path": "./admin/registries/index.md",
           "children": [
             {
-              "path": "./admin/registries/default-registry.md"
+              "path": "./admin/registries/default-registry.md",
+              "title": "Default registry",
+              "description": "Learn how to work with Coder's default registry."
             },
             {
-              "path": "./admin/registries/ecr.md"
+              "path": "./admin/registries/ecr.md",
+              "title": "Amazon Elastic Container Registry",
+              "description": "Add a private Amazon ECR to Coder."
             },
             {
-              "path": "./admin/registries/azure.md"
+              "path": "./admin/registries/azure.md",
+              "title": "Azure Container Registry",
+              "description": "Add a Microsoft Azure Container Registry (ACR) to Coder."
             },
             {
-              "path": "./admin/registries/gcr.md"
+              "path": "./admin/registries/gcr.md",
+              "title": "Google Container Registry",
+              "description": "Add the Google Container Registry to Coder."
             }
           ]
         },
@@ -289,13 +417,20 @@
           "path": "./admin/satellites/index.md",
           "children": [
             {
-              "path": "./admin/satellites/management.md"
+              "path": "./admin/satellites/management.md",
+              "title": "Manage satellites",
+              "description": "Learn how to manage a satellite."
             },
             {
-              "path": "./admin/satellites/migration.md"
+              "path": "./admin/satellites/migration.md",
+              "title": "Migrate to satellite deployments",
+              "description": "Learn how to migrate workspace providers deployed before v1.21 to satellites."
             },
             {
-              "path": "./admin/satellites/global-access-url.md"
+              "path": "./admin/satellites/global-access-url.md",
+              "title": "Global access URL configuration",
+              "description": "Learn how to configure your primary and satellite deployments so that they\nshare an access URL.\n",
+              "state": "alpha"
             }
           ]
         },
@@ -306,45 +441,71 @@
               "path": "./admin/workspace-management/cvms/index.md",
               "children": [
                 {
-                  "path": "./admin/workspace-management/cvms/cluster-setup.md"
+                  "path": "./admin/workspace-management/cvms/cluster-setup.md",
+                  "title": "Cluster setup",
+                  "description": "Learn how to set up K8s clusters capable of supporting CVMs."
                 },
                 {
-                  "path": "./admin/workspace-management/cvms/images.md"
+                  "path": "./admin/workspace-management/cvms/images.md",
+                  "title": "Images",
+                  "description": "Learn how to work with images for CVM-enabled workspaces."
                 },
                 {
-                  "path": "./admin/workspace-management/cvms/management.md"
+                  "path": "./admin/workspace-management/cvms/management.md",
+                  "title": "Management",
+                  "description": "Learn how to enable CVMs."
                 }
               ]
             },
             {
-              "path": "./admin/workspace-management/extensions.md"
+              "path": "./admin/workspace-management/extensions.md",
+              "title": "Extensions",
+              "description": "Learn how to configure the code-server extension marketplace."
             },
             {
-              "path": "./admin/workspace-management/gpu-acceleration.md"
+              "path": "./admin/workspace-management/gpu-acceleration.md",
+              "title": "GPU acceleration",
+              "description": "Learn how to use GPUs with workspaces."
             },
             {
-              "path": "./admin/workspace-management/installing-jetbrains.md"
+              "path": "./admin/workspace-management/installing-jetbrains.md",
+              "title": "IDE installation",
+              "description": "Learn how to install IDEs in images."
             },
             {
-              "path": "./admin/workspace-management/memory-overprovisioning.md"
+              "path": "./admin/workspace-management/memory-overprovisioning.md",
+              "title": "Memory provisioning",
+              "description": "Learn how to provision memory requests from workspaces."
             },
             {
-              "path": "./admin/workspace-management/cpu-provisioning.md"
+              "path": "./admin/workspace-management/cpu-provisioning.md",
+              "title": "CPU provisioning",
+              "description": "Learn how to set the CPU provisioning ratio."
             },
             {
-              "path": "./admin/workspace-management/self-contained-builds.md"
+              "path": "./admin/workspace-management/self-contained-builds.md",
+              "title": "Self-contained workspace builds",
+              "description": "Learn how to toggle self-contained workspace builds."
             },
             {
-              "path": "./admin/workspace-management/shutdown.md"
+              "path": "./admin/workspace-management/shutdown.md",
+              "title": "Shutdown",
+              "description": "Learn how to configure workspace auto-off behavior."
             },
             {
-              "path": "./admin/workspace-management/ssh-access.md"
+              "path": "./admin/workspace-management/ssh-access.md",
+              "title": "SSH configuration",
+              "description": "Learn how to configure SSH access to Coder workspaces."
             },
             {
-              "path": "./admin/workspace-management/limits.md"
+              "path": "./admin/workspace-management/limits.md",
+              "title": "Workspace limits",
+              "description": "Learn how to limit the number of workspaces users can create."
             },
             {
-              "path": "./admin/workspace-management/process-logging.md"
+              "path": "./admin/workspace-management/process-logging.md",
+              "title": "Workspace process logging",
+              "description": "Learn how to enable workspace process logging for your deployment."
             }
           ]
         },
@@ -355,62 +516,100 @@
               "path": "./admin/workspace-providers/deployment/index.md",
               "children": [
                 {
-                  "path": "./admin/workspace-providers/deployment/docker.md"
+                  "path": "./admin/workspace-providers/deployment/docker.md",
+                  "title": "Docker",
+                  "description": "Learn how to deploy a workspace provider to a Docker instance.",
+                  "state": "alpha"
                 },
                 {
-                  "path": "./admin/workspace-providers/deployment/ec2.md"
+                  "path": "./admin/workspace-providers/deployment/ec2.md",
+                  "title": "EC2",
+                  "description": "Learn how to deploy a workspace provider to an EC2 instance.",
+                  "state": "alpha"
                 },
                 {
-                  "path": "./admin/workspace-providers/deployment/kubernetes.md"
+                  "path": "./admin/workspace-providers/deployment/kubernetes.md",
+                  "title": "Kubernetes",
+                  "description": "Learn how to deploy a workspace provider to a Kubernetes cluster."
                 }
               ]
             },
             {
-              "path": "./admin/workspace-providers/management.md"
+              "path": "./admin/workspace-providers/management.md",
+              "title": "Workspace provider management",
+              "description": "Learn how to manage a workspace provider."
             }
           ]
         },
         {
-          "path": "./admin/access-url.md"
+          "path": "./admin/access-url.md",
+          "title": "Access URL",
+          "description": "Learn how to set the access URL."
         },
         {
-          "path": "./admin/account-dormancy.md"
+          "path": "./admin/account-dormancy.md",
+          "title": "Account dormancy",
+          "description": "Learn how to manage the lifecycle of dormant user accounts."
         },
         {
-          "path": "./admin/appearance.md"
+          "path": "./admin/appearance.md",
+          "title": "Appearance",
+          "description": "Learn how to augment the dashboard appearance."
         },
         {
-          "path": "./admin/audit.md"
+          "path": "./admin/audit.md",
+          "title": "Audit",
+          "description": "Learn how Coder audits user and admin actions."
         },
         {
-          "path": "./admin/security.md"
+          "path": "./admin/security.md",
+          "title": "Security",
+          "description": "Learn about Coder's security options."
         },
         {
-          "path": "./admin/devurls.md"
+          "path": "./admin/devurls.md",
+          "title": "Dev URLs",
+          "description": "Learn how to configure dev URL support for a Coder deployment."
         },
         {
-          "path": "./admin/stun.md"
+          "path": "./admin/stun.md",
+          "title": "Direct workspace connections",
+          "description": "Learn how to enable direct connections to workspaces."
         },
         {
-          "path": "./admin/shell.md"
+          "path": "./admin/shell.md",
+          "title": "Fallback shell",
+          "description": "Learn how to enable fallback shell support for Kubernetes."
         },
         {
-          "path": "./admin/git.md"
+          "path": "./admin/git.md",
+          "title": "Git integration",
+          "description": "Learn how to integrate with a Git provider to authenticate workspaces."
         },
         {
-          "path": "./admin/prometheus.md"
+          "path": "./admin/prometheus.md",
+          "title": "Prometheus integration",
+          "description": "Learn how to configure Prometheus with Coder."
         },
         {
-          "path": "./admin/licensing.md"
+          "path": "./admin/licensing.md",
+          "title": "Licensing",
+          "description": "Learn how to manage the license for your Coder deployment."
         },
         {
-          "path": "./admin/telemetry.md"
+          "path": "./admin/telemetry.md",
+          "title": "Telemetry",
+          "description": "Learn what usage telemetry Coder collects."
         },
         {
-          "path": "./admin/templates.md"
+          "path": "./admin/templates.md",
+          "title": "Templates",
+          "description": "Learn how to manage your workspace templates."
         },
         {
-          "path": "./admin/metrics.md"
+          "path": "./admin/metrics.md",
+          "title": "Usage metrics",
+          "description": "Learn how to track usage of your Coder deployment."
         }
       ]
     },
@@ -423,52 +622,84 @@
           "path": "./guides/admin/index.md",
           "children": [
             {
-              "path": "./guides/admin/resources.md"
+              "path": "./guides/admin/resources.md",
+              "title": "Compute resources",
+              "description": "Learn the unique compute resource management capabilities in Coder."
             },
             {
-              "path": "./guides/admin/timescale-migration.md"
+              "path": "./guides/admin/timescale-migration.md",
+              "title": "Database migration",
+              "description": "Learn how to migrate data from Coder's built-in database."
             },
             {
-              "path": "./guides/admin/awsrds.md"
+              "path": "./guides/admin/awsrds.md",
+              "title": "AWS RDS with IAM credentials",
+              "description": "Learn how to connect Coder to an RDS database using IAM."
             },
             {
-              "path": "./guides/admin/disable-downloads.md"
+              "path": "./guides/admin/disable-downloads.md",
+              "title": "File download disabling",
+              "description": "Learn how to disable file downloading in Coder."
             },
             {
-              "path": "./guides/admin/helm-charts.md"
+              "path": "./guides/admin/helm-charts.md",
+              "title": "Helm charts",
+              "description": "Learn how to modify configuration values in Helm charts."
             },
             {
-              "path": "./guides/admin/image-tag-names.md"
+              "path": "./guides/admin/image-tag-names.md",
+              "title": "Image tag names",
+              "description": "Learn about image tag naming conventions and recommendations for use."
             },
             {
-              "path": "./guides/admin/logging.md"
+              "path": "./guides/admin/logging.md",
+              "title": "Logging",
+              "description": "Learn how to set up logging for your Coder deployment."
             },
             {
-              "path": "./guides/admin/nfs.md"
+              "path": "./guides/admin/nfs.md",
+              "title": "NFS file mounting",
+              "description": "Learn how to mount NFS file shares onto Coder workspaces."
             },
             {
-              "path": "./guides/admin/oidc-azuread.md"
+              "path": "./guides/admin/oidc-azuread.md",
+              "title": "OpenID Connect with Azure AD",
+              "description": "Learn how to use Azure's Active Directory SSO with Coder."
             },
             {
-              "path": "./guides/admin/oidc-adfs.md"
+              "path": "./guides/admin/oidc-adfs.md",
+              "title": "OpenID Connect with Active Directory Federation Services (ADFS)",
+              "description": "Learn how to use Azure's Active Directory Federation Services (ADFS) SSO with Coder."
             },
             {
-              "path": "./guides/admin/oidc-google.md"
+              "path": "./guides/admin/oidc-google.md",
+              "title": "OpenID Connect with Google",
+              "description": "Learn how to use Google SSO with Coder."
             },
             {
-              "path": "./guides/admin/oidc-okta.md"
+              "path": "./guides/admin/oidc-okta.md",
+              "title": "OpenID Connect with Okta",
+              "description": "Learn how to use Okta SSO with Coder."
             },
             {
-              "path": "./guides/admin/shared-security.md"
+              "path": "./guides/admin/shared-security.md",
+              "title": "Shared security responsibility",
+              "description": "Learn how Coder and its users carry security-related responsibilities."
             },
             {
-              "path": "./guides/admin/storage.md"
+              "path": "./guides/admin/storage.md",
+              "title": "Storage",
+              "description": "Learn about storage in workspaces."
             },
             {
-              "path": "./guides/admin/usage-monitoring.md"
+              "path": "./guides/admin/usage-monitoring.md",
+              "title": "Usage monitoring",
+              "description": "Learn how to monitor Coder's compute usage."
             },
             {
-              "path": "./guides/admin/wp-cli.md"
+              "path": "./guides/admin/wp-cli.md",
+              "title": "Workspace provider provisioning via CLI",
+              "description": "Learn how to provision a workspace provider using the Coder CLI."
             }
           ]
         },
@@ -476,25 +707,39 @@
           "path": "./guides/customization/index.md",
           "children": [
             {
-              "path": "./guides/customization/gitconfig.md"
+              "path": "./guides/customization/gitconfig.md",
+              "title": "Git configuration",
+              "description": "Learn how to configure Git in Coder."
             },
             {
-              "path": "./guides/customization/gpg-forwarding.md"
+              "path": "./guides/customization/gpg-forwarding.md",
+              "title": "GPG forwarding",
+              "description": "Learn how to configure GPG agent forwarding Coder."
             },
             {
-              "path": "./guides/customization/macos-keybinding.md"
+              "path": "./guides/customization/macos-keybinding.md",
+              "title": "macOS keybindings",
+              "description": "Learn how to use macOS keybindings with JetBrains IDEs."
             },
             {
-              "path": "./guides/customization/multiple-jetbrains-ides.md"
+              "path": "./guides/customization/multiple-jetbrains-ides.md",
+              "title": "Multiple JetBrains instances configuration",
+              "description": "Learn how to run multiple instances of JetBrains IDEs in Coder."
             },
             {
-              "path": "./guides/customization/node.md"
+              "path": "./guides/customization/node.md",
+              "title": "Node.js Projects",
+              "description": "Learn how to create custom images for Node.js projects."
             },
             {
-              "path": "./guides/customization/tailscale.md"
+              "path": "./guides/customization/tailscale.md",
+              "title": "Tailscale",
+              "description": "Learn how to use Tailscale in your Coder workspace."
             },
             {
-              "path": "./guides/customization/vnc.md"
+              "path": "./guides/customization/vnc.md",
+              "title": "VNC",
+              "description": "Learn how to set up a VNC in Coder."
             }
           ]
         },
@@ -502,31 +747,49 @@
           "path": "./guides/deployments/index.md",
           "children": [
             {
-              "path": "./guides/deployments/archive-install.md"
+              "path": "./guides/deployments/archive-install.md",
+              "title": "Coder installation from an archive",
+              "description": "Learn how to install Coder from an archive"
             },
             {
-              "path": "./guides/deployments/artifactory.md"
+              "path": "./guides/deployments/artifactory.md",
+              "title": "JFrog Artifactory",
+              "description": "Learn how to use Artifactory to host container images in Coder."
             },
             {
-              "path": "./guides/deployments/code-server.md"
+              "path": "./guides/deployments/code-server.md",
+              "title": "Managed code-server Workspaces",
+              "description": "Learn how Coder can improve your code-server deployment on Kubernetes."
             },
             {
-              "path": "./guides/deployments/podman.md"
+              "path": "./guides/deployments/podman.md",
+              "title": "Podman",
+              "description": "Learn how to run Podman in Coder."
             },
             {
-              "path": "./guides/deployments/postgres.md"
+              "path": "./guides/deployments/postgres.md",
+              "title": "PostgreSQL",
+              "description": "Learn how connect Coder to an external postgreSQL database."
             },
             {
-              "path": "./guides/deployments/proxy.md"
+              "path": "./guides/deployments/proxy.md",
+              "title": "Proxies",
+              "description": "Learn how to configure forward and reverse proxies for Coder."
             },
             {
-              "path": "./guides/deployments/keycloak.md"
+              "path": "./guides/deployments/keycloak.md",
+              "title": "SAML 2.0 identity brokering",
+              "description": "Learn how broker JumpCloud SAML 2.0 logins to Coder using Keycloak."
             },
             {
-              "path": "./guides/deployments/teardown.md"
+              "path": "./guides/deployments/teardown.md",
+              "title": "Teardown",
+              "description": "Learn how to tear down Coder and the infrastructure on which it's deployed."
             },
             {
-              "path": "./guides/deployments/terraform.md"
+              "path": "./guides/deployments/terraform.md",
+              "title": "Terraform",
+              "description": "Learn how to deploy Coder using Terraform."
             }
           ]
         },
@@ -534,68 +797,107 @@
           "path": "./guides/tls-certificates/index.md",
           "children": [
             {
-              "path": "./guides/tls-certificates/azureDNS.md"
+              "path": "./guides/tls-certificates/azureDNS.md",
+              "title": "Azure DNS",
+              "description": "Learn how to use cert-manager to set up TLS certificates using Azure DNS for DNS01 challenges."
             },
             {
-              "path": "./guides/tls-certificates/cloudDNS.md"
+              "path": "./guides/tls-certificates/cloudDNS.md",
+              "title": "Google Cloud DNS",
+              "description": "Learn how to use cert-manager to set up TLS certificates using Google Cloud DNS for DNS01 challenges."
             },
             {
-              "path": "./guides/tls-certificates/cloudflare.md"
+              "path": "./guides/tls-certificates/cloudflare.md",
+              "title": "Cloudflare",
+              "description": "Learn how to use cert-manager to set up TLS certificates using Cloudflare for DNS01 challenges."
             },
             {
-              "path": "./guides/tls-certificates/route53.md"
+              "path": "./guides/tls-certificates/route53.md",
+              "title": "Route 53",
+              "description": "Learn how to use cert-manager to set up TLS certificates using Route 53 for DNS01 challenges."
             },
             {
-              "path": "./guides/tls-certificates/docker-tls.md"
+              "path": "./guides/tls-certificates/docker-tls.md",
+              "title": "Configure TLS on Coder for Docker",
+              "description": "Learn how to configure TLS on Coder for Docker"
             }
           ]
         },
         {
-          "path": "./guides/mobile-development/index.md"
+          "path": "./guides/mobile-development/index.md",
+          "title": "Mobile development",
+          "description": "Learn how to develop mobile apps with Coder."
         },
         {
-          "path": "./guides/api.md"
+          "path": "./guides/api.md",
+          "title": "Public API",
+          "description": "Learn more about Coder's API.",
+          "state": "alpha"
         },
         {
           "path": "./guides/troubleshooting/index.md",
           "children": [
             {
-              "path": "./guides/troubleshooting/activate-jetbrains-licensing.md"
+              "path": "./guides/troubleshooting/activate-jetbrains-licensing.md",
+              "title": "Activate JetBrains license in a browser",
+              "description": "Learn how to activate a license when running a JetBrains IDE in a browser."
             },
             {
-              "path": "./guides/troubleshooting/admin-pwd.md"
+              "path": "./guides/troubleshooting/admin-pwd.md",
+              "title": "Admin password reset",
+              "description": "Learn how to resolve issues with resetting your admin password."
             },
             {
-              "path": "./guides/troubleshooting/docker-problems.md"
+              "path": "./guides/troubleshooting/docker-problems.md",
+              "title": "Docker",
+              "description": "Learn how to solve Docker issues inside Coder workspaces."
             },
             {
-              "path": "./guides/troubleshooting/git-oauth.md"
+              "path": "./guides/troubleshooting/git-oauth.md",
+              "title": "GitHub OAuth integration",
+              "description": "Learn how to fix a \"Failed to link account\" OAuth error."
             },
             {
-              "path": "./guides/troubleshooting/registry.md"
+              "path": "./guides/troubleshooting/registry.md",
+              "title": "Image registry",
+              "description": "Learn how to resolve issues connecting to an image registry."
             },
             {
-              "path": "./guides/troubleshooting/inotify-watch-limits.md"
+              "path": "./guides/troubleshooting/inotify-watch-limits.md",
+              "title": "inotify watcher limit problems",
+              "description": "Learn how to resolve issues related to the inotify watcher limit."
             },
             {
-              "path": "./guides/troubleshooting/502error.md"
+              "path": "./guides/troubleshooting/502error.md",
+              "title": "TypeError: Failed to fetch",
+              "description": "Learn how to resolve TypeError issues."
             },
             {
-              "path": "./guides/troubleshooting/vite-hmr.md"
+              "path": "./guides/troubleshooting/vite-hmr.md",
+              "title": "Vite and HMR",
+              "description": "Learn how to resolve issues with HMR when using Vite."
             },
             {
-              "path": "./guides/troubleshooting/ssh-no-mutual-signature-supported.md"
+              "path": "./guides/troubleshooting/ssh-no-mutual-signature-supported.md",
+              "title": "SSH no mutual signature supported",
+              "description": "Learn how to fix SSH error \"no mutual signature supported\""
             }
           ]
         },
         {
-          "path": "./guides/workspaces.md"
+          "path": "./guides/workspaces.md",
+          "title": "Workspace organization",
+          "description": "Learn how to organize your Coder workspaces."
         },
         {
-          "path": "./guides/moving-to-oss.md"
+          "path": "./guides/moving-to-oss.md",
+          "title": "Moving to Coder v2",
+          "description": "What you need to know about Coder v2"
         },
         {
-          "path": "./guides/v2-faq.md"
+          "path": "./guides/v2-faq.md",
+          "title": "Sunsetting Coder v1 and v2 Migration FAQ",
+          "description": "Frequently asked questions about sunsetting of Coder v1 and migrating to v2"
         }
       ]
     },
@@ -607,10 +909,14 @@
           "path": "./changelog/1.38.0.md",
           "children": [
             {
-              "path": "./changelog/1.38.2.md"
+              "path": "./changelog/1.38.2.md",
+              "title": "1.38.2",
+              "description": "Released on 01/11/2023"
             },
             {
-              "path": "./changelog/1.38.1.md"
+              "path": "./changelog/1.38.1.md",
+              "title": "1.38.1",
+              "description": "Released on 01/06/2023"
             }
           ]
         },
@@ -618,7 +924,9 @@
           "path": "./changelog/1.37.0.md",
           "children": [
             {
-              "path": "./changelog/1.37.1.md"
+              "path": "./changelog/1.37.1.md",
+              "title": "1.37.1",
+              "description": "Released on 12/05/2022"
             }
           ]
         },
@@ -626,10 +934,14 @@
           "path": "./changelog/1.36.0.md",
           "children": [
             {
-              "path": "./changelog/1.36.2.md"
+              "path": "./changelog/1.36.2.md",
+              "title": "1.36.2",
+              "description": "Released on 12/05/2022"
             },
             {
-              "path": "./changelog/1.36.1.md"
+              "path": "./changelog/1.36.1.md",
+              "title": "1.36.1",
+              "description": "Released on 11/14/2022"
             }
           ]
         },
@@ -637,16 +949,24 @@
           "path": "./changelog/1.35.0.md",
           "children": [
             {
-              "path": "./changelog/1.35.4.md"
+              "path": "./changelog/1.35.4.md",
+              "title": "1.35.4",
+              "description": "Released on 12/05/2022"
             },
             {
-              "path": "./changelog/1.35.3.md"
+              "path": "./changelog/1.35.3.md",
+              "title": "1.35.3",
+              "description": "Released on 11/14/2022"
             },
             {
-              "path": "./changelog/1.35.2.md"
+              "path": "./changelog/1.35.2.md",
+              "title": "1.35.2",
+              "description": "Released on 10/24/2022"
             },
             {
-              "path": "./changelog/1.35.1.md"
+              "path": "./changelog/1.35.1.md",
+              "title": "1.35.1",
+              "description": "Released on 10/3/2022"
             }
           ]
         },
@@ -654,13 +974,19 @@
           "path": "./changelog/1.34.0.md",
           "children": [
             {
-              "path": "./changelog/1.34.3.md"
+              "path": "./changelog/1.34.3.md",
+              "title": "1.34.3",
+              "description": "Released on 11/14/2022"
             },
             {
-              "path": "./changelog/1.34.2.md"
+              "path": "./changelog/1.34.2.md",
+              "title": "1.34.2",
+              "description": "Released on 10/24/2022"
             },
             {
-              "path": "./changelog/1.34.1.md"
+              "path": "./changelog/1.34.1.md",
+              "title": "1.34.1",
+              "description": "Released on 10/03/2022"
             }
           ]
         },
@@ -668,22 +994,34 @@
           "path": "./changelog/1.33.0.md",
           "children": [
             {
-              "path": "./changelog/1.33.6.md"
+              "path": "./changelog/1.33.6.md",
+              "title": "1.33.6",
+              "description": "Released on 10/24/2022"
             },
             {
-              "path": "./changelog/1.33.5.md"
+              "path": "./changelog/1.33.5.md",
+              "title": "1.33.5",
+              "description": "Released on 09/16/2022"
             },
             {
-              "path": "./changelog/1.33.4.md"
+              "path": "./changelog/1.33.4.md",
+              "title": "1.33.4",
+              "description": "Released on 08/29/2022"
             },
             {
-              "path": "./changelog/1.33.3.md"
+              "path": "./changelog/1.33.3.md",
+              "title": "1.33.3",
+              "description": "Released on 08/22/2022"
             },
             {
-              "path": "./changelog/1.33.2.md"
+              "path": "./changelog/1.33.2.md",
+              "title": "1.33.2",
+              "description": "Released on 08/15/2022"
             },
             {
-              "path": "./changelog/1.33.1.md"
+              "path": "./changelog/1.33.1.md",
+              "title": "1.33.1",
+              "description": "Released on 08/04/2022"
             }
           ]
         },
@@ -691,19 +1029,29 @@
           "path": "./changelog/1.32.0.md",
           "children": [
             {
-              "path": "./changelog/1.32.5.md"
+              "path": "./changelog/1.32.5.md",
+              "title": "1.32.5",
+              "description": "Released on 09/09/2022"
             },
             {
-              "path": "./changelog/1.32.4.md"
+              "path": "./changelog/1.32.4.md",
+              "title": "1.32.4",
+              "description": "Released on 08/22/2022"
             },
             {
-              "path": "./changelog/1.32.3.md"
+              "path": "./changelog/1.32.3.md",
+              "title": "1.32.3",
+              "description": "Released on 08/04/2022"
             },
             {
-              "path": "./changelog/1.32.2.md"
+              "path": "./changelog/1.32.2.md",
+              "title": "1.32.2",
+              "description": "Released on 07/20/2022"
             },
             {
-              "path": "./changelog/1.32.1.md"
+              "path": "./changelog/1.32.1.md",
+              "title": "1.32.1",
+              "description": "Released on 07/14/2022"
             }
           ]
         },
@@ -711,13 +1059,19 @@
           "path": "./changelog/1.31.0.md",
           "children": [
             {
-              "path": "./changelog/1.31.3.md"
+              "path": "./changelog/1.31.3.md",
+              "title": "1.31.3",
+              "description": "Released on 08/15/2022"
             },
             {
-              "path": "./changelog/1.31.2.md"
+              "path": "./changelog/1.31.2.md",
+              "title": "1.31.2",
+              "description": "Released on 07/20/2022"
             },
             {
-              "path": "./changelog/1.31.1.md"
+              "path": "./changelog/1.31.1.md",
+              "title": "1.31.1",
+              "description": "Released on 06/01/2022"
             }
           ]
         },
@@ -725,19 +1079,29 @@
           "path": "./changelog/1.30.0.md",
           "children": [
             {
-              "path": "./changelog/1.30.5.md"
+              "path": "./changelog/1.30.5.md",
+              "title": "1.30.5",
+              "description": "Released on 09/01/2022"
             },
             {
-              "path": "./changelog/1.30.4.md"
+              "path": "./changelog/1.30.4.md",
+              "title": "1.30.4",
+              "description": "Released on 07/20/2022"
             },
             {
-              "path": "./changelog/1.30.3.md"
+              "path": "./changelog/1.30.3.md",
+              "title": "1.30.3",
+              "description": "Released on 06/01/2022"
             },
             {
-              "path": "./changelog/1.30.2.md"
+              "path": "./changelog/1.30.2.md",
+              "title": "1.30.2",
+              "description": "Released on 04/30/2022"
             },
             {
-              "path": "./changelog/1.30.1.md"
+              "path": "./changelog/1.30.1.md",
+              "title": "1.30.1",
+              "description": "Released on 04/29/2022"
             }
           ]
         },
@@ -747,259 +1111,387 @@
           "children": [
             {
               "path": "./changelog/1.29.6.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.29.6",
+              "description": "Released on 06/01/2022"
             },
             {
               "path": "./changelog/1.29.5.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.29.5",
+              "description": "Released on 04/30/2022"
             },
             {
               "path": "./changelog/1.29.4.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.29.4",
+              "description": "Released on 04/29/2022"
             },
             {
               "path": "./changelog/1.29.3.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.29.3",
+              "description": "Released on 4/28/2022"
             },
             {
               "path": "./changelog/1.29.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.29.2",
+              "description": "Released on 4/15/2022"
             },
             {
               "path": "./changelog/1.29.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.29.1",
+              "description": "Released on 04/05/2022"
             },
             {
               "path": "./changelog/1.29.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.29.0",
+              "description": "Released on 03/23/2022"
             },
             {
               "path": "./changelog/1.28.7.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.28.7",
+              "description": "Released on 04/30/2022"
             },
             {
               "path": "./changelog/1.28.6.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.28.6",
+              "description": "Released on 04/29/2022"
             },
             {
               "path": "./changelog/1.28.5.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.28.5",
+              "description": "Released on 4/28/2022"
             },
             {
               "path": "./changelog/1.28.4.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.28.4",
+              "description": "Released on 03/17/2022"
             },
             {
               "path": "./changelog/1.28.3.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.28.3",
+              "description": "Released on 03/10/2022"
             },
             {
               "path": "./changelog/1.28.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.28.2",
+              "description": "Released on 02/28/2022"
             },
             {
               "path": "./changelog/1.28.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.28.1",
+              "description": "Released on 02/23/2022"
             },
             {
               "path": "./changelog/1.28.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.28.0",
+              "description": "Released on 02/16/2022"
             },
             {
               "path": "./changelog/1.27.4.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.27.4",
+              "description": "Released on 05/2/2022"
             },
             {
               "path": "./changelog/1.27.3.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.27.3",
+              "description": "Released on 03/10/2022"
             },
             {
               "path": "./changelog/1.27.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.27.2",
+              "description": "Released on 02/15/2022"
             },
             {
               "path": "./changelog/1.27.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.27.1",
+              "description": "Released on 01/31/2022"
             },
             {
               "path": "./changelog/1.27.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.27.0",
+              "description": "Released on 01/19/2022"
             },
             {
               "path": "./changelog/archive/1.26.4.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.26.4",
+              "description": "Released on 03/17/2022"
             },
             {
               "path": "./changelog/archive/1.26.3.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.26.3",
+              "description": "Released on 03/11/2022"
             },
             {
               "path": "./changelog/archive/1.26.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.26.2",
+              "description": "Released on 01/28/2022"
             },
             {
               "path": "./changelog/archive/1.26.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.26.1",
+              "description": "Released on 01/06/2022"
             },
             {
               "path": "./changelog/archive/1.26.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.26.0",
+              "description": "Released on 12/15/2021"
             },
             {
               "path": "./changelog/archive/1.25.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.25.0",
+              "description": "Released on 11/17/2021"
             },
             {
               "path": "./changelog/archive/1.24.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.24.0",
+              "description": "Released on 10/20/2021"
             },
             {
               "path": "./changelog/archive/1.23.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.23.1",
+              "description": "Released on 10/11/2021"
             },
             {
               "path": "./changelog/archive/1.23.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.23.0",
+              "description": "Released on 09/22/2021"
             },
             {
               "path": "./changelog/archive/1.22.3.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.22.3",
+              "description": "Released on 09/29/2021"
             },
             {
               "path": "./changelog/archive/1.22.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.22.2",
+              "description": "Released on 09/23/2021"
             },
             {
               "path": "./changelog/archive/1.22.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.22.1",
+              "description": "Released on 09/13/2021"
             },
             {
               "path": "./changelog/archive/1.22.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.22.0",
+              "description": "Released on 08/25/2021"
             },
             {
               "path": "./changelog/archive/1.21.7.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.21.7",
+              "description": "Released on 01/05/2022"
             },
             {
               "path": "./changelog/archive/1.21.6.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.21.6",
+              "description": "Released on 11/19/2021"
             },
             {
               "path": "./changelog/archive/1.21.5.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.21.5",
+              "description": "Released on 09/29/2021"
             },
             {
               "path": "./changelog/archive/1.21.4.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.21.4",
+              "description": "Released on 09/22/2021"
             },
             {
               "path": "./changelog/archive/1.21.3.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.21.3",
+              "description": "Released on 09/13/2021"
             },
             {
               "path": "./changelog/archive/1.21.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.21.2",
+              "description": "Released on 08/26/2021"
             },
             {
               "path": "./changelog/archive/1.21.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.21.1",
+              "description": "Released on 08/05/2021"
             },
             {
               "path": "./changelog/archive/1.21.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.21.0",
+              "description": "Released on 07/21/2021"
             },
             {
               "path": "./changelog/archive/1.20.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.20.0",
+              "description": "Released on 06/16/2021"
             },
             {
               "path": "./changelog/archive/1.19.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.19.1",
+              "description": "Released on 06/23/2021"
             },
             {
               "path": "./changelog/archive/1.19.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.19.0",
+              "description": "Released on 05/19/2021"
             },
             {
               "path": "./changelog/archive/1.18.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.18.1",
+              "description": "Released on 04/21/2021"
             },
             {
               "path": "./changelog/archive/1.18.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.18.0",
+              "description": "Released on 04/21/2021"
             },
             {
               "path": "./changelog/archive/1.17.4.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.17.4",
+              "description": "Released on 04/13/2021"
             },
             {
               "path": "./changelog/archive/1.17.3.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.17.3",
+              "description": "Released on 04/09/2021"
             },
             {
               "path": "./changelog/archive/1.17.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.17.2",
+              "description": "Released on 03/30/2021"
             },
             {
               "path": "./changelog/archive/1.17.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.17.1",
+              "description": "Released on 03/25/2021"
             },
             {
               "path": "./changelog/archive/1.17.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.17.0",
+              "description": "Released on 03/17/2021"
             },
             {
               "path": "./changelog/archive/1.16.3.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.16.3",
+              "description": "Released on 03/25/21"
             },
             {
               "path": "./changelog/archive/1.16.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.16.2",
+              "description": "Released on 03/09/2021"
             },
             {
               "path": "./changelog/archive/1.16.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.16.1",
+              "description": "Released on 02/24/2021"
             },
             {
               "path": "./changelog/archive/1.16.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.16.0",
+              "description": "Released on 02/22/2021"
             },
             {
               "path": "./changelog/archive/1.15.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.15.2",
+              "description": "Released on 01/26/2021"
             },
             {
               "path": "./changelog/archive/1.15.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.15.1",
+              "description": "Released on 01/25/2021"
             },
             {
               "path": "./changelog/archive/1.15.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.15.0",
+              "description": "Released on 01/20/2021. Deprecated on 01/25/2021."
             },
             {
               "path": "./changelog/archive/1.14.4.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.14.4",
+              "description": "Released on 01/11/2021"
             },
             {
               "path": "./changelog/archive/1.14.3.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.14.3",
+              "description": "Released on 01/08/2021"
             },
             {
               "path": "./changelog/archive/1.14.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.14.2",
+              "description": "Released on 12/22/2020"
             },
             {
               "path": "./changelog/archive/1.14.1.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.14.1",
+              "description": "Released on 12/18/2020"
             },
             {
               "path": "./changelog/archive/1.14.0.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.14.0",
+              "description": "Released on 12/18/2020"
             },
             {
               "path": "./changelog/archive/1.13.2.md",
-              "navigable": false
+              "navigable": false,
+              "title": "1.13.2",
+              "description": "Released on 11/23/2020"
             }
           ]
         }

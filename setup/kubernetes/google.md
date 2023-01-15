@@ -1,7 +1,4 @@
----
-title: Google Kubernetes Engine
-description: Learn how to set up a GKE cluster for your Coder deployment.
----
+# Google Kubernetes Engine
 
 This guide shows you how to set up a Google Kubernetes Engine (GKE) cluster to
 which Coder can deploy.
@@ -24,7 +21,8 @@ be sure to account for the number of developers you expect to use Coder, as well
 as the resources they need to run their workspaces. See our guide on on
 [compute resources](../../guides/admin/resources.md) for additional information.
 
-> In GKE version 1.24 and later, Docker-based [node image types](https://cloud.google.com/kubernetes-engine/docs/concepts/node-images)
+> In GKE version 1.24 and later, Docker-based
+> [node image types](https://cloud.google.com/kubernetes-engine/docs/concepts/node-images)
 > are not supported. The examples below use `ubuntu_containerd` and
 > `cos_containerd` to meet this requirement. Docker-based node images will
 > prevent GKE cluster creation.
@@ -60,11 +58,11 @@ that makes the most sense for your location.
 The sample scripts below create an `e2-standard-4` instance with 2 nodes for
 evaluation purposes, with a configuration to auto-scale to 8 nodes as more
 developer workspace pods are created. Depending on your needs, you can choose
-other sizes. See [machine type
-comparisons](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
-in particular [general-purpose machine types like n1 and
-e2](https://cloud.google.com/compute/docs/general-purpose-machines). See
-[requirements](../requirements.md) for help estimating your cluster size.
+other sizes. See
+[machine type comparisons](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison)
+in particular
+[general-purpose machine types like n1 and e2](https://cloud.google.com/compute/docs/general-purpose-machines).
+See [requirements](../requirements.md) for help estimating your cluster size.
 
 ### Option 1: Cluster with full support of Coder features
 
@@ -153,8 +151,8 @@ For more information, see:
 
 ## Next steps
 
-If you have already installed Coder, you can add this cluster as a [workspace
-provider](../../admin/workspace-providers/deployment/index.md).
+If you have already installed Coder, you can add this cluster as a
+[workspace provider](../../admin/workspace-providers/deployment/index.md).
 
 To access Coder through a secure domain, review our guides on configuring and
 using [TLS certificates](../../guides/tls-certificates/index.md).

@@ -1,7 +1,4 @@
----
-title: Usage metrics
-description: Learn how to track usage of your Coder deployment.
----
+# Usage metrics
 
 Metrics allow you to track the number of people using Coder on a day-to-day
 basis. Access the following view from **Manage > Metrics**.

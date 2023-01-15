@@ -1,7 +1,4 @@
----
-title: GitHub OAuth integration
-description: Learn how to fix a "Failed to link account" OAuth error.
----
+# GitHub OAuth integration
 
 When configuring the OAuth integration between Coder and GitHub, you may
 encounter the following error:

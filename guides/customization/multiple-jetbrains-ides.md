@@ -1,7 +1,4 @@
----
-title: "Multiple JetBrains instances configuration"
-description: Learn how to run multiple instances of JetBrains IDEs in Coder.
----
+# Multiple JetBrains instances configuration
 
 This article walks you through the process of configuring Coder to support the
 use of multiple instances of the same JetBrains IDE using the JetBrains

@@ -1,7 +1,4 @@
----
-title: Custom image creation
-description: Learn how to write custom images for use with Coder.
----
+# Custom image creation
 
 Custom images allow you to define workspaces that include the dependencies,
 scripts, and user preferences helpful for your project.

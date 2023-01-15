@@ -1,7 +1,4 @@
----
-title: "System Requirements"
-description: Learn about the prerequisite infrastructure requirements.
----
+# System Requirements
 
 Coder is deployed into a Kubernetes cluster namespace. We recommend the
 following resource minimums to ensure quality performance.
@@ -13,8 +10,8 @@ See [Scaling](./scaling.md) for more information.
 For **each** active developer using Coder, allocate additional resources. The
 specific amount required per developer varies, though we recommend starting with
 4 CPUs and 4 GB of RAM, especially when JetBrains IDEs are used and which are
-resource intensive. Developers are free to request the resource allocation
-that fits their usage:
+resource intensive. Developers are free to request the resource allocation that
+fits their usage:
 
 ![Workspace resource request](../assets/setup/resource-request.png)
 
@@ -77,8 +74,8 @@ so that Coder can mount the PVC to the workspace (if you're using a custom
 `StorageClass`, be sure that it supports DVP. Otherwise, Coder cannot provision
 workspaces).
 
-> If you are running a multi-zone deployment, ensure that you have at least
-> one node in each zone to prevent volume node affinity conflicts.
+> If you are running a multi-zone deployment, ensure that you have at least one
+> node in each zone to prevent volume node affinity conflicts.
 
 ## Database
 

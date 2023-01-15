@@ -1,7 +1,4 @@
----
-title: Org management
-description: Learn about managing organizations.
----
+# Org management
 
 This article shows how you can create, view, edit, or delete an organization.
 

@@ -1,8 +1,4 @@
----
-title: Docker
-description: Learn how to deploy a workspace provider to a Docker instance.
-state: alpha
----
+# Docker
 
 > This Workspace Provider type is no longer supported in Coder v1. Please use
 > [Coder v2](https://coder.com/docs/coder-oss/latest) to use a remote VM as a

@@ -1,7 +1,4 @@
----
-title: Network setup
-description: Learn how to set up a network for air-gapped Coder deployment.
----
+# Network setup
 
 This article walks you through setting up the supporting infrastructure for an
 air-gapped Coder deployment.

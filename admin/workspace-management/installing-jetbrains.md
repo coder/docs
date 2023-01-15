@@ -1,7 +1,4 @@
----
-title: "IDE installation"
-description: Learn how to install IDEs in images.
----
+# IDE installation
 
 > [Development of JetBrains projector was suspended on July 11, 2022.](https://lp.jetbrains.com/projector/)
 > JetBrains IDE versions published after this date may exhibit strange behaviors

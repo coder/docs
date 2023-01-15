@@ -1,7 +1,4 @@
----
-title: "Tags"
-description: Learn how to manage image versions inside Coder.
----
+# Tags
 
 <a href="https://docs.docker.com/engine/reference/commandline/tag/"
 target="_blank" rel="noreferrer noopener">Image tags</a> are variants of the

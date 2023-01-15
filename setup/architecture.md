@@ -1,7 +1,4 @@
----
-title: "Architecture"
-description: Learn about the technical architecture of the Coder platform.
----
+# Architecture
 
 Coder is deployed on Kubernetes and includes the following components:
 

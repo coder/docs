@@ -1,7 +1,4 @@
----
-title: Management
-description: Learn how to enable CVMs.
----
+# Management
 
 Before users can create a [CVM-enabled workspace](../../../workspaces/cvms.md),
 a site manager must enable CVMs. To do so:

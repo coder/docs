@@ -1,8 +1,4 @@
----
-title: "Activate JetBrains license in a browser"
-description:
-  Learn how to activate a license when running a JetBrains IDE in a browser.
----
+# Activate JetBrains license in a browser
 
 JetBrains requires a valid license to evaluate or use a JetBrains IDE. When
 running a JetBrains IDE in a browser, you need to perform the following steps.
@@ -53,8 +49,8 @@ to the JetBrains website to log in.
 
 ## Log in with your JetBrains account
 
-At the JetBrains website, log in with your valid JetBrains account to get the IDE
-authentication token.
+At the JetBrains website, log in with your valid JetBrains account to get the
+IDE authentication token.
 
 ![Login with your NetBrains account](../../assets/workspaces/5-jetbrains-login.png)
 

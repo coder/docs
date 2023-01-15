@@ -1,9 +1,4 @@
----
-title: Azure DNS
-description:
-  Learn how to use cert-manager to set up TLS certificates using Azure DNS for
-  DNS01 challenges.
----
+# Azure DNS
 
 [cert-manager](https://cert-manager.io/) allows you to enable HTTPS on your
 Coder installation, regardless of whether you're using

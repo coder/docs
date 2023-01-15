@@ -1,10 +1,4 @@
----
-title: Global access URL configuration
-description: |
-  Learn how to configure your primary and satellite deployments so that they
-  share an access URL.
-state: alpha
----
+# Global access URL configuration
 
 By default, the primary deployment and satellite deployments have different
 access URLs. Using two access URLs can confuse engineering teams when it comes

@@ -1,8 +1,4 @@
----
-title: "Sunsetting Coder v1 and v2 Migration FAQ"
-description:
-  Frequently asked questions about sunsetting of Coder v1 and migrating to v2
----
+# Sunsetting Coder v1 and v2 Migration FAQ
 
 [Coder v2](https://github.com/coder/coder) is Coder's 2nd generation remote
 development platform launched in June 2022. This document lists frequently asked

@@ -1,7 +1,4 @@
----
-title: "Dev URLs"
-description: Learn how to access HTTP services running inside your workspace.
----
+# Dev URLs
 
 Developer (dev) URLs allow you to access the web services you're developing in
 your workspace. Once defined, Coder listens for an application running on the

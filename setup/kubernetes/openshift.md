@@ -1,7 +1,4 @@
----
-title: "Red Hat OpenShift"
-description: Learn about deploying Coder in OpenShift Container Platform
----
+# Red Hat OpenShift
 
 This deployment guide shows you how to customize your [OpenShift Container
 Platform] cluster to deploy Coder.
