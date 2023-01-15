@@ -1,7 +1,4 @@
----
-title: OpenID Connect with Okta
-description: Learn how to use Okta SSO with Coder.
----
+# OpenID Connect with Okta
 
 This article walks you through setting up single sign-on to Coder using Okta.
 

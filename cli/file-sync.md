@@ -1,7 +1,4 @@
----
-title: File sync
-description: Learn how to sync files between Coder and your local IDE.
----
+# File sync
 
 If you're working in an IDE that's on your local machine, you can use Coder's
 live sync feature to sync changes from your local IDE with your Coder workspace.

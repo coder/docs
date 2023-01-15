@@ -1,7 +1,4 @@
----
-title: "Self-contained workspace builds"
-description: Learn how to toggle self-contained workspace builds.
----
+# Self-contained workspace builds
 
 Currently, there are two ways in which the workspace boot sequence can occur:
 

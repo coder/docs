@@ -1,7 +1,4 @@
----
-title: "Workspaces"
-description: "Learn about development workspaces in Coder."
----
+# Workspaces
 
 Workspaces contain the dependencies, IDEs, and configuration information needed
 for your projects. Coder creates workspaces using a

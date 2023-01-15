@@ -1,7 +1,4 @@
----
-title: "Preferences"
-description: Learn how to manage your Coder account preferences.
----
+# Preferences
 
 The **User Preferences** area of the Coder UI allows you to manage your account.
 

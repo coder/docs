@@ -1,7 +1,4 @@
----
-title: SSH no mutual signature supported
-description: Learn how to fix SSH error "no mutual signature supported"
----
+# SSH no mutual signature supported
 
 When using `coder ssh` to reach your workspace, you may encounter the following
 error:

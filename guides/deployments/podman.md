@@ -1,7 +1,4 @@
----
-title: Podman
-description: Learn how to run Podman in Coder.
----
+# Podman
 
 This article will walk you through setting up
 [Podman](https://docs.podman.io/en/latest/) for use in Coder workspaces

@@ -1,7 +1,4 @@
----
-title: IntelliJ
-description: Get started with Coder as an IntelliJ user.
----
+# IntelliJ
 
 This article will walk you through getting started with a Coder workspace and a
 project that leverages IntelliJ. You'll learn how to:

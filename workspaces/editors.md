@@ -1,8 +1,4 @@
----
-title: "Editors and IDEs"
-description:
-  Learn how to connect your favorite editors and IDEs to your remote workspace.
----
+# Editors and IDEs
 
 There are several primary ways you can connect an IDE to your Coder workspace:
 

@@ -1,6 +1,4 @@
----
-title: "Command line"
----
+# Command line
 
 Coder provides an [open-source CLI](https://github.com/coder/coder-cli) that
 allows you to interact with your workspaces using your local machine.

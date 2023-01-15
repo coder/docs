@@ -1,7 +1,4 @@
----
-title: AWS RDS with IAM credentials
-description: Learn how to connect Coder to an RDS database using IAM.
----
+# AWS RDS with IAM credentials
 
 In addition to using
 [user/password](../../setup/installation.md#connect-an-external-database) for

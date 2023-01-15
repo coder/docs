@@ -1,7 +1,4 @@
----
-title: "Moving to Coder v2"
-description: What you need to know about Coder v2
----
+# Moving to Coder v2
 
 Coder v2 is Coder's open core remote development platform first launched in
 June 2022. Coder v2 has an [open-source](https://github.com/coder/coder) "OSS"

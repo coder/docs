@@ -1,7 +1,4 @@
----
-title: Workspace parameters
-description: Learn about each parameter available during workspace creation.
----
+# Workspace parameters
 
 Whenever you log into Coder, you'll see the **Workspace** page.
 

@@ -1,7 +1,4 @@
----
-title: "VS Code extensions"
-description: Learn how to add and use VS Code extensions with your workspace.
----
+# VS Code extensions
 
 This article will show you the ways to add VS Code extensions and use them with
 a Coder workspace:

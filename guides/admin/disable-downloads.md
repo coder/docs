@@ -1,7 +1,4 @@
----
-title: File download disabling
-description: Learn how to disable file downloading in Coder.
----
+# File download disabling
 
 For security and compliance purposes, Coder site managers may choose to disable
 the downloading of files from Coder's built-in IDEs:

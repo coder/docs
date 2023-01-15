@@ -1,7 +1,4 @@
----
-title: Coder for Docker
-description: Get started with Coder for Docker as a developer.
----
+# Coder for Docker
 
 This tutorial shows you how to create a Coder development workspace and getting
 set up to work on a web development project requiring Node.js and React.js.

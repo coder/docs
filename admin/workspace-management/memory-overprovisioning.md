@@ -1,7 +1,4 @@
----
-title: "Memory provisioning"
-description: Learn how to provision memory requests from workspaces.
----
+# Memory provisioning
 
 Coder allows you to set memory provisioning ratios for each of your
 organizations. By changing this ratio, you can change the number of workspaces

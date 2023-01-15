@@ -1,9 +1,4 @@
----
-title: OpenID Connect with Active Directory Federation Services (ADFS)
-description:
-  Learn how to use Azure's Active Directory Federation Services (ADFS) SSO with
-  Coder.
----
+# OpenID Connect with Active Directory Federation Services (ADFS)
 
 This article walks you through setting up single sign-on to Coder using Azure's
 Active Directory Federation Services (ADFS).
