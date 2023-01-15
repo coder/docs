@@ -29,7 +29,9 @@
           "path": "feedback.md",
           "title": "Feedback"
         }
-      ]
+      ],
+      "title": "Home",
+      "description": "Explore our guides and examples to get started with Coder."
     },
     {
       "path": "getting-started/index.md",
@@ -65,7 +67,9 @@
           "title": "PyCharm",
           "description": "Get started with Coder as a PyCharm user."
         }
-      ]
+      ],
+      "title": "Getting started",
+      "description": "Get started with Coder."
     },
     {
       "path": "./workspaces/index.md",
@@ -157,9 +161,14 @@
               "description": "Learn how to use code completion when creating workspace templates.",
               "state": "alpha"
             }
-          ]
+          ],
+          "title": "Workspace templates",
+          "description": "Learn how to describe workspace configuration as code.",
+          "state": "alpha"
         }
-      ]
+      ],
+      "title": "Workspaces",
+      "description": "Learn about development workspaces in Coder."
     },
     {
       "path": "./images/index.md",
@@ -205,7 +214,9 @@
           "title": "TLS certificates",
           "description": "Learn how to add TLS certificates to Coder images"
         }
-      ]
+      ],
+      "title": "Images",
+      "description": "Learn about reproducibility in Coder."
     },
     {
       "path": "./cli/index.md",
@@ -231,7 +242,8 @@
           "title": "Workspace management",
           "description": "See example usages of the CLI for personal workspace management."
         }
-      ]
+      ],
+      "title": "Command line"
     },
     {
       "path": "./setup/index.md",
@@ -280,7 +292,9 @@
               "title": "Rancher Kubernetes Engine",
               "description": "Learn how to setup a Rancher cluster for your Coder deployment"
             }
-          ]
+          ],
+          "title": "Kubernetes",
+          "description": "Learn how to set up a Kubernetes cluster compatible with Coder."
         },
         {
           "path": "./setup/installation.md",
@@ -310,7 +324,9 @@
               "title": "Offline documentation",
               "description": "Learn how to use Coder's embedded documentation."
             }
-          ]
+          ],
+          "title": "Air-gapped deployment",
+          "description": "Learn how to set up an air-gapped Coder deployment."
         },
         {
           "path": "./setup/coder-for-docker/index.md",
@@ -330,7 +346,9 @@
               "title": "Upgrade",
               "description": "Learn how to upgrade your Coder for Docker deployment."
             }
-          ]
+          ],
+          "title": "Coder for Docker",
+          "description": "Learn how to run Coder with Docker."
         },
         {
           "path": "./setup/upgrade/index.md",
@@ -340,9 +358,13 @@
               "title": "Update considerations",
               "description": "Learn how to update your Coder deployment."
             }
-          ]
+          ],
+          "title": "Upgrade",
+          "description": "Learn how to upgrade your Coder deployment."
         }
-      ]
+      ],
+      "title": "Setup",
+      "description": "Learn how to set up a Coder instance."
     },
     {
       "path": "./admin/index.md",
@@ -374,9 +396,13 @@
                   "title": "Password reset",
                   "description": "Learn how to reset Coder user passwords."
                 }
-              ]
+              ],
+              "title": "User management",
+              "description": "Learn how to add, delete and manage Coder users."
             }
-          ]
+          ],
+          "title": "Access control",
+          "description": "Learn how to change how Coder users sign in."
         },
         {
           "path": "./admin/organizations/index.md",
@@ -386,7 +412,9 @@
               "title": "Org management",
               "description": "Learn about managing organizations."
             }
-          ]
+          ],
+          "title": "Organizations",
+          "description": "Learn about Coder organizations."
         },
         {
           "path": "./admin/registries/index.md",
@@ -411,7 +439,9 @@
               "title": "Google Container Registry",
               "description": "Add the Google Container Registry to Coder."
             }
-          ]
+          ],
+          "title": "Registries",
+          "description": "Learn how to hook into Docker Registries."
         },
         {
           "path": "./admin/satellites/index.md",
@@ -432,7 +462,9 @@
               "description": "Learn how to configure your primary and satellite deployments so that they\nshare an access URL.\n",
               "state": "alpha"
             }
-          ]
+          ],
+          "title": "Satellites",
+          "description": "Learn about satellite deployments to reduce global latency."
         },
         {
           "path": "./admin/workspace-management/index.md",
@@ -455,7 +487,9 @@
                   "title": "Management",
                   "description": "Learn how to enable CVMs."
                 }
-              ]
+              ],
+              "title": "Docker in workspaces",
+              "description": "Learn about supporting Docker inside workspaces."
             },
             {
               "path": "./admin/workspace-management/extensions.md",
@@ -507,7 +541,9 @@
               "title": "Workspace process logging",
               "description": "Learn how to enable workspace process logging for your deployment."
             }
-          ]
+          ],
+          "title": "Workspace management",
+          "description": "Learn how to manage workspaces from an admin level."
         },
         {
           "path": "./admin/workspace-providers/index.md",
@@ -532,14 +568,18 @@
                   "title": "Kubernetes",
                   "description": "Learn how to deploy a workspace provider to a Kubernetes cluster."
                 }
-              ]
+              ],
+              "title": "Deployment",
+              "description": "Learn how to deploy a workspace provider to a cluster."
             },
             {
               "path": "./admin/workspace-providers/management.md",
               "title": "Workspace provider management",
               "description": "Learn how to manage a workspace provider."
             }
-          ]
+          ],
+          "title": "Workspace providers",
+          "description": "Learn how workspace providers can improve the developer experience."
         },
         {
           "path": "./admin/access-url.md",
@@ -611,7 +651,8 @@
           "title": "Usage metrics",
           "description": "Learn how to track usage of your Coder deployment."
         }
-      ]
+      ],
+      "title": "Admin"
     },
     {
       "path": "./guides/index.md",
@@ -701,7 +742,9 @@
               "title": "Workspace provider provisioning via CLI",
               "description": "Learn how to provision a workspace provider using the Coder CLI."
             }
-          ]
+          ],
+          "title": "Admin",
+          "description": "Learn about admin tasks for Coder."
         },
         {
           "path": "./guides/customization/index.md",
@@ -741,7 +784,9 @@
               "title": "VNC",
               "description": "Learn how to set up a VNC in Coder."
             }
-          ]
+          ],
+          "title": "Customization",
+          "description": "Learn about tasks related to customizing Coder."
         },
         {
           "path": "./guides/deployments/index.md",
@@ -791,7 +836,9 @@
               "title": "Terraform",
               "description": "Learn how to deploy Coder using Terraform."
             }
-          ]
+          ],
+          "title": "Deployment",
+          "description": "Learn about tasks related to deploying Coder."
         },
         {
           "path": "./guides/tls-certificates/index.md",
@@ -821,7 +868,9 @@
               "title": "Configure TLS on Coder for Docker",
               "description": "Learn how to configure TLS on Coder for Docker"
             }
-          ]
+          ],
+          "title": "TLS certificates",
+          "description": "Learn how to use cert-manager to set up TLS certificates."
         },
         {
           "path": "./guides/mobile-development/index.md",
@@ -882,7 +931,9 @@
               "title": "SSH no mutual signature supported",
               "description": "Learn how to fix SSH error \"no mutual signature supported\""
             }
-          ]
+          ],
+          "title": "Troubleshooting",
+          "description": "Learn how to troubleshoot Coder-related errors."
         },
         {
           "path": "./guides/workspaces.md",
@@ -899,7 +950,9 @@
           "title": "Sunsetting Coder v1 and v2 Migration FAQ",
           "description": "Frequently asked questions about sunsetting of Coder v1 and migrating to v2"
         }
-      ]
+      ],
+      "title": "Guides",
+      "description": "Coder customization and advanced use cases."
     },
     {
       "path": "./changelog/index.md",
@@ -918,7 +971,9 @@
               "title": "1.38.1",
               "description": "Released on 01/06/2023"
             }
-          ]
+          ],
+          "title": "1.38.0",
+          "description": "Released on 01/04/2023"
         },
         {
           "path": "./changelog/1.37.0.md",
@@ -928,7 +983,9 @@
               "title": "1.37.1",
               "description": "Released on 12/05/2022"
             }
-          ]
+          ],
+          "title": "1.37.0",
+          "description": "Released on 11/23/2022"
         },
         {
           "path": "./changelog/1.36.0.md",
@@ -943,7 +1000,9 @@
               "title": "1.36.1",
               "description": "Released on 11/14/2022"
             }
-          ]
+          ],
+          "title": "1.36.0",
+          "description": "Released on 10/26/2022"
         },
         {
           "path": "./changelog/1.35.0.md",
@@ -968,7 +1027,9 @@
               "title": "1.35.1",
               "description": "Released on 10/3/2022"
             }
-          ]
+          ],
+          "title": "1.35.0",
+          "description": "Released on 9/28/2022"
         },
         {
           "path": "./changelog/1.34.0.md",
@@ -988,7 +1049,9 @@
               "title": "1.34.1",
               "description": "Released on 10/03/2022"
             }
-          ]
+          ],
+          "title": "1.34.0",
+          "description": "Released on 08/31/2022"
         },
         {
           "path": "./changelog/1.33.0.md",
@@ -1023,7 +1086,9 @@
               "title": "1.33.1",
               "description": "Released on 08/04/2022"
             }
-          ]
+          ],
+          "title": "1.33.0",
+          "description": "Released on 07/27/2022"
         },
         {
           "path": "./changelog/1.32.0.md",
@@ -1053,7 +1118,9 @@
               "title": "1.32.1",
               "description": "Released on 07/14/2022"
             }
-          ]
+          ],
+          "title": "1.32.0",
+          "description": "Released on 06/22/2022"
         },
         {
           "path": "./changelog/1.31.0.md",
@@ -1073,7 +1140,9 @@
               "title": "1.31.1",
               "description": "Released on 06/01/2022"
             }
-          ]
+          ],
+          "title": "1.31.0",
+          "description": "Released on 05/26/2022"
         },
         {
           "path": "./changelog/1.30.0.md",
@@ -1103,7 +1172,9 @@
               "title": "1.30.1",
               "description": "Released on 04/29/2022"
             }
-          ]
+          ],
+          "title": "1.30.0",
+          "description": "Released on 04/27/2022"
         },
         {
           "path": "./changelog/archive/index.md",
@@ -1493,9 +1564,13 @@
               "title": "1.13.2",
               "description": "Released on 11/23/2020"
             }
-          ]
+          ],
+          "title": "Archives",
+          "Description": "For release 1.21.x and earlier."
         }
-      ]
+      ],
+      "title": "Changelog",
+      "description": "Coder releases annotated with breaking changes, new features, and fixes."
     }
   ]
 }

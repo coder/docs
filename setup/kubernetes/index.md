@@ -1,7 +1,4 @@
----
-title: Kubernetes
-description: Learn how to set up a Kubernetes cluster compatible with Coder.
----
+# Kubernetes
 
 This section contains guides for creating a compatible cluster on common cloud
 platforms, including Microsoft Azure, Google Cloud Platform, and Amazon Web

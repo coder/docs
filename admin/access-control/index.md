@@ -1,7 +1,4 @@
----
-title: Access control
-description: Learn how to change how Coder users sign in.
----
+# Access control
 
 The **Authentication** tab allows you to choose how your users log in and gain
 access to Coder. Currently, you can choose between **Built-In Authentication**
@@ -14,8 +11,8 @@ to manually create users who log in with their email address and temporary
 password. Coder will ask them to change their password after they log in the
 first time.
 
-The default user session expiry time is one week for users logging in via built-in
-authentication. This is non-configurable.
+The default user session expiry time is one week for users logging in via
+built-in authentication. This is non-configurable.
 
 ## OIDC authentication
 

@@ -1,7 +1,4 @@
----
-title: Docker in workspaces
-description: Learn about supporting Docker inside workspaces.
----
+# Docker in workspaces
 
 [Container-based virtual machines (CVMs)](../../../workspaces/cvms.md) allow
 users to run system-level programs, such as Docker and systemd, in their
@@ -78,8 +75,8 @@ container is what provides
   another directory like `/mycompanyname`
 
 - Coder requires an older version of `containerd.io` because it contains a
-  version of `runc` that works with Sysbox correctly. See our [enterprise-base
-  Dockerfile](https://github.com/coder/enterprise-images/blob/main/images/base/Dockerfile.ubuntu)
+  version of `runc` that works with Sysbox correctly. See our
+  [enterprise-base Dockerfile](https://github.com/coder/enterprise-images/blob/main/images/base/Dockerfile.ubuntu)
   for an example or install the following in your Dockerfile
   `containerd.io=1.5.11-1`. In a future release, Coder will update to the latest
   Sysbox version that supports the latest `runc`.

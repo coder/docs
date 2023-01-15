@@ -1,7 +1,4 @@
----
-title: "Workspace management"
-description: Learn how to manage workspaces from an admin level.
----
+# Workspace management
 
 Administrative users can modify a variety of workspace-related behaviors.
 
