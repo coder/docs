@@ -1,7 +1,4 @@
----
-title: NFS file mounting
-description: Learn how to mount NFS file shares onto Coder workspaces.
----
+# NFS file mounting
 
 This guide will walk you through configuring and mounting an NFS file share to a
 Coder workspace. The NFS file share will be separate from the user's persistent

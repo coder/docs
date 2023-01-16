@@ -1,7 +1,4 @@
----
-title: Node.js Projects
-description: Learn how to create custom images for Node.js projects.
----
+# Node.js Projects
 
 This guide will show you how to create a Coder image for a
 [sample blog project](https://github.com/gatsbyjs/gatsby-starter-blog) that's

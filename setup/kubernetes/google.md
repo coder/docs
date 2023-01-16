@@ -1,7 +1,4 @@
----
-title: Google Kubernetes Engine
-description: Learn how to set up a GKE cluster for your Coder deployment.
----
+# Google Kubernetes Engine
 
 This guide shows you how to set up a Google Kubernetes Engine (GKE) cluster to
 which Coder can deploy.

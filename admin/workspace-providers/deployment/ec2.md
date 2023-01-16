@@ -1,8 +1,4 @@
----
-title: EC2
-description: Learn how to deploy a workspace provider to an EC2 instance.
-state: alpha
----
+# EC2
 
 This article walks you through the process of deploying a workspace provider to
 an EC2 instance.

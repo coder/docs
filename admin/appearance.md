@@ -1,7 +1,4 @@
----
-title: "Appearance"
-description: Learn how to augment the dashboard appearance.
----
+# Appearance
 
 Coder offers you appearance customization options for the following:
 

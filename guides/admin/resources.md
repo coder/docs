@@ -1,7 +1,4 @@
----
-title: Compute resources
-description: Learn the unique compute resource management capabilities in Coder.
----
+# Compute resources
 
 The computing workloads of developers are unique in that they don't require
 consistent access to CPUs; instead, developers typically have short periods of

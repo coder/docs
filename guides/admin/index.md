@@ -1,6 +1,3 @@
----
-title: "Admin"
-description: Learn about admin tasks for Coder.
----
+# Admin
 
 <children></children>

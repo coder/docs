@@ -1,8 +1,4 @@
----
-title: Git integration
-description:
-  Learn how to integrate with a Git provider to authenticate workspaces.
----
+# Git integration
 
 The Git Integration allows your developers to connect their Coder accounts to
 their accounts with the Git repository service of choice.

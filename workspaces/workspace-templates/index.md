@@ -1,8 +1,4 @@
----
-title: "Workspace templates"
-description: "Learn how to describe workspace configuration as code."
-state: alpha
----
+# Workspace templates
 
 Workspace templates brings the _infrastructure as code_ paradigm to Coder
 workspaces. Templates allow you to define and create new workspaces using YAML.

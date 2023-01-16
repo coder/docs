@@ -1,7 +1,4 @@
----
-title: Organization roles
-description: Learn how to manage organization roles.
----
+# Organization roles
 
 You can assign members of an [organization](../organizations.md) roles, which
 function like [user roles](users/user-roles.md). There are two roles available:

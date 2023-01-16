@@ -1,8 +1,4 @@
----
-title: "Workspace process logging"
-description:
-  "Learn how to enable workspace process logging for your deployment."
----
+# Workspace process logging
 
 The workspace process logging feature allows you to log all system-level
 processes executing in the workspace.

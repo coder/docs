@@ -1,7 +1,4 @@
----
-title: Workspace management
-description: See example usages of the CLI for personal workspace management.
----
+# Workspace management
 
 ## List all of your workspaces
 

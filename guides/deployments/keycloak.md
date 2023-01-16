@@ -1,8 +1,4 @@
----
-title: "SAML 2.0 identity brokering"
-description:
-  "Learn how broker JumpCloud SAML 2.0 logins to Coder using Keycloak."
----
+# SAML 2.0 identity brokering
 
 This article will show you how to set up and use Keycloak to broker JumpCloud
 SAML 2.0 logins to Coder.

@@ -1,7 +1,4 @@
----
-title: "Lifecycle"
-description: "Learn about the workspace lifecycle."
----
+# Lifecycle
 
 A Coder workspace is designed to shutdown (triggered by either scheduled
 workspace inactivity or manually by users and administrators) and be rebuilt.

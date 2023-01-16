@@ -1,7 +1,4 @@
----
-title: Authentication management
-description: Learn how to manage Coder authentication.
----
+# Authentication management
 
 By default, Coder enables **built-in authentication**, though you can change
 this if desired.

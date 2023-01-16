@@ -1,6 +1,3 @@
----
-title: TLS certificates
-description: Learn how to use cert-manager to set up TLS certificates.
----
+# TLS certificates
 
 <children></children>

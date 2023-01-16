@@ -1,9 +1,4 @@
----
-title: "Scaling Coder"
-description:
-  Learn about best practices to properly scale Coder to meet developer and
-  workspace needs.
----
+# Scaling Coder
 
 Coder's control plane (`coderd`) and workspaces are deployed in a Kubernetes
 namespace. This document outlines vertical and horizontal scaling techniques to

@@ -1,7 +1,4 @@
----
-title: Organizations
-description: Learn about Coder organizations.
----
+# Organizations
 
 Organizations are groups that tie together users, workspaces, and images. You
 must assign all of your images and workspaces to a specific organization. An

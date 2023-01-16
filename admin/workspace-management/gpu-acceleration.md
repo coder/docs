@@ -1,7 +1,4 @@
----
-title: "GPU acceleration"
-description: Learn how to use GPUs with workspaces.
----
+# GPU acceleration
 
 Graphical processing units (GPUs) are useful with compute-intensive workloads,
 such as those involved with data science/machine learning projects.
