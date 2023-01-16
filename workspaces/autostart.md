@@ -1,7 +1,4 @@
----
-title: "Auto-start"
-description: Learn how to configure automated workspace rebuilds.
----
+# Auto-start
 
 Coder
 [automatically turns off idle workspaces](../admin/workspace-management/shutdown.md)

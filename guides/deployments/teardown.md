@@ -1,8 +1,4 @@
----
-title: Teardown
-description:
-  Learn how to tear down Coder and the infrastructure on which it's deployed.
----
+# Teardown
 
 This guide shows you how to tear down Coder and the cluster on which it is
 deployed.

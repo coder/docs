@@ -1,7 +1,4 @@
----
-title: "Personalization"
-description: Learn how to personalize your workspace to augment its base image.
----
+# Personalization
 
 Your Coder development workspace strikes a balance between consistent team
 configuration and personal customization. The workspace's

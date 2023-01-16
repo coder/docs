@@ -1,8 +1,4 @@
----
-title: Docker
-description: Learn how to deploy a workspace provider to a Docker instance.
-state: alpha
----
+# Docker
 
 This article walks you through the process of deploying a workspace provider to
 a remote VM instance using Docker.

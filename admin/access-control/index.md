@@ -1,7 +1,4 @@
----
-title: Access control
-description: Learn how to change how Coder users sign in.
----
+# Access control
 
 The **Authentication** tab allows you to choose how your users log in and gain
 access to Coder. Currently, you can choose between **Built-In Authentication**

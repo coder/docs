@@ -1,8 +1,4 @@
----
-title: Migrate to satellite deployments
-description:
-  Learn how to migrate workspace providers deployed before v1.21 to satellites.
----
+# Migrate to satellite deployments
 
 Coder v1.21 (and later) feature satellites, which work in tandem with Networking
 v2, to provide low latency experiences for geo-distributed teams.

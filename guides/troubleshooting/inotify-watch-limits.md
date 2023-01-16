@@ -1,7 +1,4 @@
----
-title: inotify watcher limit problems
-description: Learn how to resolve issues related to the inotify watcher limit.
----
+# inotify watcher limit problems
 
 When using some applications and tools, including Webpack or [code-server], you
 may encounter an error similar to the following:

@@ -1,7 +1,4 @@
----
-title: Docker
-description: Learn how to solve Docker issues inside Coder workspaces.
----
+# Docker
 
 When using Coder, you may encounter the following error:
 

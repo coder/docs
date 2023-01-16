@@ -1,7 +1,4 @@
----
-title: "Local deployment"
-description: Learn how to run Coder with Docker locally.
----
+# Local deployment
 
 Coder for Docker allows you to deploy Coder to any machine on which Docker runs
 quickly.

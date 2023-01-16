@@ -1,7 +1,4 @@
----
-title: "Azure Container Registry"
-description: Add a Microsoft Azure Container Registry (ACR) to Coder.
----
+# Azure Container Registry
 
 This article will show you how to add a private Azure Container Registry (ACR)
 instance to Coder.

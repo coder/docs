@@ -1,8 +1,4 @@
----
-title: Managed code-server Workspaces
-description:
-  Learn how Coder can improve your code-server deployment on Kubernetes.
----
+# Managed code-server Workspaces
 
 If you're deploying [code-server](https://github.com/coder/code-server) on
 Kubernetes, you may want to consider Coder, our solution for developers and

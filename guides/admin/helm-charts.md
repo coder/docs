@@ -1,7 +1,4 @@
----
-title: Helm charts
-description: Learn how to modify configuration values in Helm charts.
----
+# Helm charts
 
 This article will show you how to modify the default configuration values in
 Coder's Helm chart.

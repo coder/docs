@@ -1,7 +1,4 @@
----
-title: Prometheus integration
-description: Learn how to configure Prometheus with Coder.
----
+# Prometheus integration
 
 The Prometheus integration enables you to query and visualize Coder's platform
 metrics.
