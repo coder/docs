@@ -1,7 +1,4 @@
----
-title: Docker in workspaces
-description: Learn about supporting Docker inside workspaces.
----
+# Docker in workspaces
 
 [Container-based virtual machines (CVMs)](../../../workspaces/cvms.md) allow
 users to run system-level programs, such as Docker and systemd, in their

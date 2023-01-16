@@ -1,7 +1,4 @@
----
-title: "Telemetry"
-description: Learn what usage telemetry Coder collects.
----
+# Telemetry
 
 Coder allows you to control the behavior of its built-in telemetry and crash
 reporting features.

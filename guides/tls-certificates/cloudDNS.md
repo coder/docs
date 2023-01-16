@@ -1,9 +1,4 @@
----
-title: Google Cloud DNS
-description:
-  Learn how to use cert-manager to set up TLS certificates using Google Cloud
-  DNS for DNS01 challenges.
----
+# Google Cloud DNS
 
 [cert-manager](https://cert-manager.io/) allows you to enable HTTPS on your
 Coder installation, regardless of whether you're using

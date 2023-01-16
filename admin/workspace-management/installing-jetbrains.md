@@ -1,7 +1,4 @@
----
-title: "IDE installation"
-description: Learn how to install IDEs in images.
----
+# IDE installation
 
 The process of installing an IDE onto your [image](../../images/index.md) is
 similar to installing the IDE onto a local machine.

@@ -1,7 +1,4 @@
----
-title: "Shutdown"
-description: Learn how to configure workspace auto-off behavior.
----
+# Shutdown
 
 You can specify the duration of inactivity allowed before a workspace
 automatically shuts down. This helps you optimize your resource allocation since

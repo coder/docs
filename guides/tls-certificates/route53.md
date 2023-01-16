@@ -1,9 +1,4 @@
----
-title: Route 53
-description:
-  Learn how to use cert-manager to set up TLS certificates using Route 53 for
-  DNS01 challenges.
----
+# Route 53
 
 [cert-manager](https://cert-manager.io/) allows you to enable HTTPS on your
 Coder installation, regardless of whether you're using

@@ -1,7 +1,4 @@
----
-title: "Upgrade"
-description: Learn how to upgrade your Coder for Docker deployment.
----
+# Upgrade
 
 This guide will show you how to upgrade your Coder for Docker deployment.
 

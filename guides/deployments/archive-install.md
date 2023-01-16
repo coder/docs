@@ -1,7 +1,4 @@
----
-title: Coder installation from an archive
-description: Learn how to install Coder from an archive
----
+# Coder installation from an archive
 
 You can install Coder from an archive instead of using Helm. To do so, replace
 **steps 1-2** of the [Installation guide](../../setup/installation.md) with the

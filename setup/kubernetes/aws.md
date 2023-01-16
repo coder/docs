@@ -1,8 +1,4 @@
----
-title: Amazon Elastic Kubernetes Service
-description:
-  Learn how to set up an Amazon EKS cluster for your Coder deployment.
----
+# Amazon Elastic Kubernetes Service
 
 This deployment guide shows you how to set up an Amazon Elastic Kubernetes
 Engine cluster on which Coder can deploy.

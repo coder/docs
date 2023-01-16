@@ -1,7 +1,4 @@
----
-title: macOS keybindings
-description: Learn how to use macOS keybindings with JetBrains IDEs.
----
+# macOS keybindings
 
 You can switch from the default Windows/Linux keybinding to macOS keybindings
 when using any of the following JetBrains IDE within Coder.

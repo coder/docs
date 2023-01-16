@@ -1,7 +1,4 @@
----
-title: "Comparison"
-description: "Get an overview of our features."
----
+# Comparison
 
 Coder offers both enterprise and open-source (code-server) solutions to meet the
 remote development needs of organizations and individual developers. Both

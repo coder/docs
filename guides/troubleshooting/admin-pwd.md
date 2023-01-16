@@ -1,7 +1,4 @@
----
-title: Admin password reset
-description: Learn how to resolve issues with resetting your admin password.
----
+# Admin password reset
 
 When
 [resetting your Coder admin password](../../admin/access-control/users/password-reset.md#resetting-the-site-admin-password)

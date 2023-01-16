@@ -1,7 +1,4 @@
----
-title: Developers
-description: Get started with Coder as a developer.
----
+# Developers
 
 This article will walk you through the process of getting started with a Coder
 workspace and a web development project featuring Node.js and React.js. You'll

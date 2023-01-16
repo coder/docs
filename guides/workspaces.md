@@ -1,7 +1,4 @@
----
-title: "Workspace organization"
-description: Learn how to organize your Coder workspaces.
----
+# Workspace organization
 
 This article describes considerations for deciding how to set up your Coder
 workspaces.

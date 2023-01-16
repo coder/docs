@@ -1,7 +1,4 @@
----
-title: Storage
-description: Learn about storage in workspaces.
----
+# Storage
 
 Coder differentiates between system-installed files and user-installed files.
 System-installed files are stored in `/user/`, while user-installed files are

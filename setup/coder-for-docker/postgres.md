@@ -1,7 +1,4 @@
----
-title: "External database setup"
-description: Learn how to set up an external Postgres database for use with C4D.
----
+# External database setup
 
 If you'd like to use an external database with your Coder for Docker deployment,
 you must:

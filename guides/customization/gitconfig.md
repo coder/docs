@@ -1,7 +1,4 @@
----
-title: Git configuration
-description: Learn how to configure Git in Coder.
----
+# Git configuration
 
 This guide will show you how to manage your Git configuration in Coder.
 

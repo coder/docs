@@ -1,7 +1,4 @@
----
-title: "Amazon Elastic Container Registry"
-description: Add a private Amazon ECR to Coder.
----
+# Amazon Elastic Container Registry
 
 This article will show you how to add your private ECR to Coder. If you're using
 a public ECR registry, you do not need to follow the steps below.

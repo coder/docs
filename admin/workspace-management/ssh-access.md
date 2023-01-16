@@ -1,7 +1,4 @@
----
-title: "SSH configuration"
-description: Learn how to configure SSH access to Coder workspaces.
----
+# SSH configuration
 
 By default, Coder enables SSH access for all users. Coder assigns each user a
 private key that they can use to access their workspaces.

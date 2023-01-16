@@ -1,7 +1,4 @@
----
-title: "Requirements"
-description: Learn about the prerequisite infrastructure requirements.
----
+# Requirements
 
 Coder is deployed onto Kubernetes clusters, and we recommend the following
 resource allocation minimums to ensure quality performance.

@@ -1,7 +1,4 @@
----
-title: VNC
-description: Learn how to set up a VNC in Coder.
----
+# VNC
 
 This guide will show you how to set up a VNC in Coder.
 

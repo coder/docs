@@ -1,7 +1,4 @@
----
-title: Air-gapped deployment
-description: Learn how to set up an air-gapped Coder deployment.
----
+# Air-gapped deployment
 
 If you need increased security for your Coder deployments, you can set up an
 air-gapped deployment.
