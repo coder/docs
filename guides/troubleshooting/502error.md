@@ -1,7 +1,4 @@
----
-title: "TypeError: Failed to fetch"
-description: Learn how to resolve TypeError issues.
----
+# TypeError: Failed to fetch
 
 When using Coder, you may encounter this error when loading a workspace:
 

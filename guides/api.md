@@ -1,8 +1,4 @@
----
-title: "Public API"
-description: Learn more about Coder's API.
-state: alpha
----
+# Public API
 
 To help you integrate Coder into your automated workflows, we've documented our
 API.

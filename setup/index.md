@@ -1,7 +1,4 @@
----
-title: "Setup"
-description: Learn how to set up a Coder instance.
----
+# Setup
 
 The articles in this section will walk you through setting up a cluster to which
 Coder deploys and then deploying Coder.

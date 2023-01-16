@@ -1,7 +1,4 @@
----
-title: OpenID Connect with Google
-description: Learn how to use Google SSO with Coder.
----
+# OpenID Connect with Google
 
 This article walks you through setting up single sign-on to Coder using Google.
 

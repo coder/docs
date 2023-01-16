@@ -1,7 +1,4 @@
----
-title: Password reset
-description: Learn how to reset Coder user passwords.
----
+# Password reset
 
 This article walks you through resetting a user password, as well as resetting a
 site admin's password.

@@ -1,7 +1,4 @@
----
-title: "Deprecate"
-description: Learn how to deprecate an image.
----
+# Deprecate
 
 You can mark images as deprecated to prevent them from being used to create new
 workspaces.

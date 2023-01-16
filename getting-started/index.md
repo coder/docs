@@ -1,7 +1,4 @@
----
-title: "Getting started"
-description: Get started with Coder.
----
+# Getting started
 
 We’re excited for you to be part of the growing community of Coder users, and we
 wanted to provide this onboarding guide to help you get started.

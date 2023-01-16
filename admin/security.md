@@ -1,7 +1,4 @@
----
-title: Browser security
-description: Learn about Coder's browser security options.
----
+# Browser security
 
 Coder offers two browser security features that you can choose to enable. These
 are available under **Manage** > **Admin** > **Infrastructure**.

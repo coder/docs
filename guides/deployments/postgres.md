@@ -1,7 +1,4 @@
----
-title: "PostgreSQL"
-description: "Learn how connect Coder to an external postgreSQL database."
----
+# PostgreSQL
 
 This guide walks you through deploying Coder with an external PostgreSQL
 database.

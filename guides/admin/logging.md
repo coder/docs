@@ -1,7 +1,4 @@
----
-title: Logging
-description: Learn how to set up logging for your Coder deployment.
----
+# Logging
 
 Logging can help you understand what's happening under the hood of your Coder
 deployment and is useful for debugging and monitoring the health of your

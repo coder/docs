@@ -1,7 +1,4 @@
----
-title: Terraform
-description: Learn how to deploy Coder using Terraform.
----
+# Terraform
 
 Coder offers [Terraform modules](https://github.com/coder/enterprise-terraform)
 that help you deploy Coder faster.

@@ -1,7 +1,4 @@
----
-title: Offline documentation
-description: Learn how to use Coder's embedded documentation.
----
+# Offline documentation
 
 While Coder's documentation is hosted at <https://coder.com/docs/coder>, you can
 also access it directly via the Coder deplopyment. This may come in handy if

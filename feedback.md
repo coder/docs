@@ -1,6 +1,4 @@
----
-title: "Feedback"
----
+# Feedback
 
 Do you have a feature request or an idea for how we can improve our product? Is
 something not working as expected? **We want to hear from you!**

@@ -1,7 +1,4 @@
----
-title: Access URL
-description: Learn how to set the access URL.
----
+# Access URL
 
 This article will show you how to change your **access URL**, which is a custom
 domain name that you can use to access your Coder deployment.

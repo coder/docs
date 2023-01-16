@@ -1,7 +1,4 @@
----
-title: "Remote terminal"
-description: Learn how to use the Coder CLI to access your workspace.
----
+# Remote terminal
 
 You can access the shell of your Coder workspace from your local computer using
 the `coder ssh` command.
