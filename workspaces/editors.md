@@ -80,7 +80,10 @@ code-server -r personalize.log
 
 ## JetBrains Gateway with SSH
 
-[Gateway](https://www.jetbrains.com/remote-development/gateway/) is JetBrains' remote development solution. [JetBrains has suspended](https://lp.jetbrains.com/projector/) Projector (the browser-based option) therefore Coder no longer provides examples or support.
+[Gateway](https://www.jetbrains.com/remote-development/gateway/) is JetBrains'
+remote development solution.
+[JetBrains has suspended](https://lp.jetbrains.com/projector/) Projector (the
+browser-based option) therefore Coder no longer provides examples or support.
 
 > By default, Gateway will download the IDE from jetbrains.com into the Coder
 > workspace during the setup. If you are air-gapped or want to leverage a
@@ -171,7 +174,6 @@ in your local `~/.ssh` directory with `ssh-keygen -y -f`:
 [This article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup)
 outlines troubleshooting steps with Gateway. JetBrains product support including
 their Issue Trackers [are here.](https://www.jetbrains.com/support/)
-
 
 ## Jupyter Notebook
 
