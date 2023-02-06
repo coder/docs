@@ -5,10 +5,6 @@ There are several primary ways you can connect an IDE to your Coder workspace:
 1. [VS Code remote SSH](editors.md#vs-code-remote-ssh) with local VS Code
 1. [VS Code in the browser](editors.md#vs-code-in-the-browser) with code-server
 1. [JetBrains Gateway and SSH](editors.md#jetbrains-gateway-with-ssh)
-1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with
-   JetBrains Projector
-1. [JetBrains' Code With Me](editors.md#code-with-me)
-1. [Multiple JetBrains IDEs](editors.md#multiple-jetbrains-ides)
 1. [Jupyter Notebook](editors.md#jupyter-notebook)
 1. [JupyterLab](editors.md#jupyterlab)
 1. [RStudio](editors.md#rstudio)
@@ -85,8 +81,9 @@ code-server -r personalize.log
 ## JetBrains Gateway with SSH
 
 [Gateway](https://www.jetbrains.com/remote-development/gateway/) is JetBrains'
-preferred remote development solution. Projector (the browser-based option) is
-[no longer recommended](https://lp.jetbrains.com/projector/) by JetBrains.
+remote development solution.
+[JetBrains has suspended](https://lp.jetbrains.com/projector/) Projector (the
+browser-based option) therefore Coder no longer provides examples or support.
 
 > By default, Gateway will download the IDE from jetbrains.com into the Coder
 > workspace during the setup. If you are air-gapped or want to leverage a
@@ -177,182 +174,6 @@ in your local `~/.ssh` directory with `ssh-keygen -y -f`:
 [This article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup)
 outlines troubleshooting steps with Gateway. JetBrains product support including
 their Issue Trackers [are here.](https://www.jetbrains.com/support/)
-
-## JetBrains IDEs in the browser
-
-Coder uses an open-source project called Projector, created and managed by
-JetBrains, to render a JetBrains IDE in a browser.
-
-If your image
-[includes a JetBrains IDE](../admin/workspace-management/installing-jetbrains.md)
-(such as IntelliJ, PyCharm, and PhpStorm), you can launch it from the dashboard.
-
-![IntelliJ logos](../assets/workspaces/intellij-app.png)
-
-Coder launches JetBrains IDEs in their own windows; be sure to set your browser
-to allow popup windows so that you can use your IDE.
-
-> Follow these steps to
-> [start a trial or activate your paid JetBrains license](../guides/troubleshooting/activate-jetbrains-licensing.md).
-
-### Installing JetBrains' IDEs
-
-You install JetBrains IDEs in a Dockerfile, add the required packages to run
-JetBrains in a browser, and create a symlink with one of the following names so
-Coder can auto-detect the IDE and display the icon in the workspace.
-
-Using Docker, you `docker build` the image from the Dockerfile. You then push
-the image to your container registry and import the image into your Coder
-deployment.
-
-Your administrator can
-[follow these steps to build the JetBrains IDE image](../admin/workspace-management/installing-jetbrains.md).
-
-The symlink names supported by Coder are:
-
-- `clion`
-- `datagrip`
-- `dataspell`
-- `goland`
-- `intellij-idea-ultimate`
-- `intellij-idea-community`
-- `phpstorm`
-- `pycharm`
-- `pycharm-community`
-- `rider`
-- `rubymine`
-- `studio` (Android Studio)
-- `webstorm`
-
-## System requirements
-
-The resources required depends on your workspace-specific requirements. We
-recommend reviewing the documentation for your IDE to obtain a starting point.
-
-### Known issues
-
-- Window dragging behavior can misalign with mouse movements
-- Popover dialogs do not always appear in the correct location
-- Popup windows are missing titles and window controls
-- Some theme-based plugins can cause the IDE to render incorrectly
-- Some minor rendering artifacts occur during regular usage
-- Keyboard shortcuts being overridden by the browser. Try
-  [running JetBrains as a Progressive Web App](./pwa.md) to regain shortcuts.
-
-## Code With Me
-
-[JetBrains' Code With Me](https://www.jetbrains.com/code-with-me/) allows you to
-collaborate with others in real-time on your project and enables pair
-programming.
-
-> You must have a
-> [JetBrains IDE installed](../admin/workspace-management/installing-jetbrains.md)
-> in your [image](../images/index.md) to start a Code With Me session from your
-> Coder workspace. Only the workspace where the source code is being worked on
-> needs JetBrains; other collaborators do _not_ need a JetBrains IDE.
-
-### Getting started
-
-To set up a Code With Me session:
-
-1. The host creates a session and shares the information needed to join the
-   session with other participants.
-1. The participants use the information provided by the host to join the session
-   and request access.
-1. The host accepts the participants' request to join the session created by the
-   host.
-
-#### Step 1: Start and host a session
-
-To create and host a Code With Me session:
-
-1. Log in to Coder.
-
-1. Under **Browser Applications**, launch the JetBrains IDE (e.g., IntelliJ
-   PyCharm) of your choice.
-
-   ![Launch IDE](../assets/workspaces/pycharm-app.png)
-
-1. Click the **Code With Me** icon at the top of your IDE.
-
-   ![Code With Me icon](../assets/workspaces/code-with-me-2.png)
-
-1. Select **Enable Access and Copy Invitation Link...**.
-
-   ![Enable access and copy link](../assets/workspaces/code-with-me-3.png)
-
-1. Confirm and accept the Terms of Use.
-
-1. Set the permissions for new guests to **Full access** and uncheck the
-   **Automatically start voice call** feature. Click **Enable Access**.
-
-1. Once you've enabled access, JetBrains copies the link you must share with
-   participants to your clipboard. Send this link to those with whom you'd like
-   to collaborate.
-
-   You can recopy this link at any time by clicking the **Code With Me icon**
-   and choosing **Copy Invitation Link...**.
-
-   ![Link confirmation](../assets/workspaces/code-with-me-5.png)
-
-#### Step 2: Request to join the session
-
-If you've received a link to join a Code With Me session as a participant:
-
-1. Copy the Code With Me session link that you were provided, and paste it into
-   your web browser. You'll be directed to a webpage with further instructions.
-
-1. On the instructions page to which you were directed, copy the code snippet
-   and run it in the terminal.
-
-   ![Run join command](../assets/workspaces/code-with-me-4.png)
-
-1. Confirm and accept the User Agreement.
-
-1. You'll be shown a **security code**. Verify with the host of your session
-   that they see the same code.
-
-   ![Security code verification](../assets/workspaces/code-with-me-7.png)
-
-1. Wait for your host to accept your request to join; when they do, your
-   JetBrains IDE will launch automatically.
-
-   ![New JetBrains IDE](../assets/workspaces/code-with-me-8.png)
-
-#### Step 3: Accept the request to the join
-
-If you're the host of the session, you'll see a request that the other
-participant wants to join your project, the permissions you've granted to the
-other user, and a security code.
-
-![Security code verification for host](../assets/workspaces/code-with-me-9.png)
-
-Verify that the security code you see matches the one shown to your
-participants. If they do, click **Accept** to proceed.
-
-At this point, you'll be able to share your project and work with your partner
-in real-time.
-
-## Multiple JetBrains IDEs
-
-If you'd like to have multiple projects open, you'll need to have multiple
-JetBrains IDEs open in Coder simultaneously. The following steps show you how to
-configure Coder to enable this behavior.
-
-![Multiple IntelliJ icons in a workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
-
-Running multiple instances of the same JetBrains IDE requires you to create a
-custom image and configure script to install the JetBrains Projector CLI using a
-custom image and [configure](../images/configure.md) script.
-
-The configure script will install JetBrains Projector, then use the Projector
-CLI to install as many additional IDE instances as you need. Coder's
-[workspace applications](./applications.md) feature surfaces the additional IDE
-icons in the workspace.
-
-We have provided
-[detailed configuration steps](../guides/customization/multiple-jetbrains-ides.md)
-for setting up your custom image and configure script.
 
 ## Jupyter Notebook
 
