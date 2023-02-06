@@ -950,7 +950,13 @@
       "children": [
         {
           "path": "./changelog/1.39.0.md",
-          "children": [],
+          "children": [
+            {
+              "path": "./changelog/1.39.1.md",
+              "title": "1.39.1",
+              "description": "Released on 02/06/2023"
+            }
+         ],
           "title": "1.39.0",
           "description": "Released on 01/25/2023"
         },
