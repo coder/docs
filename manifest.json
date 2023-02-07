@@ -1,5 +1,5 @@
 {
-  "versions": ["v1.38", "v1.37", "v1.36", "v1.35", "v1.34", "v1.33"],
+  "versions": ["v1.39", "v1.38", "v1.37", "v1.36", "v1.35", "v1.34", "v1.33"],
   "routes": [
     {
       "path": "./index.md",
@@ -950,7 +950,13 @@
       "children": [
         {
           "path": "./changelog/1.39.0.md",
-          "children": [],
+          "children": [
+            {
+              "path": "./changelog/1.39.1.md",
+              "title": "1.39.1",
+              "description": "Released on 02/06/2023"
+            }
+          ],
           "title": "1.39.0",
           "description": "Released on 01/25/2023"
         },
