@@ -195,7 +195,6 @@ oc create imagestream enterprise-base
 
 The `Build` created from the previous step should begin automatically.
 
-
 When creating workspaces,
 [configure Coder to connect to the internal OpenShift registry](../../admin/registries/index.md)
 and use the base image you just created.
