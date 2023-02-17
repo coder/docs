@@ -952,6 +952,11 @@
           "path": "./changelog/1.39.0.md",
           "children": [
             {
+              "path": "./changelog/1.39.2.md",
+              "title": "1.39.2",
+              "description": "Released on 02/16/2023"
+            },
+            {
               "path": "./changelog/1.39.1.md",
               "title": "1.39.1",
               "description": "Released on 02/06/2023"
