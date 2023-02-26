@@ -163,6 +163,8 @@ services:
     restart: unless-stopped
     ports:
       - 7080:7080/tcp
+    networks:
+      - coder
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${HOME}/.coder:/var/run/coder
