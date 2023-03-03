@@ -183,6 +183,18 @@ spec:
       name: "enterprise-base:latest"
 ```
 
+This will automatically create a `Build` for the image.
+For the moment, it will remain in the "New" status.
+
+Finally, create an `ImageStream` that references the `ImageStreamTag`
+from the `BuildConfig` above:
+
+```console
+oc create imagestream enterprise-base
+```
+
+The `Build` created from the previous step should begin automatically.
+
 When creating workspaces,
 [configure Coder to connect to the internal OpenShift registry](../../admin/registries/index.md)
 and use the base image you just created.
