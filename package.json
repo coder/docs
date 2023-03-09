@@ -19,7 +19,7 @@
     "@types/node": "14.18.37",
     "@types/semver-compare": "^1.0.1",
     "all-contributors-cli": "^6.24.0",
-    "husky": "^8.0.1",
+    "husky": "^8.0.3",
     "lint-staged": "^13.0.3",
     "markdownlint-cli": "^0.31.1",
     "minimist": "^1.2.6",
