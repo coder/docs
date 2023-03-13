@@ -252,7 +252,7 @@
             },
             {
               "path": "./cli/reference/coder_config-ssh.md",
-              "title": "coder completion"
+              "title": "coder config-ssh"
             },
             {
               "path": "./cli/reference/coder_images.md",
