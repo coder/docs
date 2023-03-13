@@ -8,4 +8,4 @@ local machine.
 ## Full CLI reference
 
 For a full list of the Coder CLI commands available, see the
-[reference pages](./reference).
+[reference pages](./reference/coder).
