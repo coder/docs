@@ -240,6 +240,173 @@
           "path": "./cli/managing-workspaces.md",
           "title": "Workspace management",
           "description": "See example usages of the CLI for personal workspace management."
+        },
+        {
+          "path": "./cli/reference/coder.md",
+          "title": "Reference",
+          "description": "CLI reference",
+          "children": [
+            {
+              "path": "./cli/reference/coder_completion.md",
+              "title": "coder completion"
+            },
+            {
+              "path": "./cli/reference/coder_config-ssh.md",
+              "title": "coder config-ssh"
+            },
+            {
+              "path": "./cli/reference/coder_images.md",
+              "title": "coder images",
+              "children": [
+                {
+                  "path": "./cli/reference/coder_images_ls.md",
+                  "title": "coder images ls"
+                }
+              ]
+            },
+            {
+              "path": "./cli/reference/coder_login.md",
+              "title": "coder login"
+            },
+            {
+              "path": "./cli/reference/coder_logout.md",
+              "title": "coder logout"
+            },
+            {
+              "path": "./cli/reference/coder_satellites.md",
+              "title": "coder satellites",
+              "children": [
+                {
+                  "path": "./cli/reference/coder_satellites_create.md",
+                  "title": "coder satellites create"
+                },
+                {
+                  "path": "./cli/reference/coder_satellites_ls.md",
+                  "title": "coder satellites ls"
+                },
+                {
+                  "path": "./cli/reference/coder_satellites_rm.md",
+                  "title": "coder satellites rm"
+                }
+              ]
+            },
+            {
+              "path": "./cli/reference/coder_ssh.md",
+              "title": "coder ssh"
+            },
+            {
+              "path": "./cli/reference/coder_sync.md",
+              "title": "coder sync"
+            },
+            {
+              "path": "./cli/reference/coder_tokens.md",
+              "title": "coder tokens",
+              "children": [
+                {
+                  "path": "./cli/reference/coder_tokens_create.md",
+                  "title": "coder tokens create"
+                },
+                {
+                  "path": "./cli/reference/coder_tokens_ls.md",
+                  "title": "coder tokens ls"
+                },
+                {
+                  "path": "./cli/reference/coder_tokens_regen.md",
+                  "title": "coder tokens regen"
+                },
+                {
+                  "path": "./cli/reference/coder_tokens_rm.md",
+                  "title": "coder tokens rm"
+                }
+              ]
+            },
+            {
+              "path": "./cli/reference/coder_tunnel.md",
+              "title": "coder tunnel"
+            },
+            {
+              "path": "./cli/reference/coder_update.md",
+              "title": "coder update"
+            },
+            {
+              "path": "./cli/reference/coder_urls.md",
+              "title": "coder urls",
+              "children": [
+                {
+                  "path": "./cli/reference/coder_urls_create.md",
+                  "title": "coder urls create"
+                },
+                {
+                  "path": "./cli/reference/coder_urls_ls.md",
+                  "title": "coder urls ls"
+                },
+                {
+                  "path": "./cli/reference/coder_urls_rm.md",
+                  "title": "coder urls rm"
+                }
+              ]
+            },
+            {
+              "path": "./cli/reference/coder_users.md",
+              "title": "coder users",
+              "children": [
+                {
+                  "path": "./cli/reference/coder_users_ls.md",
+                  "title": "coder users ls"
+                }
+              ]
+            },
+            {
+              "path": "./cli/reference/coder_workspaces.md",
+              "title": "coder workspaces",
+              "children": [
+                {
+                  "path": "./cli/reference/coder_workspaces_create-from-config.md",
+                  "title": "coder workspaces create-from-config"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_create.md",
+                  "title": "coder workspaces create"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_edit-from-config.md",
+                  "title": "coder workspaces edit-from-config"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_edit.md",
+                  "title": "coder workspaces edit"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_ls.md",
+                  "title": "coder workspaces ls"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_ping.md",
+                  "title": "coder workspaces ping"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_policy-template.md",
+                  "title": "coder workspaces policy-template"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_rebuild.md",
+                  "title": "coder workspaces rebuild"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_rm.md",
+                  "title": "coder workspaces rm"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_stop.md",
+                  "title": "coder workspaces stop"
+                },
+                {
+                  "path": "./cli/reference/coder_workspaces_watch-build.md",
+                  "title": "coder workspaces watch-build"
+                }
+              ]
+            }
+          ]
         }
       ],
       "title": "Command line"
