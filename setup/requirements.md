@@ -156,7 +156,7 @@ that the behavior is as expected.
 ## Licenses
 
 The use of Coder deployments requires a license that's emailed to you. Save as a
-json file and see [Setup](./configuration#providing-your-license) for how to
+JSON file and see [Setup](./configuration#providing-your-license) for how to
 add a license file into a Coder deployment.
 
 ### Restrictions
@@ -167,11 +167,5 @@ Deployments using the free trial of Coder:
   your deployment must be able to access **licensor.coder.com**)
 - Cannot be deployed in an air-gapped network
 
-<<<<<<< HEAD
 If you are an enterprise and require Coder to run in an air-gapped network,
 please contact sales@coder.com to discuss your project.
-=======
-> Coder's trial license does not work in an air-gapped environment. If your
-> organization is interested in evaluating Coder air-gapped, please contact
-> [sales@coder.com](mailto:sales@coder.com) to discuss license requirements.
->>>>>>> main
