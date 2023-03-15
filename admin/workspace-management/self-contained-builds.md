@@ -1,7 +1,4 @@
----
-title: "Self-contained workspace builds"
-description: Learn how to toggle self-contained workspace builds.
----
+# Self-contained workspace builds
 
 Currently, there are two ways in which the workspace boot sequence can occur:
 
@@ -36,9 +33,9 @@ This will result in the error below:
 stream logs from workspace: Failed to create Container-based Virtual Machine
 ```
 
-To resolve this, you will need to copy the `coderd` TLS certificate into
-your Docker image's certificate trust store. Below are examples for doing so,
-for the major distributions:
+To resolve this, you will need to copy the `coderd` TLS certificate into your
+Docker image's certificate trust store. Below are examples for doing so, for the
+major distributions:
 
 ### Debian and Ubuntu distributions
 

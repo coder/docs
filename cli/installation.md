@@ -1,7 +1,4 @@
----
-title: Installation and setup
-description: Learn how to install and configure the Coder CLI.
----
+# Installation and setup
 
 ## Getting started
 
@@ -25,7 +22,7 @@ brew install cdr/coder/coder-cli
 
 ### Download (Linux, Mac)
 
-Download releases [from GitHub](https://github.com/coder/coder-cli/releases):
+Download releases [from GitHub](https://github.com/coder/coder-v1-cli/releases):
 
 1. Click a release and download the tar file for your operating system (ex:
    `coder-cli-linux-amd64.tar.gz`)

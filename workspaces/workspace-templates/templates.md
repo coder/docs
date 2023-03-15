@@ -1,8 +1,4 @@
----
-title: "Workspace templates"
-description: "Learn how to write a template for creating workspaces."
-state: alpha
----
+# Workspace templates
 
 <!-- markdownlint-disable MD044 -->
 
@@ -276,8 +272,8 @@ Sets the `runAsUser` attribute on the workspace's PodSecurityContext, which
 controls the UID used within containers. The value must be a numeric UID.
 
 If not specified, this defaults to the UID specified in the image metadata, as
-specified in the [Kubernetes
-documentation](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/).
+specified in the
+[Kubernetes documentation](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/).
 
 #### workspace.specs.kubernetes.run-as-group.value
 
@@ -286,14 +282,15 @@ controls the GID used within the workspace container. The value must be a
 numeric GID.
 
 If not specified, this defaults to a GID specified by the container runtime, as
-specified in the [Kubernetes
-documentation](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/).
+specified in the
+[Kubernetes documentation](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/).
 
 #### workspace.specs.kubernetes.seccomp-profile-type.value
 
-Applies a [seccomp profile](https://kubernetes.io/docs/tutorials/security/seccomp/)
-to the workspace pod. The value is a string, corresponding to the `type`
-subfield of the PodSecurityContext `seccompProfile` attribute.
+Applies a
+[seccomp profile](https://kubernetes.io/docs/tutorials/security/seccomp/) to the
+workspace pod. The value is a string, corresponding to the `type` subfield of
+the PodSecurityContext `seccompProfile` attribute.
 
 For example, the following snippet would explicitly disable seccomp protection:
 
@@ -307,13 +304,13 @@ admin.
 
 #### workspace.specs.kubernetes.seccomp-profile-localhost-profile.value
 
-Applies a custom [seccomp profile](https://kubernetes.io/docs/tutorials/security/seccomp/)
-to the workspace pod. The value is a string, corresponding to the
-`localhostProfile` subfield of the PodSecurityContext `seccompProfile`
-attribute.
+Applies a custom
+[seccomp profile](https://kubernetes.io/docs/tutorials/security/seccomp/) to the
+workspace pod. The value is a string, corresponding to the `localhostProfile`
+subfield of the PodSecurityContext `seccompProfile` attribute.
 
-Per the [Kubernetes
-documentation](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#seccompprofile-v1-core),
+Per the
+[Kubernetes documentation](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#seccompprofile-v1-core),
 this attribute is only valid if used in combination with the `Localhost` seccomp
 profile type. Its value must correspond to the path of a valid JSON profile that
 is already configured on the Kubernetes worker nodes.

@@ -1,7 +1,4 @@
----
-title: Manage satellites
-description: Learn how to manage a satellite.
----
+# Manage satellites
 
 This article will show you how to deploy a satellite to reduce latency. It also
 covers how to view a list of your satellites and how to remove satellites.

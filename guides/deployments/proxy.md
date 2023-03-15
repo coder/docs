@@ -1,7 +1,4 @@
----
-title: Proxies
-description: Learn how to configure forward and reverse proxies for Coder.
----
+# Proxies
 
 This article walks you through configuring proxies for Coder.
 

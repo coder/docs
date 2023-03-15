@@ -1,7 +1,4 @@
----
-title: GPG forwarding
-description: Learn how to configure GPG agent forwarding Coder.
----
+# GPG forwarding
 
 This guide will show you how to sign, encrypt, and decrypt content where GPG is
 in a Coder workspace while the private key is on your local machine.

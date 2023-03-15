@@ -1,14 +1,14 @@
----
-title: "Home"
-description: "Explore our guides and examples to get started with Coder."
----
+# Home
 
-Coder v1 is a self-hosted platform that allows organizations to securely provision
-developer workspaces (featuring remote IDEs and all related resources) for
-DevOps, platform, and software engineering teams.
+Coder v1 is a self-hosted platform that allows organizations to securely
+provision developer workspaces (featuring remote IDEs and all related resources)
+for DevOps, platform, and software engineering teams.
 
 ## News ✨
-  Coder will sunset support for Coder v1 starting in mid-2023 and is encouraging customers to install and deploy Coder v2. [See Frequently Asked Questions](./guides/v2-faq.md).
+
+Coder will sunset support for Coder v1 starting in mid-2023 and is encouraging
+customers to install and deploy Coder v2.
+[See Frequently Asked Questions](./guides/v2-faq.md).
 
 <div class="get-started">
   <div>

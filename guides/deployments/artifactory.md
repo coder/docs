@@ -1,7 +1,4 @@
----
-title: JFrog Artifactory
-description: Learn how to use Artifactory to host container images in Coder.
----
+# JFrog Artifactory
 
 This article will walk you through setting up
 [Artifactory](https://jfrog.com/artifactory/) as a Docker registry in Coder.
@@ -20,9 +17,9 @@ following links for more information:
 
 ## Step 1: Create an Artifactory repository
 
-1. If you do not already have an account you can [start up a free
-   trial](https://jfrog.com/artifactory/) or get yourself a free instance to
-   play with.
+1. If you do not already have an account you can
+   [start up a free trial](https://jfrog.com/artifactory/) or get yourself a
+   free instance to play with.
 1. Log in to your Artifactory dashboard.
 1. Navigate to **Repositories** in the sidebar.
 1. Click **+ Add Repositories**.
@@ -43,7 +40,7 @@ If you have trouble logging in click your user account icon in the upper right
 corner of the Artifactory dashboard, go to **Set Me Up**, then select **docker**
 to find exactly what username and password you can provide to get logged in.
 
-At this stage you can add any images you want to use with Coder.  For example
+At this stage you can add any images you want to use with Coder. For example
 with an image called `hello-world` and a repository called `images`:
 
 ```console
@@ -58,8 +55,8 @@ read-only permissions. This can be done by clicking the cog icon in the upper
 right corner of your Artifactory dashboard then clicking **User Management**.
 
 Once you have the credentials you want to use grab your Artifactory URL and and
-the full path to an image then [add a new registry](../../admin/registries/index.md)
-to Coder.
+the full path to an image then
+[add a new registry](../../admin/registries/index.md) to Coder.
 
 For example here we add an image stored at `codercom/enterprise-intellij` in an
 Artifactory server called `test` and a repository called `images`:

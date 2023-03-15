@@ -1,7 +1,4 @@
----
-title: Podman
-description: Learn how to run Podman in Coder.
----
+# Podman
 
 This article will walk you through setting up
 [Podman](https://docs.podman.io/en/latest/) for use in Coder workspaces
@@ -144,7 +141,7 @@ the below article:
 
    ```console
    kubectl get nodes
-   kubectl label nodes --all smarter-device-manager=enabled 
+   kubectl label nodes --all smarter-device-manager=enabled
    ```
 
 1. If you haven't already done so for your Coder deployment, enable workspace

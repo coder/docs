@@ -1,7 +1,4 @@
----
-title: Usage monitoring
-description: Learn how to monitor Coder's compute usage.
----
+# Usage monitoring
 
 We recommend monitoring your Coder deployment to track compute cost,
 performance, uptime, and deployment stability. Because you deploy Coder onto

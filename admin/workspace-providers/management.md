@@ -1,7 +1,4 @@
----
-title: Workspace provider management
-description: Learn how to manage a workspace provider.
----
+# Workspace provider management
 
 This article walks you through the process of managing your workspace provider
 via the Coder UI.

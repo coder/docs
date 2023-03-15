@@ -1,8 +1,4 @@
----
-title: Shared security responsibility
-description:
-  Learn how Coder and its users carry security-related responsibilities.
----
+# Shared security responsibility
 
 To guarantee the security of the Coder workspace, which includes the entire
 ecosystem of components needed to support the developer's user experience,
@@ -34,8 +30,7 @@ performance:
   - Encryption (mTLS)
     - Certificates
       - TLS certificates presented by `coderd`
-      - TLS certificats presented by the applications with which Coder
-        interacts
+      - TLS certificats presented by the applications with which Coder interacts
   - Boundaries (e.g., network policies)
   - External interactions (ingress and egress)
   - IP address depletion as denial of service
@@ -72,8 +67,8 @@ deploying security controls:
   - Site admins could convert a user authenticating via OIDC to built-in,
     allowing the admin to impersonate the user
 - Container registry
-  - The registry account used to access images should be a specific
-    Coder-only account so that Coder users can only pull approved images
+  - The registry account used to access images should be a specific Coder-only
+    account so that Coder users can only pull approved images
   - CVMs can only pull unauthenticated containers, which means that any user can
     reference any container within the registry
 - Git provider

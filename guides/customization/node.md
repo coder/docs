@@ -1,7 +1,4 @@
----
-title: Node.js Projects
-description: Learn how to create custom images for Node.js projects.
----
+# Node.js Projects
 
 This guide will show you how to create a Coder image for a
 [sample blog project](https://github.com/gatsbyjs/gatsby-starter-blog) that's
@@ -17,8 +14,9 @@ image and be using for your project includes:
 
 ## Requirements
 
-- A Coder deployment (you can request a [trial license](https://coder.com/trial);
-  afterward, see our [installation guide](../../setup/installation.md))
+- A Coder deployment (you can request a
+  [trial license](https://coder.com/trial); afterward, see our
+  [installation guide](../../setup/installation.md))
 - Docker (you can have this installed locally or on an existing Coder workspace)
 - A Docker Hub account or access to another Docker registry
 - VS Coder or the text editor of your choice

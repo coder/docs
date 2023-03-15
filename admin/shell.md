@@ -1,7 +1,4 @@
----
-title: Fallback shell
-description: Learn how to enable fallback shell support for Kubernetes.
----
+# Fallback shell
 
 You can enable fallback shell support so that Coder will automatically fall back
 to the

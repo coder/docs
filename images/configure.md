@@ -1,7 +1,4 @@
----
-title: "Configure script"
-description: Learn how to configure Coder's workspace startup behavior.
----
+# Configure script
 
 If you have configuration instructions that apply to everyone who uses a given
 image to create workspaces, you can define them using the **/coder/configure**
@@ -11,7 +8,7 @@ You can use the configure script to:
 
 - Run scripts to install and configure dependencies for your workspace
 - Install VS Code extensions
-- Run [Coder CLI](https://github.com/coder/coder-cli) commands
+- Run [Coder CLI](../cli) commands
 - Check for and clone a GitHub repo if it isn't present
 - Run scripts using
   [CODER\_\* environment variables](../workspaces/variables.md)
