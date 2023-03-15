@@ -5,6 +5,35 @@ following resource minimums to ensure quality performance.
 
 ## Compute
 
+For the Coder control plane (which consists of the `coderd` pod and any
+additional replicas) allocate at least 2 CPU cores, 4 GB of RAM, and 20 GB of
+storage.
+
+In addition to sizing the control plane node(s), you can configure the `coderd`
+pod's resource requests/limits and number of replicas in the [Helm
+chart](https://github.com/coder/enterprise-helm/blob/main/values.yaml). The
+current defaults for both CPU and memory are the following:
+
+```yaml
+coderd:
+  resources:
+    requests:
+      cpu: "250m"
+      memory: "512Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+```
+
+By default, Coder is a single-replica deployment. For larger evaluations and
+production systems, consider increasing the number of nodes and using at least
+two to three coderd replicas to provide failover and load balancing
+capabilities.
+
+If you expect roughly ten or more concurrent users, we recommend increasing
+these figures to improve platform performance (we also recommend regular
+performance testing in a staging environment).
+
 See [Scaling](./scaling.md) for more information.
 
 For **each** active developer using Coder, allocate additional resources. The
@@ -14,6 +43,11 @@ resource intensive. Developers are free to request the resource allocation that
 fits their usage:
 
 ![Workspace resource request](../assets/setup/resource-request.png)
+
+Administrators can put limits aka [Resource Quotas at the
+Organization-level](../admin/organizations/manage#create-a-new-organization) to
+prevent developers from using excessive compute that is either cost prohibitive
+and/or destructive to the health of the Kubernetes cluster.
 
 We also recommend [monitoring](../guides/admin/usage-monitoring.md) your usage
 to determine whether you should change your resource allocation. Accepting a
@@ -41,16 +75,19 @@ have these extensions enabled by running `kubectl get apiservices`):
 
 ## Browsers
 
-Use an up-to-date browser to ensure that you can use all of Coder's features. We
-currently require the following versions _or newer_:
+Use an up-to-date browser to ensure that you can use all of Coder's features.
+Coder runs on the following browsers:
 
-- Apple Safari 12.1
-- Google Chrome 66
-- Mozilla Firefox 57
-- Microsoft Edge 79
+- Apple Safari
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+
+> We have noticed periodic user interface issues with Apple Safari so if you
+> experience difficulties, please use another browser type.
 
 If you're using [Remote IDEs](../workspaces/editors.md), allow pop-ups; Coder
-launches the Remote IDE in a pop-up window.
+launches the Web Terminal and Remote IDE in pop-up windows.
 
 ## Storage
 
@@ -118,7 +155,9 @@ that the behavior is as expected.
 
 ## Licenses
 
-The use of Coder deployments requires a license that's emailed to you.
+The use of Coder deployments requires a license that's emailed to you. Save as a
+JSON file and see [Setup](./configuration#providing-your-license) for how to
+add a license file into a Coder deployment.
 
 ### Restrictions
 
@@ -127,8 +166,6 @@ Deployments using the free trial of Coder:
 - **Must** be able to reach and use an outbound internet connection (at minimum,
   your deployment must be able to access **licensor.coder.com**)
 - Cannot be deployed in an air-gapped network
-- Must use Coder v1.10.0 or later
 
-> Coder's trial license does not work in an air-gapped environment. If your
-> organization is interested in evaluating Coder air-gapped, please contact
-> [sales@coder.com](mailto:sales@coder.com) to discuss license requirements.
+If you are an enterprise and require Coder to run in an air-gapped network,
+please contact sales@coder.com to discuss your project.
