@@ -1,7 +1,4 @@
----
-title: PyCharm
-description: Get started with Coder as a PyCharm user.
----
+# PyCharm
 
 This article will walk you through the process of getting started with a Coder
 workspace and a project that leverages PyCharm. You'll learn how to:

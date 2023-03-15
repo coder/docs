@@ -1,7 +1,4 @@
----
-title: Tailscale
-description: Learn how to use Tailscale in your Coder workspace.
----
+# Tailscale
 
 This guide walks you through configuring [Tailscale networking] for use inside
 [Coder workspaces]. With Tailscale networking, you can access services running

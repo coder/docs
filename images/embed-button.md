@@ -1,7 +1,4 @@
----
-title: Embeddable button
-description: Learn how to embed an "Open in Coder" Button in Your Repo
----
+# Embeddable button
 
 You can embed an **Open in Coder** button into a repository's README file to
 provide developers with a one-click way to start contributing code. It

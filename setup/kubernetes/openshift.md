@@ -1,7 +1,4 @@
----
-title: "Red Hat OpenShift"
-description: Learn about deploying Coder in OpenShift Container Platform
----
+# Red Hat OpenShift
 
 This deployment guide shows you how to customize your [OpenShift Container
 Platform] cluster to deploy Coder.
@@ -112,8 +109,12 @@ Verb:      use
 Resource:  securitycontextconstraints.security.openshift.io
 
 Users:  system:admin
-        system:serviceaccount:coder:environment
+        system:serviceaccount:coder:environments
 ```
+
+> Note: Do not set any `service_account_annotations` values in Workspace
+> Providers, as it will cause Coder to create a workspace-specific service
+> account in place of the default `environments` service account.
 
 ## Option 2: Build images compatible with OpenShift
 
@@ -160,8 +161,15 @@ spec:
       # Switch to root
       USER root 
 
-      # As root, change the coder user id
-      RUN userdel coder && useradd -l -u 1000670000 coder && chown coder:coder /home/coder
+      # As root:
+      # 1) Remove the original coder user with UID 1000
+      # 2) Add a coder group with an allowed UID
+      # 3) Add a coder user as a member of the above group
+      # 4) Fix ownership on the user's home directory
+      RUN userdel coder && \
+          groupadd coder -g 1000670000 && \
+          useradd -l -u 1000670000 coder -g 1000670000 && \
+          chown -R coder:coder /home/coder
 
       # Go back to the user 'coder'
       USER coder
@@ -174,6 +182,18 @@ spec:
       kind: ImageStreamTag
       name: "enterprise-base:latest"
 ```
+
+This will automatically create a `Build` for the image.
+For the moment, it will remain in the "New" status.
+
+Finally, create an `ImageStream` that references the `ImageStreamTag`
+from the `BuildConfig` above:
+
+```console
+oc create imagestream enterprise-base
+```
+
+The `Build` created from the previous step should begin automatically.
 
 When creating workspaces,
 [configure Coder to connect to the internal OpenShift registry](../../admin/registries/index.md)

@@ -1,7 +1,4 @@
----
-title: Administrators
-description: Getting started with Coder as an administrator.
----
+# Administrators
 
 This article will walk you through the steps needed to set up, deploy, and
 configure Coder so that your developers are ready create their workspaces and

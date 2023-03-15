@@ -1,7 +1,9 @@
----
-title: "IDE installation"
-description: Learn how to install IDEs in images.
----
+# IDE installation
+
+> [Development of JetBrains projector was suspended on July 11, 2022.](https://lp.jetbrains.com/projector/)
+> JetBrains IDE versions published after this date may exhibit strange behaviors
+> or crash unexpectedly under Projector. For the best experience, JetBrains
+> recommends migrating to Jetbrains Gateway.
 
 The process of installing an IDE onto your [image](../../images/index.md) is
 similar to installing the IDE onto a local machine.

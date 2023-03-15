@@ -1,7 +1,4 @@
----
-title: Git configuration
-description: Learn how to configure Git in Coder.
----
+# Git configuration
 
 This guide will show you how to manage your Git configuration in Coder.
 
@@ -16,7 +13,7 @@ and [personalization](../../workspaces/personalization.md). This means that you
 can use both files to override the default `.gitconfig` created by Coder.
 
 > If there's already a `.gitconfig` file, Coder will not recreate a default
-version when you rebuild a workspace.
+> version when you rebuild a workspace.
 
 We recommend that each Coder user set and modify their personal `.gitconfig`
 file using the [~/personalize script](../../workspaces/personalization.md).
@@ -39,5 +36,5 @@ present, `git` applies the settings defined to each repository. However, any
 Coder user can override system-level settings using global or worktree git
 configurations.
 
-For more information on Git configuration, refer to the [official
-documentation](https://git-scm.com/docs/git-config).
+For more information on Git configuration, refer to the
+[official documentation](https://git-scm.com/docs/git-config).

@@ -1,10 +1,7 @@
----
-title: "Requirements"
-description: Learn about the prerequisite infrastructure requirements.
----
+# System Requirements
 
-Coder is deployed onto Kubernetes clusters, and we recommend the following
-resource allocation minimums to ensure quality performance.
+Coder is deployed into a Kubernetes cluster namespace. We recommend the
+following resource minimums to ensure quality performance.
 
 ## Compute
 
@@ -37,10 +34,13 @@ If you expect roughly ten or more concurrent users, we recommend increasing
 these figures to improve platform performance (we also recommend regular
 performance testing in a staging environment).
 
+See [Scaling](./scaling.md) for more information.
+
 For **each** active developer using Coder, allocate additional resources. The
-specific amount required per developer varies, though we recommend each workspace have
-4 CPUs and 4 GB of RAM, then iterating as needed. Developers are free to
-request the resource allocation that fits their usage:
+specific amount required per developer varies, though we recommend starting with
+4 CPUs and 4 GB of RAM, especially when JetBrains IDEs are used and which are
+resource intensive. Developers are free to request the resource allocation that
+fits their usage:
 
 ![Workspace resource request](../assets/setup/resource-request.png)
 
@@ -111,8 +111,8 @@ so that Coder can mount the PVC to the workspace (if you're using a custom
 `StorageClass`, be sure that it supports DVP. Otherwise, Coder cannot provision
 workspaces).
 
-> If you are running a multi-zone deployment, ensure that you have at least
-> one node in each zone to prevent volume node affinity conflicts.
+> If you are running a multi-zone deployment, ensure that you have at least one
+> node in each zone to prevent volume node affinity conflicts.
 
 ## Database
 
@@ -167,5 +167,11 @@ Deployments using the free trial of Coder:
   your deployment must be able to access **licensor.coder.com**)
 - Cannot be deployed in an air-gapped network
 
+<<<<<<< HEAD
 If you are an enterprise and require Coder to run in an air-gapped network,
 please contact sales@coder.com to discuss your project.
+=======
+> Coder's trial license does not work in an air-gapped environment. If your
+> organization is interested in evaluating Coder air-gapped, please contact
+> [sales@coder.com](mailto:sales@coder.com) to discuss license requirements.
+>>>>>>> main

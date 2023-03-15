@@ -1,7 +1,4 @@
----
-title: Images
-description: Learn how to work with images for CVM-enabled workspaces.
----
+# Images
 
 This article walks you through how to
 [configure images](../../../images/configure.md) for use with CVMs, as well as
@@ -41,7 +38,8 @@ experience, use [systemd](#systemd) and register the `docker` service so
 `dockerd` runs automatically during initialization.
 
 The following snippet shows how your image can register the `docker` services in
-its Dockerfile. For a full example, [see our `enterprise-base` image for a full example](https://github.com/coder/enterprise-images/blob/main/images/base/Dockerfile.ubuntu).
+its Dockerfile. For a full example,
+[see our `enterprise-base` image for a full example](https://github.com/coder/enterprise-images/blob/main/images/base/Dockerfile.ubuntu).
 
 ```Dockerfile
 FROM ubuntu:20.04

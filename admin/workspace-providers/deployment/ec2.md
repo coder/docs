@@ -1,8 +1,8 @@
----
-title: EC2
-description: Learn how to deploy a workspace provider to an EC2 instance.
-state: alpha
----
+# EC2
+
+> This Workspace Provider type is no longer supported in Coder v1. Please use
+> [Coder v2](https://coder.com/docs/coder-oss/latest) to provision EC2 instances
+> as workspaces.
 
 This article walks you through the process of deploying a workspace provider to
 an EC2 instance.

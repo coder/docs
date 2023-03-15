@@ -1,7 +1,4 @@
----
-title: Database migration
-description: Learn how to migrate data from Coder's built-in database.
----
+# Database migration
 
 By default, Coder deploys a built-in database in the installation's Kubernetes
 namespace. We recommend using this database _only_ for evaluation purposes.
@@ -13,11 +10,6 @@ This article will walk you through the process of doing so.
 ## Requirements
 
 - You must be a cluster admin for your Kubernetes cluster.
-
-- **Azure database users**: if you're using Azure Database for PostgreSQL, note
-  that Coder only works with Single Server; the Flexible Server (Preview) and
-  Hyperscale (Citus) options do _not_ support the TimescaleDB extension
-  required.
 
 ## Migration Steps
 

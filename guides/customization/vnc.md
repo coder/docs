@@ -1,7 +1,4 @@
----
-title: VNC
-description: Learn how to set up a VNC in Coder.
----
+# VNC
 
 This guide will show you how to set up a VNC in Coder.
 
@@ -103,8 +100,8 @@ If your Coder deployment has
 [ssh](https://coder.com/docs/admin/workspace-management/ssh-access) enabled, you
 can also connect to Coder using a local client with SSH port forwarding.
 
-You will need to install [coder-cli](https://github.com/coder/coder-cli) and a
-VNC client on your local machine.
+You will need to install [coder-cli](../../cli) and a VNC client on your local
+machine.
 
 Run the following commands on your local machine to connect to the VNC server.
 Replace `[vnc-port]` with the port on which the server is running and

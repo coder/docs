@@ -1,7 +1,4 @@
----
-title: "External database setup"
-description: Learn how to set up an external Postgres database for use with C4D.
----
+# External database setup
 
 If you'd like to use an external database with your Coder for Docker deployment,
 you must:
@@ -23,7 +20,7 @@ you must:
       -e DB_PASSWORD="" \
       -e DB_NAME=postgres \
       -e DB_SSL_MODE=disable \
-      codercom/coder:1.28.2
+      codercom/coder:1.33.3
    ```
 
 Coder supports client TLS certificates using `DB_SSL_MODE=verify-full`. Ensure

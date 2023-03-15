@@ -1,7 +1,4 @@
----
-title: Storage
-description: Learn about storage in workspaces.
----
+# Storage
 
 Coder differentiates between system-installed files and user-installed files.
 System-installed files are stored in `/user/`, while user-installed files are
@@ -27,13 +24,13 @@ potentially lead to eviction in some clusters.
 
 Instead, we recommend installing everything a user needs in the image, including
 build steps, so that they can be shared across workspaces. For example, if you
-have multiple users start base images and install the same five things
-(e.g., Node.js, CLIs, etc.), these things get placed in ephemeral storage, and
-none of it is shared across workspaces.
+have multiple users start base images and install the same five things (e.g.,
+Node.js, CLIs, etc.), these things get placed in ephemeral storage, and none of
+it is shared across workspaces.
 
-However, if you share some of the items and install them during `docker
-build`, the image cache layers have the apps in them, and they can be shared
-across workspaces. This also has the benefit of speeding up the workspace build
+However, if you share some of the items and install them during `docker build`,
+the image cache layers have the apps in them, and they can be shared across
+workspaces. This also has the benefit of speeding up the workspace build
 process.
 
 The only things we recommend placing in your workspace storage are the contents

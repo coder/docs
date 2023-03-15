@@ -1,18 +1,12 @@
----
-title: "Editors and IDEs"
-description:
-  Learn how to connect your favorite editors and IDEs to your remote workspace.
----
+# Editors and IDEs
 
 There are several primary ways you can connect an IDE to your Coder workspace:
 
 1. [VS Code remote SSH](editors.md#vs-code-remote-ssh) with local VS Code
 1. [VS Code in the browser](editors.md#vs-code-in-the-browser) with code-server
 1. [JetBrains Gateway and SSH](editors.md#jetbrains-gateway-with-ssh)
-1. [JetBrains in the browser](editors.md#jetbrains-ides-in-the-browser) with
-   JetBrains Projector
-1. [JetBrains' Code With Me](editors.md#code-with-me)
-1. [Multiple JetBrains IDEs](editors.md#multiple-jetbrains-ides)
+1. [Jupyter Notebook](editors.md#jupyter-notebook)
+1. [JupyterLab](editors.md#jupyterlab)
 1. [RStudio](editors.md#rstudio)
 1. _Any_ local editor with
    [1-way file synchronization](../cli/file-sync.md#one-way-file-sync) or
@@ -29,6 +23,15 @@ from your local VS Code, connected to your Coder workspace for compute, etc.
    extension
 1. In VS Code's left-hand nav bar, click **Remote Explorer** and right-click on
    a workspace to connect
+
+> If Coder is deployed air-gapped (no Internet), you need to configure your VS
+> Code's [setting](https://code.visualstudio.com/docs/getstarted/settings) with
+> `remote.SSH.allowLocalServerDownload` enabled so the extension will install
+> the VS Code Server on the client first and then copy it over to the Coder
+> workspace via SCP.
+>
+> For further troubleshooting steps, see
+> [Troubleshooting hanging or failing connections](https://code.visualstudio.com/docs/remote/troubleshooting#_troubleshooting-hanging-or-failing-connections)
 
 ![VS Code Remote Explorer](../assets/workspaces/vscode-remote-ssh-panel.png)
 
@@ -77,13 +80,20 @@ code-server -r personalize.log
 
 ## JetBrains Gateway with SSH
 
-If your image
-[includes a JetBrains IDE](../admin/workspace-management/installing-jetbrains.md)
-and you've [set up SSH access to Coder](./ssh.md), you can use JetBrains Gateway
-to run a local JetBrains IDE connected to your Coder workspace.
+[Gateway](https://www.jetbrains.com/remote-development/gateway/) is JetBrains'
+remote development solution.
+[JetBrains has suspended](https://lp.jetbrains.com/projector/) Projector (the
+browser-based option) therefore Coder no longer provides examples or support.
 
-Please note that:
+> By default, Gateway will download the IDE from jetbrains.com into the Coder
+> workspace during the setup. If you are air-gapped or want to leverage a
+> JetBrains IDE in your workspace for faster setup, you can point to an
+> already-installed JetBrains IDE. See the configuration at the end of this
+> Gateway section.
 
+Requirements:
+
+- SSH access to Coder must [already be configured](./ssh.md)
 - Your Coder workspace must be running. Gateway needs compute resources, so
   monitor your resource usage on the Coder dashboard and adjust accordingly.
 - If you use a premium JetBrains IDE (e.g., GoLand, IntelliJ IDEA Ultimate), you
@@ -104,214 +114,193 @@ Please note that:
 
    ![Connect Gateway to SSH](../assets/workspaces/gateway-connect-to-ssh.png)
 
-1. Enter your Coder workspace alias target in **Host** (e.g.,
-   `coder.mark-python`), `22` in **Port**, `coder` in **User name**, and change
-   **Authentication Type** to **OpenSSH config and authentication agent**. Leave
-   the local port field blank. Click **Test Connection**.
+1. Enter your Coder workspace host name in **Host** (e.g.,
+   `coder.mark-intellij`), `22` in **Port**, `coder` in **User name**, and
+   change **Authentication Type** to **OpenSSH config and authentication
+   agent**. You can find the workspace host names in `~/.ssh/config`. Leave the
+   local port field blank. Click **Test Connection**.
 
    ![Gateway SSH Configurations](../assets/workspaces/gateway-ssh-configurations.png)
 
-1. With your created configuration in the **Connection** chosen in the drop-down
-   field, click **Test Connection**, then **OK**.
+1. Choose your new connection from the drop-down and click Check Connection and
+   Continue
 
-   ![Test Gateway Connection](../assets/workspaces/gateway-test-connection.png)
+   ![Connect to SSH](../assets/workspaces/connect-to-ssh.png)
 
-1. Select a JetBrains IDE from the IDE version drop-down. Choose the IDE
-   installed in your Coder workspace, and click the folder icon and select your
-   `/home/coder` directory in your Coder workspace.
+1. The default behavior is to select a JetBrains IDE from the IDE version
+   drop-down and download it from jetbrain.com. Choose the IDE installed in your
+   Coder workspace, and click the folder icon and select your `/home/coder`
+   directory in your Coder workspace.
 
    ![Select JetBrains IDE and working directory](../assets/workspaces/gateway-ide-and-project.png)
 
-1. During this installation step, Gateway downloads the IDE and a JetBrains
-   client. This may take a couple minutes.
+   If you ran `remote-dev-server.sh` (see note below) before starting the config
+   setup, JetBrains will detect your already installed IDE in the drop-down.
 
-   ![Gateway downloading IDE and client](../assets/workspaces/gateway-download-client.png)
+   ![Select JetBrains IDE and working directory](../assets/workspaces/gateway-ide-already-installed-and-project.png)
 
-   ![Code with Me starting up](../assets/workspaces/gateway-code-with-me-loading.png)
+1. Gateway will open the JetBrains client connected to the remotely installed
+   IDE.
 
    ![A running JetBrains IDE in Gateway](../assets/workspaces/gateway-ide-running.png)
 
-> If your Coder deployment is configured with ECDSA ssh key algorithm, change
-> the Gateway authentication type to **Key pair** and create the Coder public
-> ssh key in your local `~/.ssh` directory with `ssh-keygen -y -f`:
->
-> `~/.ssh/coder_enterprise | tee ~/.ssh/coder_enterprise.pub`
+### Using an existing JetBrains installation in the workspace
 
-## JetBrains IDEs in the browser
+If you would like to use an existing JetBrains IDE in a Coder workspace (or you
+are air-gapped, and cannot reach jetbrains.com), run the following script in the
+JetBrains IDE directory to point the default Gateway directory to the IDE
+directory. This step must be done before configuring Gateway.
 
-Coder uses an open-source project called Projector, created and managed by
-JetBrains, to render a JetBrains IDE in a browser.
+```sh
+cd /opt/idea/bin
+./remote-dev-server.sh registerBackendLocationForGateway
+```
 
-If your image
-[includes a JetBrains IDE](../admin/workspace-management/installing-jetbrains.md)
-(such as IntelliJ, PyCharm, and PhpStorm), you can launch it from the dashboard.
+[Here is the JetBrains article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup:~:text=Can%20I%20point%20Remote%20Development%20to%20an%20existing%20IDE%20on%20my%20remote%20server%3F%20Is%20it%20possible%20to%20install%20IDE%20manually%3F)
+explaining this IDE specification.
 
-![IntelliJ logos](../assets/workspaces/intellij-app.png)
+### Alternative SSH key algorithms and Gateway
 
-Coder launches JetBrains IDEs in their own windows; be sure to set your browser
-to allow popup windows so that you can use your IDE.
+If your Coder deployment is configured with ECDSA ssh key algorithm, change the
+Gateway authentication type to **Key pair** and create the Coder public ssh key
+in your local `~/.ssh` directory with `ssh-keygen -y -f`:
 
-> Follow these steps to
-> [start a trial or activate your paid JetBrains license](../guides/troubleshooting/activate-jetbrains-licensing.md).
+```sh
+~/.ssh/coder_enterprise | tee ~/.ssh/coder_enterprise.pub
+```
 
-### Installing JetBrains' IDEs
+### Support & troubleshooting
 
-You install JetBrains IDEs in a Dockerfile, add the required packages to run
-JetBrains in a browser, and create a symlink with one of the following names so
-Coder can auto-detect the IDE and display the icon in the workspace.
+[This article](https://www.jetbrains.com/help/idea/remote-development-troubleshooting.html#setup)
+outlines troubleshooting steps with Gateway. JetBrains product support including
+their Issue Trackers [are here.](https://www.jetbrains.com/support/)
 
-Using Docker, you `docker build` the image from the Dockerfile. You then push
-the image to your container registry and import the image into your Coder
-deployment.
+## Jupyter Notebook
 
-Your administrator can
-[follow these steps to build the JetBrains IDE image](../admin/workspace-management/installing-jetbrains.md).
+Jupyter Notebook is the original web IDE for creating Notebooks used in data
+science, machine learning and analytics projects. By default, any Coder
+workspace with the Jupyter project installed (in `/usr/local/bin/jupyter`) will
+render the icon to launch Jupyter Notebook.
 
-The symlink names supported by Coder are:
+![Jupyter Notework](../assets/workspaces/jupyter-notebook-icon.png)
 
-- `clion`
-- `datagrip`
-- `dataspell`
-- `goland`
-- `intellij-idea-ultimate`
-- `intellij-idea-community`
-- `phpstorm`
-- `pycharm`
-- `pycharm-community`
-- `rider`
-- `rubymine`
-- `studio` (Android Studio)
-- `webstorm`
+To use Jupyter Notebook in a Coder workspace, build a Dockerfile with Jupyter
+project installed as shown below:
 
-## System requirements
+```Dockerfile
+# Dockerfile to install Jupyter Notebook
+FROM codercom/enterprise-base:ubuntu
 
-The resources required depends on your workspace-specific requirements. We
-recommend reviewing the documentation for your IDE to obtain a starting point.
+USER root
 
-### Known issues
+RUN pip3 install jupyter notebook
 
-- Window dragging behavior can misalign with mouse movements
-- Popover dialogs do not always appear in the correct location
-- Popup windows are missing titles and window controls
-- Some theme-based plugins can cause the IDE to render incorrectly
-- Some minor rendering artifacts occur during regular usage
-- Keyboard shortcuts being overridden by the browser. Try
-  [running JetBrains as a Progressive Web App](./pwa.md) to regain shortcuts.
+USER coder
+```
 
-## Code With Me
+## JupyterLab
 
-[JetBrains' Code With Me](https://www.jetbrains.com/code-with-me/) allows you to
-collaborate with others in real-time on your project and enables pair
-programming.
+JupyterLab is the next-generation web-based IDE for data science and Python
+using documents called Notebooks.
 
-> You must have a
-> [JetBrains IDE installed](../admin/workspace-management/installing-jetbrains.md)
-> in your [image](../images/index.md) to start a Code With Me session from your
-> Coder workspace. Only the workspace where the source code is being worked on
-> needs JetBrains; other collaborators do _not_ need a JetBrains IDE.
+![JupyterLab](../assets/workspaces/jupyterlab-opened.png)
 
-### Getting started
+There are three methods to install and access JupyterLab in Coder. All require
+JupyterLab to be installed in the Dockerfile via `pip3 install jupyterlab`.
 
-To set up a Code With Me session:
+The first method renames the `jupyter` binary and copies a new `jupyter` that
+adjusts the arguments passed to the `jupyter` binary to tell Coder to launch
+JupyterLab instead of Notebook.
 
-1. The host creates a session and shares the information needed to join the
-   session with other participants.
-1. The participants use the information provided by the host to join the session
-   and request access.
-1. The host accepts the participants' request to join the session created by the
-   host.
+```Dockerfile
+FROM codercom/enterprise-base:ubuntu
 
-#### Step 1: Start and host a session
+USER root
 
-To create and host a Code With Me session:
+RUN pip3 install jupyterlab
+RUN pip3 install jupyter notebook
 
-1. Log in to Coder.
+RUN mv /usr/local/bin/jupyter /usr/local/bin/jupyter.py
 
-1. Under **Browser Applications**, launch the JetBrains IDE (e.g., IntelliJ
-   PyCharm) of your choice.
+COPY jupyter /usr/local/bin/jupyter
 
-   ![Launch IDE](../assets/workspaces/pycharm-app.png)
+RUN chmod +x jupyter
 
-1. Click the **Code With Me** icon at the top of your IDE.
+USER coder
+```
 
-   ![Code With Me icon](../assets/workspaces/code-with-me-2.png)
+Below is an example `jupyter` script with the lab arguments. This file must be
+located in the same directory as the Dockerfile to be copied during
+`docker build`
 
-1. Select **Enable Access and Copy Invitation Link...**.
+```sh
+#!/bin/bash
+# Replace all "NotebookApp" settings with ServerApp settings.
+args=${@//LabApp/"ServerApp"}
+# Replace 'notebook' with 'lab' to launch juypter lab
+args=${args/notebook/"lab"}
 
-   ![Enable access and copy link](../assets/workspaces/code-with-me-3.png)
+jupyter.py ${args}
+```
 
-1. Confirm and accept the Terms of Use.
+The second method to run JupyterLab is with a dev URL and launching JupyterLab
+via `supervisord` in the `configure` script. The benefit of this approach is it
+is completely independent of Coder's IDE launching mechanism and relies only on
+a generic dev URL.
 
-1. Set the permissions for new guests to **Full access** and uncheck the
-   **Automatically start voice call** feature. Click **Enable Access**.
+![JupyterLab as a dev URL](../assets/workspaces/jupyterlab-as-devurl.png)
 
-1. Once you've enabled access, JetBrains copies the link you must share with
-   participants to your clipboard. Send this link to those with whom you'd like
-   to collaborate.
+```Dockerfile
+FROM codercom/enterprise-base:ubuntu
 
-   You can recopy this link at any time by clicking the **Code With Me icon**
-   and choosing **Copy Invitation Link...**.
+USER root
 
-   ![Link confirmation](../assets/workspaces/code-with-me-5.png)
+RUN pip3 install jupyterlab
+RUN pip3 install jupyter notebook
 
-#### Step 2: Request to join the session
+# configure script to create a dev URL and launch JupyterLab
+COPY ["configure", "/coder/configure"]
+RUN chmod +x /coder/configure
 
-If you've received a link to join a Code With Me session as a participant:
+# install supervisord
+RUN apt-get update && apt-get install -y supervisor
+RUN mkdir -p /var/log/supervisor
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-1. Copy the Code With Me session link that you were provided, and paste it into
-   your web browser. You'll be directed to a webpage with further instructions.
+# change back to the coder user
+USER coder
+```
 
-1. On the instructions page to which you were directed, copy the code snippet
-   and run it in the terminal.
+The `configure` script installs `supervisord`
 
-   ![Run join command](../assets/workspaces/code-with-me-4.png)
+```sh
+#!/bin/bash
 
-1. Confirm and accept the User Agreement.
+echo 'create dev URL for JupyterLab'
+coder urls create $CODER_WORKSPACE_NAME 8888 --name jupyterlab
 
-1. You'll be shown a **security code**. Verify with the host of your session
-   that they see the same code.
+echo 'start supervisord and JupyterLab'
+sudo /usr/bin/supervisord
+```
 
-   ![Security code verification](../assets/workspaces/code-with-me-7.png)
+The `supervisord.conf` launches JupyterLab. This file must be located in the
+same directory as the Dockerfile to be copied during `docker build`
 
-1. Wait for your host to accept your request to join; when they do, your
-   JetBrains IDE will launch automatically.
+```sh
+[supervisord]
+nodaemon=false
+environment=HOME=/home/coder
 
-   ![New JetBrains IDE](../assets/workspaces/code-with-me-8.png)
+[program:jupyterlab]
+command=/usr/local/bin/jupyter lab --ip='*' --NotebookApp.token='' --NotebookApp.password=''
+user=coder
+directory=/home/coder
+```
 
-#### Step 3: Accept the request to the join
-
-If you're the host of the session, you'll see a request that the other
-participant wants to join your project, the permissions you've granted to the
-other user, and a security code.
-
-![Security code verification for host](../assets/workspaces/code-with-me-9.png)
-
-Verify that the security code you see matches the one shown to your
-participants. If they do, click **Accept** to proceed.
-
-At this point, you'll be able to share your project and work with your partner
-in real-time.
-
-## Multiple JetBrains IDEs
-
-If you'd like to have multiple projects open, you'll need to have multiple
-JetBrains IDEs open in Coder simultaneously. The following steps show you how to
-configure Coder to enable this behavior.
-
-![Multiple IntelliJ icons in a workspace](../assets/workspaces/multi-intellij-icons-smaller.png)
-
-Running multiple instances of the same JetBrains IDE requires you to create a
-custom image and configure script to install the JetBrains Projector CLI using a
-custom image and [configure](../images/configure.md) script.
-
-The configure script will install JetBrains Projector, then use the Projector
-CLI to install as many additional IDE instances as you need. Coder's
-[workspace applications](./applications.md) feature surfaces the additional IDE
-icons in the workspace.
-
-We have provided
-[detailed configuration steps](../guides/customization/multiple-jetbrains-ides.md)
-for setting up your custom image and configure script.
+The third method to access JupyterLab is locally using the SSH port forward
+command: `ssh -L 8888:localhost:8888 coder.jupyterlab`. Alternatively, you can
+use the Coder CLI to port forward using: `coder tunnel jupyterlab 8888 8888`.
+Now, open a local browser and navigate to `https://localhost:8888`.
 
 ## RStudio
 

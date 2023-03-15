@@ -1,7 +1,4 @@
----
-title: Image registry
-description: Learn how to resolve issues connecting to an image registry.
----
+# Image registry
 
 When configuring Coder to use a local image registry in an air-gapped network,
 you may encounter an error similar to the following:

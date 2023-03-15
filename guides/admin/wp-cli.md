@@ -1,7 +1,4 @@
----
-title: Workspace provider provisioning via CLI
-description: Learn how to provision a workspace provider using the Coder CLI.
----
+# Workspace provider provisioning via CLI
 
 1. Install and authenticate the Coder CLI.
 

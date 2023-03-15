@@ -1,7 +1,4 @@
----
-title: "Tags"
-description: Learn how to manage image versions inside Coder.
----
+# Tags
 
 <a href="https://docs.docker.com/engine/reference/commandline/tag/"
 target="_blank" rel="noreferrer noopener">Image tags</a> are variants of the
@@ -25,6 +22,9 @@ Each image has a default tag. The default tag appears at the top of the list and
 is indicated by an asterisk. Coder automatically selects the default tag when
 you create a workspace.
 
+Additionally, if the current workspace image tag has been **decommissioned**,
+Coder will automatically update it to the default tag when it is next rebuilt.
+
 > For information about how Coder handles image tags, see
 > [Image Tag Names](../guides/admin/image-tag-names.md).
 
@@ -43,3 +43,9 @@ To use an existing tag as the default tag, click the **vertical ellipsis** for a
 tag and select **Make default**.
 
 ![Set existing tag as default](../assets/images/existing-tag-as-default.png)
+
+### Decommission a tag
+
+A **decommissioned** image tag cannot be used to create new workspaces.
+
+See [Deprecate and Decommission](./deprecating.md#decommission-an-image-tag)

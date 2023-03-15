@@ -1,7 +1,4 @@
----
-title: "Comparison"
-description: "Get an overview of our features."
----
+# Comparison
 
 Coder offers both enterprise and open-source (code-server) solutions to meet the
 remote development needs of organizations and individual developers. Both
@@ -75,6 +72,8 @@ support.
 </table>
 
 > To get a free trial of Coder, please visit
-> [https://coder.com/trial](https://coder.com/trial). To evaluate Coder in an
-> air-gapped network during the free trial period, please <a target="_blank"
-> href="https://coder.com/contact">contact Sales</a>.
+> [https://coder.com/trial](https://coder.com/trial).
+
+Coder's trial license does not work in an air-gapped environment. If your
+organization is interested in evaluating Coder air-gapped, please contact
+[sales@coder.com](mailto:sales@coder.com) to discuss license requirements.

@@ -1,7 +1,4 @@
----
-title: "Google Container Registry"
-description: Add the Google Container Registry to Coder.
----
+# Google Container Registry
 
 Google Container Registry (GCR) uses different authorization methods, unlike the
 generic `registry:2` image that requires a username and password. This article

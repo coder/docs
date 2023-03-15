@@ -1,7 +1,4 @@
----
-title: "Workspace limits"
-description: Learn how to limit the number of workspaces users can create.
----
+# Workspace limits
 
 You can set the maximum number of workspaces that each user can create. To do
 so, [update your Helm chart](../../guides/admin/helm-charts.md) and set the
@@ -12,5 +9,5 @@ so, [update your Helm chart](../../guides/admin/helm-charts.md) and set the
 coderd:
   extraEnvs:
     - name: CODER_MAX_WORKSPACES_PER_USER
-      value: 100
+      value: "100"
 ```

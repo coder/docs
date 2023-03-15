@@ -1,7 +1,4 @@
----
-title: Azure Kubernetes Service
-description: Learn how to set up an AKS cluster for your Coder deployment.
----
+# Azure Kubernetes Service
 
 This deployment guide shows you how to set up an Azure Kubernetes Service (AKS)
 cluster on which Coder can deploy.
@@ -30,6 +27,20 @@ for more information.
 > GPUs are not supported in workspaces deployed as
 > [container-based virtual machines (CVMs)](../../workspaces/cvms.md) unless
 > you're running Coder in a bare-metal Kubernetes environment.
+
+## Pod IP Addresses
+
+By default, AKS clusters use
+[kubenet](https://docs.microsoft.com/en-us/azure/aks/concepts-network#kubenet-basic-networking),
+and a virtual network and subnet are created for you. With kubenet, nodes get an
+IP address from a virtual network subnet. Network address translation (NAT) is
+then configured on the nodes, and pods receive an IP address "hidden" behind the
+node IP. This approach reduces the number of IP addresses that you need to
+reserve in your network space for pods to use.
+
+Alternatively with
+[Azure Container Networking Interface (CNI)](https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni#plan-ip-addressing-for-your-cluster),
+every pod gets an IP address from the subnet and can be accessed directly.
 
 ## Step 1: Create the resource group
 
@@ -94,9 +105,9 @@ az aks create \
   --location "$LOCATION" \
   --max-count 10 \
   --min-count 2 \
+  --node-count 2 \
   --node-vm-size Standard_B8ms \
-  --network-plugin "kubenet" \
-  --network-policy "azure"
+  --network-plugin "kubenet"
 ```
 
 > Both options include the
@@ -137,8 +148,8 @@ For more information, see:
 
 ## Next steps
 
-If you have already installed Coder, you can add this cluster as a [workspace
-provider](../../admin/workspace-providers/deployment/index.md).
+If you have already installed Coder, you can add this cluster as a
+[workspace provider](../../admin/workspace-providers/deployment/index.md).
 
 To access Coder through a secure domain, review our guides on configuring and
 using [TLS certificates](../../guides/tls-certificates/index.md).

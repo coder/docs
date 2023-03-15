@@ -1,8 +1,4 @@
----
-title: Git integration
-description:
-  Learn how to integrate with a Git provider to authenticate workspaces.
----
+# Git integration
 
 The Git Integration allows your developers to connect their Coder accounts to
 their accounts with the Git repository service of choice.
@@ -100,7 +96,7 @@ response received** error, click **Continue** to ignore it.
 For your newly created Application Link, provide the following values as your
 **Incoming Authentication** properties:
 
-- **Consumer Key**: `Coder`
+- **Consumer Key**: `Coder` (or the value of `CODERD_BITBUCKET_CONSUMER_KEY`)
 - **Consumer Name**: `Coder`
 - **Public Key**: Your public key (available from the Coder Admin Configuration
   page)
@@ -109,3 +105,33 @@ Then, in Coder, provide a **Name** for your app, your **URL**, and, optionally,
 a **Description**.
 
 When done, click **Save**.
+
+> 💡 By default, Coder sets the Bitbucket Consumer Key to `Coder`. This can
+> cause issues when attempting to link multiple Coder instances to a single
+> Bitbucket server. In this case, you can override the Bitbucket Consumer Key by
+> setting the environment variable `CODERD_BITBUCKET_CONSUMER_KEY` to a unique
+> value for each Coder deployment. Here's an example of how to set this in your
+> Helm values:
+>
+> ```yaml
+> coderd:
+>   [...]
+>   extraEnvs:
+>     [...]
+>     - name: CODERD_BITBUCKET_CONSUMER_KEY
+>       value: ""
+> ```
+
+### Built-in GitHub Integration (VS Code)
+
+Alternatively, users can VS Code's
+[built-in GitHub integration](https://code.visualstudio.com/docs/sourcecontrol/github)
+in order to clone repositories within VS Code Remote and code-server. This uses
+a GitHub token to authenticate instead of SSH keys.
+
+To cache the token within the workspace, users can run the following command.
+This can also be added to a [configure script](../images/configure.md):
+
+```sh
+git config --global credential.helper store
+```

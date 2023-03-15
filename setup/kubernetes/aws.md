@@ -1,11 +1,7 @@
----
-title: Amazon Elastic Kubernetes Service
-description:
-  Learn how to set up an Amazon EKS cluster for your Coder deployment.
----
+# Amazon Elastic Kubernetes Service
 
 This deployment guide shows you how to set up an Amazon Elastic Kubernetes
-Engine cluster on which Coder can deploy.
+Engine (EKS) cluster on which Coder can deploy.
 
 ## Prerequisites
 
@@ -21,194 +17,78 @@ machine:
   to fast-track this process
 - [eksctl command-line utility](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
 
-## Node Considerations
+## Step 1: Create an EKS cluster
 
-The node type and size that you select impact how you use Coder. When choosing,
-be sure to account for the number of developers you expect to use Coder, as well
-as the resources they need to run their workspaces. See our guide on on
-[compute resources](../../guides/admin/resources.md) for additional information.
+While flags can be passed to `eksctl create cluster`, the following example uses
+an [`eksctl` configuration file](https://eksctl.io/usage/schema/) to define the
+EKS cluster.
 
-If you expect to provision GPUs to your Coder workspaces, you **must** use an
-EC2 instance from AWS'
-[accelerated computing instance family](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/accelerated-computing-instances.html).
+> The cluster name,
+> [region](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones>.html#concepts-regions),
+> and SSH key path will be specific to your installation.
 
-> GPUs are not supported in workspaces deployed as
-> [container-based virtual machines (CVMs)](../../workspaces/cvms.md) unless
-> you're running Coder in a bare-metal Kubernetes environment.
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
 
-## Preliminary steps
+metadata:
+  name: coder-trial-cluster
+  region: us-east-1
 
-Before you can create a cluster, you'll need to perform the following to set up
-and configure your AWS account.
-
-1. Go to AWS' [EC2 console](https://console.aws.amazon.com/ec2/); this should
-   take you to the EC2 page for the AWS region in which you're working (if not,
-   change to the correct region using the dropdown in the top-right of the page)
-1. In the **Resources** section in the middle of the page, click **Elastic
-   IPs**.
-1. Choose either an Elastic IP address you want to use or click **Allocate
-   Elastic IP address**. Choose **Amazon's pool of IPv4 addresses** and click
-   **Allocate**.
-1. Return to the EC2 Dashboard.
-1. In the **Resources** section in the middle of the page, click **Key Pairs**.
-1. Click **Create key pair** (alternatively, if you already have a local SSH key
-   you'd like to use, you can click the Actions dropdown and import your key)
-1. Provide a **name** for your key pair and select **pem** as your **file
-   format**. Click **Create key pair**.
-1. You'll automatically download the keypair; save it to a known directory on
-   your local machine (we recommend keeping the default name, which will match
-   the name you provided to AWS).
-1. Now that you have the `.pem` file, extract the public key portion of the
-   keypair so that you can use it with the eksctl CLI in later steps:
-
-   ```sh
-   ssh-keygen -y -f <PATH/TO/KEY>.pem >> <PATH/TO/KEY/KEY>.pub
-   ```
-
-   **Note**: if you run into a bad permissions error, run `sudo` before the
-   command above.
-
-When done, you should have a .pem and .pub file for the same keypair you
-downloaded from AWS.
-
-## Step 1: Spin up a K8s cluster
-
-To make subsequent steps easier, start by creating environment variables for the
-cluster name,
-[region](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions),
-and SSH key path:
-
-```console
-CLUSTER_NAME="YOUR_CLUSTER_NAME"
-SSH_KEY_PATH="<PATH/TO/KEY>.pub"
-REGION="YOUR_REGION"
+managedNodeGroups:
+  - name: managed-ng-1
+    instanceType: t2.medium
+    amiFamily: Ubuntu2004
+    desiredCapacity: 1
+    minSize: 1
+    maxSize: 2
+    volumeSize: 100
+    ssh:
+      allow: true
+      publicKeyPath: ~/.ssh/id_rsa.pub
 ```
 
-The following will spin up a Kubernetes cluster using `eksctl` (be sure to
-update the parameters as necessary, especially the version number):
-
-```console
-
-  eksctl create cluster \
-  --name "$CLUSTER_NAME" \
-  --version <version> \
-  --region "$REGION" \
-  --nodegroup-name standard-workers \
-  --node-type t3.medium \
-  --nodes 2 \
-  --nodes-min 2 \
-  --nodes-max 8 \
-  --ssh-access \
-  --ssh-public-key "$SSH_KEY_PATH" \
-  --managed
-```
-
-Please note that the sample script creates a `t3.medium` instance; depending on
-your needs, you can choose a
-[larger size](https://aws.amazon.com/ec2/instance-types/t3/) instead. See
+This example uses `t2.medium` instance with 2 nodes which is meant for a small
+trial deployment. Depending on your needs, you can choose a
+[larger size](https://aws.amazon.com/ec2/instance-types/) instead. See our
+documentation on [resources](../../guides/admin/resources.md) and
 [requirements](../requirements.md) for help estimating your cluster size.
+
+> If your developers require Docker commands like `docker build`, `docker run`,
+> and `docker-compose` as part of their development flow, then
+> [container-based virtual machines (CVMs)](../../workspaces/cvms.md) are
+> required. In this case, we recommend using the `Ubuntu2004` AMI family, as the
+> `AmazonLinux2` AMI family does not meet the requirements for
+> [cached CVMs](../../workspace-management/cvms/management#caching).
+
+Once the file is ready, run the following command to create the cluster:
+
+```console
+eksctl create cluster -f cluster.yaml
+```
+
+This process may take ~15-30 minutes to complete since it is creating EC2
+instance(s) aka node(s), node pool, a VPC, NAT Gateway, network interface,
+security group, elastic IP, EKS cluster, namespaces and pods.
+
+> By default, EKS creates a `volumeBindingMode` of `WaitForFirstConsumer`. See
+> the
+> [Kubernetes docs](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode)
+> for more information on this mode. Coder accepts both `Immediate` and
+> `WaitForFirstConsumer`.
 
 When your cluster is ready, you should see the following message:
 
 ```console
-EKS cluster "YOUR_CLUSTER_NAME" in "YOUR_REGION" region is ready
+EKS cluster "YOUR CLUSTER NAME" in "YOUR REGION" region is ready
 ```
 
-This process may take ~15-30 minutes to complete.
-
-## Step 2: Adjust the K8s storage class
-
-Once you've created the cluster, adjust the default Kubernetes storage class to
-support immediate volume binding.
-
-1. Make sure that you're pointed to the correct context:
-
-   ```console
-   kubectl config current-context
-   ```
-
-1. If you're pointed to the correct context, delete the gp2 storage class:
-
-   ```console
-   kubectl delete sc gp2
-   ```
-
-1. Recreate the gp2 storage class with the `volumeBindingMode` set to
-   `Immediate`:
-
-   ```console
-   cat <<EOF | kubectl apply -f -
-   apiVersion: storage.k8s.io/v1
-   kind: StorageClass
-   metadata:
-     annotations:
-       storageclass.kubernetes.io/is-default-class: "true"
-     name: gp2
-   provisioner: kubernetes.io/aws-ebs
-   parameters:
-     type: gp2
-     fsType: ext4
-   volumeBindingMode: Immediate
-   allowVolumeExpansion: true
-   EOF
-   ```
-
-> See the
-> [Kubernetes docs](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode)
-> for information on choosing the right parameter for `volumeBindingMode`; Coder
-> accepts both `Immediate` and `WaitForFirstConsumer`.
-
-### Modifying your cluster to support CVMs
-
-To create clusters allowing you to
-[enable container-based virtual machines (CVMs)](../../admin/workspace-management/cvms.md)
-as a workspace deployment option, you'll need to
-[create a nodegroup](https://eksctl.io/usage/eks-managed-nodes/#creating-managed-nodegroups).
-
-1. Define your config file (we've named the file `coder-node.yaml`, but you can
-   call it whatever you'd like):
-
-   ```yaml
-   apiVersion: eksctl.io/v1alpha5
-   kind: ClusterConfig
-
-   metadata:
-     version: "<YOUR_K8s_VERSION>"
-     name: <YOUR_CLUSTER_NAME>
-     region: <YOUR_AWS_REGION>
-
-   managedNodeGroups:
-     - name: coder-node-group
-       amiFamily: Ubuntu2004 # AmazonLinux2 is also a supported option
-       # Custom EKS-compatible AMIs can be used instead of amiFamily
-       # ami: <your Ubuntu 20.04 AMI ID>
-       instanceType: <instance-type>
-       minSize: 1
-       maxSize: 2
-       desiredCapacity: 1
-       # Uncomment "overrideBootstrapCommand" if you are using a custom AMI
-       # overrideBootstrapCommand: |
-       #  #!/bin/bash -xe
-       #  sudo /etc/eks/bootstrap.sh <YOUR_CLUSTER_NAME>
-   ```
-
-> See
-> [the list of EKS-compatible Ubuntu AMIs](https://cloud-images.ubuntu.com/docs/aws/eks/)
-> and info on
-> [Latest & Custom AMI support](https://eksctl.io/usage/custom-ami-support/).
-
-1. Create your nodegroup (be sure to provide the correct file name):
-
-   ```console
-   eksctl create nodegroup --config-file=coder-node.yaml
-   ```
-
-## Step 3: (Optional) Install Calico onto your cluster
+## Step 2: (Optional) Install Calico onto your cluster
 
 AWS uses
 [Calico](https://docs.amazonaws.cn/en_us/eks/latest/userguide/calico.html) to
-implement network segmentation and tenant isolation. We strongly recommend
-executing the following steps; please see
+implement network segmentation and tenant isolation. For production deployments,
+we recommend Calico to enforce workspace pod isolation; please see
 [Network Policies](../requirements.md#network-policies) for more information.
 
 1. Apply the Calico manifest to your cluster:
@@ -232,27 +112,22 @@ executing the following steps; please see
    calico-node   3         3         3         3            ...
    ```
 
-## Access control
+## Cleanup | Delete EKS cluster
 
-EKS allows you to create and manage user permissions using IAM identity
-providers (IdPs). EKS also supports user authentication via OpenID Connect
-(OIDC) identity providers.
+To delete the EKS cluster including any installation of Coder, substitute your
+cluster name and zone in the following `eksctl` command. This will take several
+minutes and can be monitored in the CloudFormation stack.
 
-Using IAM with Kubernetes' native Role-Based Access Control (RBAC) allows you to
-grant access to your EKS cluster using existing IDPs and fine-tune permissions
-with RBAC.
-
-For more information, see:
-
-- [AWS identity providers and federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html)
-- [Kubernetes RBAC authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+```console
+eksctl delete cluster --region=us-east-1 --name=trial-cluster
+```
 
 ## Next steps
 
-If you have already installed Coder, you can add this cluster as a [workspace
-provider](../../admin/workspace-providers/deployment/index.md).
+If you have already installed Coder, you can add this cluster as a
+[workspace provider](../../admin/workspace-providers/deployment/index.md).
 
 To access Coder through a secure domain, review our guides on configuring and
 using [TLS certificates](../../guides/tls-certificates/index.md).
 
-Once complete, see our page on [installation](../installation.md).
+Once complete, see our page on [Coder installation](../installation.md).

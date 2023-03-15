@@ -1,7 +1,4 @@
----
-title: Workspace provider management
-description: Learn how to manage a workspace provider.
----
+# Workspace provider management
 
 This article walks you through the process of managing your workspace provider
 via the Coder UI.
@@ -61,6 +58,16 @@ At this point, you can:
 
   > If you enable **end-to-end encryption**, end-users using SSH need to rerun
   > `coder config-ssh`.
+
+- Specify the **CVM internal network**. CVMs use an internal bridge network to
+  communicate with the outside world. The default network range used is
+  `172.19.0.0/30`. If this overlaps with existing resources in your network, you
+  can specify an alternative network range here in CIDR format. This setting
+  applies to both cached and non-cached CVMs, but does not affect non-CVM
+  workspaces.
+
+  > The CIDR must allow for 2 hosts at minimum, so a `/30` network is the
+  > smallest possible network. Larger networks are acceptable.
 
 - Specify the Kubernetes `pod_tolerations`, `pod_node_selector`,
   `service_account_annotations`, and `affinity` for the workspaces deployed with

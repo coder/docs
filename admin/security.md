@@ -1,10 +1,7 @@
----
-title: Browser security
-description: Learn about Coder's browser security options.
----
+# Security
 
-Coder offers two browser security features that you can choose to enable. These
-are available under **Manage** > **Admin** > **Infrastructure**.
+Coder offers security features that you can configure. These are available under
+**Manage** > **Admin** > **Security**.
 
 ## HTTP Strict Transport Security
 

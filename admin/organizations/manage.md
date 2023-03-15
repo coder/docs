@@ -1,7 +1,4 @@
----
-title: Org management
-description: Learn about managing organizations.
----
+# Org management
 
 This article shows how you can create, view, edit, or delete an organization.
 
@@ -21,15 +18,15 @@ organization. You can set the:
 
 - **CPU Provisioning Rate**: sets the ratio of virtual CPUs to physical CPUs; if
   you set a higher ratio, you can schedule a larger number of workspaces per
-  node, though it will also lead to greater CPU contention
+  node, though it will also lead to greater CPU contention.
 - **Workspace Shutdown Behavior**: The number of hours a workspace may be idle
-  before Coder stops it automatically to help free up resources
+  before Coder stops it automatically to help free up resources.
 - **User-controlled workspace shutdown behavior**: Whether end-users can set the
   desired workspace shutdown behavior. If disabled, Coder uses the
   organization's default setting.
 
 Finally, you can set **Resource Quotas**. These are limits on the number of
-**CPUs** and **GPUs**, as well as the amount of **memory** and **disk space**,
+**CPUs** and **GPUs**, as well as the amount of **memory** and **disk space**
 each developer can request concurrently for running workspaces in this
 organization. The limits for what you can set are as follows:
 

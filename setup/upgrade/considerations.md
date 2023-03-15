@@ -1,11 +1,13 @@
----
-title: "Update considerations"
-description: Learn how to update your Coder deployment.
----
+# Update considerations
 
 The upgrade page provides instructions on how to upgrade your Coder deployment.
 This article, however, includes information you should be aware of prior to
 upgrading, such as architecture updates and breaking changes.
+
+## Upgrading to v1.30
+
+- Versions `1.30` and above include a database migration that changes
+  string-based IDs to PostgreSQL UUIDs.
 
 ## Upgrading to v1.29
 

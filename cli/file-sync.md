@@ -1,7 +1,4 @@
----
-title: File sync
-description: Learn how to sync files between Coder and your local IDE.
----
+# File sync
 
 If you're working in an IDE that's on your local machine, you can use Coder's
 live sync feature to sync changes from your local IDE with your Coder workspace.
@@ -24,14 +21,14 @@ so on.
 
 ### Example
 
-To sync your local directory **~/Projects/cdr/coder-cli** to **coder-cli** in
+To sync your local directory **~/Projects/coder/coder-cli** to **coder-cli** in
 the home directory of your workspace:
 
 ```console
-$ coder sync ~/Projects/cdr/coder-cli my-env:coder-cli
-2020-05-19 17:57:40 INFO doing initial sync (~/Projects/cdr/coder-cli -> coder-cli)
+$ coder sync ~/Projects/coder/coder-cli my-env:coder-cli
+2020-05-19 17:57:40 INFO doing initial sync (~/Projects/coder/coder-cli -> coder-cli)
 2020-05-19 17:57:41 SUCCESS finished initial sync (878ms)
-2020-05-19 17:57:41 INFO watching ~/Projects/cdr/coder-cli for changes
+2020-05-19 17:57:41 INFO watching ~/Projects/coder/coder-cli for changes
 ```
 
 ## Two-way file sync
@@ -68,9 +65,12 @@ changes.
    Name     ImageTag    CPUCores    MemoryGB    DiskGB    GPUs    Updating    Status
    yourName latest      4           4           30        0       false       ON
    test     latest      1           1           10        0       false       OFF
-   $ mutagen sync create ~/project coder.env-name:~/project
+   $ mutagen sync create ~/project coder.env-name:/target-dir
    Created session sync_dLg9zfqynqVa9aj2V36Fr4OCMz1AHzTKzNGFYYkqfAI
    ```
+
+> Do not include ~/ or /home in your target directory definition. Mutagen will
+> look in the home directory by default.
 
 1. Test your connection by running `mutagen sync monitor`. If you're successful,
    your project files should sync on all future changes.

@@ -1,7 +1,4 @@
----
-title: "Dev URLs"
-description: Learn how to configure dev URL support for a Coder deployment.
----
+# Dev URLs
 
 Developer (dev) URLs allow users to access the ports of running applications
 they develop within their workspace. Coder listens for the applications running
@@ -59,7 +56,7 @@ wildcard domain.
 - See our
   [guide for creating a TLS certificate using LetsEncrypt](../guides/tls-certificates)
 - To add a custom certificate, refer to our
-  [Helm chart](https://github.com/cdr/enterprise-helm)
+  [Helm chart](https://github.com/coder/enterprise-helm)
 
 ## Setting dev URL access permissions
 

@@ -1,8 +1,4 @@
----
-title: "Workspace templates"
-description: "Learn how to write a template for creating workspaces."
-state: alpha
----
+# Workspace templates
 
 <!-- markdownlint-disable MD044 -->
 
@@ -64,6 +60,14 @@ workspace:
         value:
           - key: annotation-key
             value: annotation-value
+      run-as-user:
+        value: 1000
+      run-as-group:
+        value: 1000
+      seccomp-profile-type:
+        value: Localhost
+      seccomp-profile-localhost-profile:
+        value: profiles/custom-profile.json
   configure:
     start:
       value:
@@ -261,6 +265,67 @@ node-selector:
 ```
 
 `node-selector` is disabled by default and must be enabled by a site admin.
+
+#### workspace.specs.kubernetes.run-as-user.value
+
+Sets the `runAsUser` attribute on the workspace's PodSecurityContext, which
+controls the UID used within containers. The value must be a numeric UID.
+
+If not specified, this defaults to the UID specified in the image metadata, as
+specified in the
+[Kubernetes documentation](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/).
+
+#### workspace.specs.kubernetes.run-as-group.value
+
+Sets the `runAsGroup` attribute on the workspace's PodSecurityContext, which
+controls the GID used within the workspace container. The value must be a
+numeric GID.
+
+If not specified, this defaults to a GID specified by the container runtime, as
+specified in the
+[Kubernetes documentation](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/).
+
+#### workspace.specs.kubernetes.seccomp-profile-type.value
+
+Applies a
+[seccomp profile](https://kubernetes.io/docs/tutorials/security/seccomp/) to the
+workspace pod. The value is a string, corresponding to the `type` subfield of
+the PodSecurityContext `seccompProfile` attribute.
+
+For example, the following snippet would explicitly disable seccomp protection:
+
+```yaml
+seccomp-profile-type:
+  value: Unconfined
+```
+
+`seccomp-profile-type` is disabled by default and must be enabled by a site
+admin.
+
+#### workspace.specs.kubernetes.seccomp-profile-localhost-profile.value
+
+Applies a custom
+[seccomp profile](https://kubernetes.io/docs/tutorials/security/seccomp/) to the
+workspace pod. The value is a string, corresponding to the `localhostProfile`
+subfield of the PodSecurityContext `seccompProfile` attribute.
+
+Per the
+[Kubernetes documentation](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#seccompprofile-v1-core),
+this attribute is only valid if used in combination with the `Localhost` seccomp
+profile type. Its value must correspond to the path of a valid JSON profile that
+is already configured on the Kubernetes worker nodes.
+
+The following snippet demonstrates setting a custom profile:
+
+```yaml
+seccomp-profile-type:
+  value: Localhost
+seccomp-profile-localhost-profile:
+  value: profiles/my-custom-profile.json
+```
+
+`seccomp-profile-localhost-profile` is disabled by default and must be enabled
+by a site admin.
 
 #### workspace.configure
 
