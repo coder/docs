@@ -46,7 +46,7 @@ You will need the following:
 1. Configure your geo DNS or anycast routing so the primary Coder deployment and
    all satellites share a single hostname, as well as their individual
    hostnames. (We have provided instructions on
-   [how to create a GeoDNS load balancer on Cloudflare](#create-a-geodns-load-balancer-on-cloudflare)
+   [how to create a GeoDNS load balancer on Cloudflare](#create-a-geo-dns-load-balancer-on-cloudflare)
    below.)
 
 1. In the primary Helm values file, set `coderd.alternateHostnames` to your
