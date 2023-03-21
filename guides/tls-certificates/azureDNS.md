@@ -17,7 +17,7 @@ your Coder hostname and dev URLs.
 There are three available methods to configuring the Azure DNS DNS01 Challenge
 via cert-manager:
 
-- [Managed Identity Using AAD Pod Identities](#step-1:-set-up-a-managed-identity)
+- [Managed Identity Using AAD Pod Identities](#step-1-create-an-azure-dns-zone)
 - [Managed Identity Using AKS Kubelet Identity](https://cert-manager.io/docs/configuration/acme/dns01/azuredns/#managed-identity-using-aks-kubelet-identity)
 - [Service Principal](https://cert-manager.io/docs/configuration/acme/dns01/azuredns/#service-principal)
 

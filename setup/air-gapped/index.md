@@ -30,7 +30,7 @@ item type, but you're welcome to use the alternatives of your choice):
   [HostAliases](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/))
 - A
   [certificate authority](https://github.com/activecm/docker-ca/blob/master/Dockerfile)
-  or [self-signed certificates](#self-signed-certificate-for-the-registry)
+  or self-signed certificates
 
 ## Network configuration
 

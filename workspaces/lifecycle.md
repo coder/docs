@@ -35,7 +35,7 @@ typically set this time to coincide with the start of their working day.
 Organizations can set an
 [auto-off inactivity threshold](../admin/workspace-management/shutdown.md).
 After a workspace hasn't been accessed for the specified threshold, it is shut
-down. A stopped workspace requires a [rebuild](#Rebuilds) before you can access
+down. A stopped workspace requires a [rebuild](#rebuilds) before you can access
 it again.
 
 Optionally, you can allow users to modify or disable auto-off criteria for
