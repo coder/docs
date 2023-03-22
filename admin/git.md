@@ -10,7 +10,7 @@ Coder integrates with the following service providers for authentication and
 
 - GitHub (both GitHub.com and GitHub Enterprise)
 - GitLab (both GitLab.com and self-hosted GitLab)
-- Bitbucket Server (_not_ Bitbucket Cloud; the Cloud API <a
+- Bitbucket Server and Data Center (_not_ Bitbucket Cloud; the Cloud API <a
   href="https://jira.atlassian.com/browse/BCLOUD-17762" target="_blank"
   rel="noreferrer noopener">doesn't support</a> managing SSH keys for users via
   OAuth)
@@ -85,13 +85,45 @@ ID**, and **Client Secret** to Coder. You can also provide an optional
 
 When done, click **Save**.
 
-### Bitbucket Server
+### Bitbucket Server and Data Center
+
+Determine your Bitbucket version, by looking at the footer of the
+**Administration** page, then select the corresponding Provider in Coder.
+
+#### Version 7.20 or later
+
+On your Bitbucket Server, go to **Administration** > **Applications** >
+**Application Links** and select _Create link_.
+
+- Set **Application type** to _External application_
+- Set **Direction** to _Incoming_
+
+Click _Continue_.
+
+- Enter a unique name for the link, e.g. "Coder"
+- Set **Redirect URL** to `[your-coder-domain]/oauth/callback` (e.g.
+  `https://coder.domain.com/oauth/callback`)
+- In **Application permissions**, under **Account**, enable _Write_ permission
+
+Click _Save_ and enter the generated **Client ID** and **Client Secret**.
+
+#### Version 7.19 or earlier
 
 On your Bitbucket Server, go to **Administration** > **Application Links**.
 
 Create a new **Application Link**, setting the **Application URL** as
 `[your-coder-domain]` (e.g. `https://coder.domain.com`). If you receive a **No
 response received** error, click **Continue** to ignore it.
+
+- If you are asked for a **Shared secret**, enter _Coder_
+- If you are asked for **Request Token URL**, **Access Token URL**, or
+  **Authorize URL**, enter `[your-coder-domain]` (e.g.
+  `https://coder.domain.com`)
+
+(These values are for connections from Bitbucket to Coder and are unused in our
+integration).
+
+If shown, check **Create incoming link** and click _Continue_.
 
 For your newly created Application Link, provide the following values as your
 **Incoming Authentication** properties:
