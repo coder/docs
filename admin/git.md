@@ -10,7 +10,7 @@ Coder integrates with the following service providers for authentication and
 
 - GitHub (both GitHub.com and GitHub Enterprise)
 - GitLab (both GitLab.com and self-hosted GitLab)
-- Bitbucket Server (_not_ Bitbucket Cloud; the Cloud API <a
+- Bitbucket Server and Data Center (_not_ Bitbucket Cloud; the Cloud API <a
   href="https://jira.atlassian.com/browse/BCLOUD-17762" target="_blank"
   rel="noreferrer noopener">doesn't support</a> managing SSH keys for users via
   OAuth)
@@ -85,7 +85,12 @@ ID**, and **Client Secret** to Coder. You can also provide an optional
 
 When done, click **Save**.
 
-### Bitbucket Server
+### Bitbucket Server and Data Center
+
+Determine your Bitbucket version, by looking at the footer of the
+**Administration** page, then select the corresponding Provider in Coder.
+
+#### Version 7.19 or earlier
 
 On your Bitbucket Server, go to **Administration** > **Application Links**.
 
@@ -121,6 +126,23 @@ When done, click **Save**.
 >     - name: CODERD_BITBUCKET_CONSUMER_KEY
 >       value: ""
 > ```
+
+#### Version 7.20 or later
+
+On your Bitbucket Server, go to **Administration** > **Applications** >
+**Application Links** and select _Create link_.
+
+- Set **Application type** to _External application_
+- Set **Direction** to _Incoming_
+
+Click _Continue_.
+
+- Enter a unique name for the link, e.g. "Coder"
+- Set **Redirect URL** to `[your-coder-domain]/oauth/callback` (e.g.
+  `https://coder.domain.com/oauth/callback`)
+- In **Application permissions**, under **Account**, enable _Write_ permission
+
+Click _Save_ and enter the generated **Client ID** and **Client Secret**.
 
 ### Built-in GitHub Integration (VS Code)
 
