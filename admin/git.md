@@ -90,6 +90,23 @@ When done, click **Save**.
 Determine your Bitbucket version, by looking at the footer of the
 **Administration** page, then select the corresponding Provider in Coder.
 
+#### Version 7.20 or later
+
+On your Bitbucket Server, go to **Administration** > **Applications** >
+**Application Links** and select _Create link_.
+
+- Set **Application type** to _External application_
+- Set **Direction** to _Incoming_
+
+Click _Continue_.
+
+- Enter a unique name for the link, e.g. "Coder"
+- Set **Redirect URL** to `[your-coder-domain]/oauth/callback` (e.g.
+  `https://coder.domain.com/oauth/callback`)
+- In **Application permissions**, under **Account**, enable _Write_ permission
+
+Click _Save_ and enter the generated **Client ID** and **Client Secret**.
+
 #### Version 7.19 or earlier
 
 On your Bitbucket Server, go to **Administration** > **Application Links**.
@@ -136,23 +153,6 @@ When done, click **Save**.
 >     - name: CODERD_BITBUCKET_CONSUMER_KEY
 >       value: ""
 > ```
-
-#### Version 7.20 or later
-
-On your Bitbucket Server, go to **Administration** > **Applications** >
-**Application Links** and select _Create link_.
-
-- Set **Application type** to _External application_
-- Set **Direction** to _Incoming_
-
-Click _Continue_.
-
-- Enter a unique name for the link, e.g. "Coder"
-- Set **Redirect URL** to `[your-coder-domain]/oauth/callback` (e.g.
-  `https://coder.domain.com/oauth/callback`)
-- In **Application permissions**, under **Account**, enable _Write_ permission
-
-Click _Save_ and enter the generated **Client ID** and **Client Secret**.
 
 ### Built-in GitHub Integration (VS Code)
 
