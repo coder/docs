@@ -98,6 +98,16 @@ Create a new **Application Link**, setting the **Application URL** as
 `[your-coder-domain]` (e.g. `https://coder.domain.com`). If you receive a **No
 response received** error, click **Continue** to ignore it.
 
+- If you are asked for a **Shared secret**, enter _Coder_
+- If you are asked for **Request Token URL**, **Access Token URL**, or
+  **Authorize URL**, enter `[your-coder-domain]` (e.g.
+  `https://coder.domain.com`)
+
+(These values are for connections from Bitbucket to Coder and are unused in our
+integration).
+
+If shown, check **Create incoming link** and click _Continue_.
+
 For your newly created Application Link, provide the following values as your
 **Incoming Authentication** properties:
 
