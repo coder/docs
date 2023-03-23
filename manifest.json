@@ -1,13 +1,13 @@
 {
   "versions": [
+    "v1.41",
     "v1.40",
     "v1.39",
     "v1.38",
     "v1.37",
     "v1.36",
     "v1.35",
-    "v1.34",
-    "v1.33"
+    "v1.34"
   ],
   "routes": [
     {
@@ -1125,6 +1125,11 @@
       "icon_path": "./assets/images/icons/paper.svg",
       "children": [
         {
+          "path": "./changelog/1.41.0.md",
+          "title": "1.41.0",
+          "description": "Released on 03/23/2023"
+        },
+        {
           "path": "./changelog/1.40.0.md",
           "title": "1.40.0",
           "description": "Released on 02/22/2023"
@@ -1247,46 +1252,51 @@
           "description": "Released on 08/31/2022"
         },
         {
-          "path": "./changelog/1.33.0.md",
+          "path": "./changelog/archive/index.md",
+          "navigable": false,
           "children": [
             {
               "path": "./changelog/1.33.6.md",
+              "navigable": false,
               "title": "1.33.6",
               "description": "Released on 10/24/2022"
             },
             {
               "path": "./changelog/1.33.5.md",
+              "navigable": false,
               "title": "1.33.5",
               "description": "Released on 09/16/2022"
             },
             {
               "path": "./changelog/1.33.4.md",
+              "navigable": false,
               "title": "1.33.4",
               "description": "Released on 08/29/2022"
             },
             {
               "path": "./changelog/1.33.3.md",
+              "navigable": false,
               "title": "1.33.3",
               "description": "Released on 08/22/2022"
             },
             {
               "path": "./changelog/1.33.2.md",
+              "navigable": false,
               "title": "1.33.2",
               "description": "Released on 08/15/2022"
             },
             {
               "path": "./changelog/1.33.1.md",
+              "navigable": false,
               "title": "1.33.1",
               "description": "Released on 08/04/2022"
-            }
-          ],
-          "title": "1.33.0",
-          "description": "Released on 07/27/2022"
-        },
-        {
-          "path": "./changelog/archive/index.md",
-          "navigable": false,
-          "children": [
+            },
+            {
+              "path": "./changelog/1.33.0.md",
+              "navigable": false,
+              "title": "1.33.0",
+              "description": "Released on 07/27/2022"
+            },
             {
               "path": "./changelog/1.32.5.md",
               "navigable": false,
