@@ -71,5 +71,9 @@ the Coder CLI:
 
 ## Auto-start
 
-Auto-start allows you to set the time when Coder automatically starts and builds
-your workspaces. See [auto-start](autostart.md) for more information.
+Auto-start allows you to set:
+
+- The time when Coder automatically starts and builds your workspaces.
+- Your preferred timezone.
+
+See [auto-start](autostart.md) for more information.

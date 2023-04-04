@@ -4,6 +4,10 @@ Coder allows you to set memory provisioning ratios for each of your
 organizations. By changing this ratio, you can change the number of workspaces
 that fit onto a single Kubernetes node.
 
+> **Note:** This may cause the Linux Kernel to terminate user workloads if there
+> is insufficient system memory available. You can read more about this topic
+> [here](https://www.kernel.org/doc/gorman/html/understand/understand016.html).
+
 ## Step 1: Enabling memory provisioning
 
 A site admin/manager must complete these steps:

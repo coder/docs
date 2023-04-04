@@ -17,6 +17,9 @@ Administrative users can modify a variety of workspace-related behaviors.
 - You can modify the [workspace shutdown behavior](shutdown.md) on a
   per-organization basis to optimize resource usage.
 
+- You can configure the autostart days of week on a per-organization basis to
+  minimize unnecessary resource consumption.
+
 - You can [install multiple IDEs](installing-jetbrains.md) onto your image so
   that users have alternatives to the default option (VS Code).
 

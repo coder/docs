@@ -13,17 +13,32 @@ Provide a **name** and (optionally) a **description** for this organization. If
 you want this to become a **Default organization**, make sure to check the box
 for this.
 
+You can control the
+[auto-start behaviour](../../workspaces/lifecycle.md#auto-start) for workspaces
+in this organization. You can configure:
+
+- **Autostart Days of Week**: configures on which days of the week workspaces in
+  the organization may automatically start. If you do not want workspaces to
+  auto-start in the organization _at all_, you can simply deselect all weekdays
+  here.
+- **Workspace Shutdown Behavior**: The number of hours a workspace may be idle
+  before Coder stops it automatically to help free up resources.
+- **User-controlled workspace shutdown behavior**: Whether end-users can set the
+  desired workspace shutdown behavior. If disabled, Coder uses the
+  organization's default setting.
+
 You can also control how Coder manages resources for workspaces in this
 organization. You can set the:
 
 - **CPU Provisioning Rate**: sets the ratio of virtual CPUs to physical CPUs; if
   you set a higher ratio, you can schedule a larger number of workspaces per
   node, though it will also lead to greater CPU contention.
-- **Workspace Shutdown Behavior**: The number of hours a workspace may be idle
-  before Coder stops it automatically to help free up resources.
-- **User-controlled workspace shutdown behavior**: Whether end-users can set the
-  desired workspace shutdown behavior. If disabled, Coder uses the
-  organization's default setting.
+- **Memory Provisioning Rate**: sets the ratio of requested versus maximum RAM
+  allocated to workspaces. If you set a higher ratio, you can schedule a larger
+  number of workspaces per node, though it will lead to greater memory
+  contention. See
+  [memory overprovisioning](../workspace-management/memory-overprovisioning.md)
+  for more information.
 
 Finally, you can set **Resource Quotas**. These are limits on the number of
 **CPUs** and **GPUs**, as well as the amount of **memory** and **disk space**

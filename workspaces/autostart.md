@@ -15,6 +15,7 @@ Your workspace must be:
   days)
 - Off (auto-start doesn't work when workspaces are _on_ to prevent the
   triggering of a rebuild while you're working)
+- The current day of week must be allowed for auto-start by your organization.
 
 Coder may trigger auto-start up to 5 minutes before your scheduled time to
 ensure all queued workspaces are ready on time.
@@ -27,6 +28,12 @@ ensure all queued workspaces are ready on time.
 1. Select the **Auto-start** tab and set your desired auto-start time.
 
    ![Set auto-start time](../assets/workspaces/set_autostart_time.png)
+
+   You can also set your local timezone. This ensures that your workspace will
+   start at the correct time if you experience seasonal Daylight Savings Time
+   (DST) changes.
+
+   ![Set auto-start timezone](../assets/workspaces/set_autostart_timezone.png)
 
 1. Select the workspaces for which you want to enable auto-start and save.
 
