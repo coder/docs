@@ -30,6 +30,12 @@ Users can configure a workspace
 which sets the time when Coder will rebuild and start their workspaces. Users
 typically set this time to coincide with the start of their working day.
 
+Organizations can also configure the days of week on which workspaces are
+permitted to start automatically. For example, if users tend to not start their
+workspaces on Saturday or Sunday, organization managers can exclude these days
+by
+[editing the organization](../admin/organizations/manage.md#editing-an-organization).
+
 ## Auto-off
 
 Organizations can set an
