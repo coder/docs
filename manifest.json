@@ -1128,7 +1128,14 @@
         {
           "path": "./changelog/1.42.0.md",
           "title": "1.42.0",
-          "description": "Released on 04/26/2023"
+          "description": "Released on 04/26/2023",
+          "children": [
+            {
+              "path": "./changelog/1.42.1.md",
+              "title": "1.42.1",
+              "description": "Released on 05/02/2023"
+            }
+          ]
         },
         {
           "path": "./changelog/1.41.0.md",
