@@ -103,7 +103,9 @@ Click _Continue_.
 - Enter a unique name for the link, e.g. "Coder"
 - Set **Redirect URL** to `[your-coder-domain]/oauth/callback` (e.g.
   `https://coder.domain.com/oauth/callback`)
-- In **Application permissions**, under **Account**, enable _Write_ permission
+- In **Application permissions**, enable the following:
+  - **Account: Write** (required to add SSH keys)
+  - **Repositories: Admin** (required to clone repositories and create webhooks)
 
 Click _Save_ and enter the generated **Client ID** and **Client Secret**.
 
