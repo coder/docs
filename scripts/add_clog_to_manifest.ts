@@ -42,7 +42,7 @@ const init = (): Arguments => {
  */
 const appendClogManifest = (version: string): void => {
   const clogIdx = manifestJSON.routes.findIndex(
-    (route) => route.path === "./changelog/index.md"
+    (route) => route.path === "./changelog/index.md",
   )
 
   if (clogIdx < 0) {
