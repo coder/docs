@@ -94,7 +94,6 @@ USER=coder
 ITEM_URL=https://coder.domain.com/extensions
 CODER_IMAGE_TAG=latest
 CODER_IMAGE_DIGEST=sha256:1586122346e7d9d64a0c49a28df7538de4c5da5bfe0df672b1552dd52932c9a7
-SERVICE_URL=https://extensions.coder.com/api
 CODER_IMAGE_URI=codercom/enterprise-base:ubuntu
 PATH=/usr/local/google-cloud-sdk/bin:/home/coder/go/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/tmp/coder/coder-cli
 BASE_PATH=/proxy/workspaces/60162f9e-78809dfc9a9e24b8f5e580ff/ide

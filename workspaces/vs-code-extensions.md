@@ -18,8 +18,8 @@ a Coder workspace:
 ## Using the public extensions marketplaces
 
 You can manually add an extension while you're working in the Code Web IDE. The
-extensions can be from Coder's public marketplace, Eclipse Open VSX's public
-marketplace, or the Eclipse Open VSX _local_ marketplace.
+extensions can be from Eclipse Open VSX's public marketplace or the Eclipse Open
+VSX _local_ marketplace.
 
 ![Code Web Extensions](../assets/workspaces/code-web-extensions.png)
 
@@ -85,17 +85,20 @@ marketplace:
 ## Installing from a marketplace at the command line
 
 Using the workspace's terminal or the terminal available inside Code Web (code
-server), run the following to install an extension (be sure to update the
-snippets with the name of the extension you want to install):
+server), run the following to install an extension from the currently configured
+marketplace, which defaults to Open VSX's public marketplace (be sure to update
+the snippets with the name of the extension you want to install):
 
 ```text
-SERVICE_URL=https://extensions.coder.com/api ITEM_URL=https://extensions.coder.com/item /var/tmp/coder/code-server/bin/code-server --install-extension ms-python.python
+/var/tmp/coder/code-server/bin/code-server --install-extension ms-python.python
 ```
 
-Alternatively, you can install an extension from Open VSX's public marketplace:
+To install from a different marketplace you can set the `EXTENSIONS_GALLERY`
+environment variable, which corresponds to the `extensionsGallery` entry in
+Code Web's `product.json`:
 
 ```text
-SERVICE_URL=https://open-vsx.org/vscode/gallery ITEM_URL=https://open-vsx.org/vscode/item /var/tmp/coder/code-server/bin/code-server --install-extension ms-python.python
+EXTENSIONS_GALLERY='{"serviceUrl": "https://my-extensions/api"}' /var/tmp/coder/code-server/bin/code-server --install-extension ms-python.python
 ```
 
 ## Using a local VS Code instance with SSH
