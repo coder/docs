@@ -76,8 +76,8 @@ database and a reverse proxy for TLS.
 | VM control plane                       | ❌                                                                                                                   | ✅                                                                                                                             |
 | Built-in PostgreSQL                    | ✅                                                                                                                   | ✅                                                                                                                             |
 | External PostgreSQL support            | ✅                                                                                                                   | ✅                                                                                                                             |
-| External TLS documentation             | ✅                                                                                                                   | ⌛ [#3518](https://github.com/coder/coder/issues/3518)                                                                         |
-| **Multi region/cloud (control plane)** | ✅ Multi-region [satellites](https://coder.com/docs/coder/latest/admin/satellites) for faster IDE connections.       | ⌛ [#3227](https://github.com/coder/coder/issues/3227)                                                                         |
+| External TLS documentation             | ✅                                                                                                                   | ✅                                                                                                                             |
+| **Multi region/cloud (control plane)** | ✅ Multi-region [satellites](https://coder.com/docs/coder/latest/admin/satellites) for faster IDE connections.       | ✅                                                                                                                             |
 | **Multi region/cloud (workspaces)**    | ✅ [Workspace providers](https://coder.com/docs/coder/latest/admin/workspace-providers) support additional clusters. | ✅ [Templates](https://coder.com/docs/coder/latest/admin/templates) can provision resources in any clouds, clusters, or region |
 | **Multi region/cloud (tunnel/SSH)**    | ✅                                                                                                                   | ✅                                                                                                                             |
 
@@ -174,7 +174,7 @@ comparison:
 | **ARM workspaces**                                                   | ❌                   | ✅                                                                                                                   |
 | **Additional resources in workspace (volume mounts, API keys, etc)** | ❌                   | ✅ Any [Terraform resource](https:///registry.terraform.io)                                                          |
 | **Workspace options**                                                | Limited options      | ✅ Any options via [template parameters](https://coder.com/docs/coder-oss/latest/templates#parameters)               |
-| **Edit workspace**                                                   | ✅                   | ⌛ [#4311](https://github.com/coder/coder/pull/4311)                                                                 |
+| **Edit workspace**                                                   | ✅                   | ✅                                                                                                                   |
 | **Resource provisoning rates**                                       | ✅ Organization wide | ✅ Template wide [(needs docs)](https://github.com/coder/coder/issues/3519)                                          |
 | **Manage workspaces through UI and CLI**                             | ✅                   | ✅                                                                                                                   |
 
@@ -197,7 +197,7 @@ Coder v2. Refer to this table:
 | **Share ports (web UI)**                                            | ✅ [Dev URLs](https://coder.com/docs/coder/latest/workspaces/devurls) | ✅                                                                                                           |
 | **Docker in workspaces (Kubernetes)**                               | ✅ [CVMs](https://coder.com/docs/coder/latest/workspaces/cvms)        | ✅                                                                                                           |
 | **Manage workspaces through UI and CLI**                            | ✅                                                                    | ✅                                                                                                           |
-| **Open in Coder button**                                            | ✅                                                                    | 🤔 [(needs docs)](https://github.com/coder/coder/issues/3981)                                                |
+| **Open in Coder button**                                            | ✅                                                                    | ✅                                                                                                           |
 
 ### Enterprise/management
 
