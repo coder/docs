@@ -19,7 +19,7 @@ image and be using for your project includes:
   [installation guide](../../setup/installation.md))
 - Docker (you can have this installed locally or on an existing Coder workspace)
 - A Docker Hub account or access to another Docker registry
-- VS Coder or the text editor of your choice
+- VS Code or the text editor of your choice
 
 ## Step 1: Create the Dockerfile
 
